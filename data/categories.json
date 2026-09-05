@@ -1,0 +1,392 @@
+{
+ "generatedAt": "2026-09-05T09:28:47+00:00",
+ "categories": [
+  {
+   "slug": "wires-cables",
+   "name": "Wires & Cables",
+   "blurb": "Building wire, power cable and cable accessories.",
+   "count": 2386,
+   "subcategories": [
+    {
+     "slug": "building-wires",
+     "name": "Building Wires",
+     "count": 1062
+    },
+    {
+     "slug": "power-cables",
+     "name": "Power Cables",
+     "count": 704
+    },
+    {
+     "slug": "lszh-cables",
+     "name": "LSZH Cables",
+     "count": 360
+    },
+    {
+     "slug": "medium-voltage-cables",
+     "name": "Medium Voltage Cables",
+     "count": 245
+    },
+    {
+     "slug": "cable-management",
+     "name": "Cable Management",
+     "count": 8
+    },
+    {
+     "slug": "electrical-cables",
+     "name": "Electrical Cables",
+     "count": 7
+    }
+   ]
+  },
+  {
+   "slug": "switches-sockets",
+   "name": "Switches & Sockets",
+   "blurb": "Modular switches, sockets and wiring devices.",
+   "count": 749,
+   "subcategories": [
+    {
+     "slug": "sockets",
+     "name": "Sockets",
+     "count": 632
+    },
+    {
+     "slug": "small-switches",
+     "name": "Small Switches",
+     "count": 60
+    },
+    {
+     "slug": "big-switches",
+     "name": "Big Switches",
+     "count": 34
+    },
+    {
+     "slug": "wiring-devices",
+     "name": "Wiring Devices",
+     "count": 23
+    }
+   ]
+  },
+  {
+   "slug": "electrical-accessories",
+   "name": "Electrical Accessories",
+   "blurb": "Tape, extension leads, connectors, trunking and consumables.",
+   "count": 666,
+   "subcategories": [
+    {
+     "slug": "accessories",
+     "name": "Accessories",
+     "count": 624
+    },
+    {
+     "slug": "door-bells",
+     "name": "Door Bells",
+     "count": 22
+    },
+    {
+     "slug": "extension-leads",
+     "name": "Extension Leads",
+     "count": 20
+    }
+   ]
+  },
+  {
+   "slug": "lighting",
+   "name": "Lighting & Fixtures",
+   "blurb": "LED bulbs, panels, downlights, floodlights and outdoor lighting.",
+   "count": 351,
+   "subcategories": [
+    {
+     "slug": "led-lighting",
+     "name": "LED Lighting",
+     "count": 139
+    },
+    {
+     "slug": "downlights",
+     "name": "Downlights",
+     "count": 52
+    },
+    {
+     "slug": "wall-lights",
+     "name": "Wall Lights",
+     "count": 33
+    },
+    {
+     "slug": "bulbs",
+     "name": "Bulbs",
+     "count": 27
+    },
+    {
+     "slug": "outdoor-lighting",
+     "name": "Outdoor Lighting",
+     "count": 20
+    },
+    {
+     "slug": "panel-lights",
+     "name": "Panel Lights",
+     "count": 15
+    },
+    {
+     "slug": "linear-lights",
+     "name": "Linear Lights",
+     "count": 14
+    },
+    {
+     "slug": "floodlights",
+     "name": "Floodlights",
+     "count": 13
+    },
+    {
+     "slug": "track-lights",
+     "name": "Track Lights",
+     "count": 12
+    },
+    {
+     "slug": "lighting-fixtures",
+     "name": "Lighting Fixtures",
+     "count": 11
+    },
+    {
+     "slug": "highbay-lights",
+     "name": "Highbay Lights",
+     "count": 6
+    },
+    {
+     "slug": "decorative-lighting",
+     "name": "Decorative Lighting",
+     "count": 4
+    },
+    {
+     "slug": "street-lights",
+     "name": "Street Lights",
+     "count": 3
+    },
+    {
+     "slug": "emergency-lights",
+     "name": "Emergency Lights",
+     "count": 1
+    },
+    {
+     "slug": "spot-lights",
+     "name": "Spot Lights",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "slug": "fans-ventilation",
+   "name": "Fans & Ventilation",
+   "blurb": "Ceiling, bracket, pedestal and exhaust fans.",
+   "count": 128,
+   "subcategories": [
+    {
+     "slug": "ceiling-fans",
+     "name": "Ceiling Fans",
+     "count": 60
+    },
+    {
+     "slug": "fans",
+     "name": "Fans",
+     "count": 24
+    },
+    {
+     "slug": "inverter-fans",
+     "name": "Inverter Fans",
+     "count": 16
+    },
+    {
+     "slug": "bracket-fans",
+     "name": "Bracket Fans",
+     "count": 15
+    },
+    {
+     "slug": "pedestal-fans",
+     "name": "Pedestal Fans",
+     "count": 7
+    },
+    {
+     "slug": "exhaust-fans",
+     "name": "Exhaust Fans",
+     "count": 4
+    },
+    {
+     "slug": "table-fans",
+     "name": "Table Fans",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "slug": "smart-home",
+   "name": "Smart Home Devices",
+   "blurb": "App and Wi-Fi controlled switches, plugs and devices.",
+   "count": 80,
+   "subcategories": [
+    {
+     "slug": "smart-switches",
+     "name": "Smart Switches",
+     "count": 66
+    },
+    {
+     "slug": "smart-devices",
+     "name": "Smart Devices",
+     "count": 14
+    }
+   ]
+  },
+  {
+   "slug": "industrial-control",
+   "name": "Industrial Control & Automation",
+   "blurb": "Contactors, relays, drives, soft starters and control components.",
+   "count": 75,
+   "subcategories": [
+    {
+     "slug": "industrial-components",
+     "name": "Industrial Components",
+     "count": 30
+    },
+    {
+     "slug": "drives-soft-starters",
+     "name": "Drives Soft Starters",
+     "count": 12
+    },
+    {
+     "slug": "contactors",
+     "name": "Contactors",
+     "count": 10
+    },
+    {
+     "slug": "automation",
+     "name": "Automation",
+     "count": 10
+    },
+    {
+     "slug": "push-buttons",
+     "name": "Push Buttons",
+     "count": 4
+    },
+    {
+     "slug": "relays",
+     "name": "Relays",
+     "count": 3
+    },
+    {
+     "slug": "motor-protection",
+     "name": "Motor Protection",
+     "count": 3
+    },
+    {
+     "slug": "power-supplies",
+     "name": "Power Supplies",
+     "count": 2
+    },
+    {
+     "slug": "sensors-switches",
+     "name": "Sensors Switches",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "slug": "circuit-protection",
+   "name": "Circuit Protection & Distribution",
+   "blurb": "Breakers, RCDs, distribution boards and changeover gear.",
+   "count": 66,
+   "subcategories": [
+    {
+     "slug": "circuit-breakers",
+     "name": "Circuit Breakers",
+     "count": 18
+    },
+    {
+     "slug": "mcb",
+     "name": "MCB",
+     "count": 11
+    },
+    {
+     "slug": "rcbo",
+     "name": "RCBO",
+     "count": 10
+    },
+    {
+     "slug": "mccb",
+     "name": "MCCB",
+     "count": 9
+    },
+    {
+     "slug": "acb",
+     "name": "ACB",
+     "count": 4
+    },
+    {
+     "slug": "distribution-boxes",
+     "name": "Distribution Boxes",
+     "count": 3
+    },
+    {
+     "slug": "rccb",
+     "name": "RCCB",
+     "count": 2
+    },
+    {
+     "slug": "final-distribution",
+     "name": "Final Distribution",
+     "count": 2
+    },
+    {
+     "slug": "fuses",
+     "name": "Fuses",
+     "count": 2
+    },
+    {
+     "slug": "busbars",
+     "name": "Busbars",
+     "count": 1
+    },
+    {
+     "slug": "isolators",
+     "name": "Isolators",
+     "count": 1
+    },
+    {
+     "slug": "family-not-published",
+     "name": "Family Not Published",
+     "count": 1
+    },
+    {
+     "slug": "changeover-switches",
+     "name": "Changeover Switches",
+     "count": 1
+    },
+    {
+     "slug": "vcb",
+     "name": "VCB",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "slug": "power-energy",
+   "name": "Power & Energy",
+   "blurb": "Stabilisers, meters and power factor correction equipment.",
+   "count": 20,
+   "subcategories": [
+    {
+     "slug": "voltage-stabilisers",
+     "name": "Voltage Stabilisers",
+     "count": 8
+    },
+    {
+     "slug": "meters",
+     "name": "Meters",
+     "count": 6
+    },
+    {
+     "slug": "power-factor-correction",
+     "name": "Power Factor Correction",
+     "count": 6
+    }
+   ]
+  }
+ ]
+}

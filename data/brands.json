@@ -1,0 +1,75 @@
+{
+ "generatedAt": "2026-09-05T09:28:47+00:00",
+ "brands": [
+  {
+   "slug": "pakistan-cables",
+   "name": "Pakistan Cables",
+   "count": 2378,
+   "sourceDomains": [
+    "pakistancables.com"
+   ],
+   "mark": "PC",
+   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  },
+  {
+   "slug": "aqua",
+   "name": "Aqua",
+   "count": 1486,
+   "sourceDomains": [
+    "aquaelectrical.com"
+   ],
+   "mark": "A",
+   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  },
+  {
+   "slug": "coarts",
+   "name": "Coarts",
+   "count": 226,
+   "sourceDomains": [
+    "coartslighting.com"
+   ],
+   "mark": "C",
+   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  },
+  {
+   "slug": "panasonic",
+   "name": "Panasonic",
+   "count": 155,
+   "sourceDomains": [
+    "aquaelectrical.com"
+   ],
+   "mark": "P",
+   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  },
+  {
+   "slug": "himel",
+   "name": "Himel",
+   "count": 132,
+   "sourceDomains": [
+    "himel.com"
+   ],
+   "mark": "H",
+   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  },
+  {
+   "slug": "wahid-fans",
+   "name": "Wahid Fans",
+   "count": 104,
+   "sourceDomains": [
+    "wahidfans.com"
+   ],
+   "mark": "WF",
+   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  },
+  {
+   "slug": "hyundai-electric",
+   "name": "Hyundai Electric",
+   "count": 8,
+   "sourceDomains": [
+    "jubileecorporation.com"
+   ],
+   "mark": "HE",
+   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  }
+ ]
+}
