@@ -487,6 +487,32 @@ found for these. Rather than substitute a misleading image, the original
 line-art drawing was kept. Accuracy was treated as more important than
 filling every slot.
 
+### `assets/images/products/coarts/representative-smart-door-lock.webp`
+
+- **Shows:** Smart door lock fitted to a door, operated from a phone app
+- **Used for:** Coarts "Smart Door Lock" (representative image - the source
+  publishes no photograph for this product)
+- **Source file:** File:Nuki Smart Lock.jpg
+- **Source site:** Wikimedia Commons
+- **Source page:** https://commons.wikimedia.org/wiki/File:Nuki_Smart_Lock.jpg
+- **Licence:** CC BY 2.0
+- **Note:** attribution must be displayed; permission/licensing should be
+  confirmed before production use.
+
+### `assets/images/products/hyundai/representative-variable-frequency-drive.webp`
+
+- **Shows:** Small variable-frequency drive with its terminal cover removed
+- **Used for:** the Hyundai "Industrial Inverters (Variable Frequency Drives)"
+  family entry (representative image - neither the approved source nor Hyundai
+  Electric's own site publishes a usable photograph)
+- **Source file:** File:Small variable-frequency drive.jpg
+- **Source site:** Wikimedia Commons
+- **Source page:** https://commons.wikimedia.org/wiki/File:Small_variable-frequency_drive.jpg
+- **Photographer / author:** C J Cowie
+- **Licence:** CC BY-SA 3.0
+- **Note:** share-alike licence - attribution must be displayed; permission/
+  licensing should be confirmed before production use.
+
 ### `assets/images/products/cable-coil.svg` (line-art placeholder)
 
 - **Used for:** Single Core Copper Wire coil (SEE-1001); electrical-cables subcategory

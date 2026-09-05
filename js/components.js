@@ -465,6 +465,11 @@ window.SEE_UI = (function () {
   function renderFamilyPanel(brandName, list, note) {
     var items = list.map(function (f) {
       return '<li class="family-item">' +
+               '<span class="family-item__media">' +
+                 (f.img ? '<img src="' + esc(f.img) + '" alt="" loading="lazy" decoding="async">'
+                        : '<span class="thumb-none">No image</span>') +
+               "</span>" +
+               '<span class="family-item__body">' +
                '<span class="family-item__name">' + esc(f.name) + "</span>" +
                (f.series ? '<span class="family-item__series">Series: ' + esc(f.series) + "</span>" : "") +
                (f.summary ? '<span class="family-item__sum">' + esc(f.summary) + "</span>" : "") +
@@ -472,6 +477,7 @@ window.SEE_UI = (function () {
                  '<a href="quote-request.html?family=' + encodeURIComponent(f.id) + '">Ask about this range</a>' +
                  '<a href="' + esc(f.sourceUrl) + '" rel="nofollow noopener" target="_blank">Source: ' +
                    esc(f.sourceDomain) + "</a>" +
+               "</span>" +
                "</span>" +
              "</li>";
     }).join("");

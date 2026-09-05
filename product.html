@@ -43,6 +43,7 @@
             Product image unavailable — the approved source for this product does not publish a photograph.
           </p>
         </div>
+        <p class="gallery__imgnote" id="galleryImageNote" hidden></p>
       </div>
 
       <!-- RIGHT: summary -->
@@ -130,22 +131,9 @@
         </div>
 
         <div class="tab-panel" id="panelDesc" role="tabpanel" aria-labelledby="tabDesc">
-          <div class="prose">
-            <p>
-              Full product descriptions will be supplied per item once the catalogue is finalised.
-              The layout below shows how a complete description reads on this template &mdash; product
-              overview, typical applications and installation notes.
-            </p>
-            <h3>Typical applications</h3>
-            <ul>
-              <li>Domestic wiring and rewiring work</li>
-              <li>Office and commercial fit-outs</li>
-              <li>Contractor and project installations</li>
-            </ul>
-            <p class="t-muted">
-              <em>Product-specific description text to be provided before publication.</em>
-            </p>
-          </div>
+          <!-- Filled from the product's own source record. Nothing generic is
+               shown here: if the source publishes no description, the panel says so. -->
+          <div class="prose" id="pdpDescription"></div>
         </div>
 
         <div class="tab-panel" id="panelSpecs" role="tabpanel" aria-labelledby="tabSpecs" hidden>

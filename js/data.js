@@ -89,6 +89,7 @@ window.SEE_DATA = (function () {
       stock: stockCode(x.availability),
       availability: x.availability,
       img: x.img,
+      imgType: x.imgType || null,
       type: x.hasVariations ? "variable" : "simple",
       tags: buildTags(x),
       sourceDomain: x.source,

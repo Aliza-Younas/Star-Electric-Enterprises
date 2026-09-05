@@ -47,7 +47,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-noctambule-floor-cylinder-lamp",
@@ -104,7 +106,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-10a-smart-plug",
@@ -161,7 +165,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-azzuro-led-wall-light",
@@ -211,7 +217,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-roadster-led-light",
@@ -261,7 +269,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-thunder-highbay",
@@ -314,7 +324,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-coarts-firefly-2-emergency-light",
@@ -364,7 +376,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-20th-century-black-wall-sconce",
@@ -417,7 +431,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-aqua-led-panel",
@@ -473,7 +489,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-wavy-magma-floor-lamp",
@@ -529,7 +547,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-hydro-nano-led-inground-light",
@@ -579,7 +599,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-surface-downlight-round",
@@ -635,7 +657,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-sigma-led-spot",
@@ -691,7 +715,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-spike-solar-motion-sensor-led",
@@ -747,7 +773,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-miracle-led-downlight-1",
@@ -797,7 +825,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-decorative-led-hanging-bulbs",
@@ -851,7 +881,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-rope-glass-scandinavian-pendant-lights",
@@ -908,7 +940,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-sky-eco-led-inground-light",
@@ -958,7 +992,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-curtain-wifi-switch",
@@ -1016,7 +1052,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-hydralux-06e-tri-proof-led-batten-light",
@@ -1066,7 +1104,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-3-gang-switch",
@@ -1122,7 +1162,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-outdoor-light-downtown",
@@ -1178,7 +1220,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-crystal-nova",
@@ -1231,7 +1275,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-2-gang-switch",
@@ -1287,7 +1333,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-trapped-nordic-pendant-light",
@@ -1342,7 +1390,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-mini-vessel-solar-hanging-light",
@@ -1399,7 +1449,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-high-res-solar-light",
@@ -1456,7 +1508,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-grace-downlight",
@@ -1506,7 +1560,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-elite-back-lit-wall-light",
@@ -1568,7 +1624,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-captain-flint-table-lamp",
@@ -1623,7 +1681,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-inground-spike-solar-led-light",
@@ -1686,7 +1746,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-volcano-led-wall-light",
@@ -1736,7 +1798,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-the-cupid-s-bow-3d-led-lamp",
@@ -1789,7 +1853,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-400w",
@@ -1842,7 +1908,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-sigma-led-downlight",
@@ -1892,7 +1960,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-ufo-surface-downlight-round-gen-2",
@@ -1945,7 +2015,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-guardian-led-non-maintained-emergency-light",
@@ -1995,7 +2067,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-medieval-thematic-chandelier",
@@ -2048,7 +2122,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-square-surface-downlight",
@@ -2103,7 +2179,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-grace-xl-downlight",
@@ -2153,7 +2231,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-recessed-downlight-round",
@@ -2206,7 +2286,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-eco-downlight",
@@ -2261,7 +2343,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-roadvan-street-light",
@@ -2311,7 +2395,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-diamond-ring-engraved-3d-led-lamp",
@@ -2364,7 +2450,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-snap-lamp",
@@ -2424,7 +2512,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-outdoor-light-tokyo",
@@ -2480,7 +2570,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-c1-canopy-highbay-led-light",
@@ -2514,7 +2606,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/led-bulb.webp",
    "gallery": [],
    "remote": []
   },
@@ -2528,7 +2620,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "representative-image",
+  "imageNote": "LED lamp - representative photograph of this product type."
  },
  {
   "id": "coarts-dynamic-ii-led-wall-lightng-corso-led-downlight",
@@ -2578,7 +2672,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-canopy-led-downlight",
@@ -2628,7 +2724,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-candlelight-chandelier",
@@ -2685,7 +2783,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-eco-down-light",
@@ -2741,7 +2841,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-cube-led-solar-light",
@@ -2795,7 +2897,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-atlas-3d-engraved-led-lamp",
@@ -2845,7 +2949,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-dark-wood-eleganto-light",
@@ -2901,7 +3007,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-dual-end-di-cob",
@@ -2952,7 +3060,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-square-recessed-slim-downlight",
@@ -3007,7 +3117,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-wall-flasher",
@@ -3062,7 +3174,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-butterfly-fencing-solarlight",
@@ -3118,7 +3232,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-alpha-led-cs-recessed-downlight",
@@ -3175,7 +3291,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-tri-proof-led-batten",
@@ -3232,7 +3350,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-thunder-highbay-160lum",
@@ -3283,7 +3403,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-rudolph-geometric-hanging-light",
@@ -3338,7 +3460,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-stella-flood-light-1",
@@ -3394,7 +3518,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-maple-bell-lamp",
@@ -3450,7 +3576,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-the-lion-3d-engraved-led-lamp",
@@ -3503,7 +3631,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-turbo-pro",
@@ -3556,7 +3686,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-fiber-glass-hanging-light",
@@ -3611,7 +3743,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-diphy-hanging-light",
@@ -3672,7 +3806,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-column-led",
@@ -3730,7 +3866,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-smart-relay-module",
@@ -3783,7 +3921,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-austube-eco-surface-diffuser-module",
@@ -3833,7 +3973,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-shelf-wood-luminar",
@@ -3889,7 +4031,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-ergo-led-downlight",
@@ -3939,7 +4083,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-crescent-bear-3d-led-lamp",
@@ -3992,7 +4138,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-nero-bollard-light",
@@ -4042,7 +4190,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-zenio-cob-led-strip-light",
@@ -4092,7 +4242,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-eco-led-batten-light",
@@ -4142,7 +4294,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-trackline-x-spot-module-2",
@@ -4193,7 +4347,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-dynamic-i-led-wall-light",
@@ -4243,7 +4399,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-60w",
@@ -4297,7 +4455,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-focus-led-track-light",
@@ -4347,7 +4507,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-t8-led-tube-pc-range",
@@ -4381,7 +4543,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/t8-led-tube-pc-range-range.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_39f4c5dbf05c4c22bab25c124ead0af7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -4397,7 +4559,8 @@
    "Source publishes no price for this product."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+  "imageType": "exact-image"
  },
  {
   "id": "coarts-maple-foyer-floor-lamp",
@@ -4453,7 +4616,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-ergo-led-downlight-pack-of-3",
@@ -4508,7 +4673,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-decorative-light-linzi",
@@ -4566,7 +4733,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-focus-led-spot-light",
@@ -4619,7 +4788,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-edison-bulb",
@@ -4673,7 +4844,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-1-gang-switch",
@@ -4730,7 +4903,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-spectrum-ball-crystal",
@@ -4786,7 +4961,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-decorative-light-shelter",
@@ -4842,7 +5019,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-surface-downlight-square",
@@ -4898,7 +5077,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-miracle-led-downlight",
@@ -4948,7 +5129,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-coarts-classico-downlight",
@@ -5003,7 +5186,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-40w",
@@ -5059,7 +5244,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-recessed-slim-downlight-round-1",
@@ -5114,7 +5301,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-minima-led-step-light",
@@ -5164,7 +5353,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-movable-mounted-light",
@@ -5217,7 +5408,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-t8-led-tube-glass-range",
@@ -5251,7 +5444,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/t8-led-tube-glass-range-range.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_391665679a3e4d6e9c8a1da6c30dde59~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5267,7 +5460,8 @@
    "Source publishes no price for this product."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+  "imageType": "exact-image"
  },
  {
   "id": "coarts-mini-lunar-led-globe",
@@ -5321,7 +5515,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-street-master",
@@ -5378,7 +5574,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-smokey-fade-glass-pendant",
@@ -5431,7 +5629,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-coarts-lighting-alba-led-batten",
@@ -5481,7 +5681,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-outdoor-garden-light-atlantis",
@@ -5537,7 +5739,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-phantom-led-gen-2-downlight",
@@ -5587,7 +5791,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-wooden-pendant-lantern",
@@ -5650,7 +5856,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-moon-table-lamp",
@@ -5703,7 +5911,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-unicorn-3d-engraved-led-lamp",
@@ -5756,7 +5966,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-led-mirror",
@@ -5806,7 +6018,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-ethnic-architectural-ceiling-lamp",
@@ -5861,7 +6075,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-wooden-wall-panel-light",
@@ -5918,7 +6134,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-museo-track-light-1",
@@ -5971,7 +6189,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-inspiro-beam-solar-light",
@@ -6028,7 +6248,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-optimus-eco-led-linkable-linear",
@@ -6078,7 +6300,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-innova-surface-downlight",
@@ -6129,7 +6353,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-soap-blown-glass-pendants",
@@ -6187,7 +6413,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-downtown-led-inground-light",
@@ -6237,7 +6465,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-track-light-x-linear-module",
@@ -6290,7 +6520,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-origami-bird-lamp",
@@ -6343,7 +6575,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-alteco-pro-panel",
@@ -6398,7 +6632,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-florence-crystal-wall-light",
@@ -6455,7 +6691,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-smart-door-lock",
@@ -6509,7 +6747,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-8-gang-switch",
@@ -6565,7 +6805,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-phantom-cs-led-spot-light",
@@ -6618,7 +6860,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-4-gang-switch",
@@ -6674,7 +6918,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-prime-solar-di-led",
@@ -6727,7 +6973,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-garden-light",
@@ -6784,7 +7032,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-nuvola-pendant-light",
@@ -6842,7 +7092,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-rico-bendable-desk-lamp",
@@ -6898,7 +7150,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-coarts-highbay-thunder-gen-3-led-light",
@@ -6948,7 +7202,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-recessed-downlight-square",
@@ -7003,7 +7259,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-motown-pendant-round-hanging-light",
@@ -7057,7 +7315,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-invictus-dish-solar-lamp",
@@ -7113,7 +7373,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-pwfh-weather-proof-led-batten",
@@ -7163,7 +7425,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-fan-dimmer",
@@ -7222,7 +7486,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-merry-go-round-led-lamp",
@@ -7275,7 +7541,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-thunder-ex-zone-1-exposion-proof-led-light-fixture",
@@ -7325,7 +7593,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-4-gang-plus-fan-switch",
@@ -7382,7 +7652,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-surface-downlight-round",
@@ -7439,7 +7711,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-light-dimmer",
@@ -7498,7 +7772,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-astro-g2-led-flood-light",
@@ -7548,7 +7824,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-classico-downlight",
@@ -7604,7 +7882,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-austube-slim-led-linear-light-reflector-module",
@@ -7657,7 +7937,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-f7-series-led-track-light",
@@ -7691,7 +7973,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/f7-series-led-track-light-range.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_4536bfa8df474e95abad1457b20b311c~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7707,7 +7989,8 @@
    "Source publishes no price for this product."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+  "imageType": "exact-image"
  },
  {
   "id": "coarts-austube-eco-recessed",
@@ -7757,7 +8040,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-enchant-capsule-globe-pendant",
@@ -7814,7 +8099,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-deck-inground-solar-light",
@@ -7873,7 +8160,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-modern-tear-drop-wall-light",
@@ -7932,7 +8221,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-stadia-sports-led-flood-light",
@@ -7982,7 +8273,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-serene-led-panel",
@@ -8035,7 +8328,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-raser-slim-led-step-light",
@@ -8085,7 +8380,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-starburst-crystal-nova-downlighta-led-downlight",
@@ -8140,7 +8437,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-vector-led-floodlight",
@@ -8193,7 +8492,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-innova-recessed-spotlight",
@@ -8250,7 +8551,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-berry-bomb-globe-chandelier",
@@ -8304,7 +8607,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-acrylico-camera-led-lamp",
@@ -8357,7 +8662,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-moon-floor-lamp",
@@ -8412,7 +8719,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-120w",
@@ -8465,7 +8774,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-light-sniper",
@@ -8518,7 +8829,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-manta-led-wall-light",
@@ -8568,7 +8881,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-lunar-desk-globe",
@@ -8623,7 +8938,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-t5-pro-led-batten-light",
@@ -8676,7 +8993,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-scott-led-wall-light",
@@ -8731,7 +9050,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-track-light-x-spot-module",
@@ -8784,7 +9105,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-quantum-led-downlight",
@@ -8837,7 +9160,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-surface-downlight-round-1",
@@ -8892,7 +9217,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-flasher-led-track-light",
@@ -8942,7 +9269,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-milano-glare-free-downlight",
@@ -8992,7 +9321,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-tone-eco-led-wall-light",
@@ -9042,7 +9373,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-mini-dot",
@@ -9095,7 +9428,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-globe-pillar-light",
@@ -9154,7 +9489,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-bollard-7w",
@@ -9205,7 +9542,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-captain-flint-gold-floor-lamp",
@@ -9263,7 +9602,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-starflood-gen-2-led-flood-light",
@@ -9313,7 +9654,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-ergo-downlight",
@@ -9370,7 +9713,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-recessed-slim-downlight-round",
@@ -9426,7 +9771,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-smart-dimmer-module",
@@ -9480,7 +9827,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-bendy-buddy",
@@ -9536,7 +9885,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-thunder-ex-zone-2-led-flood-light",
@@ -9586,7 +9937,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-eco-street-led",
@@ -9636,7 +9989,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-flame-bollard",
@@ -9691,7 +10046,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-linea-recessed",
@@ -9750,7 +10107,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-luna-led-downlight",
@@ -9800,7 +10159,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-marker-led-wall-light",
@@ -9850,7 +10211,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-alteco-panel-1",
@@ -9903,7 +10266,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-coarts-lighting-corso-led-downlight",
@@ -9953,7 +10318,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-tri-proof-led-batten-1",
@@ -10008,7 +10375,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-nordic-crystal-wall-light",
@@ -10064,7 +10433,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-hydralux-06a-led-batten",
@@ -10114,7 +10485,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-modern-di-chrome-crystal-wall-lamp",
@@ -10171,7 +10544,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-smart-bulb",
@@ -10224,7 +10599,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-square-recessed-downlight",
@@ -10280,7 +10657,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-f2-series-led-track-light",
@@ -10314,7 +10693,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/f2-series-led-track-light-range.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d19fdd7e5f40407387b564ba181b0cf5~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10330,7 +10709,8 @@
    "Source publishes no price for this product."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+  "imageType": "exact-image"
  },
  {
   "id": "coarts-the-prancing-horse-led-lamp",
@@ -10380,7 +10760,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-coarts-riser-led-step-light",
@@ -10435,7 +10817,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-stella-led-flood-light",
@@ -10491,7 +10875,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-alteco-cs-panel",
@@ -10546,7 +10932,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-moon-led-panel",
@@ -10596,7 +10984,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-dual-end-tri-cob",
@@ -10649,7 +11039,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-pearl-elegant-track-light",
@@ -10706,7 +11098,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-wooden-pine-hanging-light",
@@ -10761,7 +11155,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-rgb-strip-light",
@@ -10818,7 +11214,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-austube-slim-led-linear-light-diffuser-module",
@@ -10871,7 +11269,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-linea-surface",
@@ -10924,7 +11324,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-led-panel-supremo",
@@ -10977,7 +11379,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-square-surface-downlight",
@@ -11032,7 +11436,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-bollard-5w",
@@ -11085,7 +11491,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-museo-track-light",
@@ -11138,7 +11546,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-quadro-led-downlight",
@@ -11188,7 +11598,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-square-surface-downlight-1",
@@ -11241,7 +11653,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-the-elemento",
@@ -11296,7 +11710,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-eleva-eco-gen-2-led-highbay-130-lumens-per-watt",
@@ -11346,7 +11762,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-smart-universal-remote-ir",
@@ -11401,7 +11819,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-coarts-track-spot-light",
@@ -11451,7 +11871,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-rio-led-downlight",
@@ -11501,7 +11923,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-international-duplex-switch-socket",
@@ -11554,7 +11978,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-vr600-weatherproof-enclosure",
@@ -11604,7 +12030,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-revolta-track-light",
@@ -11659,7 +12087,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-200w",
@@ -11712,7 +12142,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-recessed-slim-downlight-round",
@@ -11768,7 +12200,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-v2-recessed-slim-downlight-square",
@@ -11824,7 +12258,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-nova-cob-downlight-1",
@@ -11879,7 +12315,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-niko-garden-led-spike-light",
@@ -11929,7 +12367,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-el-classico-solar-wall-lamp",
@@ -11985,7 +12425,9 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-smart-door-lock-1",
@@ -12019,7 +12461,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/representative-smart-door-lock.webp",
    "gallery": [],
    "remote": []
   },
@@ -12033,7 +12475,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "representative-image",
+  "imageNote": "Smart door lock - representative photograph of this product type. The source publishes no photograph for this item."
  },
  {
   "id": "coarts-nova-cob-downlight",
@@ -12089,7 +12533,9 @@
    "Source publishes no price for this product."
   ],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  },
  {
   "id": "coarts-5a-universal-smart-plug",
@@ -12144,6 +12590,8 @@
   "datasheetUrl": null,
   "importNotes": [],
   "_class": "REAL_PRODUCT",
-  "_classReason": ""
+  "_classReason": "",
+  "imageType": "exact-image",
+  "imageNote": ""
  }
 ]

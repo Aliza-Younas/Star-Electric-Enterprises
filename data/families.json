@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-05T10:20:29+00:00",
+ "generatedAt": "2026-09-05T11:40:53+00:00",
  "count": 176,
  "families": [
   {
@@ -13,6 +13,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+   "img": "assets/images/products/coarts/f2-series-led-track-light-range.webp",
+   "imgType": "exact-image",
    "sourceDomain": "coartslighting.com",
    "sourceUrl": "https://www.coartslighting.com/product-page/f2-series-led-track-light",
    "summary": "The Coarts F2 Series LED Track Light offers exceptional performance with high lumen efficiency greater than 120lm/W, providing bright, high-quality lighting in various environments."
@@ -28,6 +30,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+   "img": "assets/images/products/coarts/f7-series-led-track-light-range.webp",
+   "imgType": "exact-image",
    "sourceDomain": "coartslighting.com",
    "sourceUrl": "https://www.coartslighting.com/product-page/f7-series-led-track-light",
    "summary": "The Coarts F7 Series LED Track Light delivers exceptional performance with a high-efficiency COB LED that boasts greater than 120lm/W lumen efficiency."
@@ -43,6 +47,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+   "img": "assets/images/products/coarts/t8-led-tube-glass-range-range.webp",
+   "imgType": "exact-image",
    "sourceDomain": "coartslighting.com",
    "sourceUrl": "https://www.coartslighting.com/product-page/t8-led-tube-glass-range",
    "summary": "Introducing the new T8 LED Tube Glass Range, bringing the freedom of choice to the installer to select the required color temperature for different areas, all from the same luminaire."
@@ -58,6 +64,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it.",
+   "img": "assets/images/products/coarts/t8-led-tube-pc-range-range.webp",
+   "imgType": "exact-image",
    "sourceDomain": "coartslighting.com",
    "sourceUrl": "https://www.coartslighting.com/product-page/t8-led-tube-pc-range",
    "summary": "Introducing the new T8 LED Tube PC Range, bringing the freedom of choice to the installer to select the required color temperature for different areas, all from the same luminaire."
@@ -73,6 +81,8 @@
    "series": "British Wiring Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496092002315447.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Advanced-Series",
    "summary": "Advanced-Series, part of the Himel British Wiring Devices range within Home Electric."
@@ -88,6 +98,8 @@
    "series": "Variable Speed Drives",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/BASIC",
    "summary": "BASIC, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -103,6 +115,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/BASIC-Compact",
    "summary": "BASIC-Compact, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -118,6 +132,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/BASIC-Standard",
    "summary": "BASIC-Standard, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -133,6 +149,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/BASIC-Universal",
    "summary": "BASIC-Universal, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -148,6 +166,8 @@
    "series": "Modular Wiring Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935504931076060789.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Bliss-Series",
    "summary": "Bliss-Series, part of the Himel Modular Wiring Devices range within Home Electric."
@@ -163,6 +183,8 @@
    "series": "Accessories and Tools",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935534461577080753.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Cable-Ties",
    "summary": "Cable-Ties, part of the Himel Accessories and Tools range within Home Electric."
@@ -178,6 +200,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935504931076060789.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Click-Eco-Series",
    "summary": "Click-Eco-Series, part of the Himel Modular Wiring Devices range within Home Electric."
@@ -193,6 +217,8 @@
    "series": "Modular Wiring Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935504931076060789.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Click-Series",
    "summary": "Click-Series, part of the Himel Modular Wiring Devices range within Home Electric."
@@ -208,6 +234,8 @@
    "series": "European Wiring Devices (Switches and Sockets)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551243785910803.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Curvo",
    "summary": "Curvo, part of the Himel European Wiring Devices (Switches and Sockets) range within Home Electric."
@@ -223,6 +251,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/EXPERT-Compact",
    "summary": "EXPERT-Compact, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -238,6 +268,8 @@
    "series": "Variable Speed Drives",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/EXPERT-Standard",
    "summary": "EXPERT-Standard, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -253,6 +285,8 @@
    "series": "Accessories and Tools",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935534461577080753.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Electrical-Tape",
    "summary": "Electrical-Tape, part of the Himel Accessories and Tools range within Home Electric."
@@ -268,6 +302,8 @@
    "series": "Professional Wiring Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551819231626688.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Floor-Series",
    "summary": "Floor-Series, part of the Himel Professional Wiring Devices range within Home Electric."
@@ -283,6 +319,8 @@
    "series": "Digital Panel Meters",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693555613986899283.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/H72",
    "summary": "H72, part of the Himel Digital Panel Meters range within Metering."
@@ -298,6 +336,8 @@
    "series": "Digital Panel Meters",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693555613986899283.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/H96",
    "summary": "H96, part of the Himel Digital Panel Meters range within Metering."
@@ -313,6 +353,8 @@
    "series": "Soft Starter",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693549876377959989.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HASBS",
    "summary": "HASBS, part of the Himel Soft Starter range within Industrial Automation."
@@ -328,6 +370,8 @@
    "series": "Soft Starter",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693549876377959989.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HASXS",
    "summary": "HASXS, part of the Himel Soft Starter range within Industrial Automation."
@@ -343,6 +387,8 @@
    "series": "Single-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935658521842463082.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HAVRB",
    "summary": "HAVRB, part of the Himel Single-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -358,6 +404,8 @@
    "series": "Single-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935658521842463082.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HAVRL",
    "summary": "HAVRL, part of the Himel Single-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -373,6 +421,8 @@
    "series": "Busbars",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693570240960029382.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HBBT",
    "summary": "HBBT, part of the Himel Busbars range within Final Distribution."
@@ -388,6 +438,8 @@
    "series": "Control Transformers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693553336958669915.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HBK",
    "summary": "HBK, part of the Himel Control Transformers range within Industrial Control."
@@ -403,6 +455,8 @@
    "series": "Low-voltage Capacitors",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693544713481546502.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HBSM",
    "summary": "HBSM, part of the Himel Low-voltage Capacitors range within Power Factor Correction."
@@ -418,6 +472,8 @@
    "series": "Connectors and Terminal Blocks",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693553743398310897.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HCF",
    "summary": "HCF, part of the Himel Connectors and Terminal Blocks range within Industrial Control."
@@ -433,6 +489,8 @@
    "series": "Industrial Plugs",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935539311172668906.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HD",
    "summary": "HD, part of the Himel Industrial Plugs range within Industrial Control."
@@ -448,6 +506,8 @@
    "series": "3 Series RCBO",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3LE",
    "summary": "HDB3LE, part of the Himel 3 Series RCBO range within Final Distribution."
@@ -463,6 +523,8 @@
    "series": "3 Series RCBO",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3LT",
    "summary": "HDB3LT, part of the Himel 3 Series RCBO range within Final Distribution."
@@ -478,6 +540,8 @@
    "series": "3 Series RCBO",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3PLE",
    "summary": "HDB3PLE, part of the Himel 3 Series RCBO range within Final Distribution."
@@ -493,6 +557,8 @@
    "series": "Residual Current Circuit Breaker (RCCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946802361701751467.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3VR",
    "summary": "HDB3VR, part of the Himel Residual Current Circuit Breaker (RCCB) range within Final Distribution."
@@ -508,6 +574,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3w",
    "summary": "HDB3w, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -523,6 +591,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3w-125",
    "summary": "HDB3w-125, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -538,6 +608,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wH",
    "summary": "HDB3wH, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -553,6 +625,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wHLE",
    "summary": "HDB3wHLE, part of the Himel RCBO range within Final Distribution."
@@ -568,6 +642,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wHP",
    "summary": "HDB3wHP, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -583,6 +659,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wLE",
    "summary": "HDB3wLE, part of the Himel RCBO range within Final Distribution."
@@ -598,6 +676,8 @@
    "series": "3 Series RCBO",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wLE-125",
    "summary": "HDB3wLE-125, part of the Himel 3 Series RCBO range within Final Distribution."
@@ -613,6 +693,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wP",
    "summary": "HDB3wP, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -628,6 +710,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wPLE",
    "summary": "HDB3wPLE, part of the Himel RCBO range within Final Distribution."
@@ -643,6 +727,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB3wZ",
    "summary": "HDB3wZ, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -658,6 +744,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB9",
    "summary": "HDB9, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -673,6 +761,8 @@
    "series": "9 Series RCBO",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB9LE",
    "summary": "HDB9LE, part of the Himel 9 Series RCBO range within Final Distribution."
@@ -688,6 +778,8 @@
    "series": "9 Series RCBO",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB9LM",
    "summary": "HDB9LM, part of the Himel 9 Series RCBO range within Final Distribution."
@@ -703,6 +795,8 @@
    "series": "9 Series RCBO",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946823381980090949.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB9PLE",
    "summary": "HDB9PLE, part of the Himel 9 Series RCBO range within Final Distribution."
@@ -718,6 +812,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB9Z",
    "summary": "HDB9Z, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -733,6 +829,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDB9p",
    "summary": "HDB9p, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -748,6 +846,8 @@
    "series": "Miniature Circuit Breaker (MCB)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDBK",
    "summary": "HDBK, part of the Himel Miniature Circuit Breaker (MCB) range within Final Distribution."
@@ -763,6 +863,8 @@
    "series": "Contactors And Thermal Overload Relays",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935489602068616422.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDC17K",
    "summary": "HDC17K, part of the Himel Contactors And Thermal Overload Relays range within Industrial Control."
@@ -778,6 +880,8 @@
    "series": "Capacitor Switching Contactors",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935448961744769930.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDC19s",
    "summary": "HDC19s, part of the Himel Capacitor Switching Contactors range within Power Factor Correction."
@@ -793,6 +897,8 @@
    "series": "Contactors And Thermal Overload Relays",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935489602068616422.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDC3",
    "summary": "HDC3, part of the Himel Contactors And Thermal Overload Relays range within Industrial Control."
@@ -808,6 +914,8 @@
    "series": "Low-voltage Capacitors",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693544713481546502.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDCAP3",
    "summary": "HDCAP3, part of the Himel Low-voltage Capacitors range within Power Factor Correction."
@@ -823,6 +931,8 @@
    "series": "Modular Contactors",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935700591647140175.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDCH8s",
    "summary": "HDCH8s, part of the Himel Modular Contactors range within Final Distribution."
@@ -838,6 +948,8 @@
    "series": "Electronic Watt-hour Meters",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693565031971256681.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDDS606",
    "summary": "HDDS606, part of the Himel Electronic Watt-hour Meters range within Metering."
@@ -853,6 +965,8 @@
    "series": "Switch Disconnector",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935105251044986925.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDG3",
    "summary": "HDG3, part of the Himel Switch Disconnector range within Final Distribution."
@@ -868,6 +982,8 @@
    "series": "Switch Disconnector",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935105251044986925.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDG9",
    "summary": "HDG9, part of the Himel Switch Disconnector range within Final Distribution."
@@ -883,6 +999,8 @@
    "series": "Isolating Switch",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935105251044986925.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDGL",
    "summary": "HDGL, part of the Himel Isolating Switch range within Low voltage Distribution."
@@ -898,6 +1016,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16946803412115541690.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDIN",
    "summary": "Himel HDIN. Listed in the manufacturer's sitemap; family not published on an accessible page."
@@ -913,6 +1033,8 @@
    "series": "Time Relay",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935698361190665339.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDJS18",
    "summary": "HDJS18, part of the Himel Time Relay range within Final Distribution."
@@ -928,6 +1050,8 @@
    "series": "Switch Mode Power Supplies",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935531311348464524.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDK",
    "summary": "HDK, part of the Himel Switch Mode Power Supplies range within Industrial Control."
@@ -943,6 +1067,8 @@
    "series": "Switch Mode Power Supplies",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935531311348464524.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDKUS",
    "summary": "HDKUS, part of the Himel Switch Mode Power Supplies range within Industrial Control."
@@ -958,6 +1084,8 @@
    "series": "Molded Case Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM2",
    "summary": "HDM2, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -973,6 +1101,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM2L",
    "summary": "HDM2L, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -988,6 +1118,8 @@
    "series": "Molded Case Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM3-HDM3v",
    "summary": "HDM3-HDM3v, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -1003,6 +1135,8 @@
    "series": "Molded Case Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM3E",
    "summary": "HDM3E, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -1018,6 +1152,8 @@
    "series": "Molded Case Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM3L",
    "summary": "HDM3L, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -1033,6 +1169,8 @@
    "series": "Molded Case Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM3S",
    "summary": "HDM3S, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -1048,6 +1186,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM6E",
    "summary": "HDM6E, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -1063,6 +1203,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693509957243639924.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDM6s",
    "summary": "HDM6s, part of the Himel Molded Case Circuit Breakers range within Low voltage Distribution."
@@ -1078,6 +1220,8 @@
    "series": "Industrial Plugs",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935539311172668906.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDP",
    "summary": "HDP, part of the Himel Industrial Plugs range within Industrial Control."
@@ -1093,6 +1237,8 @@
    "series": "Motor Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693549205817999213.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDP17Z",
    "summary": "HDP17Z, part of the Himel Motor Circuit Breakers range within Industrial Control."
@@ -1108,6 +1254,8 @@
    "series": "Motor Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693549205817999213.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDP6",
    "summary": "HDP6, part of the Himel Motor Circuit Breakers range within Industrial Control."
@@ -1123,6 +1271,8 @@
    "series": "Industrial Plugs",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935539311172668906.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDPM",
    "summary": "HDPM, part of the Himel Industrial Plugs range within Industrial Control."
@@ -1138,6 +1288,8 @@
    "series": "Industrial Plugs",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935539311172668906.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDPS",
    "summary": "HDPS, part of the Himel Industrial Plugs range within Industrial Control."
@@ -1153,6 +1305,8 @@
    "series": "Distribution Boxes",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693570503339216290.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDPZ50",
    "summary": "HDPZ50, part of the Himel Distribution Boxes range within Final Distribution."
@@ -1168,6 +1322,8 @@
    "series": "Transfer Switch Equipment",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935103162117361960.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDQ3HB",
    "summary": "HDQ3HB, part of the Himel Transfer Switch Equipment range within Low voltage Distribution."
@@ -1183,6 +1339,8 @@
    "series": "Contactors And Thermal Overload Relays",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935489602068616422.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDR3s",
    "summary": "HDR3s, part of the Himel Contactors And Thermal Overload Relays range within Industrial Control."
@@ -1198,6 +1356,8 @@
    "series": "Magnetic Starters",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693549458563372928.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDS3",
    "summary": "HDS3, part of the Himel Magnetic Starters range within Industrial Control."
@@ -1213,6 +1373,8 @@
    "series": "Industrial Plugs",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935539311172668906.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDSF",
    "summary": "HDSF, part of the Himel Industrial Plugs range within Industrial Control."
@@ -1228,6 +1390,8 @@
    "series": "Industrial Plugs",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935539311172668906.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDSM",
    "summary": "HDSM, part of the Himel Industrial Plugs range within Industrial Control."
@@ -1243,6 +1407,8 @@
    "series": "Electronic Watt-hour Meters",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693565031971256681.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDTS606",
    "summary": "HDTS606, part of the Himel Electronic Watt-hour Meters range within Metering."
@@ -1258,6 +1424,8 @@
    "series": "Air Circuit Breakers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935099301563648179.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDW3",
    "summary": "HDW3, part of the Himel Air Circuit Breakers range within Low voltage Distribution."
@@ -1273,6 +1441,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935099301563648179.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDW6",
    "summary": "HDW6, part of the Himel Air Circuit Breakers range within Low voltage Distribution."
@@ -1288,6 +1458,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935099301563648179.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDW9",
    "summary": "HDW9, part of the Himel Air Circuit Breakers range within Low voltage Distribution."
@@ -1303,6 +1475,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693571347269113036.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDY3",
    "summary": "HDY3, part of the Himel Surge Protective Devices range within Final Distribution."
@@ -1318,6 +1492,8 @@
    "series": "Surge Protective Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693571347269113036.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDY3N",
    "summary": "HDY3N, part of the Himel Surge Protective Devices range within Final Distribution."
@@ -1333,6 +1509,8 @@
    "series": "Contactors And Thermal Overload Relays",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935489602068616422.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDZ3",
    "summary": "HDZ3, part of the Himel Contactors And Thermal Overload Relays range within Industrial Control."
@@ -1348,6 +1526,8 @@
    "series": "Miniature Relays",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935521481096840332.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HDZ9",
    "summary": "HDZ9, part of the Himel Miniature Relays range within Industrial Control."
@@ -1363,6 +1543,8 @@
    "series": "Distribution Boxes",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693570503339216290.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HEDB",
    "summary": "HEDB, part of the Himel Distribution Boxes range within Final Distribution."
@@ -1378,6 +1560,8 @@
    "series": "Axial Fan",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935535472134881401.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HICF",
    "summary": "HICF, part of the Himel Axial Fan range within Industrial Control."
@@ -1393,6 +1577,8 @@
    "series": "Connectors and Terminal Blocks",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693553743398310897.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HICTUK",
    "summary": "HICTUK, part of the Himel Connectors and Terminal Blocks range within Industrial Control."
@@ -1408,6 +1594,8 @@
    "series": "Industrial Plugs",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935539311172668906.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HIPS",
    "summary": "HIPS, part of the Himel Industrial Plugs range within Industrial Control."
@@ -1423,6 +1611,8 @@
    "series": "Reactive Power Compensation Controllers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693545332240341379.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HJKF",
    "summary": "HJKF, part of the Himel Reactive Power Compensation Controllers range within Power Factor Correction."
@@ -1438,6 +1628,8 @@
    "series": "Reactive Power Compensation Controllers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693545332240341379.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HJKL",
    "summary": "HJKL, part of the Himel Reactive Power Compensation Controllers range within Power Factor Correction."
@@ -1453,6 +1645,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693545332240341379.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HJKL2C",
    "summary": "HJKL2C, part of the Himel Reactive Power Compensation Controllers range within Power Factor Correction."
@@ -1468,6 +1662,8 @@
    "series": "Contactors And Thermal Overload Relays",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935489602068616422.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HJX2-4P",
    "summary": "HJX2-4P, part of the Himel Contactors And Thermal Overload Relays range within Industrial Control."
@@ -1483,6 +1679,8 @@
    "series": "Contactors And Thermal Overload Relays",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935489602068616422.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HJX2F-4P",
    "summary": "HJX2F-4P, part of the Himel Contactors And Thermal Overload Relays range within Industrial Control."
@@ -1498,6 +1696,8 @@
    "series": "Distribution Boxes",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693570503339216290.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HJXF",
    "summary": "HJXF, part of the Himel Distribution Boxes range within Final Distribution."
@@ -1513,6 +1713,8 @@
    "series": "Digital Time Switches",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551784381093800.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HKG",
    "summary": "HKG, part of the Himel Digital Time Switches range within Industrial Control."
@@ -1528,6 +1730,8 @@
    "series": "Three-phase Serial Reactors",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935456751295645256.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HKSG",
    "summary": "HKSG, part of the Himel Three-phase Serial Reactors range within Power Factor Correction."
@@ -1543,6 +1747,8 @@
    "series": "Pushbutton Switch and Pilot Lights",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551963898408907.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HLAY5",
    "summary": "HLAY5, part of the Himel Pushbutton Switch and Pilot Lights range within Industrial Control."
@@ -1558,6 +1764,8 @@
    "series": "Pushbutton Switch and Pilot Lights",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551963898408907.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HLAY5CS",
    "summary": "HLAY5CS, part of the Himel Pushbutton Switch and Pilot Lights range within Industrial Control."
@@ -1573,6 +1781,8 @@
    "series": "Pushbutton Switch and Pilot Lights",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551963898408907.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HLAY7",
    "summary": "HLAY7, part of the Himel Pushbutton Switch and Pilot Lights range within Industrial Control."
@@ -1588,6 +1798,8 @@
    "series": "Pushbutton Switch and Pilot Lights",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551963898408907.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HLD11",
    "summary": "HLD11, part of the Himel Pushbutton Switch and Pilot Lights range within Industrial Control."
@@ -1603,6 +1815,8 @@
    "series": "Current Transformers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935655431082180258.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HLMK",
    "summary": "HLMK, part of the Himel Current Transformers range within Metering."
@@ -1618,6 +1832,8 @@
    "series": "Digital Panel Meters",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693555613986899283.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HP606",
    "summary": "HP606, part of the Himel Digital Panel Meters range within Metering."
@@ -1633,6 +1849,8 @@
    "series": "Fuses",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935106781240819764.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HRT16",
    "summary": "HRT16, part of the Himel Fuses range within Low voltage Distribution."
@@ -1648,6 +1866,8 @@
    "series": "Fuses",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935106781240819764.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HRT18",
    "summary": "HRT18, part of the Himel Fuses range within Low voltage Distribution."
@@ -1663,6 +1883,8 @@
    "series": "Three-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693566123429819042.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HSBW",
    "summary": "HSBW, part of the Himel Three-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -1678,6 +1900,8 @@
    "series": "Three-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693566123429819042.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HSJW",
    "summary": "HSJW, part of the Himel Three-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -1693,6 +1917,8 @@
    "series": "Single-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935658521842463082.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HSVC",
    "summary": "HSVC, part of the Himel Single-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -1708,6 +1934,8 @@
    "series": "Connectors and Terminal Blocks",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693553743398310897.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HTB",
    "summary": "HTB, part of the Himel Connectors and Terminal Blocks range within Industrial Control."
@@ -1723,6 +1951,8 @@
    "series": "Single-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935658521842463082.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HTND",
    "summary": "HTND, part of the Himel Single-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -1738,6 +1968,8 @@
    "series": "Single-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935658521842463082.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HTND2",
    "summary": "HTND2, part of the Himel Single-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -1753,6 +1985,8 @@
    "series": "Single-phase Voltage Stabilizers",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935658521842463082.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HTND3",
    "summary": "HTND3, part of the Himel Single-phase Voltage Stabilizers range within Voltage Stabilizers."
@@ -1768,6 +2002,8 @@
    "series": "Limit Switch",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523671687916988.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HXC",
    "summary": "HXC, part of the Himel Limit Switch range within Industrial Control."
@@ -1783,6 +2019,8 @@
    "series": "Limit Switch",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523671687916988.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HXCKD",
    "summary": "HXCKD, part of the Himel Limit Switch range within Industrial Control."
@@ -1798,6 +2036,8 @@
    "series": "Limit Switch",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523671687916988.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HXCKM",
    "summary": "HXCKM, part of the Himel Limit Switch range within Industrial Control."
@@ -1813,6 +2053,8 @@
    "series": "Limit Switch",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523671687916988.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HXCKP",
    "summary": "HXCKP, part of the Himel Limit Switch range within Industrial Control."
@@ -1828,6 +2070,8 @@
    "series": "Limit Switch",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523671687916988.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/HXCMP",
    "summary": "HXCMP, part of the Himel Limit Switch range within Industrial Control."
@@ -1843,6 +2087,8 @@
    "series": "British Wiring Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496092002315447.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Metal-Clad",
    "summary": "Metal-Clad, part of the Himel British Wiring Devices range within Home Electric."
@@ -1858,6 +2104,8 @@
    "series": "European Wiring Devices (Switches and Sockets)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551243785910803.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Modern-Series",
    "summary": "Modern-Series, part of the Himel European Wiring Devices (Switches and Sockets) range within Home Electric."
@@ -1873,6 +2121,8 @@
    "series": "Accessories and Tools",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935534461577080753.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Multi-Series",
    "summary": "Multi-Series, part of the Himel Accessories and Tools range within Home Electric."
@@ -1888,6 +2138,8 @@
    "series": "British Wiring Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496092002315447.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Prime-V2-Series",
    "summary": "Prime-V2-Series, part of the Himel British Wiring Devices range within Home Electric."
@@ -1903,6 +2155,8 @@
    "series": "Variable Speed Drives",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/SMART-Pump",
    "summary": "SMART-Pump, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -1918,6 +2172,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/SMART-Solar",
    "summary": "SMART-Solar, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -1933,6 +2189,8 @@
    "series": null,
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/SMART-Universal",
    "summary": "SMART-Universal, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -1948,6 +2206,8 @@
    "series": "Variable Speed Drives",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935496921077360717.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/SOLAR",
    "summary": "SOLAR, part of the Himel Variable Speed Drives range within Industrial Automation."
@@ -1963,6 +2223,8 @@
    "series": "Smart Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523551985104104.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Smart-Bulb",
    "summary": "Smart-Bulb, part of the Himel Smart Devices range within Home Electric."
@@ -1978,6 +2240,8 @@
    "series": "Smart Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523551985104104.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Smart-Module",
    "summary": "Smart-Module, part of the Himel Smart Devices range within Home Electric."
@@ -1993,6 +2257,8 @@
    "series": "Smart Devices",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935523551985104104.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Smart-Plug",
    "summary": "Smart-Plug, part of the Himel Smart Devices range within Home Electric."
@@ -2008,6 +2274,8 @@
    "series": "European Wiring Devices (Switches and Sockets)",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/1693551243785910803.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Style-Series",
    "summary": "Style-Series, part of the Himel European Wiring Devices (Switches and Sockets) range within Home Electric."
@@ -2023,6 +2291,8 @@
    "series": "Accessories and Tools",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935534461577080753.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Tool",
    "summary": "Tool, part of the Himel Accessories and Tools range within Home Electric."
@@ -2038,6 +2308,8 @@
    "series": "Accessories and Tools",
    "kind": "SERIES_ONLY",
    "reason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+   "img": "assets/images/products/himel/16935534461577080753.webp",
+   "imgType": "manufacturer-image",
    "sourceDomain": "himel.com",
    "sourceUrl": "https://www.himel.com/gb/product-details/Weatherproof-Series",
    "summary": "Weatherproof-Series, part of the Himel Accessories and Tools range within Home Electric."
@@ -2053,6 +2325,8 @@
    "series": "UAN-Series",
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/hyundai-air-circuit-breakers.webp",
+   "imgType": "exact-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Air Circuit Breakers (UAN-Series, 630 A to 6300 A)."
@@ -2068,6 +2342,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/representative-variable-frequency-drive.webp",
+   "imgType": "representative-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Industrial Inverters (Variable Frequency Drives)."
@@ -2083,6 +2359,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/hyundai-magnetic-contactors.webp",
+   "imgType": "exact-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Magnetic Contactors."
@@ -2098,6 +2376,8 @@
    "series": "Hi-Series",
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/hyundai-miniature-circuit-breaker.webp",
+   "imgType": "exact-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Miniature Circuit Breaker (Hi-Series, 6 A to 63 A)."
@@ -2113,6 +2393,8 @@
    "series": "HM-Series",
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/hyundai-motor-protection-circuit-breaker.webp",
+   "imgType": "exact-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Motor Protection Circuit Breaker (HM-Series, 0.63 A to 80 A)."
@@ -2128,6 +2410,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/hyundai-moulded-case-circuit-breakers.webp",
+   "imgType": "exact-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Moulded Case Circuit Breakers."
@@ -2143,6 +2427,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/hyundai-residual-current-devices.webp",
+   "imgType": "exact-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Residual Current Devices."
@@ -2158,6 +2444,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+   "img": "assets/images/products/hyundai/hyundai-vacuum-circuit-breakers.webp",
+   "imgType": "exact-image",
    "sourceDomain": "jubileecorporation.com",
    "sourceUrl": "https://jubileecorporation.com/hyundai/",
    "summary": "Hyundai Electric Vacuum Circuit Breakers (12 kV to 15 kV)."
@@ -2173,6 +2461,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/acs880-drive-modules-5.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/5",
    "summary": "Your own cabinet design and assembly is simplified by the capability, simplicity and ease of use provided by ABB’s all-compatible ACS880 drive modules."
@@ -2188,6 +2478,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/acs880-multidrives-4.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/4",
    "summary": "The all-compatible multidrives comes with various types of supply units including diode supply units and regenerative supply units."
@@ -2203,6 +2495,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/all-compatible-acs880-single-drives-6.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/6",
    "summary": "With the ACS880 single drives you simplify your world and open all possibilities. You have complete flexibility and capability in wall-mounted or cabinet-built drives."
@@ -2218,6 +2512,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/dc-motors-compact-and-modular-16.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/16",
    "summary": "DC motors SIMOTICS DC have a compact and modular design and can be used in difficult installation conditions."
@@ -2233,6 +2529,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/high-voltage-modular-induction-motors-8.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/8",
    "summary": "ABB’s high voltage modular induction motors provide high efficiency, reliability and availability in the toughest and most demanding applications."
@@ -2248,6 +2546,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/high-voltage-rib-cooled-motors-nxr-and-axr-7.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/7",
    "summary": "NXR and AXR motors provide a unique combination of small size, high power density, high reliability, low losses and easy maintenance."
@@ -2263,6 +2563,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/iec-low-voltage-motors-9.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/9",
    "summary": "With our expertise and comprehensive portfolio of low voltage motors we help you to improve reliability, energy efficiency and productivity of your processes."
@@ -2278,6 +2580,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/industrial-drives-2.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/2",
    "summary": "Cover all your possibilities with our all-compatible ACS880 industrial drives designed to tackle any of your motor-driven applications, in any industries, whatever the power range."
@@ -2293,6 +2597,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/limit-switches-32.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/32",
    "summary": "The 3SE5 switches are available in five different enclosure sizes with 2 or 3 contacts and with the XL enclosure Electrotraders is the premier supplier and service provider of automation parts and ser"
@@ -2308,6 +2614,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/magnetic-contactors-27.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/27",
    "summary": "Siemens Magnetic Contactors in 220 Volts/110 Volts/24 V DC/24 V AC. Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2323,6 +2631,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/motion-control-motors-17.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/17",
    "summary": "Whether synchronous or asynchronous, with or without gear units - when it comes to selecting the optimum motor for your motion control application, Siemens has the widest motor selection in the world"
@@ -2338,6 +2648,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/pse-softstarter-the-efficient-range-12.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/12",
    "summary": "The new generation PSE is a true general purpose softstarter. It´s a perfect balance between high starting capacity and cost efficiency. Now featuring built-in fieldbus communication."
@@ -2353,6 +2665,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/psr-softstarter-the-compact-range-11.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/11",
    "summary": "The PSR softstarter range is a simple yet reliable starting solution that utilizes only the most basic of soft starting features: soft start and stop."
@@ -2368,6 +2682,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/pstx-softstarter-the-advanced-range-13.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/13",
    "summary": "The PSTX combines many years of research and product development with extensive knowledge of application specific requirements and needs."
@@ -2383,6 +2699,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/phoenix-contact-quint-ps-series-power-supplies-30.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/30",
    "summary": "Output DC- 24 V, 5 AMP. 10 AMP, 20 AMP Power Supplies available. Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2398,6 +2716,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/s8vk-series-power-supply-29.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/29",
    "summary": "Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2413,6 +2733,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simotics-high-voltage-motors-18.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/18",
    "summary": "A smart concept with a wide range of options makes the SIMOTICS HV motors the preferred choice for virtually any imaginable configuration with a power range from 150 kW up to 100 MW and more, speeds f"
@@ -2428,6 +2750,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simotics-low-voltage-motors-19.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/19",
    "summary": "SIMOTICS low-voltage motors cover a wide range of motors from 0.09 KW up to 5 MW. They conform to IEC and NEMA standards and they are highly efficient."
@@ -2443,6 +2767,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/sinamics-variable-frequency-drives-14.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/14",
    "summary": "Siemens has the variable frequency drives to address the complete power conversion spectrum - the entire “drive train” - maximizing energy efficiency and productivity improvements."
@@ -2458,6 +2784,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/schneider-panel-assessories-28.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/28",
    "summary": "Indication Lights, Push Buttons, Selector Switches. Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2473,6 +2801,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/siemens-breakers-mcb-mccb-acb-34.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/34",
    "summary": "ACBs = 3 and 4 Pole, Ranges from 1000 Amp, 1250 Amp, 1600 Amp, 2000 Amp, 2500 Amp, 3200 Amp, 4000 Amp are available."
@@ -2488,6 +2818,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/siemens-sirius-overload-relays-33.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/33",
    "summary": "Siemens SIRIUS Overload Relays for Motor Productions size S00 Class 10. Screw and Spring type terminals are available."
@@ -2503,6 +2835,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/siemens-electric-motors-15.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/15",
    "summary": "SIMOTICS electric motors are synonymous with quality, innovation and the highest efficiency."
@@ -2518,6 +2852,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simatic-panel-touch-20.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/20",
    "summary": "Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2533,6 +2869,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simatic-s7-1200-24.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/24",
    "summary": "With complete accessories software data cables Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2548,6 +2886,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simatic-s7-1500-25.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/25",
    "summary": "CPU - 1511 - 1PN, CPU - 1512C - 1 PN, CPU - 1516 - 3 PN/DP, CPU - 1518 - 4 PN/DP MFP Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2563,6 +2903,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simatic-s7-300-21.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/21",
    "summary": "Simatic S7 - 300 Input/Output (4,8,16 Inputs/Outputs) Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2578,6 +2920,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simatic-s7-300-cpus-22.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/22",
    "summary": "Simatic S7 - 300 Input/Output (4,8,16 Inputs/Outputs) CPU - 315 F-2 PN/DP, CPU - 317 F-2 DP, CPU - 319F - 3 PN/DP Electrotraders is the premier supplier and service provider of automation parts and se"
@@ -2593,6 +2937,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simatic-s7-400-23.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/23",
    "summary": "Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2608,6 +2954,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/simetic-s7-200-26.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/26",
    "summary": "CPU - 221 Compact Unit, CPU - 222 Compact Unit, CPU - 224 Compact Unit, CPU - 226 Compact Unit. Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."
@@ -2623,6 +2971,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/softstarters-10.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/10",
    "summary": "ABB's softstarters increase a motor's lifetime by protecting it from electrical stresses."
@@ -2638,6 +2988,8 @@
    "series": null,
    "kind": "PRODUCT_FAMILY",
    "reason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level.",
+   "img": "assets/images/products/electro-traders/weidmuller-power-supply-series-31.webp",
+   "imgType": "exact-image",
    "sourceDomain": "electrotraders.com.pk",
    "sourceUrl": "https://electrotraders.com.pk/single_product/31",
    "summary": "Electrotraders is the premier supplier and service provider of automation parts and services in Pakistan."

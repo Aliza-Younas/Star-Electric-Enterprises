@@ -847,10 +847,18 @@ body.no-scroll { overflow: hidden; }
   transform: translateY(-3px);
 }
 
+/* The hidden attribute must win over any component's own display rule.
+   Without this, `el.hidden = true` silently fails on anything styled with
+   display: grid / flex - which is how a "Buy Now" button survived on a
+   quote-only product and an empty-state caption showed under a real image. */
+[hidden] { display: none !important; }
+
 .pcard__media {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: var(--surface-soft);
+  /* White, not tinted: supplier product photography is shot on white, so a
+     tinted panel would draw a visible box around every product. */
+  background: #fff;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }

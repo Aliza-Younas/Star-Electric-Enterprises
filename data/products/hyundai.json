@@ -31,7 +31,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/hyundai-air-circuit-breakers.webp",
    "gallery": [],
    "remote": []
   },
@@ -48,7 +48,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "exact-image"
  },
  {
   "id": "hyundai-moulded-case-circuit-breakers",
@@ -82,7 +83,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/hyundai-moulded-case-circuit-breakers.webp",
    "gallery": [],
    "remote": []
   },
@@ -96,7 +97,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "exact-image"
  },
  {
   "id": "hyundai-miniature-circuit-breaker",
@@ -130,7 +132,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/hyundai-miniature-circuit-breaker.webp",
    "gallery": [],
    "remote": []
   },
@@ -147,7 +149,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "exact-image"
  },
  {
   "id": "hyundai-motor-protection-circuit-breaker",
@@ -181,7 +184,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/hyundai-motor-protection-circuit-breaker.webp",
    "gallery": [],
    "remote": []
   },
@@ -198,7 +201,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "exact-image"
  },
  {
   "id": "hyundai-residual-current-devices",
@@ -232,7 +236,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/hyundai-residual-current-devices.webp",
    "gallery": [],
    "remote": []
   },
@@ -246,7 +250,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "exact-image"
  },
  {
   "id": "hyundai-magnetic-contactors",
@@ -280,7 +285,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/hyundai-magnetic-contactors.webp",
    "gallery": [],
    "remote": []
   },
@@ -294,7 +299,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "exact-image"
  },
  {
   "id": "hyundai-vacuum-circuit-breakers",
@@ -328,7 +334,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/hyundai-vacuum-circuit-breakers.webp",
    "gallery": [],
    "remote": []
   },
@@ -344,7 +350,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "exact-image"
  },
  {
   "id": "hyundai-industrial-inverters-variable-frequency-drives",
@@ -378,7 +385,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/hyundai/representative-variable-frequency-drive.webp",
    "gallery": [],
    "remote": []
   },
@@ -392,6 +399,8 @@
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
   ],
   "_class": "PRODUCT_FAMILY",
-  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed.",
+  "imageType": "representative-image",
+  "imageNote": "Variable-frequency drive - representative photograph of this product type. The approved source publishes no image for this family and Hyundai Electric's own site does not serve product images without scripting."
  }
 ]

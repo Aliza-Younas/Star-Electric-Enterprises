@@ -1082,6 +1082,24 @@
       };
     }
 
+    /* Say plainly where the picture came from whenever it is not a photograph
+       of this exact item. */
+    var noteEl = $("#galleryImageNote");
+    if (noteEl) {
+      var kind = (full && full.imageType) || p.imgType;
+      var extra = (full && full.imageNote) || "";
+      if (kind === "manufacturer-image" || kind === "representative-image") {
+        var label = kind === "manufacturer-image"
+          ? "Manufacturer range image."
+          : "Representative image.";
+        noteEl.innerHTML = "<strong>" + label + "</strong> " + UI.esc(extra ||
+          "This shows the correct product type, not a photograph of this exact item.");
+        noteEl.hidden = false;
+      } else {
+        noteEl.hidden = true;
+      }
+    }
+
     var badges = $("#galleryBadges");
     if (badges) {
       badges.innerHTML = (p.discountPercent ? '<span class="tag tag--sale">-' + p.discountPercent + "%</span>" : "") +
@@ -1120,6 +1138,26 @@
     if (stockEl) { stockEl.className = "pill " + st.cls; stockEl.textContent = st.label; }
 
     setText("#pdpShort", (full && full.shortDescription) || "");
+
+    /* Description tab: only what the source actually publishes. */
+    var desc = $("#pdpDescription");
+    if (desc) {
+      var body = "";
+      if (full && full.shortDescription) {
+        body += "<p>" + UI.esc(full.shortDescription) + "</p>";
+      }
+      if (full && (full.features || []).length) {
+        body += "<h3>Key points</h3><ul>" + full.features.map(function (b) {
+          return "<li>" + UI.esc(b) + "</li>"; }).join("") + "</ul>";
+      }
+      if (!body) {
+        body = '<p class="t-muted">' + UI.esc(p.name) + " is listed exactly as " +
+               UI.esc(p.sourceDomain || "its source") + " publishes it, and that source " +
+               "publishes no description for it. The specifications tab shows every value " +
+               "the source does publish.</p>";
+      }
+      desc.innerHTML = body;
+    }
     setHTML("#pdpBullets", (full && full.features || []).map(function (b) {
       return "<li>" + UI.esc(b) + "</li>"; }).join(""));
 

@@ -32,7 +32,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496092002315447.webp",
    "gallery": [],
    "remote": []
   },
@@ -46,7 +46,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-basic",
@@ -81,7 +82,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -95,7 +96,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-basic-compact",
@@ -130,7 +132,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -145,7 +147,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-basic-standard",
@@ -180,7 +183,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -195,7 +198,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-basic-universal",
@@ -230,7 +234,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -245,7 +249,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-bliss-series",
@@ -280,7 +285,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935504931076060789.webp",
    "gallery": [],
    "remote": []
   },
@@ -294,7 +299,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-cable-ties",
@@ -329,7 +335,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935534461577080753.webp",
    "gallery": [],
    "remote": []
   },
@@ -343,7 +349,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-click-eco-series",
@@ -378,7 +385,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935504931076060789.webp",
    "gallery": [],
    "remote": []
   },
@@ -393,7 +400,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-click-series",
@@ -428,7 +436,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935504931076060789.webp",
    "gallery": [],
    "remote": []
   },
@@ -442,7 +450,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-curvo",
@@ -477,7 +486,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551243785910803.webp",
    "gallery": [],
    "remote": []
   },
@@ -491,7 +500,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-expert-compact",
@@ -526,7 +536,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -541,7 +551,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-expert-standard",
@@ -576,7 +587,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -590,7 +601,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-electrical-tape",
@@ -625,7 +637,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935534461577080753.webp",
    "gallery": [],
    "remote": []
   },
@@ -639,7 +651,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-floor-series",
@@ -674,7 +687,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551819231626688.webp",
    "gallery": [],
    "remote": []
   },
@@ -688,7 +701,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-h72",
@@ -723,7 +737,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693555613986899283.webp",
    "gallery": [],
    "remote": []
   },
@@ -737,7 +751,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-h96",
@@ -772,7 +787,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693555613986899283.webp",
    "gallery": [],
    "remote": []
   },
@@ -786,7 +801,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hasbs",
@@ -821,7 +837,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693549876377959989.webp",
    "gallery": [],
    "remote": []
   },
@@ -835,7 +851,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hasxs",
@@ -870,7 +887,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693549876377959989.webp",
    "gallery": [],
    "remote": []
   },
@@ -884,7 +901,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-havrb",
@@ -919,7 +937,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935658521842463082.webp",
    "gallery": [],
    "remote": []
   },
@@ -933,7 +951,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-havrl",
@@ -968,7 +987,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935658521842463082.webp",
    "gallery": [],
    "remote": []
   },
@@ -982,7 +1001,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hbbt",
@@ -1017,7 +1037,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693570240960029382.webp",
    "gallery": [],
    "remote": []
   },
@@ -1031,7 +1051,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hbk",
@@ -1066,7 +1087,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693553336958669915.webp",
    "gallery": [],
    "remote": []
   },
@@ -1080,7 +1101,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hbsm",
@@ -1115,7 +1137,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693544713481546502.webp",
    "gallery": [],
    "remote": []
   },
@@ -1129,7 +1151,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hcf",
@@ -1164,7 +1187,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693553743398310897.webp",
    "gallery": [],
    "remote": []
   },
@@ -1178,7 +1201,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hd",
@@ -1213,7 +1237,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935539311172668906.webp",
    "gallery": [],
    "remote": []
   },
@@ -1227,7 +1251,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3le",
@@ -1262,7 +1287,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -1276,7 +1301,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the RCBO range. The source publishes no separate image for this series."
  },
  {
   "id": "himel-hdb3lt",
@@ -1311,7 +1338,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -1325,7 +1352,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the RCBO range. The source publishes no separate image for this series."
  },
  {
   "id": "himel-hdb3ple",
@@ -1360,7 +1389,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -1374,7 +1403,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the RCBO range. The source publishes no separate image for this series."
  },
  {
   "id": "himel-hdb3vr",
@@ -1409,7 +1440,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946802361701751467.webp",
    "gallery": [],
    "remote": []
   },
@@ -1423,7 +1454,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3w",
@@ -1458,7 +1490,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -1472,7 +1504,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3w-125",
@@ -1507,7 +1540,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -1521,7 +1554,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3wh",
@@ -1556,7 +1590,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -1570,7 +1604,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3whle",
@@ -1605,7 +1640,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -1620,7 +1655,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3whp",
@@ -1655,7 +1691,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -1669,7 +1705,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3wle",
@@ -1704,7 +1741,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -1719,7 +1756,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3wle-125",
@@ -1754,7 +1792,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -1768,7 +1806,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the RCBO range. The source publishes no separate image for this series."
  },
  {
   "id": "himel-hdb3wp",
@@ -1803,7 +1843,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -1817,7 +1857,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3wple",
@@ -1852,7 +1893,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -1867,7 +1908,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb3wz",
@@ -1902,7 +1944,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -1916,7 +1958,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb9",
@@ -1951,7 +1994,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -1965,7 +2008,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb9le",
@@ -2000,7 +2044,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -2014,7 +2058,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the RCBO range. The source publishes no separate image for this series."
  },
  {
   "id": "himel-hdb9lm",
@@ -2049,7 +2095,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -2063,7 +2109,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the RCBO range. The source publishes no separate image for this series."
  },
  {
   "id": "himel-hdb9ple",
@@ -2098,7 +2146,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946823381980090949.webp",
    "gallery": [],
    "remote": []
   },
@@ -2112,7 +2160,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the RCBO range. The source publishes no separate image for this series."
  },
  {
   "id": "himel-hdb9z",
@@ -2147,7 +2197,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -2161,7 +2211,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdb9p",
@@ -2196,7 +2247,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -2210,7 +2261,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdbk",
@@ -2245,7 +2297,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -2259,7 +2311,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdc17k",
@@ -2294,7 +2347,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935489602068616422.webp",
    "gallery": [],
    "remote": []
   },
@@ -2308,7 +2361,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdc19s",
@@ -2343,7 +2397,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935448961744769930.webp",
    "gallery": [],
    "remote": []
   },
@@ -2357,7 +2411,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdc3",
@@ -2392,7 +2447,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935489602068616422.webp",
    "gallery": [],
    "remote": []
   },
@@ -2406,7 +2461,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdcap3",
@@ -2441,7 +2497,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693544713481546502.webp",
    "gallery": [],
    "remote": []
   },
@@ -2455,7 +2511,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdch8s",
@@ -2490,7 +2547,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935700591647140175.webp",
    "gallery": [],
    "remote": []
   },
@@ -2504,7 +2561,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdds606",
@@ -2539,7 +2597,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693565031971256681.webp",
    "gallery": [],
    "remote": []
   },
@@ -2553,7 +2611,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdg3",
@@ -2588,7 +2647,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935105251044986925.webp",
    "gallery": [],
    "remote": []
   },
@@ -2602,7 +2661,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdg9",
@@ -2637,7 +2697,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935105251044986925.webp",
    "gallery": [],
    "remote": []
   },
@@ -2651,7 +2711,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdgl",
@@ -2686,7 +2747,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935105251044986925.webp",
    "gallery": [],
    "remote": []
   },
@@ -2700,7 +2761,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdin",
@@ -2732,7 +2794,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16946803412115541690.webp",
    "gallery": [],
    "remote": []
   },
@@ -2746,7 +2808,9 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image",
+  "imageNote": "Official Himel image for the modular circuit-protection range this series belongs to. The source publishes no image for the series itself."
  },
  {
   "id": "himel-hdjs18",
@@ -2781,7 +2845,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935698361190665339.webp",
    "gallery": [],
    "remote": []
   },
@@ -2795,7 +2859,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdk",
@@ -2830,7 +2895,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935531311348464524.webp",
    "gallery": [],
    "remote": []
   },
@@ -2844,7 +2909,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdkus",
@@ -2879,7 +2945,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935531311348464524.webp",
    "gallery": [],
    "remote": []
   },
@@ -2893,7 +2959,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm2",
@@ -2928,7 +2995,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -2942,7 +3009,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm2l",
@@ -2977,7 +3045,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -2992,7 +3060,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm3-hdm3v",
@@ -3027,7 +3096,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -3041,7 +3110,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm3e",
@@ -3076,7 +3146,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -3090,7 +3160,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm3l",
@@ -3125,7 +3196,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -3139,7 +3210,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm3s",
@@ -3174,7 +3246,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -3188,7 +3260,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm6e",
@@ -3223,7 +3296,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -3238,7 +3311,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdm6s",
@@ -3273,7 +3347,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693509957243639924.webp",
    "gallery": [],
    "remote": []
   },
@@ -3288,7 +3362,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdp",
@@ -3323,7 +3398,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935539311172668906.webp",
    "gallery": [],
    "remote": []
   },
@@ -3337,7 +3412,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdp17z",
@@ -3372,7 +3448,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693549205817999213.webp",
    "gallery": [],
    "remote": []
   },
@@ -3386,7 +3462,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdp6",
@@ -3421,7 +3498,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693549205817999213.webp",
    "gallery": [],
    "remote": []
   },
@@ -3435,7 +3512,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdpm",
@@ -3470,7 +3548,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935539311172668906.webp",
    "gallery": [],
    "remote": []
   },
@@ -3484,7 +3562,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdps",
@@ -3519,7 +3598,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935539311172668906.webp",
    "gallery": [],
    "remote": []
   },
@@ -3533,7 +3612,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdpz50",
@@ -3568,7 +3648,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693570503339216290.webp",
    "gallery": [],
    "remote": []
   },
@@ -3582,7 +3662,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdq3hb",
@@ -3617,7 +3698,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935103162117361960.webp",
    "gallery": [],
    "remote": []
   },
@@ -3631,7 +3712,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdr3s",
@@ -3666,7 +3748,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935489602068616422.webp",
    "gallery": [],
    "remote": []
   },
@@ -3680,7 +3762,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hds3",
@@ -3715,7 +3798,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693549458563372928.webp",
    "gallery": [],
    "remote": []
   },
@@ -3729,7 +3812,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdsf",
@@ -3764,7 +3848,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935539311172668906.webp",
    "gallery": [],
    "remote": []
   },
@@ -3778,7 +3862,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdsm",
@@ -3813,7 +3898,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935539311172668906.webp",
    "gallery": [],
    "remote": []
   },
@@ -3827,7 +3912,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdts606",
@@ -3862,7 +3948,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693565031971256681.webp",
    "gallery": [],
    "remote": []
   },
@@ -3876,7 +3962,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdw3",
@@ -3911,7 +3998,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935099301563648179.webp",
    "gallery": [],
    "remote": []
   },
@@ -3925,7 +4012,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdw6",
@@ -3960,7 +4048,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935099301563648179.webp",
    "gallery": [],
    "remote": []
   },
@@ -3975,7 +4063,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdw9",
@@ -4010,7 +4099,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935099301563648179.webp",
    "gallery": [],
    "remote": []
   },
@@ -4025,7 +4114,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdy3",
@@ -4060,7 +4150,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693571347269113036.webp",
    "gallery": [],
    "remote": []
   },
@@ -4075,7 +4165,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdy3n",
@@ -4110,7 +4201,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693571347269113036.webp",
    "gallery": [],
    "remote": []
   },
@@ -4124,7 +4215,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdz3",
@@ -4159,7 +4251,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935489602068616422.webp",
    "gallery": [],
    "remote": []
   },
@@ -4173,7 +4265,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hdz9",
@@ -4208,7 +4301,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935521481096840332.webp",
    "gallery": [],
    "remote": []
   },
@@ -4222,7 +4315,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hedb",
@@ -4257,7 +4351,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693570503339216290.webp",
    "gallery": [],
    "remote": []
   },
@@ -4271,7 +4365,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hicf",
@@ -4306,7 +4401,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935535472134881401.webp",
    "gallery": [],
    "remote": []
   },
@@ -4320,7 +4415,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hictuk",
@@ -4355,7 +4451,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693553743398310897.webp",
    "gallery": [],
    "remote": []
   },
@@ -4369,7 +4465,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hips",
@@ -4404,7 +4501,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935539311172668906.webp",
    "gallery": [],
    "remote": []
   },
@@ -4418,7 +4515,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hjkf",
@@ -4453,7 +4551,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693545332240341379.webp",
    "gallery": [],
    "remote": []
   },
@@ -4467,7 +4565,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hjkl",
@@ -4502,7 +4601,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693545332240341379.webp",
    "gallery": [],
    "remote": []
   },
@@ -4516,7 +4615,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hjkl2c",
@@ -4551,7 +4651,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693545332240341379.webp",
    "gallery": [],
    "remote": []
   },
@@ -4566,7 +4666,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hjx2-4p",
@@ -4601,7 +4702,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935489602068616422.webp",
    "gallery": [],
    "remote": []
   },
@@ -4615,7 +4716,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hjx2f-4p",
@@ -4650,7 +4752,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935489602068616422.webp",
    "gallery": [],
    "remote": []
   },
@@ -4664,7 +4766,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hjxf",
@@ -4699,7 +4802,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693570503339216290.webp",
    "gallery": [],
    "remote": []
   },
@@ -4713,7 +4816,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hkg",
@@ -4748,7 +4852,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551784381093800.webp",
    "gallery": [],
    "remote": []
   },
@@ -4762,7 +4866,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hksg",
@@ -4797,7 +4902,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935456751295645256.webp",
    "gallery": [],
    "remote": []
   },
@@ -4811,7 +4916,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hlay5",
@@ -4846,7 +4952,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551963898408907.webp",
    "gallery": [],
    "remote": []
   },
@@ -4860,7 +4966,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hlay5cs",
@@ -4895,7 +5002,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551963898408907.webp",
    "gallery": [],
    "remote": []
   },
@@ -4909,7 +5016,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hlay7",
@@ -4944,7 +5052,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551963898408907.webp",
    "gallery": [],
    "remote": []
   },
@@ -4958,7 +5066,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hld11",
@@ -4993,7 +5102,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551963898408907.webp",
    "gallery": [],
    "remote": []
   },
@@ -5007,7 +5116,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hlmk",
@@ -5042,7 +5152,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935655431082180258.webp",
    "gallery": [],
    "remote": []
   },
@@ -5056,7 +5166,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hp606",
@@ -5091,7 +5202,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693555613986899283.webp",
    "gallery": [],
    "remote": []
   },
@@ -5105,7 +5216,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hrt16",
@@ -5140,7 +5252,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935106781240819764.webp",
    "gallery": [],
    "remote": []
   },
@@ -5154,7 +5266,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hrt18",
@@ -5189,7 +5302,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935106781240819764.webp",
    "gallery": [],
    "remote": []
   },
@@ -5203,7 +5316,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hsbw",
@@ -5238,7 +5352,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693566123429819042.webp",
    "gallery": [],
    "remote": []
   },
@@ -5252,7 +5366,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hsjw",
@@ -5287,7 +5402,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693566123429819042.webp",
    "gallery": [],
    "remote": []
   },
@@ -5301,7 +5416,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hsvc",
@@ -5336,7 +5452,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935658521842463082.webp",
    "gallery": [],
    "remote": []
   },
@@ -5350,7 +5466,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-htb",
@@ -5385,7 +5502,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693553743398310897.webp",
    "gallery": [],
    "remote": []
   },
@@ -5399,7 +5516,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-htnd",
@@ -5434,7 +5552,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935658521842463082.webp",
    "gallery": [],
    "remote": []
   },
@@ -5448,7 +5566,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-htnd2",
@@ -5483,7 +5602,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935658521842463082.webp",
    "gallery": [],
    "remote": []
   },
@@ -5497,7 +5616,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-htnd3",
@@ -5532,7 +5652,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935658521842463082.webp",
    "gallery": [],
    "remote": []
   },
@@ -5546,7 +5666,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hxc",
@@ -5581,7 +5702,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523671687916988.webp",
    "gallery": [],
    "remote": []
   },
@@ -5595,7 +5716,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hxckd",
@@ -5630,7 +5752,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523671687916988.webp",
    "gallery": [],
    "remote": []
   },
@@ -5644,7 +5766,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hxckm",
@@ -5679,7 +5802,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523671687916988.webp",
    "gallery": [],
    "remote": []
   },
@@ -5693,7 +5816,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hxckp",
@@ -5728,7 +5852,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523671687916988.webp",
    "gallery": [],
    "remote": []
   },
@@ -5742,7 +5866,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-hxcmp",
@@ -5777,7 +5902,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523671687916988.webp",
    "gallery": [],
    "remote": []
   },
@@ -5791,7 +5916,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-metal-clad",
@@ -5826,7 +5952,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496092002315447.webp",
    "gallery": [],
    "remote": []
   },
@@ -5840,7 +5966,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-modern-series",
@@ -5875,7 +6002,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551243785910803.webp",
    "gallery": [],
    "remote": []
   },
@@ -5889,7 +6016,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-multi-series",
@@ -5924,7 +6052,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935534461577080753.webp",
    "gallery": [],
    "remote": []
   },
@@ -5938,7 +6066,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-prime-v2-series",
@@ -5973,7 +6102,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496092002315447.webp",
    "gallery": [],
    "remote": []
   },
@@ -5987,7 +6116,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-smart-pump",
@@ -6022,7 +6152,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -6036,7 +6166,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-smart-solar",
@@ -6071,7 +6202,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -6086,7 +6217,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-smart-universal",
@@ -6121,7 +6253,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -6136,7 +6268,8 @@
    "Product family derived from Himel's own documented sibling models sharing the same model-code prefix, because this model does not appear in any accessible Himel navigation. Not taken from any other website."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-solar",
@@ -6171,7 +6304,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935496921077360717.webp",
    "gallery": [],
    "remote": []
   },
@@ -6185,7 +6318,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-smart-bulb",
@@ -6220,7 +6354,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523551985104104.webp",
    "gallery": [],
    "remote": []
   },
@@ -6234,7 +6368,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-smart-module",
@@ -6269,7 +6404,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523551985104104.webp",
    "gallery": [],
    "remote": []
   },
@@ -6283,7 +6418,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-smart-plug",
@@ -6318,7 +6454,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935523551985104104.webp",
    "gallery": [],
    "remote": []
   },
@@ -6332,7 +6468,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-style-series",
@@ -6367,7 +6504,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/1693551243785910803.webp",
    "gallery": [],
    "remote": []
   },
@@ -6381,7 +6518,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-tool",
@@ -6416,7 +6554,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935534461577080753.webp",
    "gallery": [],
    "remote": []
   },
@@ -6430,7 +6568,8 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  },
  {
   "id": "himel-weatherproof-series",
@@ -6465,7 +6604,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/himel/16935534461577080753.webp",
    "gallery": [],
    "remote": []
   },
@@ -6479,6 +6618,7 @@
    "Himel product-detail pages return an Akamai 'Access Denied' block to automated requests; the protection was not bypassed. Specifications, images, pricing and datasheets are unavailable from this source."
   ],
   "_class": "SERIES_ONLY",
-  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified."
+  "_classReason": "Record is a Himel series/model-group page. Individual product pages are blocked by the source (Akamai), so no item-level specification, image or price could be verified.",
+  "imageType": "manufacturer-image"
  }
 ]
