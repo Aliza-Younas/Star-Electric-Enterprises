@@ -32,30 +32,28 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 - [x] Pricing model verified — "Request for quote", price `1` is a placeholder
 - [x] Attribute model captured (7 attributes)
 - [x] Confirmed: no product images on source, single `Uncategorized` term
-- [ ] Products 1–500 retrieved
-- [ ] Products 501–1000 retrieved
-- [ ] Products 1001–1500 retrieved
-- [ ] Products 1501–2000 retrieved
-- [ ] Products 2001–2378 retrieved
-- [ ] Normalised to schema
-- [ ] Categories derived from attributes
-- [ ] Validated + written to `data/products/pakistan-cables.json`
+- [x] All 2,378 products retrieved (24 API pages)
+- [x] Normalised to schema, all Request Quote
+- [x] Categories derived from the 7 source attributes
+- [x] Validated + written to data/products/pakistan-cables.json
+
+
 
 ## Phase 2 — Aqua Electrical  (1,641 products)
 
 - [x] Platform confirmed (WooCommerce, `?rest_route=`)
 - [x] `X-WP-Total: 1641`
 - [x] 88 categories retrieved with parent/child relationships
-- [ ] Product pages 1–9 retrieved (per_page=200)
-- [ ] Variations captured
-- [ ] Images downloaded
-- [ ] Normalised + validated
+- [x] All 1,641 products retrieved (17 API pages)
+- [x] Categories resolved through parent chain (155 Panasonic)
+- [ ] Images downloaded locally  <-- REMAINING
+- [x] Normalised + validated
 
 ## Phase 3 — Wahid Fans  (104 products)
 
 - [x] Shopify `products.json` confirmed
 - [x] Total confirmed (104; page 2 empty)
-- [ ] Products + variants retrieved
+- [x] 104 products with real Shopify variants retrieved
 - [ ] Images downloaded
 - [ ] Normalised + validated
 
@@ -64,8 +62,8 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 - [x] Static site confirmed; no API/sitemap
 - [x] `/shop_products` mapped → ids 2–34
 - [x] 6 brand pages identified
-- [ ] 32 product pages crawled
-- [ ] Brand pages crawled
+- [x] 32 product pages crawled
+- [x] Brand pages crawled (all six return an identical list - recorded)
 - [ ] Normalised + validated
 
 ## Phase 5 — Himel  (PARTIAL-BLOCKED)
@@ -74,9 +72,9 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 - [x] 132 product model codes extracted
 - [x] Category pages confirmed accessible
 - [!] `/gb/product-details/*` blocked by Akamai — **not bypassed by design**
-- [ ] Category hierarchy extracted from accessible pages
-- [ ] Family/model records built
-- [ ] Normalised + validated, marked PARTIAL-BLOCKED
+- [x] Category hierarchy extracted from accessible navigation
+- [x] 132 family/model records built
+- [x] Normalised + validated, marked PARTIAL-BLOCKED
 
 ## Phase 6 — Hyundai / Jubilee  (8 families)
 
@@ -88,7 +86,7 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 ## Phase 7 — Coarts Lighting  (229 products)
 
 - [x] Wix store sitemap retrieved → 229 product URLs
-- [ ] Product pages crawled
+- [x] 226 of 229 product pages crawled
 - [ ] Images downloaded
 - [ ] Normalised + validated
 
@@ -96,21 +94,21 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 
 ## Phase 8 — Normalisation & dedupe
 
-- [ ] Category tree built from real source categories
-- [ ] Brands file built
-- [ ] Duplicate detection (source URL, brand+model, SKU, normalised name)
-- [ ] Slug uniqueness enforced
+- [x] Category tree built from real source categories (9 top level, 63 subs)
+- [x] Brands file built (7 brands)
+- [x] Duplicate detection by product id + slug uniqueness
+- [x] Slug uniqueness enforced
 
 ## Phase 9 — Frontend integration
 
-- [ ] Catalogue loader replaces `js/data.js` demo data
-- [ ] Product card supports Request Quote vs Add to Cart
-- [ ] Product page renders any catalogue product
-- [ ] Category-aware filters
-- [ ] Search across name/model/SKU/brand/category/specs
-- [ ] Homepage subsets from real data
-- [ ] Deals page limited to genuine source discounts
-- [ ] Old demo products removed
+- [x] Catalogue loader replaces the demo data
+- [x] Product card supports Request Quote vs Add to Cart
+- [x] Product page renders any catalogue product, detail loaded on demand
+- [x] Filters rebuilt (pricing/stock/brand/category); fake star filter removed
+- [x] Search across name/model/SKU/brand/series/category/specs
+- [x] Homepage subsets from real data
+- [x] Deals page limited to genuine source discounts
+- [x] Old demo products removed
 
 ## Phase 10 — QA
 

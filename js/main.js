@@ -239,9 +239,7 @@
       if (term.length < 2) { hide(); return; }
 
       var hits = D.PRODUCTS.filter(function (p) {
-        return p.name.toLowerCase().indexOf(term) !== -1 ||
-               D.categoryName(p.cat).toLowerCase().indexOf(term) !== -1 ||
-               D.brandName(p.brand).toLowerCase().indexOf(term) !== -1;
+        return matchesQuery(p, term);
       }).slice(0, 6);
 
       var cats = D.CATEGORIES.filter(function (c) {
@@ -288,6 +286,20 @@
       window.location.href = "search-results.html?s=" + encodeURIComponent(q) +
                              (cat ? "&product_cat=" + encodeURIComponent(cat) : "");
     });
+  }
+
+  /* Search across name, model, SKU, brand, series, category and specification
+     values, so "20A MCB", "2.5mm cable" or "HDB3w" all resolve. */
+  function matchesQuery(p, term) {
+    if (!term) { return true; }
+    var hay = [p.name, p.model, p.sku, p.brand, p.series,
+               D.categoryName(p.cat), String(p.sub || "").replace(/-/g, " "),
+               p.specText].join(" ").toLowerCase();
+    var words = term.toLowerCase().split(/\s+/);
+    for (var i = 0; i < words.length; i++) {
+      if (words[i] && hay.indexOf(words[i]) === -1) { return false; }
+    }
+    return true;
   }
 
   /* Quick view */
@@ -501,10 +513,12 @@
     var bg = $("#brandGrid");
     if (bg) { bg.innerHTML = D.BRANDS.slice(0, 12).map(UI.renderBrandCard).join(""); }
 
-    fill("#featuredGrid", D.byTag("featured", 8));
-    fill("#bestGrid", D.byTag("best", 8));
-    fill("#newGrid", D.byTag("new", 8));
-    fill("#dealsGrid", D.byTag("deal", 4));
+    /* Selections from the real catalogue. No "best seller" claim is made,
+       because no approved source ranks sales. */
+    fill("#featuredGrid", D.featured(8));
+    fill("#bestGrid", D.withPhotos(8));
+    fill("#newGrid", D.featured(16).slice(8, 16));
+    fill("#dealsGrid", D.deals(4));
 
     /* Hero campaign rotator */
     var slider = $("#heroSlider");
@@ -542,7 +556,7 @@
       cats: opts.cat ? [opts.cat] : [],
       subs: opts.sub ? [opts.sub] : [],
       brands: opts.brand ? [opts.brand] : [],
-      stock: [], rating: 0, type: [],
+      stock: [], rating: 0, type: [], pricing: [],
       min: null, max: null,
       sort: "relevance",
       view: "grid",
@@ -559,31 +573,39 @@
     if (!grid) { return null; }
 
     function matches(p) {
-      if (state.onlyDeals && !p.oldPrice) { return false; }
+      if (state.onlyDeals && !p.discountPercent) { return false; }
       if (state.cats.length && state.cats.indexOf(p.cat) === -1) { return false; }
       if (state.subs.length && state.subs.indexOf(p.sub) === -1) { return false; }
       if (state.brands.length && state.brands.indexOf(p.brand) === -1) { return false; }
       if (state.stock.length && state.stock.indexOf(p.stock) === -1) { return false; }
       if (state.type.length && state.type.indexOf(p.type) === -1) { return false; }
-      if (state.rating && p.rating < state.rating) { return false; }
-      if (state.min !== null && p.price < state.min) { return false; }
-      if (state.max !== null && p.price > state.max) { return false; }
-      if (state.query) {
-        var q = state.query.toLowerCase();
-        var hay = (p.name + " " + D.categoryName(p.cat) + " " + D.brandName(p.brand) + " " + (p.short || "")).toLowerCase();
-        if (hay.indexOf(q) === -1) { return false; }
+      if (state.pricing.length) {
+        var okp = false;
+        if (state.pricing.indexOf("priced") !== -1 && p.price !== null) { okp = true; }
+        if (state.pricing.indexOf("quote") !== -1 && p.isQuote) { okp = true; }
+        if (state.pricing.indexOf("discounted") !== -1 && p.discountPercent) { okp = true; }
+        if (!okp) { return false; }
       }
+      if (state.min !== null && (p.price === null || p.price < state.min)) { return false; }
+      if (state.max !== null && (p.price === null || p.price > state.max)) { return false; }
+      if (state.query && !matchesQuery(p, state.query)) { return false; }
       return true;
     }
 
     function sortList(list) {
       var l = list.slice();
-      if (state.sort === "price-asc") { l.sort(function (a, b) { return a.price - b.price; }); }
-      else if (state.sort === "price-desc") { l.sort(function (a, b) { return b.price - a.price; }); }
+      var HI = 9007199254740991;
+      if (state.sort === "price-asc") {
+        l.sort(function (a, b) {
+          return (a.price === null ? HI : a.price) - (b.price === null ? HI : b.price); });
+      } else if (state.sort === "price-desc") {
+        l.sort(function (a, b) {
+          return (b.price === null ? -1 : b.price) - (a.price === null ? -1 : a.price); });
+      }
       else if (state.sort === "name") { l.sort(function (a, b) { return a.name.localeCompare(b.name); }); }
-      else if (state.sort === "rating") { l.sort(function (a, b) { return b.rating - a.rating; }); }
+      else if (state.sort === "rating") { l.sort(function (a, b) { return a.name.localeCompare(b.name); }); }
       else if (state.sort === "discount") {
-        l.sort(function (a, b) { return UI.discount(b) - UI.discount(a); });
+        l.sort(function (a, b) { return (b.discountPercent || 0) - (a.discountPercent || 0); });
       }
       return l;
     }
@@ -638,7 +660,10 @@
       state.cats.forEach(function (c) { chips.push({ t: "cat", v: c, label: D.categoryName(c) }); });
       state.brands.forEach(function (b) { chips.push({ t: "brand", v: b, label: D.brandName(b) }); });
       state.stock.forEach(function (s) { chips.push({ t: "stock", v: s, label: UI.STOCK[s].label }); });
-      if (state.rating) { chips.push({ t: "rating", v: state.rating, label: state.rating + "★ & up" }); }
+      state.pricing.forEach(function (v) {
+        chips.push({ t: "pricing", v: v,
+                     label: v === "priced" ? "Has a price"
+                          : v === "quote" ? "Request a Quote" : "Discounted" }); });
       if (state.min !== null || state.max !== null) {
         chips.push({ t: "price", v: "price", label: "Rs. " + (state.min || 0) + " – " + (state.max || "any") });
       }
@@ -667,9 +692,11 @@
         if (!el.checked && i !== -1) { bucket.splice(i, 1); }
         /* keep duplicate controls (sidebar + drawer) in sync */
         $$('[data-filter="' + kind + '"][value="' + val + '"]').forEach(function (o) { o.checked = el.checked; });
-      } else if (kind === "rating") {
-        state.rating = el.checked ? parseFloat(val) : 0;
-        $$('[data-filter="rating"]').forEach(function (o) { if (o !== el) { o.checked = false; } });
+      } else if (kind === "pricing") {
+        var pb = state.pricing;
+        var pi = pb.indexOf(val);
+        if (el.checked && pi === -1) { pb.push(val); }
+        if (!el.checked && pi !== -1) { pb.splice(pi, 1); }
       } else if (kind === "min") {
         state.min = el.value === "" ? null : Number(el.value);
       } else if (kind === "max") {
@@ -711,7 +738,7 @@
         if (t === "cat") { state.cats.splice(state.cats.indexOf(v), 1); }
         if (t === "brand") { state.brands.splice(state.brands.indexOf(v), 1); }
         if (t === "stock") { state.stock.splice(state.stock.indexOf(v), 1); }
-        if (t === "rating") { state.rating = 0; }
+        if (t === "pricing") { state.pricing.splice(state.pricing.indexOf(v), 1); }
         if (t === "price") { state.min = null; state.max = null; }
         $$("[data-filter]").forEach(function (o) {
           if (o.type === "checkbox" && o.value === v) { o.checked = false; }
@@ -726,7 +753,7 @@
       if (closest(e.target, "[data-clear-all]")) {
         e.preventDefault();
         state.cats = []; state.brands = []; state.stock = []; state.type = [];
-        state.rating = 0; state.min = null; state.max = null; state.page = 1;
+        state.pricing = []; state.min = null; state.max = null; state.page = 1;
         $$("[data-filter]").forEach(function (o) {
           if (o.type === "checkbox") { o.checked = false; } else { o.value = ""; }
         });
@@ -805,16 +832,24 @@
       "</div>" +
       '<p class="field__hint" style="margin-top:8px">Prices in PKR. Demo values only.</p>';
 
-    var stock = ["in", "low", "out"].map(function (s) {
+    var stock = ["in", "out", "unknown"].map(function (s) {
       return '<label class="filter-opt"><input type="checkbox" data-filter="stock" value="' + s + '">' +
-             "<span>" + UI.STOCK[s].label + '</span><span class="count">' +
+             "<span>" + (UI.STOCK[s] ? UI.STOCK[s].label : s) + '</span><span class="count">' +
              D.PRODUCTS.filter(function (p) { return p.stock === s; }).length + "</span></label>";
     }).join("");
 
-    var rating = [4, 3].map(function (r) {
-      return '<label class="filter-opt"><input type="checkbox" data-filter="rating" value="' + r + '">' +
-             "<span>" + UI.stars(r) + " &amp; up</span></label>";
-    }).join("");
+    /* No approved source publishes ratings, so a star filter would be fabricated.
+       Filter by how the product is sold instead. */
+    var rating =
+      '<label class="filter-opt"><input type="checkbox" data-filter="pricing" value="priced">' +
+        '<span>Has a published price</span><span class="count">' +
+        D.PRODUCTS.filter(function (x) { return x.price !== null; }).length + "</span></label>" +
+      '<label class="filter-opt"><input type="checkbox" data-filter="pricing" value="quote">' +
+        '<span>Request a Quote</span><span class="count">' +
+        D.PRODUCTS.filter(function (x) { return x.isQuote; }).length + "</span></label>" +
+      '<label class="filter-opt"><input type="checkbox" data-filter="pricing" value="discounted">' +
+        '<span>Discounted at source</span><span class="count">' +
+        D.PRODUCTS.filter(function (x) { return x.discountPercent; }).length + "</span></label>";
 
     var types =
       '<label class="filter-opt"><input type="checkbox" data-filter="type" value="simple">' +
@@ -908,160 +943,241 @@
 
   /* ---------- PRODUCT DETAIL ---------- */
   PAGES.product = function () {
-    var id = param("id") || D.PRODUCTS[0].id;
-    var p = D.productById(id) || D.PRODUCTS[0];
-    var off = UI.discount(p);
-    var st = UI.STOCK[p.stock];
-    var cat = D.categoryBySlug(p.cat);
+    var id = param("id");
+    var light = id ? D.productById(id) : null;
+    if (!light) { light = D.PRODUCTS[0]; id = light && light.id; }
+    if (!light) { return; }
 
+    renderProductShell(light, null);          // paint immediately from the index
+    D.loadDetail(id, function (full) {        // then enrich from the source record
+      if (full) { renderProductShell(light, full); }
+    });
+  };
+
+  function renderProductShell(p, full) {
+    var cat = D.categoryBySlug(p.cat);
     document.title = p.name + " — Star Electric Enterprises";
     var md = $("#metaDesc");
-    if (md) { md.setAttribute("content", p.short || p.name); }
+    if (md) { md.setAttribute("content", (full && full.shortDescription) || p.name); }
 
     var bc = $("#breadcrumb");
     if (bc) {
-      bc.innerHTML = UI.renderBreadcrumb([
-        { label: "Home", href: "index.html" },
-        { label: "Shop", href: "shop.html" },
-        { label: cat ? cat.name : "Products", href: "category.html?cat=" + p.cat },
-        { label: p.name }
-      ]);
+      var items = [{ label: "Home", href: "index.html" },
+                   { label: "Shop", href: "shop.html" }];
+      if (cat) { items.push({ label: cat.name, href: "category.html?cat=" + p.cat }); }
+      if (p.sub) {
+        items.push({ label: subLabel(p.sub),
+                     href: "category.html?cat=" + p.cat + "&sub=" + p.sub });
+      }
+      items.push({ label: p.name });
+      bc.innerHTML = UI.renderBreadcrumb(items);
     }
 
-    /* Gallery */
+    /* ---- gallery: real source images only ---- */
+    var gallery = [];
+    if (full && full.images) {
+      if (full.images.featured) { gallery.push(full.images.featured); }
+      (full.images.gallery || []).forEach(function (g) { gallery.push(g); });
+      if (!gallery.length) {
+        (full.images.remote || []).forEach(function (g) { gallery.push(g); });
+      }
+    }
+    if (!gallery.length) {
+      var fb = D.productImage(p);
+      if (fb) { gallery.push(fb); }
+    }
     var main = $("#galleryMain");
-    if (main) { main.src = D.imageUrl(p.gallery[0]); main.alt = p.name; }
+    if (main && gallery.length) { main.src = gallery[0]; main.alt = p.name; }
     var thumbs = $("#galleryThumbs");
     if (thumbs) {
-      thumbs.innerHTML = p.gallery.map(function (g, i) {
-        return '<button class="gallery__thumb" type="button" role="tab" aria-selected="' + (i === 0) + '" ' +
-               'data-src="' + D.imageUrl(g) + '" aria-label="View image ' + (i + 1) + '">' +
-               '<img src="' + D.imageUrl(g) + '" alt="" loading="lazy" aria-hidden="true"></button>';
-      }).join("");
-      thumbs.addEventListener("click", function (e) {
+      thumbs.innerHTML = gallery.length > 1 ? gallery.map(function (g, i) {
+        return '<button class="gallery__thumb" type="button" role="tab" aria-selected="' + (i === 0) +
+               '" data-src="' + UI.esc(g) + '" aria-label="View image ' + (i + 1) + '">' +
+               '<img src="' + UI.esc(g) + '" alt="" loading="lazy" aria-hidden="true"></button>';
+      }).join("") : "";
+      thumbs.onclick = function (e) {
         var b = closest(e.target, ".gallery__thumb");
         if (!b) { return; }
         $$(".gallery__thumb", thumbs).forEach(function (o) { o.setAttribute("aria-selected", "false"); });
         b.setAttribute("aria-selected", "true");
         if (main) { main.src = b.getAttribute("data-src"); }
-      });
+      };
     }
 
     var badges = $("#galleryBadges");
     if (badges) {
-      badges.innerHTML = (off ? '<span class="tag tag--sale">-' + off + "%</span>" : "") +
-                         (p.tags.indexOf("new") !== -1 ? '<span class="tag tag--new">New</span>' : "");
+      badges.innerHTML = (p.discountPercent ? '<span class="tag tag--sale">-' + p.discountPercent + "%</span>" : "") +
+                         (p.isQuote ? '<span class="tag tag--quote">Request Quote</span>' : "");
     }
 
-    setText("#pdpBrand", D.brandName(p.brand));
+    setText("#pdpBrand", p.brand || "");
     setText("#pdpTitle", p.name);
-    setText("#pdpSku", p.id);
+    setText("#pdpSku", p.sku || p.model || "Not specified");
     setText("#pdpCat", cat ? cat.name : "");
-    setHTML("#pdpCat2", cat
-      ? '<a class="link-inline" href="category.html?cat=' + cat.slug + '">' +
-        UI.esc(cat.name) + "</a>"
-      : "");
-    setHTML("#pdpRating", UI.stars(p.rating, "stars--lg") + '<span class="rating__count">(no reviews yet)</span>');
-    setHTML("#pdpPrice",
-      '<span class="price__now">' + UI.money(p.price) + "</span>" +
-      (p.oldPrice ? '<span class="price__old">' + UI.money(p.oldPrice) + "</span>" : "") +
-      (off ? '<span class="price__off">Save ' + off + "%</span>" : ""));
+    setHTML("#pdpCat2", cat ? '<a class="link-inline" href="category.html?cat=' + p.cat + '">' +
+                              UI.esc(cat.name) + "</a>" : "");
+
+    /* ratings: no approved source publishes them, so the block is removed */
+    var rate = $("#pdpRating");
+    if (rate) { rate.innerHTML = '<span class="t-xs t-faint">No customer ratings published</span>'; }
+
+    if (p.isQuote) {
+      setHTML("#pdpPrice", '<span class="price__quote">Request a Quote</span>');
+    } else {
+      setHTML("#pdpPrice",
+        '<span class="price__now">' + UI.money(p.price) + "</span>" +
+        (p.oldPrice ? '<span class="price__old">' + UI.money(p.oldPrice) + "</span>" : "") +
+        (p.discountPercent ? '<span class="price__off">Save ' + p.discountPercent + "%</span>" : "") +
+        (p.priceType === "from" ? '<span class="price__from">from</span>' : ""));
+    }
     var save = $("#pdpSave");
     if (save) {
-      save.textContent = p.oldPrice ? "You save " + UI.money(p.oldPrice - p.price) : "";
-      save.hidden = !p.oldPrice;
+      var has = !p.isQuote && p.oldPrice && p.price;
+      save.textContent = has ? "You save " + UI.money(p.oldPrice - p.price) : "";
+      save.hidden = !has;
     }
+
+    var st = UI.STOCK[p.stock] || { cls: "pill--unknown", label: "Availability not specified" };
     var stockEl = $("#pdpStock");
     if (stockEl) { stockEl.className = "pill " + st.cls; stockEl.textContent = st.label; }
-    setText("#pdpShort", p.short || "");
-    setHTML("#pdpBullets", (p.bullets || []).map(function (b) { return "<li>" + UI.esc(b) + "</li>"; }).join(""));
 
-    /* Variations */
+    setText("#pdpShort", (full && full.shortDescription) || "");
+    setHTML("#pdpBullets", (full && full.features || []).map(function (b) {
+      return "<li>" + UI.esc(b) + "</li>"; }).join(""));
+
+    /* ---- variations: only real source variations ---- */
     var varWrap = $("#pdpVariations");
     var chosen = "";
     if (varWrap) {
-      if (p.type === "variable" && p.attr) {
-        chosen = p.attr.options[0];
+      var vars = (full && full.variations) || [];
+      if (vars.length) {
+        varWrap.hidden = false;
+        var optName = Object.keys(vars[0].options || {})[0] || "Option";
+        chosen = vars[0].name;
         varWrap.innerHTML =
           '<div class="variation">' +
-            '<p class="variation__label">' + UI.esc(p.attr.label) + ': <span id="varChosen">' + UI.esc(chosen) + "</span></p>" +
-            '<div class="swatches" id="varSwatches">' +
-              p.attr.options.map(function (o, i) {
-                return '<button class="swatch" type="button" aria-pressed="' + (i === 0) + '" data-val="' + UI.esc(o) + '">' +
-                       UI.esc(o) + "</button>";
-              }).join("") +
+            '<p class="variation__label">' + UI.esc(optName) +
+              ': <span id="varChosen">' + UI.esc(chosen) + "</span></p>" +
+            '<div class="swatches">' + vars.map(function (v, i) {
+              return '<button class="swatch" type="button" aria-pressed="' + (i === 0) +
+                     '" data-val="' + UI.esc(v.name) + '"' +
+                     (v.price ? ' data-price="' + v.price + '"' : "") + ">" +
+                     UI.esc(v.name) + "</button>"; }).join("") +
             "</div>" +
           "</div>";
-        varWrap.addEventListener("click", function (e) {
-          var s = closest(e.target, ".swatch");
-          if (!s) { return; }
+        varWrap.onclick = function (e) {
+          var b = closest(e.target, ".swatch");
+          if (!b) { return; }
           $$(".swatch", varWrap).forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
-          s.setAttribute("aria-pressed", "true");
-          chosen = s.getAttribute("data-val");
+          b.setAttribute("aria-pressed", "true");
+          chosen = b.getAttribute("data-val");
           setText("#varChosen", chosen);
-          var addBtn = $("#pdpAdd");
-          if (addBtn) { addBtn.setAttribute("data-variant", chosen); }
-        });
+          var vp = b.getAttribute("data-price");
+          if (vp) { setHTML("#pdpPrice", '<span class="price__now">' + UI.money(+vp) + "</span>"); }
+          var ab = $("#pdpAdd");
+          if (ab) { ab.setAttribute("data-variant", chosen); }
+        };
       } else {
         varWrap.hidden = true;
       }
     }
 
+    /* ---- buy area: Request a Quote when the source publishes no price ---- */
     var addBtn = $("#pdpAdd");
+    var buyNow = $("#pdpBuy");
+    var qtyField = $("#pdpQty");
     if (addBtn) {
-      addBtn.setAttribute("data-id", p.id);
-      addBtn.setAttribute("data-variant", chosen);
-      addBtn.setAttribute("data-qty-from", "#pdpQty");
-      if (p.stock === "out") { addBtn.disabled = true; addBtn.textContent = "Out of Stock"; }
+      if (p.isQuote) {
+        addBtn.outerHTML = '<a class="btn btn--accent btn--lg" id="pdpAdd" href="quote-request.html?product=' +
+                           encodeURIComponent(p.id) + '">Request a Quote</a>';
+        if (buyNow) { buyNow.hidden = true; }
+        if (qtyField && qtyField.closest(".field")) { qtyField.closest(".field").hidden = true; }
+      } else {
+        addBtn.setAttribute("data-id", p.id);
+        addBtn.setAttribute("data-variant", chosen);
+        addBtn.setAttribute("data-qty-from", "#pdpQty");
+        if (p.stock === "out") { addBtn.disabled = true; addBtn.textContent = "Out of Stock"; }
+      }
     }
     var wishBtn = $("#pdpWish");
     if (wishBtn) {
       wishBtn.setAttribute("data-id", p.id);
       if (SEE_STORE.inWishlist(p.id)) { wishBtn.classList.add("is-active"); }
     }
-    var buyNow = $("#pdpBuy");
-    if (buyNow) {
-      buyNow.addEventListener("click", function (e) {
+    if (buyNow && !p.isQuote) {
+      buyNow.onclick = function (e) {
         e.preventDefault();
         if (p.stock === "out") { return; }
-        var q = parseInt(($("#pdpQty") || {}).value, 10) || 1;
-        SEE_STORE.add(p.id, q, chosen);
+        SEE_STORE.add(p.id, parseInt((qtyField || {}).value, 10) || 1, chosen);
         syncCounts();
         window.location.href = "checkout.html";
-      });
+      };
     }
 
-    /* Specifications table */
+    /* ---- specifications, in the source's own terminology ---- */
     var specs = $("#pdpSpecs");
-    if (specs && p.specs) {
-      specs.innerHTML = Object.keys(p.specs).map(function (k) {
-        return "<tr><th scope=\"row\">" + UI.esc(k) + "</th><td>" + UI.esc(p.specs[k]) + "</td></tr>";
-      }).join("");
+    if (specs) {
+      var sp = (full && full.specifications) || {};
+      var keys = Object.keys(sp);
+      specs.innerHTML = keys.length ? keys.map(function (k) {
+        var v = sp[k];
+        return "<tr><th scope=\"row\">" + UI.esc(k) + "</th><td>" +
+               UI.esc(Array.isArray(v) ? v.join(", ") : v) + "</td></tr>";
+      }).join("") :
+        '<tr><td colspan="2" class="placeholder">No specifications published by the source.</td></tr>';
     }
 
-    /* Related + recently viewed */
-    var related = D.PRODUCTS.filter(function (x) { return x.cat === p.cat && x.id !== p.id; }).slice(0, 4);
-    if (related.length < 4) {
-      related = related.concat(D.PRODUCTS.filter(function (x) {
-        return x.cat !== p.cat && x.id !== p.id;
-      }).slice(0, 4 - related.length));
+    /* ---- source attribution + import notes ---- */
+    var meta = $("#pdpSourceMeta");
+    if (meta && full) {
+      meta.innerHTML =
+        '<div><dt>Source</dt><dd><a class="link-inline" href="' + UI.esc(full.source.url) +
+          '" target="_blank" rel="noopener nofollow">' + UI.esc(full.source.website) + "</a></dd></div>" +
+        '<div><dt>Reference checked</dt><dd>' + UI.esc((full.source.checkedAt || "").slice(0, 10)) + "</dd></div>" +
+        (full.model ? '<div><dt>Model</dt><dd>' + UI.esc(full.model) + "</dd></div>" : "") +
+        (full.series ? '<div><dt>Series</dt><dd>' + UI.esc(full.series) + "</dd></div>" : "");
     }
-    fill("#relatedGrid", related);
+    var notes = $("#pdpNotes");
+    if (notes) {
+      var ns = (full && full.importNotes) || [];
+      notes.innerHTML = ns.length ? ns.map(function (n) {
+        return '<li>' + UI.esc(n) + "</li>"; }).join("") : "";
+      notes.hidden = !ns.length;
+    }
 
+    /* ---- related: same subcategory, then same category, then same brand ---- */
+    var rel = D.PRODUCTS.filter(function (x) {
+      return x.id !== p.id && x.sub === p.sub && x.cat === p.cat; }).slice(0, 4);
+    if (rel.length < 4) {
+      rel = rel.concat(D.PRODUCTS.filter(function (x) {
+        return x.id !== p.id && x.cat === p.cat && rel.indexOf(x) === -1; })
+        .slice(0, 4 - rel.length));
+    }
+    if (rel.length < 4) {
+      rel = rel.concat(D.PRODUCTS.filter(function (x) {
+        return x.id !== p.id && x.brand === p.brand && rel.indexOf(x) === -1; })
+        .slice(0, 4 - rel.length));
+    }
+    fill("#relatedGrid", rel);
+
+    /* ---- recently viewed ---- */
     var seen = [];
-    try {
-      seen = JSON.parse(window.sessionStorage.getItem("see_seen") || "[]");
-    } catch (e) { seen = []; }
+    try { seen = JSON.parse(window.sessionStorage.getItem("see_seen") || "[]"); }
+    catch (e) { seen = []; }
     var recent = seen.filter(function (x) { return x !== p.id; })
                      .map(function (x) { return D.productById(x); })
                      .filter(Boolean).slice(0, 4);
     var rv = $("#recentSection");
     if (recent.length && rv) { rv.hidden = false; fill("#recentGrid", recent); }
     seen.unshift(p.id);
-    try {
-      window.sessionStorage.setItem("see_seen", JSON.stringify(seen.slice(0, 8)));
-    } catch (e) { /* ignore */ }
-  };
+    try { window.sessionStorage.setItem("see_seen", JSON.stringify(seen.slice(0, 8))); }
+    catch (e) { /* ignore */ }
+  }
+
+  function subLabel(slug) {
+    return String(slug || "").replace(/-/g, " ").replace(/\b\w/g, function (c) {
+      return c.toUpperCase(); });
+  }
 
   function setText(sel, v) { var el = $(sel); if (el) { el.textContent = v; } }
   function setHTML(sel, v) { var el = $(sel); if (el) { el.innerHTML = v; } }

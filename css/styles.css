@@ -429,6 +429,21 @@ body.no-scroll { overflow: hidden; }
 .price__old { font-size: 13px; color: var(--text-faint); text-decoration: line-through; }
 .price__off { font-size: 12px; font-weight: 700; color: var(--brand-accent); }
 .price--lg .price__now { font-size: 28px; color: var(--brand-accent); }
+
+/* Products the source does not price are never shown as Rs. 0 */
+.price__quote {
+  font-size: 15px; font-weight: 700; color: var(--brand-primary);
+  letter-spacing: -.01em;
+}
+.price--lg .price__quote { font-size: 21px; }
+.price__from { font-size: 12px; color: var(--text-muted); }
+.pill--unknown { color: var(--text-muted); background: var(--surface-alt); }
+.tag--quote { background: var(--navy-50); color: var(--navy-700); border: 1px solid var(--navy-100); }
+.pcard__model { font-size: 11.5px; color: var(--text-muted); }
+.pcard__noimg {
+  display: grid; place-items: center; height: 100%; padding: var(--sp-4);
+  text-align: center; font-size: 12px; color: var(--text-faint);
+}
 .price--lg .price__old { font-size: 16px; }
 
 

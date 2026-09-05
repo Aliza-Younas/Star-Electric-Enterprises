@@ -29,7 +29,8 @@ window.SEE_UI = (function () {
   var STOCK = {
     "in":  { cls: "pill--in",  label: "In Stock" },
     "low": { cls: "pill--low", label: "Low Stock" },
-    "out": { cls: "pill--out", label: "Out of Stock" }
+    "out": { cls: "pill--out", label: "Out of Stock" },
+    "unknown": { cls: "pill--unknown", label: "Availability not specified" }
   };
 
   /* ----------------------------------------------------------------------
@@ -361,23 +362,44 @@ window.SEE_UI = (function () {
      ---------------------------------------------------------------------- */
   function renderProductCard(p, opts) {
     opts = opts || {};
-    var off = discount(p);
     var out = p.stock === "out";
-    var st = STOCK[p.stock];
     var href = "product.html?id=" + encodeURIComponent(p.id);
     var saved = window.SEE_STORE && SEE_STORE.inWishlist(p.id);
+    var img = D.productImage(p);
 
+    /* Badges are facts only: a discount badge requires a real source discount.
+       There is no "Best Seller" - no approved source ranks sales. */
     var badges = "";
-    if (off > 0) { badges += '<span class="tag tag--sale">-' + off + "%</span>"; }
-    if (p.tags.indexOf("new") !== -1) { badges += '<span class="tag tag--new">New</span>'; }
-    if (p.tags.indexOf("best") !== -1) { badges += '<span class="tag tag--best">Best Seller</span>'; }
+    if (p.discountPercent) { badges += '<span class="tag tag--sale">-' + p.discountPercent + "%</span>"; }
+    if (p.isQuote) { badges += '<span class="tag tag--quote">Request Quote</span>'; }
 
-    var cta = out
-      ? '<button class="btn btn--ghost btn--block pcard__add" type="button" disabled>Out of Stock</button>'
-      : (p.type === "variable"
-          ? '<a class="btn btn--ghost btn--block pcard__add" href="' + href + '">Select Options</a>'
-          : '<button class="btn btn--ghost btn--block pcard__add js-add" type="button" data-id="' + esc(p.id) + '">' +
-              icon("cart") + "Add to Cart</button>");
+    /* Price block: never render Rs. 0 for an unpriced product. */
+    var priceHtml;
+    if (p.isQuote) {
+      priceHtml = '<p class="price price--quote"><span class="price__quote">Request a Quote</span></p>';
+    } else {
+      priceHtml = '<p class="price">' +
+        '<span class="price__now">' + money(p.price) + "</span>" +
+        (p.oldPrice ? '<span class="price__old">' + money(p.oldPrice) + "</span>" : "") +
+        (p.discountPercent ? '<span class="price__off">Save ' + p.discountPercent + "%</span>" : "") +
+        (p.priceType === "from" ? '<span class="price__from">from</span>' : "") +
+      "</p>";
+    }
+
+    var st = STOCK[p.stock] || { cls: "pill--unknown", label: "Not specified" };
+
+    var cta;
+    if (p.isQuote) {
+      cta = '<a class="btn btn--accent btn--block pcard__add" href="quote-request.html?product=' +
+            encodeURIComponent(p.id) + '">Request a Quote</a>';
+    } else if (out) {
+      cta = '<button class="btn btn--ghost btn--block pcard__add" type="button" disabled>Out of Stock</button>';
+    } else if (p.type === "variable") {
+      cta = '<a class="btn btn--ghost btn--block pcard__add" href="' + href + '">Select Options</a>';
+    } else {
+      cta = '<button class="btn btn--ghost btn--block pcard__add js-add" type="button" data-id="' +
+            esc(p.id) + '">' + icon("cart") + "Add to Cart</button>";
+    }
 
     return '' +
     '<li class="pcard" data-id="' + esc(p.id) + '">' +
@@ -389,26 +411,19 @@ window.SEE_UI = (function () {
           '<button class="tool-btn js-quick" type="button" data-id="' + esc(p.id) + '" aria-label="Quick view">' + icon("eye") + "</button>" +
         "</div>" +
         '<a href="' + href + '" tabindex="-1">' +
-          '<img src="' + D.imageUrl(p.img) + '" alt="' + esc(p.name) + '" ' +
-               'loading="lazy" decoding="async" width="1200" height="900">' +
+          (img ? '<img src="' + esc(img) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async" width="1200" height="900">'
+               : '<span class="pcard__noimg">No image published by source</span>') +
         "</a>" +
       "</div>" +
 
       '<div class="pcard__body">' +
         '<p class="pcard__meta">' +
-          '<span class="pcard__brand">' + esc(D.brandName(p.brand)) + "</span>" +
+          '<span class="pcard__brand">' + esc(p.brand || "") + "</span>" +
           '<span class="pcard__cat">' + esc(D.categoryName(p.cat)) + "</span>" +
         "</p>" +
         '<h3 class="pcard__name"><a href="' + href + '">' + esc(p.name) + "</a></h3>" +
-        '<p class="pcard__desc">' + esc(p.short || "") + "</p>" +
-        '<div class="rating">' + stars(p.rating) +
-          '<span class="rating__count">(no reviews yet)</span>' +
-        "</div>" +
-        '<p class="price">' +
-          '<span class="price__now">' + money(p.price) + "</span>" +
-          (p.oldPrice ? '<span class="price__old">' + money(p.oldPrice) + "</span>" : "") +
-          (off > 0 ? '<span class="price__off">Save ' + off + "%</span>" : "") +
-        "</p>" +
+        (p.model ? '<p class="pcard__model">Model: ' + esc(p.model) + "</p>" : "") +
+        priceHtml +
         '<span class="pill ' + st.cls + '">' + st.label + "</span>" +
         cta +
       "</div>" +
@@ -432,7 +447,8 @@ window.SEE_UI = (function () {
              "</span>" +
              '<span class="cat-card__txt">' +
                '<span class="cat-card__name">' + esc(c.name) + "</span>" +
-               '<span class="cat-card__meta">' + esc(c.subs.length) + " subcategories</span>" +
+               '<span class="cat-card__meta">' + esc(c.count) + " products &middot; " +
+                  esc(c.subs.length) + " subcategories</span>" +
              "</span>" +
            "</a></li>";
   }

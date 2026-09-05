@@ -104,6 +104,7 @@
           <a class="btn btn--ghost" href="quote-request.html">Request Bulk Quote</a>
         </div>
 
+        <dl class="pdp__meta" id="pdpSourceMeta"></dl>
         <dl class="pdp__meta">
           <div><dt>Category</dt><dd id="pdpCat2"></dd></div>
           <div><dt>Delivery</dt><dd class="placeholder">[ options to be confirmed ]</dd></div>
@@ -153,6 +154,7 @@
         </div>
 
         <div class="tab-panel" id="panelAdd" role="tabpanel" aria-labelledby="tabAdd" hidden>
+          <ul class="prose" id="pdpNotes" hidden style="margin-bottom:24px"></ul>
           <table class="table table--specs">
             <caption class="sr-only">Additional information</caption>
             <tbody>
@@ -245,6 +247,7 @@
   <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
 </button>
 
+<script src="data/catalogue-index.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>

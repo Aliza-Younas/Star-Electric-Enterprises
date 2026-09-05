@@ -10,15 +10,23 @@ Reconnaissance performed 2026-09-05.
 
 ## Summary
 
-| Source | Discovered | Imported | Priced | Request Quote | Status |
-|---|---|---|---|---|---|
-| Pakistan Cables | 2,378 | 0 | — | — | IN PROGRESS |
-| Aqua Electrical | 1,641 | 0 | — | — | IN PROGRESS |
-| Wahid Fans | 104 | 0 | — | — | IN PROGRESS |
-| Electro Traders | 32 | 0 | — | — | IN PROGRESS |
-| Himel | 132 models | 0 | — | — | PARTIAL-BLOCKED |
-| Hyundai / Jubilee | 8 families | 0 | — | — | IN PROGRESS |
-| Coarts Lighting | 229 | 0 | — | — | IN PROGRESS |
+| Source | Discovered | Imported | Priced | Request Quote | With variations | With source images | Status |
+|---|---|---|---|---|---|---|---|
+| Aqua Electrical | 1641 | 1641 | 1633 | 8 | 0 | 1640 | COMPLETE |
+| Coarts Lighting | 229 | 226 | 64 | 162 | 0 | 224 | COMPLETE (226 of 229; 3 pages carry no product data) |
+| Electro Traders | 32 | 32 | 0 | 32 | 0 | 32 | COMPLETE |
+| Himel | 132 | 132 | 0 | 132 | 0 | 0 | PARTIAL-BLOCKED |
+| Hyundai / Jubilee | 8 | 8 | 0 | 8 | 0 | 0 | COMPLETE (source publishes 8 families only) |
+| Pakistan Cables | 2378 | 2378 | 0 | 2378 | 0 | 0 | COMPLETE |
+| Wahid Fans | 104 | 104 | 104 | 0 | 104 | 104 | COMPLETE |
+
+**Totals: 4521 imported · 1801 priced · 2720 Request Quote · 104 with variations · 2000 with source imagery · 19 carrying a genuine source discount.**
+
+Source images are recorded as remote URLs on each product; local download and
+optimisation into `assets/images/products/<source>/` is the remaining step and is
+tracked in `research-progress.md`.
+
+---
 
 ---
 
