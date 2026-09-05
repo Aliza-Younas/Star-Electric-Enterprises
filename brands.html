@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brands — Star Electric Enterprises | Saddar, Rawalpindi</title>
+<meta name="description" content="Browse product brands stocked at Star Electric Enterprises, Saddar, Rawalpindi. Search the brand directory alphabetically and view the products available under each brand.">
+<link rel="canonical" href="https://REPLACE-WITH-DOMAIN/brands.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brands — Star Electric Enterprises">
+<meta property="og:description" content="Browse the brand directory and view products available under each brand.">
+<meta property="og:image" content="assets/logo/star-electric-logo-stacked.jpg">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN/brands.html">
+<link rel="icon" href="assets/logo/favicon.png" sizes="any">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="brands">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div id="siteHeader"></div>
+<div class="drawer" id="mobileNav" hidden></div>
+
+<main id="main">
+
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li aria-current="page">Brands</li>
+        </ol>
+      </nav>
+      <h1 class="page-head__title">Brand Directory</h1>
+      <p class="page-head__sub">
+        Search or browse alphabetically to find products by brand.
+      </p>
+    </div>
+  </div>
+
+  <section class="section section--sm">
+    <div class="container">
+
+      <!-- No dealership or authorisation claims are made anywhere on this page -->
+      <div class="placeholder-note" style="margin-bottom:32px">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+        <span>
+          <strong>Brand names and logos are placeholders.</strong> Star Electric Enterprises has not
+          stated any dealership, distribution or authorisation relationship, so none is shown here.
+          Confirmed brand names and supplied logo files will replace these tiles.
+        </span>
+      </div>
+
+      <div class="panel panel--tint" style="margin-bottom:32px">
+        <div class="form-grid" style="grid-template-columns:minmax(0,1fr) auto;align-items:end">
+          <div class="field">
+            <label class="field__label" for="brandSearch">Search brands</label>
+            <input class="input" id="brandSearch" type="search" placeholder="Start typing a brand name…" autocomplete="off">
+          </div>
+          <p class="t-sm t-muted" id="brandCount" style="padding-bottom:12px"></p>
+        </div>
+
+        <div class="az-bar" id="azBar" role="group" aria-label="Filter brands by first letter" style="margin-top:20px"></div>
+      </div>
+
+      <ul class="brand-grid" id="brandDirectory"></ul>
+
+      <div id="brandEmpty" hidden>
+        <div class="empty-state">
+          <span class="empty-state__ico">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+          </span>
+          <h2>No brands match that search</h2>
+          <p>Try a different letter or clear the search box to see the whole directory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="brandCatTitle">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title" id="brandCatTitle">Prefer to browse by department?</h2>
+          <p class="section__sub">Every brand's products also sit inside these nine departments.</p>
+        </div>
+        <a class="link-more" href="shop.html">Go to shop
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <ul class="cat-grid cat-grid--4" id="categoryGrid"></ul>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<div class="modal" id="quickView" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <button class="icon-btn modal__close" type="button" data-close aria-label="Close quick view">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+    <div id="qvBody"></div>
+  </div>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

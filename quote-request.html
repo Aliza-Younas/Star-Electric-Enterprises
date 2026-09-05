@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Quote — Bulk &amp; Project Orders | Star Electric Enterprises</title>
+<meta name="description" content="Request a written quotation for bulk electrical requirements from Star Electric Enterprises, Saddar, Rawalpindi. For contractors, electricians, builders and commercial projects.">
+<link rel="canonical" href="https://REPLACE-WITH-DOMAIN/quote-request.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Request a Quote — Bulk &amp; Project Orders">
+<meta property="og:description" content="Written quotations for contractors, electricians, builders and commercial projects.">
+<meta property="og:image" content="assets/logo/star-electric-logo-stacked.jpg">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN/quote-request.html">
+<link rel="icon" href="assets/logo/favicon.png" sizes="any">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="quote">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div id="siteHeader"></div>
+<div class="drawer" id="mobileNav" hidden></div>
+
+<main id="main">
+
+  <!-- Dark project-focused header so this reads as a trade service,
+       not a generic contact form -->
+  <section class="section bulk section--sm" aria-labelledby="quoteTitle">
+    <div class="container">
+      <nav aria-label="Breadcrumb" style="margin-bottom:16px">
+        <ol class="breadcrumb">
+          <li><a href="index.html" style="color:rgba(255,255,255,.6)">Home</a></li>
+          <li class="sep" aria-hidden="true" style="color:rgba(255,255,255,.35)">/</li>
+          <li aria-current="page" style="color:#fff">Request a Quote</li>
+        </ol>
+      </nav>
+
+      <div class="bulk__inner">
+        <div>
+          <h1 class="bulk__title" id="quoteTitle">Bulk &amp; Project Orders</h1>
+          <p class="bulk__text">
+            Supplying contractors, electricians, builders and commercial projects. Send us your
+            item list or bill of quantities and we will prepare a written quotation for the
+            materials you need.
+          </p>
+          <ul class="hero__cta" style="gap:8px;flex-wrap:wrap">
+            <li class="hero__eyebrow" style="margin:0">Contractors</li>
+            <li class="hero__eyebrow" style="margin:0">Electricians</li>
+            <li class="hero__eyebrow" style="margin:0">Builders</li>
+            <li class="hero__eyebrow" style="margin:0">Commercial Projects</li>
+          </ul>
+        </div>
+        <ol class="bulk__steps">
+          <li><b>01</b> Submit your requirements below</li>
+          <li><b>02</b> We review availability and pricing</li>
+          <li><b>03</b> You receive a written quotation</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm">
+    <div class="container form-layout">
+
+      <div class="panel">
+        <div class="panel__head">
+          <div>
+            <h2 class="panel__title">Quote Request</h2>
+            <p class="t-sm t-muted" style="margin-top:4px">
+              The more detail you provide, the more accurate the quotation.
+            </p>
+          </div>
+          <span class="t-xs t-faint"><span class="t-accent">*</span> required</span>
+        </div>
+
+        <form class="stack-5" data-demo-form="Quote request submitted (design prototype — the form is not connected yet).">
+
+          <fieldset style="border:0;padding:0;margin:0">
+            <legend class="field__label" style="margin-bottom:16px;font-size:14px">Your details</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="qName">Full name <span class="req">*</span></label>
+                <input class="input" id="qName" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="qCompany">Company / Contractor name</label>
+                <input class="input" id="qCompany" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label class="field__label" for="qPhone">Phone <span class="req">*</span></label>
+                <input class="input" id="qPhone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="qEmail">Email <span class="req">*</span></label>
+                <input class="input" id="qEmail" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <hr>
+
+          <fieldset style="border:0;padding:0;margin:0">
+            <legend class="field__label" style="margin-bottom:16px;font-size:14px">Project details</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="qType">Project type <span class="req">*</span></label>
+                <select class="select" id="qType" name="project_type" required>
+                  <option value="">Select a project type…</option>
+                  <option>Residential — new build</option>
+                  <option>Residential — renovation / rewiring</option>
+                  <option>Commercial fit-out</option>
+                  <option>Office installation</option>
+                  <option>Industrial / factory</option>
+                  <option>Shop or retail unit</option>
+                  <option>Maintenance / repair contract</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field__label" for="qDate">Required delivery date</label>
+                <input class="input" id="qDate" name="required_date" type="date">
+                <p class="field__hint">Approximate is fine.</p>
+              </div>
+              <div class="field span-2">
+                <label class="field__label" for="qItems">Product requirements <span class="req">*</span></label>
+                <textarea class="textarea" id="qItems" name="requirements" required
+                  placeholder="List the products you need — for example:&#10;&#10;1.5mm single core copper wire — 20 coils&#10;32A MCB single pole — 40 units&#10;12W LED bulb B22 — 150 units"></textarea>
+                <p class="field__hint">
+                  Include ratings, sizes and any brand preference where it matters.
+                </p>
+              </div>
+              <div class="field span-2">
+                <label class="field__label" for="qQty">Estimated total quantities / order value</label>
+                <input class="input" id="qQty" name="quantities" type="text"
+                       placeholder="e.g. approx. 400 items, or an approximate budget range">
+              </div>
+              <div class="field span-2">
+                <label class="field__label" for="qMessage">Additional notes</label>
+                <textarea class="textarea" id="qMessage" name="message" style="min-height:110px"
+                  placeholder="Site location, phased delivery, access restrictions, anything else we should know…"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <hr>
+
+          <fieldset style="border:0;padding:0;margin:0">
+            <legend class="field__label" style="margin-bottom:16px;font-size:14px">Attachments</legend>
+            <div class="field">
+              <label class="field__label" for="qFile">Bill of quantities or item list</label>
+              <label class="file-drop" for="qFile">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V5M8 9l4-4 4 4"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/></svg>
+                <span><strong>Choose a file</strong> or drag it here</span>
+                <span class="t-xs t-faint">
+                  File upload is a placeholder in this prototype — accepted formats and size
+                  limits will be set once the form is connected.
+                </span>
+              </label>
+              <input id="qFile" name="attachment" type="file" class="sr-only">
+            </div>
+          </fieldset>
+
+          <label class="check">
+            <input type="checkbox" required>
+            <span>
+              I agree that my details may be used to respond to this quote request, as described
+              in the <a class="link-inline" href="privacy.html">Privacy Policy</a>. <span class="req">*</span>
+            </span>
+          </label>
+
+          <button class="btn btn--accent btn--lg" type="submit" style="justify-self:start">
+            Submit Quote Request
+          </button>
+        </form>
+      </div>
+
+      <aside>
+        <div class="info-card">
+          <h3>What happens next</h3>
+          <ul class="info-list">
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h7l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M13 3v5h5"/></svg>
+              <span><strong>We review your list</strong>Availability and current pricing are checked.</span>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+              <span><strong>You receive a quotation</strong>Sent in writing to the contact details you provide.</span>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+              <span><strong>Collection or delivery</strong>Arranged once the quotation is accepted.</span>
+            </li>
+          </ul>
+          <p class="field__hint" style="margin-top:16px">
+            Response times are to be confirmed by the business.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Prefer to talk it through?</h3>
+          <ul class="info-list">
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l1.6 4-2.2 1.6a12 12 0 0 0 6 6L16 13.4l4 1.6v4a1 1 0 0 1-1.1 1A16.5 16.5 0 0 1 4 6.1 1 1 0 0 1 5 4Z"/></svg>
+              <span><strong>Phone</strong><span class="placeholder">[ number to be added ]</span></span>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.3-3.9A8 8 0 1 1 20 11.8Z"/></svg>
+              <span><strong>WhatsApp</strong><span class="placeholder">[ number to be added ]</span></span>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              <span><strong>Visit the store</strong>Saddar, Rawalpindi<br><span class="placeholder">[ address to be added ]</span></span>
+            </li>
+          </ul>
+          <a class="btn btn--ghost btn--block btn--sm" href="contact.html" style="margin-top:16px">Contact page</a>
+        </div>
+
+        <div class="info-card">
+          <h3>Browse before you ask</h3>
+          <p class="t-sm t-muted" style="margin-bottom:16px">
+            Check the catalogue to confirm the products and specifications you need.
+          </p>
+          <a class="btn btn--accent btn--block btn--sm" href="shop.html">Browse the Shop</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

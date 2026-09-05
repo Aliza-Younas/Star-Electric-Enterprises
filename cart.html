@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopping Cart — Star Electric Enterprises | Saddar, Rawalpindi</title>
+<meta name="description" content="Review the electrical products in your cart at Star Electric Enterprises, Saddar, Rawalpindi. Update quantities, apply a coupon and proceed to checkout.">
+<link rel="canonical" href="https://REPLACE-WITH-DOMAIN/cart.html">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shopping Cart — Star Electric Enterprises">
+<meta property="og:description" content="Review the products in your cart and proceed to checkout.">
+<meta property="og:image" content="assets/logo/star-electric-logo-stacked.jpg">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN/cart.html">
+<link rel="icon" href="assets/logo/favicon.png" sizes="any">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="cart">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div id="siteHeader"></div>
+<div class="drawer" id="mobileNav" hidden></div>
+
+<main id="main">
+
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li aria-current="page">Cart</li>
+        </ol>
+      </nav>
+      <h1 class="page-head__title">Shopping Cart</h1>
+
+      <div class="steps" style="margin-top:16px">
+        <span class="step is-active"><span class="step__num">1</span> Cart</span>
+        <span class="step__line" aria-hidden="true"></span>
+        <span class="step"><span class="step__num">2</span> Checkout</span>
+        <span class="step__line" aria-hidden="true"></span>
+        <span class="step"><span class="step__num">3</span> Order Complete</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section--sm">
+    <div class="container cart-layout">
+
+      <div>
+        <div class="cart-panel" id="cartPanel">
+          <table class="table table--stack">
+            <caption class="sr-only">Products in your cart</caption>
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"><span class="sr-only">Remove</span></th>
+              </tr>
+            </thead>
+            <tbody id="cartBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Empty state -->
+        <div id="cartEmpty" hidden>
+          <div class="empty-state">
+            <span class="empty-state__ico">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h2.3l2.2 9.5h9.2L19 8H7"/><circle cx="9.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg>
+            </span>
+            <h2>Your cart is empty</h2>
+            <p>Browse the catalogue and add the items you need, or send us a list for a bulk quotation.</p>
+            <div class="btn-row">
+              <a class="btn btn--accent" href="shop.html">Browse the Shop</a>
+              <a class="btn btn--ghost" href="quote-request.html">Request a Quote</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:24px" id="couponPanel">
+          <div class="form-grid" style="grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px">
+            <form class="field" id="couponForm">
+              <label class="field__label" for="couponCode">Have a coupon code?</label>
+              <div class="coupon">
+                <input class="input" id="couponCode" type="text" placeholder="Enter coupon code" autocomplete="off">
+                <button class="btn btn--ghost" type="submit">Apply Coupon</button>
+              </div>
+              <p class="field__hint">Coupon rules will be configured in WooCommerce.</p>
+            </form>
+            <div class="btn-row" style="padding-bottom:22px">
+              <a class="btn btn--ghost btn--sm" href="shop.html">Continue Shopping</a>
+              <button class="btn btn--quiet btn--sm" type="button" id="clearCart">Clear cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart totals -->
+      <aside class="summary" id="cartSummary">
+        <div class="panel">
+          <h2 class="panel__title">Cart Totals</h2>
+
+          <div class="summary__row">
+            <span>Subtotal</span>
+            <strong id="sumSubtotal">Rs. 0</strong>
+          </div>
+          <div class="summary__row">
+            <span>Delivery</span>
+            <span class="placeholder">[ calculated at checkout ]</span>
+          </div>
+          <div class="summary__row">
+            <span>Tax</span>
+            <span class="placeholder">[ to be confirmed ]</span>
+          </div>
+
+          <div class="summary__total">
+            <span>Total</span>
+            <strong id="sumTotal">Rs. 0</strong>
+          </div>
+
+          <a class="btn btn--accent btn--lg btn--block" href="checkout.html" style="margin-top:20px">
+            Proceed to Checkout
+          </a>
+
+          <p class="alert alert--info" style="margin-top:16px">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="3"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/><path d="M12 14v2"/></svg>
+            <span>Totals exclude delivery until an address is entered. Delivery charges are to be confirmed.</span>
+          </p>
+        </div>
+
+        <div class="info-card" style="margin-top:16px">
+          <h3>Buying in quantity?</h3>
+          <p class="t-sm t-muted" style="margin-bottom:16px">
+            Larger project requirements can be quoted separately.
+          </p>
+          <a class="btn btn--ghost btn--block btn--sm" href="quote-request.html">Request a Bulk Quote</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<div class="modal" id="quickView" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <button class="icon-btn modal__close" type="button" data-close aria-label="Close quick view">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+    <div id="qvBody"></div>
+  </div>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Wishlist — Star Electric Enterprises | Saddar, Rawalpindi</title>
+<meta name="description" content="Products you have saved at Star Electric Enterprises, Saddar, Rawalpindi. Review saved electrical items, check availability and move them to your cart.">
+<link rel="canonical" href="https://REPLACE-WITH-DOMAIN/wishlist.html">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="My Wishlist — Star Electric Enterprises">
+<meta property="og:description" content="Products you have saved for later.">
+<meta property="og:image" content="assets/logo/star-electric-logo-stacked.jpg">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN/wishlist.html">
+<link rel="icon" href="assets/logo/favicon.png" sizes="any">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="wishlist" data-nav="shop">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div id="siteHeader"></div>
+<div class="drawer" id="mobileNav" hidden></div>
+
+<main id="main">
+
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li><a href="my-account.html">My Account</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li aria-current="page">Wishlist</li>
+        </ol>
+      </nav>
+      <h1 class="page-head__title">My Wishlist</h1>
+      <p class="page-head__sub">
+        Products you have saved. Saving is stored in this browser only for the prototype &mdash;
+        on the live store it will be tied to your account.
+      </p>
+    </div>
+  </div>
+
+  <section class="section section--sm">
+    <div class="container">
+
+      <div class="cart-panel" id="wishlistPanel">
+        <table class="table table--stack">
+          <caption class="sr-only">Saved products</caption>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="wishlistBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Empty state -->
+      <div id="wishlistEmpty" hidden>
+        <div class="empty-state">
+          <span class="empty-state__ico">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.3-4.4-7.3-9.3A4.2 4.2 0 0 1 12 8.2a4.2 4.2 0 0 1 7.3 2.5C19.3 15.6 12 20 12 20Z"/></svg>
+          </span>
+          <h2>Your wishlist is empty</h2>
+          <p>
+            Use the heart icon on any product to save it here for later. Saved items are handy
+            when you are pricing up a job over several visits.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--accent" href="shop.html">Browse the Shop</a>
+            <a class="btn btn--ghost" href="deals.html">See Current Deals</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="wishCatTitle">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title" id="wishCatTitle">Keep browsing</h2>
+          <p class="section__sub">Jump back into the departments you were shopping.</p>
+        </div>
+        <a class="link-more" href="shop.html">Go to shop
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <ul class="cat-grid cat-grid--4" id="categoryGrid"></ul>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<div class="modal" id="quickView" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <button class="icon-btn modal__close" type="button" data-close aria-label="Close quick view">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+    <div id="qvBody"></div>
+  </div>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

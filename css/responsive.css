@@ -1,0 +1,353 @@
+/* ==========================================================================
+   STAR ELECTRIC ENTERPRISES — Responsive layer
+   Loaded last. Every breakpoint the brief targets is handled here:
+   1920 · 1440 · 1366 · 1200 · 1024 · 900 · 768 · 600 · 430 · 390 · 375
+   Layouts are re-composed per breakpoint, never just scaled down.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1920 and wider — allow the grid to breathe, show a 5-up product row
+   ========================================================================== */
+@media (min-width: 1700px) {
+  :root { --container: 1440px; --gutter: 32px; }
+  .product-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .shop-layout { grid-template-columns: 300px minmax(0, 1fr); }
+  .hero__grid { grid-template-columns: minmax(0, 1fr) 360px; }
+}
+
+
+/* ==========================================================================
+   1440 — reference desktop (tokens already tuned for this width)
+   ========================================================================== */
+@media (max-width: 1439px) {
+  :root { --container: 1320px; }
+}
+
+
+/* ==========================================================================
+   1366 — common laptop
+   ========================================================================== */
+@media (max-width: 1400px) {
+  :root { --container: 1200px; }
+  .footer__grid { gap: var(--sp-6); }
+}
+
+
+/* ==========================================================================
+   1200 — small laptop
+   ========================================================================== */
+@media (max-width: 1280px) {
+  :root { --gutter: 20px; }
+  .header__inner { gap: var(--sp-4); }
+  .search { max-width: 560px; }
+
+  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .brand-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .subcat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .trust-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: var(--sp-5); }
+  .footer__grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; }
+  .footer__grid .footer__col--business { grid-column: span 1; }
+  .shop-layout { grid-template-columns: 250px minmax(0, 1fr); }
+  .cart-layout { grid-template-columns: minmax(0, 1fr) 320px; }
+  .checkout-layout { grid-template-columns: minmax(0, 1fr) 340px; }
+}
+
+
+/* ==========================================================================
+   1120 — compact the header actions before anything breaks
+   ========================================================================== */
+@media (max-width: 1120px) {
+  .header__quote { display: none; }
+  .action__txt { display: none; }
+  .action { padding: var(--sp-2); }
+  .action__ico .ico { width: 23px; height: 23px; }
+  .search { max-width: none; }
+  .mega { width: min(760px, calc(100vw - 40px)); }
+  .mega__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+
+/* ==========================================================================
+   1024 — tablet landscape / small laptop
+   Sidebars and two-column page templates collapse here.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .section { padding-block: var(--sp-8); }
+
+  /* Home */
+  .hero { padding-block: var(--sp-6); }
+  .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  .hero__slider { min-height: 340px; }
+  .hero__slide { padding: var(--sp-6); }
+  .hero__rail { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: none; }
+  .hero__dots { left: var(--sp-6); bottom: var(--sp-5); }
+  .promo-grid { grid-template-columns: minmax(0, 1fr); }
+  .bulk__inner { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
+  .store-strip { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
+  .map-ph { min-height: 280px; }
+
+  /* Catalog: filters move into a drawer */
+  .shop-layout { grid-template-columns: minmax(0, 1fr); }
+  .filters { display: none; }
+  .filter-open { display: inline-flex; }
+
+  /* Product detail */
+  .pdp { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
+  .gallery__main { aspect-ratio: 4 / 3; }
+
+  /* Category */
+  .cat-hero { grid-template-columns: minmax(0, 1fr); }
+  .cat-hero__art { display: none; }
+
+  /* Commerce templates */
+  .cart-layout,
+  .checkout-layout,
+  .account-layout,
+  .doc-layout,
+  .form-layout { grid-template-columns: minmax(0, 1fr); }
+  .summary, .filters, .doc-toc { position: static; }
+  .doc-toc { display: none; }
+  .auth-layout { grid-template-columns: minmax(0, 1fr); }
+
+  .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); }
+  .value-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+
+/* ==========================================================================
+   900 — the header switches to two rows and navigation becomes a drawer
+   ========================================================================== */
+@media (max-width: 900px) {
+  .topbar__item--delivery { display: none; }
+  .nav { display: none; }
+  .header__burger { display: inline-flex; }
+
+  /* Search gets its own row so the account/wishlist/cart cluster can
+     never be pushed outside the viewport. */
+  .header__inner {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas:
+      "burger logo actions"
+      "search search search";
+    column-gap: var(--sp-3);
+    row-gap: var(--sp-3);
+    padding-block: var(--sp-3);
+    min-height: 0;
+  }
+  .header__burger { grid-area: burger; }
+  .logo { grid-area: logo; }
+  .header__actions { grid-area: actions; }
+  .search { grid-area: search; min-width: 0; }
+  .logo img { height: 28px; }
+
+  .track-form { grid-template-columns: minmax(0, 1fr); }
+  .track-form .btn { width: 100%; }
+}
+
+
+/* ==========================================================================
+   768 — tablet portrait
+   ========================================================================== */
+@media (max-width: 768px) {
+  .section { padding-block: var(--sp-7); }
+  .section__head { flex-direction: column; align-items: flex-start; }
+  .section__head--center { align-items: center; }
+
+  .product-grid,
+  .product-grid--3,
+  .product-grid--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); }
+  .cat-grid, .cat-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); }
+  .brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .subcat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); }
+  .trust-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .value-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero__rail { grid-template-columns: minmax(0, 1fr); }
+
+  .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .panel { padding: var(--sp-5); }
+
+  /* List view stacks like the grid card on small screens */
+  .product-grid--list .pcard { flex-direction: column; }
+  .product-grid--list .pcard__media {
+    width: 100%; aspect-ratio: 4 / 3;
+    border-right: 0; border-bottom: 1px solid var(--border);
+  }
+  .product-grid--list .pcard__body { padding: var(--sp-4); }
+  .product-grid--list .pcard__desc { display: none; }
+  .product-grid--list .pcard__name { font-size: 14.5px; }
+  .product-grid--list .pcard__add { max-width: none; }
+
+  .modal__grid { grid-template-columns: minmax(0, 1fr); }
+  .modal__media {
+    border-right: 0; border-bottom: 1px solid var(--border);
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+    padding: var(--sp-5);
+  }
+  .modal__media img { max-height: 200px; }
+
+  .gallery { grid-template-columns: minmax(0, 1fr); }
+  .gallery__thumbs { grid-template-columns: repeat(5, minmax(0, 1fr)); order: 2; }
+
+  .table--stack thead { display: none; }
+  .table--stack tr { display: grid; gap: var(--sp-3); padding: var(--sp-4); border-bottom: 1px solid var(--border); }
+  .table--stack td { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); padding: 0; border: 0; }
+  .table--stack td::before {
+    content: attr(data-label);
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--text-muted);
+  }
+  .table--stack td.td-full { display: block; }
+  .table--stack td.td-full::before { display: none; }
+
+  .table--specs th { width: 45%; }
+}
+
+
+/* ==========================================================================
+   600 — large phones
+   ========================================================================== */
+@media (max-width: 600px) {
+  :root { --gutter: 16px; }
+  body { font-size: 14.5px; }
+
+  .section { padding-block: var(--sp-6); }
+  .page-head { padding-block: var(--sp-5) var(--sp-4); }
+
+  /* Top bar keeps only the essentials, centred */
+  .topbar { font-size: 12px; }
+  .topbar__inner { justify-content: center; text-align: center; gap: 6px; padding-block: var(--sp-2); }
+  .topbar__links { justify-content: center; gap: 6px var(--sp-4); }
+
+  /* Header */
+  .logo img { height: 26px; }
+  .header__actions { gap: 0; }
+  .action { padding: 7px; }
+
+  /* Search: the category select drops below the field so the input
+     and button stay comfortably tappable. */
+  .search { flex-wrap: wrap; }
+  .search__catwrap { order: 3; width: 100%; }
+  .search__cat {
+    width: 100%; max-width: none; height: 42px;
+    border-right: 0; border-top: 1px solid var(--border);
+    border-radius: 0 0 var(--r-md) var(--r-md);
+  }
+  .search__input { order: 1; width: calc(100% - 60px); height: 46px; font-size: 16px; }
+  .search__btn { order: 2; padding: 0 14px; margin: 4px 4px 4px 0; }
+  .search__btn span { display: none; }
+
+  /* Home */
+  .hero__slider { min-height: 300px; border-radius: var(--r-lg); }
+  .hero__slide { padding: var(--sp-5); }
+  .hero__title { font-size: 26px; }
+  .hero__text { font-size: 14.5px; }
+  .hero__cta .btn { flex: 1 1 46%; }
+  .hero__dots { left: var(--sp-5); bottom: var(--sp-4); }
+  .promo-card { min-height: 160px; padding: var(--sp-5); }
+  .bulk__steps li { font-size: 13.5px; }
+
+  .trust-strip { grid-template-columns: minmax(0, 1fr); gap: var(--sp-3); padding-block: var(--sp-5); }
+  .why-card { padding: var(--sp-4); }
+  .why-card__ico { width: 40px; height: 40px; margin-bottom: var(--sp-3); }
+
+  /* Cards */
+  .cat-card__txt { padding: var(--sp-3); }
+  .cat-card__name { font-size: 13.5px; }
+  .cat-card__meta { font-size: 11.5px; }
+  .brand-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .subcat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .pcard__body { padding: var(--sp-3); gap: 6px; }
+  .pcard__name { font-size: 13.5px; }
+  .pcard__meta { font-size: 10.5px; }
+  .price__now { font-size: 15px; }
+  .price__old { font-size: 12px; }
+  .pcard__add { padding: 10px; font-size: 13px; }
+  .pcard__add .ico { display: none; }
+  /* Touch: no hover, so the wishlist / quick-view tools stay visible */
+  .pcard__tools { opacity: 1; transform: none; }
+  .tool-btn { width: 32px; height: 32px; }
+
+  /* Product detail */
+  .pdp__pricebox { padding: var(--sp-4); }
+  .price--lg .price__now { font-size: 24px; }
+  .pdp__buy .btn { flex: 1 1 100%; }
+  .pdp__meta div { grid-template-columns: 104px minmax(0, 1fr); }
+
+  /* Commerce */
+  .store-list > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .map-ph { min-height: 220px; }
+  .summary__total strong { font-size: 21px; }
+  .coupon { flex-direction: column; }
+  .coupon .input { max-width: none; }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wish-row { grid-template-columns: 64px minmax(0, 1fr); }
+  .wish-row .wish-row__actions { grid-column: 1 / -1; }
+
+  .shop-toolbar { padding: var(--sp-3); }
+  .shop-toolbar__left { width: 100%; }
+  .shop-toolbar__right { width: 100%; }
+  .shop-toolbar .select { flex: 1 1 auto; width: auto; }
+
+  /* Footer */
+  .footer__grid { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); padding-block: var(--sp-7) var(--sp-5); }
+  .footer__contact li { grid-template-columns: 78px minmax(0, 1fr); }
+  .footer__barinner { flex-direction: column; align-items: flex-start; }
+
+  .modal { padding: var(--sp-3); }
+  .modal__body { padding: var(--sp-5); }
+  .modal__actions .btn { flex: 1 1 100%; }
+
+  .to-top { right: var(--sp-3); bottom: var(--sp-3); }
+  .toast-wrap { bottom: var(--sp-4); }
+}
+
+
+/* ==========================================================================
+   430 / 390 — primary mobile targets
+   ========================================================================== */
+@media (max-width: 440px) {
+  .section__title { font-size: 19px; }
+  .page-head__title { font-size: 22px; }
+  .hero__title { font-size: 24px; }
+  .hero__eyebrow { font-size: 10.5px; }
+
+  .btn { padding: 11px 16px; }
+  .btn--lg { padding: 13px 18px; font-size: 14.5px; }
+  .hero__cta .btn { flex: 1 1 100%; }
+
+  .gallery__thumbs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .steps { font-size: 12px; }
+  .step__line { width: 16px; }
+  .az-bar button { min-width: 30px; height: 30px; font-size: 12px; }
+}
+
+
+/* ==========================================================================
+   375 and below — smallest supported phone
+   ========================================================================== */
+@media (max-width: 380px) {
+  :root { --gutter: 14px; }
+  .logo img { height: 23px; }
+  .action { padding: 6px; }
+  .action__ico .ico { width: 21px; height: 21px; }
+  .why-grid { grid-template-columns: minmax(0, 1fr); }
+  .pcard__name { font-size: 13px; }
+  .filter-open span { display: none; }
+}
+
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+@media print {
+  .topbar, .header, .nav, .footer, .to-top, .toast-wrap,
+  .pcard__tools, .filters, .drawer { display: none !important; }
+  body { color: #000; }
+  .container { max-width: none; }
+}

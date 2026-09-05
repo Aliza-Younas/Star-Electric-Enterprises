@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Star Electric Enterprises | Saddar, Rawalpindi</title>
+<meta name="description" content="Complete your order at Star Electric Enterprises, Saddar, Rawalpindi. Enter billing details, choose a delivery method and review your order summary.">
+<link rel="canonical" href="https://REPLACE-WITH-DOMAIN/checkout.html">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Checkout — Star Electric Enterprises">
+<meta property="og:description" content="Complete your order.">
+<meta property="og:image" content="assets/logo/star-electric-logo-stacked.jpg">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN/checkout.html">
+<link rel="icon" href="assets/logo/favicon.png" sizes="any">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="checkout">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div id="siteHeader"></div>
+<div class="drawer" id="mobileNav" hidden></div>
+
+<main id="main">
+
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li><a href="cart.html">Cart</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li aria-current="page">Checkout</li>
+        </ol>
+      </nav>
+      <h1 class="page-head__title">Checkout</h1>
+
+      <div class="steps" style="margin-top:16px">
+        <span class="step is-done"><span class="step__num">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+        </span> Cart</span>
+        <span class="step__line" aria-hidden="true"></span>
+        <span class="step is-active"><span class="step__num">2</span> Checkout</span>
+        <span class="step__line" aria-hidden="true"></span>
+        <span class="step"><span class="step__num">3</span> Order Complete</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section--sm">
+    <div class="container checkout-layout">
+
+      <!-- Billing + delivery -->
+      <div id="checkoutMain">
+        <form data-demo-form="This is a design prototype — no order is placed and no payment is processed.">
+
+          <div class="panel" style="margin-bottom:24px">
+            <div class="panel__head">
+              <h2 class="panel__title">Billing Information</h2>
+              <span class="t-xs t-faint"><span class="t-accent">*</span> required</span>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="fname">First name <span class="req">*</span></label>
+                <input class="input" id="fname" name="fname" type="text" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="lname">Last name <span class="req">*</span></label>
+                <input class="input" id="lname" name="lname" type="text" autocomplete="family-name" required>
+              </div>
+              <div class="field span-2">
+                <label class="field__label" for="company">Company / Contractor name</label>
+                <input class="input" id="company" name="company" type="text" autocomplete="organization">
+                <p class="field__hint">Optional — useful for project and trade orders.</p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="phone">Phone <span class="req">*</span></label>
+                <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email <span class="req">*</span></label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field span-2">
+                <label class="field__label" for="address">Street address <span class="req">*</span></label>
+                <input class="input" id="address" name="address" type="text" autocomplete="street-address"
+                       placeholder="House / shop number and street name" required>
+              </div>
+              <div class="field span-2">
+                <label class="field__label" for="address2">Apartment, suite, floor</label>
+                <input class="input" id="address2" name="address2" type="text" autocomplete="address-line2">
+              </div>
+              <div class="field">
+                <label class="field__label" for="city">City <span class="req">*</span></label>
+                <input class="input" id="city" name="city" type="text" autocomplete="address-level2"
+                       value="Rawalpindi" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="postcode">Postcode</label>
+                <input class="input" id="postcode" name="postcode" type="text" autocomplete="postal-code">
+              </div>
+            </div>
+
+            <label class="check" style="margin-top:20px">
+              <input type="checkbox" id="shipDifferent">
+              <span>Deliver to a different address</span>
+            </label>
+          </div>
+
+          <div class="panel" style="margin-bottom:24px">
+            <div class="panel__head">
+              <h2 class="panel__title">Delivery Method</h2>
+            </div>
+            <div class="stack">
+              <label class="pay-option">
+                <input type="radio" name="delivery" value="collect" checked>
+                <span>
+                  <strong>Collect from store</strong>
+                  <small>Saddar, Rawalpindi &mdash; <span class="placeholder">[ collection hours to be confirmed ]</span></small>
+                </span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="delivery" value="local">
+                <span>
+                  <strong>Local delivery</strong>
+                  <small class="placeholder">[ coverage area and charges to be confirmed ]</small>
+                </span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="delivery" value="courier">
+                <span>
+                  <strong>Courier dispatch</strong>
+                  <small class="placeholder">[ courier partners and charges to be confirmed ]</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-bottom:24px">
+            <div class="panel__head">
+              <h2 class="panel__title">Payment Method</h2>
+            </div>
+
+            <div class="alert alert--info" style="margin-bottom:20px">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+              <span>
+                <strong>No payment is processed on this prototype.</strong> These are visual
+                placeholders. Real payment gateways will be configured in WooCommerce once the
+                business confirms which methods it accepts.
+              </span>
+            </div>
+
+            <div class="stack">
+              <label class="pay-option">
+                <input type="radio" name="payment" value="cod" checked>
+                <span>
+                  <strong>Cash on Delivery</strong>
+                  <small>Pay when the order is handed over.</small>
+                </span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="bank">
+                <span>
+                  <strong>Bank Transfer</strong>
+                  <small class="placeholder">[ account details to be added ]</small>
+                </span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="card">
+                <span>
+                  <strong>Card Payment</strong>
+                  <small class="placeholder">[ gateway to be selected ]</small>
+                </span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="wallet">
+                <span>
+                  <strong>Mobile Wallet</strong>
+                  <small class="placeholder">[ provider to be selected ]</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="field">
+              <label class="field__label" for="orderNotes">Order notes</label>
+              <textarea class="textarea" id="orderNotes" name="notes" style="min-height:100px"
+                        placeholder="Delivery instructions, site access notes, required ratings or sizes…"></textarea>
+            </div>
+
+            <label class="check" style="margin-top:20px">
+              <input type="checkbox" required>
+              <span>
+                I have read and agree to the
+                <a class="link-inline" href="terms.html">Terms &amp; Conditions</a>
+                and <a class="link-inline" href="privacy.html">Privacy Policy</a>. <span class="req">*</span>
+              </span>
+            </label>
+
+            <button class="btn btn--accent btn--lg btn--block" type="submit" style="margin-top:24px">
+              Place Order
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Order summary -->
+      <aside class="summary" id="checkoutAside">
+        <div class="panel">
+          <h2 class="panel__title" style="margin-bottom:16px">Your Order</h2>
+
+          <div id="checkoutItems"></div>
+
+          <div class="summary__row" style="margin-top:16px">
+            <span>Subtotal</span>
+            <strong id="coSubtotal">Rs. 0</strong>
+          </div>
+          <div class="summary__row">
+            <span>Delivery</span>
+            <span class="placeholder">[ to be confirmed ]</span>
+          </div>
+          <div class="summary__row">
+            <span>Tax</span>
+            <span class="placeholder">[ to be confirmed ]</span>
+          </div>
+
+          <div class="summary__total">
+            <span>Total</span>
+            <strong id="coTotal">Rs. 0</strong>
+          </div>
+
+          <p class="t-xs t-muted" style="margin-top:16px">
+            <a class="link-inline" href="cart.html">Edit cart</a>
+          </p>
+        </div>
+
+        <div class="info-card" style="margin-top:16px">
+          <h3>Need help with this order?</h3>
+          <ul class="info-list">
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l1.6 4-2.2 1.6a12 12 0 0 0 6 6L16 13.4l4 1.6v4a1 1 0 0 1-1.1 1A16.5 16.5 0 0 1 4 6.1 1 1 0 0 1 5 4Z"/></svg>
+              <span><strong>Call the store</strong><span class="placeholder">[ number to be added ]</span></span>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.3-3.9A8 8 0 1 1 20 11.8Z"/></svg>
+              <span><strong>WhatsApp</strong><span class="placeholder">[ number to be added ]</span></span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

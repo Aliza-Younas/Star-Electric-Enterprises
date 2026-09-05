@@ -1,0 +1,71 @@
+# ==========================================================================
+# Star Electric Enterprises — Git ignore rules
+# --------------------------------------------------------------------------
+# IMPORTANT: every website file is tracked on purpose — all .html, .css, .js,
+# the logo, product photography, category images, banners and the image
+# source record are part of the site and MUST be committed.
+# Only secrets, OS clutter, editor noise and generated/temporary files are
+# excluded below.
+# ==========================================================================
+
+# ---- Secrets: never commit credentials, tokens or API keys ---------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# ---- Dependencies (not used yet; here for the future WordPress/build step)
+node_modules/
+vendor/
+
+# ---- Operating system clutter --------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---- Logs and temporary files --------------------------------------------
+*.log
+npm-debug.log*
+temp/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~
+
+# ---- Editor / IDE --------------------------------------------------------
+# The .vscode folder is kept so shared workspace settings can be added later,
+# but personal machine-specific settings are excluded.
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.sublime-workspace
+
+# ---- Local validation scratch files --------------------------------------
+# Debug copies produced by the responsive/validation tooling (_v_*.html,
+# _m_*.html, _i_*.html, _debug.html). Never part of the site.
+_v_*.html
+_m_*.html
+_i_*.html
+_debug.html
+_sheet.html
+_proc*.html
+
+# ==========================================================================
+# Deliberately NOT ignored (these are the website itself):
+#   *.html            all page templates
+#   css/              styles.css, pages.css, responsive.css
+#   js/               data.js, components.js, main.js
+#   assets/logo/      the Star Electric Enterprises logo files
+#   assets/images/    product photography, category images, banners
+#   assets/image-sources.md   image licence + attribution record
+# ==========================================================================
