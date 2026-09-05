@@ -434,7 +434,7 @@
   border: 1px solid var(--border);
   border-radius: var(--r-md);
 }
-.cat-hero__art img { max-height: 150px; }
+.cat-hero__art img { max-height: 150px; max-width: 100%; width: auto; height: auto; }
 
 
 /* ==========================================================================
