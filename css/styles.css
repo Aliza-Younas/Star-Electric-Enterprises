@@ -446,6 +446,16 @@ body.no-scroll { overflow: hidden; }
 }
 .price--lg .price__old { font-size: 16px; }
 
+/* Honest empty state wherever a product's source published no image.
+   Never replaced by a stock photo, category icon or generated render. */
+.thumb-none {
+  display: grid; place-items: center; width: 100%; height: 100%;
+  font-size: 10.5px; line-height: 1.2; text-align: center;
+  color: var(--text-faint); background: var(--surface-soft);
+  border-radius: var(--r-sm, 6px);
+}
+
+
 
 /* ==========================================================================
    07  FORMS

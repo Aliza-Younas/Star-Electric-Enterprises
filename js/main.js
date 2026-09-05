@@ -25,6 +25,16 @@
   function on(el, ev, fn) { if (el) { el.addEventListener(ev, fn); } }
   function closest(t, sel) { return t && t.closest ? t.closest(sel) : null; }
 
+  /* A thumbnail is rendered only when the product's own source published an
+     image. Otherwise an honest empty state is shown - never a stand-in photo. */
+  function thumb(p, cls) {
+    var src = D.productImage(p);
+    if (!src) {
+      return '<span class="thumb-none ' + (cls || "") + '" aria-hidden="true">No image</span>';
+    }
+    return '<img class="' + (cls || "") + '" src="' + UI.esc(src) + '" alt="" loading="lazy" aria-hidden="true">';
+  }
+
   /* ======================================================================
      1. DEMO STORE (cart + wishlist)
      localStorage is a per-viewer convenience only; every access is guarded
@@ -53,12 +63,11 @@
        account screens can be reviewed in a populated state. */
     if (!mem.seeded) {
       mem.seeded = true;
-      mem.cart = [
-        { id: "SEE-1001", qty: 2, variant: "1.5mm" },
-        { id: "SEE-3001", qty: 4, variant: "32A" },
-        { id: "SEE-4001", qty: 6, variant: "12W" }
-      ];
-      mem.wishlist = ["SEE-5001", "SEE-4004"];
+      var seed = (D.PRODUCTS || []).filter(function (p) {
+        return p.price !== null && p.stock !== "out";
+      }).slice(0, 3);
+      mem.cart = seed.map(function (p, i) { return { id: p.id, qty: i + 1, variant: "" }; });
+      mem.wishlist = seed.slice(0, 2).map(function (p) { return p.id; });
       write();
     }
 
@@ -251,7 +260,7 @@
         html += '<p class="suggest__head">Products</p>';
         html += hits.map(function (p) {
           return '<a class="suggest__item" href="product.html?id=' + encodeURIComponent(p.id) + '">' +
-                   '<img src="' + D.imageUrl(p.img) + '" alt="" aria-hidden="true">' +
+                   thumb(p, "suggest__img") +
                    "<span>" + UI.esc(p.name) + "</span>" +
                    '<span class="suggest__cat">' + UI.esc(D.categoryName(p.cat)) + "</span>" +
                  "</a>";
@@ -265,7 +274,7 @@
         }).join("");
       }
       if (!html) {
-        html = '<p class="suggest__empty">No demo products match &ldquo;' + UI.esc(q) +
+        html = '<p class="suggest__empty">No products match &ldquo;' + UI.esc(q) +
                '&rdquo;. Try &ldquo;cable&rdquo;, &ldquo;switch&rdquo; or &ldquo;LED&rdquo;.</p>';
       }
       box.innerHTML = html;
@@ -319,12 +328,15 @@
 
       $("#qvBody").innerHTML =
         '<div class="modal__grid">' +
-          '<div class="modal__media"><img src="' + D.imageUrl(p.img) + '" alt="' + UI.esc(p.name) + '" decoding="async"></div>' +
+          '<div class="modal__media">' +
+            (D.productImage(p)
+              ? '<img src="' + UI.esc(D.productImage(p)) + '" alt="' + UI.esc(p.name) + '" decoding="async">'
+              : '<span class="pcard__noimg">Product image unavailable</span>') +
+          "</div>" +
           '<div class="modal__body">' +
             '<p class="pcard__meta"><span class="pcard__brand">' + UI.esc(D.brandName(p.brand)) + "</span>" +
               '<span class="pcard__cat">' + UI.esc(D.categoryName(p.cat)) + "</span></p>" +
             "<h2 id=\"qvTitle\" style=\"font-size:21px\">" + UI.esc(p.name) + "</h2>" +
-            '<div class="rating">' + UI.stars(p.rating) + '<span class="rating__count">(no reviews yet)</span></div>' +
             '<p class="price price--lg"><span class="price__now">' + UI.money(p.price) + "</span>" +
               (p.oldPrice ? '<span class="price__old">' + UI.money(p.oldPrice) + "</span>" : "") +
               (off ? '<span class="price__off">Save ' + off + "%</span>" : "") + "</p>" +
@@ -517,7 +529,7 @@
        because no approved source ranks sales. */
     fill("#featuredGrid", D.featured(8));
     fill("#bestGrid", D.withPhotos(8));
-    fill("#newGrid", D.featured(16).slice(8, 16));
+    fill("#newGrid", D.byTag("quote", 8));
     fill("#dealsGrid", D.deals(4));
 
     /* Hero campaign rotator */
@@ -556,7 +568,7 @@
       cats: opts.cat ? [opts.cat] : [],
       subs: opts.sub ? [opts.sub] : [],
       brands: opts.brand ? [opts.brand] : [],
-      stock: [], rating: 0, type: [], pricing: [],
+      stock: [], type: [], pricing: [],
       min: null, max: null,
       sort: "relevance",
       view: "grid",
@@ -603,7 +615,6 @@
           return (b.price === null ? -1 : b.price) - (a.price === null ? -1 : a.price); });
       }
       else if (state.sort === "name") { l.sort(function (a, b) { return a.name.localeCompare(b.name); }); }
-      else if (state.sort === "rating") { l.sort(function (a, b) { return a.name.localeCompare(b.name); }); }
       else if (state.sort === "discount") {
         l.sort(function (a, b) { return (b.discountPercent || 0) - (a.discountPercent || 0); });
       }
@@ -635,15 +646,30 @@
       if (pager) {
         if (pages <= 1) { pager.innerHTML = ""; }
         else {
+          /* The real catalogue runs to thousands of products, so the pager is
+             windowed: first, last, and the pages either side of the current
+             one. Printing every page number would overflow the bar. */
           var html = "";
           html += state.page > 1
             ? '<a href="#" data-page="' + (state.page - 1) + '">Prev</a>'
             : '<span class="is-gap">Prev</span>';
-          for (var n = 1; n <= pages; n++) {
+
+          var wanted = {};
+          wanted[1] = true; wanted[pages] = true;
+          for (var d = -2; d <= 2; d++) {
+            var w = state.page + d;
+            if (w >= 1 && w <= pages) { wanted[w] = true; }
+          }
+          var nums = Object.keys(wanted).map(Number).sort(function (a, b) { return a - b; });
+          var prevNum = 0;
+          nums.forEach(function (n) {
+            if (prevNum && n > prevNum + 1) { html += '<span class="is-gap">&hellip;</span>'; }
             html += n === state.page
               ? '<span class="is-current">' + n + "</span>"
               : '<a href="#" data-page="' + n + '">' + n + "</a>";
-          }
+            prevNum = n;
+          });
+
           html += state.page < pages
             ? '<a href="#" data-page="' + (state.page + 1) + '">Next</a>'
             : '<span class="is-gap">Next</span>';
@@ -742,7 +768,7 @@
         if (t === "price") { state.min = null; state.max = null; }
         $$("[data-filter]").forEach(function (o) {
           if (o.type === "checkbox" && o.value === v) { o.checked = false; }
-          if (o.getAttribute("data-filter") === "rating") { o.checked = false; }
+          if (o.getAttribute("data-filter") === "pricing") { o.checked = false; }
           if (t === "price" && (o.getAttribute("data-filter") === "min" || o.getAttribute("data-filter") === "max")) { o.value = ""; }
         });
         state.page = 1;
@@ -830,7 +856,8 @@
         '<label class="sr-only" for="' + uid + '-max">Maximum price</label>' +
         '<input class="input" id="' + uid + '-max" type="number" min="0" placeholder="Max" data-filter="max">' +
       "</div>" +
-      '<p class="field__hint" style="margin-top:8px">Prices in PKR. Demo values only.</p>';
+      '<p class="field__hint" style="margin-top:8px">Prices in PKR, exactly as published by each ' +
+        "product's own source.</p>";
 
     var stock = ["in", "out", "unknown"].map(function (s) {
       return '<label class="filter-opt"><input type="checkbox" data-filter="stock" value="' + s + '">' +
@@ -840,7 +867,7 @@
 
     /* No approved source publishes ratings, so a star filter would be fabricated.
        Filter by how the product is sold instead. */
-    var rating =
+    var pricing =
       '<label class="filter-opt"><input type="checkbox" data-filter="pricing" value="priced">' +
         '<span>Has a published price</span><span class="count">' +
         D.PRODUCTS.filter(function (x) { return x.price !== null; }).length + "</span></label>" +
@@ -865,7 +892,7 @@
            group("brand", "Brands", brands, true) +
            group("price", "Price", price, true) +
            group("stock", "Availability", stock, true) +
-           group("rating", "Rating", rating, false) +
+           group("pricing", "How it is sold", pricing, false) +
            group("type", "Product type", types, false);
   }
 
@@ -908,6 +935,27 @@
     $$('[data-filter="cat"][value="' + slug + '"]').forEach(function (o) { o.checked = true; });
     if (c) { c.render(); }
 
+    /* Families in this category are shown below the products, clearly separated
+       from them, because they are not individually purchasable items. */
+    var fsec = $("#catFamilySection");
+    var flist = $("#catFamilyList");
+    if (fsec && flist) {
+      var fams = D.familiesForCategory(slug);
+      var byBrand = {};
+      fams.forEach(function (f) {
+        /* Electro Traders' six brand pages all return the same list, so the
+           brand behind those ranges could not be established from the source
+           and is not guessed here. */
+        var key = (!f.brand || f.brand === "Not specified") ? "Brand not stated by source" : f.brand;
+        (byBrand[key] = byBrand[key] || []).push(f);
+      });
+      var names = Object.keys(byBrand).sort();
+      flist.innerHTML = names.map(function (n) {
+        return UI.renderFamilyPanel(n, byBrand[n], byBrand[n][0].reason || "");
+      }).join("");
+      fsec.hidden = names.length === 0;
+    }
+
     var side = initSideDrawer("filterDrawer");
     on($("#filterOpen"), "click", function (e) { e.preventDefault(); if (side) { side.open(); } });
   };
@@ -945,8 +993,29 @@
   PAGES.product = function () {
     var id = param("id");
     var light = id ? D.productById(id) : null;
-    if (!light) { light = D.PRODUCTS[0]; id = light && light.id; }
-    if (!light) { return; }
+
+    /* An unknown id must never be answered with a different product: that would
+       show one product's price and specification under another one's link. */
+    if (!light) {
+      var main = $("#main");
+      var fam = id ? D.familyById(id) : null;
+      if (main) {
+        main.innerHTML =
+          '<section class="section"><div class="container">' +
+            UI.renderEmpty("box", fam ? "That is a product range, not a single product"
+                                      : "Product not found",
+              fam ? fam.name + " is a range published by " + fam.sourceDomain +
+                    ", which does not list its individual products. Ask us about the range and " +
+                    "we will quote against the rating or size you need."
+                  : "We could not find that product in the catalogue. It may have been removed " +
+                    "from the source it came from.",
+              fam ? "quote-request.html?family=" + encodeURIComponent(fam.id) : "shop.html",
+              fam ? "Ask about this range" : "Browse the catalogue") +
+          "</div></section>";
+      }
+      document.title = (fam ? fam.name : "Product not found") + " — Star Electric Enterprises";
+      return;
+    }
 
     renderProductShell(light, null);          // paint immediately from the index
     D.loadDetail(id, function (full) {        // then enrich from the source record
@@ -973,21 +1042,30 @@
       bc.innerHTML = UI.renderBreadcrumb(items);
     }
 
-    /* ---- gallery: real source images only ---- */
+    /* ---- gallery ----
+       Only images downloaded from this product's own approved source are shown.
+       Remote URLs are never hotlinked, no category icon or stock photograph is
+       substituted, and where the source published nothing the gallery says so. */
     var gallery = [];
     if (full && full.images) {
       if (full.images.featured) { gallery.push(full.images.featured); }
       (full.images.gallery || []).forEach(function (g) { gallery.push(g); });
-      if (!gallery.length) {
-        (full.images.remote || []).forEach(function (g) { gallery.push(g); });
+    }
+    if (!gallery.length && p.img) { gallery.push(D.productImage(p)); }
+    var main = $("#galleryMain");
+    var noImg = $("#galleryNoImage");
+    if (main) {
+      if (gallery.length) {
+        main.src = gallery[0];
+        main.alt = p.name;
+        main.hidden = false;
+        if (noImg) { noImg.hidden = true; }
+      } else {
+        main.removeAttribute("src");
+        main.hidden = true;
+        if (noImg) { noImg.hidden = false; }
       }
     }
-    if (!gallery.length) {
-      var fb = D.productImage(p);
-      if (fb) { gallery.push(fb); }
-    }
-    var main = $("#galleryMain");
-    if (main && gallery.length) { main.src = gallery[0]; main.alt = p.name; }
     var thumbs = $("#galleryThumbs");
     if (thumbs) {
       thumbs.innerHTML = gallery.length > 1 ? gallery.map(function (g, i) {
@@ -1052,7 +1130,11 @@
       var vars = (full && full.variations) || [];
       if (vars.length) {
         varWrap.hidden = false;
-        var optName = Object.keys(vars[0].options || {})[0] || "Option";
+        /* Swatch values are the source's own variant names. When a variant
+           combines more than one option axis its name already spells them out,
+           so the group is labelled generically rather than by one axis. */
+        var optKeys = Object.keys(vars[0].options || {});
+        var optName = optKeys.length === 1 ? optKeys[0] : (optKeys.length ? "Options" : "Option");
         chosen = vars[0].name;
         varWrap.innerHTML =
           '<div class="variation">' +
@@ -1189,17 +1271,37 @@
     var letter = "";
     var query = "";
 
+    /* Only brands that actually have verified individual products get a
+       shoppable tile. Brands whose source publishes ranges only are listed
+       separately, as families, and are never presented as products. */
+    function matches(b) {
+      if (letter && b.name.charAt(0).toUpperCase() !== letter) { return false; }
+      if (query && b.name.toLowerCase().indexOf(query.toLowerCase()) === -1) { return false; }
+      return true;
+    }
+
     function render() {
-      var list = D.BRANDS.filter(function (b) {
-        if (letter && b.name.replace(/^Placeholder\s+Brand\s+/i, "").charAt(0).toUpperCase() !== letter) { return false; }
-        if (query && b.name.toLowerCase().indexOf(query.toLowerCase()) === -1) { return false; }
-        return true;
-      });
-      grid.innerHTML = list.length ? list.map(UI.renderBrandCard).join("") : "";
+      var shoppable = D.BRANDS.filter(function (b) { return b.count > 0 && matches(b); });
+      var familyOnly = D.BRANDS.filter(function (b) { return b.count === 0 && matches(b); });
+
+      grid.innerHTML = shoppable.length ? shoppable.map(UI.renderBrandCard).join("") : "";
       var empty = $("#brandEmpty");
-      if (empty) { empty.hidden = list.length > 0; }
+      if (empty) { empty.hidden = shoppable.length > 0 || familyOnly.length > 0; }
       var cnt = $("#brandCount");
-      if (cnt) { cnt.textContent = list.length + " brand placeholders"; }
+      if (cnt) {
+        cnt.textContent = shoppable.length + (shoppable.length === 1 ? " brand" : " brands") +
+          " with individual products" +
+          (familyOnly.length ? " · " + familyOnly.length + " listed at family level" : "");
+      }
+
+      var fs = $("#familySection");
+      var fd = $("#familyDirectory");
+      if (fs && fd) {
+        fd.innerHTML = familyOnly.map(function (b) {
+          return UI.renderFamilyPanel(b.name, D.familiesForBrand(b.slug), b.note);
+        }).join("");
+        fs.hidden = familyOnly.length === 0;
+      }
     }
 
     var az = $("#azBar");
@@ -1207,7 +1309,7 @@
       var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
       var available = {};
       D.BRANDS.forEach(function (b) {
-        available[b.name.replace(/^Placeholder\s+Brand\s+/i, "").charAt(0).toUpperCase()] = true;
+        available[b.name.charAt(0).toUpperCase()] = true;
       });
       az.innerHTML = '<button type="button" data-letter="" aria-pressed="true">All</button>' +
         letters.map(function (l) {
@@ -1249,7 +1351,7 @@
       return "<tr>" +
         '<td class="td-full">' +
           '<div class="cart-item">' +
-            '<span class="cart-item__img"><img src="' + D.imageUrl(p.img) + '" alt="' + UI.esc(p.name) + '" loading="lazy"></span>' +
+            '<span class="cart-item__img">' + thumb(p) + "</span>" +
             "<span>" +
               '<span class="cart-item__name"><a href="product.html?id=' + encodeURIComponent(p.id) + '">' +
                 UI.esc(p.name) + "</a></span>" +
@@ -1309,7 +1411,7 @@
         return "<tr>" +
           '<td class="td-full">' +
             '<div class="cart-item">' +
-              '<span class="cart-item__img"><img src="' + D.imageUrl(p.img) + '" alt="' + UI.esc(p.name) + '" loading="lazy"></span>' +
+              '<span class="cart-item__img">' + thumb(p) + "</span>" +
               "<span>" +
                 '<span class="cart-item__name"><a href="product.html?id=' + encodeURIComponent(p.id) + '">' +
                   UI.esc(p.name) + "</a></span>" +
@@ -1387,7 +1489,7 @@
 
     wrap.innerHTML = lines.map(function (x) {
       return '<div class="mini-item">' +
-        '<span class="mini-item__img"><img src="' + D.imageUrl(x.product.img) + '" alt="' + UI.esc(x.product.name) + '" loading="lazy"></span>' +
+        '<span class="mini-item__img">' + thumb(x.product) + "</span>" +
         "<span>" +
           '<span class="mini-item__name">' + UI.esc(x.product.name) + "</span>" +
           '<span class="mini-item__qty">Qty ' + x.line.qty +
@@ -1480,6 +1582,43 @@
     });
   };
 
+  /* ---------- QUOTE REQUEST ----------
+     Prefills the requirement box when the visitor arrives from a product or
+     from a product family. Only what the source itself publishes is written
+     in: name, model, SKU or family name, plus the source page. */
+  PAGES.quote = function () {
+    var box = $("#qItems");
+    if (!box) { return; }
+    var pid = param("product");
+    var fid = param("family");
+    var lines = [];
+
+    if (pid) {
+      var p = D.productById(pid);
+      if (p) {
+        lines.push(p.name);
+        if (p.brand) { lines.push("Brand: " + D.brandName(p.brand)); }
+        if (p.model) { lines.push("Model: " + p.model); }
+        if (p.sku) { lines.push("SKU: " + p.sku); }
+      }
+    } else if (fid) {
+      var f = D.familyById(fid);
+      if (f) {
+        lines.push(f.name + " (product range)");
+        if (f.brand) { lines.push("Brand: " + f.brand); }
+        if (f.series) { lines.push("Series: " + f.series); }
+        lines.push("The source publishes this as a range rather than individual " +
+                   "products, so please tell us the rating, size or model you need.");
+      }
+    }
+
+    if (lines.length && !box.value.trim()) {
+      box.value = lines.join("\n") + "\n\nQuantity required: ";
+      box.focus();
+      try { box.setSelectionRange(box.value.length, box.value.length); } catch (e) { /* ignore */ }
+    }
+  };
+
   /* ======================================================================
      6. BOOT
      ====================================================================== */
@@ -1500,6 +1639,7 @@
       home: PAGES.home, shop: PAGES.shop, category: PAGES.category,
       product: PAGES.product, search: PAGES.search, deals: PAGES.deals,
       brands: PAGES.brands, wishlist: PAGES.wishlist, cart: PAGES.cart,
+      quote: PAGES.quote,
       checkout: PAGES.checkout, account: PAGES.account, track: PAGES.track,
       faq: PAGES.faq
     };

@@ -73,7 +73,6 @@
                 <option value="price-asc">Price: Low to High</option>
                 <option value="price-desc">Price: High to Low</option>
                 <option value="name">Name: A to Z</option>
-                <option value="rating">Rating</option>
                 <option value="discount">Biggest Discount</option>
               </select>
               <div class="view-toggle" role="group" aria-label="Product view">
@@ -97,12 +96,24 @@
                 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.2v9.6L12 21l-8-4.2V7.2Z"/><path d="m4 7.2 8 4.3 8-4.3M12 21v-9.5"/></svg>
               </span>
               <h2>Nothing in this selection yet</h2>
-              <p>No demo products match the current filters for this category.</p>
+              <p>No products match the current filters for this category.</p>
               <button class="btn btn--accent" type="button" data-clear-all>Clear all filters</button>
             </div>
           </div>
 
           <nav class="pagination" id="pagination" aria-label="Product pages" style="margin-top:32px"></nav>
+
+          <!-- Ranges published by a source without individual product pages.
+               Navigation and enquiry only - never priced, never added to cart. -->
+          <section class="panel" id="catFamilySection" style="margin-top:32px" hidden>
+            <h2 class="section__title" style="font-size:20px" id="catFamilyTitle">Ranges listed at family level</h2>
+            <p class="t-sm t-muted" style="margin:8px 0 20px">
+              For these ranges the approved source does not publish individual product pages, so
+              they are not listed as products. Tell us the rating or size you need and we will
+              quote against it.
+            </p>
+            <div id="catFamilyList"></div>
+          </section>
         </div>
       </div>
     </div>
@@ -143,6 +154,7 @@
 </button>
 
 <script src="data/catalogue-index.js"></script>
+  <script src="data/families.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>

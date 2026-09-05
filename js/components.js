@@ -82,14 +82,8 @@ window.SEE_UI = (function () {
     return '<svg class="ico ' + (cls || "") + '" viewBox="0 0 24 24" aria-hidden="true">' + body + "</svg>";
   }
 
-  function stars(rating, cls) {
-    var out = '<span class="stars ' + (cls || "") + '" aria-hidden="true">';
-    for (var i = 1; i <= 5; i++) {
-      out += '<svg viewBox="0 0 24 24" class="' + (i <= Math.round(rating) ? "is-on" : "") + '">' +
-             ICONS.star + "</svg>";
-    }
-    return out + "</span>";
-  }
+  /* There is no star-rating renderer. No approved source publishes ratings or
+     reviews, so the storefront has no way to draw one honestly. */
 
   /* ----------------------------------------------------------------------
      Primary navigation definition (single source of truth)
@@ -412,7 +406,7 @@ window.SEE_UI = (function () {
         "</div>" +
         '<a href="' + href + '" tabindex="-1">' +
           (img ? '<img src="' + esc(img) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async" width="1200" height="900">'
-               : '<span class="pcard__noimg">No image published by source</span>') +
+               : '<span class="pcard__noimg">Product image unavailable</span>') +
         "</a>" +
       "</div>" +
 
@@ -454,11 +448,38 @@ window.SEE_UI = (function () {
   }
 
   function renderBrandCard(b) {
+    var n = b.count || 0;
     return '<li><a class="brand-card" href="shop.html?brand=' + esc(b.slug) + '">' +
              '<span class="brand-card__mark" aria-hidden="true">' + esc(b.mark) + "</span>" +
              '<span class="brand-card__name">' + esc(b.name) + "</span>" +
-             '<span class="brand-card__note">logo placeholder</span>' +
+             '<span class="brand-card__note">' + n + (n === 1 ? " product" : " products") + "</span>" +
            "</a></li>";
+  }
+
+  /* ----------------------------------------------------------------------
+     PRODUCT FAMILY PANEL
+     A family is a range name the source publishes with no item-level model,
+     specification, image or price behind it. It is rendered as navigation and
+     enquiry only: no price, no stock pill, no add-to-cart, no product link.
+     ---------------------------------------------------------------------- */
+  function renderFamilyPanel(brandName, list, note) {
+    var items = list.map(function (f) {
+      return '<li class="family-item">' +
+               '<span class="family-item__name">' + esc(f.name) + "</span>" +
+               (f.series ? '<span class="family-item__series">Series: ' + esc(f.series) + "</span>" : "") +
+               (f.summary ? '<span class="family-item__sum">' + esc(f.summary) + "</span>" : "") +
+               '<span class="family-item__links">' +
+                 '<a href="quote-request.html?family=' + encodeURIComponent(f.id) + '">Ask about this range</a>' +
+                 '<a href="' + esc(f.sourceUrl) + '" rel="nofollow noopener" target="_blank">Source: ' +
+                   esc(f.sourceDomain) + "</a>" +
+               "</span>" +
+             "</li>";
+    }).join("");
+    return '<article class="panel family-panel">' +
+             '<h3 class="family-panel__title">' + esc(brandName) + "</h3>" +
+             (note ? '<p class="family-panel__note">' + esc(note) + "</p>" : "") +
+             '<ul class="family-list">' + items + "</ul>" +
+           "</article>";
   }
 
   function renderSubcatCard(catSlug, s) {
@@ -489,10 +510,11 @@ window.SEE_UI = (function () {
 
   return {
     esc: esc, money: money, discount: discount, STOCK: STOCK,
-    icon: icon, stars: stars, NAV: NAV, LOGO: LOGO,
+    icon: icon, NAV: NAV, LOGO: LOGO,
     renderHeader: renderHeader, renderDrawer: renderDrawer, renderFooter: renderFooter,
     renderProductCard: renderProductCard, renderProductGrid: renderProductGrid,
     renderCategoryCard: renderCategoryCard, renderBrandCard: renderBrandCard,
+    renderFamilyPanel: renderFamilyPanel,
     renderSubcatCard: renderSubcatCard, renderBreadcrumb: renderBreadcrumb,
     renderEmpty: renderEmpty
   };

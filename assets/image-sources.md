@@ -6,6 +6,26 @@ keep it updated whenever an image is added or replaced.
 
 ---
 
+## Product photography (added later, see `product-image-sources.md`)
+
+The policy above describes the **decorative and category** imagery on this site:
+hero banners, category tiles and illustrative photographs, all from Wikimedia
+Commons under CC licences.
+
+It does **not** cover product photography. Individual products in the catalogue
+now show the actual image published by that product's own approved supplier
+source, downloaded locally rather than hotlinked. Those files live in
+`assets/images/products/<source>/` and every one is recorded, with its original
+image URL and product page, in **`assets/product-image-sources.md`**.
+
+Permission and licensing for that supplier photography should be confirmed with
+each supplier before production use. Where a source publishes no photograph for
+a product, the storefront shows a "Product image unavailable" state — no stock
+photograph, category icon, generated render or substitute from another retailer
+is used in its place.
+
+---
+
 ## 1. Sourcing policy actually applied
 
 The brief asked for manufacturer product photography first. That route was

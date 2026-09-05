@@ -31,7 +31,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/coarts-highbay-eleva-eco-gen-3-led-light-coarts-highb.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_660f19904f114e5c89931342d7b40b71~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -45,7 +45,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-noctambule-floor-cylinder-lamp",
@@ -79,8 +81,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/noctambule-floor-cylinder-lamp-noctambule-f.webp",
+   "gallery": [
+    "assets/images/products/coarts/noctambule-floor-cylinder-lamp-noctambule-f-1.webp",
+    "assets/images/products/coarts/noctambule-floor-cylinder-lamp-noctambule-f-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b6cc0befd7c94629b23b1fa0a3cea759~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_329c53d4e8614872b16b2ed64a246402~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -97,7 +102,9 @@
   "shortDescription": "Noctambule floor cylinder lamp combines beauty, functionality, and innovation.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-10a-smart-plug",
@@ -131,8 +138,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/10a-smart-plug-10a-smart-pl.webp",
+   "gallery": [
+    "assets/images/products/coarts/10a-smart-plug-10a-smart-pl-1.webp",
+    "assets/images/products/coarts/10a-smart-plug-10a-smart-pl-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ee8dbb096f5e43b3b8a9cf715a1b95a4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_ec953d87737545c683651cbf8e527f00~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -149,7 +159,9 @@
   "shortDescription": "The Coarts-Bluedot smart plug is so smart, you can pair it with a vast variety of household products, including your phone chargers and lamp It is voice and app controlled and supported by Google Home",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-azzuro-led-wall-light",
@@ -183,7 +195,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/azzuro-led-wall-light-azzuro-led-w.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_05497abb68bc4419bb6a9443740280da~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -197,7 +209,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-roadster-led-light",
@@ -231,7 +245,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/roadster-led-light-roadster-led.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_2fe47dafcb274b468e3aa60fbc438be8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -245,7 +259,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-thunder-highbay",
@@ -279,8 +295,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/thunder-highbay-160lum-thunder-high.webp",
+   "gallery": [
+    "assets/images/products/coarts/thunder-highbay-160lum-thunder-high-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ebf4c881224948fe87c1fd5b24c900b9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8cf8f8f469ce487ba84b28c890e65690~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -294,7 +312,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-coarts-firefly-2-emergency-light",
@@ -328,7 +348,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/coarts-firefly-2-emergency-light-coarts-firef.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c925a019174245c3a8f92aec108f201d~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -342,7 +362,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-20th-century-black-wall-sconce",
@@ -376,8 +398,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/20th-century-black-wall-sconce-20th-century.webp",
+   "gallery": [
+    "assets/images/products/coarts/20th-century-black-wall-sconce-20th-century-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_28188c8e30f14fc8956efb2440d200c7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8dc68c66568a474ca7f2371ad0f46cea~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -391,7 +415,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-aqua-led-panel",
@@ -425,8 +451,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/aqua-led-panel-aqua-led-pan.webp",
+   "gallery": [
+    "assets/images/products/coarts/aqua-led-panel-aqua-led-pan-1.webp",
+    "assets/images/products/coarts/aqua-led-panel-aqua-led-pan-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_cba969cec036454aab16da3bb2626029~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_17d2a95b1ad74633bef69f1ec9251e49~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -442,7 +471,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-wavy-magma-floor-lamp",
@@ -476,8 +507,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/wavy-magma-floor-lamp-wavy-magma-f.webp",
+   "gallery": [
+    "assets/images/products/coarts/wavy-magma-floor-lamp-wavy-magma-f-1.webp",
+    "assets/images/products/coarts/wavy-magma-floor-lamp-wavy-magma-f-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_46c76e8711a3430fb55eeb831c5b4a15~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_a06a89b8102f438e9edd78149ecd4394~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -493,7 +527,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-hydro-nano-led-inground-light",
@@ -527,7 +563,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/hydro-nano-led-inground-light-hydro-nano-l.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_646af10c07c34849b2cbc1a318e22d02~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -541,7 +577,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-surface-downlight-round",
@@ -575,8 +613,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/round-surface-downlight-surface-down.webp",
+   "gallery": [
+    "assets/images/products/coarts/round-surface-downlight-surface-down-1.webp",
+    "assets/images/products/coarts/round-surface-downlight-surface-down-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_fcf485dba9c0410a9e0c0d2158630199~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_fbc567fc843044ee95da34c0aa091280~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -592,7 +633,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-sigma-led-spot",
@@ -626,8 +669,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/sigma-led-spot-sigma-led-sp.webp",
+   "gallery": [
+    "assets/images/products/coarts/sigma-led-spot-sigma-led-sp-1.webp",
+    "assets/images/products/coarts/sigma-led-spot-sigma-led-sp-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_eef3b0304ca947398dc2f1981796f523~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_f9394421d775426c9389e4481d3698d3~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -643,7 +689,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-spike-solar-motion-sensor-led",
@@ -677,8 +725,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/spike-solar-motion-sensor-led-spike-solar-.webp",
+   "gallery": [
+    "assets/images/products/coarts/spike-solar-motion-sensor-led-spike-solar--1.webp",
+    "assets/images/products/coarts/spike-solar-motion-sensor-led-spike-solar--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9cbcdfe092b14c26a1381f008e1815d7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_07a1b49a032e4e0fae34b68cee0cdba8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -694,7 +745,9 @@
   "shortDescription": "The Spike inground Solar Motion Sensor LED is the perfect light for your outdoor space.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-miracle-led-downlight-1",
@@ -728,7 +781,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/miracle-led-downlight-miracle-led-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_23157b625f514702992eb5c09cceb8a2~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -742,7 +795,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-decorative-led-hanging-bulbs",
@@ -776,8 +831,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/decorative-led-hanging-bulbs-decorative-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/decorative-led-hanging-bulbs-decorative-l-1.webp",
+    "assets/images/products/coarts/decorative-led-hanging-bulbs-decorative-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_27312dab6ed9471f86528590cd8ab8ac~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_c988ae00a5664aff9e8ac4502330c2ca~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -791,7 +849,9 @@
   "shortDescription": "Fairy light inside an incandescent light bulb casing is your ultimate way to give your spaces a breathtaking appearance. Easily switched on and off and can be installed anywhere you want.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-rope-glass-scandinavian-pendant-lights",
@@ -825,8 +885,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/rope-glass-scandinavian-pendant-lights-rope-glass-s.webp",
+   "gallery": [
+    "assets/images/products/coarts/rope-glass-scandinavian-pendant-lights-rope-glass-s-1.webp",
+    "assets/images/products/coarts/rope-glass-scandinavian-pendant-lights-rope-glass-s-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_db555a27950c452e847911276644506a~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_f2bb5690ccf44a0d8b6ea466166879d1~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -843,7 +906,9 @@
   "shortDescription": "This elegant light pendant is the perfect way to add a touch of sophistication to any room. Not only do they look cool hanging, but they also cast a warm, soft glow on those below it.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-sky-eco-led-inground-light",
@@ -877,7 +942,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/sky-eco-led-inground-light-sky-eco-led-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_53bb41ea0b214731bc297f0665f52fa4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -891,7 +956,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-curtain-wifi-switch",
@@ -925,8 +992,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/curtain-wifi-switch-curtain-wifi.webp",
+   "gallery": [
+    "assets/images/products/coarts/curtain-wifi-switch-curtain-wifi-1.webp",
+    "assets/images/products/coarts/curtain-wifi-switch-curtain-wifi-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_02dd34a60cc74d41a22aebcbf128f4c6~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_a41b4dc8bdd04bf6b83baffbd5826d03~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -944,7 +1014,9 @@
   "shortDescription": "Using the Smart Life app on your smartphone or voice control through the Amazon Alexa or Google Home, you can control switches from anywhere using this technology.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-hydralux-06e-tri-proof-led-batten-light",
@@ -978,7 +1050,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/hydralux-06e-tri-proof-led-batten-light-hydralux-06e.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_6c534a28a25940049f8d23305598da22~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -992,7 +1064,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-3-gang-switch",
@@ -1026,8 +1100,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/3-gang-switch-3-gang-switc.webp",
+   "gallery": [
+    "assets/images/products/coarts/3-gang-switch-3-gang-switc-1.webp",
+    "assets/images/products/coarts/3-gang-switch-3-gang-switc-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_30672b4b30ae4d939c39892cff2ada5c~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8c78e9e7b2e0485bbeb8a18a423b224e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -1043,7 +1120,9 @@
   "shortDescription": "With this 3 gang switch technology, you can manage lights from anywhere using the Smart Life app on your smartphone or voice commands with Amazon Alexa and Google Home.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-outdoor-light-downtown",
@@ -1077,8 +1156,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/downtown-outdoor-ligh.webp",
+   "gallery": [
+    "assets/images/products/coarts/downtown-outdoor-ligh-1.webp",
+    "assets/images/products/coarts/downtown-outdoor-ligh-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_867ccc338577445298fdb70f8f4e6e47~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_6889233cf0114c5a9fbf9c337d344c6f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -1094,7 +1176,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-crystal-nova",
@@ -1128,8 +1212,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/crystal-nova-crystal-nova.webp",
+   "gallery": [
+    "assets/images/products/coarts/crystal-nova-crystal-nova-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_3d9162cdb405402b83b57c1b15b9bf7a~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_ee2045edefd54ffdbe9f68f11452e344~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -1143,7 +1229,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-2-gang-switch",
@@ -1177,8 +1265,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/2-gang-switch-2-gang-switc.webp",
+   "gallery": [
+    "assets/images/products/coarts/2-gang-switch-2-gang-switc-1.webp",
+    "assets/images/products/coarts/2-gang-switch-2-gang-switc-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_fdc4b70d398547c8b2a34ffe130ef489~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_89c0a3516f1341d2a232cc68b817acb7~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -1194,7 +1285,9 @@
   "shortDescription": "With this 2 gang switch technology, you can control lights from anywhere using your smartphone and the Smart Life app, or via voice control with Amazon Alexa and Google Home.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-trapped-nordic-pendant-light",
@@ -1228,8 +1321,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/trapped-nordic-pendant-light-trapped-nord.webp",
+   "gallery": [
+    "assets/images/products/coarts/trapped-nordic-pendant-light-trapped-nord-1.webp",
+    "assets/images/products/coarts/trapped-nordic-pendant-light-trapped-nord-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c4719e31721e4e14bf5bde0ff18282c5~mv2.webp/v1/fit/w_500,h_500,q_90/file.webp",
     "https://static.wixstatic.com/media/21be31_67715a7315d24423aa6a1119d4c23c28~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -1244,7 +1340,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-mini-vessel-solar-hanging-light",
@@ -1278,8 +1376,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/mini-vessel-solar-hanging-light-mini-vessel-.webp",
+   "gallery": [
+    "assets/images/products/coarts/mini-vessel-solar-hanging-light-mini-vessel--1.webp",
+    "assets/images/products/coarts/mini-vessel-solar-hanging-light-mini-vessel--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_aa76c20990144224ab154ba5117d175a~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_85f9ed9c7a3e43feac37331e025cab3b~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -1296,7 +1397,9 @@
   "shortDescription": "This jar-shaped light is a beautiful piece of decor that you can hang in your gardens and pathways to create a cool and calming environment for yourself as well as your visitors.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-high-res-solar-light",
@@ -1330,8 +1433,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/high-res-solar-light-high-res-sol.webp",
+   "gallery": [
+    "assets/images/products/coarts/high-res-solar-light-high-res-sol-1.webp",
+    "assets/images/products/coarts/high-res-solar-light-high-res-sol-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a93096a88a144e92a2a2708e85102a1c~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_86dc6e1ee7b9432a8b0b8bdbc4c46f8b~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -1348,7 +1454,9 @@
   "shortDescription": "This high res solar light is super sharp and emits high-resolution light making it best for security and night surveillance purposes. Features: Installation is simple. Guaranteed durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-grace-downlight",
@@ -1382,7 +1490,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/grace-downlight-grace-downli.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_24e11a82ebf84ba093a69a641ce45bb6~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -1396,7 +1504,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-elite-back-lit-wall-light",
@@ -1430,8 +1540,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/elite-back-lit-wall-light-elite-back-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/elite-back-lit-wall-light-elite-back-l-1.webp",
+    "assets/images/products/coarts/elite-back-lit-wall-light-elite-back-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_af696d724dd94cc389f52c3f8ad6f1cf~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_b0795633eb4a43d1946f0add43d84857~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -1453,7 +1566,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-captain-flint-table-lamp",
@@ -1487,8 +1602,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/captain-flint-table-lamp-captain-flin.webp",
+   "gallery": [
+    "assets/images/products/coarts/captain-flint-table-lamp-captain-flin-1.webp",
+    "assets/images/products/coarts/captain-flint-table-lamp-captain-flin-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b6be44103b134f44b8a265a8221d6342~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_c62cfd105c90464d872dd8bbec7297ba~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -1503,7 +1621,9 @@
   "shortDescription": "Captain Flint table lamp can be used in a variety of settings as it features thoughtful design from its lamp shade to its base marble.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-inground-spike-solar-led-light",
@@ -1537,8 +1657,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/inground-spike-solar-led-light-inground-spi.webp",
+   "gallery": [
+    "assets/images/products/coarts/inground-spike-solar-led-light-inground-spi-1.webp",
+    "assets/images/products/coarts/inground-spike-solar-led-light-inground-spi-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_4a841c9cdfd645e499dd87ee2a947302~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_1d0c44bc9a50430d9431bee9cac2e523~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -1561,7 +1684,9 @@
   "shortDescription": "This Garden Inground Solar Spike LED Light is the perfect way to add a touch of elegance and convenience to your outdoor area.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-volcano-led-wall-light",
@@ -1595,7 +1720,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/volcano-led-wall-light-volcano-led-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a85adb02b9db4234a76c47db0fddf8d7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -1609,7 +1734,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-the-cupid-s-bow-3d-led-lamp",
@@ -1643,8 +1770,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/the-cupid-s-bow-3d-led-lamp-the-cupid-s-.webp",
+   "gallery": [
+    "assets/images/products/coarts/the-cupid-s-bow-3d-led-lamp-the-cupid-s--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ed9b24be897543efa959b8fe38493320~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_aa05a04ea0c948a3a5fe7ef635fc114d~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -1658,7 +1787,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-400w",
@@ -1692,8 +1823,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-flare-flood-light-400w-solar-flare-.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-flare-flood-light-400w-solar-flare--1.webp",
+    "assets/images/products/coarts/solar-flare-flood-light-400w-solar-flare--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_7bf50d830c4a4a78a48e46fff29cb16e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_106206cd1e844cf78276409ffc7b10e5~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -1706,7 +1840,9 @@
   "shortDescription": "Our 400W Solar Flare Flood light has an external solar panel and built-in battery for convenient charging. The lamp has a remote control so you can turn it on and off remotely.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-sigma-led-downlight",
@@ -1740,7 +1876,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/sigma-led-downlight-sigma-led-do.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_03902a0e289f49e090540723a67428f7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -1754,7 +1890,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-ufo-surface-downlight-round-gen-2",
@@ -1788,8 +1926,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/ufo-surface-downlight-round-gen-2-ufo-surface-.webp",
+   "gallery": [
+    "assets/images/products/coarts/ufo-surface-downlight-round-gen-2-ufo-surface--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9616c5bdf9314a5a8b2214b10209de99~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_1835ebf5c4324e7ea5d7986c49d52de1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -1803,7 +1943,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-guardian-led-non-maintained-emergency-light",
@@ -1837,7 +1979,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/guardian-led-non-maintained-emergency-light-guardian-led.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_eb606dd016824c959f9191f36efbe921~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -1851,7 +1993,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-medieval-thematic-chandelier",
@@ -1885,8 +2029,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/medieval-thematic-chandelier-medieval-the.webp",
+   "gallery": [
+    "assets/images/products/coarts/medieval-thematic-chandelier-medieval-the-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_285761788a184a3fb7487cf6ea91912e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_94442125503d45ddae8d4d2e338de8ed~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -1900,7 +2046,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-square-surface-downlight",
@@ -1934,8 +2082,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/square-surface-downlight-square-surfa.webp",
+   "gallery": [
+    "assets/images/products/coarts/square-surface-downlight-square-surfa-1.webp",
+    "assets/images/products/coarts/square-surface-downlight-square-surfa-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_cd755c8d0e0747f5b1485535e26a45cb~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_ad4b7ebf5bd545b8b2aeb706be4d7930~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -1950,7 +2101,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-grace-xl-downlight",
@@ -1984,7 +2137,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/grace-xl-downlight-grace-xl-dow.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_f9b6e77e77eb4cf8904673fa2b3845c4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -1998,7 +2151,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-recessed-downlight-round",
@@ -2032,8 +2187,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/v2-recessed-downlight-round-v2-recessed-.webp",
+   "gallery": [
+    "assets/images/products/coarts/v2-recessed-downlight-round-v2-recessed--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_f1c5948cda2b4d83a80519ad1f5800bf~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_b9361cbf5205440dbe3cdf566d6d224b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -2047,7 +2204,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-eco-downlight",
@@ -2081,8 +2240,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/eco-downlight-eco-downligh.webp",
+   "gallery": [
+    "assets/images/products/coarts/eco-downlight-eco-downligh-1.webp",
+    "assets/images/products/coarts/eco-downlight-eco-downligh-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_72a353d9457b42fc9585dac70e4c1716~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_5d5e5dcf7f8948b5b7049c4ef8684718~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -2097,7 +2259,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-roadvan-street-light",
@@ -2131,7 +2295,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/roadvan-street-light-roadvan-stre.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_dc37ff38c5a0483c81f22f37f63d50a4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -2145,7 +2309,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-diamond-ring-engraved-3d-led-lamp",
@@ -2179,8 +2345,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/diamond-ring-engraved-3d-led-lamp-diamond-ring.webp",
+   "gallery": [
+    "assets/images/products/coarts/diamond-ring-engraved-3d-led-lamp-diamond-ring-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_066da00fbca04c05b13eff456664cfce~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_4369f045ce304ef5904fde52a0dad373~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -2194,7 +2362,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-snap-lamp",
@@ -2228,8 +2398,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/snap-lamp-snap-lamp.webp",
+   "gallery": [
+    "assets/images/products/coarts/snap-lamp-snap-lamp-1.webp",
+    "assets/images/products/coarts/snap-lamp-snap-lamp-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b2ef337ab4a84d9bad556f9df3913230~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_69990682c1e446d8a09bc83c408a6d48~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -2249,7 +2422,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-outdoor-light-tokyo",
@@ -2283,8 +2458,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/tokyo-outdoor-ligh.webp",
+   "gallery": [
+    "assets/images/products/coarts/tokyo-outdoor-ligh-1.webp",
+    "assets/images/products/coarts/tokyo-outdoor-ligh-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0a5d5cff9dc14d0a953c9d544528f93e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_707048b524774887b6f5dec91abc1150~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -2300,7 +2478,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-c1-canopy-highbay-led-light",
@@ -2346,7 +2526,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-dynamic-ii-led-wall-lightng-corso-led-downlight",
@@ -2380,7 +2562,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/dynamic-ii-led-wall-lightng-corso-led-downlight-dynamic-ii-l.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_4c0975dd4a6d439ab4522d9f50c65cf8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -2394,7 +2576,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-canopy-led-downlight",
@@ -2428,7 +2612,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/canopy-led-downlight-canopy-led-d.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_22ccee0ffbc54456be836ce60a005f66~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -2442,7 +2626,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-candlelight-chandelier",
@@ -2476,8 +2662,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/candlelight-chandelier-candlelight-.webp",
+   "gallery": [
+    "assets/images/products/coarts/candlelight-chandelier-candlelight--1.webp",
+    "assets/images/products/coarts/candlelight-chandelier-candlelight--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_164c417f33a647d7a9a0dd82da9d84f4~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_78bf4672abd745849bf9c2e4e1a33369~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -2494,7 +2683,9 @@
   "shortDescription": "This enormous candlelight chandelier is extremely diverse, but it is united by formal simplicity.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-eco-down-light",
@@ -2528,8 +2719,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/eco-downlight-eco-down-lig.webp",
+   "gallery": [
+    "assets/images/products/coarts/eco-downlight-eco-down-lig-1.webp",
+    "assets/images/products/coarts/eco-downlight-eco-down-lig-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_5869e3f34a564728a4469bac7e3d56f7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_9ecdefb3f0a847149204cb448278f1f3~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -2545,7 +2739,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-cube-led-solar-light",
@@ -2579,8 +2775,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/cube-led-solar-light-cube-led-sol.webp",
+   "gallery": [
+    "assets/images/products/coarts/cube-led-solar-light-cube-led-sol-1.webp",
+    "assets/images/products/coarts/cube-led-solar-light-cube-led-sol-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_8efcfaf3ba634bbd96095e2cbd031d7f~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_52189b31e0024de08ef39af648b88ff7~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -2594,7 +2793,9 @@
   "shortDescription": "This cube-shaped garden light is unique and a work of art. It is crafted with great precision to beautify your gardens as well as outperform all other lights in your outdoor spaces.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-atlas-3d-engraved-led-lamp",
@@ -2628,7 +2829,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/atlas-3d-engraved-led-lamp-atlas-3d-eng.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c76872c55d2346bfb951ad99ab2d47d3~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -2642,7 +2843,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-dark-wood-eleganto-light",
@@ -2676,8 +2879,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/dark-wood-eleganto-light-dark-wood-el.webp",
+   "gallery": [
+    "assets/images/products/coarts/dark-wood-eleganto-light-dark-wood-el-1.webp",
+    "assets/images/products/coarts/dark-wood-eleganto-light-dark-wood-el-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c5791f712cb547638952c3c333030278~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_18d5e8b332a4456fae30c8fa13c5552d~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -2693,7 +2899,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-dual-end-di-cob",
@@ -2727,8 +2935,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/dual-end-di-cob-dual-end-di-.webp",
+   "gallery": [
+    "assets/images/products/coarts/dual-end-di-cob-dual-end-di--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a985faf817204b26b6ef744cb73ac6fd~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_a123bb0679124c539894436f78624ed4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -2740,7 +2950,9 @@
   "shortDescription": "These wall mounted lights tend to light up two ways and spread by a broad spectrum. They are dual headed they are best to be placed inside your car parks, gardens, hallways, and pathways.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-square-recessed-slim-downlight",
@@ -2774,8 +2986,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/square-recessed-slim-downlight-square-reces.webp",
+   "gallery": [
+    "assets/images/products/coarts/square-recessed-slim-downlight-square-reces-1.webp",
+    "assets/images/products/coarts/square-recessed-slim-downlight-square-reces-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_faeccb71166b4673a4b23f8890185c5c~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_9a8a63bea30145ad856f48396a969b5d~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -2790,7 +3005,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-wall-flasher",
@@ -2824,8 +3041,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-wall-flasher-solar-wall-f.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-wall-flasher-solar-wall-f-1.webp",
+    "assets/images/products/coarts/solar-wall-flasher-solar-wall-f-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_46aa082a59db42db9a60eb06dd8cf86d~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_51a7665439d747a684249febd95ca198~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -2840,7 +3060,9 @@
   "shortDescription": "This Solar Wall Flasher is sleek and stylish and designed to meet your contemporary design standards. Its stain and corrosion proof and very easy to install as well as maintain.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-butterfly-fencing-solarlight",
@@ -2874,8 +3096,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/butterfly-fencing-solar-light-butterfly-fe.webp",
+   "gallery": [
+    "assets/images/products/coarts/butterfly-fencing-solar-light-butterfly-fe-1.webp",
+    "assets/images/products/coarts/butterfly-fencing-solar-light-butterfly-fe-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_364b39218d9f492abbc4cf5932909f13~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_08f7c4e13a9a40ec9cdce6a37a5accee~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -2891,7 +3116,9 @@
   "shortDescription": "Our butterfly solar light is an energy-saving outdoor light designed to be used for your home’s outdoor steps.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-alpha-led-cs-recessed-downlight",
@@ -2925,8 +3152,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/alpha-led-color-select-recessed-downlight-alpha-led-cs.webp",
+   "gallery": [
+    "assets/images/products/coarts/alpha-led-color-select-recessed-downlight-alpha-led-cs-1.webp",
+    "assets/images/products/coarts/alpha-led-color-select-recessed-downlight-alpha-led-cs-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0e5f986a913040ff9984b57f9e0c8850~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_2de2a8cc347a44b6a25614a11717dea7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -2943,7 +3173,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-tri-proof-led-batten",
@@ -2977,8 +3209,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/tri-proof-led-batten-tri-proof-le.webp",
+   "gallery": [
+    "assets/images/products/coarts/tri-proof-led-batten-tri-proof-le-1.webp",
+    "assets/images/products/coarts/tri-proof-led-batten-tri-proof-le-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_6d399b17cce14af8b525edc2c7dccbf5~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_0d8952acf75147d595d9395f6165b477~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -2995,7 +3230,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-thunder-highbay-160lum",
@@ -3029,8 +3266,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/thunder-highbay-130lum-thunder-high.webp",
+   "gallery": [
+    "assets/images/products/coarts/thunder-highbay-130lum-thunder-high-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9e2e8c0f90d34b128b7a76fdf746882b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_1c74b701bf7341bba1275f26489b9fba~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3042,7 +3281,9 @@
   "shortDescription": "With an ultra-high lumen output of 38400 lumens and a light efficiency of up to 160lm/W, the thunder high bay light fixtures can help you save a lot of money on your electricity bill over the course o",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-rudolph-geometric-hanging-light",
@@ -3076,8 +3317,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/rudolph-geometric-hanging-light-rudolph-geom.webp",
+   "gallery": [
+    "assets/images/products/coarts/rudolph-geometric-hanging-light-rudolph-geom-1.webp",
+    "assets/images/products/coarts/rudolph-geometric-hanging-light-rudolph-geom-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9c2c07e72cfe4575be1897a238558d6c~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_a2f5c595c11e4431bec2b4f5ce947c43~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -3092,7 +3336,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-stella-flood-light-1",
@@ -3126,8 +3372,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/stella-flood-light-stella-flood.webp",
+   "gallery": [
+    "assets/images/products/coarts/stella-flood-light-stella-flood-1.webp",
+    "assets/images/products/coarts/stella-flood-light-stella-flood-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_216e755678a34742bea0f7ad0e6f0050~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_1152ad1c5a674b4eaf34bf22eda32900~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -3143,7 +3392,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-maple-bell-lamp",
@@ -3177,8 +3428,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/maple-bell-lamp-maple-bell-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/maple-bell-lamp-maple-bell-l-1.webp",
+    "assets/images/products/coarts/maple-bell-lamp-maple-bell-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_3433bd60f0cb478faae58da94ba7311f~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_42faaf14f43446ceaa9048546911ed0c~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -3194,7 +3448,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-the-lion-3d-engraved-led-lamp",
@@ -3228,8 +3484,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/the-lion-3d-engraved-led-lamp-the-lion-3d-.webp",
+   "gallery": [
+    "assets/images/products/coarts/the-lion-3d-engraved-led-lamp-the-lion-3d--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c45ab1ca824544688acc2cae2eff57a5~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_dfea46cdafbc46f3a7db20379805f82b~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -3243,7 +3501,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-turbo-pro",
@@ -3277,8 +3537,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/tubo-pro-turbo-pro.webp",
+   "gallery": [
+    "assets/images/products/coarts/tubo-pro-turbo-pro-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_fd47cf1a4cb24bb491bf66c77796a3e1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_c0a12d9236594b7cac06fb8b2da5d4bc~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3292,7 +3554,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-fiber-glass-hanging-light",
@@ -3326,8 +3590,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/fiber-glass-hanging-light-fiber-glass-.webp",
+   "gallery": [
+    "assets/images/products/coarts/fiber-glass-hanging-light-fiber-glass--1.webp",
+    "assets/images/products/coarts/fiber-glass-hanging-light-fiber-glass--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_fd82b238214745ff84b0d0c75d9d53b6~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_3634a61faaec4f38a371a9e07e77b4e1~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -3342,7 +3609,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-diphy-hanging-light",
@@ -3376,8 +3645,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/diphy-hanging-light-diphy-hangin.webp",
+   "gallery": [
+    "assets/images/products/coarts/diphy-hanging-light-diphy-hangin-1.webp",
+    "assets/images/products/coarts/diphy-hanging-light-diphy-hangin-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_1c70e4a704b74f3685c4ba218663f7fb~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_83831cf118db4902966d88af0483a391~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -3398,7 +3670,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-column-led",
@@ -3432,8 +3706,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/column-led-column-led.webp",
+   "gallery": [
+    "assets/images/products/coarts/column-led-column-led-1.webp",
+    "assets/images/products/coarts/column-led-column-led-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_76002db9555740d7864fad12879beb24~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_9e4b3202db174acdbc56f077dd528951~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -3451,7 +3728,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-smart-relay-module",
@@ -3485,8 +3764,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smart-relay-module-smart-relay-.webp",
+   "gallery": [
+    "assets/images/products/coarts/smart-relay-module-smart-relay--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c9d11c2fa77b42629c86075dda1ba696~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_0b1ef45c7de345b5869196d2faa1139a~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -3500,7 +3781,9 @@
   "shortDescription": "You can have the functionality of three smart switches or plugs in one with the Bluedot 3 Smart Switch Module.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-austube-eco-surface-diffuser-module",
@@ -3534,7 +3817,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/austube-eco-surface-diffuser-module-austube-eco-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_663a7e454c9e481fb2aaec23aecb7587~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3548,7 +3831,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-shelf-wood-luminar",
@@ -3582,8 +3867,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/shelf-wood-luminar-shelf-wood-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/shelf-wood-luminar-shelf-wood-l-1.webp",
+    "assets/images/products/coarts/shelf-wood-luminar-shelf-wood-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c40fb14d90b34efab7c65d9a6a8a104a~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_762a0d7874624a7a8e74b20f75bb364c~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -3599,7 +3887,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-ergo-led-downlight",
@@ -3633,7 +3923,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/ergo-led-downlight-ergo-led-dow.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_51ebb72abfff46aa83cc4c215d54c7dc~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3647,7 +3937,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-crescent-bear-3d-led-lamp",
@@ -3681,8 +3973,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/crescent-bear-3d-led-lamp-crescent-bea.webp",
+   "gallery": [
+    "assets/images/products/coarts/crescent-bear-3d-led-lamp-crescent-bea-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_cd00e2aaac0b4354ade86e92dc446758~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_501e47688ece445d90af1d757e588af4~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -3696,7 +3990,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-nero-bollard-light",
@@ -3730,7 +4026,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/nero-bollard-light-nero-bollard.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_8c57804b280645d8a0bb57e70bd61c66~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3744,7 +4040,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-zenio-cob-led-strip-light",
@@ -3778,7 +4076,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/zenio-cob-led-strip-light-zenio-cob-le.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_4bcd3f61bba240d2b2f61d3e45ab32da~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3792,7 +4090,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-eco-led-batten-light",
@@ -3826,7 +4126,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/eco-led-batten-light-eco-led-batt.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_795869e5a9844d03ab756eee8c1fa59c~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3840,7 +4140,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-trackline-x-spot-module-2",
@@ -3874,8 +4176,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/track-line-x-spot-module-2-trackline-x-.webp",
+   "gallery": [
+    "assets/images/products/coarts/track-line-x-spot-module-2-trackline-x--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a829e4a549964c6493dde586377280c8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_1652ea6c7b4d4dc790091b7bfb03e942~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3887,7 +4191,9 @@
   "shortDescription": "The Spot module's track line boasts a playful sophistication and a matte finish that works in perfect harmony with the adjustable shades, allowing you to simply illuminate any space in your home with",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-dynamic-i-led-wall-light",
@@ -3921,7 +4227,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/dynamic-i-led-wall-light-dynamic-i-le.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_74d76d5ffa024e46aafc955dd36bfc3a~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -3935,7 +4241,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-60w",
@@ -3969,8 +4277,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-flare-flood-light-60w-solar-flare-.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-flare-flood-light-60w-solar-flare--1.webp",
+    "assets/images/products/coarts/solar-flare-flood-light-60w-solar-flare--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_bffdf8730b9e4f16a75c211c44ad8980~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_ed9326df2c884070bd7ce9e46e2a0276~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -3984,7 +4295,9 @@
   "shortDescription": "Our 60W Solar Flare Flood light is ideal for any exterior lighting requirements and comes with an external solar panel and built-in battery for quick and easy charging.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-focus-led-track-light",
@@ -4018,7 +4331,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/focus-led-track-light-focus-led-tr.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_fb1f94b845f24c0babf9943df356cff4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -4032,7 +4345,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-t8-led-tube-pc-range",
@@ -4080,7 +4395,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
  },
  {
   "id": "coarts-maple-foyer-floor-lamp",
@@ -4114,8 +4431,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/maple-foyer-floor-lamp-maple-foyer-.webp",
+   "gallery": [
+    "assets/images/products/coarts/maple-foyer-floor-lamp-maple-foyer--1.webp",
+    "assets/images/products/coarts/maple-foyer-floor-lamp-maple-foyer--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a3773930e95f4f7d855af95077b40996~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_8f19a4fd81d1441cb84a1da7fdddc9ac~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -4131,7 +4451,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-ergo-led-downlight-pack-of-3",
@@ -4165,8 +4487,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/ergo-led-downlight-pack-of-3-ergo-led-dow.webp",
+   "gallery": [
+    "assets/images/products/coarts/ergo-led-downlight-pack-of-3-ergo-led-dow-1.webp",
+    "assets/images/products/coarts/ergo-led-downlight-pack-of-3-ergo-led-dow-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_3ae6632a2452479583799888a2bc0ecb~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_093373d8c30c463ba102aa9ae36c4118~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4181,7 +4506,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-decorative-light-linzi",
@@ -4215,8 +4542,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/linzi-decorative-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/linzi-decorative-l-1.webp",
+    "assets/images/products/coarts/linzi-decorative-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_cce166d4edf04b269b7e0a6504316d47~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8208880dea1c41eea247e4373a1ec801~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4234,7 +4564,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-focus-led-spot-light",
@@ -4268,8 +4600,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/focus-led-spot-light-focus-led-sp.webp",
+   "gallery": [
+    "assets/images/products/coarts/focus-led-spot-light-focus-led-sp-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9047206d218e438f9670265f59c1bdb7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_691e6e0a40f743e189d4b13163166910~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -4283,7 +4617,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-edison-bulb",
@@ -4317,8 +4653,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/edison-bulb-edison-bulb.webp",
+   "gallery": [
+    "assets/images/products/coarts/edison-bulb-edison-bulb-1.webp",
+    "assets/images/products/coarts/edison-bulb-edison-bulb-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_f9999baec0d24c6fa6da208835fbf90d~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_7678921d47574be29e3d966ca05a4631~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4332,7 +4671,9 @@
   "shortDescription": "The Coarts Lighting Edison bulb is the incandescent light bulb that is designed to mimic the look of the original light bulbs invented by Thomas Edison in the late 1800s.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-1-gang-switch",
@@ -4366,8 +4707,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/1-gang-switch-1-gang-switc.webp",
+   "gallery": [
+    "assets/images/products/coarts/1-gang-switch-1-gang-switc-1.webp",
+    "assets/images/products/coarts/1-gang-switch-1-gang-switc-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_90ea8963f0c14c74925fd0623a771cd2~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_b3a4431d46f348f298222badd34e25d5~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -4384,7 +4728,9 @@
   "shortDescription": "With this 1 gang switch technology, you can control your light from anywhere with your smartphone using the Smart Life app or voice control with Amazon Alexa and Google Home.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-spectrum-ball-crystal",
@@ -4418,8 +4764,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/spectrum-ball-crystal-spectrum-bal.webp",
+   "gallery": [
+    "assets/images/products/coarts/spectrum-ball-crystal-spectrum-bal-1.webp",
+    "assets/images/products/coarts/spectrum-ball-crystal-spectrum-bal-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_54cc5a1403274abd866741e5e61601ba~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_232739368abb46e9a88e417371bba874~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4435,7 +4784,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-decorative-light-shelter",
@@ -4469,8 +4820,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/shelter-decorative-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/shelter-decorative-l-1.webp",
+    "assets/images/products/coarts/shelter-decorative-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c4777cb381bc47e0978673007316835c~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_cba40bf93e13449abf43089b49799d7b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4486,7 +4840,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-surface-downlight-square",
@@ -4520,8 +4876,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/surface-square-downlight-v2-v2-surface-d.webp",
+   "gallery": [
+    "assets/images/products/coarts/surface-square-downlight-v2-v2-surface-d-1.webp",
+    "assets/images/products/coarts/surface-square-downlight-v2-v2-surface-d-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d7e60a9b56b7423b86aad9d1ab1fd7ec~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_84cde200e91f497bbb22fa210451d9a2~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -4537,7 +4896,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-miracle-led-downlight",
@@ -4571,7 +4932,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/miracle-led-downlight-miracle-led-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d87fd00da1b948bc94e964e9ec277a48~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -4585,7 +4946,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-coarts-classico-downlight",
@@ -4619,8 +4982,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/coarts-classico-downlight-coarts-class.webp",
+   "gallery": [
+    "assets/images/products/coarts/coarts-classico-downlight-coarts-class-1.webp",
+    "assets/images/products/coarts/coarts-classico-downlight-coarts-class-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_276139dfad9f454191f921720c014a96~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8beca3d36a1e47fa8ede1b00423e42b5~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4635,7 +5001,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-40w",
@@ -4669,8 +5037,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-flare-flood-light-40w-solar-flare-.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-flare-flood-light-40w-solar-flare--1.webp",
+    "assets/images/products/coarts/solar-flare-flood-light-40w-solar-flare--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_aab2fc92fb264d618bb94906a86a7429~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_9175b3f13edc4019b56f195b313ea299~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -4686,7 +5057,9 @@
   "shortDescription": "Our 40W Solar Flare Flood light is perfect for any exterior lighting needs and comes with an external solar panel and built-in battery for easy and efficient charging.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-recessed-slim-downlight-round-1",
@@ -4720,8 +5093,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/recessed-slim-downlight-round-recessed-sli.webp",
+   "gallery": [
+    "assets/images/products/coarts/recessed-slim-downlight-round-recessed-sli-1.webp",
+    "assets/images/products/coarts/recessed-slim-downlight-round-recessed-sli-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_afad4150f399463da7fb5b076484bd17~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_67915b8941f3471d88bc286e874df2f8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4736,7 +5112,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-minima-led-step-light",
@@ -4770,7 +5148,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/minima-led-step-light-minima-led-s.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e2222c842f104249a57a5fd07d11c5f3~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -4784,7 +5162,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-movable-mounted-light",
@@ -4818,8 +5198,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-movable-mounted-light-solar-movabl.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-movable-mounted-light-solar-movabl-1.webp",
+    "assets/images/products/coarts/solar-movable-mounted-light-solar-movabl-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_129445a38fd34f05b0787e5d73ab3da9~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_ce31dbfa1dbf42b9bbbadb541782d245~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -4832,7 +5215,9 @@
   "shortDescription": "This is a movable base Solar Wall Light that moves on command so that you can direct its focus on the farthest zones on the wall.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-t8-led-tube-glass-range",
@@ -4880,7 +5265,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
  },
  {
   "id": "coarts-mini-lunar-led-globe",
@@ -4914,8 +5301,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/mini-lunar-led-globe-mini-lunar-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/mini-lunar-led-globe-mini-lunar-l-1.webp",
+    "assets/images/products/coarts/mini-lunar-led-globe-mini-lunar-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_da06fc42007d436ca6fcd126939e2748~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_1894f0a9e61d4a3b8be22550da85acd3~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -4929,7 +5319,9 @@
   "shortDescription": "This Mini Lunar Globe is super chic and stylish, much needed in a modern-day home or co-working space as it can be used in two ways; you can place it on your table or hang it from your ceiling on the",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-street-master",
@@ -4963,8 +5355,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/street-master-street-maste.webp",
+   "gallery": [
+    "assets/images/products/coarts/street-master-street-maste-1.webp",
+    "assets/images/products/coarts/street-master-street-maste-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_8bb9c287a4d94feaa96bbd8939a1c869~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_e919a5f122b24e9794d2715d79429019~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -4981,7 +5376,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-smokey-fade-glass-pendant",
@@ -5015,8 +5412,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smokey-fade-glass-pendant-smokey-fade-.webp",
+   "gallery": [
+    "assets/images/products/coarts/smokey-fade-glass-pendant-smokey-fade--1.webp",
+    "assets/images/products/coarts/smokey-fade-glass-pendant-smokey-fade--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_77027cce1ab243b698af4a80c65aa1c3~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_88aaaee60ced4a7c924c84fc6509a239~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -5029,7 +5429,9 @@
   "shortDescription": "Smokey Fade Glass Pendants are the latest in modern lighting design.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-coarts-lighting-alba-led-batten",
@@ -5063,7 +5465,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/coarts-lighting-alba-led-batten-coarts-light.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_45ab145c5cda4f8db7fa6cc08c1f90dc~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5077,7 +5479,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-outdoor-garden-light-atlantis",
@@ -5111,8 +5515,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/atlantis-outdoor-gard.webp",
+   "gallery": [
+    "assets/images/products/coarts/atlantis-outdoor-gard-1.webp",
+    "assets/images/products/coarts/atlantis-outdoor-gard-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_77bc92937c5c486db51ae916f691b62b~mv2.jpeg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_13edbf60463a44da9a1ff65f8ba6342d~mv2.jpeg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -5128,7 +5535,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-phantom-led-gen-2-downlight",
@@ -5162,7 +5571,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/phantom-led-gen-2-downlight-phantom-led-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e332038568e5433ea9b04db7b4bbee13~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5176,7 +5585,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-wooden-pendant-lantern",
@@ -5210,8 +5621,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/wooden-pendant-lantern-wooden-penda.webp",
+   "gallery": [
+    "assets/images/products/coarts/wooden-pendant-lantern-wooden-penda-1.webp",
+    "assets/images/products/coarts/wooden-pendant-lantern-wooden-penda-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_8dabeeafbe3f4e10b69cff3adebd4766~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_0a91711fc910486c9feb00ca0e70a6b1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -5234,7 +5648,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-moon-table-lamp",
@@ -5268,8 +5684,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/moon-table-lamp-moon-table-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/moon-table-lamp-moon-table-l-1.webp",
+    "assets/images/products/coarts/moon-table-lamp-moon-table-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_5e45c202ac194d249cfa29b067dd2ae4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_00a975b482864aa0b6670bee20c902bc~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -5282,7 +5701,9 @@
   "shortDescription": "Our Moon table lamp draws inspiration from traditional styles, it is rendered in a contemporary metal finish that can be easily paired with a wide range of decor.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-unicorn-3d-engraved-led-lamp",
@@ -5316,8 +5737,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/unicorn-3d-engraved-led-lamp-unicorn-3d-e.webp",
+   "gallery": [
+    "assets/images/products/coarts/unicorn-3d-engraved-led-lamp-unicorn-3d-e-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_31f3968f39c348fa8c17e9e238001b20~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_d4e170a27ecd42729385ee91e01aa99b~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -5331,7 +5754,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-led-mirror",
@@ -5365,7 +5790,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/led-mirror-led-mirror.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d811149b5ca441f081c7cff57a8d6a5f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5379,7 +5804,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-ethnic-architectural-ceiling-lamp",
@@ -5413,8 +5840,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/ethnic-architectural-ceiling-lamp-ethnic-archi.webp",
+   "gallery": [
+    "assets/images/products/coarts/ethnic-architectural-ceiling-lamp-ethnic-archi-1.webp",
+    "assets/images/products/coarts/ethnic-architectural-ceiling-lamp-ethnic-archi-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_8f199bc8ad3f406982d7ec5ab545b6e2~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_ed82556ec6ac4277907ed15e781c79d7~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -5429,7 +5859,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-wooden-wall-panel-light",
@@ -5463,8 +5895,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/wooden-wall-panel-light-wooden-wall-.webp",
+   "gallery": [
+    "assets/images/products/coarts/wooden-wall-panel-light-wooden-wall--1.webp",
+    "assets/images/products/coarts/wooden-wall-panel-light-wooden-wall--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_2859feea267749ab8e1b0339a6cee976~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_440daecc0629455f9a261156088ed6cf~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -5481,7 +5916,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-museo-track-light-1",
@@ -5515,8 +5952,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/museo-track-light-museo-track-.webp",
+   "gallery": [
+    "assets/images/products/coarts/museo-track-light-museo-track--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d5623ff954e646e987b82288ef51212b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_a2b8c525fa0d4061b6d6d28f6e3df832~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5530,7 +5969,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-inspiro-beam-solar-light",
@@ -5564,8 +6005,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/inspiro-beam-solar-light-inspiro-beam.webp",
+   "gallery": [
+    "assets/images/products/coarts/inspiro-beam-solar-light-inspiro-beam-1.webp",
+    "assets/images/products/coarts/inspiro-beam-solar-light-inspiro-beam-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_2acd67a705d54218bda09387b014dcd9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_a9d01a90ea2546448c00165ba1889ecb~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -5582,7 +6026,9 @@
   "shortDescription": "A gentle white outdoor light to go with walls in the garden shed and other out spaces where the wall colour is usually dark.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-optimus-eco-led-linkable-linear",
@@ -5616,7 +6062,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/optimus-eco-led-linkable-linear-optimus-eco-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_349a4943cd6943f2a1cedb31c66d0049~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5630,7 +6076,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-innova-surface-downlight",
@@ -5664,8 +6112,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/innova-surface-downlight-innova-surfa.webp",
+   "gallery": [
+    "assets/images/products/coarts/innova-surface-downlight-innova-surfa-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b9b629dbeac74263bc22d05b854e405e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_485d8c101ed1466fab449e50d4a8e580~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -5677,7 +6127,9 @@
   "shortDescription": "The Innova Surface Spotlight is a high-efficiency recessed lighting with a wattage option of 15 watts, perfect for illuminating interior spaces.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-soap-blown-glass-pendants",
@@ -5711,8 +6163,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/soap-blown-glass-pendants-soap-blown-g.webp",
+   "gallery": [
+    "assets/images/products/coarts/soap-blown-glass-pendants-soap-blown-g-1.webp",
+    "assets/images/products/coarts/soap-blown-glass-pendants-soap-blown-g-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_987fd95ed9c745129353a60136a5083c~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_d83a3db9618f4b23b71a0703ca1060c4~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -5730,7 +6185,9 @@
   "shortDescription": "These blown glass pendant lights are inspired by soap bubbles' iridescent tones and fluid shapes. Each piece is hand-blown without a mould to create a uniquely hued, organic shape.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-downtown-led-inground-light",
@@ -5764,7 +6221,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/downtown-led-inground-light-downtown-led.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b385e027459645789f8e6eccfeaa6b90~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5778,7 +6235,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-track-light-x-linear-module",
@@ -5812,8 +6271,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/track-line-x-linear-module-1-track-light-.webp",
+   "gallery": [
+    "assets/images/products/coarts/track-line-x-linear-module-1-track-light--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_f4eb6f12df604f8fb0a2d332a801b762~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_dc678d1547ba4d78ba40e8409ee2059b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -5827,7 +6288,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-origami-bird-lamp",
@@ -5861,8 +6324,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/origami-bird-lamp-origami-bird.webp",
+   "gallery": [
+    "assets/images/products/coarts/origami-bird-lamp-origami-bird-1.webp",
+    "assets/images/products/coarts/origami-bird-lamp-origami-bird-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9abacfa8d15b45109ae5e5f3f21fe7b2~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_3450b66174674e9ea333798aef3a91c8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -5875,7 +6341,9 @@
   "shortDescription": "The Origami bird-shaped lamp is perfect to instantly brighten up the room with its unique design and light glow.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-alteco-pro-panel",
@@ -5909,8 +6377,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/alteco-pro-panel-alteco-pro-p.webp",
+   "gallery": [
+    "assets/images/products/coarts/alteco-pro-panel-alteco-pro-p-1.webp",
+    "assets/images/products/coarts/alteco-pro-panel-alteco-pro-p-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ef78b2f134f14798bb6397cf2d2b0f08~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_a0a6ebd8b3cd4598be985346a23ef941~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -5925,7 +6396,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-florence-crystal-wall-light",
@@ -5959,8 +6432,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/florence-crystal-wall-light-florence-cry.webp",
+   "gallery": [
+    "assets/images/products/coarts/florence-crystal-wall-light-florence-cry-1.webp",
+    "assets/images/products/coarts/florence-crystal-wall-light-florence-cry-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_f5e7a2c251d54797b6c3de7588cc40c3~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_25c6ae7f8be14b70893634eb49a5757d~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -5977,7 +6453,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-smart-door-lock",
@@ -6011,8 +6489,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smart-door-lock-smart-door-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/smart-door-lock-smart-door-l-1.webp",
+    "assets/images/products/coarts/smart-door-lock-smart-door-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_7553d184a714433aba2da287e2dda4c4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_6d286fc3c03a4369bae3df560a678d3b~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6026,7 +6507,9 @@
   "shortDescription": "No more worry and hassle of losing your keys as the Wi-Fi- smart lock gives you protection with ease.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-8-gang-switch",
@@ -6060,8 +6543,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/8-gang-switch-8-gang-switc.webp",
+   "gallery": [
+    "assets/images/products/coarts/8-gang-switch-8-gang-switc-1.webp",
+    "assets/images/products/coarts/8-gang-switch-8-gang-switc-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_71b0c6463a6d4f09acd1daed8b633e85~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_766372934ffc4b34a2db0c718a5ff8be~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6077,7 +6563,9 @@
   "shortDescription": "With this 8-gang technology, you can control your switches and lights from anywhere with your smartphone using the Smart Life app or voice control with Amazon Alexa and Google Home.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-phantom-cs-led-spot-light",
@@ -6111,8 +6599,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/phantom-cs-led-spot-light-phantom-cs-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/phantom-cs-led-spot-light-phantom-cs-l-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e97ce11ef2284ef18ddb601f614c5da0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_82350a06f3394ebd97f6cf5ac484e1f8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -6126,7 +6616,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-4-gang-switch",
@@ -6160,8 +6652,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/4-gang-switch-4-gang-switc.webp",
+   "gallery": [
+    "assets/images/products/coarts/4-gang-switch-4-gang-switc-1.webp",
+    "assets/images/products/coarts/4-gang-switch-4-gang-switc-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ca3c83b0ce794d088f38d4f3c04a6762~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_4a6608c188774f648e56275dd7caa0ec~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6177,7 +6672,9 @@
   "shortDescription": "With this 4 gang switch technology, you can manage lights from any location using the Smart Life app on your smartphone or the voice control capabilities of Amazon Alexa and Google Home devices.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-prime-solar-di-led",
@@ -6211,8 +6708,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/prime-solar-di-led-prime-solar-.webp",
+   "gallery": [
+    "assets/images/products/coarts/prime-solar-di-led-prime-solar--1.webp",
+    "assets/images/products/coarts/prime-solar-di-led-prime-solar--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_bc3f7c64938e46faac173563d92d1a35~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_80ab7f4377ee4c0f82f8cf4d652ff910~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6225,7 +6725,9 @@
   "shortDescription": "This boxed LED Solar Light is perfect to create that dual lighting impact on a wall on a cool winter night and during your outdoor gatherings.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-garden-light",
@@ -6259,8 +6761,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/garden-light-garden-light.webp",
+   "gallery": [
+    "assets/images/products/coarts/garden-light-garden-light-1.webp",
+    "assets/images/products/coarts/garden-light-garden-light-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c10496703a014ee8a9efecac0ed71afc~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_03e14622bfca487fbba69749edb8284f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -6277,7 +6782,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-nuvola-pendant-light",
@@ -6311,8 +6818,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/nuvola-pendant-light-nuvola-penda.webp",
+   "gallery": [
+    "assets/images/products/coarts/nuvola-pendant-light-nuvola-penda-1.webp",
+    "assets/images/products/coarts/nuvola-pendant-light-nuvola-penda-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0f4b3ce16c19457ea88920c5a604d884~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_ce1f940c8e344a30b36b87559f1115a6~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6330,7 +6840,9 @@
   "shortDescription": "The Nuvola pendant light has a white cloud-shaped polyethene diffuser that is mounted on wall.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-rico-bendable-desk-lamp",
@@ -6364,8 +6876,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/rico-bendable-desk-lamp-rico-bendabl.webp",
+   "gallery": [
+    "assets/images/products/coarts/rico-bendable-desk-lamp-rico-bendabl-1.webp",
+    "assets/images/products/coarts/rico-bendable-desk-lamp-rico-bendabl-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_38dc5505c5b445e3bceb4cc11fe52cbe~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_3d9dfeef4fb84924ac8f5e5068f5ba7e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6381,7 +6896,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-coarts-highbay-thunder-gen-3-led-light",
@@ -6415,7 +6932,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/coarts-highbay-thunder-gen-3-led-light-coarts-highb.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d32c2a028f244819ba9b86866b3a6418~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -6429,7 +6946,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-recessed-downlight-square",
@@ -6463,8 +6982,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/v2-recessed-downlight-square-v2-recessed-.webp",
+   "gallery": [
+    "assets/images/products/coarts/v2-recessed-downlight-square-v2-recessed--1.webp",
+    "assets/images/products/coarts/v2-recessed-downlight-square-v2-recessed--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d11da04e3a3c4850a0ac65db77dccfbb~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_20beae05572f4470add9b9985b481693~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -6479,7 +7001,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-motown-pendant-round-hanging-light",
@@ -6513,8 +7037,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/motown-pendant-round-hanging-light-motown-penda.webp",
+   "gallery": [
+    "assets/images/products/coarts/motown-pendant-round-hanging-light-motown-penda-1.webp",
+    "assets/images/products/coarts/motown-pendant-round-hanging-light-motown-penda-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b1e8b4b32270468ea70b63da9d57c0e4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_e38f42a3bd07476c8bb67e0d7e617f06~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -6528,7 +7055,9 @@
   "shortDescription": "This motown wall mounted light is distinguished by its one-of-a-kind and sophisticated appearance. The unique design of the display contributes to the creation of a serene and relaxing ambiance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-invictus-dish-solar-lamp",
@@ -6562,8 +7091,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/invictus-dish-solar-lamp-invictus-dis.webp",
+   "gallery": [
+    "assets/images/products/coarts/invictus-dish-solar-lamp-invictus-dis-1.webp",
+    "assets/images/products/coarts/invictus-dish-solar-lamp-invictus-dis-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_6eb8f48662fb43deb79cc13c8b3de9d9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_d0ee7f79c7bc429885a5c0a6d72dd07a~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6579,7 +7111,9 @@
   "shortDescription": "This beautiful dish-shaped wall lamp is designed to bestow an earthy and vintage feeling in your surroundings. It's a perfect fit for your parking, especially your outdoor sitting areas.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-pwfh-weather-proof-led-batten",
@@ -6613,7 +7147,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/pwfh-weather-proof-led-batten-pwfh-weather.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9bd7f1b97a7641f6b31664cead9df06e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -6627,7 +7161,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-fan-dimmer",
@@ -6661,8 +7197,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smart-fan-dimmer-fan-dimmer.webp",
+   "gallery": [
+    "assets/images/products/coarts/smart-fan-dimmer-fan-dimmer-1.webp",
+    "assets/images/products/coarts/smart-fan-dimmer-fan-dimmer-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_eb5a2740018f48cdb8256143cd7a7022~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_b0acd16fac10401d84bc3e3c7c3184c4~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6681,7 +7220,9 @@
   "shortDescription": "With this smart fan dimmer technology, you can control the speed of your fan from anywhere with your smartphone using the Smart Life app or voice control with Amazon Alexa and Google Home.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-merry-go-round-led-lamp",
@@ -6715,8 +7256,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/merry-go-round-led-lamp-merry-go-rou.webp",
+   "gallery": [
+    "assets/images/products/coarts/merry-go-round-led-lamp-merry-go-rou-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9443596cfccb4ff391ad9c7c74916b20~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_14037faa12f844ab9c3240878d6cab7b~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -6730,7 +7273,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-thunder-ex-zone-1-exposion-proof-led-light-fixture",
@@ -6764,7 +7309,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/thunder-ex-zone-1-exposion-proof-led-light-fixture-thunder-ex-z.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c033d7749b9f4ed5bad0de476d2743d8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -6778,7 +7323,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-4-gang-plus-fan-switch",
@@ -6812,8 +7359,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/4-gang-plus-smart-fan-switch-4-gang-plus-.webp",
+   "gallery": [
+    "assets/images/products/coarts/4-gang-plus-smart-fan-switch-4-gang-plus--1.webp",
+    "assets/images/products/coarts/4-gang-plus-smart-fan-switch-4-gang-plus--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_61fb7c4a604e456ba40f95ebfaefa785~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_72e3c3726b014a23b6ca10c20ad66556~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6830,7 +7380,9 @@
   "shortDescription": "With this 4 gang and fan controlling technology, you can control your lights and fan from anywhere with your smartphone using the Smart Life app or voice control with Amazon Alexa and Google Home.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-surface-downlight-round",
@@ -6864,8 +7416,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/surface-round-downlight-v2-v2-surface-d.webp",
+   "gallery": [
+    "assets/images/products/coarts/surface-round-downlight-v2-v2-surface-d-1.webp",
+    "assets/images/products/coarts/surface-round-downlight-v2-v2-surface-d-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_4ec2ea9159884be5bf0f16d9dc856779~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8ef50b10872e4fc0a0390d76d31538bb~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6882,7 +7437,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-light-dimmer",
@@ -6916,8 +7473,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smart-light-dimmer-light-dimmer.webp",
+   "gallery": [
+    "assets/images/products/coarts/smart-light-dimmer-light-dimmer-1.webp",
+    "assets/images/products/coarts/smart-light-dimmer-light-dimmer-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0b6d16753627480ab56e7ddfa7ac9a27~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_2e5c3a8126d24fe4a25baf5abc27af76~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -6936,7 +7496,9 @@
   "shortDescription": "With this technology, you can manage the brightness of your lights and manage switches from any location by utilizing the Smart Life app on your smartphone or the voice control capabilities of Amazon",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-astro-g2-led-flood-light",
@@ -6970,7 +7532,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/astro-g2-led-flood-light-astro-g2-led.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_8d0cb507676e4c67a1e40583aa99dfc8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -6984,7 +7546,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-classico-downlight",
@@ -7018,8 +7582,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/classico-downlight-classico-dow.webp",
+   "gallery": [
+    "assets/images/products/coarts/classico-downlight-classico-dow-1.webp",
+    "assets/images/products/coarts/classico-downlight-classico-dow-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0df4ba3e21e14f55a663cef0fd0c23b9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_00487f2326ef42519a013f879cbc1244~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -7035,7 +7602,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-austube-slim-led-linear-light-reflector-module",
@@ -7069,8 +7638,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/austube-slim-led-linear-light-reflector-module-austube-slim.webp",
+   "gallery": [
+    "assets/images/products/coarts/austube-slim-led-linear-light-reflector-module-austube-slim-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ff3232dedcc74d699e8f5f2e8895f3b2~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_dcfbd5bdfec2446581200a9abda027cb~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7084,7 +7655,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-f7-series-led-track-light",
@@ -7132,7 +7705,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
  },
  {
   "id": "coarts-austube-eco-recessed",
@@ -7166,7 +7741,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/austube-eco-recessed-austube-eco-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_5badc39a5d8a40eea9b6aa51da5b6f73~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7180,7 +7755,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-enchant-capsule-globe-pendant",
@@ -7214,8 +7791,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/enchant-model-2065-capsule-pendant-enchant-caps.webp",
+   "gallery": [
+    "assets/images/products/coarts/enchant-model-2065-capsule-pendant-enchant-caps-1.webp",
+    "assets/images/products/coarts/enchant-model-2065-capsule-pendant-enchant-caps-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_3e14930095bb4d05b58103503de47112~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_775a21fc7f1d468db3356b117697bc48~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -7232,7 +7812,9 @@
   "shortDescription": "Elegance and lightness, what this model of decorative lighting is all about.Enchant Capsule globe wall light pendant consists of a diffuser made of two joined opalescent methacrylate saucers, suspende",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-deck-inground-solar-light",
@@ -7266,8 +7848,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/deck-inground-solar-light-deck-ingroun.webp",
+   "gallery": [
+    "assets/images/products/coarts/deck-inground-solar-light-deck-ingroun-1.webp",
+    "assets/images/products/coarts/deck-inground-solar-light-deck-ingroun-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c2f167512589497a802723b2df0eb36f~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_8a7d83ead95040fcbedd6f390a488398~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -7286,7 +7871,9 @@
   "shortDescription": "The Deck Inground Solar light is the perfect way to bring light to your outdoor space.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-modern-tear-drop-wall-light",
@@ -7320,8 +7907,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/modern-tear-drop-wall-light-modern-tear-.webp",
+   "gallery": [
+    "assets/images/products/coarts/modern-tear-drop-wall-light-modern-tear--1.webp",
+    "assets/images/products/coarts/modern-tear-drop-wall-light-modern-tear--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_535ef8c32aa14c04b01ffb2520c09995~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_0905acce443c4982a146ffe134a44c2f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -7340,7 +7930,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-stadia-sports-led-flood-light",
@@ -7374,7 +7966,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/stadia-sports-led-flood-light-stadia-sport.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_6fdf682e6e2e4b2aa0ebf4eac86a23e9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7388,7 +7980,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-serene-led-panel",
@@ -7422,8 +8016,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/serene-led-panel-serene-led-p.webp",
+   "gallery": [
+    "assets/images/products/coarts/serene-led-panel-serene-led-p-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_83de505fbf4d420e9b9896cce8f355e7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_ee92d94d17794161bf3915cd4c71c2d3~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7437,7 +8033,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-raser-slim-led-step-light",
@@ -7471,7 +8069,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/raser-slim-led-step-light-raser-slim-l.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_45c0f0eb4f37479195e3c1cfa7600369~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7485,7 +8083,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-starburst-crystal-nova-downlighta-led-downlight",
@@ -7519,8 +8119,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/starburst-crystal-nova-downlighta-led-downlight-starburst-cr.webp",
+   "gallery": [
+    "assets/images/products/coarts/starburst-crystal-nova-downlighta-led-downlight-starburst-cr-1.webp",
+    "assets/images/products/coarts/starburst-crystal-nova-downlighta-led-downlight-starburst-cr-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a600790ce22e4dc2b0b24c9566451593~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_e76f59cf71f045128d7ef1508e0ed57f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -7535,7 +8138,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-vector-led-floodlight",
@@ -7569,8 +8174,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/vector-led-floodlight-vector-led-f.webp",
+   "gallery": [
+    "assets/images/products/coarts/vector-led-floodlight-vector-led-f-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0562f316a95e4069922a6c5d048e30c1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_37f77f43c5dd44299bae92cb26fa5682~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -7584,7 +8191,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-innova-recessed-spotlight",
@@ -7618,8 +8227,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/innova-recessed-spotlight-innova-reces.webp",
+   "gallery": [
+    "assets/images/products/coarts/innova-recessed-spotlight-innova-reces-1.webp",
+    "assets/images/products/coarts/innova-recessed-spotlight-innova-reces-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_bc02212c23a745eda30e62336c4e1f16~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8153edd9dab945b89f071ad143582069~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -7636,7 +8248,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-berry-bomb-globe-chandelier",
@@ -7670,8 +8284,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/berry-bomb-globe-chandelier-berry-bomb-g.webp",
+   "gallery": [
+    "assets/images/products/coarts/berry-bomb-globe-chandelier-berry-bomb-g-1.webp",
+    "assets/images/products/coarts/berry-bomb-globe-chandelier-berry-bomb-g-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a96621fc18fb4f9c8c0eb708b8cad04d~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_a4e945b2fb2e47878a556b3de2cfb2f5~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -7685,7 +8302,9 @@
   "shortDescription": "This artistic chandelier string light is modern and super chic. Its unique and intricate fringe design makes it stand out in your homes.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-acrylico-camera-led-lamp",
@@ -7719,8 +8338,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/acrylico-camera-led-lamp-acrylico-cam.webp",
+   "gallery": [
+    "assets/images/products/coarts/acrylico-camera-led-lamp-acrylico-cam-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_043ad626764e4f6dbf15e029218ba10e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_afab124b43584985b0b10fb6c1970e1e~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -7734,7 +8355,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-moon-floor-lamp",
@@ -7768,8 +8391,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/moon-floor-lamp-moon-floor-l.webp",
+   "gallery": [
+    "assets/images/products/coarts/moon-floor-lamp-moon-floor-l-1.webp",
+    "assets/images/products/coarts/moon-floor-lamp-moon-floor-l-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e1306f7c800b4e2a87c094f93791c23e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_dd82db7699a04659b93df0b1c096914a~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -7784,7 +8410,9 @@
   "shortDescription": "Our Moon floor lamp draws inspiration from traditional styles, it is rendered in a contemporary metal finish that can be easily paired with a wide range of decor.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-120w",
@@ -7818,8 +8446,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-flare-flood-light-120w-solar-flare-.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-flare-flood-light-120w-solar-flare--1.webp",
+    "assets/images/products/coarts/solar-flare-flood-light-120w-solar-flare--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b8aa2339e3c44b21a4b056af3bfd34a7~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_7bf50d830c4a4a78a48e46fff29cb16e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -7832,7 +8463,9 @@
   "shortDescription": "Our 120W Solar Flare Flood light has an external solar panel and built-in battery for convenient charging. The lamp has a remote control to turn it on and off remotely.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-light-sniper",
@@ -7866,8 +8499,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/light-sniper-light-sniper.webp",
+   "gallery": [
+    "assets/images/products/coarts/light-sniper-light-sniper-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ac12f080fd074cc6a92ecbf86ca867ee~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_1938dd17cc3144c4aa344f7a7e17bae8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7881,7 +8516,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-manta-led-wall-light",
@@ -7915,7 +8552,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/manta-led-wall-light-manta-led-wa.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_01d4615bf9e147149321d97d3fa07c9b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -7929,7 +8566,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-lunar-desk-globe",
@@ -7963,8 +8602,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/lunar-desk-globe-lunar-desk-g.webp",
+   "gallery": [
+    "assets/images/products/coarts/lunar-desk-globe-lunar-desk-g-1.webp",
+    "assets/images/products/coarts/lunar-desk-globe-lunar-desk-g-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_da730a31a17f4801867a058a0b346493~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_e1411c561d514a79bf3b5b838511bbe7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -7979,7 +8621,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-t5-pro-led-batten-light",
@@ -8013,8 +8657,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/t5-pro-led-batten-light-t5-pro-led-b.webp",
+   "gallery": [
+    "assets/images/products/coarts/t5-pro-led-batten-light-t5-pro-led-b-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_63df8f51666e403299b6a827b6c749c0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_ad45284ece7f424fbc92f30d5992bf1e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8028,7 +8674,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-scott-led-wall-light",
@@ -8062,8 +8710,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/scott-led-wall-light-scott-led-wa.webp",
+   "gallery": [
+    "assets/images/products/coarts/scott-led-wall-light-scott-led-wa-1.webp",
+    "assets/images/products/coarts/scott-led-wall-light-scott-led-wa-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_663540cb2b7a4d4aaae2090cdf11f13b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_465125437c0849e69e062dfa669845b0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -8078,7 +8729,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-track-light-x-spot-module",
@@ -8112,8 +8765,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/track-line-x-spot-module-1-track-light-.webp",
+   "gallery": [
+    "assets/images/products/coarts/track-line-x-spot-module-1-track-light--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_509c1a5e02d7452fb4dfdfe54d9e89cd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_f68564984c774b66b715e01989d4c32b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8127,7 +8782,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-quantum-led-downlight",
@@ -8161,8 +8818,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/quantum-led-downlight-quantum-led-.webp",
+   "gallery": [
+    "assets/images/products/coarts/quantum-led-downlight-quantum-led--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_cbb33fc5a9634d7ea25c90a10e6aa1eb~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_c1d6be55e86d4c759fbb9550a2b18035~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8176,7 +8835,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-surface-downlight-round-1",
@@ -8210,8 +8871,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/v2-surface-downlight-round-v2-surface-d.webp",
+   "gallery": [
+    "assets/images/products/coarts/v2-surface-downlight-round-v2-surface-d-1.webp",
+    "assets/images/products/coarts/v2-surface-downlight-round-v2-surface-d-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0572178897cc42d28319482d5e57116f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_8bc3c43cb5984fd385b11995ea50b716~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -8226,7 +8890,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-flasher-led-track-light",
@@ -8260,7 +8926,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/flasher-led-track-light-flasher-led-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_699f321b3270419dab5304531a88973d~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8274,7 +8940,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-milano-glare-free-downlight",
@@ -8308,7 +8976,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/milano-glare-free-downlight-milano-glare.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_846507d8dc9247df9b385cbff81355b7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8322,7 +8990,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-tone-eco-led-wall-light",
@@ -8356,7 +9026,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/tone-eco-led-wall-light-tone-eco-led.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d63bb5792cf24c749902fac8431bcda4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8370,7 +9040,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-mini-dot",
@@ -8404,8 +9076,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/mini-dot-h-mini-dot.webp",
+   "gallery": [
+    "assets/images/products/coarts/mini-dot-h-mini-dot-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_55a36b013dc243c185ef91ef2db0c018~mv2.jpeg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_b374a4651dec4c909249f5f92e4c2f6e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8419,7 +9093,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-globe-pillar-light",
@@ -8453,8 +9129,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-globe-pillar-light-solar-globe-.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-globe-pillar-light-solar-globe--1.webp",
+    "assets/images/products/coarts/solar-globe-pillar-light-solar-globe--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e738bcaf8bd14b588cbde07007aa2dfd~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_6f89efbfe051437fa485087d6a79b58a~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -8473,7 +9152,9 @@
   "shortDescription": "This Solar Globe Pillar Light is the perfect addition to any outdoor living space. This stylish light is designed to look like a traditional pillar light, but with a modern twist.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-bollard-7w",
@@ -8507,8 +9188,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-bollard-7w-solar-bollar.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-bollard-7w-solar-bollar-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9bf0986d7fda4d1db1aeae306c653099~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_61b92938de2b48da87346db789ea5935~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -8520,7 +9203,9 @@
   "shortDescription": "This solar bollard light is a unique, elegant addition to any outdoor area. It is made of high-quality ABS and has a beautiful, modern design.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-captain-flint-gold-floor-lamp",
@@ -8554,8 +9239,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/captain-flint-gold-floor-lamp-captain-flin.webp",
+   "gallery": [
+    "assets/images/products/coarts/captain-flint-gold-floor-lamp-captain-flin-1.webp",
+    "assets/images/products/coarts/captain-flint-gold-floor-lamp-captain-flin-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_8f0a64026c3a48eb9f704bb0aa91e4a4~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_e36eba4be04f4f51b7c931f3d9e3ae6e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -8573,7 +9261,9 @@
   "shortDescription": "This elegant Captain Flint floor lamp can be used in a variety of settings and features thoughtful design from top to bottom.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-starflood-gen-2-led-flood-light",
@@ -8607,7 +9297,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/starflood-gen-2-led-flood-light-starflood-ge.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d98da828f0ea461887c49e3bbf677b5e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8621,7 +9311,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-ergo-downlight",
@@ -8655,8 +9347,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/ergo-downlight-ergo-downlig.webp",
+   "gallery": [
+    "assets/images/products/coarts/ergo-downlight-ergo-downlig-1.webp",
+    "assets/images/products/coarts/ergo-downlight-ergo-downlig-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_0ad961330f024b78abd56841db0d388e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_7b0d87453b3c4c2cb740a13d5ef35301~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -8673,7 +9368,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-recessed-slim-downlight-round",
@@ -8707,8 +9404,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/recessed-slim-downlight-round-recessed-sli.webp",
+   "gallery": [
+    "assets/images/products/coarts/recessed-slim-downlight-round-recessed-sli-1.webp",
+    "assets/images/products/coarts/recessed-slim-downlight-round-recessed-sli-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_673ba35c7a754b67ad603d3559ffd68a~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_faa5791f89ad4e80b2925ab9e28dcc5f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -8724,7 +9424,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-smart-dimmer-module",
@@ -8758,8 +9460,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smart-dimmer-module-smart-dimmer.webp",
+   "gallery": [
+    "assets/images/products/coarts/smart-dimmer-module-smart-dimmer-1.webp",
+    "assets/images/products/coarts/smart-dimmer-module-smart-dimmer-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_3c93b5d1247841c9a1c37f9cbdc4eb66~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_2623e5c0071d4673a146f0f53171518e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -8773,7 +9478,9 @@
   "shortDescription": "Get the functionality of three smart switches or plugs in one with the Bluedot 3 Smart Switch Module.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-bendy-buddy",
@@ -8807,8 +9514,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/bendy-buddy-bendy-buddy.webp",
+   "gallery": [
+    "assets/images/products/coarts/bendy-buddy-bendy-buddy-1.webp",
+    "assets/images/products/coarts/bendy-buddy-bendy-buddy-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e5bc1852f92848998c342be2aa8bd2ed~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_62f83cc8ba4d455b9fef514f36900511~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -8824,7 +9534,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-thunder-ex-zone-2-led-flood-light",
@@ -8858,7 +9570,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/thunder-ex-zone-2-led-flood-light-thunder-ex-z.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_4f8f00f3585a41c1b3c00276af71eca5~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8872,7 +9584,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-eco-street-led",
@@ -8906,7 +9620,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/eco-street-led-eco-street-l.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_5de73e9545414266a0f8223b11d2fe35~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -8920,7 +9634,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-flame-bollard",
@@ -8954,8 +9670,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-flame-bollard-solar-flame-.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-flame-bollard-solar-flame--1.webp",
+    "assets/images/products/coarts/solar-flame-bollard-solar-flame--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_00fd2e7ec0f64de5b30f59509e00babd~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_ece2bb8b69394d2e86e1724f042481c3~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -8970,7 +9689,9 @@
   "shortDescription": "Our Solar Flame Bollard Light is a stylish and elegant way to light up your outdoor space. The modern design of this light adds a sophisticated touch to any outdoor area.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-linea-recessed",
@@ -9004,8 +9725,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/linea-recessed-linea-recess.webp",
+   "gallery": [
+    "assets/images/products/coarts/linea-recessed-linea-recess-1.webp",
+    "assets/images/products/coarts/linea-recessed-linea-recess-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_f4fbdde964b84ef8b3f251386eb63b91~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_118292f791eb4f1fbfeee026237ec2d9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9024,7 +9748,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-luna-led-downlight",
@@ -9058,7 +9784,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/luna-led-downlight-luna-led-dow.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b20408338ac847da9486af368646afdf~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -9072,7 +9798,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-marker-led-wall-light",
@@ -9106,7 +9834,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/marker-led-wall-light-marker-led-w.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_1271831275234245aad2abf10823d6ad~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -9120,7 +9848,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-alteco-panel-1",
@@ -9154,8 +9884,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/alteco-led-panel-alteco-panel.webp",
+   "gallery": [
+    "assets/images/products/coarts/alteco-led-panel-alteco-panel-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a3c73613cd694f86adfdc61f29e56cf0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_dac1ba6325e7421daf0f96b28b2ec958~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -9169,7 +9901,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-coarts-lighting-corso-led-downlight",
@@ -9203,7 +9937,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/coarts-lighting-corso-led-downlight-coarts-light.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e5d446ba601749fdb4082e99fb06cd2b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -9217,7 +9951,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-tri-proof-led-batten-1",
@@ -9251,8 +9987,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/tri-proof-led-batten-tri-proof-le.webp",
+   "gallery": [
+    "assets/images/products/coarts/tri-proof-led-batten-tri-proof-le-1.webp",
+    "assets/images/products/coarts/tri-proof-led-batten-tri-proof-le-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_264b441c612344099c6a604086a1376f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_27c4c0eb1f764913973fce2423ee0275~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9267,7 +10006,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-nordic-crystal-wall-light",
@@ -9301,8 +10042,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/nordic-crystal-wall-light-nordic-cryst.webp",
+   "gallery": [
+    "assets/images/products/coarts/nordic-crystal-wall-light-nordic-cryst-1.webp",
+    "assets/images/products/coarts/nordic-crystal-wall-light-nordic-cryst-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ca704bc0ebfa46fdaa0fba875eeefa6b~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_0539152bad7f40a79505a7510c608eb0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9318,7 +10062,9 @@
   "shortDescription": "An amazing wall-mounted lamp that is very classy in design and finesse. Equipped with LED and used as high fixtures in bedrooms and lobby walls.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-hydralux-06a-led-batten",
@@ -9352,7 +10098,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/hydralux-06a-led-batten-hydralux-06a.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c102681405114638b0815f767dbf50f0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -9366,7 +10112,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-modern-di-chrome-crystal-wall-lamp",
@@ -9400,8 +10148,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/modern-di-chrome-crystal-wall-lamp-modern-di-ch.webp",
+   "gallery": [
+    "assets/images/products/coarts/modern-di-chrome-crystal-wall-lamp-modern-di-ch-1.webp",
+    "assets/images/products/coarts/modern-di-chrome-crystal-wall-lamp-modern-di-ch-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_16735f0a5dc2412da192c60cd5792a3e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_e24ce125b0f6469ca83301f807c5cb9f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9418,7 +10169,9 @@
   "shortDescription": "A chromatic and luxurious appearance combined with an elegant display of lights, this Coarts Wall Light is one of its kind out there as its intricate design is unique and innovative.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-smart-bulb",
@@ -9452,8 +10205,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smart-bulb-smart-bulb.webp",
+   "gallery": [
+    "assets/images/products/coarts/smart-bulb-smart-bulb-1.webp",
+    "assets/images/products/coarts/smart-bulb-smart-bulb-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a6ac11fbb2f7475bb999e3327792f274~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_4fa618dc062c40159f3b8bcdf615584b~mv2.webp/v1/fit/w_500,h_500,q_90/file.webp",
@@ -9466,7 +10222,9 @@
   "shortDescription": "Say bye bye to boring homes. Now you can glamorize the ambience of your spaces with smart lighting coupled with adjustable intensity controls and timed-controlling functions.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-square-recessed-downlight",
@@ -9500,8 +10258,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/square-recessed-slim-downlight-square-reces.webp",
+   "gallery": [
+    "assets/images/products/coarts/square-recessed-slim-downlight-square-reces-1.webp",
+    "assets/images/products/coarts/square-recessed-slim-downlight-square-reces-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_7681c519c6904dc39848ffca64d2972e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_d5ef195dc6c1441bb0a6ee822acb7b2a~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9517,7 +10278,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-f2-series-led-track-light",
@@ -9565,7 +10328,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Name denotes a range/series and the source publishes no item-level price, SKU, specification or variant behind it."
  },
  {
   "id": "coarts-the-prancing-horse-led-lamp",
@@ -9599,7 +10364,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/the-prancing-horse-led-lamp-the-prancing.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_4d2c6ef0c6894576a77d2f785cd715c8~mv2.png/v1/fit/w_500,h_500,q_90/file.png"
@@ -9613,7 +10378,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-coarts-riser-led-step-light",
@@ -9647,8 +10414,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/coarts-riser-led-step-light-coarts-riser.webp",
+   "gallery": [
+    "assets/images/products/coarts/coarts-riser-led-step-light-coarts-riser-1.webp",
+    "assets/images/products/coarts/coarts-riser-led-step-light-coarts-riser-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_beb0e4589806401398536d2257d37b5e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_1b12c1bac9454acfabc06c62ed0ab117~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9663,7 +10433,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-stella-led-flood-light",
@@ -9697,8 +10469,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/stella-led-flood-light-stella-led-f.webp",
+   "gallery": [
+    "assets/images/products/coarts/stella-led-flood-light-stella-led-f-1.webp",
+    "assets/images/products/coarts/stella-led-flood-light-stella-led-f-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_6aebaf83eb5643febc6205381ab03ba0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_7d7999ad057c4b1fbb89ba6172647303~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9714,7 +10489,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-alteco-cs-panel",
@@ -9748,8 +10525,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/alteco-cs-panel-alteco-cs-pa.webp",
+   "gallery": [
+    "assets/images/products/coarts/alteco-cs-panel-alteco-cs-pa-1.webp",
+    "assets/images/products/coarts/alteco-cs-panel-alteco-cs-pa-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c028e1cba16b4303b6dbedcdcf155807~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_6fa6a9ee13da494eae3f32a0d6073dd0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9764,7 +10544,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-moon-led-panel",
@@ -9798,7 +10580,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/moon-led-panel-moon-led-pan.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_fd8911fc56bf43c4811648a6628ba3f1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -9812,7 +10594,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-dual-end-tri-cob",
@@ -9846,8 +10630,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/dual-end-tri-cob-dual-end-tri.webp",
+   "gallery": [
+    "assets/images/products/coarts/dual-end-tri-cob-dual-end-tri-1.webp",
+    "assets/images/products/coarts/dual-end-tri-cob-dual-end-tri-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_39d6086e42734f44a17a8116c8856cf0~mv2.webp/v1/fit/w_500,h_500,q_90/file.webp",
     "https://static.wixstatic.com/media/21be31_5f2b4187fef741f99ee61cc4c0942f62~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -9860,7 +10647,9 @@
   "shortDescription": "These outdoor wall lights tend to light up two ways and spread by a broad spectrum. They are dual headed they are best to be placed inside your car parks, gardens, hallways, and pathways.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-pearl-elegant-track-light",
@@ -9894,8 +10683,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/pearl-elegant-track-light-pearl-elegan.webp",
+   "gallery": [
+    "assets/images/products/coarts/pearl-elegant-track-light-pearl-elegan-1.webp",
+    "assets/images/products/coarts/pearl-elegant-track-light-pearl-elegan-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_9ac9eca1f18a40fbb35d9525aa8bc6fd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_d64fdb487bb0450f9452a315ce541406~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -9912,7 +10704,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-wooden-pine-hanging-light",
@@ -9946,8 +10740,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/wooden-pine-hanging-light-wooden-pine-.webp",
+   "gallery": [
+    "assets/images/products/coarts/wooden-pine-hanging-light-wooden-pine--1.webp",
+    "assets/images/products/coarts/wooden-pine-hanging-light-wooden-pine--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_c9f4a3c9509245f5b0004b98aa8ab1f9~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_9f0887bc88914dae8716632bc7e16ff2~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -9962,7 +10759,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-rgb-strip-light",
@@ -9996,8 +10795,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/rgb-strip-light-rgb-strip-li.webp",
+   "gallery": [
+    "assets/images/products/coarts/rgb-strip-light-rgb-strip-li-1.webp",
+    "assets/images/products/coarts/rgb-strip-light-rgb-strip-li-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_26f9c9d4aa4f4738b00f2e0a819109f7~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_9bc046deb70a4c6f9d9f8372064eb625~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -10014,7 +10816,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-austube-slim-led-linear-light-diffuser-module",
@@ -10048,8 +10852,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/austube-slim-led-linear-light-diffuser-module-austube-slim.webp",
+   "gallery": [
+    "assets/images/products/coarts/austube-slim-led-linear-light-diffuser-module-austube-slim-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_cc51319ddeec414899389950b5c5333f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_e4fc9d096f6f4ffc83dc1ee5ecd6c4fd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10063,7 +10869,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-linea-surface",
@@ -10097,8 +10905,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/linea-surface-linea-surfac.webp",
+   "gallery": [
+    "assets/images/products/coarts/linea-surface-linea-surfac-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_53ff3bb3fe1148329dd1d0a58e6d9cff~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_55b9826df1c24b8ca0446332eb7987d7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10112,7 +10922,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-led-panel-supremo",
@@ -10146,8 +10958,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/led-panel-supremo-led-panel-su.webp",
+   "gallery": [
+    "assets/images/products/coarts/led-panel-supremo-led-panel-su-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_46623847eb0f44888c325f779b6ad955~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_50023cf53e634957a5baef5ed14b0595~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10161,7 +10975,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-square-surface-downlight",
@@ -10195,8 +11011,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/v2-square-surface-downlight-v2-square-su.webp",
+   "gallery": [
+    "assets/images/products/coarts/v2-square-surface-downlight-v2-square-su-1.webp",
+    "assets/images/products/coarts/v2-square-surface-downlight-v2-square-su-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b4fc8e856fe54013bbe68ae0412de46e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_baa01736f7e3497ebd003c926748bad6~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -10211,7 +11030,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-bollard-5w",
@@ -10245,8 +11066,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-bollard-5w-solar-bollar.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-bollard-5w-solar-bollar-1.webp",
+    "assets/images/products/coarts/solar-bollard-5w-solar-bollar-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_2819fb4aa4ce45d085f1ca7700e4b31e~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_6f32f5c4f2a54fc8a8bd15db0ad56449~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -10259,7 +11083,9 @@
   "shortDescription": "This solar bollard light is a unique, elegant addition to any outdoor area. It is made of high-quality ABS and has a beautiful, modern design.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-museo-track-light",
@@ -10293,8 +11119,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/museo-track-light-museo-track-.webp",
+   "gallery": [
+    "assets/images/products/coarts/museo-track-light-museo-track--1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_e2165ba2fcba41a589c0131179c28d8b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_0bc5ac55717647e3ae060f0e5eadc8a0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10308,7 +11136,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-quadro-led-downlight",
@@ -10342,7 +11172,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/quadro-led-downlight-quadro-led-d.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_24a2a06acbe64a8e9f767638c2d548fa~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10356,7 +11186,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-square-surface-downlight-1",
@@ -10390,8 +11222,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/square-surface-downlight-square-surfa.webp",
+   "gallery": [
+    "assets/images/products/coarts/square-surface-downlight-square-surfa-1.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_cc28a27be3dc486a88b4adfe710e7020~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_841575093f0540548122bcfb47f1deb0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10405,7 +11239,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-the-elemento",
@@ -10439,8 +11275,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/the-elemento-the-elemento.webp",
+   "gallery": [
+    "assets/images/products/coarts/the-elemento-the-elemento-1.webp",
+    "assets/images/products/coarts/the-elemento-the-elemento-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d3eb6d31fdde45a3b5a1fc7f6685e4c5~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_e941d17f4bb84b55abbe6b575af8525f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -10455,7 +11294,9 @@
   "shortDescription": "This modern piece has a built-in table and a base of white marble that supports an adjustable lamp made of black powder-coated metal.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-eleva-eco-gen-2-led-highbay-130-lumens-per-watt",
@@ -10489,7 +11330,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/eleva-eco-gen-2-led-highbay-130-lumens-per-watt-eleva-eco-ge.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_afccedae333a475c8ad14abe7b9359d8~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10503,7 +11344,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-smart-universal-remote-ir",
@@ -10537,8 +11380,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/smart-universal-remote-ir-smart-univer.webp",
+   "gallery": [
+    "assets/images/products/coarts/smart-universal-remote-ir-smart-univer-1.webp",
+    "assets/images/products/coarts/smart-universal-remote-ir-smart-univer-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_2286e52a09fa492f873235b04b5c9bc1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_643dc3f22cfe4f48baf6962dc7e605b9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -10553,7 +11399,9 @@
   "shortDescription": "Tired of handling too many remote controls at a time.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-coarts-track-spot-light",
@@ -10587,7 +11435,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/coarts-track-spot-light-coarts-track.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_099dcf300c3042679d333460fffb34c4~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10601,7 +11449,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-rio-led-downlight",
@@ -10635,7 +11485,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/rio-led-downlight-rio-led-down.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_007ac6adbc154aa787d351c477c468f1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10649,7 +11499,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-international-duplex-switch-socket",
@@ -10683,8 +11535,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/international-switch-socket-internationa.webp",
+   "gallery": [
+    "assets/images/products/coarts/international-switch-socket-internationa-1.webp",
+    "assets/images/products/coarts/international-switch-socket-internationa-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_1f939ae38c004aadb0d88797ce338830~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_19ada6c2affe4093a6e0889f8ab2c6b0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -10697,7 +11552,9 @@
   "shortDescription": "More accessibility; more ease! Managing devices has never been easier with Bluedot's two Smart Wifi International Sockets and two USB Sockets.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-vr600-weatherproof-enclosure",
@@ -10731,7 +11588,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/vr600-weatherproof-enclosure-vr600-weathe.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_d687225d22fe49af90b403838b0c9d7b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -10745,7 +11602,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-revolta-track-light",
@@ -10779,8 +11638,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/revolta-track-light-revolta-trac.webp",
+   "gallery": [
+    "assets/images/products/coarts/revolta-track-light-revolta-trac-1.webp",
+    "assets/images/products/coarts/revolta-track-light-revolta-trac-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_7f565250346049328ad498d3ed81dcc0~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_fabb4831d0da4b64b479ea93176f9127~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -10795,7 +11657,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-solar-flare-flood-light-200w",
@@ -10829,8 +11693,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/solar-flare-flood-light-200w-solar-flare-.webp",
+   "gallery": [
+    "assets/images/products/coarts/solar-flare-flood-light-200w-solar-flare--1.webp",
+    "assets/images/products/coarts/solar-flare-flood-light-200w-solar-flare--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_106206cd1e844cf78276409ffc7b10e5~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_d7cdb8d228b5458d9f923a7734608eb3~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -10843,7 +11710,9 @@
   "shortDescription": "With an external solar panel and a built-in battery for quick and easy charging, our 200W Solar Flare Flood light is ideal for any exterior lighting needs.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-recessed-slim-downlight-round",
@@ -10877,8 +11746,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/recessed-slim-round-downlight-round-v2-v2-recessed-.webp",
+   "gallery": [
+    "assets/images/products/coarts/recessed-slim-round-downlight-round-v2-v2-recessed--1.webp",
+    "assets/images/products/coarts/recessed-slim-round-downlight-round-v2-v2-recessed--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a905bd7edda749aaa077aeadfc51cedd~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_4284c267b4a44b83ae764300f98c569d~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -10894,7 +11766,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-v2-recessed-slim-downlight-square",
@@ -10928,8 +11802,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/recessed-slim-square-downlight-v2-v2-recessed-.webp",
+   "gallery": [
+    "assets/images/products/coarts/recessed-slim-square-downlight-v2-v2-recessed--1.webp",
+    "assets/images/products/coarts/recessed-slim-square-downlight-v2-v2-recessed--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_05ede58fcc3f456e9849ac8cdce80d72~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_a1d44e50628e4b46917c2e99d6da811b~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -10945,7 +11822,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-nova-cob-downlight-1",
@@ -10979,8 +11858,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/nova-cob-downlight-nova-cob-dow.webp",
+   "gallery": [
+    "assets/images/products/coarts/nova-cob-downlight-nova-cob-dow-1.webp",
+    "assets/images/products/coarts/nova-cob-downlight-nova-cob-dow-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b36f42cb695e4d7c8a4b372c3d2c3a29~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_bec8fa8bbb4843e89a5eaddffb352bdf~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -10995,7 +11877,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-niko-garden-led-spike-light",
@@ -11029,7 +11913,7 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/coarts/niko-garden-led-spike-light-niko-garden-.webp",
    "gallery": [],
    "remote": [
     "https://static.wixstatic.com/media/21be31_ea0dafecdfdd4131a7d97c3ebe64523b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
@@ -11043,7 +11927,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-el-classico-solar-wall-lamp",
@@ -11077,8 +11963,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/vintage-classico-solar-wall-lamp-el-classico-.webp",
+   "gallery": [
+    "assets/images/products/coarts/vintage-classico-solar-wall-lamp-el-classico--1.webp",
+    "assets/images/products/coarts/vintage-classico-solar-wall-lamp-el-classico--2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_acf75dfc7d144dcd8455b6834c4f100b~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     "https://static.wixstatic.com/media/21be31_a6b244de033b4bb0ba02a4c978809be1~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -11094,7 +11983,9 @@
   "shortDescription": "A chic and stylish vintage lamp that is powered by Solar energy and is incredibly energy-efficient, perfect to give your places that medieval classical look of 19th century England.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-smart-door-lock-1",
@@ -11140,7 +12031,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-nova-cob-downlight",
@@ -11174,8 +12067,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/nova-cob-downlight-nova-cob-dow.webp",
+   "gallery": [
+    "assets/images/products/coarts/nova-cob-downlight-nova-cob-dow-1.webp",
+    "assets/images/products/coarts/nova-cob-downlight-nova-cob-dow-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_b9a4f3031f4b4658b41da43e10d0b88f~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_500e5a3495144d269976abbce5275962~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
@@ -11191,7 +12087,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes no price for this product."
-  ]
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "coarts-5a-universal-smart-plug",
@@ -11225,8 +12123,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/coarts/5a-universal-smart-plug-5a-universal.webp",
+   "gallery": [
+    "assets/images/products/coarts/5a-universal-smart-plug-5a-universal-1.webp",
+    "assets/images/products/coarts/5a-universal-smart-plug-5a-universal-2.webp"
+   ],
    "remote": [
     "https://static.wixstatic.com/media/21be31_a8dfa3c86bda45d4af03ac525d613f7e~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
     "https://static.wixstatic.com/media/21be31_c1c98f799e124cecbd62f77e6f47c572~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
@@ -11241,6 +12142,8 @@
   "shortDescription": "Now you can time your electronical devices and gadgets with the Universal two-pin plug from anywhere at any time.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  }
 ]

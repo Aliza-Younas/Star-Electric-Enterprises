@@ -23,9 +23,11 @@ window.SEE_DATA = (function () {
   var IMG_FALLBACK = "assets/images/products/";
 
   /* ---------------------------------------------------------------- images */
-  /* Line-art fallbacks retained from the prototype for catalogue entries whose
-     source publishes no photograph (e.g. every Pakistan Cables product). */
-  var FALLBACK_BY_CATEGORY = {
+  /* These line-art keys are CATEGORY icons - used for category tiles and
+     navigation only. They are never used as a product photograph: a product
+     either shows the real image published by its own source, or it shows an
+     honest "Product image unavailable" state. */
+  var CATEGORY_ICON = {
     "wires-cables": "cable-coil",
     "switches-sockets": "switch-plate",
     "circuit-protection": "mcb",
@@ -50,10 +52,12 @@ window.SEE_DATA = (function () {
   function categoryImage(slug) { return "assets/images/categories/" + slug + ".webp"; }
   function hasPhoto(key) { return PHOTO.indexOf(key) !== -1; }
 
+  /* Product imagery is source-verified or absent. No category icon, stock
+     photograph, generated render or substitute from another retailer is ever
+     shown in place of a product's own image. Callers must handle null by
+     rendering the "Product image unavailable" state. */
   function productImage(p) {
-    if (p.img) { return imageUrl(p.img); }
-    var fb = FALLBACK_BY_CATEGORY[p.cat || p.category];
-    return fb ? imageUrl(fb) : null;
+    return p && p.img ? imageUrl(p.img) : null;
   }
 
   /* ------------------------------------------------------- stock + pricing */
@@ -117,18 +121,43 @@ window.SEE_DATA = (function () {
       name: c.name,
       blurb: c.blurb || "",
       count: c.count,
-      icon: FALLBACK_BY_CATEGORY[c.slug] || "cable-coil",
+      icon: CATEGORY_ICON[c.slug] || "cable-coil",
       subs: (c.subcategories || []).map(function (s) {
         return { slug: s.slug, name: s.name, count: s.count,
-                 icon: FALLBACK_BY_CATEGORY[c.slug] || "cable-coil" };
+                 icon: CATEGORY_ICON[c.slug] || "cable-coil" };
       })
     };
   });
 
   var BRANDS = (C.brands || []).map(function (b) {
-    return { slug: b.slug, name: b.name, mark: b.mark, count: b.count,
+    return { slug: b.slug, name: b.name, mark: b.mark,
+             count: b.productCount != null ? b.productCount : (b.count || 0),
+             familyCount: b.familyCount || 0,
+             catalogueExposed: b.catalogueExposed !== false,
              sourceDomains: b.sourceDomains || [], note: b.note || "" };
   });
+
+  /* ------------------------------------------------------------- families
+     Product families and series are NOT products and are never rendered as
+     product cards. A family is a group name the source publishes without any
+     item-level model, specification, image or price behind it, so it is used
+     only for navigation: brand pages, category pages and enquiries.
+     data/families.js is optional - pages that need it load it explicitly. */
+  var F = window.SEE_FAMILIES || { families: [] };
+  var FAMILIES = (F.families || []).slice();
+
+  function familiesForBrand(slug) {
+    return FAMILIES.filter(function (f) { return f.brandSlug === slug; });
+  }
+  function familiesForCategory(slug) {
+    return FAMILIES.filter(function (f) { return f.category === slug; });
+  }
+  function familyById(id) {
+    for (var i = 0; i < FAMILIES.length; i++) {
+      if (FAMILIES[i].id === id) { return FAMILIES[i]; }
+    }
+    return null;
+  }
 
   /* ------------------------------------------------------------- lookups */
   function categoryBySlug(s) {
@@ -214,6 +243,10 @@ window.SEE_DATA = (function () {
     IMG: IMG_FALLBACK,
     CATEGORIES: CATEGORIES,
     BRANDS: BRANDS,
+    FAMILIES: FAMILIES,
+    familiesForBrand: familiesForBrand,
+    familiesForCategory: familiesForCategory,
+    familyById: familyById,
     PRODUCTS: PRODUCTS,
     generatedAt: C.generatedAt || null,
     categoryBySlug: categoryBySlug,

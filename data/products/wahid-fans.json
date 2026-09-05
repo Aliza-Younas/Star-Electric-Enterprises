@@ -33,8 +33,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/ace-series-56-99-99-copper-versace-design-103741918087.webp",
+   "gallery": [
+    "assets/images/products/wahid/ace-series-56-99-99-copper-versace-design-103741918087-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/2_68c72821-cf81-4038-b79e-3002cc11bef4.png?v=1786350821",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/3_92a44601-3720-4c1b-9385-1a62ac110668.png?v=1786350821"
@@ -80,7 +82,9 @@
   "shortDescription": "Ace Series - Versace Design ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10374076793112",
@@ -118,8 +122,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/ace-series-56-solar-ac-dc-versace-design-103740767931.webp",
+   "gallery": [
+    "assets/images/products/wahid/ace-series-56-solar-ac-dc-versace-design-103740767931-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/2_68c72821-cf81-4038-b79e-3002cc11bef4.png?v=1786350821",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/3_92a44601-3720-4c1b-9385-1a62ac110668.png?v=1786350821"
@@ -160,7 +166,9 @@
   "shortDescription": "Ace Series AC/DC ceiling fan combines powerful performance with energy efficiency. Features 99.99% copper wire, durable rustproof body, and aerodynamically designed blades for optimal air circulation.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10373960106264",
@@ -197,8 +205,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-56-inverter-ace-series-versace-design-103739601062.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-56-inverter-ace-series-versace-design-103739601062-1.webp",
+    "assets/images/products/wahid/30-watts-56-inverter-ace-series-versace-design-103739601062-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/3_db2f9c2d-099f-4bb8-93d4-ed5a41b4f55f.png?v=1786350382",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/2_166f1b2b-8d5f-433a-9fb3-ba8a60f79133.png?v=1786350382",
@@ -240,7 +251,9 @@
   "shortDescription": "30 Watts Inverter Ace Series – Premium Ceiling Fan with Advanced Technology Experience superior cooling with the 30 Watts Inverter Ace Series, engineered for maximum efficiency and performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109030168",
@@ -277,8 +290,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/aviator-series-ac-dc-103191090301.webp",
+   "gallery": [
+    "assets/images/products/wahid/aviator-series-ac-dc-103191090301-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_9d9577503f1b4a7895817b5c82cd3d84_mv2_d9ddad73-5072-436f-ae58-2e29b4031c55.png?v=1782729825",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_a28ad7eb0c8e4270ab8b1e70479fe1ca_mv2_ba6a3a54-2eca-45e7-88ff-3176b1855802.png?v=1782729825"
@@ -318,7 +333,9 @@
   "shortDescription": "Aviator Series AC/DC — Premium Ceiling Fan with Dual Power Options Experience superior cooling with the Aviator Series AC/DC ceiling fan, engineered for reliability and performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108931864",
@@ -355,8 +372,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/elegance-series-56-solar-ac-dc-103191089318.webp",
+   "gallery": [
+    "assets/images/products/wahid/elegance-series-56-solar-ac-dc-103191089318-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_8841f8b46d3745ed8eb105fcee85e9aa_mv2_da906c31-91cd-4e93-9de3-4961f7c3495d.png?v=1782729823",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_8d42ce18f8a1495eb5a20a6bd14bd09b_mv2_9ce74296-24b9-499d-af4d-589ccb99b7d5.png?v=1782729823"
@@ -397,7 +416,9 @@
   "shortDescription": "Elegance Series AC/DC ceiling fan combines premium performance with energy efficiency. Features 99.99% copper wire, aerodynamically designed blades, and a rustproof body for lasting durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108866328",
@@ -435,8 +456,11 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/ace-series-56-solar-ac-dc-103191088663.webp",
+   "gallery": [
+    "assets/images/products/wahid/ace-series-56-solar-ac-dc-103191088663-1.webp",
+    "assets/images/products/wahid/ace-series-56-solar-ac-dc-103191088663-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/2_d53cc37e-7e72-4f66-b34f-b9e83ce81214.png?v=1786346915",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_857d3353ee9d47f6a0a317d4e1ad994e_mv2_3ff6b026-d1dc-46b3-a635-85bdf3c0390f.png?v=1782729821",
@@ -478,7 +502,9 @@
   "shortDescription": "Ace Series AC/DC ceiling fan combines powerful performance with energy efficiency. Features 99.99% copper wire, durable rustproof body, and aerodynamically designed blades for optimal air circulation.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109259544",
@@ -515,8 +541,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/passion-series-ac-dc-103191092595.webp",
+   "gallery": [
+    "assets/images/products/wahid/passion-series-ac-dc-103191092595-1.webp",
+    "assets/images/products/wahid/passion-series-ac-dc-103191092595-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_974226297b864881bc2506d4525e6765_mv2.png?v=1782729832",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_0387b55b21d54b53a2b4b9ff6ca472e6_mv2.png?v=1782729832",
@@ -560,7 +589,9 @@
   "shortDescription": "Passion Series AC/DC ceiling fan combines premium engineering with modern convenience. Features wireless digital RF remote control—no dimmer required.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109194008",
@@ -597,8 +628,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/falcon-series-ac-dc-103191091940.webp",
+   "gallery": [
+    "assets/images/products/wahid/falcon-series-ac-dc-103191091940-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_2583d51a9d5246a0b8fc9e7adf4023d6_mv2_c33964fb-7c52-4818-8066-f55f794e0d41.png?v=1782729830",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_501ac349c07f49a3a6f341077d5f1575_mv2_efd76db2-529c-4076-8462-70ba47d0846a.png?v=1782729830"
@@ -638,7 +671,9 @@
   "shortDescription": "Falcon Series AC/DC Ceiling Fan – Premium Performance with Remote Control Experience superior cooling with the Falcon Series AC/DC ceiling fan, engineered for maximum efficiency and durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109161240",
@@ -674,8 +709,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/falcon-series-103191091612.webp",
+   "gallery": [
+    "assets/images/products/wahid/falcon-series-103191091612-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_501ac349c07f49a3a6f341077d5f1575_mv2.png?v=1782729829",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_2583d51a9d5246a0b8fc9e7adf4023d6_mv2.png?v=1782729829"
@@ -720,7 +757,9 @@
   "shortDescription": "Falcon Series ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10364181446936",
@@ -757,7 +796,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/pb-18-ac-dc-solar-special-standard-103641814469.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_c6528b8b9e4645d49484c19237998a44_mv2.png?v=1782729878"
@@ -790,7 +829,9 @@
   "shortDescription": "Experience uninterrupted cooling with the PB 18\" AC-DC/Solar Special Standard pedestal fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111815448",
@@ -827,8 +868,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/classic-series-103191118154.webp",
+   "gallery": [
+    "assets/images/products/wahid/classic-series-103191118154-1.webp",
+    "assets/images/products/wahid/classic-series-103191118154-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_04c11d323a5d4a1d8bdbe1c650166af1_mv2.png?v=1782729907",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_0712776bd6a04552a265495b598afc4c_mv2.png?v=1782729907",
@@ -927,7 +971,9 @@
   "shortDescription": "Classic Series ceiling fan combines reliability with performance. Features 99.99% copper wire, energy-efficient durable motor, and aerodynamically designed blades for optimal air circulation.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111782680",
@@ -963,8 +1009,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/twister-series-103191117826.webp",
+   "gallery": [
+    "assets/images/products/wahid/twister-series-103191117826-1.webp",
+    "assets/images/products/wahid/twister-series-103191117826-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_5fee0a8a61b94e9eb89f69cb89e80aac_mv2.png?v=1782729907",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_6564965762734a008b562542888cd0bb_mv2.png?v=1782729906",
@@ -1109,7 +1158,9 @@
   "shortDescription": "Twister Series ceiling fan combines premium engineering with reliable performance. Built with 99.99% copper wire and a durable, rustproof body, this fan delivers consistent cooling for any room.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111749912",
@@ -1145,8 +1196,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/unique-series-ceiling-fan-103191117499.webp",
+   "gallery": [
+    "assets/images/products/wahid/unique-series-ceiling-fan-103191117499-1.webp",
+    "assets/images/products/wahid/unique-series-ceiling-fan-103191117499-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_8eb799c66863412c8170f14dc0248b99_mv2.png?v=1782729905",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_4d0433a9b90c43f09ea4a472222d7ac1_mv2.png?v=1782729905",
@@ -1216,7 +1270,9 @@
   "shortDescription": "Unique Series Ceiling Fan — Premium Performance for Modern Homes Experience superior cooling with the Unique Series Ceiling Fan, engineered for elegance and efficiency.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111717144",
@@ -1251,8 +1307,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/floral-series-ceiling-fan-103191117171.webp",
+   "gallery": [
+    "assets/images/products/wahid/floral-series-ceiling-fan-103191117171-1.webp",
+    "assets/images/products/wahid/floral-series-ceiling-fan-103191117171-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7ee19fc640de4372aa446456ffd5d217_mv2_c580157e-28c9-49e8-b37f-c5967abdb228.png?v=1782729904",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_41f557f060bc4efc85cb5214708d29c5_mv2_077862d7-466c-4cba-a1ff-5ed00662adba.png?v=1782729904",
@@ -1429,7 +1488,9 @@
   "shortDescription": "Floral Series Ceiling Fan — Premium Performance for Your Home Experience superior air circulation with our Floral Series Ceiling Fan, engineered for efficiency and durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111684376",
@@ -1465,8 +1526,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/grace-series-ceiling-fan-99-99-copper-103191116843.webp",
+   "gallery": [
+    "assets/images/products/wahid/grace-series-ceiling-fan-99-99-copper-103191116843-1.webp",
+    "assets/images/products/wahid/grace-series-ceiling-fan-99-99-copper-103191116843-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_b40339edd19b4fe994a2b1e4f2bcd803_mv2_51c4edf4-e627-4b8f-b133-abc06a4a4409.png?v=1782729902",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_728d5ed2ee8741928fee1df34afd7ed7_mv2_e60e5395-e98e-4488-a83a-a1a8fdbcff74.png?v=1782729902",
@@ -1700,7 +1764,9 @@
   "shortDescription": "Grace Series ceiling fan combines premium engineering with reliable performance. Features 99.99% copper wire construction and an energy-efficient motor rated at 80 watts.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111651608",
@@ -1736,8 +1802,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/super-grace-series-103191116516.webp",
+   "gallery": [
+    "assets/images/products/wahid/super-grace-series-103191116516-1.webp",
+    "assets/images/products/wahid/super-grace-series-103191116516-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_c08a21d1f34c404aa0f716775152bf6b_mv2.png?v=1782729901",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_23b1b5669fe4435eb035c84fcf240d03_mv2.png?v=1782729902",
@@ -1836,7 +1905,9 @@
   "shortDescription": "Super Grace Series ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111618840",
@@ -1872,8 +1943,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/florence-series-ceiling-fan-103191116188.webp",
+   "gallery": [
+    "assets/images/products/wahid/florence-series-ceiling-fan-103191116188-1.webp",
+    "assets/images/products/wahid/florence-series-ceiling-fan-103191116188-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.47.32_PM_1.jpg?v=1787135167",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.47.32_PM.jpg?v=1787135167",
@@ -2079,7 +2153,9 @@
   "shortDescription": "Experience superior cooling with the Florence Series ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111586072",
@@ -2115,8 +2191,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/passion-series-103191115860.webp",
+   "gallery": [
+    "assets/images/products/wahid/passion-series-103191115860-1.webp",
+    "assets/images/products/wahid/passion-series-103191115860-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_0387b55b21d54b53a2b4b9ff6ca472e6_mv2_078834af-5a7f-4a81-98c5-ff4e23ced07d.png?v=1782729899",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_5a3139ba121f41da87e5ae70736989a6_mv2_f1b205c4-8684-4aac-8549-2a8425784d70.png?v=1782729899",
@@ -2215,7 +2294,9 @@
   "shortDescription": "Passion Series ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111553304",
@@ -2252,8 +2333,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/premium-series-103191115533.webp",
+   "gallery": [
+    "assets/images/products/wahid/premium-series-103191115533-1.webp",
+    "assets/images/products/wahid/premium-series-103191115533-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_e607aec238f143e09ed9d98d5901c5f9_mv2.png?v=1782729899",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_92ab71a8174f452d97bbf0176008b575_mv2.png?v=1782729899",
@@ -2295,7 +2379,9 @@
   "shortDescription": "Premium Series ceiling fan engineered for superior performance and reliability. Features 99.99% copper wire construction with original factory warranty.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111520536",
@@ -2331,8 +2417,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/deluxe-plus-series-103191115205.webp",
+   "gallery": [
+    "assets/images/products/wahid/deluxe-plus-series-103191115205-1.webp",
+    "assets/images/products/wahid/deluxe-plus-series-103191115205-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_cb975bfbdbba47fa977fa9245fdf5263_mv2_19e4cc58-7609-4b4a-8e5e-b4d9bcc70c91.png?v=1782729897",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_e6920edc9ba34452b3c666665712170b_mv2_f95fc8b0-bb14-4a15-904b-d869e50e19f3.png?v=1782729897",
@@ -2404,7 +2493,9 @@
   "shortDescription": "Deluxe Plus Series ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111487768",
@@ -2441,8 +2532,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/deluxe-plus-series-ac-dc-103191114877.webp",
+   "gallery": [
+    "assets/images/products/wahid/deluxe-plus-series-ac-dc-103191114877-1.webp",
+    "assets/images/products/wahid/deluxe-plus-series-ac-dc-103191114877-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_bb42217d2bc24f35a37f12a5a7bce534_mv2.png?v=1782729897",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_3cf069c98b8248b0a6fb7ac67781f32e_mv2_3a3d1869-9eaf-4ee4-9f76-c958d2c01dde.png?v=1782729897",
@@ -2485,7 +2579,9 @@
   "shortDescription": "Experience superior cooling with the Deluxe Plus Series AC/DC ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111455000",
@@ -2521,8 +2617,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/urban-series-103191114550.webp",
+   "gallery": [
+    "assets/images/products/wahid/urban-series-103191114550-1.webp",
+    "assets/images/products/wahid/urban-series-103191114550-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_828718b1cc8147aeb15106d129db53bf_mv2_d5f44710-6b76-4781-b4bc-72f7b36ec8c7.png?v=1782729896",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_70f857a195724c6783bab3555f1a4da4_mv2_c29bdf5d-dcac-40d5-b4e8-6fd8c745538b.png?v=1782729896",
@@ -2675,7 +2774,9 @@
   "shortDescription": "Urban Series ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111422232",
@@ -2711,8 +2812,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/summit-series-103191114222.webp",
+   "gallery": [
+    "assets/images/products/wahid/summit-series-103191114222-1.webp",
+    "assets/images/products/wahid/summit-series-103191114222-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_d18f8a04cc034356b68055210e5a16b5_mv2.png?v=1782729895",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_f12aab801f954eacb18e39a6566480a9_mv2.png?v=1782729895",
@@ -2754,7 +2858,9 @@
   "shortDescription": "Experience superior cooling with the Summit Series ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111389464",
@@ -2790,8 +2896,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/galaxy-series-ceiling-fan-103191113894.webp",
+   "gallery": [
+    "assets/images/products/wahid/galaxy-series-ceiling-fan-103191113894-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_c0099d964fbe4a4f80d47d991fda9cad_mv2_f5c7ca45-d45a-46c9-a70f-6ca3f0be5bb7.png?v=1782729894",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_38589c33fbb743f28a84efffe4263fa4_mv2_148e0f40-a30a-4c90-af6c-cc0879c33f8a.png?v=1782729894"
@@ -2861,7 +2969,9 @@
   "shortDescription": "Experience superior cooling with the Galaxy Series Ceiling Fan—engineered for maximum performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111356696",
@@ -2897,8 +3007,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/super-gold-model-ceiling-fan-103191113566.webp",
+   "gallery": [
+    "assets/images/products/wahid/super-gold-model-ceiling-fan-103191113566-1.webp",
+    "assets/images/products/wahid/super-gold-model-ceiling-fan-103191113566-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_fd753e1d6a9c4d29bb001d10a76edc49_mv2.png?v=1782729893",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_8d57ef13333b4ccfb8fc44ba92b43ef9_mv2.png?v=1782729893",
@@ -3030,7 +3143,9 @@
   "shortDescription": "Experience superior cooling with the Super Gold Model Ceiling Fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111323928",
@@ -3067,8 +3182,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/waterproof-fan-ceiling-fan-103191113239.webp",
+   "gallery": [
+    "assets/images/products/wahid/waterproof-fan-ceiling-fan-103191113239-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_ff698c334b1d45578a7413dd95288056_mv2.png?v=1782729892",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_b8a4ed9c72bf4a2b9fb3a95db7062a05_mv2.png?v=1782729892"
@@ -3096,7 +3213,9 @@
   "shortDescription": "Stay cool and dry with the Waterproof Fan — engineered for bathrooms, kitchens, and outdoor spaces.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111291160",
@@ -3132,8 +3251,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/deluxe-ceiling-103191112911.webp",
+   "gallery": [
+    "assets/images/products/wahid/deluxe-ceiling-103191112911-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_66d82587350f4822a56145e56563a7eb_mv2.png?v=1782729891",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_264b9b9ca43041699e29f3624acd6c90_mv2.png?v=1782729891"
@@ -3216,7 +3337,9 @@
   "shortDescription": "Experience superior cooling with the Deluxe Ceiling Fan—engineered for performance and durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111258392",
@@ -3252,8 +3375,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/saad-series-residential-ceiling-fan-99-99-copper-103191112583.webp",
+   "gallery": [
+    "assets/images/products/wahid/saad-series-residential-ceiling-fan-99-99-copper-103191112583-1.webp",
+    "assets/images/products/wahid/saad-series-residential-ceiling-fan-99-99-copper-103191112583-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_3.02.02_PM.jpg?v=1787136138",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_fc756d178d8a4549b7e55a2a7c264dc6_mv2_e63c7b01-a38f-45fe-90c3-2eb26d5a2423.png?v=1782729890",
@@ -3345,7 +3471,9 @@
   "shortDescription": "Experience superior cooling with the Saad Series ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111225624",
@@ -3381,8 +3509,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/airmax-series-103191112256.webp",
+   "gallery": [
+    "assets/images/products/wahid/airmax-series-103191112256-1.webp",
+    "assets/images/products/wahid/airmax-series-103191112256-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_eb1101f95fba4420bf3896f53d312ec8_mv2_9a9203bc-c844-410a-be25-5d105941f101.png?v=1782729889",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_d7618dcb2b4b4e04b250453256f47e1c_mv2_b0d4c99a-3901-471c-a019-4f70877d286f.png?v=1782729889",
@@ -3454,7 +3585,9 @@
   "shortDescription": "Experience superior air circulation with the Airmax Series ceiling fan—engineered for maximum performance and durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111192856",
@@ -3490,8 +3623,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/khyber-model-103191111928.webp",
+   "gallery": [
+    "assets/images/products/wahid/khyber-model-103191111928-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7829797394a945c399a24314c5db82a4_mv2.png?v=1782729889",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_fd3799ad415340eba3cf06b2069d8cf3_mv2.png?v=1782729889"
@@ -3586,7 +3721,9 @@
   "shortDescription": "Experience superior cooling with the Khyber Model ceiling fan—engineered for performance and durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111160088",
@@ -3622,8 +3759,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/expo-model-ceiling-fan-103191111600.webp",
+   "gallery": [
+    "assets/images/products/wahid/expo-model-ceiling-fan-103191111600-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_b2aa382bc1304318b4141a9e31219a5d_mv2.png?v=1782729888",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_234259dce8214d919ee059b252b8c320_mv2.png?v=1782729888"
@@ -3718,7 +3857,9 @@
   "shortDescription": "Experience superior cooling with the Expo Model Ceiling Fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111127320",
@@ -3754,8 +3895,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/super-khyber-supreme-103191111273.webp",
+   "gallery": [
+    "assets/images/products/wahid/super-khyber-supreme-103191111273-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_de7c444a538d4b12b5f4af6b9f5d9e43_mv2.png?v=1782729887",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_e256219ffed34f47b96bc43a9d07c9ad_mv2.png?v=1782729887"
@@ -3850,7 +3993,9 @@
   "shortDescription": "Experience superior cooling with the Super Khyber Supreme ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111094552",
@@ -3887,7 +4032,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/louvre-pedestal-103191110945.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_f6fa8ca707ae446b896aab7e26ddd603_mv2.png?v=1782729886"
@@ -3927,7 +4072,9 @@
   "shortDescription": "Experience superior cooling with the Louvre Pedestal fan—a 14\" powerhouse engineered for modern homes.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111061784",
@@ -3964,7 +4111,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/louvre-bracket-103191110617.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_9365ab27ee6847b48c6f30969fa3b0d2_mv2.png?v=1782729885"
@@ -4004,7 +4151,9 @@
   "shortDescription": "Sturdy louvre bracket designed for secure mounting and directional airflow control. Perfect for adjusting fan angles to suit your comfort needs.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319111029016",
@@ -4039,7 +4188,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/table-fan-103191110290.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_39136e355ada4856a51a2c6e55eeb861_mv2.png?v=1782729884"
@@ -4079,7 +4228,9 @@
   "shortDescription": "Salient Features: Jerk free oscillation & smooth running. 3 speed options & 90° horizontal oscillation. Aerodynamically designed blades for maximum air delivery.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110996248",
@@ -4114,8 +4265,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/tcp-fans-103191109962.webp",
+   "gallery": [
+    "assets/images/products/wahid/tcp-fans-103191109962-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_2fb64165e9e842d6919ac92c3f2c1a9a_mv2.png?v=1782729884",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_472a25cc22ed4ff4a2dc834154cddd51_mv2.png?v=1782729884"
@@ -4185,7 +4338,9 @@
   "shortDescription": "Salient Features: Jerk free oscillation & smooth running 3 speed options & 90° horizontal oscillation Adjustable height Aerodynamically designed blades for maximum air delivery Energy efficient Electr",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110963480",
@@ -4222,8 +4377,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/vip-exhaust-metal-103191109634.webp",
+   "gallery": [
+    "assets/images/products/wahid/vip-exhaust-metal-103191109634-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_4a0c3cafbeea44fd85142892c25e83b5_mv2.png?v=1782729883",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_bbfad0938adf4e11b897116627ebbba9_mv2.png?v=1782729883"
@@ -4353,7 +4510,9 @@
   "shortDescription": "Premium metal exhaust fan engineered for powerful ventilation and durability. Features robust construction with efficient airflow performance, ideal for kitchens, bathrooms, and industrial spaces.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110930712",
@@ -4390,7 +4549,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/exhaust-metal-103191109307.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_461b4e3c41f14739b1f7165e749a6d68_mv2.png?v=1782729882"
@@ -4610,7 +4769,9 @@
   "shortDescription": "Powerful exhaust metal fan designed to efficiently remove moisture, odors, and stale air from kitchens, bathrooms, and utility spaces.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110897944",
@@ -4647,7 +4808,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/glass-exhaust-103191108979.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7c984177c4d84403a10f83d214db6e4d_mv2.png?v=1782729881"
@@ -4687,7 +4848,9 @@
   "shortDescription": "Keep your home fresh and cool with the Glass Exhaust fan — engineered for silent, efficient ventilation.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110865176",
@@ -4723,7 +4886,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/exhaust-plastic-wahid-fans-103191108651.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7981c9282b02465e84dd421d2cb78652_mv2.png?v=1782729880"
@@ -4775,7 +4938,9 @@
   "shortDescription": "Exhaust Plastic is a high-performance ventilation fan designed for efficient air circulation in homes and commercial spaces.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110832408",
@@ -4809,8 +4974,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/standard-pedestal-103191108324.webp",
+   "gallery": [
+    "assets/images/products/wahid/standard-pedestal-103191108324-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_52ad184847ad49eb9d84b8d30f430a6a_mv2.png?v=1782729879",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_e39aee45f39642e79db58efd938719ac_mv2.png?v=1782729880"
@@ -5020,7 +5187,9 @@
   "shortDescription": "Powerful air circulation for any room. The Standard Pedestal delivers reliable cooling with two size options to match your space.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110799640",
@@ -5056,8 +5225,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/pb-24-special-standard-103191107996.webp",
+   "gallery": [
+    "assets/images/products/wahid/pb-24-special-standard-103191107996-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_41d6d31414284c30be52e5e66e2ac381_mv2.png?v=1782729878",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_87ee5201efe24addaac85cb1234ef365_mv2.png?v=1782729878"
@@ -5241,7 +5412,9 @@
   "shortDescription": "Saliant Features Complete Metal Body Energy efficient Electrical Steel Sheet and 99.9% Pure Copper Wire. High quality paint for superior finishing.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110766872",
@@ -5277,7 +5450,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/pb-18-special-standard-103191107668.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_c6528b8b9e4645d49484c19237998a44_mv2.png?v=1782729878"
@@ -5328,7 +5501,9 @@
   "shortDescription": "Saliant Features Complete Metal Body Energy efficient Electrical Steel Sheet and 99.9% Pure Copper Wire. High quality paint for superior finishing.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110734104",
@@ -5364,7 +5539,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/mega-bracket-plus-103191107341.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_cc29da2f2e27468f8bad444e1c978195_mv2.png?v=1782729877"
@@ -5434,7 +5609,9 @@
   "shortDescription": "Sturdy wall-mounted fan bracket designed to securely hold and position your fan at the perfect angle.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110701336",
@@ -5470,7 +5647,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/mega-bracket-103191107013.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_d4a25738ebb241898a95f0a13faff3a3_mv2_0221129f-dd5c-4faf-8e8c-f756b8a9b5ad.png?v=1782729876"
@@ -5540,7 +5717,9 @@
   "shortDescription": "Experience powerful cooling with the Mega Bracket wall mount fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110668568",
@@ -5576,7 +5755,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/smart-white-bracket-103191106685.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_08e65a01cd584c10a9eb3301c7ea97a1_mv2_8f82aa73-1cd5-48a8-9687-932cb68ed358.png?v=1782729875"
@@ -5621,7 +5800,9 @@
   "shortDescription": "Experience superior cooling with the Smart White Bracket fan. Built with 99.9% copper wire and an energy-efficient durable motor, it delivers powerful air circulation without jerky movements.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110635800",
@@ -5655,7 +5836,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/smart-black-bracket-103191106358.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_392e3c854e5f49548158aa789bc707bb_mv2_5bc7f31b-25d3-4ae7-aa08-e19c86de6b5d.png?v=1782729874"
@@ -5700,7 +5881,9 @@
   "shortDescription": "Salient Features: 99.9% copper wire Energy efficient durable motor Jerk free oscillation 3 speed options and 90 Degree horizontal oscillation Aerodynamically designed Aluminum blades for maximum air d",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110603032",
@@ -5734,7 +5917,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/smart-grey-bracket-103191106030.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_e2dae09b3f4d456fa32e6c9ff22a4905_mv2_d8f9bba7-810f-4b9f-8341-93b9445357a1.png?v=1782729873"
@@ -5779,7 +5962,9 @@
   "shortDescription": "Salient Features: 99.9% copper wire Energy efficient durable motor Jerk free oscillation 3 speed options and 90 Degree horizontal oscillation Aerodynamically designed Aluminum blades for maximum air d",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110570264",
@@ -5813,7 +5998,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/deluxe-white-bracket-103191105702.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_2ec34d7d1491457ba13ffca04a2ceacc_mv2.png?v=1782729873"
@@ -5858,7 +6043,9 @@
   "shortDescription": "Salient Features: 99.9% copper wire Energy efficient durable motor Jerk free oscillation 3 speed options and 90 Degree horizontal oscillation Aerodynamically designed Aluminum blades for maximum air d",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110537496",
@@ -5892,7 +6079,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/deluxe-grey-bracket-103191105374.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_b4ec75a7f9e54a0e9471aa9d2b623919_mv2.png?v=1782729872"
@@ -5932,7 +6119,9 @@
   "shortDescription": "Salient Features: 99.9% copper wire Energy efficient durable motor Jerk free oscillation 3 speed options and 90 Degree horizontal oscillation Aerodynamically designed Aluminum blades for maximum air d",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110504728",
@@ -5966,7 +6155,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/deluxe-black-bracket-103191105047.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_3320d7045a2d40eba7aab3373f75a104_mv2.png?v=1782729871"
@@ -6006,7 +6195,9 @@
   "shortDescription": "Salient Features: 99.9% copper wire Energy efficient durable motor Jerk free oscillation 3 speed options and 90 Degree horizontal oscillation Aerodynamically designed Aluminum blades for maximum air d",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110439192",
@@ -6043,7 +6234,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/circomatic-ceiling-fan-103191104391.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_93d22cfb8e994eee98b08d8f9e5d4069_mv2.png?v=1782729870"
@@ -6088,7 +6279,9 @@
   "shortDescription": "Experience superior air circulation with the Circomatic ceiling fan—engineered for spaces with limited headroom.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110406424",
@@ -6125,8 +6318,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/prime-plus-series-ac-dc-103191104064.webp",
+   "gallery": [
+    "assets/images/products/wahid/prime-plus-series-ac-dc-103191104064-1.webp",
+    "assets/images/products/wahid/prime-plus-series-ac-dc-103191104064-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7307f28cb3894763810ddcb5dd99e16b_mv2_b1e1200a-1f9d-43ac-a42f-5f637f37ef2c.png?v=1782729869",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_3cf069c98b8248b0a6fb7ac67781f32e_mv2_eaf79bc6-ab61-4dd3-ac4d-63713f062695.png?v=1782729868",
@@ -6169,7 +6365,9 @@
   "shortDescription": "Experience ultimate comfort with the Prime Plus Series AC/DC Ceiling Fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110373656",
@@ -6205,8 +6403,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/prime-plus-series-103191103736.webp",
+   "gallery": [
+    "assets/images/products/wahid/prime-plus-series-103191103736-1.webp",
+    "assets/images/products/wahid/prime-plus-series-103191103736-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_258afa87d6ca486db02433711d5de7aa_mv2_28be0195-4dab-4ca5-9814-7d8800c1e935.png?v=1782729868",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_a4d645c71ab74cc09769c474a744b9cd_mv2_80b21d81-d808-4de9-9fc2-a64eed772025.png?v=1782729867",
@@ -6278,7 +6479,9 @@
   "shortDescription": "Experience superior cooling with the Prime Plus Series ceiling fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110340888",
@@ -6315,8 +6518,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/prime-series-ac-dc-103191103408.webp",
+   "gallery": [
+    "assets/images/products/wahid/prime-series-ac-dc-103191103408-1.webp",
+    "assets/images/products/wahid/prime-series-ac-dc-103191103408-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_93f3c7be3b8c4040894d605eada80fd9_mv2_da5c972f-0cae-4159-89a6-e4ac210e4f16.png?v=1782729867",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_0d7ae13a7e1a44dbb72a062ae39f7cd4_mv2_123991cc-62c3-434c-ba73-26eaab9b2fa8.png?v=1782729867",
@@ -6415,7 +6621,9 @@
   "shortDescription": "Experience superior cooling with the Prime Series AC/DC ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110308120",
@@ -6451,8 +6659,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/prime-series-103191103081.webp",
+   "gallery": [
+    "assets/images/products/wahid/prime-series-103191103081-1.webp",
+    "assets/images/products/wahid/prime-series-103191103081-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_93f3c7be3b8c4040894d605eada80fd9_mv2_ed091908-e418-4987-871e-b8756b74a450.png?v=1782729865",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_0d7ae13a7e1a44dbb72a062ae39f7cd4_mv2_15a81e9a-83c8-49ad-a150-51c3fdd09948.png?v=1782729865",
@@ -6632,7 +6843,9 @@
   "shortDescription": "Experience premium cooling with the Prime Series ceiling fan—engineered for superior performance and lasting durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110275352",
@@ -6669,8 +6882,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/grace-solar-series-ac-dc-103191102753.webp",
+   "gallery": [
+    "assets/images/products/wahid/grace-solar-series-ac-dc-103191102753-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.54.40_PM.jpg?v=1787135888",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_26a8482ed8e9454380e51f41cd8801bd_mv2_b7ee7b77-8b54-4041-a8bb-205e39fe4d57.png?v=1782729863",
@@ -6798,7 +7013,9 @@
   "shortDescription": "Grace Series (AC/DC) — Premium Ceiling Fan with Remote Control Experience superior cooling with the Grace Series ceiling fan, engineered for optimal performance and durability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110242584",
@@ -6835,8 +7052,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/florence-series-solar-ac-dc-103191102425.webp",
+   "gallery": [
+    "assets/images/products/wahid/florence-series-solar-ac-dc-103191102425-1.webp",
+    "assets/images/products/wahid/florence-series-solar-ac-dc-103191102425-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.47.32_PM.jpg?v=1787135167",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.45.30_PM.jpg?v=1787135166",
@@ -6949,7 +7169,9 @@
   "shortDescription": "Experience superior cooling with the Florence Series AC/DC ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110209816",
@@ -6985,8 +7207,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/super-deluxe-ceiling-fan-103191102098.webp",
+   "gallery": [
+    "assets/images/products/wahid/super-deluxe-ceiling-fan-103191102098-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_308f6d85061c4691a6567f1468137ef2_mv2_a6a4ecd5-ed7a-401e-9c22-1f14559e390d.png?v=1782729859",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_6e5b071aed54407681ae6f189f7e8a25_mv2_a2440e80-b915-4107-b40a-79a59d38b760.png?v=1782729859"
@@ -7056,7 +7280,9 @@
   "shortDescription": "Experience premium cooling with the Super Deluxe ceiling fan—engineered for superior performance and lasting reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110177048",
@@ -7090,8 +7316,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/fantasy-model-103191101770.webp",
+   "gallery": [
+    "assets/images/products/wahid/fantasy-model-103191101770-1.webp",
+    "assets/images/products/wahid/fantasy-model-103191101770-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_cc3b0125172b4ae8a9631afde2130e4a_mv2.png?v=1782729858",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7c338347268a445599b866c778ef1d93_mv2.png?v=1782729858",
@@ -7163,7 +7392,9 @@
   "shortDescription": "Salient Features: 99.99% copper wire Original factory warranty offered Energy efficient durable motor Specially designed waterproof canopy Aerodynamically designed blades for maximum air delivery Pack",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110144280",
@@ -7200,8 +7431,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/airmax-series-ac-dc-103191101442.webp",
+   "gallery": [
+    "assets/images/products/wahid/airmax-series-ac-dc-103191101442-1.webp",
+    "assets/images/products/wahid/airmax-series-ac-dc-103191101442-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_eb1101f95fba4420bf3896f53d312ec8_mv2.png?v=1782729857",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_bc99b7b4137e4129aa642aa32e35ba7a_mv2.png?v=1782729857",
@@ -7244,7 +7478,9 @@
   "shortDescription": "Experience superior cooling with the Airmax Series AC/DC—engineered for reliability and performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110111512",
@@ -7280,7 +7516,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/pb-18-standard-off-white-103191101115.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_ec50859cdc094ac0953cc186edfba57e_mv2.png?v=1782729856"
@@ -7331,7 +7567,9 @@
   "shortDescription": "Saliant Features Complete Metal Body Energy efficient Electrical Steel Sheet and 99.9% Pure Copper Wire. High quality paint for superior finishing.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110078744",
@@ -7366,7 +7604,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/pb-24-classic-pedestal-103191100787.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_3eca412d941249cba79e83826fc3fbfb_mv2.png?v=1782729854"
@@ -7437,7 +7675,9 @@
   "shortDescription": "Saliant Features Complete Metal Body Energy efficient Electrical Steel Sheet and 99.9% Pure Copper Wire. High quality paint for superior finishing.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110045976",
@@ -7473,8 +7713,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/marjan-series-ceiling-fan-103191100459.webp",
+   "gallery": [
+    "assets/images/products/wahid/marjan-series-ceiling-fan-103191100459-1.webp",
+    "assets/images/products/wahid/marjan-series-ceiling-fan-103191100459-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_94e616c9e17d4c6288350021777c5fd3_mv2.png?v=1782729853",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_df509348641f4fc2a2ad4f5c7b676af0_mv2.png?v=1782729853",
@@ -7606,7 +7849,9 @@
   "shortDescription": "Experience superior cooling with the Marjan Series Ceiling Fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319110013208",
@@ -7642,8 +7887,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/glory-model-103191100132.webp",
+   "gallery": [
+    "assets/images/products/wahid/glory-model-103191100132-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_b9bd2582278f4975812d6b15909d985a_mv2.png?v=1782729852",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_e85c7497f0664babb35aed9871f6e3dc_mv2.png?v=1782729852"
@@ -7683,7 +7930,9 @@
   "shortDescription": "Experience superior cooling with the Glory Model ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109980440",
@@ -7720,7 +7969,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/smart-ac-dc-black-bracket-103191099804.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_392e3c854e5f49548158aa789bc707bb_mv2.png?v=1782729852"
@@ -7748,7 +7997,9 @@
   "shortDescription": "Salient Features: • 99.9% Pure Copper Wire • Energy efficient durable motor • Jerk Free Oscillation • Remote Controlled • Aerodynamically designed Aluminium blades for maximum air delivery.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109947672",
@@ -7784,7 +8035,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/smart-ac-dc-grey-bracket-103191099476.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_e2dae09b3f4d456fa32e6c9ff22a4905_mv2.png?v=1782729851"
@@ -7812,7 +8063,9 @@
   "shortDescription": "Salient Features : • 99.9% Pure Copper Wire • Energy efficient durable motor • Jerk Free Oscillation • Remote Controlled • Aerodynamically designed Aluminium blades for maximum air delivery.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109914904",
@@ -7846,7 +8099,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/smart-ac-dc-white-bracket-103191099149.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_08e65a01cd584c10a9eb3301c7ea97a1_mv2.png?v=1782729850"
@@ -7874,7 +8127,9 @@
   "shortDescription": "Salient Features: • 99.9% Pure Copper Wire • Energy efficient durable motor • Jerk Free Oscillation • Remote Controlled • Aerodynamically designed Aluminium blades for maximum air delivery.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109882136",
@@ -7909,7 +8164,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/smart-ac-dc-wooden-bracket-103191098821.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d7da360219844313801d6960c6bca048_mv2.png?v=1782729849"
@@ -7937,7 +8192,9 @@
   "shortDescription": "Salient Features: • 99.9% Pure Copper Wire • Energy efficient durable motor • Jerk Free Oscillation • Remote Controlled • Aerodynamically designed Aluminium blades for maximum air delivery.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109849368",
@@ -7974,8 +8231,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-prime-series-103191098493.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-prime-series-103191098493-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-prime-series-103191098493-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_93f3c7be3b8c4040894d605eada80fd9_mv2.png?v=1782729849",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_0d7ae13a7e1a44dbb72a062ae39f7cd4_mv2.png?v=1782729848",
@@ -8073,7 +8333,9 @@
   "shortDescription": "Experience premium cooling with the 30 Watts Inverter Prime Series ceiling fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109816600",
@@ -8110,8 +8372,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watt-bldc-inverter-saad-series-103191098166.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watt-bldc-inverter-saad-series-103191098166-1.webp",
+    "assets/images/products/wahid/30-watt-bldc-inverter-saad-series-103191098166-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_3.02.02_PM.jpg?v=1787136138",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_fc756d178d8a4549b7e55a2a7c264dc6_mv2_607c594b-7d71-40b6-ab6b-6af08bc047a8.png?v=1782729847",
@@ -8140,7 +8405,9 @@
   "shortDescription": "Experience ultimate cooling comfort with the 30 Watt Inverter Saad Series ceiling fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109783832",
@@ -8177,8 +8444,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-passion-series-103191097838.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-passion-series-103191097838-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-passion-series-103191097838-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_974226297b864881bc2506d4525e6765_mv2_c6db6771-bbd2-4a0c-9960-884b06e61d2c.png?v=1782729847",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_0387b55b21d54b53a2b4b9ff6ca472e6_mv2_28d828e9-e703-422b-b8e7-ce05105bbf0a.png?v=1782729847",
@@ -8222,7 +8492,9 @@
   "shortDescription": "Experience the perfect blend of elegance and efficiency with the 30 Watts Inverter Passion Series ceiling fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109751064",
@@ -8257,8 +8529,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watt-bldc-inverter-grace-series-103191097510.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watt-bldc-inverter-grace-series-103191097510-1.webp",
+    "assets/images/products/wahid/30-watt-bldc-inverter-grace-series-103191097510-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.32.00_PM.jpg?v=1787135442",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.54.40_PM.jpg?v=1787135888",
@@ -8386,7 +8661,9 @@
   "shortDescription": "30 Watts Inverter Grace Series — Premium ceiling fan engineered for efficiency and performance. Features remote operation with wireless digital RF technology, eliminating the need for a dimmer.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109718296",
@@ -8421,8 +8698,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-floral-series-103191097182.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-floral-series-103191097182-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-floral-series-103191097182-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7ee19fc640de4372aa446456ffd5d217_mv2_0f87694d-495a-4332-804a-36ae94db1704.png?v=1782729845",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_41f557f060bc4efc85cb5214708d29c5_mv2_ce1de56c-b736-4791-ba46-d688e1f25631.png?v=1782729844",
@@ -8517,7 +8797,9 @@
   "shortDescription": "Experience ultimate comfort with the 30 Watts Inverter Floral Series ceiling fan — engineered for efficiency and style.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109685528",
@@ -8557,8 +8839,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-florence-series-103191096855.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-florence-series-103191096855-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-florence-series-103191096855-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.47.32_PM.jpg?v=1787135167",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.45.30_PM.jpg?v=1787135166",
@@ -8670,7 +8955,9 @@
   "shortDescription": "30 Watts Inverter Florence Series — Premium Ceiling Fan with Remote Control Experience superior cooling with the Florence Series 30W inverter ceiling fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109652760",
@@ -8706,8 +8993,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/super-deluxe-economy-103191096527.webp",
+   "gallery": [
+    "assets/images/products/wahid/super-deluxe-economy-103191096527-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_308f6d85061c4691a6567f1468137ef2_mv2.png?v=1782729843",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_6e5b071aed54407681ae6f189f7e8a25_mv2.png?v=1782729843"
@@ -8752,7 +9041,9 @@
   "shortDescription": "Experience superior cooling with the Super Deluxe Economy ceiling fan—engineered for reliability and performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109619992",
@@ -8788,8 +9079,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/karachi-model-103191096199.webp",
+   "gallery": [
+    "assets/images/products/wahid/karachi-model-103191096199-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_fc756d178d8a4549b7e55a2a7c264dc6_mv2_07f0c938-0a72-412a-9c45-9e727dcb8cbb.png?v=1782729842",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_f35321fd51f047b6a6012c0618ca5fd6_mv2_492d5e93-1413-4cd4-abbe-2428bbfe19f0.png?v=1782729842"
@@ -8839,7 +9132,9 @@
   "shortDescription": "Experience superior cooling with the Karachi Model ceiling fan, engineered for Pakistani homes.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109587224",
@@ -8875,8 +9170,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/florence-economy-103191095872.webp",
+   "gallery": [
+    "assets/images/products/wahid/florence-economy-103191095872-1.webp",
+    "assets/images/products/wahid/florence-economy-103191095872-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_2.45.30_PM.jpg?v=1787135166",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_ba413e95853a4483b9cf3e92c555d477_mv2.png?v=1782729841",
@@ -9251,7 +9549,9 @@
   "shortDescription": "Experience reliable cooling with the Florence Economy fan. Built with 99.99% copper wire and an energy-efficient motor, it delivers powerful airflow at 12,000 cu.ft/min.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109554456",
@@ -9287,8 +9587,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/galaxy-awami-model-103191095544.webp",
+   "gallery": [
+    "assets/images/products/wahid/galaxy-awami-model-103191095544-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_c0099d964fbe4a4f80d47d991fda9cad_mv2.png?v=1782729840",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_38589c33fbb743f28a84efffe4263fa4_mv2.png?v=1782729840"
@@ -9328,7 +9630,9 @@
   "shortDescription": "Experience superior cooling with the Galaxy Awami Model ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109521688",
@@ -9364,8 +9668,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/civic-series-103191095216.webp",
+   "gallery": [
+    "assets/images/products/wahid/civic-series-103191095216-1.webp",
+    "assets/images/products/wahid/civic-series-103191095216-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_5d59bb7c3c0f4a469a878e3c46379914_mv2.jpg?v=1782729839",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_36b0fef1183744d0a3425cabfb1b332d_mv2.jpg?v=1782729839",
@@ -9462,7 +9769,9 @@
   "shortDescription": "Civic Series ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109488920",
@@ -9499,8 +9808,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-icon-series-103191094889.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-icon-series-103191094889-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-icon-series-103191094889-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_87e87426571046c7871d5d98e18aad3b_mv2_9995c527-6071-4d18-8f10-2a8bf9a21714.png?v=1782729838",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d9879d11df2c4885a5fbb9a86bdb449d_mv2_33cc19da-0574-45dc-badf-7c1f46c7b91a.png?v=1782729838",
@@ -9563,7 +9875,9 @@
   "shortDescription": "Experience premium cooling with the 30 Watts Inverter Icon Series ceiling fan — engineered for efficiency and performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109456152",
@@ -9600,8 +9914,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-ace-series-103191094561.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-ace-series-103191094561-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-ace-series-103191094561-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/2_d53cc37e-7e72-4f66-b34f-b9e83ce81214.png?v=1786346915",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d6e29fa2c5a9426c9b7e65394a975822_mv2_e939fe1d-edb1-420b-838f-70ac13e07a08.png?v=1782729837",
@@ -9643,7 +9960,9 @@
   "shortDescription": "30 Watts Inverter Ace Series – Premium Ceiling Fan with Advanced Technology Experience superior cooling with the 30 Watts Inverter Ace Series, engineered for maximum efficiency and performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109423384",
@@ -9680,8 +9999,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-crystal-series-103191094233.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-crystal-series-103191094233-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-crystal-series-103191094233-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_db6bc6ad7b06441b8e0ad4c463255147_mv2_5bf239cc-aa99-4ef4-958e-accd2be66c0e.png?v=1782729836",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d727c284011d4ad69b626b9c6a6b1297_mv2_f8fe070b-de8b-4e8a-aa2d-d48e7ae4afcd.png?v=1782729836",
@@ -9722,7 +10044,9 @@
   "shortDescription": "Experience superior cooling with the 30 Watts Inverter Crystal Series ceiling fan.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109390616",
@@ -9759,8 +10083,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/saad-series-solar-ac-dc-103191093906.webp",
+   "gallery": [
+    "assets/images/products/wahid/saad-series-solar-ac-dc-103191093906-1.webp",
+    "assets/images/products/wahid/saad-series-solar-ac-dc-103191093906-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/WhatsApp_Image_2026-08-19_at_3.02.02_PM.jpg?v=1787136138",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_fc756d178d8a4549b7e55a2a7c264dc6_mv2.png?v=1782729835",
@@ -9789,7 +10116,9 @@
   "shortDescription": "Experience ultimate comfort with the Saad Series AC/DC ceiling fan—engineered for superior performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109357848",
@@ -9826,8 +10155,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/crystal-series-ac-dc-103191093578.webp",
+   "gallery": [
+    "assets/images/products/wahid/crystal-series-ac-dc-103191093578-1.webp",
+    "assets/images/products/wahid/crystal-series-ac-dc-103191093578-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_db6bc6ad7b06441b8e0ad4c463255147_mv2_0f91b549-ee7f-4854-848a-a592a5fd9340.png?v=1782729834",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d727c284011d4ad69b626b9c6a6b1297_mv2_ad7058f0-e7dc-468a-9de0-fdc4a7d9702a.png?v=1782729834",
@@ -9868,7 +10200,9 @@
   "shortDescription": "Experience ultimate cooling comfort with the Crystal Series AC/DC ceiling fan—engineered for superior performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109325080",
@@ -9905,8 +10239,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watt-inverter-prime-plus-series-103191093250.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watt-inverter-prime-plus-series-103191093250-1.webp",
+    "assets/images/products/wahid/30-watt-inverter-prime-plus-series-103191093250-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7307f28cb3894763810ddcb5dd99e16b_mv2.png?v=1782729833",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_3cf069c98b8248b0a6fb7ac67781f32e_mv2_500e5245-cfe6-4455-9d24-932f483fd314.png?v=1782729834",
@@ -9949,7 +10286,9 @@
   "shortDescription": "Power your home with the 30 Watt Inverter Prime Plus Series — engineered for reliability and performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109292312",
@@ -9986,8 +10325,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/icon-series-ac-dc-103191092923.webp",
+   "gallery": [
+    "assets/images/products/wahid/icon-series-ac-dc-103191092923-1.webp",
+    "assets/images/products/wahid/icon-series-ac-dc-103191092923-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_87e87426571046c7871d5d98e18aad3b_mv2_5ad38f38-5437-4373-beed-e9925f01198d.png?v=1782729832",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d9879d11df2c4885a5fbb9a86bdb449d_mv2_9394760e-dc4a-4d5a-8dec-121ace04b3f5.png?v=1782729833",
@@ -10050,7 +10392,9 @@
   "shortDescription": "Icon Series AC/DC ceiling fan combines premium engineering with smart remote control technology.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109226776",
@@ -10084,8 +10428,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/floral-series-ac-dc-103191092267.webp",
+   "gallery": [
+    "assets/images/products/wahid/floral-series-ac-dc-103191092267-1.webp",
+    "assets/images/products/wahid/floral-series-ac-dc-103191092267-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_7ee19fc640de4372aa446456ffd5d217_mv2.png?v=1782729831",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_41f557f060bc4efc85cb5214708d29c5_mv2.png?v=1782729831",
@@ -10180,7 +10527,9 @@
   "shortDescription": "Elegant ceiling fan combining style with advanced engineering. Features wireless remote control, high-grade double ball bearing construction, and premium copper winding for efficient cooling.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109128472",
@@ -10217,8 +10566,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/grace-plus-series-103191091284.webp",
+   "gallery": [
+    "assets/images/products/wahid/grace-plus-series-103191091284-1.webp",
+    "assets/images/products/wahid/grace-plus-series-103191091284-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_372fae63b8584ecdaa3fdacc36fc7e92_mv2_56a75cdb-7287-491a-8d88-b97b198df4f7.png?v=1782729828",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_578fabdf5773421da26992b53baaad2c_mv2_7a4929fd-f15b-448e-b240-588ccd7735b3.png?v=1782729828",
@@ -10469,7 +10821,9 @@
   "shortDescription": "Experience superior cooling with the Grace Plus Series ceiling fan. Built with 99.99% copper wire and an energy-efficient durable motor, this fan delivers powerful air circulation at 12,000 cu.ft/min.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109095704",
@@ -10507,8 +10861,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/grace-plus-series-ac-dc-103191090957.webp",
+   "gallery": [
+    "assets/images/products/wahid/grace-plus-series-ac-dc-103191090957-1.webp",
+    "assets/images/products/wahid/grace-plus-series-ac-dc-103191090957-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_372fae63b8584ecdaa3fdacc36fc7e92_mv2.png?v=1782729827",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_578fabdf5773421da26992b53baaad2c_mv2.png?v=1782729827",
@@ -10625,7 +10982,9 @@
   "shortDescription": "Grace Plus Series AC/DC ceiling fan combines efficiency with durability. Features 99.99% copper wire, energy-efficient motor, and aerodynamically designed blades for superior air circulation.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319109062936",
@@ -10663,8 +11022,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-aviator-series-103191090629.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-aviator-series-103191090629-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-aviator-series-103191090629-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_9d9577503f1b4a7895817b5c82cd3d84_mv2_0cddc1c1-f33c-49ca-88be-ef8b087d2368.png?v=1782729826",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_a28ad7eb0c8e4270ab8b1e70479fe1ca_mv2_7deddf4d-bd5a-465d-908f-0a6e7b8414b6.png?v=1782729826",
@@ -10705,7 +11067,9 @@
   "shortDescription": "The 30 Watts Inverter Aviator Series ceiling fan combines energy efficiency with powerful performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108997400",
@@ -10741,8 +11105,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/aviator-series-103191089974.webp",
+   "gallery": [
+    "assets/images/products/wahid/aviator-series-103191089974-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_9d9577503f1b4a7895817b5c82cd3d84_mv2.png?v=1782729825",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_a28ad7eb0c8e4270ab8b1e70479fe1ca_mv2.png?v=1782729825"
@@ -10787,7 +11153,9 @@
   "shortDescription": "Premium ceiling fan engineered for superior performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108964632",
@@ -10825,8 +11193,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-elegance-series-103191089646.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-elegance-series-103191089646-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-elegance-series-103191089646-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_8841f8b46d3745ed8eb105fcee85e9aa_mv2_20bcffd4-2516-456a-8057-53201449664e.png?v=1782729824",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_8d42ce18f8a1495eb5a20a6bd14bd09b_mv2_aeed4687-d9b7-43b9-8d4e-5406a46af265.png?v=1782729824",
@@ -10867,7 +11238,9 @@
   "shortDescription": "The 30 Watts Inverter Elegance Series ceiling fan combines premium engineering with energy efficiency.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108899096",
@@ -10901,8 +11274,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/elegance-series-103191088990.webp",
+   "gallery": [
+    "assets/images/products/wahid/elegance-series-103191088990-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_8d42ce18f8a1495eb5a20a6bd14bd09b_mv2.png?v=1782729822",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_8841f8b46d3745ed8eb105fcee85e9aa_mv2.png?v=1782729822"
@@ -10947,7 +11322,9 @@
   "shortDescription": "Elegance Series ceiling fan combines premium craftsmanship with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108833560",
@@ -10983,8 +11360,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/ace-series-103191088335.webp",
+   "gallery": [
+    "assets/images/products/wahid/ace-series-103191088335-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_857d3353ee9d47f6a0a317d4e1ad994e_mv2.png?v=1782729821",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d6e29fa2c5a9426c9b7e65394a975822_mv2.png?v=1782729820"
@@ -11029,7 +11408,9 @@
   "shortDescription": "Ace Series ceiling fan combines premium engineering with reliable performance.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108800792",
@@ -11063,8 +11444,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/twister-plus-series-103191088007.webp",
+   "gallery": [
+    "assets/images/products/wahid/twister-plus-series-103191088007-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_9e345c16955b48ba81a62b10c212b9f8_mv2_d4ce4032-601f-4766-b493-8f10831a3d89.png?v=1782729820",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_ce3ba2357e444f9e9661fcad423fc91f_mv2_414ea36c-597a-4736-861b-1e8ba1dd0ce4.png?v=1782729820"
@@ -11104,7 +11487,9 @@
   "shortDescription": "Premium ceiling fan engineered for superior performance and durability. Features 99.99% copper wire construction with an energy-efficient motor delivering 12,000 cu.ft/min air displacement at 360 RPM.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108768024",
@@ -11141,8 +11526,10 @@
   },
   "availability": "Out of Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/twister-plus-series-ac-dc-fan-103191087680.webp",
+   "gallery": [
+    "assets/images/products/wahid/twister-plus-series-ac-dc-fan-103191087680-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_9e345c16955b48ba81a62b10c212b9f8_mv2.png?v=1782729819",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_ce3ba2357e444f9e9661fcad423fc91f_mv2.png?v=1782729819"
@@ -11182,7 +11569,9 @@
   "shortDescription": "Twister Plus Series AC/DC Fan — Premium cooling with dual power options. Features 99.99% copper wire motor, aerodynamically designed blades for maximum air delivery, and rustproof durable construction.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108735256",
@@ -11218,8 +11607,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/oval-series-103191087352.webp",
+   "gallery": [
+    "assets/images/products/wahid/oval-series-103191087352-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_0179f8ae35194fac817d4d3fda0be25c_mv2_2d5bb4dd-6403-4252-b2cf-485ceef23c5a.png?v=1782729818",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_2b53361081b04d83a212401f0cd9379d_mv2_6520ce75-a791-4323-be1f-5958ca326bf8.png?v=1782729818"
@@ -11289,7 +11680,9 @@
   "shortDescription": "Experience superior cooling with the Oval Series ceiling fan—engineered for maximum performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108702488",
@@ -11327,8 +11720,10 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/oval-series-ac-dc-103191087024.webp",
+   "gallery": [
+    "assets/images/products/wahid/oval-series-ac-dc-103191087024-1.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_0179f8ae35194fac817d4d3fda0be25c_mv2_2a17235a-55e9-4347-902c-0b418022522f.png?v=1782729818",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_2b53361081b04d83a212401f0cd9379d_mv2_58bf68c1-b1ea-4908-86e2-8e4357ce4f04.png?v=1782729817"
@@ -11368,7 +11763,9 @@
   "shortDescription": "Experience superior cooling with the Oval Series AC/DC ceiling fan—engineered for maximum performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108669720",
@@ -11405,8 +11802,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/30-watts-inverter-oval-series-103191086697.webp",
+   "gallery": [
+    "assets/images/products/wahid/30-watts-inverter-oval-series-103191086697-1.webp",
+    "assets/images/products/wahid/30-watts-inverter-oval-series-103191086697-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_0179f8ae35194fac817d4d3fda0be25c_mv2.png?v=1782729817",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_2b53361081b04d83a212401f0cd9379d_mv2.png?v=1782729816",
@@ -11447,7 +11847,9 @@
   "shortDescription": "Experience premium cooling with the 30 Watts Inverter Oval Series ceiling fan — engineered for maximum efficiency and silent operation.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108604184",
@@ -11481,8 +11883,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/icon-series-103191086041.webp",
+   "gallery": [
+    "assets/images/products/wahid/icon-series-103191086041-1.webp",
+    "assets/images/products/wahid/icon-series-103191086041-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_87e87426571046c7871d5d98e18aad3b_mv2.png?v=1782729816",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d9879d11df2c4885a5fbb9a86bdb449d_mv2.png?v=1782729816",
@@ -11588,7 +11993,9 @@
   "shortDescription": "Premium ceiling fan engineered for superior performance and durability. Features 99.99% copper wire construction with original factory warranty, ensuring long-lasting reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108571416",
@@ -11624,8 +12031,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/crystal-series-103191085714.webp",
+   "gallery": [
+    "assets/images/products/wahid/crystal-series-103191085714-1.webp",
+    "assets/images/products/wahid/crystal-series-103191085714-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_db6bc6ad7b06441b8e0ad4c463255147_mv2.png?v=1782729815",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/9906f2_d727c284011d4ad69b626b9c6a6b1297_mv2.png?v=1782729815",
@@ -11696,7 +12106,9 @@
   "shortDescription": "Experience superior cooling with the Crystal Series ceiling fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108538648",
@@ -11731,7 +12143,7 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/wahid/mega-bracket-ac-dc-103191085386.webp",
    "gallery": [],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_d4a25738ebb241898a95f0a13faff3a3_mv2.png?v=1782729814"
@@ -11771,7 +12183,9 @@
   "shortDescription": "Mega Bracket AC/DC Fan – Powerful Cooling with Premium Build Quality Experience superior air circulation with the Mega Bracket AC/DC, engineered for reliable performance and energy efficiency.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  },
  {
   "id": "wahid-10319108505880",
@@ -11807,8 +12221,11 @@
   },
   "availability": "In Stock",
   "images": {
-   "featured": null,
-   "gallery": [],
+   "featured": "assets/images/products/wahid/grand-series-ceiling-fans-103191085058.webp",
+   "gallery": [
+    "assets/images/products/wahid/grand-series-ceiling-fans-103191085058-1.webp",
+    "assets/images/products/wahid/grand-series-ceiling-fans-103191085058-2.webp"
+   ],
    "remote": [
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_70f857a195724c6783bab3555f1a4da4_mv2.png?v=1782729813",
     "https://cdn.shopify.com/s/files/1/0991/8165/8392/files/ae556d_828718b1cc8147aeb15106d129db53bf_mv2.png?v=1782729813",
@@ -11961,6 +12378,8 @@
   "shortDescription": "Experience superior cooling with the Grand Series Ceiling Fan—engineered for performance and reliability.",
   "catalogueUrl": null,
   "datasheetUrl": null,
-  "importNotes": []
+  "importNotes": [],
+  "_class": "REAL_PRODUCT",
+  "_classReason": ""
  }
 ]

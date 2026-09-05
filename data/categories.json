@@ -1,11 +1,12 @@
 {
- "generatedAt": "2026-09-05T09:28:47+00:00",
+ "generatedAt": "2026-09-05T10:20:29+00:00",
  "categories": [
   {
    "slug": "wires-cables",
    "name": "Wires & Cables",
    "blurb": "Building wire, power cable and cable accessories.",
    "count": 2386,
+   "familyCount": 0,
    "subcategories": [
     {
      "slug": "building-wires",
@@ -43,7 +44,8 @@
    "slug": "switches-sockets",
    "name": "Switches & Sockets",
    "blurb": "Modular switches, sockets and wiring devices.",
-   "count": 749,
+   "count": 726,
+   "familyCount": 23,
    "subcategories": [
     {
      "slug": "sockets",
@@ -59,11 +61,6 @@
      "slug": "big-switches",
      "name": "Big Switches",
      "count": 34
-    },
-    {
-     "slug": "wiring-devices",
-     "name": "Wiring Devices",
-     "count": 23
     }
    ]
   },
@@ -71,12 +68,13 @@
    "slug": "electrical-accessories",
    "name": "Electrical Accessories",
    "blurb": "Tape, extension leads, connectors, trunking and consumables.",
-   "count": 666,
+   "count": 660,
+   "familyCount": 5,
    "subcategories": [
     {
      "slug": "accessories",
      "name": "Accessories",
-     "count": 624
+     "count": 618
     },
     {
      "slug": "door-bells",
@@ -94,7 +92,8 @@
    "slug": "lighting",
    "name": "Lighting & Fixtures",
    "blurb": "LED bulbs, panels, downlights, floodlights and outdoor lighting.",
-   "count": 351,
+   "count": 347,
+   "familyCount": 4,
    "subcategories": [
     {
      "slug": "led-lighting",
@@ -104,7 +103,7 @@
     {
      "slug": "downlights",
      "name": "Downlights",
-     "count": 52
+     "count": 50
     },
     {
      "slug": "wall-lights",
@@ -137,14 +136,14 @@
      "count": 13
     },
     {
-     "slug": "track-lights",
-     "name": "Track Lights",
-     "count": 12
-    },
-    {
      "slug": "lighting-fixtures",
      "name": "Lighting Fixtures",
      "count": 11
+    },
+    {
+     "slug": "track-lights",
+     "name": "Track Lights",
+     "count": 10
     },
     {
      "slug": "highbay-lights",
@@ -178,6 +177,7 @@
    "name": "Fans & Ventilation",
    "blurb": "Ceiling, bracket, pedestal and exhaust fans.",
    "count": 128,
+   "familyCount": 0,
    "subcategories": [
     {
      "slug": "ceiling-fans",
@@ -221,6 +221,7 @@
    "name": "Smart Home Devices",
    "blurb": "App and Wi-Fi controlled switches, plugs and devices.",
    "count": 80,
+   "familyCount": 0,
    "subcategories": [
     {
      "slug": "smart-switches",
@@ -235,158 +236,34 @@
    ]
   },
   {
-   "slug": "industrial-control",
-   "name": "Industrial Control & Automation",
-   "blurb": "Contactors, relays, drives, soft starters and control components.",
-   "count": 75,
-   "subcategories": [
-    {
-     "slug": "industrial-components",
-     "name": "Industrial Components",
-     "count": 30
-    },
-    {
-     "slug": "drives-soft-starters",
-     "name": "Drives Soft Starters",
-     "count": 12
-    },
-    {
-     "slug": "contactors",
-     "name": "Contactors",
-     "count": 10
-    },
-    {
-     "slug": "automation",
-     "name": "Automation",
-     "count": 10
-    },
-    {
-     "slug": "push-buttons",
-     "name": "Push Buttons",
-     "count": 4
-    },
-    {
-     "slug": "relays",
-     "name": "Relays",
-     "count": 3
-    },
-    {
-     "slug": "motor-protection",
-     "name": "Motor Protection",
-     "count": 3
-    },
-    {
-     "slug": "power-supplies",
-     "name": "Power Supplies",
-     "count": 2
-    },
-    {
-     "slug": "sensors-switches",
-     "name": "Sensors Switches",
-     "count": 1
-    }
-   ]
-  },
-  {
    "slug": "circuit-protection",
    "name": "Circuit Protection & Distribution",
    "blurb": "Breakers, RCDs, distribution boards and changeover gear.",
-   "count": 66,
+   "count": 17,
+   "familyCount": 49,
    "subcategories": [
     {
      "slug": "circuit-breakers",
      "name": "Circuit Breakers",
-     "count": 18
-    },
-    {
-     "slug": "mcb",
-     "name": "MCB",
-     "count": 11
-    },
-    {
-     "slug": "rcbo",
-     "name": "RCBO",
-     "count": 10
-    },
-    {
-     "slug": "mccb",
-     "name": "MCCB",
-     "count": 9
-    },
-    {
-     "slug": "acb",
-     "name": "ACB",
-     "count": 4
-    },
-    {
-     "slug": "distribution-boxes",
-     "name": "Distribution Boxes",
-     "count": 3
-    },
-    {
-     "slug": "rccb",
-     "name": "RCCB",
-     "count": 2
-    },
-    {
-     "slug": "final-distribution",
-     "name": "Final Distribution",
-     "count": 2
-    },
-    {
-     "slug": "fuses",
-     "name": "Fuses",
-     "count": 2
-    },
-    {
-     "slug": "busbars",
-     "name": "Busbars",
-     "count": 1
-    },
-    {
-     "slug": "isolators",
-     "name": "Isolators",
-     "count": 1
-    },
-    {
-     "slug": "family-not-published",
-     "name": "Family Not Published",
-     "count": 1
-    },
-    {
-     "slug": "changeover-switches",
-     "name": "Changeover Switches",
-     "count": 1
-    },
-    {
-     "slug": "vcb",
-     "name": "VCB",
-     "count": 1
+     "count": 17
     }
    ]
+  },
+  {
+   "slug": "industrial-control",
+   "name": "Industrial Control & Automation",
+   "blurb": "Contactors, relays, drives, soft starters and control components.",
+   "count": 0,
+   "familyCount": 75,
+   "subcategories": []
   },
   {
    "slug": "power-energy",
    "name": "Power & Energy",
    "blurb": "Stabilisers, meters and power factor correction equipment.",
-   "count": 20,
-   "subcategories": [
-    {
-     "slug": "voltage-stabilisers",
-     "name": "Voltage Stabilisers",
-     "count": 8
-    },
-    {
-     "slug": "meters",
-     "name": "Meters",
-     "count": 6
-    },
-    {
-     "slug": "power-factor-correction",
-     "name": "Power Factor Correction",
-     "count": 6
-    }
-   ]
+   "count": 0,
+   "familyCount": 20,
+   "subcategories": []
   }
  ]
 }

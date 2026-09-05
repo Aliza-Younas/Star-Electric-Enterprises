@@ -49,7 +49,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-4",
@@ -101,7 +103,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-5",
@@ -153,7 +157,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-6",
@@ -205,7 +211,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-7",
@@ -258,7 +266,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-8",
@@ -311,7 +321,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-9",
@@ -364,7 +376,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-10",
@@ -417,7 +431,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-11",
@@ -470,7 +486,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-12",
@@ -523,7 +541,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-13",
@@ -576,7 +596,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-14",
@@ -628,7 +650,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-15",
@@ -680,7 +704,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-16",
@@ -732,7 +758,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-17",
@@ -784,7 +812,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-18",
@@ -836,7 +866,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-19",
@@ -889,7 +921,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-20",
@@ -942,7 +976,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-21",
@@ -995,7 +1031,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-22",
@@ -1048,7 +1086,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-23",
@@ -1101,7 +1141,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-24",
@@ -1154,7 +1196,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-25",
@@ -1207,7 +1251,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-26",
@@ -1260,7 +1306,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-27",
@@ -1313,7 +1361,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-28",
@@ -1362,7 +1412,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-29",
@@ -1411,7 +1463,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-30",
@@ -1460,7 +1514,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-31",
@@ -1509,7 +1565,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-32",
@@ -1562,7 +1620,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-33",
@@ -1615,7 +1675,9 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  },
  {
   "id": "et-34",
@@ -1668,6 +1730,8 @@
   "importNotes": [
    "Source is an enquiry-based distributor site and publishes no prices.",
    "Brand not attributed: the source's six brand pages each return the identical 32-product list, so per-product brand cannot be verified from this source. Not inferred from elsewhere."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source pages describe product ranges (e.g. 'Softstarters', 'PSR softstarter - The compact range') with no model, SKU or specification at item level."
  }
 ]

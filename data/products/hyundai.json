@@ -46,7 +46,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  },
  {
   "id": "hyundai-moulded-case-circuit-breakers",
@@ -92,7 +94,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  },
  {
   "id": "hyundai-miniature-circuit-breaker",
@@ -141,7 +145,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  },
  {
   "id": "hyundai-motor-protection-circuit-breaker",
@@ -190,7 +196,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  },
  {
   "id": "hyundai-residual-current-devices",
@@ -236,7 +244,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  },
  {
   "id": "hyundai-magnetic-contactors",
@@ -282,7 +292,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  },
  {
   "id": "hyundai-vacuum-circuit-breakers",
@@ -330,7 +342,9 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  },
  {
   "id": "hyundai-industrial-inverters-variable-frequency-drives",
@@ -376,6 +390,8 @@
   "datasheetUrl": null,
   "importNotes": [
    "Source publishes a single partner overview page with no per-model pages, specification tables or downloadable catalogue. Imported as a product family with only the ratings the source states; individual SKUs are not fabricated."
-  ]
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Source publishes a single partner page listing product families; no per-model pages, specifications or catalogue are exposed."
  }
 ]

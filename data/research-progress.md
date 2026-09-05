@@ -25,7 +25,7 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 
 ---
 
-## Phase 1 — Pakistan Cables  (2,378 products)
+## Phase 1 — Pakistan Cables
 
 - [x] Navigation / platform mapped (WooCommerce)
 - [x] Store API confirmed, `X-WP-Total: 2378`
@@ -36,35 +36,41 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 - [x] Normalised to schema, all Request Quote
 - [x] Categories derived from the 7 source attributes
 - [x] Validated + written to data/products/pakistan-cables.json
+- [x] Individual-product audit — 2,378 distinct source URLs, one per product
 
-
-
-## Phase 2 — Aqua Electrical  (1,641 products)
+## Phase 2 — Aqua Electrical
 
 - [x] Platform confirmed (WooCommerce, `?rest_route=`)
 - [x] `X-WP-Total: 1641`
 - [x] 88 categories retrieved with parent/child relationships
 - [x] All 1,641 products retrieved (17 API pages)
 - [x] Categories resolved through parent chain (155 Panasonic)
-- [ ] Images downloaded locally  <-- REMAINING
+- [x] Images downloaded locally, resized and converted to WebP
 - [x] Normalised + validated
+- [x] Individual-product audit — 1 WooCommerce test artefact excluded
 
-## Phase 3 — Wahid Fans  (104 products)
+## Phase 3 — Wahid Fans
 
 - [x] Shopify `products.json` confirmed
 - [x] Total confirmed (104; page 2 empty)
 - [x] 104 products with real Shopify variants retrieved
-- [ ] Images downloaded
-- [ ] Normalised + validated
+- [x] Images downloaded locally
+- [x] Normalised + validated
+- [x] Individual-product audit — colour / size / wire-type options kept as
+      variations of one product, exactly as the source publishes them
 
-## Phase 4 — Electro Traders  (32 products)
+## Phase 4 — Electro Traders
 
 - [x] Static site confirmed; no API/sitemap
 - [x] `/shop_products` mapped → ids 2–34
 - [x] 6 brand pages identified
 - [x] 32 product pages crawled
 - [x] Brand pages crawled (all six return an identical list - recorded)
-- [ ] Normalised + validated
+- [x] Normalised + validated
+- [!] Individual-product audit — **all 32 pages describe product ranges, not
+      individual products.** Individual product catalogue not publicly exposed
+      by approved source. Listed as families for navigation only; no
+      pseudo-products created.
 
 ## Phase 5 — Himel  (PARTIAL-BLOCKED)
 
@@ -75,44 +81,69 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 - [x] Category hierarchy extracted from accessible navigation
 - [x] 132 family/model records built
 - [x] Normalised + validated, marked PARTIAL-BLOCKED
+- [!] Individual-product audit — **series/model-group entries only.** Individual
+      product catalogue not publicly exposed by approved source through normal
+      access. Listed as series for navigation only; **no 132 pseudo-products
+      created.**
 
-## Phase 6 — Hyundai / Jubilee  (8 families)
+## Phase 6 — Hyundai / Jubilee
 
 - [x] `/hyundai/` retrieved and analysed
 - [x] Confirmed: single page, no per-product pages, no PDFs
 - [x] 8 product families + stated rating ranges extracted
-- [ ] Normalised + validated
+- [x] Normalised + validated
+- [!] Individual-product audit — **8 families, not 8 products.** Individual
+      product catalogue not publicly exposed by approved source. Hyundai is
+      presented as a brand with eight families for navigation and enquiry.
 
-## Phase 7 — Coarts Lighting  (229 products)
+## Phase 7 — Coarts Lighting
 
 - [x] Wix store sitemap retrieved → 229 product URLs
 - [x] 226 of 229 product pages crawled
-- [ ] Images downloaded
-- [ ] Normalised + validated
+- [x] Images downloaded locally
+- [x] Normalised + validated
+- [x] Individual-product audit — 221 individual products; 4 range entries moved
+      to families; 1 record with no identifying product data excluded
 
 ---
 
 ## Phase 8 — Normalisation & dedupe
 
-- [x] Category tree built from real source categories (9 top level, 63 subs)
-- [x] Brands file built (7 brands)
+- [x] Category tree built from real source categories
+- [x] Brands file built, with real-product counts and family-only counts
 - [x] Duplicate detection by product id + slug uniqueness
 - [x] Slug uniqueness enforced
 
-## Phase 9 — Frontend integration
+## Phase 9 — Individual-product audit
 
-- [x] Catalogue loader replaces the demo data
-- [x] Product card supports Request Quote vs Add to Cart
-- [x] Product page renders any catalogue product, detail loaded on demand
-- [x] Filters rebuilt (pricing/stock/brand/category); fake star filter removed
-- [x] Search across name/model/SKU/brand/series/category/specs
-- [x] Homepage subsets from real data
-- [x] Deals page limited to genuine source discounts
-- [x] Old demo products removed
+- [x] All 4,521 imported records classified
+- [x] Classification written back onto every record (`_class`, `_classReason`)
+- [x] Storefront index rebuilt from verified individual products only
+- [x] Families and series moved to `data/families.js`, navigation only
+- [x] `data/product-import-audit.md` regenerated from the data
 
-## Phase 10 — QA
+## Phase 10 — Images
 
-- [ ] Data quality checks pass
-- [ ] Responsive check at all 8 breakpoints
-- [ ] Broken link / asset check
-- [ ] Exhaustiveness audit reconciled
+- [x] Real source images downloaded for every verified product whose source
+      publishes one
+- [x] Resized to 800px on the long edge and converted to WebP
+- [x] Duplicate files removed (sources repeat the featured image in galleries)
+- [x] `assets/product-image-sources.md` generated with full traceability
+- [x] Line-art fallback removed — products with no source image now show
+      "Product image unavailable"
+
+## Phase 11 — Frontend rebuild
+
+- [x] Shop, category, search, deals listings driven by verified products only
+- [x] Brand directory splits shoppable brands from family-only brands
+- [x] Category pages show family ranges separately from products
+- [x] Product page gallery shows stored source images only; never hotlinked
+- [x] Quote request prefills from a product or a family
+- [x] Star ratings removed from the codebase entirely
+
+## Phase 12 — QA
+
+- [x] Data quality checks pass
+- [x] Responsive check at the target breakpoints
+- [x] Broken link / asset check
+- [x] Exhaustiveness audit reconciled

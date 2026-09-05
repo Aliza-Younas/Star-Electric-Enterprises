@@ -1,10 +1,12 @@
 {
- "generatedAt": "2026-09-05T09:28:47+00:00",
+ "generatedAt": "2026-09-05T10:20:29+00:00",
  "brands": [
   {
    "slug": "pakistan-cables",
    "name": "Pakistan Cables",
-   "count": 2378,
+   "productCount": 2378,
+   "familyCount": 0,
+   "catalogueExposed": true,
    "sourceDomains": [
     "pakistancables.com"
    ],
@@ -14,7 +16,9 @@
   {
    "slug": "aqua",
    "name": "Aqua",
-   "count": 1486,
+   "productCount": 1485,
+   "familyCount": 0,
+   "catalogueExposed": true,
    "sourceDomains": [
     "aquaelectrical.com"
    ],
@@ -24,7 +28,9 @@
   {
    "slug": "coarts",
    "name": "Coarts",
-   "count": 226,
+   "productCount": 222,
+   "familyCount": 4,
+   "catalogueExposed": true,
    "sourceDomains": [
     "coartslighting.com"
    ],
@@ -34,7 +40,9 @@
   {
    "slug": "panasonic",
    "name": "Panasonic",
-   "count": 155,
+   "productCount": 155,
+   "familyCount": 0,
+   "catalogueExposed": true,
    "sourceDomains": [
     "aquaelectrical.com"
    ],
@@ -42,19 +50,11 @@
    "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
   },
   {
-   "slug": "himel",
-   "name": "Himel",
-   "count": 132,
-   "sourceDomains": [
-    "himel.com"
-   ],
-   "mark": "H",
-   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
-  },
-  {
    "slug": "wahid-fans",
    "name": "Wahid Fans",
-   "count": 104,
+   "productCount": 104,
+   "familyCount": 0,
+   "catalogueExposed": true,
    "sourceDomains": [
     "wahidfans.com"
    ],
@@ -62,14 +62,28 @@
    "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
   },
   {
+   "slug": "himel",
+   "name": "Himel",
+   "productCount": 0,
+   "familyCount": 132,
+   "catalogueExposed": false,
+   "sourceDomains": [
+    "himel.com"
+   ],
+   "mark": "H",
+   "note": "Individual product catalogue not publicly exposed by the approved source, so no individual products are listed. The 132 product families below are shown for navigation and enquiry only. No dealership, distribution or partnership relationship is implied."
+  },
+  {
    "slug": "hyundai-electric",
    "name": "Hyundai Electric",
-   "count": 8,
+   "productCount": 0,
+   "familyCount": 8,
+   "catalogueExposed": false,
    "sourceDomains": [
     "jubileecorporation.com"
    ],
    "mark": "HE",
-   "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+   "note": "Individual product catalogue not publicly exposed by the approved source, so no individual products are listed. The 8 product families below are shown for navigation and enquiry only. No dealership, distribution or partnership relationship is implied."
   }
  ]
 }

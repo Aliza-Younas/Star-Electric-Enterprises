@@ -38,8 +38,10 @@
         <div class="gallery__thumbs" id="galleryThumbs" role="tablist" aria-label="Product images"></div>
         <div class="gallery__main">
           <div class="gallery__badges" id="galleryBadges"></div>
-          <img id="galleryMain" src="assets/images/products/cable-coil.svg" alt=""
-               width="1200" height="900" fetchpriority="high" decoding="async">
+          <img id="galleryMain" alt="" width="1200" height="900" fetchpriority="high" decoding="async" hidden>
+          <p class="gallery__noimage" id="galleryNoImage" hidden>
+            Product image unavailable — the approved source for this product does not publish a photograph.
+          </p>
         </div>
       </div>
 
@@ -248,6 +250,7 @@
 </button>
 
 <script src="data/catalogue-index.js"></script>
+  <script src="data/families.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>
