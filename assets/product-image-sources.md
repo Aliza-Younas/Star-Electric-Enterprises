@@ -19,26 +19,26 @@ ownership of it and no dealership, distribution or authorisation relationship wi
 brand shown. Representative images are openly licensed (Creative Commons); the licence and
 author for each are given in the notes below and in `assets/image-sources.md`.
 
-Compiled 2026-09-05.
+Compiled 2026-09-07.
 
 | Measure | Count |
 |---|---:|
-| Image records listed | 5162 |
-| Products carrying an image | 4344 of 4344 |
-| Families / series carrying an image | 176 of 176 |
+| Image records listed | 5168 |
+| Products carrying an image | 4348 of 4348 |
+| Families / series carrying an image | 178 of 181 |
 | `exact-image` products | 1948 |
-| `manufacturer-image` products | 2378 |
+| `manufacturer-image` products | 2382 |
 | `representative-image` products | 18 |
 
 | Source domain | Image records |
 |---|---:|
-| pakistancables.com | 2378 |
+| pakistancables.com | 2382 |
 | aquaelectrical.com | 1847 |
 | coartslighting.com | 512 |
 | wahidfans.com | 235 |
 | himel.com | 132 |
 | electrotraders.com.pk | 32 |
-| commons.wikimedia.org | 19 |
+| commons.wikimedia.org | 21 |
 | jubileecorporation.com | 7 |
 
 ---
@@ -73,6 +73,12 @@ from the per-source tables.
 | `assets/images/products/pakistan-cables/pc-range-low-voltage.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Low-Voltage-Cables-Catalogue.pdf | https://www.pakistancables.com/products/ | pakistancables.com | Cover photograph of Pakistan Cables' own Low Voltage Cables product catalogue, cropped to the photograph. Used for multi-core low voltage power cables. Used by 1476 records. |
 | `assets/images/products/pakistan-cables/pc-range-medium-voltage.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Medium-Voltage-Cables-Catalogue.pdf | https://www.pakistancables.com/products/ | pakistancables.com | Cover photograph of Pakistan Cables' own Medium Voltage Cables product catalogue, cropped to the photograph. Used for cables rated above 1 kV. Used by 288 records. |
 | `assets/images/products/pakistan-cables/pc-range-solar.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Solar-Cables-Catalogue.pdf | https://www.pakistancables.com/products/ | pakistancables.com | Cover photograph of Pakistan Cables' own Solar Cables product catalogue, cropped to the photograph. Used for the XLPO / XLHFFR photovoltaic cable range. Used by 20 records. |
+| `assets/images/products/pakistan-cables/pc-net-cat6-uutp-pvc.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf | https://www.pakistancables.com/our-products/wires-cables/ | pakistancables.com | Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue. Used by 1 records. |
+| `assets/images/products/pakistan-cables/pc-net-cat6-uutp-lszh.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf | https://www.pakistancables.com/our-products/wires-cables/ | pakistancables.com | Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue. Used by 1 records. |
+| `assets/images/products/pakistan-cables/pc-net-cat6-futp-lszh.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf | https://www.pakistancables.com/our-products/wires-cables/ | pakistancables.com | Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue. Used by 1 records. |
+| `assets/images/products/pakistan-cables/pc-net-cat7-sftp-lszh.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf | https://www.pakistancables.com/our-products/wires-cables/ | pakistancables.com | Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue. Used by 1 records. |
+| `assets/images/products/abb-furse/furse-earthing-systems.webp` | representative-image | https://commons.wikimedia.org/wiki/File:HomeEarthRodAustralia1.jpg | https://commons.wikimedia.org/wiki/File:HomeEarthRodAustralia1.jpg | commons.wikimedia.org | Earth rod with earthing conductor and clamp, CC BY-SA 3.0. Representative product-type image: ABB publishes no accessible image for the Furse range. Used by 1 records. |
+| `assets/images/products/abb-furse/furse-structural-lightning-protection.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Lightning_Rod_Meteora.jpg | https://commons.wikimedia.org/wiki/File:Lightning_Rod_Meteora.jpg | commons.wikimedia.org | Lightning rod air termination, photograph by Etan Tal, CC BY 3.0. Representative product-type image. Used by 1 records. |
 | `assets/images/products/switch-plate.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Wall_Light_switch.jpg | https://commons.wikimedia.org/wiki/File:Wall_Light_switch.jpg | commons.wikimedia.org | Wall light switch, photograph by Blee72, CC BY-SA 4.0. Representative product-type image, used only where the product's own source publishes no photograph. Used by 4 records. |
 | `assets/images/products/socket.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Electrical_Outlet.jpg | https://commons.wikimedia.org/wiki/File:Electrical_Outlet.jpg | commons.wikimedia.org | Socket outlet, photograph by Texas Lane, CC BY-SA 4.0. Representative product-type image. Used by 11 records. |
 | `assets/images/products/led-bulb.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Led-lampa.jpg | https://commons.wikimedia.org/wiki/File:Led-lampa.jpg | commons.wikimedia.org | LED lamp, CC BY 3.0. Representative product-type image. Used by 2 records. |

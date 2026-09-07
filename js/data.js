@@ -90,6 +90,11 @@ window.SEE_DATA = (function () {
       availability: x.availability,
       img: x.img,
       imgType: x.imgType || null,
+      /* Department memberships. A product belongs to one category but can
+         sit in several departments - a Wi-Fi switch is Smart Switches,
+         Home Automation and Office Automation Solutions at once - without
+         a second record existing anywhere. */
+      depts: x.depts || [],
       type: x.hasVariations ? "variable" : "simple",
       tags: buildTags(x),
       sourceDomain: x.source,
@@ -153,6 +158,11 @@ window.SEE_DATA = (function () {
   function familiesForCategory(slug) {
     return FAMILIES.filter(function (f) { return f.category === slug; });
   }
+  function familiesForDepartment(slug) {
+    return FAMILIES.filter(function (f) {
+      return (f.depts || []).indexOf(slug) !== -1;
+    });
+  }
   function familyById(id) {
     for (var i = 0; i < FAMILIES.length; i++) {
       if (FAMILIES[i].id === id) { return FAMILIES[i]; }
@@ -182,6 +192,7 @@ window.SEE_DATA = (function () {
     var out = [];
     for (var i = 0; i < PRODUCTS.length; i++) {
       var p = PRODUCTS[i];
+      if (sel.dept && p.depts.indexOf(sel.dept) === -1) { continue; }
       if (sel.cat && p.cat !== sel.cat) { continue; }
       if (sel.sub && p.sub !== sel.sub) { continue; }
       if (sel.brand && p.brand !== sel.brand) { continue; }
@@ -247,6 +258,9 @@ window.SEE_DATA = (function () {
      can never drift apart. */
   function selectionUrl(sel) {
     sel = sel || {};
+    if (sel.dept) {
+      return "category.html?dept=" + encodeURIComponent(sel.dept);
+    }
     if (sel.query) {
       return "search-results.html?s=" + encodeURIComponent(sel.query) +
              (sel.cat ? "&product_cat=" + encodeURIComponent(sel.cat) : "");
@@ -276,7 +290,11 @@ window.SEE_DATA = (function () {
     { label: "Wiring Accessories",    sel: { cat: "electrical-accessories" }, art: "wiring-accessories" },
     { label: "Smart Home",            sel: { cat: "smart-home" }, art: "smart-home" },
     { label: "Industrial Control",    sel: { cat: "industrial-control" }, art: "industrial-control" },
-    { label: "Power & Energy",        sel: { cat: "power-energy" }, art: "power-energy" }
+    { label: "Power & Energy",        sel: { cat: "power-energy" }, art: "power-energy" },
+    { label: "Earthing Material",     sel: { cat: "earthing-material" }, art: "earthing-material" },
+    { label: "Networking Solutions",  sel: { dept: "networking-solutions" }, art: "networking-solutions" },
+    { label: "Home Automation",       sel: { dept: "home-automation" }, art: "home-automation" },
+    { label: "Office Automation Solutions", sel: { dept: "office-automation" }, art: "office-automation" }
   ];
 
   /* Product rails on the homepage. Only departments with enough individual
@@ -289,9 +307,11 @@ window.SEE_DATA = (function () {
     { title: "Lighting & Fixtures",   sel: { cat: "lighting" } },
     { title: "Fans & Ventilation",    sel: { cat: "fans-ventilation" } },
     { title: "Circuit Protection",    sel: { cat: "circuit-protection" } },
-    { title: "Smart Home",            sel: { cat: "smart-home" } },
     { title: "Wiring Accessories",    sel: { cat: "electrical-accessories" } },
-    { title: "Solar Panel Cables",    sel: { cat: "wires-cables", sub: "solar-cables" } }
+    { title: "Solar Panel Cables",    sel: { cat: "wires-cables", sub: "solar-cables" } },
+    { title: "Home Automation",       sel: { dept: "home-automation" } },
+    { title: "Office Automation Solutions", sel: { dept: "office-automation" } },
+    { title: "Networking Solutions",  sel: { dept: "networking-solutions" } }
   ];
 
   /* A department's picture is a real photograph of something inside it:
@@ -318,7 +338,11 @@ window.SEE_DATA = (function () {
     { label: "Distribution Boards",      sel: { cat: "electrical-accessories", sub: "distribution-boards" } },
     { label: "LED Lighting",             sel: { cat: "lighting", sub: "led-lighting" } },
     { label: "Smart Switches",           sel: { cat: "smart-home", sub: "smart-switches" } },
-    { label: "Data & Telephone Outlets", sel: { cat: "switches-sockets", query: "data socket" } }
+    { label: "Data & Telephone Outlets", sel: { cat: "switches-sockets", query: "data socket" } },
+    { label: "Earthing Material",        sel: { cat: "earthing-material" } },
+    { label: "Networking Solutions",     sel: { dept: "networking-solutions" } },
+    { label: "Home Automation",          sel: { dept: "home-automation" } },
+    { label: "Office Automation Solutions", sel: { dept: "office-automation" } }
   ];
 
   function railSections() {
@@ -334,18 +358,52 @@ window.SEE_DATA = (function () {
       };
     });
     RAIL_SHORTCUTS.forEach(function (d) {
-      out.push({ label: d.label, href: selectionUrl(d.sel),
-                 count: selectProducts(d.sel).length, subs: [] });
+      var n = selectProducts(d.sel).length;
+      if (!n && d.sel.cat) { n = familiesForCategory(d.sel.cat).length; }
+      out.push({ label: d.label, href: selectionUrl(d.sel), count: n, subs: [] });
     });
     return out;
+  }
+
+  var DEPT_BLURB = {
+    "earthing-material": "Earthing, structural lightning protection and surge protection ranges from ABB Furse.",
+    "networking-solutions": "Structured data cabling from the Pakistan Cables networking catalogue.",
+    "home-automation": "Wi-Fi switches, controls, motors and smart devices for the home.",
+    "office-automation": "The same verified smart control products, grouped for workplace use. " +
+                         "These are products we list; no installation or automation service is offered."
+  };
+
+  function departmentBySlug(slug) {
+    var all = departments();
+    for (var i = 0; i < all.length; i++) {
+      var key = all[i].sel.dept || all[i].sel.cat;
+      if (key === slug) {
+        all[i].blurb = DEPT_BLURB[slug] || "";
+        return all[i];
+      }
+    }
+    return null;
+  }
+
+  /* Readable department names, used so a search for "home automation" matches. */
+  function departmentName(list) {
+    if (!list || !list.length) { return ""; }
+    var out = [];
+    for (var i = 0; i < DEPARTMENTS.length; i++) {
+      var key = DEPARTMENTS[i].sel.dept || DEPARTMENTS[i].sel.cat;
+      if (list.indexOf(key) !== -1) { out.push(DEPARTMENTS[i].label); }
+    }
+    return out.join(" ");
   }
 
   function departments() {
     return DEPARTMENTS.map(function (d) {
       var n = selectProducts(d.sel).length;
+      var fams = d.sel.dept ? familiesForDepartment(d.sel.dept)
+                            : familiesForCategory(d.sel.cat);
       return {
         label: d.label, sel: d.sel, count: n, art: d.art,
-        familyCount: n ? 0 : familiesForCategory(d.sel.cat).length,
+        familyCount: n ? 0 : fams.length,
         href: selectionUrl(d.sel), img: departmentImage(d)
       };
     });
@@ -438,6 +496,7 @@ window.SEE_DATA = (function () {
     FAMILIES: FAMILIES,
     familiesForBrand: familiesForBrand,
     familiesForCategory: familiesForCategory,
+    familiesForDepartment: familiesForDepartment,
     familyById: familyById,
     PRODUCTS: PRODUCTS,
     generatedAt: C.generatedAt || null,
@@ -461,6 +520,8 @@ window.SEE_DATA = (function () {
     spreadProducts: spreadProducts,
     selectionUrl: selectionUrl,
     departments: departments,
+    departmentBySlug: departmentBySlug,
+    departmentName: departmentName,
     railSections: railSections,
     HOME_RAILS: HOME_RAILS
   };

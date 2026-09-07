@@ -1,11 +1,11 @@
 {
- "generatedAt": "2026-09-07T07:40:35+00:00",
+ "generatedAt": "2026-09-07T10:25:40+00:00",
  "brands": [
   {
    "slug": "pakistan-cables",
    "name": "Pakistan Cables",
-   "productCount": 2378,
-   "familyCount": 0,
+   "productCount": 2382,
+   "familyCount": 2,
    "catalogueExposed": true,
    "sourceDomains": [
     "pakistancables.com"
@@ -60,6 +60,18 @@
    ],
    "mark": "WF",
    "note": "Listed from the approved source catalogue. No dealership, distribution or partnership relationship is implied."
+  },
+  {
+   "slug": "abb-furse",
+   "name": "ABB Furse",
+   "productCount": 0,
+   "familyCount": 3,
+   "catalogueExposed": false,
+   "sourceDomains": [
+    "abb.com"
+   ],
+   "mark": "AF",
+   "note": "Individual product catalogue not publicly exposed by the approved source, so no individual products are listed. The 3 product families below are shown for navigation and enquiry only. No dealership, distribution or partnership relationship is implied."
   },
   {
    "slug": "himel",

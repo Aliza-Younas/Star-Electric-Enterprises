@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-09-07T07:40:35+00:00",
+ "generatedAt": "2026-09-07T10:25:40+00:00",
  "categories": [
   {
    "slug": "wires-cables",
    "name": "Wires & Cables",
    "blurb": "Building wire, power cable and cable accessories.",
-   "count": 2386,
-   "familyCount": 0,
+   "count": 2390,
+   "familyCount": 2,
    "subcategories": [
     {
      "slug": "building-wires",
@@ -37,6 +37,11 @@
      "slug": "cable-management",
      "name": "Cable Management",
      "count": 8
+    },
+    {
+     "slug": "networking-cables",
+     "name": "Networking Cables",
+     "count": 4
     },
     {
      "slug": "electrical-cables",
@@ -273,6 +278,14 @@
    "blurb": "Stabilisers, meters and power factor correction equipment.",
    "count": 0,
    "familyCount": 20,
+   "subcategories": []
+  },
+  {
+   "slug": "earthing-material",
+   "name": "Earthing Material",
+   "blurb": "Earthing, structural lightning protection and surge protection ranges.",
+   "count": 0,
+   "familyCount": 3,
    "subcategories": []
   }
  ]

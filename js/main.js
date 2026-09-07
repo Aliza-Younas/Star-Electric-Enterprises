@@ -318,6 +318,8 @@
     if (!term) { return true; }
     var hay = [p.name, p.model, p.sku, p.brand, p.series,
                D.categoryName(p.cat), String(p.sub || "").replace(/-/g, " "),
+               (p.depts || []).join(" ").replace(/-/g, " "),
+               D.departmentName ? D.departmentName(p.depts) : "",
                p.specText].join(" ").toLowerCase();
     var words = term.toLowerCase().split(/\s+/);
     for (var i = 0; i < words.length; i++) {
@@ -543,6 +545,9 @@
     var state = {
       cats: opts.cat ? [opts.cat] : [],
       subs: opts.sub ? [opts.sub] : [],
+      /* A department is a many-to-many grouping, so it filters alongside the
+         category tree rather than replacing it. */
+      dept: opts.dept || "",
       brands: opts.brand ? [opts.brand] : [],
       stock: [], type: [], pricing: [],
       min: null, max: null,
@@ -562,6 +567,7 @@
 
     function matches(p) {
       if (state.onlyDeals && !p.discountPercent) { return false; }
+      if (state.dept && (p.depts || []).indexOf(state.dept) === -1) { return false; }
       if (state.cats.length && state.cats.indexOf(p.cat) === -1) { return false; }
       if (state.subs.length && state.subs.indexOf(p.sub) === -1) { return false; }
       if (state.brands.length && state.brands.indexOf(p.brand) === -1) { return false; }
@@ -1295,6 +1301,11 @@
 
   /* ---------- CATEGORY ---------- */
   PAGES.category = function () {
+    /* A department page (?dept=) is a merchandising view across categories; a
+       category page (?cat=) is the taxonomy. Both render through the same
+       catalogue engine. */
+    var dept = param("dept");
+    var department = dept ? D.departmentBySlug(dept) : null;
     var slug = param("cat") || D.CATEGORIES[0].slug;
     var sub = param("sub");
     var cat = D.categoryBySlug(slug) || D.CATEGORIES[0];
@@ -1302,7 +1313,9 @@
     var bc = $("#breadcrumb");
     if (bc) {
       var items = [{ label: "Home", href: "index.html" }, { label: "Shop", href: "shop.html" }];
-      if (sub) {
+      if (department) {
+        items.push({ label: department.label });
+      } else if (sub) {
         items.push({ label: cat.name, href: "category.html?cat=" + cat.slug });
         var s = cat.subs.filter(function (x) { return x.slug === sub; })[0];
         items.push({ label: s ? s.name : sub });
@@ -1312,18 +1325,34 @@
       bc.innerHTML = UI.renderBreadcrumb(items);
     }
 
-    var t = $("#catTitle"); if (t) { t.textContent = cat.name; }
-    var b = $("#catBlurb"); if (b) { b.textContent = cat.blurb; }
+    var heading = department ? department.label : cat.name;
+    var t = $("#catTitle"); if (t) { t.textContent = heading; }
+    var b = $("#catBlurb");
+    if (b) { b.textContent = department ? (department.blurb || "") : cat.blurb; }
     var art = $("#catArt");
-    if (art) { art.src = D.categoryImage(cat.slug); art.alt = cat.name + " products"; }
-    document.title = cat.name + " — Star Electric Enterprises";
+    if (art) {
+      art.src = department ? department.img : D.categoryImage(cat.slug);
+      art.alt = heading + " products";
+    }
+    document.title = heading + " — Star Electric Enterprises";
 
+    /* Subcategory tiles only exist for a category that has them. A department
+       view, or a category whose source publishes ranges rather than products,
+       hides the heading rather than showing an empty row under it. */
     var sg = $("#subcatGrid");
-    if (sg) { sg.innerHTML = cat.subs.map(function (s) { return UI.renderSubcatCard(cat.slug, s); }).join(""); }
+    var st = $("#subcatTitle");
+    var subs = (!department && cat.subs) ? cat.subs : [];
+    if (sg) {
+      sg.innerHTML = subs.map(function (s) { return UI.renderSubcatCard(cat.slug, s); }).join("");
+      sg.hidden = !subs.length;
+    }
+    if (st) { st.hidden = !subs.length; }
 
     buildFilterUI();
-    var c = catalog({ cat: slug, sub: sub });
-    $$('[data-filter="cat"][value="' + slug + '"]').forEach(function (o) { o.checked = true; });
+    var c = department ? catalog({ dept: dept }) : catalog({ cat: slug, sub: sub });
+    if (!department) {
+      $$('[data-filter="cat"][value="' + slug + '"]').forEach(function (o) { o.checked = true; });
+    }
     if (c) { c.render(); }
 
     /* Families in this category are shown below the products, clearly separated
@@ -1331,7 +1360,7 @@
     var fsec = $("#catFamilySection");
     var flist = $("#catFamilyList");
     if (fsec && flist) {
-      var fams = D.familiesForCategory(slug);
+      var fams = department ? D.familiesForDepartment(dept) : D.familiesForCategory(slug);
       var byBrand = {};
       fams.forEach(function (f) {
         /* Electro Traders' six brand pages all return the same list, so the
@@ -1362,6 +1391,29 @@
     var c = catalog({ query: q, cat: cat });
     if (cat) { $$('[data-filter="cat"][value="' + cat + '"]').forEach(function (o) { o.checked = true; }); }
     if (c) { c.render(); }
+
+    /* Ranges matching the query. A search for "Furse" or "coaxial" hits a
+       range rather than a product, and that should not look like nothing. */
+    var rsec = $("#searchRanges");
+    var rlist = $("#searchRangesList");
+    if (rsec && rlist) {
+      var term = (q || "").toLowerCase().trim();
+      var hits = !term ? [] : D.FAMILIES.filter(function (f) {
+        var hay = [f.name, f.brand, f.series, f.summary,
+                   String(f.category || "").replace(/-/g, " ")].join(" ").toLowerCase();
+        return term.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
+      });
+      var byBrand = {};
+      hits.forEach(function (f) {
+        var k = (!f.brand || f.brand === "Not specified") ? "Brand not stated by source" : f.brand;
+        (byBrand[k] = byBrand[k] || []).push(f);
+      });
+      var names = Object.keys(byBrand).sort();
+      rlist.innerHTML = names.map(function (n) {
+        return UI.renderFamilyPanel(n, byBrand[n], byBrand[n][0].reason || "");
+      }).join("");
+      rsec.hidden = !hits.length;
+    }
 
     var sugg = $("#suggestedCats");
     if (sugg) { sugg.innerHTML = D.CATEGORIES.slice(0, 6).map(UI.renderCategoryCard).join(""); }

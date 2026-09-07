@@ -1,25 +1,25 @@
 # Image Completion Audit
 
 Record of the pass that closed the remaining image gaps in the catalogue.
-Completed 2026-09-05.
+Completed 2026-09-07.
 
 ## Before and after
 
 | Measure | Before | After |
 |---|---:|---:|
-| Verified individual products | 4344 | 4344 |
-| Products with an image | 1,929 | 4344 |
+| Verified individual products | 4348 | 4348 |
+| Products with an image | 1,929 | 4348 |
 | Products with **no** image | 2,415 | 0 |
-| Families / series with an image | 0 | 176 |
+| Families / series with an image | 0 | 178 |
 
 ## Image types across the catalogue
 
 | Type | Products |
 |---|---:|
 | `exact-image` | 1948 |
-| `manufacturer-image` | 2378 |
+| `manufacturer-image` | 2382 |
 | `representative-image` | 18 |
-| **Total** | **4344** |
+| **Total** | **4348** |
 
 ## By source
 
@@ -27,7 +27,7 @@ Completed 2026-09-05.
 |---|---:|---:|---:|---:|---:|
 | Aqua Electrical | 1640 | 1624 | 0 | 16 | 0 |
 | Coarts Lighting | 222 | 220 | 0 | 2 | 0 |
-| Pakistan Cables | 2378 | 0 | 2378 | 0 | 0 |
+| Pakistan Cables | 2382 | 0 | 2382 | 0 | 0 |
 | Wahid Fans | 104 | 104 | 0 | 0 | 0 |
 
 ## What was done, source by source

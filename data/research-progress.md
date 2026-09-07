@@ -147,3 +147,23 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 - [x] Responsive check at the target breakpoints
 - [x] Broken link / asset check
 - [x] Exhaustiveness audit reconciled
+
+## Phase 13 — Additional category sources
+
+- [x] ABB Furse page retrieved and analysed (three named ranges, no item-level data)
+- [x] ABB product sitemap crawled in full — 1,459 low-voltage product pages
+      checked against their own breadcrumbs, 0 earthing/lightning/surge items
+- [!] ABB Library API requires signed credentials (HTTP 403 `MissingKey`) —
+      **not circumvented by design**; Furse part numbers are not publicly reachable
+- [x] Earthing Material created as 3 range records, no invented SKUs
+- [x] Pakistan Cables Networking Cables Catalogue read; 4 individual cables imported
+      with construction, dimensions, standards, packaging and catalogue photographs
+- [x] Networking price check — Store API returns 0 results for cat6/coaxial/telephone/
+      control and the online store shows no price, so all four are Request a Quote
+- [x] Telephone/Intercom and Coaxial recorded as ranges, not products
+- [x] Aqua smart tree audited — all 83 products already present, none duplicated
+- [x] Home Automation and Office Automation Solutions added as many-to-many
+      department relationships on the existing records
+- [x] Office Automation Solutions documented as a product grouping, not a service
+- [x] Departments wired into the rail, circular strip, product rails, category
+      pages (`?dept=`) and search, including range results for range-only queries

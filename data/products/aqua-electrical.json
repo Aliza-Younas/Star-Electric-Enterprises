@@ -309,7 +309,10 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation"
+  ]
  },
  {
   "id": "aqua-14955",
@@ -1998,7 +2001,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-14694",
@@ -2049,7 +2056,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-14687",
@@ -2103,7 +2114,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-14682",
@@ -5246,7 +5261,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-14111",
@@ -5297,7 +5316,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-14108",
@@ -5348,7 +5371,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-14106",
@@ -5399,7 +5426,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-14104",
@@ -5450,7 +5481,10 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation"
+  ]
  },
  {
   "id": "aqua-14006",
@@ -6346,7 +6380,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13797",
@@ -6397,7 +6435,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13793",
@@ -6448,7 +6490,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13791",
@@ -6499,7 +6545,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13789",
@@ -6550,7 +6600,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13787",
@@ -6601,7 +6655,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13784",
@@ -6652,7 +6710,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13782",
@@ -6703,7 +6765,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13780",
@@ -6754,7 +6820,10 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation"
+  ]
  },
  {
   "id": "aqua-13778",
@@ -6805,7 +6874,10 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation"
+  ]
  },
  {
   "id": "aqua-13776",
@@ -9272,7 +9344,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13462",
@@ -9322,7 +9398,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13459",
@@ -9372,7 +9452,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13456",
@@ -9422,7 +9506,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13452",
@@ -9476,7 +9564,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13448",
@@ -9530,7 +9622,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13446",
@@ -9581,7 +9677,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13419",
@@ -9640,7 +9740,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13409",
@@ -9691,7 +9795,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13403",
@@ -9747,7 +9855,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13401",
@@ -9798,7 +9910,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13400",
@@ -9849,7 +9965,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13399",
@@ -9900,7 +10020,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13398",
@@ -9951,7 +10075,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13397",
@@ -10002,7 +10130,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13396",
@@ -10053,7 +10185,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13395",
@@ -10104,7 +10240,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13394",
@@ -10155,7 +10295,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13393",
@@ -10206,7 +10350,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13392",
@@ -10257,7 +10405,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13391",
@@ -10308,7 +10460,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-13332",
@@ -24045,7 +24201,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-9645",
@@ -24096,7 +24256,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-9644",
@@ -24147,7 +24311,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-9643",
@@ -24198,7 +24366,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-9642",
@@ -24249,7 +24421,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-9635",
@@ -24300,7 +24476,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-9617",
@@ -35427,7 +35607,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8671",
@@ -35478,7 +35662,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8670",
@@ -35529,7 +35717,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8669",
@@ -35580,7 +35772,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8668",
@@ -35631,7 +35827,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8667",
@@ -35682,7 +35882,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8666",
@@ -35733,7 +35937,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8665",
@@ -35784,7 +35992,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8664",
@@ -35835,7 +36047,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8663",
@@ -35886,7 +36102,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8662",
@@ -35937,7 +36157,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8638",
@@ -35988,7 +36212,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8637",
@@ -36039,7 +36267,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8636",
@@ -36090,7 +36322,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8635",
@@ -36141,7 +36377,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8634",
@@ -36192,7 +36432,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8633",
@@ -36243,7 +36487,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8632",
@@ -36294,7 +36542,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8631",
@@ -36345,7 +36597,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8630",
@@ -36396,7 +36652,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8629",
@@ -36447,7 +36707,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8615",
@@ -36555,7 +36819,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-8587",
@@ -53996,7 +54264,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6893",
@@ -54048,7 +54320,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6889",
@@ -54099,7 +54375,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6887",
@@ -54150,7 +54430,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6886",
@@ -54201,7 +54485,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6884",
@@ -54252,7 +54540,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6883",
@@ -54303,7 +54595,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6882",
@@ -54354,7 +54650,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6881",
@@ -54406,7 +54706,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6879",
@@ -54457,7 +54761,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6878",
@@ -54508,7 +54816,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6877",
@@ -54559,7 +54871,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6875",
@@ -54610,7 +54926,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6874",
@@ -54661,7 +54981,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6873",
@@ -54712,7 +55036,11 @@
   "_class": "REAL_PRODUCT",
   "_classReason": "",
   "imageType": "exact-image",
-  "imageNote": ""
+  "imageNote": "",
+  "departments": [
+   "home-automation",
+   "office-automation"
+  ]
  },
  {
   "id": "aqua-6774",

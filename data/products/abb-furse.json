@@ -1,0 +1,173 @@
+[
+ {
+  "id": "furse-earthing-systems",
+  "slug": "furse-earthing-systems",
+  "brand": "ABB Furse",
+  "manufacturer": "ABB",
+  "name": "Furse Earthing Systems",
+  "model": null,
+  "sku": null,
+  "source": {
+   "website": "ABB Furse",
+   "domain": "abb.com",
+   "url": "https://www.abb.com/global/en/areas/electrification/low-voltage/earthing-lightning-surge-protection/lightning-protection-and-earthing-systems/furse",
+   "checkedAt": "2026-09-07T10:23:55+00:00"
+  },
+  "category": "earthing-material",
+  "subcategory": "earthing-systems",
+  "sourceCategories": [
+   "Electrification",
+   "Low Voltage",
+   "Earthing, Lightning and Surge Protection",
+   "Furse"
+  ],
+  "series": "Furse",
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:23:55+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": "assets/images/products/abb-furse/furse-earthing-systems.webp",
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {},
+  "features": [],
+  "shortDescription": "ABB's Furse earthing range: earth electrodes, earthing conductors, clamps and bonding components for the earthing part of a lightning protection and earthing installation.",
+  "catalogueUrl": null,
+  "datasheetUrl": null,
+  "importNotes": [
+   "ABB publishes Furse as a solution overview; no individual product, specification or price is exposed for this range.",
+   "No dealership, distribution or authorisation relationship with ABB or Furse is implied."
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "ABB publishes Furse as a solution overview only: the page names this range but no individual product, model, specification or price for it. All 1,459 ABB low-voltage product pages were checked and none is an earthing, lightning or surge protection item, and the ABB Library API that holds the Furse part numbers requires signed credentials, which were not circumvented.",
+  "imageType": "representative-image",
+  "imageNote": "Representative photograph of this product type. ABB publishes no accessible image for the Furse range itself.",
+  "departments": [
+   "earthing-material"
+  ]
+ },
+ {
+  "id": "furse-structural-lightning-protection",
+  "slug": "furse-structural-lightning-protection",
+  "brand": "ABB Furse",
+  "manufacturer": "ABB",
+  "name": "Furse Structural Lightning Protection",
+  "model": null,
+  "sku": null,
+  "source": {
+   "website": "ABB Furse",
+   "domain": "abb.com",
+   "url": "https://www.abb.com/global/en/areas/electrification/low-voltage/earthing-lightning-surge-protection/lightning-protection-and-earthing-systems/furse",
+   "checkedAt": "2026-09-07T10:23:55+00:00"
+  },
+  "category": "earthing-material",
+  "subcategory": "lightning-protection",
+  "sourceCategories": [
+   "Electrification",
+   "Low Voltage",
+   "Earthing, Lightning and Surge Protection",
+   "Furse"
+  ],
+  "series": "Furse",
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:23:55+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": "assets/images/products/abb-furse/furse-structural-lightning-protection.webp",
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {},
+  "features": [],
+  "shortDescription": "ABB's Furse structural lightning protection range: air termination, down conductors and the fixings that make up a structural lightning protection system.",
+  "catalogueUrl": null,
+  "datasheetUrl": null,
+  "importNotes": [
+   "ABB publishes Furse as a solution overview; no individual product, specification or price is exposed for this range.",
+   "No dealership, distribution or authorisation relationship with ABB or Furse is implied."
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "ABB publishes Furse as a solution overview only: the page names this range but no individual product, model, specification or price for it. All 1,459 ABB low-voltage product pages were checked and none is an earthing, lightning or surge protection item, and the ABB Library API that holds the Furse part numbers requires signed credentials, which were not circumvented.",
+  "imageType": "representative-image",
+  "imageNote": "Representative photograph of this product type. ABB publishes no accessible image for the Furse range itself.",
+  "departments": [
+   "earthing-material"
+  ]
+ },
+ {
+  "id": "furse-surge-protection",
+  "slug": "furse-surge-protection",
+  "brand": "ABB Furse",
+  "manufacturer": "ABB",
+  "name": "Furse Surge Protection",
+  "model": null,
+  "sku": null,
+  "source": {
+   "website": "ABB Furse",
+   "domain": "abb.com",
+   "url": "https://www.abb.com/global/en/areas/electrification/low-voltage/earthing-lightning-surge-protection/lightning-protection-and-earthing-systems/furse",
+   "checkedAt": "2026-09-07T10:23:55+00:00"
+  },
+  "category": "earthing-material",
+  "subcategory": "surge-protection",
+  "sourceCategories": [
+   "Electrification",
+   "Low Voltage",
+   "Earthing, Lightning and Surge Protection",
+   "Furse"
+  ],
+  "series": "Furse",
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:23:55+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": null,
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {},
+  "features": [],
+  "shortDescription": "ABB's Furse surge protection range for mains and data lines, protecting electronic systems against transient overvoltages.",
+  "catalogueUrl": null,
+  "datasheetUrl": null,
+  "importNotes": [
+   "ABB publishes Furse as a solution overview; no individual product, specification or price is exposed for this range.",
+   "No dealership, distribution or authorisation relationship with ABB or Furse is implied."
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "ABB publishes Furse as a solution overview only: the page names this range but no individual product, model, specification or price for it. All 1,459 ABB low-voltage product pages were checked and none is an earthing, lightning or surge protection item, and the ABB Library API that holds the Furse part numbers requires signed credentials, which were not circumvented.",
+  "imageType": null,
+  "imageNote": "",
+  "departments": [
+   "earthing-material"
+  ]
+ }
+]

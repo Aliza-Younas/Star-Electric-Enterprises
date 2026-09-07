@@ -80,6 +80,18 @@
 
         <ul class="product-grid" id="catalogGrid"></ul>
 
+        <!-- Ranges that match the search. Some suppliers publish a range name
+             without item-level products; those are shown here rather than
+             leaving the query with no result at all. -->
+        <section class="panel" id="searchRanges" style="margin-top:32px" hidden>
+          <h2 class="section__title" style="font-size:20px" id="searchRangesTitle">Matching product ranges</h2>
+          <p class="t-sm t-muted" style="margin:8px 0 20px">
+            These are published by their source as a range rather than as individual
+            products. Tell us the rating or size you need and we will quote against it.
+          </p>
+          <div id="searchRangesList"></div>
+        </section>
+
         <!-- No-results state -->
         <div id="catalogEmpty" hidden>
           <div class="empty-state">
@@ -150,6 +162,7 @@
 </button>
 
 <script src="data/catalogue-index.js"></script>
+<script src="data/families.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>

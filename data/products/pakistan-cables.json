@@ -135063,5 +135063,433 @@
   "_classReason": "",
   "imageType": "manufacturer-image",
   "imageNote": "Pakistan Cables publishes no photograph against individual cable sizes. This is the manufacturer's own photograph of the Low Voltage Cables range, from its published product catalogue."
+ },
+ {
+  "brand": "Pakistan Cables",
+  "manufacturer": "Pakistan Cables Limited",
+  "category": "wires-cables",
+  "subcategory": "networking-cables",
+  "sourceCategories": [
+   "Wires & Cables",
+   "Networking Cables"
+  ],
+  "series": "Networking Cables",
+  "id": "pc-net-cat6-uutp-pvc",
+  "slug": "pakistan-cables-cat6-uutp-pvc",
+  "name": "CAT6 U/UTP PVC Unshielded Twisted Pairs",
+  "model": "CAT6 U/UTP PVC 4PR 23AWG",
+  "sku": null,
+  "source": {
+   "website": "Pakistan Cables",
+   "domain": "pakistancables.com",
+   "url": "https://www.pakistancables.com/our-products/wires-cables/",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": "assets/images/products/pakistan-cables/pc-net-cat6-uutp-pvc.webp",
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [
+   {
+    "name": "Blue (RAL 5015)",
+    "options": {
+     "Sheath Colour": "Blue (RAL 5015)"
+    },
+    "sku": null,
+    "price": null,
+    "regularPrice": null,
+    "availability": "Not specified",
+    "image": null
+   },
+   {
+    "name": "Grey (RAL 7046)",
+    "options": {
+     "Sheath Colour": "Grey (RAL 7046)"
+    },
+    "sku": null,
+    "price": null,
+    "regularPrice": null,
+    "availability": "Not specified",
+    "image": null
+   }
+  ],
+  "specifications": {
+   "Category": "CAT6",
+   "Construction": "U/UTP unshielded twisted pairs",
+   "Pairs": "4",
+   "Conductor": "23 AWG solid bare copper",
+   "Conductor Diameter": "0.0209 in / 0.53 ± 0.01 mm",
+   "Dielectric": "HDPE over each of the 4 pairs",
+   "Dielectric Diameter": "0.0385 in / 0.98 ± 0.05 mm",
+   "Filler": "PE separator",
+   "Ripcord": "Nylon",
+   "Jacket": "PVC (Polyvinyl Chloride)",
+   "Jacket Diameter": "0.240 ± 0.0079 in / 6.1 ± 0.20 mm",
+   "Jacket Thickness": "0.0236 in / 0.60 mm",
+   "Standards": "ISO/IEC 11801, ANSI/TIA 568C.2",
+   "Packaging": "305 m reel pull-box (approx. 13 kg)"
+  },
+  "features": [
+   "Solid bare copper conductors to ISO/IEC 11801 and ANSI/TIA 568C.2",
+   "Available in two outer sheath colours: Blue (RAL 5015) or Grey (RAL 7046)",
+   "305 m reel pull-box"
+  ],
+  "shortDescription": "CAT6 unshielded twisted pair data cable with a PVC sheath, supplied on a 305 m reel pull-box in blue or grey.",
+  "catalogueUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "datasheetUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "importNotes": [
+   "Imported from the official Pakistan Cables Networking Cables Catalogue linked from the approved Wires & Cables page.",
+   "The manufacturer publishes no retail price for this cable; the online store lists it without a price, so it is Request a Quote.",
+   "Photograph cropped from the catalogue page for this product.",
+   "Two sheath colours are published for this cable and are recorded as source variations."
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": "",
+  "imageType": "manufacturer-image",
+  "imageNote": "Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue.",
+  "departments": [
+   "networking-solutions"
+  ]
+ },
+ {
+  "brand": "Pakistan Cables",
+  "manufacturer": "Pakistan Cables Limited",
+  "category": "wires-cables",
+  "subcategory": "networking-cables",
+  "sourceCategories": [
+   "Wires & Cables",
+   "Networking Cables"
+  ],
+  "series": "Networking Cables",
+  "id": "pc-net-cat6-uutp-lszh",
+  "slug": "pakistan-cables-cat6-uutp-lszh",
+  "name": "CAT6 U/UTP LSZH Unshielded Twisted Pairs",
+  "model": "CAT6 U/UTP LSZH 4PR 23AWG",
+  "sku": null,
+  "source": {
+   "website": "Pakistan Cables",
+   "domain": "pakistancables.com",
+   "url": "https://www.pakistancables.com/our-products/wires-cables/",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": "assets/images/products/pakistan-cables/pc-net-cat6-uutp-lszh.webp",
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {
+   "Category": "CAT6",
+   "Construction": "U/UTP unshielded twisted pairs",
+   "Pairs": "4",
+   "Conductor": "23 AWG solid bare copper",
+   "Dielectric": "HDPE over each of the 4 pairs",
+   "Filler": "PE separator",
+   "Ripcord": "Nylon",
+   "Jacket": "LSZH (Low Smoke Zero Halogen)",
+   "Sheath Colour": "White (RAL 9003)",
+   "Jacket Diameter": "0.240 ± 0.0079 in / 6.1 ± 0.20 mm",
+   "Jacket Thickness": "0.0236 in / 0.60 mm",
+   "Standards": "ISO/IEC 11801, ANSI/TIA 568C.2, BS EN/IEC 60332-1-2",
+   "Packaging": "305 m reel pull-box (approx. 14 kg)"
+  },
+  "features": [
+   "Low smoke zero halogen sheath for populated and enclosed spaces",
+   "Flame propagation tested to BS EN/IEC 60332-1-2",
+   "305 m reel pull-box"
+  ],
+  "shortDescription": "CAT6 unshielded twisted pair data cable with a low smoke zero halogen sheath, supplied on a 305 m reel pull-box.",
+  "catalogueUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "datasheetUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "importNotes": [
+   "Imported from the official Pakistan Cables Networking Cables Catalogue linked from the approved Wires & Cables page.",
+   "The manufacturer publishes no retail price for this cable; the online store lists it without a price, so it is Request a Quote.",
+   "Photograph cropped from the catalogue page for this product."
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": "",
+  "imageType": "manufacturer-image",
+  "imageNote": "Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue.",
+  "departments": [
+   "networking-solutions"
+  ]
+ },
+ {
+  "brand": "Pakistan Cables",
+  "manufacturer": "Pakistan Cables Limited",
+  "category": "wires-cables",
+  "subcategory": "networking-cables",
+  "sourceCategories": [
+   "Wires & Cables",
+   "Networking Cables"
+  ],
+  "series": "Networking Cables",
+  "id": "pc-net-cat6-futp-lszh",
+  "slug": "pakistan-cables-cat6-futp-lszh",
+  "name": "CAT6 F/UTP LSZH Foiled/Unshielded Twisted Pairs",
+  "model": "CAT6 FTP LSZH 4PR 23AWG SHIELDED",
+  "sku": null,
+  "source": {
+   "website": "Pakistan Cables",
+   "domain": "pakistancables.com",
+   "url": "https://www.pakistancables.com/our-products/wires-cables/",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": "assets/images/products/pakistan-cables/pc-net-cat6-futp-lszh.webp",
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {
+   "Category": "CAT6",
+   "Construction": "F/UTP foiled / unshielded twisted pairs",
+   "Pairs": "4",
+   "Conductor": "23 AWG solid bare copper",
+   "Shield": "Aluminium foil tape",
+   "Drain Wire": "Solid tinned copper (0.40 ± 0.01 mm)",
+   "Ripcord": "Nylon",
+   "Jacket": "LSZH (Low Smoke Zero Halogen)",
+   "Sheath Colour": "Violet (RAL 4005)",
+   "Jacket Diameter": "0.295 ± 0.0079 in / 7.5 ± 0.20 mm",
+   "Jacket Thickness": "0.0275 in / 0.70 mm",
+   "Standards": "ISO/IEC 11801, ANSI/TIA 568C.2, BS EN/IEC 60332-1-2",
+   "Packaging": "305 m wooden / card board reel (approx. 18 kg)"
+  },
+  "features": [
+   "Foil shielded for installations with electrical interference",
+   "Solid tinned copper drain wire",
+   "Low smoke zero halogen sheath"
+  ],
+  "shortDescription": "Foil shielded CAT6 data cable with a low smoke zero halogen sheath, supplied on a 305 m reel.",
+  "catalogueUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "datasheetUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "importNotes": [
+   "Imported from the official Pakistan Cables Networking Cables Catalogue linked from the approved Wires & Cables page.",
+   "The manufacturer publishes no retail price for this cable; the online store lists it without a price, so it is Request a Quote.",
+   "Photograph cropped from the catalogue page for this product."
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": "",
+  "imageType": "manufacturer-image",
+  "imageNote": "Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue.",
+  "departments": [
+   "networking-solutions"
+  ]
+ },
+ {
+  "brand": "Pakistan Cables",
+  "manufacturer": "Pakistan Cables Limited",
+  "category": "wires-cables",
+  "subcategory": "networking-cables",
+  "sourceCategories": [
+   "Wires & Cables",
+   "Networking Cables"
+  ],
+  "series": "Networking Cables",
+  "id": "pc-net-cat7-sftp-lszh",
+  "slug": "pakistan-cables-cat7-sftp-lszh",
+  "name": "CAT7 S/FTP LSZH Shielded Twisted Pairs, Braided",
+  "model": "CAT 7 S/FTP LSZH 4PR 23AWG",
+  "sku": null,
+  "source": {
+   "website": "Pakistan Cables",
+   "domain": "pakistancables.com",
+   "url": "https://www.pakistancables.com/our-products/wires-cables/",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": "assets/images/products/pakistan-cables/pc-net-cat7-sftp-lszh.webp",
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {
+   "Category": "CAT7",
+   "Construction": "S/FTP shielded twisted pairs, braided",
+   "Pairs": "4",
+   "Conductor": "23 AWG solid bare copper",
+   "Conductor Diameter": "0.02255 in / 0.573 ± 0.005 mm",
+   "Dielectric": "Foam polyethylene (PE) over each of the four pairs",
+   "Dielectric Diameter": "0.0531 in / 1.35 ± 0.05 mm",
+   "Shield": "Aluminium foil tape on each pair",
+   "Drain Wire": "Solid tinned copper (0.40 ± 0.01 mm)",
+   "Braiding": "Braided tinned copper",
+   "Jacket": "LSZH (Low Smoke Zero Halogen)",
+   "Sheath Colour": "Orange (RAL 2003)",
+   "Jacket Diameter": "0.30707 ± 0.0079 in / 7.80 ± 0.20 mm",
+   "Jacket Thickness": "0.0236 in / 0.60 mm",
+   "Standards": "ISO/IEC 11801, ANSI/TIA 568C.2, IEC 60332",
+   "Packaging": "305 m wooden / card board reel (approx. 20 kg)"
+  },
+  "features": [
+   "Individually foiled pairs inside an overall tinned copper braid",
+   "Foam polyethylene dielectric",
+   "Low smoke zero halogen sheath"
+  ],
+  "shortDescription": "CAT7 individually shielded and overall braided data cable with a low smoke zero halogen sheath, supplied on a 305 m reel.",
+  "catalogueUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "datasheetUrl": "https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf",
+  "importNotes": [
+   "Imported from the official Pakistan Cables Networking Cables Catalogue linked from the approved Wires & Cables page.",
+   "The manufacturer publishes no retail price for this cable; the online store lists it without a price, so it is Request a Quote.",
+   "Photograph cropped from the catalogue page for this product."
+  ],
+  "_class": "REAL_PRODUCT",
+  "_classReason": "",
+  "imageType": "manufacturer-image",
+  "imageNote": "Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue.",
+  "departments": [
+   "networking-solutions"
+  ]
+ },
+ {
+  "brand": "Pakistan Cables",
+  "manufacturer": "Pakistan Cables Limited",
+  "category": "wires-cables",
+  "subcategory": "networking-cables",
+  "sourceCategories": [
+   "Wires & Cables",
+   "Networking Cables"
+  ],
+  "series": "Networking Cables",
+  "id": "pc-range-telephone-intercom",
+  "slug": "pc-range-telephone-intercom",
+  "name": "Indoor Telephone / Intercom Cables",
+  "model": null,
+  "sku": null,
+  "source": {
+   "website": "Pakistan Cables",
+   "domain": "pakistancables.com",
+   "url": "https://www.pakistancables.com/our-products/wires-cables/",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": null,
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {},
+  "features": [],
+  "shortDescription": "",
+  "catalogueUrl": null,
+  "datasheetUrl": null,
+  "importNotes": [
+   "Range named on the approved source page; no item-level data is published for it."
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Named as a General Wiring range on the approved source page. The source publishes no item-level model, specification or price for it, and it is absent from the manufacturer's Store API.",
+  "departments": [
+   "networking-solutions"
+  ]
+ },
+ {
+  "brand": "Pakistan Cables",
+  "manufacturer": "Pakistan Cables Limited",
+  "category": "wires-cables",
+  "subcategory": "networking-cables",
+  "sourceCategories": [
+   "Wires & Cables",
+   "Networking Cables"
+  ],
+  "series": "Networking Cables",
+  "id": "pc-range-coaxial",
+  "slug": "pc-range-coaxial",
+  "name": "Coaxial Cables",
+  "model": null,
+  "sku": null,
+  "source": {
+   "website": "Pakistan Cables",
+   "domain": "pakistancables.com",
+   "url": "https://www.pakistancables.com/our-products/wires-cables/",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "pricing": {
+   "currency": "PKR",
+   "price": null,
+   "regularPrice": null,
+   "salePrice": null,
+   "discountPercent": null,
+   "priceType": "quote",
+   "priceStatus": "Request Quote",
+   "checkedAt": "2026-09-07T10:20:16+00:00"
+  },
+  "availability": "Not specified",
+  "images": {
+   "featured": null,
+   "gallery": [],
+   "remote": []
+  },
+  "variations": [],
+  "specifications": {},
+  "features": [],
+  "shortDescription": "",
+  "catalogueUrl": null,
+  "datasheetUrl": null,
+  "importNotes": [
+   "Range named on the approved source page; no item-level data is published for it."
+  ],
+  "_class": "PRODUCT_FAMILY",
+  "_classReason": "Named as a General Wiring range on the approved source page. The source publishes no item-level model, specification or price for it, and it is absent from the manufacturer's Store API.",
+  "departments": [
+   "networking-solutions"
+  ]
  }
 ]

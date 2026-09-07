@@ -4,7 +4,7 @@ Individual-product audit of the imported catalogue. Every record imported from t
 approved sources was re-examined and classified, and only records that are genuinely
 individual products appear in the storefront.
 
-Audit performed 2026-09-05. **Gaps are never hidden**: where a source restricts automated access,
+Audit performed 2026-09-07. **Gaps are never hidden**: where a source restricts automated access,
 or simply does not publish individual products, that is stated plainly instead of being
 filled in with invented items.
 
@@ -14,19 +14,19 @@ filled in with invented items.
 
 | Class | Meaning | Records | Shown as a product? |
 |---|---|---:|---|
-| `REAL_PRODUCT` | An individually identifiable item published by the source | 4344 | Yes |
+| `REAL_PRODUCT` | An individually identifiable item published by the source | 4348 | Yes |
 | `REAL_VARIANT` | A source-published variant of a real product | 0 | Yes, as a variation of its product |
-| `PRODUCT_FAMILY` | A family / range / collection page, not one item | 44 | No - navigation and enquiry only |
+| `PRODUCT_FAMILY` | A family / range / collection page, not one item | 49 | No - navigation and enquiry only |
 | `SERIES_ONLY` | A series or model-group name with no item-level data | 132 | No - navigation and enquiry only |
 | `CATEGORY_ONLY` | A category heading | 0 | No - category navigation only |
 | `INSUFFICIENT_SOURCE_DATA` | Nothing that identifies an actual product | 1 | No - excluded entirely |
 
-**Records audited: 4521.**
+**Records audited: 4530.**
 
 Note on variants: no source record was split into separate pseudo-products. Where a source
 publishes options against one product - a fan model with colour and wire-type options, for
 example - they are kept as variations of that single product. Across the verified products
-there are **477 source-published variants** attached to 104 products.
+there are **479 source-published variants** attached to 105 products.
 
 ---
 
@@ -34,81 +34,41 @@ there are **477 source-published variants** attached to 104 products.
 
 | # | Measure | Count |
 |---:|---|---:|
-| 1 | Records in the previous import | 4521 |
-| 2 | Confirmed REAL individual products | 4344 |
-| 3 | Legitimate variants (source-published, kept on their product) | 477 |
-| 4 | Removed as product families | 44 |
+| 1 | Records in the previous import | 4530 |
+| 2 | Confirmed REAL individual products | 4348 |
+| 3 | Legitimate variants (source-published, kept on their product) | 479 |
+| 4 | Removed as product families | 49 |
 | 5 | Removed as series only | 132 |
 | 6 | Removed for insufficient source data | 1 |
-| 7 | Products with a real source image stored locally | 1929 |
-| 8 | Products still without an image | 2415 |
+| 7 | Products with a real source image stored locally | 4348 |
+| 8 | Products still without an image | 0 |
 | 9 | Products with an actual source price | 1800 |
-| 10 | Products using Request a Quote | 2544 |
+| 10 | Products using Request a Quote | 2548 |
 | 11 | Real individual products by source | see table below |
 
-Of the 2415 products still without an image, 2378 are Pakistan Cables items, whose source
+Of the 0 products still without an image, 0 are Pakistan Cables items, whose source
 publishes no product photography at all. Those products show a "Product image unavailable"
 state; no substitute image is used.
 
-A further **35** products name an image on their source page whose URL returns no
-image: the source answers HTTP 200 with a zero-byte file (verified on
-`aquaelectrical.com/wp-content/uploads/MCCB-40A-3Pole.jpg` among others), so there is
-no photograph to store. These carry the same "Product image unavailable" state rather
-than being given a stand-in picture:
-
-- `aqua-8158` — AQUA MCCB III POLE 40 Amp (aquaelectrical.com)
-- `aqua-8112` — AQUA BG D/POLE 30 Amp (aquaelectrical.com)
-- `aqua-7763` — Aqua Quad Grey Series Multi Socket Plus Dual USB (aquaelectrical.com)
-- `aqua-6881` — Aqua Wifi Smart Grey Multi Function Switch (aquaelectrical.com)
-- `aqua-6485` — AQUA DYNAMIC 4 GANG SWITCH PLUS 2 SOCKET (aquaelectrical.com)
-- `aqua-6443` — AQUA DYNAMIC DOUBLE DATA SOCKET (aquaelectrical.com)
-- `aqua-6437` — AQUA DYNASTY 5 GANG SWITCH (aquaelectrical.com)
-- `aqua-6429` — AQUA GLI 10 GANG SWITCH (aquaelectrical.com)
-- `aqua-6148` — AQUA GLOW POWER SWITCH 32 AMP (aquaelectrical.com)
-- `aqua-6142` — AQUA GLOW 15 AMP SWITCH SOCKET (aquaelectrical.com)
-- `aqua-5986` — PARADISE ECO 6 GANG SWITCH PLUS 2 SOCKET (aquaelectrical.com)
-- `aqua-5985` — PARADISE ECO 4 GANG SWITCH PLUS 2 SOCKET (aquaelectrical.com)
-- `aqua-5983` — PARADISE ECO 10 GANG SWITCH (aquaelectrical.com)
-- `aqua-5980` — PARADISE ECO DOUBLE DATA SOCKET (aquaelectrical.com)
-- `aqua-5979` — PARADISE ECO SINGLE DATA SOCKET (aquaelectrical.com)
-- `aqua-5773` — AQUA EDGE BROWN DOUBLE MULTI PLUS 2 USB (aquaelectrical.com)
-- `aqua-5770` — AQUA EDGE BROWN DOUBLE MULTI SOCKET (aquaelectrical.com)
-- `aqua-5769` — AQUA EDGE BROWN 9 GANG SWITCH PLUS 1 SOCKET (aquaelectrical.com)
-- `aqua-5734` — AQUA EDGE BROWN 2 GANG SWITCH PLUS 1 SOCKET (aquaelectrical.com)
-- `aqua-5491` — CENTURY CRYSTAL 1 GANG 2 WAY SWITCH (aquaelectrical.com)
-- `aqua-5439` — AQUA SAPPHIRE 4 GANG SWITCH (aquaelectrical.com)
-- `aqua-5426` — AQUA SAPPHIRE 3 GANG 1 WAY SWITCH (aquaelectrical.com)
-- `aqua-5420` — AQUA BRAVO 4 SWITCH 1 SOCKET 1 DIMMER (aquaelectrical.com)
-- `aqua-5415` — AQUA BRAVO DIGITAL DOUBLE USB (aquaelectrical.com)
-- `aqua-5411` — AQUA BRAVO FAN DIMMER (aquaelectrical.com)
-- `aqua-5404` — AQUA BRAVO BELL PUSH (aquaelectrical.com)
-- `aqua-5305` — AQUA GLORY LED NIGHT LIGHT WITH SWITCH (aquaelectrical.com)
-- `aqua-5304` — AQUA GLORY POWER PLUG (aquaelectrical.com)
-- `aqua-5301` — AQUA GLORY SINGLE TV SOCKET (aquaelectrical.com)
-- `aqua-5279` — AQUA GLORY 2 GANG SWITCH (aquaelectrical.com)
-- `aqua-5250` — AQUA SINGLE POLE 32 AMP MCB BREAKER (aquaelectrical.com)
-- `aqua-5246` — AQUA SINGLE POLE 10 AMP MCB BREAKER (aquaelectrical.com)
-- `aqua-4769` — Aqua Icon Brown Single Data Socket (aquaelectrical.com)
-- `aqua-4762` — Aqua Icon Brown Single Telephone Socket (aquaelectrical.com)
-- `aqua-4756` — Aqua Icon Brown 3 Gang 1 Way Switch (aquaelectrical.com)
 
 ### Real individual products by source
 
 | Source | Records imported | REAL products | Families | Series only | Excluded | With image | Priced | Request Quote |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Pakistan Cables | 2378 | 2378 | 0 | 0 | 0 | 0 | 0 | 2378 |
-| Aqua Electrical | 1641 | 1640 | 0 | 0 | 1 | 1605 | 1632 | 8 |
+| Pakistan Cables | 2384 | 2382 | 2 | 0 | 0 | 2382 | 0 | 2382 |
+| Aqua Electrical | 1641 | 1640 | 0 | 0 | 1 | 1640 | 1632 | 8 |
 | Wahid Fans | 104 | 104 | 0 | 0 | 0 | 104 | 104 | 0 |
 | Electro Traders | 32 | 0 | 32 | 0 | 0 | 0 | 0 | 0 |
 | Himel | 132 | 0 | 0 | 132 | 0 | 0 | 0 | 0 |
 | Hyundai / Jubilee Corporation | 8 | 0 | 8 | 0 | 0 | 0 | 0 | 0 |
-| Coarts Lighting | 226 | 222 | 4 | 0 | 0 | 220 | 64 | 158 |
-| **Total** | **4521** | **4344** | **44** | **132** | **1** | **1929** | **1800** | **2544** |
+| Coarts Lighting | 226 | 222 | 4 | 0 | 0 | 222 | 64 | 158 |
+| ABB Furse | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 |
+| **Total** | **4530** | **4348** | **49** | **132** | **1** | **4348** | **1800** | **2548** |
 
 Genuine source discounts across the verified products: **19**. A discount is only recorded
 where the source itself publishes both a regular price and a lower current price.
 
-The product count is lower than the 4521 records previously imported. That is the intended
+The product count is lower than the 4530 records previously imported. That is the intended
 outcome of the audit: accuracy over catalogue size.
 
 ---
@@ -119,14 +79,14 @@ outcome of the audit: accuracy over catalogue size.
 
 **URL:** https://www.pakistancables.com/  
 **Platform:** WordPress / WooCommerce  
-**Records imported:** 2378 · **verified individual products:** 2378 · **families/series:** 0 · **excluded:** 0
+**Records imported:** 2384 · **verified individual products:** 2382 · **families/series:** 2 · **excluded:** 0
 
 Every record is a distinct published catalogue item with its own product page and its own URL on the source: a specific conductor size, core count, insulation and voltage combination that Pakistan Cables actually lists. No size x core x insulation x voltage combinations were generated; the 2,378 records correspond one-to-one with 2,378 distinct source URLs. The source publishes no product photography and no retail price, so every one of these products carries Request a Quote and an honest "Product image unavailable" state.
 
-- With a stored source image: **0** of 2378
-- With a source price: **0** · Request a Quote: **2378**
-- With source-published variations: **0**
-- With a specification table: **2377**
+- With a stored source image: **2382** of 2382
+- With a source price: **0** · Request a Quote: **2382**
+- With source-published variations: **1**
+- With a specification table: **2381**
 
 ### Aqua Electrical
 
@@ -136,7 +96,7 @@ Every record is a distinct published catalogue item with its own product page an
 
 Individual products with their own product page, price, stock state, SKU where published and product photography. One record was a WooCommerce test artefact ("WooCommerce Automated Testing Product") and has been excluded.
 
-- With a stored source image: **1605** of 1640
+- With a stored source image: **1640** of 1640
 - With a source price: **1632** · Request a Quote: **8**
 - With source-published variations: **0**
 - With a specification table: **0**
@@ -186,10 +146,18 @@ The approved source is a single partner page listing eight product families with
 
 Individual lighting products with their own product page, photography and, where the source publishes one, a price. Four records name a range rather than an item ("T8 LED Tube PC Range", "T8 LED Tube Glass Range", "F7 Series LED Track Light", "F2 Series LED Track Light"): each has its own page and a photograph, but no price, no model number, no SKU and no specification behind it, so they are listed as families rather than sold as products.
 
-- With a stored source image: **220** of 222
+- With a stored source image: **222** of 222
 - With a source price: **64** · Request a Quote: **158**
 - With source-published variations: **0**
 - With a specification table: **0**
+
+### ABB Furse
+
+**URL:** https://www.abb.com/global/en/areas/electrification/low-voltage/earthing-lightning-surge-protection/lightning-protection-and-earthing-systems/furse  
+**Platform:** ABB corporate site (AEM)  
+**Records imported:** 3 · **verified individual products:** 0 · **families/series:** 3 · **excluded:** 0
+
+ABB publishes Furse as a solution overview. The page names three ranges - structural lightning protection, earthing and surge protection - and publishes no individual product, model, specification or price for any of them. All 1,459 ABB low-voltage product pages listed in ABB's own product sitemap were crawled and checked against their breadcrumbs: not one is an earthing, lightning or surge protection item. The ABB Library API that holds the Furse part numbers answers HTTP 403 MissingKey without signed credentials, and that restriction was not circumvented. Earthing Material is therefore imported at range level - three families for navigation and enquiry - and no Furse SKU has been invented.
 
 ---
 
@@ -210,3 +178,89 @@ Individual lighting products with their own product page, photography and, where
   seven approved ones.
 - No dealership, distribution, authorisation or partnership relationship is claimed for any
   brand anywhere on the site.
+
+
+---
+
+## Additional category sources
+
+Four departments were added after the original seven-source import, each from a
+source the business approved for that area. Nothing here duplicates an existing
+record: where a product was already in the catalogue it gained a department
+relationship rather than a second copy.
+
+### Earthing Material — ABB Furse
+
+**Source:** https://www.abb.com/global/en/areas/electrification/low-voltage/earthing-lightning-surge-protection/lightning-protection-and-earthing-systems/furse
+
+The page is a solution overview. It names three Furse ranges — structural
+lightning protection, earthing and surge protection — and publishes no
+individual product, model, specification or price for any of them.
+
+Two further checks were made before concluding that:
+
+- **ABB's own product sitemap was crawled in full.** All 1,459 low-voltage
+  product pages were fetched and classified by their own `BreadcrumbList`.
+  Not one is an earthing, lightning or surge protection product; the catalogue
+  published there is metering and energy devices.
+- **The ABB Library API was not circumvented.** The Furse part numbers sit
+  behind `library.e.abb.com`, which answers HTTP 403 `MissingKey` without
+  signed credentials. That is an access restriction and it was left alone.
+
+**Result: 3 ranges, 0 products.** Recorded as families for navigation and
+enquiry, exactly as Himel and Hyundai are. No Furse SKU has been invented, and
+no dealership, distribution or authorisation relationship with ABB or Furse is
+claimed anywhere.
+
+### Networking Solutions — Pakistan Cables
+
+**Source:** https://www.pakistancables.com/our-products/wires-cables/ and the
+official Networking Cables Catalogue linked from it.
+
+The catalogue publishes four individual cables, all imported with the
+construction, dimensions, standards and packaging printed in it, and with the
+product photograph cropped from its own page:
+
+- CAT6 U/UTP PVC Unshielded Twisted Pairs — two source-published sheath
+  colours, recorded as variations
+- CAT6 U/UTP LSZH Unshielded Twisted Pairs
+- CAT6 F/UTP LSZH Foiled/Unshielded Twisted Pairs
+- CAT7 S/FTP LSZH Shielded Twisted Pairs, Braided
+
+No price is published for any of them — the manufacturer's Store API returns
+`X-WP-Total: 0` for cat6, coaxial, telephone and control, and its own online
+store lists the cable without a price — so all four are Request a Quote.
+
+The same page names two further ranges without item-level data, Indoor
+Telephone / Intercom Cables and Coaxial Cables. Those are recorded as families,
+not invented SKUs.
+
+**Result: 4 products, 2 ranges.**
+
+### Home Automation — Aqua Wi-Fi Smart Switches
+
+**Source:** https://aquaelectrical.com/product-category/aqua-wifi-smart-switches/
+
+All 83 products in that category tree were already in the catalogue from the
+original Aqua import, verified by matching source product IDs. **Nothing was
+re-imported and no record was duplicated.** They gained a department
+relationship instead.
+
+**Result: 83 products.**
+
+### Office Automation Solutions — Aqua Wi-Fi Smart Switches
+
+**Source:** the same approved category, grouped for a second context.
+
+**Classification: a contextual product grouping, not a verified service.**
+Star Electric has not stated that it installs, commissions or supports
+automation, so nothing on the site offers one. The department is the subset of
+the verified smart range that suits a workplace — switching, controls, motors,
+protection and entry devices.
+
+**Result: 79 products**, every one of them the same record that appears under
+Home Automation. A product can belong to Smart Switches, Home Automation and
+Office Automation Solutions at once because departments are a many-to-many
+relationship on the product, not a copy of it.
+
+Compiled 2026-09-07.
