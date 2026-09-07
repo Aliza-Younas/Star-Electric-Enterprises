@@ -261,22 +261,22 @@ window.SEE_DATA = (function () {
   /* Departments shown as the circular strip and in the hero rail.
      `label` is what the shopper reads; `sel` is what it actually filters. */
   var DEPARTMENTS = [
-    { label: "Wires & Cables",        sel: { cat: "wires-cables" } },
-    { label: "Power Cables",          sel: { cat: "wires-cables", sub: "power-cables" } },
-    { label: "Solar Panel Cables",    sel: { cat: "wires-cables", sub: "solar-cables" } },
-    { label: "PVC Pipe & Conduit",    sel: { cat: "wires-cables", sub: "cable-management" } },
-    { label: "Switches & Sockets",    sel: { cat: "switches-sockets" } },
-    { label: "Smart Switches",        sel: { cat: "smart-home", sub: "smart-switches" } },
-    { label: "Data & Telephone Outlets", sel: { cat: "switches-sockets", query: "data socket" } },
-    { label: "Circuit Protection",    sel: { cat: "circuit-protection" } },
-    { label: "Distribution Boards",   sel: { cat: "electrical-accessories", sub: "distribution-boards" } },
-    { label: "Lighting & Fixtures",   sel: { cat: "lighting" } },
-    { label: "LED Lighting",          sel: { cat: "lighting", sub: "led-lighting" } },
-    { label: "Fans & Ventilation",    sel: { cat: "fans-ventilation" } },
-    { label: "Wiring Accessories",    sel: { cat: "electrical-accessories" } },
-    { label: "Smart Home",            sel: { cat: "smart-home" } },
-    { label: "Industrial Control",    sel: { cat: "industrial-control" } },
-    { label: "Power & Energy",        sel: { cat: "power-energy" } }
+    { label: "Wires & Cables",        sel: { cat: "wires-cables" }, art: "wires-cables" },
+    { label: "Power Cables",          sel: { cat: "wires-cables", sub: "power-cables" }, art: "power-cables" },
+    { label: "Solar Panel Cables",    sel: { cat: "wires-cables", sub: "solar-cables" }, art: "solar-cables" },
+    { label: "PVC Pipe & Conduit",    sel: { cat: "wires-cables", sub: "cable-management" }, art: "pvc-conduit" },
+    { label: "Switches & Sockets",    sel: { cat: "switches-sockets" }, art: "switches-sockets" },
+    { label: "Smart Switches",        sel: { cat: "smart-home", sub: "smart-switches" }, art: "smart-switches" },
+    { label: "Data & Telephone Outlets", sel: { cat: "switches-sockets", query: "data socket" }, art: "data-outlets" },
+    { label: "Circuit Protection",    sel: { cat: "circuit-protection" }, art: "circuit-protection" },
+    { label: "Distribution Boards",   sel: { cat: "electrical-accessories", sub: "distribution-boards" }, art: "distribution-boards" },
+    { label: "Lighting & Fixtures",   sel: { cat: "lighting" }, art: "lighting" },
+    { label: "LED Lighting",          sel: { cat: "lighting", sub: "led-lighting" }, art: "led-lighting" },
+    { label: "Fans & Ventilation",    sel: { cat: "fans-ventilation" }, art: "fans-ventilation" },
+    { label: "Wiring Accessories",    sel: { cat: "electrical-accessories" }, art: "wiring-accessories" },
+    { label: "Smart Home",            sel: { cat: "smart-home" }, art: "smart-home" },
+    { label: "Industrial Control",    sel: { cat: "industrial-control" }, art: "industrial-control" },
+    { label: "Power & Energy",        sel: { cat: "power-energy" }, art: "power-energy" }
   ];
 
   /* Product rails on the homepage. Only departments with enough individual
@@ -297,17 +297,13 @@ window.SEE_DATA = (function () {
   /* A department's picture is a real photograph of something inside it:
      the first product image, or the range image where a source publishes
      ranges only. Never an icon standing in for a product. */
+  /* Every department shows the same kind of picture: the product photograph on
+     a white stage, at a common subject scale, generated once into
+     assets/images/departments/. That is what keeps the strip looking like one
+     set rather than a mix of studio backdrops and cut-outs. */
   function departmentImage(dep) {
-    var sel = dep.sel;
-    if (!sel.sub && !sel.query && sel.cat) {
-      /* A whole department is represented by its largest subcategory, so
-         "Wires & Cables" shows cable rather than whichever item happens to
-         sort first. */
-      var cat = categoryBySlug(sel.cat);
-      var biggest = cat && cat.subs && cat.subs.length ? cat.subs[0] : null;
-      if (biggest) { sel = { cat: sel.cat, sub: biggest.slug }; }
-    }
-    var first = selectProducts(sel, 1)[0];
+    if (dep.art) { return "assets/images/departments/" + dep.art + ".webp"; }
+    var first = selectProducts(dep.sel, 1)[0];
     if (first && first.img) { return imageUrl(first.img); }
     var fam = familiesForCategory(dep.sel.cat)[0];
     if (fam && fam.img) { return imageUrl(fam.img); }
@@ -348,7 +344,7 @@ window.SEE_DATA = (function () {
     return DEPARTMENTS.map(function (d) {
       var n = selectProducts(d.sel).length;
       return {
-        label: d.label, sel: d.sel, count: n,
+        label: d.label, sel: d.sel, count: n, art: d.art,
         familyCount: n ? 0 : familiesForCategory(d.sel.cat).length,
         href: selectionUrl(d.sel), img: departmentImage(d)
       };

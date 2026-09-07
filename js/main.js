@@ -59,15 +59,30 @@
 
     read();
 
-    /* Seed a small demo cart the first time so the cart, checkout and
-       account screens can be reviewed in a populated state. */
-    if (!mem.seeded) {
-      mem.seeded = true;
-      var seed = (D.PRODUCTS || []).filter(function (p) {
+    /* No commerce state is ever created for a visitor. A first-time shopper
+       arrives with an empty cart and an empty wishlist.
+
+       Earlier builds seeded a demo cart so the cart and checkout screens could
+       be reviewed populated, and that shipped to the live site where new
+       visitors found items already in their basket. The seeding is gone. For
+       anyone still carrying it, the seeded records are removed once - and only
+       those: the seed was the first three priced, in-stock products with
+       quantities 1, 2, 3 and no variant, so it can be recognised exactly and
+       anything the shopper added themselves is left untouched. */
+    if (mem.seeded && !mem.demoCleared) {
+      var seeded = (D.PRODUCTS || []).filter(function (p) {
         return p.price !== null && p.stock !== "out";
-      }).slice(0, 3);
-      mem.cart = seed.map(function (p, i) { return { id: p.id, qty: i + 1, variant: "" }; });
-      mem.wishlist = seed.slice(0, 2).map(function (p) { return p.id; });
+      }).slice(0, 3).map(function (p) { return p.id; });
+
+      mem.cart = mem.cart.filter(function (line, i) {
+        var seedIndex = seeded.indexOf(line.id);
+        return !(seedIndex !== -1 && !line.variant && line.qty === seedIndex + 1);
+      });
+      mem.wishlist = mem.wishlist.filter(function (id) {
+        return seeded.slice(0, 2).indexOf(id) === -1;
+      });
+      mem.demoCleared = true;
+      mem.seeded = false;
       write();
     }
 
@@ -771,6 +786,341 @@
   function initRail(track, prev, next) {
     if (!track) { return; }
 
+    /* Page by a whole number of cards. Measuring the step each time and
+       rounding to whole cards is what stops repeated clicks accumulating
+       sub-pixel drift and desynchronising the snap points. */
+    function step() {
+      var first = track.firstElementChild;
+      if (!first) { return track.clientWidth; }
+      var gap = parseFloat(getComputedStyle(track).columnGap || 16) || 0;
+      return first.getBoundingClientRect().width + gap;
+    }
+    function page() {
+      var one = step();
+      var per = Math.max(1, Math.round(track.clientWidth / one));
+      return one * per;
+    }
+    function settle() {
+      /* Land exactly on a card boundary after a page. */
+      var one = step();
+      if (!one) { return; }
+      var max = track.scrollWidth - track.clientWidth;
+      var target = Math.round(track.scrollLeft / one) * one;
+      track.scrollLeft = Math.max(0, Math.min(max, target));
+    }
+    var still = window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function scrollBy(dir) {
+      track.scrollBy({ left: dir * page(), behavior: still ? "auto" : "smooth" });
+    }
+    function sync() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      if (prev) { prev.disabled = track.scrollLeft <= 2; }
+      if (next) { next.disabled = track.scrollLeft >= max; }
+    }
+
+    /* Re-check the arrows once scrolling has come to rest, and realign to a
+       card boundary so the row never ends up half a card out. */
+    var idle = null;
+    function onScroll() {
+      sync();
+      window.clearTimeout(idle);
+      idle = window.setTimeout(function () { if (still) { settle(); } sync(); }, 140);
+    }
+
+    on(prev, "click", function () { scrollBy(-1); });
+    on(next, "click", function () { scrollBy(1); });
+    on(track, "scroll", onScroll);
+    on(window, "resize", function () { sync(); });
+
+    /* Keyboard: the track is focusable, so arrow keys page it. */
+    on(track, "keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); scrollBy(1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); scrollBy(-1); }
+    });
+
+    /* Pointer dragging on desktop. Touch already scrolls natively, so this
+       only takes over for a mouse and never blocks a click on a card. */
+    var down = false, startX = 0, startLeft = 0, moved = 0;
+    on(track, "pointerdown", function (e) {
+      if (e.pointerType === "touch" || e.button !== 0) { return; }
+      down = true; moved = 0;
+      startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    on(track, "pointermove", function (e) {
+      if (!down) { return; }
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) {
+        moved = Math.abs(dx);
+        track.scrollLeft = startLeft - dx;
+        track.classList.add("is-dragging");
+      }
+    });
+    ["pointerup", "pointercancel", "pointerleave"].forEach(function (ev) {
+      on(track, ev, function () {
+        down = false;
+        track.classList.remove("is-dragging");
+      });
+    });
+    on(track, "click", function (e) {
+      if (moved > 6) { e.preventDefault(); e.stopPropagation(); moved = 0; }
+    }, true);
+
+    sync();
+  }
+
+  /* Wire every rail inside a container that follows the standard markup. */
+  function initRailsIn(root) {
+    $$(".rail", root).forEach(function (sec) {
+      initRail($(".rail__track", sec), $("[data-rail-prev]", sec), $("[data-rail-next]", sec));
+    });
+  }
+
+  /* ---------- HOME ---------- */
+  PAGES.home = function () {
+    /* ---- department rail beside the banner ---- */
+    var railEl = $("#heroRail");
+    if (railEl) { railEl.innerHTML = UI.renderHeroRail(D.railSections()); }
+
+    /* ---- campaign banner ----
+       Each slide is composed from department photography already verified in
+       this repository. Copy describes what the catalogue actually holds; no
+       slide claims a discount, and none is claimed anywhere unless a source
+       publishes one. */
+    var slides = [
+      { tone: "navy", eyebrow: "Circuit Protection",
+        title: "Protection Sized to Your Load",
+        text: "MCBs, RCCBs, distribution boxes and changeover gear, with Himel and " +
+              "Hyundai ranges quoted against the rating you specify.",
+        cta: "Shop Circuit Protection", href: "category.html?cat=circuit-protection",
+        cta2: "Request a Quote", href2: "quote-request.html",
+        art: ["circuit-protection", "distribution-boards", "industrial-control"] },
+
+      { tone: "slate", eyebrow: "Wires & Cables",
+        title: "Cable for Every Installation",
+        text: "2,386 published items across building wire, power cable, LSZH, medium " +
+              "voltage and solar, straight from the Pakistan Cables catalogue.",
+        cta: "Shop Wires & Cables", href: "category.html?cat=wires-cables",
+        cta2: "Bulk Enquiry", href2: "quote-request.html",
+        art: ["power-cables", "wires-cables", "solar-cables"] },
+
+      { tone: "red", eyebrow: "Switches & Sockets",
+        title: "Wiring Devices for Home and Office",
+        text: "Modular switches, sockets, data and telephone outlets across the Aqua " +
+              "and Panasonic ranges, priced as the source publishes them.",
+        cta: "Shop Switches & Sockets", href: "category.html?cat=switches-sockets",
+        art: ["switches-sockets", "smart-switches", "data-outlets"] },
+
+      { tone: "navy", eyebrow: "Lighting & Fixtures",
+        title: "LED Lighting, Panel to Highbay",
+        text: "Panels, downlights, track, floodlights and industrial highbay fittings " +
+              "from the Coarts lighting catalogue.",
+        cta: "Shop Lighting", href: "category.html?cat=lighting",
+        art: ["lighting", "led-lighting"] },
+
+      { tone: "slate", eyebrow: "Fans & Smart",
+        title: "Fans, Smart Switches and Controls",
+        text: "Ceiling, bracket and inverter fans alongside Wi-Fi switches, curtain " +
+              "motors and smart controls.",
+        cta: "Shop Fans", href: "category.html?cat=fans-ventilation",
+        cta2: "Smart Home", href2: "category.html?cat=smart-home",
+        art: ["fans-ventilation", "smart-home", "smart-switches"] }
+    ];
+
+    var track = $("#heroTrack");
+    if (track) {
+      track.innerHTML = slides.map(function (sl, i) {
+        return UI.renderHeroSlide(sl, i, i === 0);
+      }).join("");
+      var nav = $("#heroNav");
+      if (nav) { nav.innerHTML = UI.renderHeroNav(slides); }
+      initHeroBanner(slides);
+    }
+
+    /* ---- compact promo tiles ---- */
+    var promos = $("#heroPromos");
+    if (promos) {
+      promos.innerHTML = [
+        { kicker: "Protection", title: "Breakers & Distribution",
+          cta: "Shop now", href: "category.html?cat=circuit-protection",
+          img: "assets/images/categories/circuit-protection.webp" },
+        { kicker: "Smart electrical", title: "Wi-Fi Switches & Devices",
+          cta: "Explore", href: "category.html?cat=smart-home",
+          img: "assets/images/categories/smart-home.webp" },
+        { kicker: "Projects", title: "Bulk & Contractor Orders",
+          cta: "Request a quote", href: "quote-request.html",
+          img: "assets/images/categories/wires-cables.webp" }
+      ].map(UI.renderPromoTile).join("");
+    }
+
+    /* ---- department strip ---- */
+    var strip = $("#deptStrip");
+    if (strip) {
+      strip.innerHTML = D.departments().map(UI.renderDepartmentTile).join("");
+      var head = strip.parentNode.querySelector(".rail__head");
+      initRail(strip, $("[data-rail-prev]", head), $("[data-rail-next]", head));
+    }
+
+    /* ---- one product rail per department ----
+       Ten products each: enough to swipe through, small enough that the
+       homepage never mounts a slice of the full catalogue. */
+    var rails = $("#homeRails");
+    if (rails) {
+      rails.innerHTML = D.HOME_RAILS.map(function (r, i) {
+        var items = D.spreadProducts(r.sel, 10);
+        return UI.renderRail({
+          id: "rail-" + i, title: r.title, items: items,
+          count: D.selectProducts(r.sel).length,
+          viewAllUrl: D.selectionUrl(r.sel)
+        });
+      }).join("");
+      initRailsIn(rails);
+    }
+
+    /* ---- genuine source discounts only ---- */
+    var dealsWrap = $("#dealsRail");
+    if (dealsWrap) {
+      var deals = D.deals(10);
+      dealsWrap.innerHTML = deals.length
+        ? UI.renderRail({ id: "rail-deals", title: "Discounted at source",
+                          items: deals, count: D.deals().length,
+                          viewAllUrl: "deals.html" })
+        : UI.renderEmpty("tag", "No current discounts",
+            "None of our sources is publishing a reduced price today. Everything else " +
+            "is listed at its normal price or available on quotation.",
+            "shop.html", "Browse the catalogue");
+      initRailsIn(dealsWrap);
+    }
+
+    $$("[data-product-count]").forEach(function (el) {
+      el.textContent = D.PRODUCTS.length.toLocaleString("en-PK");
+    });
+
+    var bg = $("#brandGrid");
+    if (bg) { bg.innerHTML = D.BRANDS.slice(0, 12).map(UI.renderBrandCard).join(""); }
+  };
+
+  /* ======================================================================
+     HERO BANNER
+     ----------------------------------------------------------------------
+     A transform-based slider: the track carries every slide side by side and
+     is translated, so there is no cross-fade flash and nothing is hidden and
+     re-shown on load. Autoplay pauses whenever the visitor is looking at it
+     (hover), interacting with it (focus), or not looking at the page at all
+     (hidden tab), and does not run at all under reduced motion.
+     ====================================================================== */
+  var HERO_INTERVAL = 7000;
+
+  function initHeroBanner(slides) {
+    var track = $("#heroTrack");
+    if (!track) { return; }
+    var items = $$(".hslide", track);
+    if (!items.length) { return; }
+
+    var nav = $("#heroNav");
+    var buttons = nav ? $$(".hnav", nav) : [];
+    var status = $("#heroStatus");
+    var banner = $("#heroBanner");
+    var still = window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var index = 0, timer = null, paused = false;
+
+    function paint() {
+      track.style.transform = "translate3d(" + (-index * 100) + "%,0,0)";
+      items.forEach(function (el, i) {
+        el.classList.toggle("is-active", i === index);
+        /* Off-screen slides are removed from the tab order so keyboard focus
+           never lands on a control the visitor cannot see. */
+        $$("a,button", el).forEach(function (c) {
+          if (i === index) { c.removeAttribute("tabindex"); }
+          else { c.setAttribute("tabindex", "-1"); }
+        });
+      });
+      buttons.forEach(function (b, i) {
+        if (i === index) { b.setAttribute("aria-current", "true"); }
+        else { b.removeAttribute("aria-current"); }
+        b.classList.toggle("is-active", i === index);
+      });
+      if (status) {
+        status.textContent = "Slide " + (index + 1) + " of " + items.length + ": " +
+                             (slides[index] ? slides[index].eyebrow : "");
+      }
+    }
+
+    function go(n) {
+      index = (n + items.length) % items.length;
+      paint();
+    }
+
+    function stop() { window.clearInterval(timer); timer = null; }
+    function play() {
+      stop();
+      if (still || paused || document.hidden) { return; }
+      timer = window.setInterval(function () { go(index + 1); }, HERO_INTERVAL);
+    }
+    function restart() { go(index); play(); }
+
+    buttons.forEach(function (b, i) {
+      on(b, "click", function () { go(i); play(); });
+    });
+    on($("#heroPrev"), "click", function () { go(index - 1); play(); });
+    on($("#heroNext"), "click", function () { go(index + 1); play(); });
+
+    /* Pause while the pointer is over the banner or focus is inside it. */
+    on(banner, "mouseenter", function () { paused = true; stop(); });
+    on(banner, "mouseleave", function () { paused = false; play(); });
+    on(banner, "focusin", function () { paused = true; stop(); });
+    on(banner, "focusout", function () { paused = false; play(); });
+
+    /* Nothing should keep ticking in a tab nobody is looking at. */
+    on(document, "visibilitychange", function () {
+      if (document.hidden) { stop(); } else { play(); }
+    });
+
+    /* Keyboard: the banner takes arrow keys when anything inside it has focus. */
+    on(banner, "keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(index + 1); play(); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); go(index - 1); play(); }
+    });
+
+    /* Swipe. Horizontal intent only, so a vertical scroll is never hijacked. */
+    var x0 = null, y0 = null, dx = 0;
+    on(track, "pointerdown", function (e) {
+      if (e.pointerType === "mouse" && e.button !== 0) { return; }
+      x0 = e.clientX; y0 = e.clientY; dx = 0;
+    });
+    on(track, "pointermove", function (e) {
+      if (x0 === null) { return; }
+      dx = e.clientX - x0;
+      if (Math.abs(dx) > Math.abs(e.clientY - y0) && Math.abs(dx) > 8) {
+        track.style.transform = "translate3d(calc(" + (-index * 100) + "% + " + dx + "px),0,0)";
+      }
+    });
+    ["pointerup", "pointercancel", "pointerleave"].forEach(function (ev) {
+      on(track, ev, function () {
+        if (x0 === null) { return; }
+        if (Math.abs(dx) > 60) { go(index + (dx < 0 ? 1 : -1)); }
+        else { paint(); }
+        x0 = null; dx = 0;
+        play();
+      });
+    });
+
+    paint();
+    play();
+  }
+
+  /* ======================================================================
+     RAIL — one horizontal carousel used by every homepage row
+     ----------------------------------------------------------------------
+     Native scrolling with scroll-snap does the hard work: touch, trackpad
+     and momentum come free, and the arrows just page the scroller. No
+     carousel library, and nothing auto-advances a row of products.
+     ====================================================================== */
+  function initRail(track, prev, next) {
+    if (!track) { return; }
+
     function page() {
       var first = track.firstElementChild;
       if (!first) { return track.clientWidth; }
@@ -838,160 +1188,6 @@
     });
   }
 
-  /* ---------- HOME ---------- */
-  PAGES.home = function () {
-    /* ---- department rail beside the banner ---- */
-    var railEl = $("#heroRail");
-    if (railEl) { railEl.innerHTML = UI.renderHeroRail(D.railSections()); }
-
-    /* ---- campaign banner ----
-       Every slide is built from our own catalogue: the picture is a real
-       department photograph and the copy describes what is actually there.
-       No discount is claimed unless the catalogue carries one. */
-    var slides = [
-      { tone: "navy", eyebrow: "Wires & Cables",
-        title: "Cable for Every Installation",
-        text: "Building wire, power cable, LSZH and medium voltage — sized, rated and " +
-              "quoted from the Pakistan Cables catalogue.",
-        cta: "Shop Wires & Cables", href: "category.html?cat=wires-cables",
-        cta2: "Request a Quote", href2: "quote-request.html",
-        img: "assets/images/products/pakistan-cables/pc-range-low-voltage.webp" },
-      { tone: "red", eyebrow: "Switches & Sockets",
-        title: "Wiring Devices for Home and Office",
-        text: "Modular switches, sockets, data and telephone outlets across the Aqua " +
-              "and Panasonic ranges we list.",
-        cta: "Shop Switches & Sockets", href: "category.html?cat=switches-sockets",
-        img: "assets/images/products/aqua/aqua-bravo-2-gang-1-socket-5382.webp" },
-      { tone: "slate", eyebrow: "Circuit Protection",
-        title: "Breakers, RCDs and Distribution",
-        text: "MCBs, MCCBs, RCCBs and distribution boxes — with Himel and Hyundai " +
-              "ranges available to quote against your rating.",
-        cta: "Shop Circuit Protection", href: "category.html?cat=circuit-protection",
-        img: "assets/images/products/himel/16946803412115541690.webp" },
-      { tone: "navy", eyebrow: "Lighting & Fixtures",
-        title: "LED Lighting for Every Space",
-        text: "Panels, downlights, track, floodlights and outdoor fittings from the " +
-              "Coarts lighting catalogue.",
-        cta: "Shop Lighting", href: "category.html?cat=lighting",
-        img: "assets/images/categories/lighting.webp" },
-      { tone: "red", eyebrow: "Fans & Smart Electrical",
-        title: "Fans, Smart Switches and Controls",
-        text: "Ceiling, bracket and inverter fans alongside Wi-Fi switches and smart " +
-              "devices, priced as the source publishes them.",
-        cta: "Shop Fans", href: "category.html?cat=fans-ventilation",
-        cta2: "Smart Home", href2: "category.html?cat=smart-home",
-        img: "assets/images/categories/fans-ventilation.webp" }
-    ];
-
-    var wrap = $("#heroSlides");
-    if (wrap) {
-      wrap.innerHTML = slides.map(function (s, i) { return UI.renderHeroSlide(s, i === 0); }).join("");
-      var dots = $("#heroDots");
-      if (dots) {
-        dots.innerHTML = slides.map(function (s, i) {
-          return '<button type="button" role="tab" aria-selected="' + (i === 0) +
-                 '" aria-label="' + UI.esc(s.eyebrow) + '"><span>' +
-                 UI.esc(s.eyebrow) + "</span></button>";
-        }).join("");
-      }
-      initHeroBanner(wrap, dots);
-    }
-
-    /* ---- compact promo tiles ---- */
-    var promos = $("#heroPromos");
-    if (promos) {
-      promos.innerHTML = [
-        { kicker: "Protection", title: "Breakers & Distribution",
-          cta: "Shop now", href: "category.html?cat=circuit-protection",
-          img: "assets/images/categories/circuit-protection.webp" },
-        { kicker: "Smart electrical", title: "Wi-Fi Switches & Devices",
-          cta: "Explore", href: "category.html?cat=smart-home",
-          img: "assets/images/categories/smart-home.webp" },
-        { kicker: "Project supply", title: "Bulk & Contractor Orders",
-          cta: "Request a quote", href: "quote-request.html",
-          img: "assets/images/categories/wires-cables.webp" }
-      ].map(UI.renderPromoTile).join("");
-    }
-
-    /* ---- department strip ---- */
-    var strip = $("#deptStrip");
-    if (strip) {
-      strip.innerHTML = D.departments().map(UI.renderDepartmentTile).join("");
-      var head = strip.parentNode.querySelector(".rail__head");
-      initRail(strip, $("[data-rail-prev]", head), $("[data-rail-next]", head));
-    }
-
-    /* ---- one product rail per department ----
-       Twelve products each: enough to swipe through, small enough that the
-       homepage never renders a fraction of the 4,344-product catalogue. */
-    var rails = $("#homeRails");
-    if (rails) {
-      rails.innerHTML = D.HOME_RAILS.map(function (r, i) {
-        var items = D.spreadProducts(r.sel, 12);
-        return UI.renderRail({
-          id: "rail-" + i, title: r.title, items: items,
-          count: D.selectProducts(r.sel).length,
-          viewAllUrl: D.selectionUrl(r.sel)
-        });
-      }).join("");
-      initRailsIn(rails);
-    }
-
-    /* ---- genuine source discounts only ---- */
-    var dealsWrap = $("#dealsRail");
-    if (dealsWrap) {
-      var deals = D.deals(12);
-      dealsWrap.innerHTML = deals.length
-        ? UI.renderRail({ id: "rail-deals", title: "Discounted at source",
-                          items: deals, count: D.deals().length,
-                          viewAllUrl: "deals.html" })
-        : UI.renderEmpty("tag", "No current discounts",
-            "None of our sources is publishing a reduced price today. Everything else " +
-            "is listed at its normal price or available on quotation.",
-            "shop.html", "Browse the catalogue");
-      initRailsIn(dealsWrap);
-    }
-
-    var bg = $("#brandGrid");
-    if (bg) { bg.innerHTML = D.BRANDS.slice(0, 12).map(UI.renderBrandCard).join(""); }
-  };
-
-  /* Campaign banner: fades between slides, pauses on hover and focus, and
-     stops entirely for anyone who asked for reduced motion. */
-  function initHeroBanner(wrap, dots) {
-    var slides = $$(".hslide", wrap);
-    if (slides.length < 2) { return; }
-    var buttons = dots ? $$("button", dots) : [];
-    var i = 0, timer = null;
-    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    function go(n) {
-      i = (n + slides.length) % slides.length;
-      slides.forEach(function (s, k) {
-        s.classList.toggle("is-active", k === i);
-        if (k === i) { s.removeAttribute("aria-hidden"); }
-        else { s.setAttribute("aria-hidden", "true"); }
-      });
-      buttons.forEach(function (b, k) {
-        b.setAttribute("aria-selected", k === i ? "true" : "false");
-      });
-    }
-    function restart() {
-      window.clearInterval(timer);
-      if (still) { return; }
-      timer = window.setInterval(function () { go(i + 1); }, 7000);
-    }
-    buttons.forEach(function (b, k) {
-      on(b, "click", function () { go(k); restart(); });
-    });
-    on($("#heroPrev"), "click", function () { go(i - 1); restart(); });
-    on($("#heroNext"), "click", function () { go(i + 1); restart(); });
-    on(wrap, "mouseenter", function () { window.clearInterval(timer); });
-    on(wrap, "mouseleave", restart);
-    on(wrap, "focusin", function () { window.clearInterval(timer); });
-    on(wrap, "focusout", restart);
-    go(0); restart();
-  }
 
   PAGES.shop = function () {
     buildFilterUI();

@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Star Electric Enterprises — Electrical Supplies Store | Saddar, Rawalpindi</title>
 <meta name="description" content="Shop electrical supplies at Star Electric Enterprises, Saddar, Rawalpindi. Wires and cables, switches and sockets, circuit breakers, lighting, fans, power equipment and tools for homes, offices, commercial projects, electricians and contractors.">
-<!-- SEO: replace the domain in every canonical/og:url before launch -->
-<link rel="canonical" href="https://REPLACE-WITH-DOMAIN/index.html">
+<!-- Canonical and Open Graph URLs point at the deployed GitHub Pages origin. -->
+<link rel="canonical" href="https://aliza-younas.github.io/Star-Electric-Enterprises/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Star Electric Enterprises — Electrical Supplies Store">
 <meta property="og:description" content="Electrical supplies for homes, offices, commercial projects, electricians and contractors. Saddar, Rawalpindi.">
-<meta property="og:image" content="assets/logo/star-electric-logo-stacked.jpg">
-<meta property="og:url" content="https://REPLACE-WITH-DOMAIN/index.html">
+<meta property="og:image" content="https://aliza-younas.github.io/Star-Electric-Enterprises/assets/logo/star-electric-logo-stacked.jpg">
+<meta property="og:url" content="https://aliza-younas.github.io/Star-Electric-Enterprises/">
 <link rel="icon" href="assets/logo/favicon.png" sizes="any">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/pages.css">
@@ -41,14 +41,18 @@
       <div class="hcom__rail" id="heroRail"></div>
 
       <div class="hcom__main">
-        <div class="hbanner" id="heroBanner">
-          <div class="hbanner__viewport" id="heroSlides"></div>
+        <section class="hbanner" id="heroBanner" aria-roledescription="carousel"
+                 aria-label="Featured departments">
+          <div class="hbanner__viewport">
+            <div class="hbanner__track" id="heroTrack"></div>
+          </div>
           <button class="hbanner__arrow hbanner__arrow--prev" type="button"
-                  id="heroPrev" aria-label="Previous campaign"></button>
+                  id="heroPrev" aria-label="Previous slide"></button>
           <button class="hbanner__arrow hbanner__arrow--next" type="button"
-                  id="heroNext" aria-label="Next campaign"></button>
-          <div class="hbanner__dots" id="heroDots" role="tablist" aria-label="Campaigns"></div>
-        </div>
+                  id="heroNext" aria-label="Next slide"></button>
+          <div class="hbanner__nav" id="heroNav" aria-label="Choose a slide"></div>
+          <p class="sr-only" aria-live="polite" id="heroStatus"></p>
+        </section>
 
         <div class="hpromos" id="heroPromos"></div>
       </div>
@@ -71,14 +75,6 @@
       <li class="trust-item">
         <span class="trust-item__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-7 7v4a3 3 0 0 0 3 3h1v-7H7"/><path d="M19 14v-4a7 7 0 0 0-7-7"/><path d="M19 14a3 3 0 0 1-3 3h-1v-7h1a3 3 0 0 1 3 3Z"/><path d="M16 17v1a3 3 0 0 1-3 3h-1"/></svg></span>
         <span><strong>Expert Assistance</strong><small>Ratings, sizes and specifications</small></span>
-      </li>
-      <li class="trust-item">
-        <span class="trust-item__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span>
-        <span><strong>Delivery Support</strong><small class="placeholder">[ coverage to be confirmed ]</small></span>
-      </li>
-      <li class="trust-item">
-        <span class="trust-item__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="3"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/><path d="M12 14v2"/></svg></span>
-        <span><strong>Secure Checkout</strong><small class="placeholder">[ payment methods to be confirmed ]</small></span>
       </li>
     </ul>
   </div>
@@ -122,7 +118,7 @@
         <div>
           <p class="section__eyebrow">Current offers</p>
           <h2 class="section__title" id="dealTitle">Deals &amp; Promotions</h2>
-          <p class="section__sub">Offer terms and validity to be confirmed before publication.</p>
+          <p class="section__sub">Every reduction here is one the product&rsquo;s own source publishes. Nothing is marked down by us.</p>
         </div>
         <a class="link-more" href="deals.html">All deals
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
@@ -164,8 +160,8 @@
           <p class="section__eyebrow">Manufacturers</p>
           <h2 class="section__title" id="brandTitle">Shop by Brand</h2>
           <p class="section__sub">
-            Brand tiles are placeholders. No dealership or authorisation is implied &mdash;
-            confirmed brand names and logos will replace these.
+            Brand names come from the approved product sources. No dealership, distribution
+            or authorisation relationship is implied.
           </p>
         </div>
         <a class="link-more" href="brands.html">All brands
@@ -189,9 +185,9 @@
         </p>
         <div class="btn-row">
           <a class="btn btn--accent btn--lg" href="quote-request.html">Request Bulk Quote</a>
-          <a class="btn btn--light btn--lg" href="contact.html" data-placeholder="WhatsApp number to be added">
-            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.3-3.9A8 8 0 1 1 20 11.8Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5"/></svg>
-            WhatsApp Us
+          <a class="btn btn--light btn--lg" href="contact.html">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            Contact the Store
           </a>
         </div>
       </div>
@@ -247,49 +243,41 @@
 
   <!-- ======================================================
        K. LOCAL STORE
+          Only facts on record appear here. The shop address, phone, WhatsApp
+          and opening hours have not been supplied, so those rows are absent
+          rather than shown as empty brackets on a live site.
        ====================================================== -->
   <section class="section section--tint" aria-labelledby="storeTitle">
-    <div class="container store-strip">
-      <div>
+    <div class="container store-band">
+      <div class="store-band__copy">
         <p class="section__eyebrow">Visit us</p>
         <h2 class="section__title" id="storeTitle">Star Electric Enterprises</h2>
         <p class="t-lead" style="margin-top:8px">Saddar, Rawalpindi</p>
-
-        <dl class="store-list">
-          <div>
-            <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg> Address</dt>
-            <dd class="placeholder">[ shop address to be added ]</dd>
-          </div>
-          <div>
-            <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l1.6 4-2.2 1.6a12 12 0 0 0 6 6L16 13.4l4 1.6v4a1 1 0 0 1-1.1 1A16.5 16.5 0 0 1 4 6.1 1 1 0 0 1 5 4Z"/></svg> Phone</dt>
-            <dd class="placeholder">[ phone number to be added ]</dd>
-          </div>
-          <div>
-            <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.3-3.9A8 8 0 1 1 20 11.8Z"/></svg> WhatsApp</dt>
-            <dd class="placeholder">[ WhatsApp number to be added ]</dd>
-          </div>
-          <div>
-            <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l4 2"/></svg> Business hours</dt>
-            <dd class="placeholder">[ opening hours to be added ]</dd>
-          </div>
-        </dl>
-
+        <p class="store-band__text">
+          An electrical supplies store serving householders, electricians and contractors.
+          Send us your item list or bill of quantities and we will come back with a written
+          quotation for the ratings and sizes you need.
+        </p>
         <div class="btn-row">
-          <a class="btn btn--accent" href="#" data-placeholder="Map link to be added">
-            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 6-2.2 4 2.2 6-2.4V4l-6 2.4-4-2.2L4 6.4Z"/><path d="M10 4.2v13.6M14 6.4V20"/></svg>
-            Get Directions
-          </a>
-          <a class="btn btn--ghost" href="contact.html">Contact Page</a>
+          <a class="btn btn--accent" href="quote-request.html">Request a Quotation</a>
+          <a class="btn btn--ghost" href="contact.html">Contact the Store</a>
         </div>
       </div>
 
-      <div class="map-ph" role="img" aria-label="Map placeholder — a map embed will be added here">
-        <div class="map-ph__grid" aria-hidden="true"></div>
-        <div class="map-ph__pin" aria-hidden="true">
-          <svg class="ico" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-        </div>
-        <p class="map-ph__label">Map embed placeholder<br><span class="placeholder">[ map to be added ]</span></p>
-      </div>
+      <ul class="store-band__facts">
+        <li>
+          <strong data-product-count>&nbsp;</strong>
+          <span>individual products listed from seven supplier sources</span>
+        </li>
+        <li>
+          <strong>Retail &amp; bulk</strong>
+          <span>quotations prepared for project and contractor orders</span>
+        </li>
+        <li>
+          <strong>Source-checked</strong>
+          <span>every price and specification taken from the supplier&rsquo;s own catalogue</span>
+        </li>
+      </ul>
     </div>
   </section>
 

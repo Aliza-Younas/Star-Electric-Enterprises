@@ -267,8 +267,14 @@ These hold until the user says otherwise:
   opening hours, delivery charges, return windows, warranty terms, payment
   methods, establishment year, customer counts, reviews, ratings-as-real-data,
   awards, certifications and dealership/authorised-partner claims are all
-  off-limits unless the user supplies them. Unknown details stay as visible
-  bracketed placeholders.
+  off-limits unless the user supplies them.
+- **The live site shows no bracketed placeholders.** The site is deployed to
+  GitHub Pages, so anything on it is public. Where a fact is not on record,
+  remove the UI item that would have displayed it rather than shipping
+  `[ number ]` or `[ to be confirmed ]` — and never invent a value to fill the
+  gap. Keep the real route open instead (contact form, quotation request). This
+  supersedes the earlier instruction to leave visible bracketed placeholders,
+  which was written before the site was published.
 - **Brand logos stay as monogram placeholders** until a confirmed brand list is
   supplied — real manufacturer logos would imply stock relationships that do not
   exist on record.

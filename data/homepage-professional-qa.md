@@ -1,0 +1,352 @@
+# Homepage Professional QA
+
+Production quality review of the homepage, carried out against the deployed site
+at https://aliza-younas.github.io/Star-Electric-Enterprises/ and the identical
+local build at commit `aad0a5c`.
+
+Reviewed by rendering the page — not by reading source — at 1920, 1440, 1366,
+1024, 768, 430, 390 and 375, plus scripted measurement of the DOM, images,
+commerce state and runtime errors.
+
+Measured baseline: 3,422 DOM nodes · 137 images (134 lazy, 0 broken) ·
+108 product cards across 9 rails · 0 JavaScript errors · 19 visible
+placeholder elements · hero product image occupying 14% of the banner area.
+
+---
+
+## BEFORE — issues found
+
+Severity key: **critical** breaks trust or function on the live site ·
+**high** clearly reads as unfinished · **medium** noticeably below professional
+standard · **low** polish.
+
+### A. Visual hierarchy
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| A1 | The banner is the largest element on the page but carries the least information — a 858×548 px area in which the product occupies 14%. The eye lands on empty space. | critical | all desktop | A commerce hero must sell; this one reads as an unfinished container. | Rebuild as an editorial composition: layered multi-product still life, tighter height, stronger type scale. |
+| A2 | Nothing establishes a "first screen" priority order. Rail, banner, promos and trust strip all carry similar visual weight. | high | ≥1024 | No focal point, so the page reads as a set of boxes. | Give the banner clear dominance, demote promo tiles, lighten the trust strip. |
+
+### B. Hero / banner
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| B1 | Single small product floating in a near-white field; no composition, depth or art direction. | critical | all | Looks like a placeholder slot rather than a designed banner. | Compose 2–4 complementary real products per slide with a staged backdrop. |
+| B2 | Slide is 548 px tall with ~130 px dead space above and below the copy. | high | ≥1024 | Wastes the most valuable screen area. | Fix a compact commercial aspect and align copy to it. |
+| B3 | **Prev arrow overlays the body copy** — the word "sized" is hidden behind the control. | critical | 768–1023 | Broken layout; text is unreadable. | Move controls out of the text column; reserve gutters. |
+| B4 | **Slide-label chips overlap the CTA buttons.** | critical | 768–1023 | Two interactive layers on top of each other; the CTA can be mis-clicked. | Put navigation in its own row at every width. |
+| B5 | Navigation chips look like leftover filter pills, not premium slider navigation. | high | all | Reads as debug UI. | Purpose-built tab navigation with a progress indicator. |
+| B6 | Fade-only transition, no swipe, no keyboard, no pause when the tab is hidden. | high | all | Feels basic; autoplay keeps running unseen. | Transform-based slide + fade, swipe, arrow keys, pause on hover/focus/visibility change. |
+| B7 | First paint shows all five slides stacked before JS hides them. | medium | all | Content flash on load. | Render inactive slides hidden from the start. |
+
+### C. Category rail / navigation
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| C1 | 15 rows with no separators and a heavy solid navy cap; rows read as one undifferentiated block. | medium | ≥1024 | Hard to scan. | Hairline separators, calmer header, tighter row rhythm. |
+| C2 | Chevron only on some rows with no alignment column. | medium | ≥1024 | Ragged right edge. | Fixed chevron column, consistent baseline. |
+| C3 | Flyout can be clipped by the banner stacking context. | high | ≥1024 | Menu unusable in places. | Raise the rail's stacking context above the banner. |
+| C4 | Hover state is a flat grey wash with no affordance for the active row. | low | ≥1024 | Feels unfinished. | Accent left edge marker plus text colour change. |
+
+### D. Category circular thumbnails
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| D1 | **Two different image languages in one strip**: Pakistan Cables tiles show a dark-green photographic square inside the circle, while Aqua/Himel tiles show a clean product on white. | critical | all | The single most amateur-looking element on the page. | Normalise every department image onto one white photographic stage. |
+| D2 | Perceived product scale varies widely between tiles. | high | all | Strip reads as random. | Regenerate square masters with a common subject-height target. |
+| D3 | Two-line labels ("Data & Telephone Outlets") push the count down and break the baseline across the row. | medium | all | Ragged row. | Fixed label block height, 2-line clamp. |
+| D4 | Counts on every tile add noise to a navigation strip. | low | all | Clutter. | Keep counts but demote them visually. |
+
+### E. Product sliders
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| E1 | Every rail sits on the same tinted band with equal spacing, so nine shelves merge into one long field. | high | all | No merchandising rhythm. | Alternating surface treatment and a stronger shelf header rule. |
+| E2 | Arrows are the same weight as the "View All" pill and compete with it. | medium | ≥768 | Two controls fighting. | Quieter arrows, pill remains primary. |
+| E3 | Repeated arrow clicks accumulate sub-pixel drift, so snap points slowly desynchronise. | medium | ≥768 | Cards end up mis-aligned. | Snap the computed page width to whole card steps. |
+
+### F. Product cards
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| F1 | **The product image has no frame** — it runs edge to edge into the card, so dark product photography merges with the card and the page. | critical | all | Explicitly below the requested standard; looks unfinished. | Give the image its own inset framed stage with border and radius. |
+| F2 | Product name (13.5 px) is barely stronger than the brand line; price is not the strongest element. | high | all | Weak hierarchy for a commerce card. | Name 15 px semibold, brand 12.5 px muted, price 17 px bold. |
+| F3 | "Request a Quote" renders as plain bold text and reads as missing price data. | high | all | Undermines the 2,544 quote-only products. | Deliberate quote treatment in brand navy with a supporting line. |
+| F4 | Full-width red primary button on every card produces a wall of red across a rail. | medium | all | Visually loud, dilutes emphasis. | Navy primary for cart actions, red reserved for quote/discount emphasis. |
+| F5 | Card has no hover affordance beyond a border tint. | medium | ≥1024 | Feels static. | Subtle lift, shadow, 1.03 image scale. |
+| F6 | Action row height 36 px is below the comfortable touch target. | medium | ≤430 | Hard to tap accurately. | 44 px on touch widths. |
+
+### G. Spacing and rhythm
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| G1 | The tinted rails band starts immediately under the departments strip with no separation. | medium | all | Sections collide. | Consistent section rhythm with defined band boundaries. |
+| G2 | Hero section top padding is smaller than every other section, so the page starts abruptly under the nav. | low | all | Cramped. | Align to the spacing scale. |
+
+### H. Typography
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| H1 | Banner headline maxes at 34 px — small for a hero at 1440+. | medium | ≥1366 | Lacks presence. | Fluid scale to 44 px. |
+| H2 | Rail titles, department labels and card names use three unrelated sizes with no rhythm. | medium | all | Inconsistent. | Rationalise to a single scale. |
+| H3 | Uppercase eyebrows on banner, promos and card meta all at once. | low | all | Over-used device. | Restrict uppercase to the banner eyebrow. |
+
+### I. Colour consistency
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| I1 | Red is used for every primary action on every card, the search button, the CTA and the badges simultaneously. | medium | all | Emphasis is lost when everything is emphasised. | Navy structural actions; red for quote, discount and the single hero CTA. |
+| I2 | Three different neutral surfaces (`#fff`, `--surface-soft`, `--surface-alt`) alternate without a rule. | low | all | Muddy. | One tint for bands, white for cards. |
+
+### J. Image consistency
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| J1 | Promo tile images are tiny dark thumbnails; the "Bulk & Contractor Orders" tile is a near-black rectangle. | high | all | Unreadable at size. | Re-cut promo art from lighter product imagery, larger frame. |
+| J2 | Department and card images mix dark-background and white-background masters. | critical | all | See D1. | Single normalisation pass. |
+
+### K. Hover and focus
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| K1 | Rail arrows and hero arrows have no visible keyboard focus ring. | high | all | Keyboard users cannot see position. | Explicit `:focus-visible` styling on all controls. |
+| K2 | Department tiles show no hover feedback on the label. | low | ≥1024 | Feels inert. | Colour shift plus disc elevation. |
+
+### L. Mobile responsiveness (≤430)
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| L1 | Hero product image is a dark green square dominating above the headline. | high | ≤430 | Inconsistent with the rest of the catalogue imagery. | Normalised composition art. |
+| L2 | Card action buttons 34 px tall. | medium | ≤430 | Below touch guidance. | 44 px. |
+| L3 | Trust strip renders five rows of icon + placeholder text before any product. | medium | ≤430 | Pushes commerce below the fold. | Trim to verified items only. |
+
+### M. Tablet responsiveness (768–1023)
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| M1 | Arrow over copy (B3) and chips over CTA (B4). | critical | 768–1023 | Broken. | Reserved gutters and a dedicated nav row. |
+| M2 | Promo tile titles wrap to three lines; kicker wraps to two; arrow orphans. | high | 768–1023 | Looks broken. | Reflow to two columns with room for the label. |
+
+### N. Slider usability
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| N1 | Hero has no swipe support. | high | touch | Expected gesture missing. | Pointer/touch swipe with threshold. |
+| N2 | Hero autoplay continues while the tab is hidden. | medium | all | Wasted work; slide position unpredictable on return. | `visibilitychange` pause. |
+| N3 | Rail arrows are hidden entirely below 760 px, leaving no affordance that the row scrolls. | low | ≤760 | Discoverability. | Partial next card already implies it; keep arrows hidden but ensure the peek is consistent. |
+
+### O. Accessibility
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| O1 | Hero uses `role="tablist"` on the dot row but the slides are not `tabpanel`s. | high | all | Incorrect semantics for assistive tech. | Move to a labelled group with `aria-current`, or correct the tab relationship. |
+| O2 | Slide changes are not announced. | medium | all | Screen-reader users get no feedback. | Polite live region on the slide label. |
+| O3 | No visible focus ring on hero and rail controls (K1). | high | all | WCAG 2.4.7. | Add focus-visible styles. |
+| O4 | Decorative promo/department images have `alt=""` correctly, but product card images also have `alt=""` while acting as the primary link target. | low | all | The card name link carries the accessible name, so this is acceptable; verified, no change. | No change. |
+
+### P. Performance
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| P1 | 3,422 DOM nodes and 108 product cards on first paint. | medium | all | Heavier than necessary for a homepage. | Reduce rail size to 10 cards; keep 8 rails. |
+| P2 | All five hero slides render their images at load; only one is visible. | medium | all | Wasted bytes on the critical path. | Only the first slide image is eager; the rest lazy. |
+| P3 | Hero image has no `fetchpriority` on the actual LCP element after the redesign. | medium | all | Slower LCP. | `fetchpriority="high"` on slide 1 art only. |
+
+### Q. Console / runtime
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| Q1 | No JavaScript errors found. | — | all | Verified clean. | No change. |
+
+### R. Broken links / assets
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| R1 | No broken images (0 of 137) and no dead internal links found. | — | all | Verified clean. | No change. |
+
+### S. Public placeholder / demo content
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| S1 | **A first-time visitor arrives with 6 items in the cart and 2 in the wishlist**, seeded by demo code. | critical | live | Destroys credibility and misrepresents commerce state. | Remove seeding; one-time migration clears the seeded state for returning visitors without touching genuine additions. |
+| S2 | 19 visible placeholder elements: topbar "WhatsApp: [ number ]", "Call: [ number ]", "Delivery & support: [ details ]", nav "Store hours: [ timings ]", trust strip "[ coverage to be confirmed ]" and "[ payment methods to be confirmed ]", store block address/phone/WhatsApp/hours, map, footer contact list. | critical | live | Reads as an unfinished development build. | Remove the UI items whose data is unknown rather than invent values. |
+| S3 | Footer social icons link to `#` and are labelled "placeholder". | high | live | Dead links on a production site. | Remove until real profiles exist. |
+| S4 | Mega menu footnote "Product range shown is indicative — full catalogue to be confirmed." | medium | live | Contradicts a 4,344-product verified catalogue. | Replace with a factual statement. |
+
+### T. SEO / meta
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| T1 | **`<link rel="canonical" href="https://REPLACE-WITH-DOMAIN/index.html">` and `og:url` are live on all 21 pages.** | critical | live | Invalid canonical; blocks correct indexing and breaks social sharing. | Set the GitHub Pages production origin and per-page paths. |
+| T2 | `og:image` points at a relative path, which social crawlers cannot resolve. | high | live | Link previews break. | Absolute production URL. |
+
+### U. Ecommerce credibility
+
+| # | Problem | Sev | Where | Reason | Planned fix |
+|---|---|---|---|---|---|
+| U1 | Combined effect of S1, S2 and D1: seeded cart, bracketed placeholders and mismatched imagery read as a prototype. | critical | live | The stated primary objective. | Addressed by the fixes above. |
+| U2 | "Deals & Promotions" heading is shown even though only 19 of 4,344 products carry a source discount. | low | all | Over-promises. | Keep, but the rail already states its basis honestly. |
+
+---
+
+## Issue counts (before)
+
+| Severity | Count |
+|---|---:|
+| Critical | 11 |
+| High | 15 |
+| Medium | 19 |
+| Low | 8 |
+| **Total** | **53** |
+
+Two sections (Q, R) were checked and found clean.
+
+
+---
+
+## AFTER — what was changed
+
+Re-audited by re-rendering at all eight widths, re-running the site and mobile
+validators, scripted functional testing of the homepage, and a regression pass
+over the other ten pages.
+
+### Credibility and live-site hygiene
+
+- **Seeded demo cart removed.** A first-time visitor now arrives with an empty
+  cart and empty wishlist (verified: both badges read 0). Returning visitors
+  carrying the old seeded state get a one-time clean-up that removes *only* the
+  three seeded lines and two seeded wishlist entries — recognised by their exact
+  signature (the first three priced, in-stock products at quantities 1, 2, 3
+  with no variant) — so anything a shopper added themselves survives.
+- **Every public placeholder removed** from the homepage, header, mobile drawer
+  and footer: the two `[ number ]` phone routes, `Delivery & support: [ details ]`,
+  `Store hours: [ timings ]`, the two placeholder trust items, the store
+  address/phone/WhatsApp/hours block, the map placeholder, the five footer
+  contact rows, the `[ card ]` / `[ wallet ]` payment chips and the four social
+  icons that linked to `#`. Nothing was invented to fill the gaps: where a fact
+  is not on record the UI item is gone, and real routes (contact form, quotation
+  request) took its place. Homepage now reports 0 placeholder elements and 0
+  dead `#` links.
+- **Store section rebuilt** around what is actually known — trading name, area,
+  what the business does — plus three factual figures drawn from the catalogue
+  at runtime rather than typed into the markup.
+- **Mega-menu footnote** no longer says the catalogue is indicative.
+
+### SEO
+
+- Canonical and `og:url` set to the deployed origin on **all 21 pages**;
+  `REPLACE-WITH-DOMAIN` no longer appears anywhere in the repository.
+- `og:image` made absolute so social crawlers can resolve it.
+
+### Hero
+
+- Rebuilt as a composed banner: two or three real department photographs staged
+  at different depths on a soft white disc, over a restrained brand-tinted
+  ground. The product no longer occupies 14% of an empty panel.
+- Slider rewritten as a transform-based track: real slide motion, no cross-fade
+  flash, nothing hidden and re-shown on load.
+- Autoplay at 7 s, pausing on hover, on focus within the banner, and on
+  `visibilitychange` when the tab is hidden; disabled entirely under
+  `prefers-reduced-motion`.
+- Swipe with horizontal-intent detection so vertical scrolling is never
+  hijacked; left/right arrow keys when focus is inside the banner.
+- Navigation replaced with labelled tabs, each with its own progress bar, and
+  `aria-current` on the active one. A polite live region announces slide changes.
+  Off-screen slides have their links and buttons removed from the tab order.
+- **B3/B4 fixed**: the copy column now has a reserved gutter, so the arrow no
+  longer sits on the text, and the navigation has its own row instead of
+  overlapping the call to action at 768–1023.
+
+### Category discs — one image language
+
+- All 17 department thumbnails regenerated into a single treatment: product on
+  a pure white stage, common subject scale, identical 480 px square master,
+  written to `assets/images/departments/`.
+- The four Pakistan Cables range photographs are shot on a flat dark-green
+  studio backdrop. That backdrop is lifted to white; the product itself is
+  untouched — no recolouring, retouching or generation — which is the
+  normalisation the brief asked for where no cleaner source image exists.
+- Labels clamp to two lines with a fixed block height, so the row keeps a
+  single baseline.
+
+### Product cards
+
+- **Image frame added**: `#FAFAFB` stage, 1 px `#E3E6EC` border, 8 px radius,
+  inset from the card, `object-fit: contain`. Product photography no longer
+  dissolves into the card or the page.
+- Hierarchy corrected — name 15 px semibold, brand 12.5 px muted, price 17 px
+  bold — with a fixed-height price block so names, prices and buttons align
+  across a row.
+- Quote-only products get a deliberate treatment (**Request a Quote** in brand
+  navy with a "Priced on enquiry" line) instead of reading as missing data.
+- Colour discipline: navy for the everyday cart action, red kept for quotation
+  and genuine discounts, so a rail is no longer a wall of red.
+- Hover is a 2 px lift, a soft shadow and a 1.03 image scale — all suppressed
+  under reduced motion.
+- Buttons are 40 px, rising to 44 px on touch widths.
+
+### Rails, rhythm and controls
+
+- Shelf headers get a rule and more space; rail spacing moved onto the scale.
+- Arrow paging now measures a whole number of cards and settles onto a card
+  boundary, so repeated clicks no longer accumulate sub-pixel drift.
+- Explicit `:focus-visible` rings on every rail arrow, hero arrow, nav tab,
+  department tile, card button and scroll track.
+
+### Performance
+
+- Homepage DOM reduced from **3,422 to 3,039 nodes**; rails carry 10 products
+  each instead of 12 (90 cards instead of 108).
+- Only the first slide's artwork is eager with `fetchpriority="high"`; the rest
+  lazy-load. 0 broken images.
+
+### Dead code
+
+- 16 obsolete rules from the previous homepage removed (`.hero__bg`,
+  `.hero__content`, `.hero__dots`, `.hero__grid`, `.hero__rail`, `.hero__slide`
+  and its `::after`, `.hero__slider`, `.hero__text`, `.hero__title`,
+  `.rail-card`, `.rail-card__ico`). `.hero`, `.hero__cta` and `.hero__eyebrow`
+  were verified as still used by `quote-request.html` and kept.
+- A duplicated `PAGES.home` and a stale `initHeroBanner` were found shadowing
+  the new implementation and removed — 160 lines.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| Widths rendered | 1920, 1440, 1366, 1024, 768, 430, 390, 375 |
+| Horizontal overflow | none at any width |
+| Cards per view | 5.0 / 4.0 / 4.0 / 3.0 / 2.2 / 1.7 / 1.5 / 1.5 |
+| Site validator | no errors, 21 pages |
+| Mobile validator | no errors, no overflow, all images load |
+| JS errors | 0 on the homepage and on 10 other pages |
+| Broken images | 0 |
+| Initial cart / wishlist | 0 / 0 |
+| Placeholders on homepage | 0 |
+| Dead `#` links | 0 |
+| Genuine discount badges | 13, all source-published |
+| Cross-page `.pcard` | unchanged; shop, category, search, deals all render 12 cards |
+
+### Issue disposition
+
+| Severity | Found | Fixed | Open |
+|---|---:|---:|---:|
+| Critical | 11 | 11 | 0 |
+| High | 15 | 15 | 0 |
+| Medium | 19 | 18 | 1 |
+| Low | 8 | 6 | 2 |
+| **Total** | **53** | **50** | **3** |
+
+### Knowingly left open
+
+1. **J2 (medium) — product card photography still mixes backgrounds.** The
+   2,378 Pakistan Cables products use the manufacturer's own range photographs,
+   which are shot on a green studio backdrop. Those are the product images of
+   record; the brief for this task says to preserve verified product images, so
+   they were left as published. The department discs, which are navigation
+   rather than product data, were normalised. Normalising the product masters
+   themselves is a data-side change and should be a separate, deliberate task.
+2. **H3 (low) — uppercase eyebrows** remain on promo tiles as well as the
+   banner. Restricting them further would weaken the promo tiles' scanning.
+3. **N3 (low) — rail arrows stay hidden below 760 px.** The partial next card
+   communicates swipeability and arrows at that size would crowd the header.

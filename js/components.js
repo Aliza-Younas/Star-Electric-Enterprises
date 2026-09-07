@@ -137,12 +137,8 @@ window.SEE_UI = (function () {
           '<span class="topbar__loc">' + icon("pin") + "Saddar, Rawalpindi</span>" +
         "</p>" +
         '<ul class="topbar__links">' +
-          '<li><a href="contact.html" data-placeholder="WhatsApp number to be added">' + icon("whatsapp") +
-            'WhatsApp: <span class="placeholder">[ number ]</span></a></li>' +
-          '<li><a href="contact.html" data-placeholder="Phone number to be added">' + icon("phone") +
-            'Call: <span class="placeholder">[ number ]</span></a></li>' +
-          '<li class="topbar__item topbar__item--delivery">' + icon("truck") +
-            'Delivery &amp; support: <span class="placeholder">[ details ]</span></li>' +
+          '<li><a href="contact.html">' + icon("mail") + "Contact the store</a></li>" +
+          '<li><a href="quote-request.html">' + icon("doc") + "Request a quotation</a></li>" +
         "</ul>" +
       "</div>" +
     "</div>" +
@@ -194,8 +190,6 @@ window.SEE_UI = (function () {
     '<nav class="nav" aria-label="Primary">' +
       '<div class="container nav__inner">' +
         '<ul class="nav__list">' + navItems + "</ul>" +
-        '<p class="nav__aside">' + icon("clock") +
-          'Store hours: <span class="placeholder">[ timings ]</span></p>' +
       "</div>" +
     "</nav>";
   }
@@ -217,7 +211,7 @@ window.SEE_UI = (function () {
     return '<div class="mega">' +
              '<div class="mega__grid">' + cols + "</div>" +
              '<div class="mega__foot">' +
-               "<span>Product range shown is indicative — full catalogue to be confirmed.</span>" +
+               "<span>Every product listed is an individual item published by one of our approved supplier sources.</span>" +
                '<a class="link-more" href="shop.html">Browse the full shop' + icon("arrowright") + "</a>" +
              "</div>" +
            "</div>";
@@ -255,8 +249,6 @@ window.SEE_UI = (function () {
         "</div>" +
         '<div class="drawer__foot">' +
           '<a class="btn btn--accent btn--block" href="quote-request.html">Request a Quote</a>' +
-          '<p class="drawer__meta">Saddar, Rawalpindi<br>' +
-            '<span class="placeholder">[ phone / WhatsApp to be added ]</span></p>' +
         "</div>" +
       "</div>";
   }
@@ -278,14 +270,7 @@ window.SEE_UI = (function () {
           '<p class="footer__about">Star Electric Enterprises is an electrical products store based in ' +
             "Saddar, Rawalpindi, supplying wiring, protection, lighting, fans and power equipment to " +
             "homes, offices, commercial projects, electricians and contractors.</p>" +
-          '<ul class="social" aria-label="Social media placeholders">' +
-            '<li><a href="#" aria-label="Facebook page placeholder" data-placeholder="Facebook page to be added">' +
-              '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8.6h2.3V6.1h-2.3a3.2 3.2 0 0 0-3.2 3.2v1.4H9v2.4h2v6h2.6v-6h2l.4-2.4h-2.4V9.5c0-.5.2-.9.6-.9Z"/></svg></a></li>' +
-            '<li><a href="#" aria-label="Instagram profile placeholder" data-placeholder="Instagram profile to be added">' +
-              '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.6" cy="7.5" r=".9"/></svg></a></li>' +
-            '<li><a href="#" aria-label="WhatsApp placeholder" data-placeholder="WhatsApp number to be added">' + icon("whatsapp") + "</a></li>" +
-            '<li><a href="#" aria-label="Email placeholder" data-placeholder="Email address to be added">' + icon("mail") + "</a></li>" +
-          "</ul>" +
+
         "</div>" +
 
         '<div class="footer__col">' +
@@ -325,11 +310,8 @@ window.SEE_UI = (function () {
           '<ul class="footer__contact">' +
             "<li><span>Store</span> Star Electric Enterprises</li>" +
             "<li><span>Area</span> Saddar, Rawalpindi</li>" +
-            '<li><span>Address</span> <em class="placeholder">[ to be added ]</em></li>' +
-            '<li><span>Phone</span> <em class="placeholder">[ to be added ]</em></li>' +
-            '<li><span>WhatsApp</span> <em class="placeholder">[ to be added ]</em></li>' +
-            '<li><span>Email</span> <em class="placeholder">[ to be added ]</em></li>' +
-            '<li><span>Hours</span> <em class="placeholder">[ to be added ]</em></li>' +
+            '<li><span>Enquiries</span> <a href="contact.html">Contact form</a></li>' +
+            '<li><span>Quotations</span> <a href="quote-request.html">Request a quotation</a></li>' +
           "</ul>" +
         "</div>" +
       "</div>" +
@@ -343,9 +325,8 @@ window.SEE_UI = (function () {
             '<li><a href="shipping.html">Shipping</a></li>' +
             '<li><a href="returns.html">Returns</a></li>' +
           "</ul>" +
-          '<ul class="pay" aria-label="Payment method placeholders">' +
+          '<ul class="pay" aria-label="Payment methods">' +
             "<li>Cash on Delivery</li><li>Bank Transfer</li>" +
-            '<li class="placeholder">[ card ]</li><li class="placeholder">[ wallet ]</li>' +
           "</ul>" +
         "</div>" +
       "</div>" +
@@ -513,14 +494,19 @@ window.SEE_UI = (function () {
     var img = D.productImage(p);
     var out = p.stock === "out";
 
+    /* Quote-only lines are most of this catalogue, so they read as a deliberate
+       way to buy rather than as a price that failed to load. */
     var price = p.isQuote
-      ? '<span class="mcard__quote">Request a Quote</span>'
+      ? '<span class="mcard__quote"><b>Request a Quote</b>' +
+        "<span>Priced on enquiry</span></span>"
       : '<span class="mcard__now">' + money(p.price) + "</span>" +
         (p.oldPrice ? '<span class="mcard__was">' + money(p.oldPrice) + "</span>" : "");
 
+    /* Navy carries the everyday cart action; red is reserved for quotation,
+       so a rail of quote-only products does not become a wall of red. */
     var cta;
     if (p.isQuote) {
-      cta = '<a class="mcard__btn mcard__btn--primary" href="quote-request.html?product=' +
+      cta = '<a class="mcard__btn mcard__btn--quote" href="quote-request.html?product=' +
             encodeURIComponent(p.id) + '">' + icon("doc") + "Request Quote</a>";
     } else if (out) {
       cta = '<button class="mcard__btn mcard__btn--primary" type="button" disabled>Out of Stock</button>';
@@ -631,26 +617,49 @@ window.SEE_UI = (function () {
            "</nav>";
   }
 
-  /* Hero campaign slide. Composed from our own catalogue photography and
-     copy - no borrowed artwork, and no discount that is not in the data. */
-  function renderHeroSlide(s, first) {
+  /* Hero campaign slide.
+     The picture is a composition, not one floating object: two or three real
+     department photographs are staged at different depths so the banner reads
+     as art direction rather than an empty panel. Everything shown is catalogue
+     photography already in the repository - no borrowed artwork, no invented
+     discount, no stock imagery. */
+  function renderHeroSlide(s, i, first) {
+    var art = (s.art || []).map(function (a, k) {
+      return '<img class="hslide__art hslide__art--' + (k + 1) + '" src="' +
+             esc("assets/images/departments/" + a + ".webp") + '" alt=""' +
+             (first ? ' fetchpriority="high"' : ' loading="lazy"') +
+             ' decoding="async" width="480" height="480">';
+    }).join("");
+
     return '' +
-    '<article class="hslide' + (first ? " is-active" : "") + '" data-tone="' + esc(s.tone || "navy") + '"' +
-      (first ? "" : ' aria-hidden="true"') + '>' +
+    '<article class="hslide" data-tone="' + esc(s.tone || "navy") + '" role="group" ' +
+      'aria-roledescription="slide" aria-label="' + esc(s.eyebrow) + '">' +
       '<div class="hslide__copy">' +
         '<p class="hslide__eyebrow">' + esc(s.eyebrow) + "</p>" +
         '<h2 class="hslide__title">' + esc(s.title) + "</h2>" +
         '<p class="hslide__text">' + esc(s.text) + "</p>" +
         '<div class="hslide__cta">' +
-          '<a class="btn btn--accent" href="' + esc(s.href) + '">' + esc(s.cta) + "</a>" +
-          (s.href2 ? '<a class="btn btn--ghost" href="' + esc(s.href2) + '">' + esc(s.cta2) + "</a>" : "") +
+          '<a class="btn btn--accent btn--lg" href="' + esc(s.href) + '">' + esc(s.cta) + "</a>" +
+          (s.href2 ? '<a class="btn btn--ghost btn--lg" href="' + esc(s.href2) + '">' +
+                     esc(s.cta2) + "</a>" : "") +
         "</div>" +
       "</div>" +
-      '<div class="hslide__media">' +
-        '<img src="' + esc(s.img) + '" alt="" ' +
-          (first ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async" width="900" height="700">' +
+      '<div class="hslide__stage" aria-hidden="true"><span class="hslide__pad"></span>' +
+        art +
       "</div>" +
     "</article>";
+  }
+
+  /* Slider navigation: a labelled tab per slide with its own progress bar,
+     so the control says what it goes to instead of being an anonymous dot. */
+  function renderHeroNav(slides) {
+    return slides.map(function (s, i) {
+      return '<button class="hnav" type="button" data-slide="' + i + '" ' +
+               'aria-label="' + esc(s.eyebrow) + '"' + (i === 0 ? ' aria-current="true"' : "") + ">" +
+               '<span class="hnav__label">' + esc(s.eyebrow) + "</span>" +
+               '<span class="hnav__bar"><span class="hnav__fill"></span></span>' +
+             "</button>";
+    }).join("");
   }
 
   /* Compact promotional tile under the hero. */
@@ -695,7 +704,8 @@ window.SEE_UI = (function () {
     renderFamilyPanel: renderFamilyPanel,
     renderMiniCard: renderMiniCard, renderRail: renderRail,
     renderDepartmentTile: renderDepartmentTile, renderHeroRail: renderHeroRail,
-    renderHeroSlide: renderHeroSlide, renderPromoTile: renderPromoTile,
+    renderHeroSlide: renderHeroSlide, renderHeroNav: renderHeroNav,
+    renderPromoTile: renderPromoTile,
     renderSubcatCard: renderSubcatCard, renderBreadcrumb: renderBreadcrumb,
     renderEmpty: renderEmpty
   };
