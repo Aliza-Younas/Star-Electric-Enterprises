@@ -491,15 +491,28 @@ Masters are now 800 × 800 with the product centred, matching the Aqua masters.
 | Catalogue records with no image | 0 of 4,348 |
 | Family/range records with no image | 0 of 181 |
 | Files in the asset tree still carrying the studio green | 0 |
-| Image QA defects found on review | 2 |
-| Corrected | 2 |
+| Image QA defects found on review | 3 |
+| Corrected | 3 |
 | Pakistan Cables product data changed | none — count, pricing, Request Quote, SKU, specifications, source URLs and category relationships all untouched |
 | `manufacturer-image` classification on the four range photographs | preserved |
 | Department discs regenerated from the cleaner masters | 4 |
 
-The two QA defects were the erased earth-wire stripe and a speckled dark rim
-along the cable edges, both found by inspecting the cut-outs at 1:1 and both
-fixed in the extraction rather than accepted.
+The three QA defects, all found by inspecting the cut-outs at 1:1 and all fixed
+in the extraction rather than accepted:
+
+1. The green/yellow earth wire lost its green stripe — the first mask treated it
+   as backdrop. Fixed with the brightness ceiling described above.
+2. A dark speckled rim along the cable edges, from JPEG ringing at high-contrast
+   boundaries. Fixed with a median pass on the mask.
+3. The ASC group logo survived the first cut-out: the rectangles that paint page
+   furniture out were given in the source image's coordinates but applied without
+   translating them into the cropped frame, so they landed off-image. Fixed by
+   translating them before painting.
+
+Separately, the generator behind `assets/product-image-sources.md` labelled the
+classification of shared images from the file path (`"pakistan-cables" in path`
+meant `manufacturer-image`). That was true until these two representative images
+landed in the same folder. It now reads the classification off the records.
 
 ### Notes
 
