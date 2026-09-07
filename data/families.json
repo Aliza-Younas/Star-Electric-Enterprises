@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-07T10:25:40+00:00",
+ "generatedAt": "2026-09-07T11:30:39+00:00",
  "count": 181,
  "families": [
   {
@@ -53,8 +53,8 @@
    "series": "Furse",
    "kind": "PRODUCT_FAMILY",
    "reason": "ABB publishes Furse as a solution overview only: the page names this range but no individual product, model, specification or price for it. All 1,459 ABB low-voltage product pages were checked and none is an earthing, lightning or surge protection item, and the ABB Library API that holds the Furse part numbers requires signed credentials, which were not circumvented.",
-   "img": null,
-   "imgType": null,
+   "img": "assets/images/products/abb-furse/furse-surge-protection.webp",
+   "imgType": "representative-image",
    "depts": [
     "earthing-material"
    ],

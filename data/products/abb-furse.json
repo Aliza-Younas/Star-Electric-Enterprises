@@ -148,7 +148,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/abb-furse/furse-surge-protection.webp",
    "gallery": [],
    "remote": []
   },
@@ -160,12 +160,13 @@
   "datasheetUrl": null,
   "importNotes": [
    "ABB publishes Furse as a solution overview; no individual product, specification or price is exposed for this range.",
-   "No dealership, distribution or authorisation relationship with ABB or Furse is implied."
+   "No dealership, distribution or authorisation relationship with ABB or Furse is implied.",
+   "Range image: ABB OVR T1 25 surge protective device, Wikimedia Commons, CC BY-SA 3.0, Pavel Tomashyov. Used as a representative image of the product type and of ABB's own surge protection, not as a Furse part."
   ],
   "_class": "PRODUCT_FAMILY",
   "_classReason": "ABB publishes Furse as a solution overview only: the page names this range but no individual product, model, specification or price for it. All 1,459 ABB low-voltage product pages were checked and none is an earthing, lightning or surge protection item, and the ABB Library API that holds the Furse part numbers requires signed credentials, which were not circumvented.",
-  "imageType": null,
-  "imageNote": "",
+  "imageType": "representative-image",
+  "imageNote": "Representative photograph of an ABB OVR T1 surge protective device, not an exact ABB Furse SKU photograph. ABB publishes no accessible image for the Furse surge protection range itself.",
   "departments": [
    "earthing-material"
   ]

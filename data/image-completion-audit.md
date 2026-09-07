@@ -10,7 +10,7 @@ Completed 2026-09-07.
 | Verified individual products | 4348 | 4348 |
 | Products with an image | 1,929 | 4348 |
 | Products with **no** image | 2,415 | 0 |
-| Families / series with an image | 0 | 178 |
+| Families / series with an image | 0 | 179 |
 
 ## Image types across the catalogue
 
@@ -63,6 +63,15 @@ now use it.
 
 **Wahid Fans.** Already complete - every fan had its own source photography.
 
+**ABB Furse (3 ranges).** ABB publishes Furse as a solution overview with no item-level
+data and no image the site can reach: the Furse page is rendered client-side and its
+og:image is empty, neither the global nor the UK low-voltage product sitemap contains an
+earthing, lightning or surge protection product, and the ABB Library needs signed
+credentials, which were not circumvented. All three ranges therefore use representative
+product-type photographs - an earth rod, a lightning rod air termination, and for surge
+protection an ABB OVR T1 surge protective device. The surge image is ABB's own brand
+rather than a competitor's, is not an exact Furse part, and says so on the range entry.
+
 ## Categories
 
 Six of the nine category tiles were rebuilt. Industrial Control was a low-quality collage,
@@ -77,9 +86,15 @@ already strong.
 
 - Pakistan Cables does not photograph individual cable sizes. Its 2,378 products therefore
   share four manufacturer range photographs, and the product page says so on every one.
-- 18 products and one family entry use a representative product-type photograph because
-  neither their source nor the manufacturer publishes a usable image. Every one is labelled
-  "Representative image" on its product page.
+- 18 products and three family entries use a representative product-type photograph
+  because neither their source nor the manufacturer publishes a usable image. Every one is
+  labelled "Representative image" on its product page.
+- No openly licensed, unbranded photograph of a low-voltage surge protective device
+  exists: every clean one found carries a rival manufacturer's logo. ABB's own OVR device
+  was used for the Furse surge protection range for that reason.
+- Two Pakistan Cables range entries, Coaxial Cables and Indoor Telephone / Intercom
+  Cables, still have no image. The manufacturer photographs neither range in any of its
+  published catalogues, and no accurate substitute has been agreed.
 - Himel's individual product pages remain blocked. The range images used are official Himel
   images from its accessible category pages, not per-model photographs.
 - Brand logos remain monogram placeholders. Using manufacturers' logos would imply a

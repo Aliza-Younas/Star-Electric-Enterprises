@@ -167,3 +167,11 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
 - [x] Office Automation Solutions documented as a product grouping, not a service
 - [x] Departments wired into the rail, circular strip, product rails, category
       pages (`?dept=`) and search, including range results for range-only queries
+- [x] Furse Surge Protection range image closed. ABB serves no reachable image for
+      it (client-rendered page, no surge SKU in either product sitemap, library
+      widget returns nothing, signed library **not** circumvented) and every clean
+      openly-licensed SPD photograph carries a rival's logo, so the range now uses
+      ABB's own OVR T1 surge protective device as a labelled representative image
+- [!] Pakistan Cables **Coaxial Cables** and **Indoor Telephone / Intercom Cables**
+      ranges still have no image — the manufacturer photographs neither in any of
+      its published catalogues

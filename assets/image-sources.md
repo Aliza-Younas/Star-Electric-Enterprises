@@ -487,6 +487,56 @@ found for these. Rather than substitute a misleading image, the original
 line-art drawing was kept. Accuracy was treated as more important than
 filling every slot.
 
+### `assets/images/products/abb-furse/furse-earthing-systems.webp`
+
+- **Shows:** Copper-bonded earth rod driven into the ground, with an earthing
+  conductor and clamp
+- **Used for:** the ABB Furse "Furse Earthing Systems" range entry
+  (representative image — ABB publishes no accessible photograph for the range)
+- **Source file:** File:HomeEarthRodAustralia1.jpg
+- **Source site:** Wikimedia Commons
+- **Source page:** https://commons.wikimedia.org/wiki/File:HomeEarthRodAustralia1.jpg
+- **Licence:** CC BY-SA 3.0
+- **Note:** share-alike licence — attribution must be displayed.
+
+### `assets/images/products/abb-furse/furse-structural-lightning-protection.webp`
+
+- **Shows:** Lightning rod air termination
+- **Used for:** the ABB Furse "Furse Structural Lightning Protection" range entry
+  (representative image — ABB publishes no accessible photograph for the range)
+- **Source file:** File:Lightning_Rod_Meteora.jpg
+- **Source site:** Wikimedia Commons
+- **Source page:** https://commons.wikimedia.org/wiki/File:Lightning_Rod_Meteora.jpg
+- **Photographer / author:** Etan Tal
+- **Licence:** CC BY 3.0
+- **Note:** attribution must be displayed.
+
+### `assets/images/products/abb-furse/furse-surge-protection.webp`
+
+- **Shows:** ABB OVR T1 25 440-50 Type 1 surge protective device, DIN-rail
+  mounted module photographed against a white background
+- **Used for:** the ABB Furse "Furse Surge Protection" range entry
+  (representative image — **not** an exact ABB Furse SKU photograph)
+- **Source file:** File:OVR T1 25.jpg
+- **Source site:** Wikimedia Commons
+- **Source page:** https://commons.wikimedia.org/wiki/File:OVR_T1_25.jpg
+- **Original image URL:** https://upload.wikimedia.org/wikipedia/commons/2/27/OVR_T1_25.jpg
+- **Photographer / author:** Pavel Tomashyov (Павел Томашёв)
+- **Licence:** CC BY-SA 3.0
+- **Retrieved:** 2026-09-07
+- **Why this one:** ABB's Furse page is rendered client-side and carries no
+  image, neither the global nor the UK low-voltage product sitemap lists an
+  earthing, lightning or surge protection product, and the ABB Library needs
+  signed credentials, which were not used. Every clean, openly-licensed
+  photograph of a low-voltage surge protective device that exists carries a
+  rival manufacturer's logo — Cirprotec, Phoenix Contact, OBO Bettermann, DEHN
+  or Eaton — so none of them was usable under an ABB Furse heading. This is
+  ABB's own surge protective device: the correct manufacturer and the correct
+  product type, shown as representative of the range rather than as a Furse part.
+- **Note:** share-alike licence — attribution must be displayed. Processing was
+  limited to trimming the white margin, scaling and centring on a 480px white
+  square; the product itself is unaltered.
+
 ### `assets/images/products/coarts/representative-smart-door-lock.webp`
 
 - **Shows:** Smart door lock fitted to a door, operated from a phone app

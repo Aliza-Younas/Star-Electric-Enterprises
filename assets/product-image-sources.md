@@ -23,9 +23,9 @@ Compiled 2026-09-07.
 
 | Measure | Count |
 |---|---:|
-| Image records listed | 5168 |
+| Image records listed | 5169 |
 | Products carrying an image | 4348 of 4348 |
-| Families / series carrying an image | 178 of 181 |
+| Families / series carrying an image | 179 of 181 |
 | `exact-image` products | 1948 |
 | `manufacturer-image` products | 2382 |
 | `representative-image` products | 18 |
@@ -38,7 +38,7 @@ Compiled 2026-09-07.
 | wahidfans.com | 235 |
 | himel.com | 132 |
 | electrotraders.com.pk | 32 |
-| commons.wikimedia.org | 21 |
+| commons.wikimedia.org | 22 |
 | jubileecorporation.com | 7 |
 
 ---
@@ -79,6 +79,7 @@ from the per-source tables.
 | `assets/images/products/pakistan-cables/pc-net-cat7-sftp-lszh.webp` | manufacturer-image | https://www.pakistancables.com/wp-content/uploads/Networking-Cables-Catalogue.pdf | https://www.pakistancables.com/our-products/wires-cables/ | pakistancables.com | Photograph of this cable from Pakistan Cables' own Networking Cables Catalogue. Used by 1 records. |
 | `assets/images/products/abb-furse/furse-earthing-systems.webp` | representative-image | https://commons.wikimedia.org/wiki/File:HomeEarthRodAustralia1.jpg | https://commons.wikimedia.org/wiki/File:HomeEarthRodAustralia1.jpg | commons.wikimedia.org | Earth rod with earthing conductor and clamp, CC BY-SA 3.0. Representative product-type image: ABB publishes no accessible image for the Furse range. Used by 1 records. |
 | `assets/images/products/abb-furse/furse-structural-lightning-protection.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Lightning_Rod_Meteora.jpg | https://commons.wikimedia.org/wiki/File:Lightning_Rod_Meteora.jpg | commons.wikimedia.org | Lightning rod air termination, photograph by Etan Tal, CC BY 3.0. Representative product-type image. Used by 1 records. |
+| `assets/images/products/abb-furse/furse-surge-protection.webp` | representative-image | https://upload.wikimedia.org/wikipedia/commons/2/27/OVR_T1_25.jpg | https://commons.wikimedia.org/wiki/File:OVR_T1_25.jpg | commons.wikimedia.org | ABB OVR T1 25 440-50 surge protective device, photograph by Pavel Tomashyov, CC BY-SA 3.0. Representative product-type image: ABB publishes no accessible image for the Furse surge protection range, so ABB's own surge protective device stands in. NOT an exact ABB Furse SKU photograph. Used by 1 records. |
 | `assets/images/products/switch-plate.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Wall_Light_switch.jpg | https://commons.wikimedia.org/wiki/File:Wall_Light_switch.jpg | commons.wikimedia.org | Wall light switch, photograph by Blee72, CC BY-SA 4.0. Representative product-type image, used only where the product's own source publishes no photograph. Used by 4 records. |
 | `assets/images/products/socket.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Electrical_Outlet.jpg | https://commons.wikimedia.org/wiki/File:Electrical_Outlet.jpg | commons.wikimedia.org | Socket outlet, photograph by Texas Lane, CC BY-SA 4.0. Representative product-type image. Used by 11 records. |
 | `assets/images/products/led-bulb.webp` | representative-image | https://commons.wikimedia.org/wiki/File:Led-lampa.jpg | https://commons.wikimedia.org/wiki/File:Led-lampa.jpg | commons.wikimedia.org | LED lamp, CC BY 3.0. Representative product-type image. Used by 2 records. |

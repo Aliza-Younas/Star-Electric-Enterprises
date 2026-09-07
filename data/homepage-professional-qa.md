@@ -350,3 +350,66 @@ over the other ten pages.
    banner. Restricting them further would weaken the promo tiles' scanning.
 3. **N3 (low) — rail arrows stay hidden below 760 px.** The partial next card
    communicates swipeability and arrows at that size would crowd the header.
+
+---
+
+## Addendum — 2026-09-07: ABB Furse Surge Protection range imagery
+
+### What was wrong
+
+The Earthing Material department listed three ABB Furse ranges. Two carried a
+representative photograph; **Furse Surge Protection rendered the "No image"
+state**, which was visible on the Earthing Material category page, in the ABB
+Furse panel on the brands page, and in search results for "Furse" and
+"surge protection".
+
+### Sources tried, in the required order
+
+| # | Source | Result |
+|---|---|---|
+| 1 | ABB's own Furse page | Rendered client-side; `og:image` is empty and the body carries no product image. |
+| 1 | ABB product pages (`cdn.productimages.abb.com`) | Product pages do serve images, but neither the global low-voltage sitemap (1,459 URLs) nor the UK one (~3,800) contains an earthing, lightning or surge protection product. Confirmed by SKU prefix and by sampling page metadata. |
+| 2 | ABB Library / download section | The Furse page's own public download widget (`ds.library.abb.com`, category `9AAC183595`) answers with zero documents. The signed-URL library returns HTTP 403 `MissingKey` and **was not circumvented**. |
+| 3 | Furse-related distributor material | Nothing openly licensed. |
+| 4 | Wikimedia Commons / Openverse | 59 candidates reviewed. Every clean, product-quality photograph of a low-voltage surge protective device carries a **rival manufacturer's** logo — Cirprotec, Phoenix Contact, OBO Bettermann, DEHN, Eaton, Fatech. The rest are installation shots, fire-damage photographs, historical engravings or bare components. |
+
+### What was chosen
+
+`File:OVR T1 25.jpg` — an **ABB OVR T1 25 440-50** Type 1 surge protective
+device, photographed straight-on against a white background.
+
+- ABB owns Furse, so this is the correct manufacturer, not a competitor's logo.
+- Correct product type: a low-voltage mains surge protective device.
+- CC BY-SA 3.0, Pavel Tomashyov, via Wikimedia Commons; 857 x 1581 source.
+- Stored locally at `assets/images/products/abb-furse/furse-surge-protection.webp`,
+  never hotlinked. Normalised the same way as the other range masters: white
+  margin trimmed, scaled to 86% and centred on a 480 x 480 white square, WebP
+  q84. **The product itself is unaltered** — nothing was retouched or removed.
+- Classified `representative-image`, with an `imageNote` stating in as many
+  words that it is **not an exact ABB Furse SKU photograph**.
+- The entry stays a `PRODUCT_FAMILY` range. It was **not** converted into a
+  sellable product, and no part number, price or specification was invented.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| `thumb-none` ("No image") in rendered DOM | 0 on homepage, Earthing Material, brands, and both searches |
+| Furse ranges with an image | 3 of 3 |
+| Search "furse" / "surge protection" | Range shown with its image |
+| Broken images across the five rendered pages | 0 of 329 `<img>` refs |
+| Console errors | none on index, category, brands, search |
+| Responsive 1440 / 768 / 390 | Image present and correctly scaled at all three; no horizontal overflow |
+| Presentation vs other ranges | Same 480px square white master, same `object-fit: contain` frame |
+| Competitor branding | none |
+
+### Still open
+
+Two Pakistan Cables range entries — **Coaxial Cables** and **Indoor Telephone /
+Intercom Cables** — still show "No image". Pakistan Cables photographs neither
+range in any of its seven published catalogues (checked; the Networking Cables
+catalogue is LAN cable only, and the Wiring Accessories hits are coaxial TV and
+RJ11 *sockets*, not cable). Unlike a surge protective device, coaxial and
+telephone cable are generic unbranded objects, so an accurate representative
+photograph is findable — but that is a separate decision on a different
+supplier's ranges and was not made unilaterally here.
