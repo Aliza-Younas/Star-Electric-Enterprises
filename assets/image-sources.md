@@ -487,6 +487,46 @@ found for these. Rather than substitute a misleading image, the original
 line-art drawing was kept. Accuracy was treated as more important than
 filling every slot.
 
+### `assets/images/products/pakistan-cables/pc-range-coaxial.webp`
+
+- **Shows:** Coaxial cable cut back to expose, in order, the black outer
+  sheath, the braided copper shield, the foil shield, the white dielectric and
+  the stranded centre conductor
+- **Used for:** the Pakistan Cables "Coaxial Cables" range entry
+  (representative image — Pakistan Cables photographs this range in none of its
+  seven published catalogues)
+- **Source file:** File:Coaxial cable cut.jpg
+- **Source site:** Wikimedia Commons
+- **Source page:** https://commons.wikimedia.org/wiki/File:Coaxial_cable_cut.jpg
+- **Original image URL:** https://upload.wikimedia.org/wikipedia/commons/0/08/Coaxial_cable_cut.jpg
+- **Photographer / author:** FDominec
+- **Licence:** CC BY-SA 3.0
+- **Retrieved:** 2026-09-07
+- **Classification:** `representative-image`
+- **Note:** Representative range photograph; not an exact Pakistan Cables SKU
+  image. Share-alike licence — attribution must be displayed. Processing was
+  limited to lifting the light studio backdrop to pure white, then scaling and
+  centring on an 800px white square; the cable is unaltered.
+
+### `assets/images/products/pakistan-cables/pc-range-telephone-intercom.webp`
+
+- **Shows:** Telecommunication cable with four twisted pairs, the ivory sheath
+  opened to show the colour-coded conductors
+- **Used for:** the Pakistan Cables "Indoor Telephone / Intercom Cables" range
+  entry (representative image — Pakistan Cables photographs this range in none
+  of its seven published catalogues)
+- **Source file:** File:001 2012 02 25 Kabel und Draehte.jpg
+- **Source site:** Wikimedia Commons
+- **Source page:** https://commons.wikimedia.org/wiki/File:001_2012_02_25_Kabel_und_Draehte.jpg
+- **Original image URL:** https://upload.wikimedia.org/wikipedia/commons/c/cc/001_2012_02_25_Kabel_und_Draehte.jpg
+- **Photographer / author:** Friedrich Haag
+- **Licence:** CC BY-SA 4.0
+- **Retrieved:** 2026-09-07
+- **Classification:** `representative-image`
+- **Note:** Representative range photograph; not an exact Pakistan Cables SKU
+  image. Share-alike licence — attribution must be displayed. The uniform
+  studio backdrop was replaced with white; the cable is unaltered.
+
 ### `assets/images/products/abb-furse/furse-earthing-systems.webp`
 
 - **Shows:** Copper-bonded earth rod driven into the ground, with an earthing

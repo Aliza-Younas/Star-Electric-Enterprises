@@ -10,7 +10,7 @@ Completed 2026-09-07.
 | Verified individual products | 4348 | 4348 |
 | Products with an image | 1,929 | 4348 |
 | Products with **no** image | 2,415 | 0 |
-| Families / series with an image | 0 | 179 |
+| Families / series with an image | 0 | 181 |
 
 ## Image types across the catalogue
 
@@ -63,6 +63,17 @@ now use it.
 
 **Wahid Fans.** Already complete - every fan had its own source photography.
 
+**Pakistan Cables visual normalisation (2026-09-07).** The four manufacturer range
+photographs were shot on Pakistan Cables' own dark green studio backdrop, so on a
+white product card they read as a green rectangle while every other source read as a
+clean white stage. All four were re-read from the JPEG embedded in the catalogue PDF
+rather than the earlier page raster, the backdrop was separated by its own colour and
+replaced with white, and the result was centred on an 800px square to match the Aqua
+masters. The cables themselves - sheath, printed text, armour, conductors, colours,
+proportions - are carried through untouched. The two ranges the manufacturer does not
+photograph at all, Coaxial Cables and Indoor Telephone / Intercom Cables, now carry
+representative product-type photographs, labelled as such.
+
 **ABB Furse (3 ranges).** ABB publishes Furse as a solution overview with no item-level
 data and no image the site can reach: the Furse page is rendered client-side and its
 og:image is empty, neither the global nor the UK low-voltage product sitemap contains an
@@ -86,15 +97,15 @@ already strong.
 
 - Pakistan Cables does not photograph individual cable sizes. Its 2,378 products therefore
   share four manufacturer range photographs, and the product page says so on every one.
-- 18 products and three family entries use a representative product-type photograph
+- 18 products and five family entries use a representative product-type photograph
   because neither their source nor the manufacturer publishes a usable image. Every one is
   labelled "Representative image" on its product page.
 - No openly licensed, unbranded photograph of a low-voltage surge protective device
   exists: every clean one found carries a rival manufacturer's logo. ABB's own OVR device
   was used for the Furse surge protection range for that reason.
-- Two Pakistan Cables range entries, Coaxial Cables and Indoor Telephone / Intercom
-  Cables, still have no image. The manufacturer photographs neither range in any of its
-  published catalogues, and no accurate substitute has been agreed.
+- Pakistan Cables photographs neither its Coaxial Cables nor its Indoor Telephone /
+  Intercom Cables range in any of its seven published catalogues, so both use a
+  representative product-type photograph from Wikimedia Commons, labelled as such.
 - Himel's individual product pages remain blocked. The range images used are official Himel
   images from its accessible category pages, not per-model photographs.
 - Brand logos remain monogram placeholders. Using manufacturers' logos would imply a

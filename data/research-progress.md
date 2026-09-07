@@ -172,6 +172,26 @@ Legend: `[x]` done · `[~]` in progress · `[ ]` not started · `[!]` blocked
       widget returns nothing, signed library **not** circumvented) and every clean
       openly-licensed SPD photograph carries a rival's logo, so the range now uses
       ABB's own OVR T1 surge protective device as a labelled representative image
-- [!] Pakistan Cables **Coaxial Cables** and **Indoor Telephone / Intercom Cables**
-      ranges still have no image — the manufacturer photographs neither in any of
-      its published catalogues
+- [x] Pakistan Cables **Coaxial Cables** and **Indoor Telephone / Intercom Cables**
+      ranges given representative product-type photographs from Wikimedia Commons.
+      The manufacturer photographs neither range in any of its seven published
+      catalogues (checked), so both are labelled `representative-image`
+
+---
+
+## Phase 14 — Pakistan Cables visual normalisation
+
+- [x] Image mapping audited: 2,382 products resolve to 8 unique master files, so
+      only the masters were touched and no duplicate transformed copy was created
+- [x] 4 manufacturer range photographs re-read from the JPEG embedded in each
+      catalogue PDF, rather than the earlier 150 dpi page raster
+- [x] Green studio backdrop separated by its own colour and replaced with white;
+      the brightness gate keeps the green/yellow earth wire, which is green-dominant
+      too but far brighter than the backdrop
+- [x] Page furniture (ASC group logo, catalogue headings) painted out before cut-out
+- [x] Masters standardised to 800px square, product centred, matching the Aqua masters
+- [x] 4 department discs regenerated from the cleaner masters; the old crude green-key
+      had eroded the black sheath edges
+- [x] Wires & Cables category tile checked — it is a separate dark editorial banner
+      from the manufacturer, carries no green backdrop, and was left alone
+- [x] Whole asset tree scanned: 0 files still carry the Pakistan Cables studio green

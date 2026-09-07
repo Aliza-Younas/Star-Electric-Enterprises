@@ -135421,7 +135421,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/pakistan-cables/pc-range-telephone-intercom.webp",
    "gallery": [],
    "remote": []
   },
@@ -135432,13 +135432,16 @@
   "catalogueUrl": null,
   "datasheetUrl": null,
   "importNotes": [
-   "Range named on the approved source page; no item-level data is published for it."
+   "Range named on the approved source page; no item-level data is published for it.",
+   "Range image: telecommunication cable with 4 twisted pairs. Wikimedia Commons, File:001 2012 02 25 Kabel und Draehte.jpg, photograph by Friedrich Haag, CC BY-SA 4.0, retrieved 2026-09-07. Used as a representative image of the product type, not as a Pakistan Cables part."
   ],
   "_class": "PRODUCT_FAMILY",
   "_classReason": "Named as a General Wiring range on the approved source page. The source publishes no item-level model, specification or price for it, and it is absent from the manufacturer's Store API.",
   "departments": [
    "networking-solutions"
-  ]
+  ],
+  "imageType": "representative-image",
+  "imageNote": "Representative range photograph; not an exact Pakistan Cables SKU image."
  },
  {
   "brand": "Pakistan Cables",
@@ -135473,7 +135476,7 @@
   },
   "availability": "Not specified",
   "images": {
-   "featured": null,
+   "featured": "assets/images/products/pakistan-cables/pc-range-coaxial.webp",
    "gallery": [],
    "remote": []
   },
@@ -135484,12 +135487,15 @@
   "catalogueUrl": null,
   "datasheetUrl": null,
   "importNotes": [
-   "Range named on the approved source page; no item-level data is published for it."
+   "Range named on the approved source page; no item-level data is published for it.",
+   "Range image: coaxial cable cut to show sheath, braided shield, foil, dielectric and centre conductor. Wikimedia Commons, File:Coaxial cable cut.jpg, photograph by FDominec, CC BY-SA 3.0, retrieved 2026-09-07. Used as a representative image of the product type, not as a Pakistan Cables part."
   ],
   "_class": "PRODUCT_FAMILY",
   "_classReason": "Named as a General Wiring range on the approved source page. The source publishes no item-level model, specification or price for it, and it is absent from the manufacturer's Store API.",
   "departments": [
    "networking-solutions"
-  ]
+  ],
+  "imageType": "representative-image",
+  "imageNote": "Representative range photograph; not an exact Pakistan Cables SKU image."
  }
 ]

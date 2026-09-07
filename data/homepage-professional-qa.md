@@ -413,3 +413,98 @@ RJ11 *sockets*, not cable). Unlike a surge protective device, coaxial and
 telephone cable are generic unbranded objects, so an accurate representative
 photograph is findable — but that is a separate decision on a different
 supplier's ranges and was not made unilaterally here.
+
+---
+
+## Addendum — 2026-09-07: Pakistan Cables visual normalisation
+
+### What was wrong
+
+Two problems, both visible on the live site.
+
+1. **Two ranges rendered the "No image" state** — Pakistan Cables → Coaxial
+   Cables and Pakistan Cables → Indoor Telephone / Intercom Cables.
+2. **Pakistan Cables was the only source still on a coloured backdrop.** Its
+   four range photographs are shot on the manufacturer's dark green studio
+   backdrop, so on a white product card they read as a green rectangle inside
+   the frame while Aqua, Coarts, Wahid, Himel and ABB/Furse all read as a clean
+   white stage.
+
+### Audit first — how many images actually needed work
+
+| Measure | Count |
+|---|---:|
+| Pakistan Cables product records | 2,382 |
+| Unique master image files they resolve to | 8 |
+| Masters on the green backdrop | 4 |
+| Masters already on white (the CAT6/CAT7 catalogue photographs) | 4 |
+| Range records with no image at all | 2 |
+
+The four green masters are shared by 2,378 products — 1,476 on Low Voltage, 594
+on General Wiring, 288 on Medium Voltage, 20 on Solar. Only the masters were
+touched. Every product keeps pointing at the same filename, so no product record
+changed and no duplicate transformed copy was created.
+
+### Part A — the two representative range images
+
+| Range | Source | Author / licence |
+|---|---|---|
+| Coaxial Cables | [File:Coaxial cable cut.jpg](https://commons.wikimedia.org/wiki/File:Coaxial_cable_cut.jpg) — cut showing sheath, braided shield, foil, dielectric and centre conductor | FDominec, CC BY-SA 3.0 |
+| Indoor Telephone / Intercom Cables | [File:001 2012 02 25 Kabel und Draehte.jpg](https://commons.wikimedia.org/wiki/File:001_2012_02_25_Kabel_und_Draehte.jpg) — telecommunication cable with four twisted pairs | Friedrich Haag, CC BY-SA 4.0 |
+
+Both are classified `representative-image` and carry the note "Representative
+range photograph; not an exact Pakistan Cables SKU image." Neither range was
+converted into a product; no part number, price or specification was invented.
+Rejected along the way: a retail shelf of Philips-branded coax (marketplace and
+rival branding), a coax photographed against a coin, an annotated RG-59 with a
+ruler in shot, a cable-manufacturer-branded coax, and several telephone-cable
+photographs that were installation shots, held in a hand, or shot on fabric.
+
+### Part B — how the backdrop was replaced
+
+Measured from the source, the backdrop and the product separate cleanly:
+
+| | R | G | green-dominance |
+|---|---:|---:|---:|
+| studio backdrop | ~10 | ~74 | ~27 |
+| black sheath | ~20 | ~20 | ~0 |
+| green/yellow earth wire | 40–60 | 120–199 | high |
+
+So a pixel is backdrop only when it is green-dominant **and** dark in red **and**
+no brighter than the backdrop ever gets. That third gate is what keeps the earth
+wire's green stripe, which is green-dominant too. A first pass without it erased
+the stripe — caught in review and fixed.
+
+Also applied: the covers were re-read from the JPEG actually embedded in each
+catalogue PDF instead of a 300 dpi page raster; a median pass clears JPEG
+speckle that would otherwise survive as a dark dotted rim; green spill is pulled
+back out of a 3px edge band only, gated on the same brightness ceiling so the
+earth wire is never desaturated; and the ASC group logo and catalogue headings
+are painted out before the cut-out so no page furniture survives.
+
+Masters are now 800 × 800 with the product centred, matching the Aqua masters.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| Catalogue records with no image | 0 of 4,348 |
+| Family/range records with no image | 0 of 181 |
+| Files in the asset tree still carrying the studio green | 0 |
+| Image QA defects found on review | 2 |
+| Corrected | 2 |
+| Pakistan Cables product data changed | none — count, pricing, Request Quote, SKU, specifications, source URLs and category relationships all untouched |
+| `manufacturer-image` classification on the four range photographs | preserved |
+| Department discs regenerated from the cleaner masters | 4 |
+
+The two QA defects were the erased earth-wire stripe and a speckled dark rim
+along the cable edges, both found by inspecting the cut-outs at 1:1 and both
+fixed in the extraction rather than accepted.
+
+### Notes
+
+- The Wires & Cables **category tile** is a separate dark editorial banner from
+  the manufacturer's own site, not a green catalogue cover. It carries no green
+  backdrop and is a full-bleed category image by design, so it was left alone.
+- The four CAT6/CAT7 networking masters were already shot on white and were not
+  re-encoded.

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-07T11:30:39+00:00",
+ "generatedAt": "2026-09-07T12:20:19+00:00",
  "count": 181,
  "families": [
   {
@@ -3241,8 +3241,8 @@
    "series": "Networking Cables",
    "kind": "PRODUCT_FAMILY",
    "reason": "Named as a General Wiring range on the approved source page. The source publishes no item-level model, specification or price for it, and it is absent from the manufacturer's Store API.",
-   "img": null,
-   "imgType": null,
+   "img": "assets/images/products/pakistan-cables/pc-range-coaxial.webp",
+   "imgType": "representative-image",
    "depts": [
     "networking-solutions"
    ],
@@ -3261,8 +3261,8 @@
    "series": "Networking Cables",
    "kind": "PRODUCT_FAMILY",
    "reason": "Named as a General Wiring range on the approved source page. The source publishes no item-level model, specification or price for it, and it is absent from the manufacturer's Store API.",
-   "img": null,
-   "imgType": null,
+   "img": "assets/images/products/pakistan-cables/pc-range-telephone-intercom.webp",
+   "imgType": "representative-image",
    "depts": [
     "networking-solutions"
    ],
