@@ -22,7 +22,7 @@
     var m = new RegExp("[?&]" + name + "=([^&#]*)").exec(window.location.search);
     return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : "";
   }
-  function on(el, ev, fn) { if (el) { el.addEventListener(ev, fn); } }
+  function on(el, ev, fn, opts) { if (el) { el.addEventListener(ev, fn, opts); } }
   function closest(t, sel) { return t && t.closest ? t.closest(sel) : null; }
 
   /* A thumbnail is rendered only when the product's own source published an
@@ -517,45 +517,6 @@
      ====================================================================== */
   var PAGES = {};
 
-  /* ---------- HOME ---------- */
-  PAGES.home = function () {
-    var cg = $("#categoryGrid");
-    if (cg) { cg.innerHTML = D.CATEGORIES.map(UI.renderCategoryCard).join(""); }
-
-    var bg = $("#brandGrid");
-    if (bg) { bg.innerHTML = D.BRANDS.slice(0, 12).map(UI.renderBrandCard).join(""); }
-
-    /* Selections from the real catalogue. No "best seller" claim is made,
-       because no approved source ranks sales. */
-    fill("#featuredGrid", D.featured(8));
-    fill("#bestGrid", D.withPhotos(8));
-    fill("#newGrid", D.byTag("quote", 8));
-    fill("#dealsGrid", D.deals(4));
-
-    /* Hero campaign rotator */
-    var slider = $("#heroSlider");
-    if (slider) {
-      var slides = $$(".hero__slide", slider);
-      var dots = $$("#heroDots button");
-      var i = 0, timer = null;
-      function go(n) {
-        i = (n + slides.length) % slides.length;
-        slides.forEach(function (s, k) { s.classList.toggle("is-active", k === i); });
-        dots.forEach(function (d, k) { d.setAttribute("aria-selected", k === i ? "true" : "false"); });
-      }
-      dots.forEach(function (d, k) {
-        d.addEventListener("click", function () { go(k); restart(); });
-      });
-      function restart() {
-        window.clearInterval(timer);
-        timer = window.setInterval(function () { go(i + 1); }, 6000);
-      }
-      go(0); restart();
-      slider.addEventListener("mouseenter", function () { window.clearInterval(timer); });
-      slider.addEventListener("mouseleave", restart);
-    }
-  };
-
   function fill(sel, list) {
     var el = $(sel);
     if (el) { el.innerHTML = UI.renderProductGrid(list); }
@@ -798,6 +759,240 @@
   }
 
   /* ---------- SHOP ---------- */
+
+  /* ---------- HOME ---------- */
+  /* ======================================================================
+     RAIL — one horizontal carousel used by every homepage row
+     ----------------------------------------------------------------------
+     Native scrolling with scroll-snap does the hard work: touch, trackpad
+     and momentum come free, and the arrows just page the scroller. No
+     carousel library, and nothing auto-advances a row of products.
+     ====================================================================== */
+  function initRail(track, prev, next) {
+    if (!track) { return; }
+
+    function page() {
+      var first = track.firstElementChild;
+      if (!first) { return track.clientWidth; }
+      var step = first.getBoundingClientRect().width +
+                 parseFloat(getComputedStyle(track).columnGap || 16);
+      var per = Math.max(1, Math.floor(track.clientWidth / step));
+      return step * per;
+    }
+    var still = window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function scrollBy(dir) {
+      track.scrollBy({ left: dir * page(), behavior: still ? "auto" : "smooth" });
+    }
+    function sync() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      if (prev) { prev.disabled = track.scrollLeft <= 2; }
+      if (next) { next.disabled = track.scrollLeft >= max; }
+    }
+
+    on(prev, "click", function () { scrollBy(-1); });
+    on(next, "click", function () { scrollBy(1); });
+    on(track, "scroll", sync);
+    on(window, "resize", sync);
+
+    /* Keyboard: the track is focusable, so arrow keys page it. */
+    on(track, "keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); scrollBy(1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); scrollBy(-1); }
+    });
+
+    /* Pointer dragging on desktop. Touch already scrolls natively, so this
+       only takes over for a mouse and never blocks a click on a card. */
+    var down = false, startX = 0, startLeft = 0, moved = 0;
+    on(track, "pointerdown", function (e) {
+      if (e.pointerType === "touch" || e.button !== 0) { return; }
+      down = true; moved = 0;
+      startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    on(track, "pointermove", function (e) {
+      if (!down) { return; }
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) {
+        moved = Math.abs(dx);
+        track.scrollLeft = startLeft - dx;
+        track.classList.add("is-dragging");
+      }
+    });
+    ["pointerup", "pointercancel", "pointerleave"].forEach(function (ev) {
+      on(track, ev, function () {
+        down = false;
+        track.classList.remove("is-dragging");
+      });
+    });
+    on(track, "click", function (e) {
+      if (moved > 6) { e.preventDefault(); e.stopPropagation(); moved = 0; }
+    }, true);
+
+    sync();
+  }
+
+  /* Wire every rail inside a container that follows the standard markup. */
+  function initRailsIn(root) {
+    $$(".rail", root).forEach(function (sec) {
+      initRail($(".rail__track", sec), $("[data-rail-prev]", sec), $("[data-rail-next]", sec));
+    });
+  }
+
+  /* ---------- HOME ---------- */
+  PAGES.home = function () {
+    /* ---- department rail beside the banner ---- */
+    var railEl = $("#heroRail");
+    if (railEl) { railEl.innerHTML = UI.renderHeroRail(D.railSections()); }
+
+    /* ---- campaign banner ----
+       Every slide is built from our own catalogue: the picture is a real
+       department photograph and the copy describes what is actually there.
+       No discount is claimed unless the catalogue carries one. */
+    var slides = [
+      { tone: "navy", eyebrow: "Wires & Cables",
+        title: "Cable for Every Installation",
+        text: "Building wire, power cable, LSZH and medium voltage — sized, rated and " +
+              "quoted from the Pakistan Cables catalogue.",
+        cta: "Shop Wires & Cables", href: "category.html?cat=wires-cables",
+        cta2: "Request a Quote", href2: "quote-request.html",
+        img: "assets/images/products/pakistan-cables/pc-range-low-voltage.webp" },
+      { tone: "red", eyebrow: "Switches & Sockets",
+        title: "Wiring Devices for Home and Office",
+        text: "Modular switches, sockets, data and telephone outlets across the Aqua " +
+              "and Panasonic ranges we list.",
+        cta: "Shop Switches & Sockets", href: "category.html?cat=switches-sockets",
+        img: "assets/images/products/aqua/aqua-bravo-2-gang-1-socket-5382.webp" },
+      { tone: "slate", eyebrow: "Circuit Protection",
+        title: "Breakers, RCDs and Distribution",
+        text: "MCBs, MCCBs, RCCBs and distribution boxes — with Himel and Hyundai " +
+              "ranges available to quote against your rating.",
+        cta: "Shop Circuit Protection", href: "category.html?cat=circuit-protection",
+        img: "assets/images/products/himel/16946803412115541690.webp" },
+      { tone: "navy", eyebrow: "Lighting & Fixtures",
+        title: "LED Lighting for Every Space",
+        text: "Panels, downlights, track, floodlights and outdoor fittings from the " +
+              "Coarts lighting catalogue.",
+        cta: "Shop Lighting", href: "category.html?cat=lighting",
+        img: "assets/images/categories/lighting.webp" },
+      { tone: "red", eyebrow: "Fans & Smart Electrical",
+        title: "Fans, Smart Switches and Controls",
+        text: "Ceiling, bracket and inverter fans alongside Wi-Fi switches and smart " +
+              "devices, priced as the source publishes them.",
+        cta: "Shop Fans", href: "category.html?cat=fans-ventilation",
+        cta2: "Smart Home", href2: "category.html?cat=smart-home",
+        img: "assets/images/categories/fans-ventilation.webp" }
+    ];
+
+    var wrap = $("#heroSlides");
+    if (wrap) {
+      wrap.innerHTML = slides.map(function (s, i) { return UI.renderHeroSlide(s, i === 0); }).join("");
+      var dots = $("#heroDots");
+      if (dots) {
+        dots.innerHTML = slides.map(function (s, i) {
+          return '<button type="button" role="tab" aria-selected="' + (i === 0) +
+                 '" aria-label="' + UI.esc(s.eyebrow) + '"><span>' +
+                 UI.esc(s.eyebrow) + "</span></button>";
+        }).join("");
+      }
+      initHeroBanner(wrap, dots);
+    }
+
+    /* ---- compact promo tiles ---- */
+    var promos = $("#heroPromos");
+    if (promos) {
+      promos.innerHTML = [
+        { kicker: "Protection", title: "Breakers & Distribution",
+          cta: "Shop now", href: "category.html?cat=circuit-protection",
+          img: "assets/images/categories/circuit-protection.webp" },
+        { kicker: "Smart electrical", title: "Wi-Fi Switches & Devices",
+          cta: "Explore", href: "category.html?cat=smart-home",
+          img: "assets/images/categories/smart-home.webp" },
+        { kicker: "Project supply", title: "Bulk & Contractor Orders",
+          cta: "Request a quote", href: "quote-request.html",
+          img: "assets/images/categories/wires-cables.webp" }
+      ].map(UI.renderPromoTile).join("");
+    }
+
+    /* ---- department strip ---- */
+    var strip = $("#deptStrip");
+    if (strip) {
+      strip.innerHTML = D.departments().map(UI.renderDepartmentTile).join("");
+      var head = strip.parentNode.querySelector(".rail__head");
+      initRail(strip, $("[data-rail-prev]", head), $("[data-rail-next]", head));
+    }
+
+    /* ---- one product rail per department ----
+       Twelve products each: enough to swipe through, small enough that the
+       homepage never renders a fraction of the 4,344-product catalogue. */
+    var rails = $("#homeRails");
+    if (rails) {
+      rails.innerHTML = D.HOME_RAILS.map(function (r, i) {
+        var items = D.spreadProducts(r.sel, 12);
+        return UI.renderRail({
+          id: "rail-" + i, title: r.title, items: items,
+          count: D.selectProducts(r.sel).length,
+          viewAllUrl: D.selectionUrl(r.sel)
+        });
+      }).join("");
+      initRailsIn(rails);
+    }
+
+    /* ---- genuine source discounts only ---- */
+    var dealsWrap = $("#dealsRail");
+    if (dealsWrap) {
+      var deals = D.deals(12);
+      dealsWrap.innerHTML = deals.length
+        ? UI.renderRail({ id: "rail-deals", title: "Discounted at source",
+                          items: deals, count: D.deals().length,
+                          viewAllUrl: "deals.html" })
+        : UI.renderEmpty("tag", "No current discounts",
+            "None of our sources is publishing a reduced price today. Everything else " +
+            "is listed at its normal price or available on quotation.",
+            "shop.html", "Browse the catalogue");
+      initRailsIn(dealsWrap);
+    }
+
+    var bg = $("#brandGrid");
+    if (bg) { bg.innerHTML = D.BRANDS.slice(0, 12).map(UI.renderBrandCard).join(""); }
+  };
+
+  /* Campaign banner: fades between slides, pauses on hover and focus, and
+     stops entirely for anyone who asked for reduced motion. */
+  function initHeroBanner(wrap, dots) {
+    var slides = $$(".hslide", wrap);
+    if (slides.length < 2) { return; }
+    var buttons = dots ? $$("button", dots) : [];
+    var i = 0, timer = null;
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) {
+        s.classList.toggle("is-active", k === i);
+        if (k === i) { s.removeAttribute("aria-hidden"); }
+        else { s.setAttribute("aria-hidden", "true"); }
+      });
+      buttons.forEach(function (b, k) {
+        b.setAttribute("aria-selected", k === i ? "true" : "false");
+      });
+    }
+    function restart() {
+      window.clearInterval(timer);
+      if (still) { return; }
+      timer = window.setInterval(function () { go(i + 1); }, 7000);
+    }
+    buttons.forEach(function (b, k) {
+      on(b, "click", function () { go(k); restart(); });
+    });
+    on($("#heroPrev"), "click", function () { go(i - 1); restart(); });
+    on($("#heroNext"), "click", function () { go(i + 1); restart(); });
+    on(wrap, "mouseenter", function () { window.clearInterval(timer); });
+    on(wrap, "mouseleave", restart);
+    on(wrap, "focusin", function () { window.clearInterval(timer); });
+    on(wrap, "focusout", restart);
+    go(0); restart();
+  }
+
   PAGES.shop = function () {
     buildFilterUI();
     var c = catalog({ brand: param("brand"), cat: param("cat") });

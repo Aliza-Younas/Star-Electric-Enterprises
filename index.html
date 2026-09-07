@@ -28,83 +28,29 @@
 <main id="main">
 
   <!-- ======================================================
-       A. HERO — compact retail banner, ready for real campaigns
+       A. COMMERCE HERO — department rail + campaign banner + promo tiles
+          All three are filled by PAGES.home from the verified catalogue.
        ====================================================== -->
-  <section class="hero" aria-label="Featured campaigns">
-    <div class="container hero__grid">
+  <h1 class="sr-only">Star Electric Enterprises &mdash; electrical supplies, wiring, protection, lighting and fans</h1>
 
-      <div class="hero__slider" id="heroSlider">
-        <article class="hero__slide is-active">
-          <img class="hero__bg" src="assets/images/banners/hero-electrical.webp" alt="" aria-hidden="true"
-               width="1800" height="760" fetchpriority="high" decoding="async">
-          <div class="hero__content">
-            <p class="hero__eyebrow">Saddar, Rawalpindi</p>
-            <h1 class="hero__title">Electrical Solutions for Every Project</h1>
-            <p class="hero__text">
-              Wiring, protection, lighting, fans and power equipment for homes, offices and
-              commercial work &mdash; stocked for electricians, contractors and everyday customers alike.
-            </p>
-            <div class="hero__cta">
-              <a class="btn btn--accent btn--lg" href="shop.html">Shop Now</a>
-              <a class="btn btn--light btn--lg" href="quote-request.html">Request a Quote</a>
-            </div>
-          </div>
-        </article>
+  <section class="hcom" aria-label="Departments and featured campaigns">
+    <div class="container hcom__grid">
 
-        <article class="hero__slide">
-          <img class="hero__bg" src="assets/images/banners/promo-tools.webp" alt="" aria-hidden="true"
-               width="1200" height="620" loading="lazy" decoding="async">
-          <div class="hero__content">
-            <p class="hero__eyebrow">For professionals</p>
-            <h2 class="hero__title">Supplying Electricians &amp; Contractors</h2>
-            <p class="hero__text">
-              Share a project item list or bill of quantities and receive a written quotation
-              for bulk electrical requirements.
-            </p>
-            <div class="hero__cta">
-              <a class="btn btn--accent btn--lg" href="quote-request.html">Request Bulk Quote</a>
-              <a class="btn btn--light btn--lg" href="about.html">About Our Store</a>
-            </div>
-          </div>
-        </article>
+      <!-- Left: department rail (desktop). On small screens the departments
+           strip below the banner takes over, so this is hidden there. -->
+      <div class="hcom__rail" id="heroRail"></div>
 
-        <article class="hero__slide">
-          <img class="hero__bg" src="assets/images/banners/promo-protection.webp" alt="" aria-hidden="true"
-               width="1200" height="620" loading="lazy" decoding="async">
-          <div class="hero__content">
-            <p class="hero__eyebrow">Browse the range</p>
-            <h2 class="hero__title">Nine Product Departments, One Store</h2>
-            <p class="hero__text">
-              From cable and circuit protection to lighting, fans, smart devices and tools &mdash;
-              organised so you can find the exact rating and size you need.
-            </p>
-            <div class="hero__cta">
-              <a class="btn btn--accent btn--lg" href="shop.html">Browse Categories</a>
-              <a class="btn btn--light btn--lg" href="deals.html">See Current Deals</a>
-            </div>
-          </div>
-        </article>
-
-        <div class="hero__dots" id="heroDots" role="tablist" aria-label="Campaign slides">
-          <button type="button" role="tab" aria-selected="true" aria-label="Campaign 1"></button>
-          <button type="button" role="tab" aria-selected="false" aria-label="Campaign 2"></button>
-          <button type="button" role="tab" aria-selected="false" aria-label="Campaign 3"></button>
+      <div class="hcom__main">
+        <div class="hbanner" id="heroBanner">
+          <div class="hbanner__viewport" id="heroSlides"></div>
+          <button class="hbanner__arrow hbanner__arrow--prev" type="button"
+                  id="heroPrev" aria-label="Previous campaign"></button>
+          <button class="hbanner__arrow hbanner__arrow--next" type="button"
+                  id="heroNext" aria-label="Next campaign"></button>
+          <div class="hbanner__dots" id="heroDots" role="tablist" aria-label="Campaigns"></div>
         </div>
-      </div>
 
-      <div class="hero__rail">
-        <a class="rail-card" href="quote-request.html">
-          <span class="rail-card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h7l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M13 3v5h5"/></svg></span>
-          <span><strong>Request a Quote</strong><small>For bulk and project orders</small></span>
-        </a>
-        <a class="rail-card" href="track-order.html">
-          <span class="rail-card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.2v9.6L12 21l-8-4.2V7.2Z"/><path d="m4 7.2 8 4.3 8-4.3M12 21v-9.5"/></svg></span>
-          <span><strong>Track Your Order</strong><small>Check the status of an order</small></span>
-        </a>
-        <a class="rail-card" href="contact.html">
-          <span class="rail-card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-7 7v4a3 3 0 0 0 3 3h1v-7H7"/><path d="M19 14v-4a7 7 0 0 0-7-7"/><path d="M19 14a3 3 0 0 1-3 3h-1v-7h1a3 3 0 0 1 3 3Z"/><path d="M16 17v1a3 3 0 0 1-3 3h-1"/></svg></span>
-          <span><strong>Product Assistance</strong><small>Help choosing ratings and sizes</small></span>
-        </a>
+        <div class="hpromos" id="heroPromos"></div>
       </div>
     </div>
   </section>
@@ -138,62 +84,33 @@
   </div>
 
   <!-- ======================================================
-       C. SHOP BY CATEGORY
+       C. DEPARTMENTS — circular strip, horizontally scrollable
        ====================================================== -->
-  <section class="section" aria-labelledby="catTitle">
+  <section class="section section--sm" aria-labelledby="deptTitle">
     <div class="container">
-      <div class="section__head">
-        <div>
-          <p class="section__eyebrow">Departments</p>
-          <h2 class="section__title" id="catTitle">Shop by Category</h2>
-          <p class="section__sub">Nine departments covering the electrical range we stock.</p>
+      <div class="rail__head">
+        <h2 class="rail__title" id="deptTitle">Shop by Department</h2>
+        <div class="rail__tools">
+          <a class="rail__all" href="shop.html">View All Categories</a>
+          <div class="rail__arrows">
+            <button class="rail__arrow" type="button" data-rail-prev
+                    aria-label="Previous departments"></button>
+            <button class="rail__arrow" type="button" data-rail-next
+                    aria-label="More departments"></button>
+          </div>
         </div>
-        <a class="link-more" href="shop.html">View all categories
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
-      <ul class="cat-grid cat-grid--4" id="categoryGrid"></ul>
+      <ul class="dept-track" id="deptStrip" tabindex="0" role="list"></ul>
     </div>
   </section>
 
   <!-- ======================================================
-       D. FEATURED PRODUCTS
+       D. CATEGORY PRODUCT RAILS
+          One reusable rail component per department, rendered from the
+          verified catalogue. A limited set per rail keeps the homepage light.
        ====================================================== -->
-  <section class="section section--tint" aria-labelledby="featTitle">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <p class="section__eyebrow">From the catalogue</p>
-          <h2 class="section__title" id="featTitle">Featured Products</h2>
-          <p class="section__sub">A browse selection of individually listed products. Every name,
-            price and image comes from that product&rsquo;s own source.</p>
-        </div>
-        <a class="link-more" href="shop.html">Shop all
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-      <ul class="product-grid" id="featuredGrid"></ul>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       E. MORE FROM THE CATALOGUE
-       ====================================================== -->
-  <section class="section" aria-labelledby="bestTitle">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <p class="section__eyebrow">Keep browsing</p>
-          <h2 class="section__title" id="bestTitle">More From the Catalogue</h2>
-          <p class="section__sub">A further selection of individually listed products. We do not
-            rank products by sales, so nothing here is presented as a best seller.</p>
-        </div>
-        <a class="link-more" href="shop.html">Shop all
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-      <ul class="product-grid" id="bestGrid"></ul>
-    </div>
+  <section class="section section--sm section--tint">
+    <div class="container" id="homeRails"></div>
   </section>
 
   <!-- ======================================================
@@ -233,7 +150,7 @@
         </article>
       </div>
 
-      <ul class="product-grid" id="dealsGrid"></ul>
+      <div id="dealsRail"></div>
     </div>
   </section>
 
@@ -256,26 +173,6 @@
         </a>
       </div>
       <ul class="brand-grid" id="brandGrid"></ul>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       H. NEW ARRIVALS
-       ====================================================== -->
-  <section class="section section--tint" aria-labelledby="newTitle">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <p class="section__eyebrow">Priced on enquiry</p>
-          <h2 class="section__title" id="newTitle">Available on Request</h2>
-          <p class="section__sub">Lines whose source publishes no retail price. Tell us the rating,
-            size or model you need and we will quote against it.</p>
-        </div>
-        <a class="link-more" href="shop.html">Shop all
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-      <ul class="product-grid" id="newGrid"></ul>
     </div>
   </section>
 
@@ -417,6 +314,7 @@
 </button>
 
 <script src="data/catalogue-index.js"></script>
+<script src="data/families.js"></script>
 <script src="js/data.js"></script>
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>

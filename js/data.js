@@ -160,6 +160,201 @@ window.SEE_DATA = (function () {
     return null;
   }
 
+
+  /* ==================================================================
+     HOMEPAGE MERCHANDISING
+     ------------------------------------------------------------------
+     The homepage groups the catalogue into shopper-facing departments.
+     Every entry resolves to a real filter over verified products - there
+     is no merchandising label here that the catalogue cannot back, and
+     nothing is duplicated just because a name could be written two ways.
+
+     Labels the business has not established are deliberately absent:
+     earthing material and networking hardware are not in the catalogue,
+     and no automation service has been confirmed, so none is advertised.
+     ================================================================== */
+
+  /* Select products for a homepage rail. `sel` is a plain filter, so the
+     same definition drives both the tile and the link it opens. */
+  function selectProducts(sel, limit) {
+    sel = sel || {};
+    var words = (sel.query || "").toLowerCase().split(/\s+/).filter(Boolean);
+    var out = [];
+    for (var i = 0; i < PRODUCTS.length; i++) {
+      var p = PRODUCTS[i];
+      if (sel.cat && p.cat !== sel.cat) { continue; }
+      if (sel.sub && p.sub !== sel.sub) { continue; }
+      if (sel.brand && p.brand !== sel.brand) { continue; }
+      if (words.length) {
+        var hay = [p.name, p.model, p.sku, p.brand, p.series, p.sub, p.specText]
+                    .join(" ").toLowerCase();
+        var ok = true;
+        for (var w = 0; w < words.length; w++) {
+          if (hay.indexOf(words[w]) === -1) { ok = false; break; }
+        }
+        if (!ok) { continue; }
+      }
+      out.push(p);
+    }
+    /* Lead with what a shopper can act on: a published price, in stock and
+       a photograph of the item itself. This is a display order, not a claim. */
+    out.sort(function (a, b) {
+      return (score(b) - score(a));
+    });
+    return limit ? out.slice(0, limit) : out;
+  }
+  function score(p) {
+    var n = 0;
+    if (p.price !== null) { n += 4; }
+    if (p.stock === "in") { n += 2; }
+    if (p.imgType === "exact-image") { n += 2; }
+    if (p.discountPercent) { n += 1; }
+    return n;
+  }
+
+  /* A homepage row should look like its department. Taking the highest
+     scoring products alone would fill "Wires & Cables" with the handful of
+     priced conduit boxes and never show a cable, so a rail takes the best
+     from each subcategory in turn. */
+  function spreadProducts(sel, limit) {
+    sel = sel || {};
+    var all = selectProducts(sel);
+    if (!sel.cat || sel.sub || sel.query || all.length <= limit) {
+      return all.slice(0, limit);
+    }
+    var groups = {}, order = [];
+    for (var i = 0; i < all.length; i++) {
+      var k = all[i].sub || "_";
+      if (!groups[k]) { groups[k] = []; order.push(k); }
+      groups[k].push(all[i]);
+    }
+    /* Biggest subcategories lead, then one from each in rotation. */
+    order.sort(function (a, b) { return groups[b].length - groups[a].length; });
+    var out = [], round = 0;
+    while (out.length < limit) {
+      var added = false;
+      for (var g = 0; g < order.length && out.length < limit; g++) {
+        var list = groups[order[g]];
+        if (round < list.length) { out.push(list[round]); added = true; }
+      }
+      if (!added) { break; }
+      round++;
+    }
+    return out;
+  }
+
+  /* Where a rail sends the shopper. Kept next to the filter so the two
+     can never drift apart. */
+  function selectionUrl(sel) {
+    sel = sel || {};
+    if (sel.query) {
+      return "search-results.html?s=" + encodeURIComponent(sel.query) +
+             (sel.cat ? "&product_cat=" + encodeURIComponent(sel.cat) : "");
+    }
+    if (sel.cat) {
+      return "category.html?cat=" + encodeURIComponent(sel.cat) +
+             (sel.sub ? "&sub=" + encodeURIComponent(sel.sub) : "");
+    }
+    return "shop.html";
+  }
+
+  /* Departments shown as the circular strip and in the hero rail.
+     `label` is what the shopper reads; `sel` is what it actually filters. */
+  var DEPARTMENTS = [
+    { label: "Wires & Cables",        sel: { cat: "wires-cables" } },
+    { label: "Power Cables",          sel: { cat: "wires-cables", sub: "power-cables" } },
+    { label: "Solar Panel Cables",    sel: { cat: "wires-cables", sub: "solar-cables" } },
+    { label: "PVC Pipe & Conduit",    sel: { cat: "wires-cables", sub: "cable-management" } },
+    { label: "Switches & Sockets",    sel: { cat: "switches-sockets" } },
+    { label: "Smart Switches",        sel: { cat: "smart-home", sub: "smart-switches" } },
+    { label: "Data & Telephone Outlets", sel: { cat: "switches-sockets", query: "data socket" } },
+    { label: "Circuit Protection",    sel: { cat: "circuit-protection" } },
+    { label: "Distribution Boards",   sel: { cat: "electrical-accessories", sub: "distribution-boards" } },
+    { label: "Lighting & Fixtures",   sel: { cat: "lighting" } },
+    { label: "LED Lighting",          sel: { cat: "lighting", sub: "led-lighting" } },
+    { label: "Fans & Ventilation",    sel: { cat: "fans-ventilation" } },
+    { label: "Wiring Accessories",    sel: { cat: "electrical-accessories" } },
+    { label: "Smart Home",            sel: { cat: "smart-home" } },
+    { label: "Industrial Control",    sel: { cat: "industrial-control" } },
+    { label: "Power & Energy",        sel: { cat: "power-energy" } }
+  ];
+
+  /* Product rails on the homepage. Only departments with enough individual
+     products to fill a row appear here; Industrial Control and Power &
+     Energy are published by their sources at range level only, so they stay
+     in the departments strip and on their category pages instead. */
+  var HOME_RAILS = [
+    { title: "Wires & Cables",        sel: { cat: "wires-cables" } },
+    { title: "Switches & Sockets",    sel: { cat: "switches-sockets" } },
+    { title: "Lighting & Fixtures",   sel: { cat: "lighting" } },
+    { title: "Fans & Ventilation",    sel: { cat: "fans-ventilation" } },
+    { title: "Circuit Protection",    sel: { cat: "circuit-protection" } },
+    { title: "Smart Home",            sel: { cat: "smart-home" } },
+    { title: "Wiring Accessories",    sel: { cat: "electrical-accessories" } },
+    { title: "Solar Panel Cables",    sel: { cat: "wires-cables", sub: "solar-cables" } }
+  ];
+
+  /* A department's picture is a real photograph of something inside it:
+     the first product image, or the range image where a source publishes
+     ranges only. Never an icon standing in for a product. */
+  function departmentImage(dep) {
+    var sel = dep.sel;
+    if (!sel.sub && !sel.query && sel.cat) {
+      /* A whole department is represented by its largest subcategory, so
+         "Wires & Cables" shows cable rather than whichever item happens to
+         sort first. */
+      var cat = categoryBySlug(sel.cat);
+      var biggest = cat && cat.subs && cat.subs.length ? cat.subs[0] : null;
+      if (biggest) { sel = { cat: sel.cat, sub: biggest.slug }; }
+    }
+    var first = selectProducts(sel, 1)[0];
+    if (first && first.img) { return imageUrl(first.img); }
+    var fam = familiesForCategory(dep.sel.cat)[0];
+    if (fam && fam.img) { return imageUrl(fam.img); }
+    return categoryImage(dep.sel.cat);
+  }
+
+  /* The left-hand rail: the real category tree, plus the shortcuts shoppers
+     ask for by name. Every entry points at a filter that returns products. */
+  var RAIL_SHORTCUTS = [
+    { label: "Solar Panel Cables",       sel: { cat: "wires-cables", sub: "solar-cables" } },
+    { label: "PVC Pipe & Conduit",       sel: { cat: "wires-cables", sub: "cable-management" } },
+    { label: "Distribution Boards",      sel: { cat: "electrical-accessories", sub: "distribution-boards" } },
+    { label: "LED Lighting",             sel: { cat: "lighting", sub: "led-lighting" } },
+    { label: "Smart Switches",           sel: { cat: "smart-home", sub: "smart-switches" } },
+    { label: "Data & Telephone Outlets", sel: { cat: "switches-sockets", query: "data socket" } }
+  ];
+
+  function railSections() {
+    var out = CATEGORIES.map(function (c) {
+      return {
+        label: c.name, href: "category.html?cat=" + encodeURIComponent(c.slug),
+        count: c.count,
+        subs: (c.subs || []).map(function (s) {
+          return { name: s.name, count: s.count,
+                   href: "category.html?cat=" + encodeURIComponent(c.slug) +
+                         "&sub=" + encodeURIComponent(s.slug) };
+        })
+      };
+    });
+    RAIL_SHORTCUTS.forEach(function (d) {
+      out.push({ label: d.label, href: selectionUrl(d.sel),
+                 count: selectProducts(d.sel).length, subs: [] });
+    });
+    return out;
+  }
+
+  function departments() {
+    return DEPARTMENTS.map(function (d) {
+      var n = selectProducts(d.sel).length;
+      return {
+        label: d.label, sel: d.sel, count: n,
+        familyCount: n ? 0 : familiesForCategory(d.sel.cat).length,
+        href: selectionUrl(d.sel), img: departmentImage(d)
+      };
+    });
+  }
+
   /* ------------------------------------------------------------- lookups */
   function categoryBySlug(s) {
     for (var i = 0; i < CATEGORIES.length; i++) {
@@ -265,6 +460,12 @@ window.SEE_DATA = (function () {
     categoryImage: categoryImage,
     hasPhoto: hasPhoto,
     loadDetail: loadDetail,
-    sourceFileFor: sourceFileFor
+    sourceFileFor: sourceFileFor,
+    selectProducts: selectProducts,
+    spreadProducts: spreadProducts,
+    selectionUrl: selectionUrl,
+    departments: departments,
+    railSections: railSections,
+    HOME_RAILS: HOME_RAILS
   };
 })();

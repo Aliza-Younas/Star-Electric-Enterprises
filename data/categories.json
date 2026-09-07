@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-05T11:40:53+00:00",
+ "generatedAt": "2026-09-07T07:40:35+00:00",
  "categories": [
   {
    "slug": "wires-cables",
@@ -16,7 +16,7 @@
     {
      "slug": "power-cables",
      "name": "Power Cables",
-     "count": 704
+     "count": 690
     },
     {
      "slug": "lszh-cables",
@@ -29,6 +29,11 @@
      "count": 245
     },
     {
+     "slug": "solar-cables",
+     "name": "Solar Cables",
+     "count": 20
+    },
+    {
      "slug": "cable-management",
      "name": "Cable Management",
      "count": 8
@@ -36,7 +41,7 @@
     {
      "slug": "electrical-cables",
      "name": "Electrical Cables",
-     "count": 7
+     "count": 1
     }
    ]
   },
@@ -74,7 +79,12 @@
     {
      "slug": "accessories",
      "name": "Accessories",
-     "count": 618
+     "count": 591
+    },
+    {
+     "slug": "distribution-boards",
+     "name": "Distribution Boards",
+     "count": 27
     },
     {
      "slug": "door-bells",

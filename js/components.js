@@ -45,6 +45,7 @@ window.SEE_UI = (function () {
     close:    '<path d="m6 6 12 12M18 6 6 18"/>',
     chevdown: '<path d="m7 10 5 5 5-5"/>',
     chevright:'<path d="m10 7 5 5-5 5"/>',
+    chevleft: '<path d="m14 7-5 5 5 5"/>',
     arrowright:'<path d="M5 12h13M13 6l6 6-6 6"/>',
     arrowup:  '<path d="M12 19V6M6 12l6-6 6 6"/>',
     phone:    '<path d="M5 4h4l1.6 4-2.2 1.6a12 12 0 0 0 6 6L16 13.4l4 1.6v4a1 1 0 0 1-1.1 1A16.5 16.5 0 0 1 4 6.1 1 1 0 0 1 5 4Z"/>',
@@ -495,6 +496,177 @@ window.SEE_UI = (function () {
            "</a></li>";
   }
 
+
+  /* ======================================================================
+     HOMEPAGE MERCHANDISING COMPONENTS
+     ----------------------------------------------------------------------
+     A compact catalogue card, a circular department tile and the shell of a
+     horizontal rail. These map onto WooCommerce later as content-product.php
+     in a shortcode loop, so the markup is deliberately plain.
+     ====================================================================== */
+
+  /* The merchandising card follows a catalogue hierarchy: picture, name,
+     brand, price, then the two actions. It carries no rating, no badge that
+     is not a fact, and never a price the source did not publish. */
+  function renderMiniCard(p) {
+    var href = "product.html?id=" + encodeURIComponent(p.id);
+    var img = D.productImage(p);
+    var out = p.stock === "out";
+
+    var price = p.isQuote
+      ? '<span class="mcard__quote">Request a Quote</span>'
+      : '<span class="mcard__now">' + money(p.price) + "</span>" +
+        (p.oldPrice ? '<span class="mcard__was">' + money(p.oldPrice) + "</span>" : "");
+
+    var cta;
+    if (p.isQuote) {
+      cta = '<a class="mcard__btn mcard__btn--primary" href="quote-request.html?product=' +
+            encodeURIComponent(p.id) + '">' + icon("doc") + "Request Quote</a>";
+    } else if (out) {
+      cta = '<button class="mcard__btn mcard__btn--primary" type="button" disabled>Out of Stock</button>';
+    } else if (p.type === "variable") {
+      cta = '<a class="mcard__btn mcard__btn--primary" href="' + href + '">' +
+            icon("cart") + "Select Options</a>";
+    } else {
+      cta = '<button class="mcard__btn mcard__btn--primary js-add" type="button" data-id="' +
+            esc(p.id) + '">' + icon("cart") + "Add to Cart</button>";
+    }
+
+    return '' +
+    '<li class="mcard" data-id="' + esc(p.id) + '">' +
+      '<a class="mcard__media" href="' + href + '" tabindex="-1" aria-hidden="true">' +
+        (p.discountPercent ? '<span class="mcard__off">-' + p.discountPercent + "%</span>" : "") +
+        (img ? '<img src="' + esc(img) + '" alt="" loading="lazy" decoding="async" width="600" height="600">'
+             : '<span class="thumb-none">Product image unavailable</span>') +
+      "</a>" +
+      '<div class="mcard__body">' +
+        '<h3 class="mcard__name"><a href="' + href + '">' + esc(p.name) + "</a></h3>" +
+        '<p class="mcard__brand">By: <a href="shop.html?brand=' + esc(p.brand) + '">' +
+          esc(D.brandName(p.brand) || p.brand || "Not specified") + "</a></p>" +
+        '<p class="mcard__price">' + price + "</p>" +
+        '<div class="mcard__actions">' + cta +
+          '<a class="mcard__btn mcard__btn--ghost" href="' + href + '" aria-label="View ' +
+            esc(p.name) + '">' + icon("eye") + "<span>View</span></a>" +
+        "</div>" +
+      "</div>" +
+    "</li>";
+  }
+
+  /* A horizontal rail: heading, View All, arrows and a scroll-snap track.
+     One component serves every product row on the homepage. */
+  function renderRail(opts) {
+    var id = opts.id;
+    var items = opts.items || [];
+    if (!items.length) { return ""; }
+    return '' +
+    '<section class="rail" aria-labelledby="' + esc(id) + '-t">' +
+      '<div class="rail__head">' +
+        "<h2 class=\"rail__title\" id=\"" + esc(id) + "-t\">" + esc(opts.title) + "</h2>" +
+        '<div class="rail__tools">' +
+          (opts.viewAllUrl
+            ? '<a class="rail__all" href="' + esc(opts.viewAllUrl) + '">View All' +
+              (opts.count ? ' <span class="rail__count">' + opts.count + "</span>" : "") + "</a>"
+            : "") +
+          '<div class="rail__arrows">' +
+            '<button class="rail__arrow" type="button" data-rail-prev aria-label="Previous ' +
+              esc(opts.title) + ' products">' + icon("chevleft") + "</button>" +
+            '<button class="rail__arrow" type="button" data-rail-next aria-label="More ' +
+              esc(opts.title) + ' products">' + icon("chevright") + "</button>" +
+          "</div>" +
+        "</div>" +
+      "</div>" +
+      '<ul class="rail__track" id="' + esc(id) + '" tabindex="0" role="list">' +
+        items.map(renderMiniCard).join("") +
+      "</ul>" +
+    "</section>";
+  }
+
+  /* Circular department tile. The picture is a real photograph of something
+     the department contains - never a coloured icon disc. */
+  function renderDepartmentTile(d) {
+    var meta = d.count
+      ? d.count.toLocaleString("en-PK") + (d.count === 1 ? " product" : " products")
+      : (d.familyCount ? d.familyCount + " ranges" : "");
+    return '' +
+    '<li class="dept">' +
+      '<a class="dept__link" href="' + esc(d.href) + '">' +
+        '<span class="dept__disc">' +
+          (d.img ? '<img src="' + esc(d.img) + '" alt="" loading="lazy" decoding="async" width="220" height="220">'
+                 : "") +
+        "</span>" +
+        '<span class="dept__name">' + esc(d.label) + "</span>" +
+        (meta ? '<span class="dept__meta">' + esc(meta) + "</span>" : "") +
+      "</a>" +
+    "</li>";
+  }
+
+  /* Left department rail beside the hero. Departments that have their own
+     subcategories open a flyout; the rest are a plain link. */
+  function renderHeroRail(items) {
+    var list = items.map(function (c) {
+      var subs = (c.subs || []).filter(function (s) { return s.count > 0; });
+      if (!subs.length) {
+        return '<li class="hrail__item"><a class="hrail__link" href="' + esc(c.href) + '">' +
+               esc(c.label) + "</a></li>";
+      }
+      return '<li class="hrail__item hrail__item--has-sub">' +
+               '<a class="hrail__link" href="' + esc(c.href) + '">' + esc(c.label) +
+                 icon("chevright", "hrail__chev") + "</a>" +
+               '<div class="hrail__flyout">' +
+                 '<p class="hrail__flyhead">' + esc(c.label) +
+                   ' <span>' + (c.count || 0).toLocaleString("en-PK") + " products</span></p>" +
+                 "<ul>" + subs.map(function (s) {
+                   return '<li><a href="' + esc(s.href) + '">' + esc(s.name) +
+                          "<span>" + s.count + "</span></a></li>";
+                 }).join("") + "</ul>" +
+                 '<a class="hrail__flyall" href="' + esc(c.href) + '">Browse ' + esc(c.label) + "</a>" +
+               "</div>" +
+             "</li>";
+    }).join("");
+    return '<nav class="hrail" aria-label="Product departments">' +
+             '<p class="hrail__head">All Departments</p>' +
+             '<ul class="hrail__list">' + list + "</ul>" +
+             '<a class="hrail__all" href="shop.html">View All Categories' +
+               icon("arrowright") + "</a>" +
+           "</nav>";
+  }
+
+  /* Hero campaign slide. Composed from our own catalogue photography and
+     copy - no borrowed artwork, and no discount that is not in the data. */
+  function renderHeroSlide(s, first) {
+    return '' +
+    '<article class="hslide' + (first ? " is-active" : "") + '" data-tone="' + esc(s.tone || "navy") + '"' +
+      (first ? "" : ' aria-hidden="true"') + '>' +
+      '<div class="hslide__copy">' +
+        '<p class="hslide__eyebrow">' + esc(s.eyebrow) + "</p>" +
+        '<h2 class="hslide__title">' + esc(s.title) + "</h2>" +
+        '<p class="hslide__text">' + esc(s.text) + "</p>" +
+        '<div class="hslide__cta">' +
+          '<a class="btn btn--accent" href="' + esc(s.href) + '">' + esc(s.cta) + "</a>" +
+          (s.href2 ? '<a class="btn btn--ghost" href="' + esc(s.href2) + '">' + esc(s.cta2) + "</a>" : "") +
+        "</div>" +
+      "</div>" +
+      '<div class="hslide__media">' +
+        '<img src="' + esc(s.img) + '" alt="" ' +
+          (first ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async" width="900" height="700">' +
+      "</div>" +
+    "</article>";
+  }
+
+  /* Compact promotional tile under the hero. */
+  function renderPromoTile(t) {
+    return '' +
+    '<a class="ptile" href="' + esc(t.href) + '">' +
+      '<span class="ptile__body">' +
+        '<span class="ptile__kicker">' + esc(t.kicker) + "</span>" +
+        '<span class="ptile__title">' + esc(t.title) + "</span>" +
+        '<span class="ptile__link">' + esc(t.cta) + icon("arrowright") + "</span>" +
+      "</span>" +
+      '<span class="ptile__media"><img src="' + esc(t.img) +
+        '" alt="" loading="lazy" decoding="async" width="300" height="240"></span>' +
+    "</a>";
+  }
+
   function renderBreadcrumb(items) {
     var html = items.map(function (it, i) {
       var last = i === items.length - 1;
@@ -521,6 +693,9 @@ window.SEE_UI = (function () {
     renderProductCard: renderProductCard, renderProductGrid: renderProductGrid,
     renderCategoryCard: renderCategoryCard, renderBrandCard: renderBrandCard,
     renderFamilyPanel: renderFamilyPanel,
+    renderMiniCard: renderMiniCard, renderRail: renderRail,
+    renderDepartmentTile: renderDepartmentTile, renderHeroRail: renderHeroRail,
+    renderHeroSlide: renderHeroSlide, renderPromoTile: renderPromoTile,
     renderSubcatCard: renderSubcatCard, renderBreadcrumb: renderBreadcrumb,
     renderEmpty: renderEmpty
   };

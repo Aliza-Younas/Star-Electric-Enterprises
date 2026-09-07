@@ -14,7 +14,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -71,7 +71,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -128,7 +128,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -185,7 +185,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -242,7 +242,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -299,7 +299,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -356,7 +356,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -34615,7 +34615,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "electrical-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -35287,7 +35287,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "electrical-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -45114,7 +45114,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -45171,7 +45171,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -45228,7 +45228,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -45285,7 +45285,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -45342,7 +45342,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -45399,7 +45399,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -45456,7 +45456,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "power-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -79715,7 +79715,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "electrical-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -80387,7 +80387,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "electrical-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -124409,7 +124409,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "electrical-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
@@ -125081,7 +125081,7 @@
    "checkedAt": "2026-09-05T09:01:08+00:00"
   },
   "category": "wires-cables",
-  "subcategory": "electrical-cables",
+  "subcategory": "solar-cables",
   "sourceCategories": [],
   "series": null,
   "pricing": {
