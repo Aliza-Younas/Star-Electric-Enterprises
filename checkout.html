@@ -56,7 +56,7 @@
 
       <!-- Billing + delivery -->
       <div id="checkoutMain">
-        <form data-demo-form="This is a design prototype — no order is placed and no payment is processed.">
+        <form data-demo-form="Online ordering is not open yet. Please contact the store to place this order.">
 
           <div class="panel" style="margin-bottom:24px">
             <div class="panel__head">
@@ -121,23 +121,12 @@
                 <input type="radio" name="delivery" value="collect" checked>
                 <span>
                   <strong>Collect from store</strong>
-                  <small>Saddar, Rawalpindi &mdash; <span class="placeholder">[ collection hours to be confirmed ]</span></small>
+                  <small>Saddar, Rawalpindi</small>
                 </span>
               </label>
-              <label class="pay-option">
-                <input type="radio" name="delivery" value="local">
-                <span>
-                  <strong>Local delivery</strong>
-                  <small class="placeholder">[ coverage area and charges to be confirmed ]</small>
-                </span>
-              </label>
-              <label class="pay-option">
-                <input type="radio" name="delivery" value="courier">
-                <span>
-                  <strong>Courier dispatch</strong>
-                  <small class="placeholder">[ courier partners and charges to be confirmed ]</small>
-                </span>
-              </label>
+              <!-- Local delivery and courier dispatch are not offered here: neither
+                   the coverage area nor the charges are on record, and an option a
+                   shopper can select has to mean something. -->
             </div>
           </div>
 
@@ -149,9 +138,8 @@
             <div class="alert alert--info" style="margin-bottom:20px">
               <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
               <span>
-                <strong>No payment is processed on this prototype.</strong> These are visual
-                placeholders. Real payment gateways will be configured in WooCommerce once the
-                business confirms which methods it accepts.
+                <strong>No payment is taken on this website.</strong> The store confirms your
+                order and arranges payment with you directly.
               </span>
             </div>
 
@@ -163,27 +151,9 @@
                   <small>Pay when the order is handed over.</small>
                 </span>
               </label>
-              <label class="pay-option">
-                <input type="radio" name="payment" value="bank">
-                <span>
-                  <strong>Bank Transfer</strong>
-                  <small class="placeholder">[ account details to be added ]</small>
-                </span>
-              </label>
-              <label class="pay-option">
-                <input type="radio" name="payment" value="card">
-                <span>
-                  <strong>Card Payment</strong>
-                  <small class="placeholder">[ gateway to be selected ]</small>
-                </span>
-              </label>
-              <label class="pay-option">
-                <input type="radio" name="payment" value="wallet">
-                <span>
-                  <strong>Mobile Wallet</strong>
-                  <small class="placeholder">[ provider to be selected ]</small>
-                </span>
-              </label>
+              <!-- Bank transfer, card and wallet options are absent until the
+                   store supplies account details and a gateway. Listing a payment
+                   method it has not confirmed would be a claim, not a feature. -->
             </div>
           </div>
 
@@ -221,14 +191,8 @@
             <span>Subtotal</span>
             <strong id="coSubtotal">Rs. 0</strong>
           </div>
-          <div class="summary__row">
-            <span>Delivery</span>
-            <span class="placeholder">[ to be confirmed ]</span>
-          </div>
-          <div class="summary__row">
-            <span>Tax</span>
-            <span class="placeholder">[ to be confirmed ]</span>
-          </div>
+          <!-- No delivery or tax line: neither charge is on record. The total
+               below is for the items only. -->
 
           <div class="summary__total">
             <span>Total</span>
@@ -242,16 +206,14 @@
 
         <div class="info-card" style="margin-top:16px">
           <h3>Need help with this order?</h3>
-          <ul class="info-list">
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l1.6 4-2.2 1.6a12 12 0 0 0 6 6L16 13.4l4 1.6v4a1 1 0 0 1-1.1 1A16.5 16.5 0 0 1 4 6.1 1 1 0 0 1 5 4Z"/></svg>
-              <span><strong>Call the store</strong><span class="placeholder">[ number to be added ]</span></span>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.3-3.9A8 8 0 1 1 20 11.8Z"/></svg>
-              <span><strong>WhatsApp</strong><span class="placeholder">[ number to be added ]</span></span>
-            </li>
-          </ul>
+          <p class="t-sm t-muted" style="margin-bottom:16px">
+            Send us the details and the store will come back to you to confirm the
+            order and any delivery charge.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--ghost btn--sm" href="contact.html">Contact the store</a>
+            <a class="btn btn--ghost btn--sm" href="quote-request.html">Request a quotation</a>
+          </div>
         </div>
       </aside>
     </div>

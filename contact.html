@@ -56,7 +56,7 @@
           <span class="t-xs t-faint"><span class="t-accent">*</span> required</span>
         </div>
 
-        <form class="stack-5" data-demo-form="Message sent (design prototype — the form is not connected yet).">
+        <form class="stack-5" data-demo-form="This form is not connected yet. Please contact the store directly.">
           <div class="form-grid">
             <div class="field">
               <label class="field__label" for="cName">Full name <span class="req">*</span></label>
@@ -112,26 +112,6 @@
               <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V6a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v15"/><path d="M14 10h5a1 1 0 0 1 1 1v10"/><path d="M7 9h3M7 13h3M7 17h3M17 14h1M17 18h1"/></svg>
               <span><strong>Star Electric Enterprises</strong>Saddar, Rawalpindi</span>
             </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-              <span><strong>Address</strong><span class="placeholder">[ shop address to be added ]</span></span>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l1.6 4-2.2 1.6a12 12 0 0 0 6 6L16 13.4l4 1.6v4a1 1 0 0 1-1.1 1A16.5 16.5 0 0 1 4 6.1 1 1 0 0 1 5 4Z"/></svg>
-              <span><strong>Phone</strong><span class="placeholder">[ number to be added ]</span></span>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.3-3.9A8 8 0 1 1 20 11.8Z"/></svg>
-              <span><strong>WhatsApp</strong><span class="placeholder">[ number to be added ]</span></span>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
-              <span><strong>Email</strong><span class="placeholder">[ address to be added ]</span></span>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l4 2"/></svg>
-              <span><strong>Business hours</strong><span class="placeholder">[ opening hours to be added ]</span></span>
-            </li>
           </ul>
         </div>
 
@@ -162,7 +142,7 @@
 
   <!-- Map + directions -->
   <section class="section section--tint" aria-labelledby="mapTitle">
-    <div class="container store-strip">
+    <div class="container">
       <div>
         <p class="section__eyebrow">Visit the store</p>
         <h2 class="section__title" id="mapTitle">Find Us in Saddar</h2>
@@ -171,49 +151,15 @@
           specification at the counter.
         </p>
 
-        <dl class="store-list">
-          <div>
-            <dt>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-              Address
-            </dt>
-            <dd class="placeholder">[ shop address to be added ]</dd>
-          </div>
-          <div>
-            <dt>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l4 2"/></svg>
-              Opening hours
-            </dt>
-            <dd class="placeholder">[ opening hours to be added ]</dd>
-          </div>
-          <div>
-            <dt>
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
-              Collection
-            </dt>
-            <dd class="placeholder">[ collection process to be confirmed ]</dd>
-          </div>
-        </dl>
+        <!-- Street address, opening hours and the collection process are not on
+             record, so those rows are absent rather than shown as placeholders.
+             The enquiry form above is the route that works today. -->
 
         <div class="btn-row">
-          <a class="btn btn--accent" href="#" data-placeholder="Map link to be added once the exact address is confirmed">
-            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 6-2.2 4 2.2 6-2.4V4l-6 2.4-4-2.2L4 6.4Z"/><path d="M10 4.2v13.6M14 6.4V20"/></svg>
-            Get Directions
-          </a>
-          <a class="btn btn--ghost" href="quote-request.html">Request a Quote</a>
+          <a class="btn btn--accent" href="quote-request.html">Request a Quote</a>
         </div>
       </div>
 
-      <div class="map-ph" role="img" aria-label="Map placeholder — a map embed will be added here once the exact address is confirmed">
-        <div class="map-ph__grid" aria-hidden="true"></div>
-        <div class="map-ph__pin" aria-hidden="true">
-          <svg class="ico" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-        </div>
-        <p class="map-ph__label">
-          Map embed placeholder<br>
-          <span class="placeholder">[ map to be added ]</span>
-        </p>
-      </div>
     </div>
   </section>
 

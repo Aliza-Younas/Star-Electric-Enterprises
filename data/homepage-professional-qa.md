@@ -521,3 +521,108 @@ landed in the same folder. It now reads the classification off the records.
   backdrop and is a full-bleed category image by design, so it was left alone.
 - The four CAT6/CAT7 networking masters were already shot on white and were not
   re-encoded.
+
+---
+
+## Addendum — 2026-09-08: production defects — live placeholders and quote pricing
+
+Two defects that were visible on the deployed site, found while reviewing the
+Pakistan Cables imagery work.
+
+### Defect 1 — bracketed development placeholders on public pages
+
+**What was wrong.** Product pages printed `Delivery [ options to be confirmed ]`,
+`Returns [ policy to be confirmed ]` and `Warranty [ terms to be confirmed ]`.
+A repository-wide scan found the same pattern on **13 more pages: 97 bracketed
+placeholders in total**, plus a set of development-facing strings that were not
+bracketed but were just as clearly internal.
+
+**Root cause.** These were written when the site was an unpublished prototype and
+CLAUDE.md still said "unknown details stay as visible bracketed placeholders".
+That instruction was replaced when the site went to GitHub Pages — the live-site
+policy now says to remove the UI item rather than ship a placeholder — but the
+existing pages were never swept.
+
+**What was done.** No policy, period, charge, threshold or payment method was
+invented anywhere. Each placeholder was resolved by removing the thing it stood
+in for:
+
+| Page | Action |
+|---|---|
+| `product.html` | Delivery / Returns / Warranty rows removed; the 5-row "Additional Information" placeholder table removed, leaving only the notes the source record carries; the Shipping tab removed (it held no terms, only a note that they were to be confirmed); reviews empty state reworded |
+| `contact.html` | Address, phone, WhatsApp, email and opening-hours rows removed; the store-details `dl`, the dead "Get Directions" link and the empty map panel removed |
+| `checkout.html` | Local delivery and courier options removed (no coverage or charges on record); bank transfer, card and wallet payment options removed; delivery and tax summary rows removed; the help card now points at routes that work |
+| `cart.html` | Delivery and tax rows removed; the totals note reworded |
+| `shipping.html`, `returns.html`, `terms.html`, `privacy.html` | Each was a scaffold — headings, "This section will cover" lists and `[ Content to be supplied and approved by Star Electric Enterprises. ]` under a banner addressed to the business owner. Each page now states plainly that the terms are not published and points at the contact and quotation routes |
+| `faq.html` | 16 answers ended in `[ to be confirmed ]`. Each was rewritten to keep what is genuinely known and say plainly what is not set |
+| `track-order.html` | A fabricated sample order — invented order number, date, payment status and delivery method — was replaced with an honest "not available yet" state |
+| `my-account.html` | `[ customer name ]` / `[ email address ]` removed; three dead `href="#"` controls that only raised a developer toast removed or pointed at contact |
+| `about.html` | "Established `[ year to be confirmed ]`" row removed; a note telling the reader that placeholders appear throughout the site removed |
+| `deals.html`, `shop.html`, `wishlist.html`, `complaint.html`, `quote-request.html` | Development-facing copy ("design prototype", "to be confirmed by the business") reworded |
+| `js/components.js` | Footer payment badges "Cash on Delivery / Bank Transfer" removed — the store has not confirmed either |
+
+**Result: 0 bracketed placeholders and 0 uses of the word "prototype" in any
+rendered page.** The only `class="placeholder"` left is four account statistics
+that render as an em dash, which is a genuine "no data" marker.
+
+### Defect 2 — Quick View priced quote-only products at Rs. 0
+
+**What was wrong.** A product card correctly read "Request a Quote", but opening
+Quick View on the same product showed **Rs. 0** and offered **Add to Cart**.
+
+**Root cause.** The rule "a product with no published price is quote-only" was
+implemented three times — once in `renderProductCard`, once in `renderMiniCard`
+and once in the Quick View markup in `js/main.js`. The first two tested
+`p.isQuote`; the third did not, and called `UI.money(p.price)` directly, which
+rendered `Number(null)` as `Rs. 0`. The wishlist row had the same bug.
+
+**Fix — one source of truth.** `js/components.js` now owns the rule:
+
+- `isQuote(p)` — true when the source published no price
+- `priceHtml(p, variant)` — the price block, in `card` / `lg` / `mini` / `bare` form
+- `ctaHtml(p, opts)` — the buying action, quote-aware
+- `money(v)` now returns an empty string for `null`, `undefined` or `NaN`, so a
+  missing price can no longer print as `Rs. 0` or `Rs. NaN` through any path
+
+Every surface calls those: product cards, homepage rails, Quick View, the
+product page, wishlist and search/deals/category (which share the card).
+`SEE_STORE.add()` also refuses a quote-only product as a backstop, and
+`cartLines()` drops any such line left in a returning visitor's storage.
+
+### Test cases
+
+| Case | Product | Quick View price | Quick View actions |
+|---|---|---|---|
+| Quote-only | `pc-5090` | Request a Quote | Request a Quote → `quote-request.html?product=pc-5090`, View Product |
+| Priced | `aqua-15227` | Rs. 2,200 | Add to Cart, Full Details |
+| Genuine source sale | `aqua-14452` | Rs. 3,500 / Rs. 6,500 / Save 46% | Add to Cart, Full Details |
+| Variable, priced | `wahid-10374191808792` | Rs. 17,545 | Select Options, Full Details |
+| Out of stock, priced | `aqua-14992` | Rs. 3,500 | Out of Stock (disabled) |
+| Out of stock, variable | `wahid-10374076793112` | Rs. 18,245 | Out of Stock (disabled) |
+| ABB Furse range | `furse-surge-protection` | n/a — `productById` returns null, so Quick View does not open on a range | no fake product behaviour |
+
+Product detail pages verified for the same products: quote product shows
+Request a Quote with the correct href, Buy Now hidden, no Add to Cart; the sale
+product shows Rs. 3,500 / Rs. 6,500 / Save 46% and "You save Rs. 3,000".
+
+### Validation
+
+| Check | Result |
+|---|---|
+| Bracketed placeholders in rendered pages | 0 |
+| `Rs. 0` in rendered DOM | only the empty-cart header total and the cart page's own subtotal/total — no product price |
+| Console errors across 21 pages | 0 |
+| Internal links checked / broken | 4,046 / 0 |
+| Images checked / broken | 551 / 0 |
+| Horizontal overflow at 1440 / 1024 / 768 / 430 / 390 | 0 at every width |
+| Quick View button overflow at 390 | none |
+| Cart and wishlist for a new visitor | both empty |
+| Product data | unchanged — no file under `data/` was touched |
+| Header / footer | unchanged except the removed payment badges |
+
+### Left in place deliberately
+
+`my-account.html` still carries a "View signed-in state" preview toggle onto a
+dashboard layout with no real data. It no longer contains placeholders or dead
+controls, but it is a design preview on a public page. Removing it is a page-level
+decision rather than a defect fix, so it was left for a separate call.

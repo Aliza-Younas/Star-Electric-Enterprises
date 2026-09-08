@@ -23,8 +23,86 @@ window.SEE_UI = (function () {
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
-  function money(v) { return "Rs. " + Number(v).toLocaleString("en-PK"); }
+  /* Most of this catalogue is priced on enquiry, so an unpriced product must
+     never fall through to a number. money() refuses anything that is not a real
+     figure rather than printing "Rs. 0" or "Rs. NaN". */
+  function money(v) {
+    var n = Number(v);
+    return (v === null || v === undefined || v === "" || !isFinite(n)) ? "" : "Rs. " + n.toLocaleString("en-PK");
+  }
   function discount(p) { return p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0; }
+
+  /* ----------------------------------------------------------------------
+     Pricing — one source of truth
+
+     A product is quote-only when its source published no price. That single
+     test, and the two renderers under it, are used by every surface that shows
+     a price or a buying action: product cards, the homepage rails, quick view,
+     the product page, wishlist and cart. Nothing re-implements the rule, so a
+     null price cannot become "Rs. 0" on one surface while the card next to it
+     reads "Request a Quote".
+     ---------------------------------------------------------------------- */
+  function isQuote(p) {
+    return !!(p && (p.isQuote || p.price === null || p.price === undefined));
+  }
+
+  var QUOTE_HREF = "quote-request.html?product=";
+  function quoteHref(p) { return QUOTE_HREF + encodeURIComponent(p.id); }
+
+  /* Quote products never carry an old price, a saving or a discount badge —
+     there is no figure to discount from. */
+  function priceInner(p) {
+    if (isQuote(p)) { return '<span class="price__quote">Request a Quote</span>'; }
+    return '<span class="price__now">' + money(p.price) + "</span>" +
+      (p.oldPrice ? '<span class="price__old">' + money(p.oldPrice) + "</span>" : "") +
+      (p.discountPercent ? '<span class="price__off">Save ' + p.discountPercent + "%</span>" : "") +
+      (p.priceType === "from" ? '<span class="price__from">from</span>' : "");
+  }
+
+  /* variant: "card" (default) | "lg" | "mini" | "bare".
+     "bare" returns the spans only, for a container that is already .price. */
+  function priceHtml(p, variant) {
+    var v = variant || "card";
+    if (v === "mini") {
+      return isQuote(p)
+        ? '<span class="mcard__quote"><b>Request a Quote</b><span>Priced on enquiry</span></span>'
+        : '<span class="mcard__now">' + money(p.price) + "</span>" +
+          (p.oldPrice ? '<span class="mcard__was">' + money(p.oldPrice) + "</span>" : "");
+    }
+    if (v === "bare") { return priceInner(p); }
+    return '<p class="price' + (v === "lg" ? " price--lg" : "") +
+           (isQuote(p) ? " price--quote" : "") + '">' + priceInner(p) + "</p>";
+  }
+
+  /* The buying action follows the same truth: a product with no published price
+     cannot be added to a cart, so it is offered a quotation instead.
+     opts.icon: true for every button, false for none, "add" for the cart button
+     only — which is how the large product card has always looked. */
+  function ctaHtml(p, opts) {
+    opts = opts || {};
+    var cls = opts.cls || "btn btn--ghost btn--block";
+    var quoteCls = opts.quoteCls || "btn btn--accent btn--block";
+    var href = "product.html?id=" + encodeURIComponent(p.id);
+    var mode = opts.icon === undefined ? true : opts.icon;
+    function ico(name, forAdd) {
+      if (mode === true) { return icon(name); }
+      if (mode === "add" && forAdd) { return icon(name); }
+      return "";
+    }
+    if (isQuote(p)) {
+      return '<a class="' + quoteCls + '" href="' + quoteHref(p) + '">' +
+             ico("doc") + (opts.quoteLabel || "Request a Quote") + "</a>";
+    }
+    if (p.stock === "out") {
+      return '<button class="' + cls + '" type="button" disabled>Out of Stock</button>';
+    }
+    if (p.type === "variable") {
+      return '<a class="' + cls + '" href="' + href + '">' +
+             ico("cart") + "Select Options</a>";
+    }
+    return '<button class="' + cls + ' js-add" type="button" data-id="' + esc(p.id) + '">' +
+           ico("cart", true) + "Add to Cart</button>";
+  }
 
   var STOCK = {
     "in":  { cls: "pill--in",  label: "In Stock" },
@@ -325,9 +403,9 @@ window.SEE_UI = (function () {
             '<li><a href="shipping.html">Shipping</a></li>' +
             '<li><a href="returns.html">Returns</a></li>' +
           "</ul>" +
-          '<ul class="pay" aria-label="Payment methods">' +
-            "<li>Cash on Delivery</li><li>Bank Transfer</li>" +
-          "</ul>" +
+          /* No payment-method badges: the store has not confirmed which methods
+             it accepts, and the checkout no longer offers bank transfer. Listing
+             them here would be a claim rather than a feature. */
         "</div>" +
       "</div>" +
     "</footer>";
@@ -338,7 +416,6 @@ window.SEE_UI = (function () {
      ---------------------------------------------------------------------- */
   function renderProductCard(p, opts) {
     opts = opts || {};
-    var out = p.stock === "out";
     var href = "product.html?id=" + encodeURIComponent(p.id);
     var saved = window.SEE_STORE && SEE_STORE.inWishlist(p.id);
     var img = D.productImage(p);
@@ -347,35 +424,19 @@ window.SEE_UI = (function () {
        There is no "Best Seller" - no approved source ranks sales. */
     var badges = "";
     if (p.discountPercent) { badges += '<span class="tag tag--sale">-' + p.discountPercent + "%</span>"; }
-    if (p.isQuote) { badges += '<span class="tag tag--quote">Request Quote</span>'; }
+    if (isQuote(p)) { badges += '<span class="tag tag--quote">Request Quote</span>'; }
 
-    /* Price block: never render Rs. 0 for an unpriced product. */
-    var priceHtml;
-    if (p.isQuote) {
-      priceHtml = '<p class="price price--quote"><span class="price__quote">Request a Quote</span></p>';
-    } else {
-      priceHtml = '<p class="price">' +
-        '<span class="price__now">' + money(p.price) + "</span>" +
-        (p.oldPrice ? '<span class="price__old">' + money(p.oldPrice) + "</span>" : "") +
-        (p.discountPercent ? '<span class="price__off">Save ' + p.discountPercent + "%</span>" : "") +
-        (p.priceType === "from" ? '<span class="price__from">from</span>' : "") +
-      "</p>";
-    }
+    /* Price and buying action both come from the shared pricing helpers, so an
+       unpriced product can never render Rs. 0 or an Add to Cart button here. */
+    var priceBlock = priceHtml(p, "card");
 
     var st = STOCK[p.stock] || { cls: "pill--unknown", label: "Not specified" };
 
-    var cta;
-    if (p.isQuote) {
-      cta = '<a class="btn btn--accent btn--block pcard__add" href="quote-request.html?product=' +
-            encodeURIComponent(p.id) + '">Request a Quote</a>';
-    } else if (out) {
-      cta = '<button class="btn btn--ghost btn--block pcard__add" type="button" disabled>Out of Stock</button>';
-    } else if (p.type === "variable") {
-      cta = '<a class="btn btn--ghost btn--block pcard__add" href="' + href + '">Select Options</a>';
-    } else {
-      cta = '<button class="btn btn--ghost btn--block pcard__add js-add" type="button" data-id="' +
-            esc(p.id) + '">' + icon("cart") + "Add to Cart</button>";
-    }
+    var cta = ctaHtml(p, {
+      cls: "btn btn--ghost btn--block pcard__add",
+      quoteCls: "btn btn--accent btn--block pcard__add",
+      icon: "add"
+    });
 
     return '' +
     '<li class="pcard" data-id="' + esc(p.id) + '">' +
@@ -399,7 +460,7 @@ window.SEE_UI = (function () {
         "</p>" +
         '<h3 class="pcard__name"><a href="' + href + '">' + esc(p.name) + "</a></h3>" +
         (p.model ? '<p class="pcard__model">Model: ' + esc(p.model) + "</p>" : "") +
-        priceHtml +
+        priceBlock +
         '<span class="pill ' + st.cls + '">' + st.label + "</span>" +
         cta +
       "</div>" +
@@ -492,31 +553,18 @@ window.SEE_UI = (function () {
   function renderMiniCard(p) {
     var href = "product.html?id=" + encodeURIComponent(p.id);
     var img = D.productImage(p);
-    var out = p.stock === "out";
 
     /* Quote-only lines are most of this catalogue, so they read as a deliberate
-       way to buy rather than as a price that failed to load. */
-    var price = p.isQuote
-      ? '<span class="mcard__quote"><b>Request a Quote</b>' +
-        "<span>Priced on enquiry</span></span>"
-      : '<span class="mcard__now">' + money(p.price) + "</span>" +
-        (p.oldPrice ? '<span class="mcard__was">' + money(p.oldPrice) + "</span>" : "");
+       way to buy rather than as a price that failed to load.
 
-    /* Navy carries the everyday cart action; red is reserved for quotation,
-       so a rail of quote-only products does not become a wall of red. */
-    var cta;
-    if (p.isQuote) {
-      cta = '<a class="mcard__btn mcard__btn--quote" href="quote-request.html?product=' +
-            encodeURIComponent(p.id) + '">' + icon("doc") + "Request Quote</a>";
-    } else if (out) {
-      cta = '<button class="mcard__btn mcard__btn--primary" type="button" disabled>Out of Stock</button>';
-    } else if (p.type === "variable") {
-      cta = '<a class="mcard__btn mcard__btn--primary" href="' + href + '">' +
-            icon("cart") + "Select Options</a>";
-    } else {
-      cta = '<button class="mcard__btn mcard__btn--primary js-add" type="button" data-id="' +
-            esc(p.id) + '">' + icon("cart") + "Add to Cart</button>";
-    }
+       Navy carries the everyday cart action; red is reserved for quotation, so
+       a rail of quote-only products does not become a wall of red. */
+    var price = priceHtml(p, "mini");
+    var cta = ctaHtml(p, {
+      cls: "mcard__btn mcard__btn--primary",
+      quoteCls: "mcard__btn mcard__btn--quote",
+      quoteLabel: "Request Quote"
+    });
 
     return '' +
     '<li class="mcard" data-id="' + esc(p.id) + '">' +
@@ -697,6 +745,7 @@ window.SEE_UI = (function () {
 
   return {
     esc: esc, money: money, discount: discount, STOCK: STOCK,
+    isQuote: isQuote, priceHtml: priceHtml, ctaHtml: ctaHtml, quoteHref: quoteHref,
     icon: icon, NAV: NAV, LOGO: LOGO,
     renderHeader: renderHeader, renderDrawer: renderDrawer, renderFooter: renderFooter,
     renderProductCard: renderProductCard, renderProductGrid: renderProductGrid,

@@ -131,7 +131,6 @@
 .why-card p { font-size: 13.5px; color: var(--text-muted); }
 
 /* Store strip */
-.store-strip { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-7); align-items: center; }
 .store-list { display: grid; gap: var(--sp-3); margin-block: var(--sp-5); }
 .store-list > div {
   display: grid; grid-template-columns: 150px minmax(0, 1fr);
@@ -143,35 +142,6 @@
 .store-list dt .ico { width: 16px; height: 16px; color: var(--brand-accent); }
 .store-list dd { font-size: 14px; }
 
-.map-ph {
-  position: relative;
-  min-height: 360px;
-  display: grid; place-items: center;
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  background: var(--surface-soft);
-  overflow: hidden;
-}
-.map-ph__grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-.map-ph__pin {
-  position: relative;
-  display: grid; place-items: center;
-  width: 56px; height: 56px;
-  margin-bottom: var(--sp-2);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  box-shadow: var(--sh-2);
-  color: var(--brand-accent);
-}
-.map-ph__pin .ico { width: 26px; height: 26px; }
-.map-ph__label { position: relative; text-align: center; font-size: 13px; font-weight: 600; color: var(--text-muted); }
 
 
 /* ==========================================================================
@@ -559,6 +529,9 @@
 /* ==========================================================================
    12  CONTENT / POLICY PAGES
    ========================================================================== */
+/* A policy page with no policy to show yet: one panel, held to a readable
+   measure rather than stretched across the container. */
+.doc-single { max-width: 680px; }
 .doc-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: var(--sp-7); align-items: start; }
 .doc-toc {
   position: sticky; top: 96px;

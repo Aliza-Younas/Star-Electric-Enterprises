@@ -96,7 +96,7 @@
         </div>
 
         <div class="btn-row" style="margin-bottom:24px">
-          <a class="btn btn--whatsapp" href="contact.html" data-placeholder="WhatsApp number to be added">
+          <a class="btn btn--whatsapp" href="contact.html">
             <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.3-3.9A8 8 0 1 1 20 11.8Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5"/></svg>
             WhatsApp Inquiry
           </a>
@@ -108,11 +108,12 @@
         </div>
 
         <dl class="pdp__meta" id="pdpSourceMeta"></dl>
+        <!-- Delivery, Returns and Warranty rows are deliberately absent. The
+             store has not supplied those terms, and a public product page must
+             not state or hint at a policy that is not on record. They belong
+             here once the real terms are provided. -->
         <dl class="pdp__meta">
           <div><dt>Category</dt><dd id="pdpCat2"></dd></div>
-          <div><dt>Delivery</dt><dd class="placeholder">[ options to be confirmed ]</dd></div>
-          <div><dt>Returns</dt><dd class="placeholder">[ policy to be confirmed ]</dd></div>
-          <div><dt>Warranty</dt><dd class="placeholder">[ terms to be confirmed ]</dd></div>
         </dl>
       </div>
     </div>
@@ -127,7 +128,6 @@
           <button role="tab" id="tabSpecs" aria-controls="panelSpecs" aria-selected="false">Specifications</button>
           <button role="tab" id="tabAdd" aria-controls="panelAdd" aria-selected="false">Additional Information</button>
           <button role="tab" id="tabRev" aria-controls="panelRev" aria-selected="false">Reviews</button>
-          <button role="tab" id="tabShip" aria-controls="panelShip" aria-selected="false">Shipping</button>
         </div>
 
         <div class="tab-panel" id="panelDesc" role="tabpanel" aria-labelledby="tabDesc">
@@ -143,18 +143,11 @@
           </table>
         </div>
 
+        <!-- Only the notes this product's own source record carries. The tab is
+             hidden by the page controller when there are none, so the panel is
+             never an empty promise. -->
         <div class="tab-panel" id="panelAdd" role="tabpanel" aria-labelledby="tabAdd" hidden>
-          <ul class="prose" id="pdpNotes" hidden style="margin-bottom:24px"></ul>
-          <table class="table table--specs">
-            <caption class="sr-only">Additional information</caption>
-            <tbody>
-              <tr><th scope="row">Packaging</th><td class="placeholder">[ to be confirmed ]</td></tr>
-              <tr><th scope="row">Unit of sale</th><td class="placeholder">[ to be confirmed ]</td></tr>
-              <tr><th scope="row">Manufacturer</th><td class="placeholder">[ to be confirmed ]</td></tr>
-              <tr><th scope="row">Country of origin</th><td class="placeholder">[ to be confirmed ]</td></tr>
-              <tr><th scope="row">Warranty</th><td class="placeholder">[ to be confirmed ]</td></tr>
-            </tbody>
-          </table>
+          <ul class="prose" id="pdpNotes" hidden></ul>
         </div>
 
         <div class="tab-panel" id="panelRev" role="tabpanel" aria-labelledby="tabRev" hidden>
@@ -164,28 +157,14 @@
             </span>
             <h3>No reviews yet</h3>
             <p>
-              Customer reviews will appear here once the store is live. No review content has been
-              created for this prototype.
+              No customer reviews have been published for this product.
             </p>
           </div>
         </div>
 
-        <div class="tab-panel" id="panelShip" role="tabpanel" aria-labelledby="tabShip" hidden>
-          <div class="prose">
-            <p class="placeholder-note">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
-              <span>Shipping charges, delivery areas and lead times are to be confirmed before publication.</span>
-            </p>
-            <h3>What this section will cover</h3>
-            <ul>
-              <li>Delivery coverage within Rawalpindi and Islamabad</li>
-              <li>Nationwide dispatch options</li>
-              <li>Collection from the Saddar store</li>
-              <li>Handling of bulk and project deliveries</li>
-            </ul>
-            <p><a class="link-inline" href="shipping.html">See the full shipping page</a></p>
-          </div>
-        </div>
+        <!-- A Shipping tab was removed: it carried no delivery terms, only a
+             note that they were still to be confirmed. Shipping is reachable
+             from the footer, and the tab returns when the terms are on record. -->
       </div>
     </div>
   </section>

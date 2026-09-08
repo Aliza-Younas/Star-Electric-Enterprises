@@ -37,8 +37,8 @@
       </nav>
       <h1 class="page-head__title">My Account</h1>
       <p class="page-head__sub">
-        Both account states are built here as design previews. There is no authentication in this
-        prototype &mdash; real login is handled by WooCommerce.
+        Customer accounts are not open yet. You can browse, save products in this browser
+        and request a quotation without one.
       </p>
       <div class="btn-row" style="margin-top:16px">
         <button class="btn btn--ghost btn--sm" type="button" id="previewAuth">View signed-out state</button>
@@ -55,7 +55,7 @@
         <div class="panel__head">
           <h2 class="panel__title">Sign In</h2>
         </div>
-        <form class="stack" data-demo-form="Sign-in is not connected — this prototype has no authentication.">
+        <form class="stack" data-demo-form="Customer accounts are not open yet.">
           <div class="field">
             <label class="field__label" for="loginUser">Username or email <span class="req">*</span></label>
             <input class="input" id="loginUser" type="text" autocomplete="username" required>
@@ -70,8 +70,8 @@
           </label>
           <button class="btn btn--accent btn--block" type="submit">Sign In</button>
           <p class="t-sm">
-            <a class="link-inline" href="#" data-placeholder="Password reset will be handled by WooCommerce">
-              Forgot your password?
+            <a class="link-inline" href="contact.html">
+              Trouble signing in? Contact the store
             </a>
           </p>
         </form>
@@ -81,7 +81,7 @@
         <div class="panel__head">
           <h2 class="panel__title">Create an Account</h2>
         </div>
-        <form class="stack" data-demo-form="Registration is not connected — this prototype has no authentication.">
+        <form class="stack" data-demo-form="Customer accounts are not open yet.">
           <div class="form-grid">
             <div class="field">
               <label class="field__label" for="regFirst">First name <span class="req">*</span></label>
@@ -128,8 +128,8 @@
         <div class="account-nav__user">
           <span class="avatar" aria-hidden="true">SE</span>
           <span>
-            <strong class="placeholder">[ customer name ]</strong>
-            <small class="placeholder">[ email address ]</small>
+            <strong>Your account</strong>
+            <small>Not signed in</small>
           </span>
         </div>
         <nav class="account-nav__list" aria-label="Account sections">
@@ -201,8 +201,7 @@
               </span>
               <h3>No orders to show</h3>
               <p>
-                Order history will appear here once the store is live. No demo orders have been
-                created for this prototype.
+                Order history will appear here once customer accounts are open.
               </p>
               <a class="btn btn--accent" href="shop.html">Browse the Shop</a>
             </div>
@@ -214,21 +213,15 @@
           <div class="panel">
             <div class="panel__head">
               <h2 class="panel__title">Addresses</h2>
-              <button class="btn btn--ghost btn--sm" type="button"
-                      data-placeholder="Address editing is handled by WooCommerce">Add address</button>
             </div>
             <div class="form-grid">
               <div class="info-card">
                 <h3>Billing address</h3>
-                <p class="t-sm placeholder">[ no billing address saved yet ]</p>
-                <button class="btn btn--ghost btn--sm" type="button" style="margin-top:16px"
-                        data-placeholder="Address editing is handled by WooCommerce">Edit</button>
+                <p class="t-sm t-muted">No billing address saved.</p>
               </div>
               <div class="info-card">
                 <h3>Delivery address</h3>
-                <p class="t-sm placeholder">[ no delivery address saved yet ]</p>
-                <button class="btn btn--ghost btn--sm" type="button" style="margin-top:16px"
-                        data-placeholder="Address editing is handled by WooCommerce">Edit</button>
+                <p class="t-sm t-muted">No delivery address saved.</p>
               </div>
             </div>
           </div>
@@ -238,7 +231,7 @@
         <div data-acct-panel="details" hidden>
           <div class="panel">
             <h2 class="panel__title" style="margin-bottom:20px">Account Details</h2>
-            <form class="stack" data-demo-form="Account updates are not connected in this prototype.">
+            <form class="stack" data-demo-form="Customer accounts are not open yet.">
               <div class="form-grid">
                 <div class="field">
                   <label class="field__label" for="accFirst">First name</label>

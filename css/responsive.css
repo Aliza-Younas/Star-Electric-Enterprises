@@ -86,8 +86,6 @@
   .hero__dots { left: var(--sp-6); bottom: var(--sp-5); }
   .promo-grid { grid-template-columns: minmax(0, 1fr); }
   .bulk__inner { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
-  .store-strip { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
-  .map-ph { min-height: 280px; }
 
   /* Catalog: filters move into a drawer */
   .shop-layout { grid-template-columns: minmax(0, 1fr); }
@@ -281,7 +279,6 @@
 
   /* Commerce */
   .store-list > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-  .map-ph { min-height: 220px; }
   .summary__total strong { font-size: 21px; }
   .coupon { flex-direction: column; }
   .coupon .input { max-width: none; }

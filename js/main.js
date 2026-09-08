@@ -89,7 +89,11 @@
     function cartLines() {
       return mem.cart.map(function (l) {
         var p = D.productById(l.id);
-        return p ? { line: l, product: p, total: p.price * l.qty } : null;
+        /* Quote-only lines are dropped rather than rendered: they have no price
+           to show or total, and add() no longer accepts them. This only ever
+           matches a line left in a returning visitor's storage. */
+        if (!p || UI.isQuote(p)) { return null; }
+        return { line: l, product: p, total: p.price * l.qty };
       }).filter(Boolean);
     }
     function cartCount() {
@@ -101,6 +105,10 @@
     function add(id, qty, variant) {
       var p = D.productById(id);
       if (!p || p.stock === "out") { return false; }
+      /* A product the source never priced cannot be carted: there is no figure
+         to total. Every surface offers it a quotation instead, and this is the
+         backstop so no future button can slip one in. */
+      if (UI.isQuote(p)) { return false; }
       qty = qty || 1;
       for (var i = 0; i < mem.cart.length; i++) {
         if (mem.cart[i].id === id && mem.cart[i].variant === (variant || "")) {
@@ -339,7 +347,6 @@
       if (!p) { return; }
       currentId = id;
       last = document.activeElement;
-      var off = UI.discount(p);
       var st = UI.STOCK[p.stock];
       var href = "product.html?id=" + encodeURIComponent(p.id);
 
@@ -354,16 +361,13 @@
             '<p class="pcard__meta"><span class="pcard__brand">' + UI.esc(D.brandName(p.brand)) + "</span>" +
               '<span class="pcard__cat">' + UI.esc(D.categoryName(p.cat)) + "</span></p>" +
             "<h2 id=\"qvTitle\" style=\"font-size:21px\">" + UI.esc(p.name) + "</h2>" +
-            '<p class="price price--lg"><span class="price__now">' + UI.money(p.price) + "</span>" +
-              (p.oldPrice ? '<span class="price__old">' + UI.money(p.oldPrice) + "</span>" : "") +
-              (off ? '<span class="price__off">Save ' + off + "%</span>" : "") + "</p>" +
+            UI.priceHtml(p, "lg") +
             '<span class="pill ' + st.cls + '">' + st.label + "</span>" +
             "<p class=\"t-sm t-muted\">" + UI.esc(p.short || "") + "</p>" +
             '<div class="btn-row" style="margin-top:8px">' +
-              (p.stock === "out"
-                ? '<button class="btn btn--accent" type="button" disabled>Out of Stock</button>'
-                : '<button class="btn btn--accent js-add" type="button" data-id="' + UI.esc(p.id) + '">Add to Cart</button>') +
-              '<a class="btn btn--ghost" href="' + href + '">Full Details</a>' +
+              UI.ctaHtml(p, { cls: "btn btn--accent", quoteCls: "btn btn--accent", icon: false }) +
+              '<a class="btn btn--ghost" href="' + href + '">' +
+                (UI.isQuote(p) ? "View Product" : "Full Details") + "</a>" +
             "</div>" +
           "</div>" +
         "</div>";
@@ -1546,7 +1550,7 @@
     var badges = $("#galleryBadges");
     if (badges) {
       badges.innerHTML = (p.discountPercent ? '<span class="tag tag--sale">-' + p.discountPercent + "%</span>" : "") +
-                         (p.isQuote ? '<span class="tag tag--quote">Request Quote</span>' : "");
+                         (UI.isQuote(p) ? '<span class="tag tag--quote">Request Quote</span>' : "");
     }
 
     setText("#pdpBrand", p.brand || "");
@@ -1560,18 +1564,11 @@
     var rate = $("#pdpRating");
     if (rate) { rate.innerHTML = '<span class="t-xs t-faint">No customer ratings published</span>'; }
 
-    if (p.isQuote) {
-      setHTML("#pdpPrice", '<span class="price__quote">Request a Quote</span>');
-    } else {
-      setHTML("#pdpPrice",
-        '<span class="price__now">' + UI.money(p.price) + "</span>" +
-        (p.oldPrice ? '<span class="price__old">' + UI.money(p.oldPrice) + "</span>" : "") +
-        (p.discountPercent ? '<span class="price__off">Save ' + p.discountPercent + "%</span>" : "") +
-        (p.priceType === "from" ? '<span class="price__from">from</span>' : ""));
-    }
+    /* #pdpPrice is already the .price container, so only the inner spans. */
+    setHTML("#pdpPrice", UI.priceHtml(p, "bare"));
     var save = $("#pdpSave");
     if (save) {
-      var has = !p.isQuote && p.oldPrice && p.price;
+      var has = !UI.isQuote(p) && p.oldPrice && p.price;
       save.textContent = has ? "You save " + UI.money(p.oldPrice - p.price) : "";
       save.hidden = !has;
     }
@@ -1650,7 +1647,7 @@
     var buyNow = $("#pdpBuy");
     var qtyField = $("#pdpQty");
     if (addBtn) {
-      if (p.isQuote) {
+      if (UI.isQuote(p)) {
         addBtn.outerHTML = '<a class="btn btn--accent btn--lg" id="pdpAdd" href="quote-request.html?product=' +
                            encodeURIComponent(p.id) + '">Request a Quote</a>';
         if (buyNow) { buyNow.hidden = true; }
@@ -1667,7 +1664,7 @@
       wishBtn.setAttribute("data-id", p.id);
       if (SEE_STORE.inWishlist(p.id)) { wishBtn.classList.add("is-active"); }
     }
-    if (buyNow && !p.isQuote) {
+    if (buyNow && !UI.isQuote(p)) {
       buyNow.onclick = function (e) {
         e.preventDefault();
         if (p.stock === "out") { return; }
@@ -1706,6 +1703,14 @@
       notes.innerHTML = ns.length ? ns.map(function (n) {
         return '<li>' + UI.esc(n) + "</li>"; }).join("") : "";
       notes.hidden = !ns.length;
+      /* The Additional Information tab holds nothing but these notes, so it is
+         removed rather than opened onto an empty panel. */
+      var addTab = $("#tabAdd");
+      if (addTab && !ns.length) {
+        addTab.hidden = true;
+        var addPanel = $("#panelAdd");
+        if (addPanel) { addPanel.hidden = true; }
+      }
     }
 
     /* ---- related: same subcategory, then same category, then same brand ---- */
@@ -1840,13 +1845,13 @@
             "</span>" +
           "</div>" +
         "</td>" +
-        '<td data-label="Price"><span class="price__now">' + UI.money(p.price) + "</span></td>" +
+        '<td data-label="Price">' +
+          (UI.isQuote(p) ? '<span class="price__quote">Request a Quote</span>'
+                         : '<span class="price__now">' + UI.money(p.price) + "</span>") + "</td>" +
         '<td data-label="Stock"><span class="pill ' + st.cls + '">' + st.label + "</span></td>" +
         '<td data-label="Actions">' +
           '<div class="btn-row">' +
-            (p.stock === "out"
-              ? '<button class="btn btn--ghost btn--sm" type="button" disabled>Out of Stock</button>'
-              : '<button class="btn btn--accent btn--sm js-add" type="button" data-id="' + UI.esc(p.id) + '">Add to Cart</button>') +
+            UI.ctaHtml(p, { cls: "btn btn--ghost btn--sm", quoteCls: "btn btn--accent btn--sm", icon: false }) +
             '<button class="icon-btn icon-btn--sm" type="button" data-wish-remove="' + UI.esc(p.id) + '" ' +
               'aria-label="Remove from wishlist">' + UI.icon("trash") + "</button>" +
           "</div>" +
@@ -2042,7 +2047,7 @@
       e.preventDefault();
       result.hidden = false;
       result.scrollIntoView({ behavior: "smooth", block: "start" });
-      toast("Demo tracking result shown — not connected to real orders.", "info");
+      toast("Order tracking is not connected yet — please contact the store.", "info");
     });
   };
 
