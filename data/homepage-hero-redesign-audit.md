@@ -245,3 +245,98 @@ supplier's shop rather than a slide.
 **Kept deliberately:** the global header and navigation, the department menu
 beside the banner (capped to 13 rows so the two columns finish together), the
 three promo tiles, and the white-stage category carousel below.
+
+---
+
+## 11. Hero image quality refinement — 2026-09-08
+
+The hero layout, height, structure, split composition, slide categories and
+integrated navigator were all kept. This pass fixed the **product imagery
+quality only**, which was the weak part of the first build.
+
+### What was actually wrong
+
+Judged by rendering each composition at its true display size (547 × 394 at a
+1440 viewport) over the real navy panel and light stage, then magnifying 3×.
+
+| Slide | Cut-out | Edges | Halo | Remnants | Shadow | Overlap | Scale | Product choice |
+|---|---|---|---|---|---|---|---|---|
+| Circuit Protection | binary | stair-stepped | white rim | none | generic ellipse | ok | ok | ok |
+| Wires & Cables | binary | stair-stepped | white rim | none | generic ellipse | ok | ok | ok |
+| Switches & Sockets | binary | stepped, worst on the black socket | thin white line along the top edge | none | generic ellipse | ok | ok | ok |
+| Lighting | binary | stair-stepped | white rim | none | generic ellipse | ok | **soft** | **2 of 3 low-resolution** |
+| Fans & Smart | binary | **worst — heavy staircase on every blade** | strong white rim | none | generic ellipse | **fan blade sliced across the switch face** | ok | **hero fan looked cheap** |
+
+Three root causes, all in the build script rather than the design:
+
+1. **A binary mask.** The matte was a hard 0/255 mask put through a
+   morphological closing. Closing on a hard mask produces blocky, aliased
+   edges, and the 0.7px blur afterwards was far too small to rescue them.
+2. **No colour decontamination.** An edge pixel is a blend of product and white
+   backdrop. Keeping its observed colour paints a white halo — which is exactly
+   what showed against the navy panel.
+3. **Straight-alpha resizing.** PIL resizes colour and alpha independently, so
+   the white sitting in fully transparent areas bled into every edge on the way
+   down. This was the single largest contributor to the halo.
+
+Two further problems were product selection, not masking: the Lighting slide
+used a 500 × 333 downlight and a 474 × 481 floodlight, both upscaled at hero
+size against 800px neighbours — visibly softer. And the gold-and-wood ceiling
+fan read as the cheapest thing on the page.
+
+### How each was fixed
+
+- **Soft matte.** The backdrop is still found by a border-connected flood fill
+  at a strict threshold, but the anti-aliased ring just outside it now receives
+  *fractional* alpha from how far each pixel sits from white. No morphology, no
+  hard mask.
+- **Decontamination.** Partially covered pixels are un-premultiplied against
+  white, recovering the product's own colour instead of a white-washed one.
+- **Premultiplied resizing.** Scaling happens in premultiplied space and is
+  un-premultiplied afterwards, so nothing bleeds in from transparent areas.
+- **Silhouette shadows.** The generic ellipse under each bounding box was
+  replaced with a shadow derived from the product's own alpha — squashed,
+  blurred and tucked under its base. A fan and a socket no longer sit on the
+  same footprint. Opacities were then raised, because the first pass was so
+  subtle the products read as floating.
+
+### Products replaced
+
+| Slide | Out | In | Why |
+|---|---|---|---|
+| Lighting | Coarts Alpha downlight (500 × 333) | Aqua COB downlight 18W (800 × 800) | source was being upscaled; the new one is sharp and shows the reflector |
+| Lighting | Coarts Astro G2 floodlight (474 × 481) | Aqua LED flood light 100W (800 × 800) | sharper, stronger silhouette, legible IP65 100W marking |
+| Fans & Smart | Wahid Ace 56" Versace (gold/wood) | Wahid Falcon Series AC/DC (black + gold) | the wooden fan looked cheap at hero scale; the Falcon has a far more premium silhouette |
+| Fans & Smart | Wahid Crystal inverter | Wahid Crystal Series AC/DC | cleaner angle for the back-left position over navy |
+
+All replacements are verified catalogue products from the same category.
+Nothing was generated, recoloured, re-badged or merged.
+
+**Composition fix:** on Fans & Smart the fan was moved left and down and the
+glass switch right and up, because a blade was cutting straight across the
+switch face.
+
+### Result
+
+Re-checked at true display size and magnified 3×: smooth anti-aliased edges, no
+white halo, no dark halo, no stair-stepping, no background fragments, no
+clipped detail. White products keep their contour against navy without a dirty
+grey outline; the black glass switches and the black-bladed fan keep a clean
+silhouette with no bright fringing.
+
+### Assets
+
+Canvas reduced from 1200 × 860 to **1120 × 803** — a 2× buffer for the 547px
+display size at a 1440 viewport and about 1.8× at 1920 — and WebP quality set
+to 84. That absorbs most of the cost of the sharper source products.
+
+| | Before | After |
+|---|---:|---:|
+| Five compositions | 399 KB | 475 KB |
+| LCP image (campaign 01) | 58 KB | 54 KB |
+
+Five files, same names, overwritten in place — no obsolete or duplicate hero
+assets. The stacked mobile hero also had its picture sizing corrected: a
+percentage height was resolving against the slide rather than the grid row, so
+the composition rendered at twice the space available and was clipped by the
+banner. It is now positioned into the stage and contained.
