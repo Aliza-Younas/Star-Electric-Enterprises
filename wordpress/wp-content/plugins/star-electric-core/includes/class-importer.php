@@ -706,6 +706,14 @@ class Star_Electric_Importer {
 			}
 		}
 
+		/*
+		 * WooCommerce has two stock states; the source has three. 2,382 products
+		 * publish no availability at all, and calling those "In Stock" would be
+		 * inventing a claim about the shop's shelves. So the WooCommerce status
+		 * only decides whether the product can be bought, while the availability
+		 * actually shown to a shopper comes from the meta below - which says
+		 * "not specified" when that is the truth.
+		 */
 		$product->set_stock_status( 'Out of Stock' === $rec['availability'] ? 'outofstock' : 'instock' );
 
 		if ( ! empty( $rec['image'] ) && isset( $map[ $rec['image'] ] ) ) {
@@ -730,6 +738,7 @@ class Star_Electric_Importer {
 
 		update_post_meta( $id, STAR_ELECTRIC_SOURCE_ID_META, $rec['source_id'] );
 		update_post_meta( $id, STAR_ELECTRIC_QUOTE_META, ! empty( $rec['quote_only'] ) ? 'yes' : 'no' );
+		update_post_meta( $id, '_star_electric_availability', (string) $rec['availability'] );
 		foreach ( array( 'model', 'series', 'source_url', 'source_domain', 'source_checked', 'image_type', 'image_note' ) as $k ) {
 			if ( ! empty( $rec[ $k ] ) ) {
 				update_post_meta( $id, '_star_electric_' . $k, $rec[ $k ] );
@@ -738,6 +747,22 @@ class Star_Electric_Importer {
 		if ( ! empty( $rec['specifications'] ) ) {
 			update_post_meta( $id, '_star_electric_specifications', wp_json_encode( $rec['specifications'] ) );
 		}
+
+		/*
+		 * The approved shop offers a "Biggest Discount" sort. Ordering by a
+		 * discount computed at query time is not possible, so it is stored -
+		 * and stored on every product, including 0, so the sort does not
+		 * silently drop the products that are not discounted.
+		 */
+		$discount = 0;
+		if ( empty( $rec['quote_only'] ) && ! empty( $rec['sale_price'] ) && ! empty( $rec['regular_price'] ) ) {
+			$regular = (float) $rec['regular_price'];
+			$sale    = (float) $rec['sale_price'];
+			if ( $regular > 0 && $sale > 0 && $sale < $regular ) {
+				$discount = (int) round( ( 1 - ( $sale / $regular ) ) * 100 );
+			}
+		}
+		update_post_meta( $id, '_star_electric_discount', $discount );
 
 		// Category tree, brand and departments - one product, many terms.
 		$cats = array_filter( array( $rec['category'], $rec['subcategory'] ) );

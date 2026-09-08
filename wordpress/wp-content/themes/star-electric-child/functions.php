@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+require_once get_stylesheet_directory() . '/inc/class-shell.php';
+
 /**
  * Enqueue the approved design system.
  *
@@ -46,8 +48,82 @@ function star_electric_child_assets(): void {
 			(string) filemtime( $path )
 		);
 	}
+
+	$shell = $dir . '/assets/js/shell.js';
+	if ( file_exists( $shell ) ) {
+		wp_enqueue_script(
+			'star-electric-shell',
+			$uri . '/assets/js/shell.js',
+			array(),
+			(string) filemtime( $shell ),
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'star_electric_child_assets', 20 );
+
+/**
+ * Render the rupee the way the approved storefront does.
+ *
+ * WooCommerce ships "₨" for PKR; every price on the approved site reads
+ * "Rs. 1,234". With the symbol position set to left-with-space, this makes the
+ * WordPress build match it exactly rather than approximately.
+ *
+ * @param string $symbol   Currency symbol.
+ * @param string $currency Currency code.
+ */
+function star_electric_child_currency_symbol( string $symbol, string $currency ): string {
+	return 'PKR' === $currency ? 'Rs.' : $symbol;
+}
+add_filter( 'woocommerce_currency_symbol', 'star_electric_child_currency_symbol', 10, 2 );
+
+/**
+ * The number of items in the cart, for the header badge.
+ *
+ * Returns zero rather than failing when WooCommerce is not loaded, so the
+ * header still renders on a site where the plugin has been switched off.
+ */
+function star_electric_child_cart_count(): int {
+	if ( function_exists( 'WC' ) && WC()->cart ) {
+		return (int) WC()->cart->get_cart_contents_count();
+	}
+	return 0;
+}
+
+/**
+ * The cart subtotal, for the header.
+ */
+function star_electric_child_cart_total(): string {
+	if ( function_exists( 'WC' ) && WC()->cart ) {
+		return (string) WC()->cart->get_cart_subtotal();
+	}
+	return '';
+}
+
+/**
+ * Keep the header badge and total in step with AJAX add-to-cart.
+ *
+ * Without this the header would still read the count from the page it was
+ * rendered with, which is how a cart silently appears empty after an add.
+ *
+ * @param array $fragments Fragments keyed by selector.
+ */
+function star_electric_child_cart_fragments( array $fragments ): array {
+	ob_start();
+	?>
+	<span class="badge" data-count="cart"><?php echo esc_html( (string) star_electric_child_cart_count() ); ?></span>
+	<?php
+	$fragments['span.badge[data-count="cart"]'] = (string) ob_get_clean();
+
+	ob_start();
+	?>
+	<strong data-cart-total><?php echo wp_kses_post( star_electric_child_cart_total() ); ?></strong>
+	<?php
+	$fragments['strong[data-cart-total]'] = (string) ob_get_clean();
+
+	return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'star_electric_child_cart_fragments' );
 
 /**
  * Declare WooCommerce support so the gallery and template hooks behave.
