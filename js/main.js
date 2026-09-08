@@ -891,53 +891,59 @@
   /* ---------- HOME ---------- */
   PAGES.home = function () {
     /* ---- department rail beside the banner ---- */
+    /* The rail is held to the height of the banner and the promo tiles beside
+       it, so the two columns finish together instead of the menu running on
+       past the campaign. Everything below the cut stays reachable from the
+       mega menu, the departments strip and View All Categories. */
     var railEl = $("#heroRail");
-    if (railEl) { railEl.innerHTML = UI.renderHeroRail(D.railSections()); }
+    if (railEl) { railEl.innerHTML = UI.renderHeroRail(D.railSections().slice(0, 13)); }
 
     /* ---- campaign banner ----
-       Each slide is composed from department photography already verified in
-       this repository. Copy describes what the catalogue actually holds; no
-       slide claims a discount, and none is claimed anywhere unless a source
-       publishes one. */
-    var slides = [
-      { tone: "navy", eyebrow: "Circuit Protection",
-        title: "Protection Sized to Your Load",
-        text: "MCBs, RCCBs, distribution boxes and changeover gear, with Himel and " +
-              "Hyundai ranges quoted against the rating you specify.",
+       One structured campaign list, one renderer. Each entry names the composed
+       product image built for it, so a campaign is added by adding a row here
+       and a composition beside it - never by pasting another block of markup.
+       Copy describes what the catalogue actually holds. No slide claims a
+       discount, a delivery term, a warranty or a dealership. */
+    var HERO_CAMPAIGNS = [
+      { tone: "navy", art: "protection",
+        eyebrow: "Circuit Protection",
+        title: "Built to Protect Every Circuit",
+        text: "MCBs, RCCBs, changeover gear and distribution boards, quoted against " +
+              "the rating you specify.",
         cta: "Shop Circuit Protection", href: "category.html?cat=circuit-protection",
-        cta2: "Request a Quote", href2: "quote-request.html",
-        art: ["circuit-protection", "distribution-boards", "industrial-control"] },
+        cta2: "Request a Quote", href2: "quote-request.html" },
 
-      { tone: "slate", eyebrow: "Wires & Cables",
-        title: "Cable for Every Installation",
-        text: "2,386 published items across building wire, power cable, LSZH, medium " +
-              "voltage and solar, straight from the Pakistan Cables catalogue.",
-        cta: "Shop Wires & Cables", href: "category.html?cat=wires-cables",
-        cta2: "Bulk Enquiry", href2: "quote-request.html",
-        art: ["power-cables", "wires-cables", "solar-cables"] },
+      { tone: "deep", art: "cables",
+        eyebrow: "Wires & Cables",
+        title: "Power Every Connection",
+        text: "Building wire, armoured power cable, LSZH, medium voltage and solar " +
+              "from the Pakistan Cables catalogue.",
+        cta: "Explore Cables", href: "category.html?cat=wires-cables",
+        cta2: "Bulk Enquiry", href2: "quote-request.html" },
 
-      { tone: "red", eyebrow: "Switches & Sockets",
-        title: "Wiring Devices for Home and Office",
-        text: "Modular switches, sockets, data and telephone outlets across the Aqua " +
-              "and Panasonic ranges, priced as the source publishes them.",
-        cta: "Shop Switches & Sockets", href: "category.html?cat=switches-sockets",
-        art: ["switches-sockets", "smart-switches", "data-outlets"] },
+      { tone: "navy", art: "switches",
+        eyebrow: "Switches & Sockets",
+        title: "Control, Beautifully Finished",
+        text: "Modular switches, sockets and data outlets across the Aqua and " +
+              "Panasonic ranges.",
+        cta: "Shop Switches & Sockets", href: "category.html?cat=switches-sockets" },
 
-      { tone: "navy", eyebrow: "Lighting & Fixtures",
-        title: "LED Lighting, Panel to Highbay",
-        text: "Panels, downlights, track, floodlights and industrial highbay fittings " +
-              "from the Coarts lighting catalogue.",
-        cta: "Shop Lighting", href: "category.html?cat=lighting",
-        art: ["lighting", "led-lighting"] },
+      { tone: "ink", art: "lighting",
+        eyebrow: "Lighting & Fixtures",
+        title: "Light Designed Around Your Space",
+        text: "Panels, downlights, floodlights and highbay fittings from the Coarts " +
+              "lighting catalogue.",
+        cta: "Browse Lighting", href: "category.html?cat=lighting" },
 
-      { tone: "slate", eyebrow: "Fans & Smart",
-        title: "Fans, Smart Switches and Controls",
-        text: "Ceiling, bracket and inverter fans alongside Wi-Fi switches, curtain " +
-              "motors and smart controls.",
+      { tone: "deep", art: "smart",
+        eyebrow: "Fans & Smart",
+        title: "Smarter Control Starts Here",
+        text: "Inverter and AC/DC ceiling fans alongside Wi-Fi switches, dimmers and " +
+              "curtain controls.",
         cta: "Shop Fans", href: "category.html?cat=fans-ventilation",
-        cta2: "Smart Home", href2: "category.html?cat=smart-home",
-        art: ["fans-ventilation", "smart-home", "smart-switches"] }
+        cta2: "Smart Home", href2: "category.html?cat=smart-home" }
     ];
+    var slides = HERO_CAMPAIGNS;
 
     var track = $("#heroTrack");
     if (track) {
@@ -1026,7 +1032,7 @@
   function initHeroBanner(slides) {
     var track = $("#heroTrack");
     if (!track) { return; }
-    var items = $$(".hslide", track);
+    var items = $$(".hs", track);
     if (!items.length) { return; }
 
     var nav = $("#heroNav");
@@ -1038,10 +1044,24 @@
 
     var index = 0, timer = null, paused = false;
 
+    /* The autoplay progress line is a CSS animation, so its duration has to
+       agree with the timer that actually advances the slide. */
+    if (banner) { banner.style.setProperty("--hb-dur", HERO_INTERVAL + "ms"); }
+
+    /* Re-running an animation on an element that already carries it needs the
+       class dropped and a reflow forced before it is put back. */
+    function replay(el) {
+      if (!el) { return; }
+      el.classList.remove("is-live");
+      void el.offsetWidth;
+      el.classList.add("is-live");
+    }
+
     function paint() {
       track.style.transform = "translate3d(" + (-index * 100) + "%,0,0)";
       items.forEach(function (el, i) {
         el.classList.toggle("is-active", i === index);
+        if (i !== index) { el.classList.remove("is-live"); }
         /* Off-screen slides are removed from the tab order so keyboard focus
            never lands on a control the visitor cannot see. */
         $$("a,button", el).forEach(function (c) {
@@ -1054,6 +1074,11 @@
         else { b.removeAttribute("aria-current"); }
         b.classList.toggle("is-active", i === index);
       });
+      if (!still) {
+        replay(items[index]);
+        var fill = buttons[index] && buttons[index].querySelector(".hnav__fill");
+        if (fill) { fill.style.animation = "none"; void fill.offsetWidth; fill.style.animation = ""; }
+      }
       if (status) {
         status.textContent = "Slide " + (index + 1) + " of " + items.length + ": " +
                              (slides[index] ? slides[index].eyebrow : "");
@@ -1065,11 +1090,18 @@
       paint();
     }
 
-    function stop() { window.clearInterval(timer); timer = null; }
+    /* is-paused freezes the progress line in place; the timer is cleared with
+       it, so what the visitor sees and what the clock does stay in step. */
+    function mark() {
+      if (banner) { banner.classList.toggle("is-paused", !timer); }
+    }
+    function stop() { window.clearInterval(timer); timer = null; mark(); }
     function play() {
-      stop();
-      if (still || paused || document.hidden) { return; }
-      timer = window.setInterval(function () { go(index + 1); }, HERO_INTERVAL);
+      window.clearInterval(timer); timer = null;
+      if (!still && !paused && !document.hidden) {
+        timer = window.setInterval(function () { go(index + 1); }, HERO_INTERVAL);
+      }
+      mark();
     }
     function restart() { go(index); play(); }
 

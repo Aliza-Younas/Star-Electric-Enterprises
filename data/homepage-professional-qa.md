@@ -725,3 +725,49 @@ rendered page or in any string emitted by the JavaScript. Remaining matches are
 | Card content overflow at 390 | none |
 | Track Order | still shows nothing until a visitor submits the form; the fabricated sample order removed earlier has not returned |
 | Product data | unchanged — nothing under `data/` touched but this record |
+
+---
+
+## Addendum — 2026-09-08: homepage hero redesigned
+
+The campaign banner below the header was rebuilt. Full analysis, the three
+directions considered and the before/after are in
+`data/homepage-hero-redesign-audit.md`; this is the QA record.
+
+**Root cause of the old banner's empty space:** `.hcom__grid` used
+`align-items: stretch`, so the department menu — taller than the campaign —
+stretched the banner column and the banner inherited a height it had no content
+to fill. Changed to `align-items: start` with an explicit banner height.
+
+**What changed:** an angled navy campaign panel against a light merchandising
+stage, with a composed cluster of two to three real catalogue products crossing
+the seam; a numbered campaign navigator built into the banner's bottom edge; a
+control chip pair at the bottom-right; 470px tall instead of 575px.
+
+| Check | Result |
+|---|---|
+| Horizontal overflow at 1920 / 1440 / 1366 / 1024 / 768 / 430 / 390 / 375 | 0 at every width |
+| Broken images at every width | 0 of 137 |
+| Console errors across 16 pages | 0 |
+| Banner height | 470px desktop, 440px at 1024–1279, 470px stacked below 860px |
+| Slider: arrows, campaign tabs, autoplay, progress, pause on hover/focus/hidden, keyboard, swipe, reduced motion | all verified |
+| Homepage sections after the change | department menu, hero, navigator, promo tiles, departments strip, 11 product rails, 1,274 cards, 32 brand cards all render |
+| Old hero code | `.hslide` / `.hbanner` fully removed; one hero architecture |
+| Product data | unchanged — nothing under `data/` touched but this record and the new audit |
+
+**Three defects found and fixed during QA, each a real robustness issue:**
+
+1. The prev arrow, centred on the left edge, sat on top of the body copy.
+   Both controls moved to a pair at the bottom-right.
+2. Between 1024 and 1279 the body copy ran under the product cluster: the copy
+   column narrows faster than the headline does. The stage was pulled back to
+   54% and the copy given a right gutter.
+3. The entrance animation used `animation-fill-mode: backwards` with
+   `opacity: 0` in its first keyframe, so a stalled animation left the campaign
+   invisible. The entrance is now transform-only — content is visible by
+   default and the motion is an enhancement.
+
+Also reverted during QA: `loading="lazy"` on campaigns 02–05. The track is
+translated rather than scrolled, so those images were not reliably fetched
+before their slide arrived and the merchandising zone rendered empty. They load
+eagerly at `fetchpriority="low"` instead.

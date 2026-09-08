@@ -673,39 +673,53 @@ window.SEE_UI = (function () {
      as art direction rather than an empty panel. Everything shown is catalogue
      photography already in the repository - no borrowed artwork, no invented
      discount, no stock imagery. */
-  function renderHeroSlide(s, i, first) {
-    var art = (s.art || []).map(function (a, k) {
-      return '<img class="hslide__art hslide__art--' + (k + 1) + '" src="' +
-             esc("assets/images/departments/" + a + ".webp") + '" alt=""' +
-             (first ? ' fetchpriority="high"' : ' loading="lazy"') +
-             ' decoding="async" width="480" height="480">';
-    }).join("");
+  /* ----------------------------------------------------------------------
+     HERO CAMPAIGN SLIDE
 
+     One angled composition: a navy campaign panel carrying the copy, a light
+     merchandising stage carrying the products, and a single composed product
+     image that crosses the seam between them so the two halves read as one
+     banner rather than two boxes. The composition is a pre-built transparent
+     WebP of real catalogue products - see the hero build notes in
+     data/homepage-hero-redesign-audit.md - so the browser lays out one image
+     instead of stacking three and the products can be shown large.
+     ---------------------------------------------------------------------- */
+  function renderHeroSlide(s, i, first) {
     return '' +
-    '<article class="hslide" data-tone="' + esc(s.tone || "navy") + '" role="group" ' +
+    '<article class="hs" data-tone="' + esc(s.tone || "navy") + '" role="group" ' +
       'aria-roledescription="slide" aria-label="' + esc(s.eyebrow) + '">' +
-      '<div class="hslide__copy">' +
-        '<p class="hslide__eyebrow">' + esc(s.eyebrow) + "</p>" +
-        '<h2 class="hslide__title">' + esc(s.title) + "</h2>" +
-        '<p class="hslide__text">' + esc(s.text) + "</p>" +
-        '<div class="hslide__cta">' +
+      '<span class="hs__panel" aria-hidden="true"></span>' +
+      '<div class="hs__copy">' +
+        '<p class="hs__eyebrow">' + esc(s.eyebrow) + "</p>" +
+        '<h2 class="hs__title">' + esc(s.title) + "</h2>" +
+        '<p class="hs__text">' + esc(s.text) + "</p>" +
+        '<div class="hs__cta">' +
           '<a class="btn btn--accent btn--lg" href="' + esc(s.href) + '">' + esc(s.cta) + "</a>" +
-          (s.href2 ? '<a class="btn btn--ghost btn--lg" href="' + esc(s.href2) + '">' +
+          (s.href2 ? '<a class="btn btn--outline btn--lg" href="' + esc(s.href2) + '">' +
                      esc(s.cta2) + "</a>" : "") +
         "</div>" +
       "</div>" +
-      '<div class="hslide__stage" aria-hidden="true"><span class="hslide__pad"></span>' +
-        art +
+      '<div class="hs__stage" aria-hidden="true">' +
+        /* The track is translated, not scrolled, so a lazy image on an
+           off-screen slide is not reliably fetched before that slide arrives -
+           it showed an empty merchandising zone on slides two onwards. They
+           load eagerly at low priority instead, which keeps them out of the
+           way of the first slide's LCP without risking a blank campaign. */
+        '<img class="hs__art" src="' + esc("assets/images/hero/hero-" + s.art + ".webp") +
+          '" alt="" width="1200" height="860" decoding="async"' +
+          (first ? ' fetchpriority="high">' : ' fetchpriority="low">') +
       "</div>" +
     "</article>";
   }
 
-  /* Slider navigation: a labelled tab per slide with its own progress bar,
-     so the control says what it goes to instead of being an anonymous dot. */
+  /* The campaign navigator, attached to the bottom edge of the banner: a
+     numbered, labelled entry per campaign with its own autoplay progress line,
+     so the control names where it goes and shows how long is left. */
   function renderHeroNav(slides) {
     return slides.map(function (s, i) {
       return '<button class="hnav" type="button" data-slide="' + i + '" ' +
                'aria-label="' + esc(s.eyebrow) + '"' + (i === 0 ? ' aria-current="true"' : "") + ">" +
+               '<span class="hnav__num">' + ("0" + (i + 1)).slice(-2) + "</span>" +
                '<span class="hnav__label">' + esc(s.eyebrow) + "</span>" +
                '<span class="hnav__bar"><span class="hnav__fill"></span></span>' +
              "</button>";

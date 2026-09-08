@@ -637,9 +637,11 @@
   display: grid;
   grid-template-columns: 264px minmax(0, 1fr);
   gap: var(--sp-5);
-  align-items: stretch;
+  /* start, not stretch: a tall department menu must not stretch the banner
+     column and leave a band of empty space under the campaign. */
+  align-items: start;
 }
-.hcom__main { display: grid; grid-template-rows: 1fr auto; gap: var(--sp-4); min-width: 0; }
+.hcom__main { display: grid; grid-template-rows: auto auto; gap: var(--sp-4); min-width: 0; }
 
 /* ------------------------------------------------------------ department rail
    A commerce department menu: hairline separators rather than boxed rows, one
@@ -731,111 +733,189 @@
   }
 }
 
-/* --------------------------------------------------------------- hero banner
-   A wide commercial banner, deliberately compact so the departments strip is
-   reachable without scrolling on a laptop. */
-.hbanner {
-  position: relative; height: 100%;
-  background: var(--surface);
-  border: 1px solid var(--border);
+/* ---------------------------------------------------------------- hero banner
+   A campaign banner built from two zones that read as one: an angled navy
+   panel carrying the copy, and a light merchandising stage carrying the
+   products. The composed product image is allowed to cross the seam between
+   them, which is what stops the banner looking like two boxes side by side.
+
+   Height is deliberately held so the departments strip and the first product
+   rail are reachable on a 1366x768 laptop without a long scroll. */
+.hb {
+  --hb-nav: 64px;
+  --hb-dur: 7000ms;
+  position: relative; z-index: 1;
+  display: grid; grid-template-rows: minmax(0, 1fr) auto;
+  height: 470px;
+  background: var(--brand-dark);
   border-radius: var(--r-md);
   overflow: hidden;
+  box-shadow: 0 18px 44px rgba(20, 16, 62, .13);
 }
-.hbanner__viewport { overflow: hidden; height: 100%; }
-.hbanner__track {
+.hb__viewport { overflow: hidden; min-height: 0; }
+.hb__track {
   display: flex; height: 100%;
-  transition: transform .55s cubic-bezier(.33, 1, .68, 1);
+  transition: transform .58s cubic-bezier(.33, 1, .68, 1);
   will-change: transform;
 }
-.hslide {
-  flex: 0 0 100%; min-width: 0;
-  display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
-  align-items: center; gap: var(--sp-5);
-  padding: var(--sp-7) var(--sp-7) 74px var(--sp-9);
-  min-height: 386px;
-}
-.hslide[data-tone="navy"]  { background:
-  radial-gradient(120% 130% at 92% 8%, #fff 0%, var(--navy-50) 62%, #EDEFF8 100%); }
-.hslide[data-tone="red"]   { background:
-  radial-gradient(120% 130% at 92% 8%, #fff 0%, var(--red-50) 62%, #FCE9E9 100%); }
-.hslide[data-tone="slate"] { background:
-  radial-gradient(120% 130% at 92% 8%, #fff 0%, var(--surface-soft) 58%, var(--surface-alt) 100%); }
 
-.hslide__eyebrow {
-  margin: 0 0 10px; font-size: 11.5px; font-weight: 700;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--brand-accent);
+.hs {
+  flex: 0 0 100%; min-width: 0; position: relative;
+  display: grid; grid-template-columns: minmax(0, .46fr) minmax(0, .54fr);
+  align-items: center;
+  background: radial-gradient(76% 96% at 74% 28%, #fff 0%, #F2F4FA 56%, #E5E8F2 100%);
 }
-.hslide__title {
-  margin: 0 0 var(--sp-3);
-  font-size: clamp(26px, 2.5vw, 42px); line-height: 1.1; letter-spacing: -.015em;
-  color: var(--brand-primary);
-}
-.hslide__text {
-  margin: 0 0 var(--sp-5); max-width: 44ch;
-  font-size: 15px; line-height: 1.62; color: var(--text-secondary);
-}
-.hslide__cta { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
 
-/* The composition: a soft stage disc with two or three products layered on it
-   at different depths. */
-.hslide__stage {
-  position: relative; height: 100%; min-height: 250px;
-  display: grid; place-items: center;
+/* The campaign panel. Its right edge leans, so the split reads as a
+   composition rather than a 50/50 division. */
+.hs__panel {
+  position: absolute; inset: 0 auto 0 0; width: 61%;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 104px) 100%, 0 100%);
+  background:
+    radial-gradient(58% 76% at 4% 108%, rgba(253, 42, 42, .32) 0%, rgba(253, 42, 42, 0) 62%),
+    linear-gradient(134deg, #2C2488 0%, #221B66 48%, #171149 100%);
 }
-.hslide__pad {
-  position: absolute; width: 80%; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%, #fff 0%, rgba(255,255,255,.72) 58%, rgba(255,255,255,0) 74%);
-  box-shadow: 0 30px 70px rgba(22, 22, 60, .10);
+/* A restrained blueprint grid, faded out before it reaches the seam. */
+.hs__panel::after {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg,  rgba(255,255,255,.055) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.055) 0 1px, transparent 1px 38px);
+  -webkit-mask-image: linear-gradient(102deg, #000 0%, #000 46%, transparent 84%);
+          mask-image: linear-gradient(102deg, #000 0%, #000 46%, transparent 84%);
 }
-.hslide__art {
-  position: absolute; object-fit: contain;
-  /* multiply drops the white master into the tinted stage. No filter here:
-     a filter would create a stacking context and isolate the blend, which is
-     what printed a pale rectangle around each product. */
-  mix-blend-mode: multiply;
+.hs[data-tone="deep"] .hs__panel {
+  background:
+    radial-gradient(58% 76% at 4% 108%, rgba(253, 42, 42, .28) 0%, rgba(253, 42, 42, 0) 62%),
+    linear-gradient(134deg, #2A1E7E 0%, #1D1659 48%, #130E42 100%);
 }
-.hslide__art--1 { width: 50%; z-index: 3; transform: translate(-6%, 2%); }
-.hslide__art--2 { width: 34%; z-index: 2; transform: translate(46%, -27%); }
-.hslide__art--3 { width: 28%; z-index: 1; transform: translate(-46%, 30%); }
+.hs[data-tone="ink"] .hs__panel {
+  background:
+    radial-gradient(58% 76% at 4% 108%, rgba(253, 42, 42, .26) 0%, rgba(253, 42, 42, 0) 60%),
+    linear-gradient(134deg, #211A63 0%, #16114A 50%, #0E0B33 100%);
+}
 
-.hbanner__arrow {
-  position: absolute; top: 46%; transform: translateY(-50%); z-index: 6;
-  width: 40px; height: 40px; display: grid; place-items: center;
-  border: 1px solid var(--border); border-radius: 50%;
-  background: rgba(255, 255, 255, .94);
-  box-shadow: var(--sh-1); cursor: pointer;
-  transition: background var(--t-fast), border-color var(--t-fast), opacity var(--t-fast);
+.hs__copy {
+  position: relative; z-index: 2;
+  padding: var(--sp-6) var(--sp-4) var(--sp-6) var(--sp-8);
 }
-.hbanner__arrow::before {
+.hs__eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 12px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: #FF8585;
+}
+.hs__eyebrow::before {
+  content: ""; width: 22px; height: 2px; flex: none;
+  background: var(--brand-accent-bright); border-radius: 2px;
+}
+.hs__title {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3.05vw, 46px); line-height: 1.07; letter-spacing: -.02em;
+  color: #fff;
+}
+.hs__text {
+  margin: 0 0 var(--sp-5); max-width: 40ch;
+  font-size: 14.5px; line-height: 1.6; color: rgba(255, 255, 255, .72);
+}
+.hs__cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.hs__cta .btn { height: 46px; padding: 0 18px; font-size: 14px; }
+/* The secondary action is an outline on navy, never a second filled button. */
+.hs__cta .btn--outline {
+  background: transparent; color: #fff; border-color: rgba(255, 255, 255, .42);
+}
+.hs__cta .btn--outline:hover { background: rgba(255, 255, 255, .12); border-color: #fff; }
+
+/* The merchandising stage overlaps the panel, so the product cluster sits
+   across the seam instead of being fenced into the right half. */
+.hs__stage {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 58%;
+  z-index: 3; display: grid; place-items: center;
+  padding: 6px var(--sp-5) 6px 0;
+  pointer-events: none;
+}
+.hs__art { max-width: 100%; max-height: 100%; width: auto; height: 100%; object-fit: contain; }
+
+/* Entrance motion, replayed each time a slide becomes the active one.
+
+   Deliberately no animation-fill-mode: backwards. With it, the keyframe's
+   opacity:0 is held before the animation starts, so anything that stops the
+   animation running - a stalled frame, a paused document - leaves the campaign
+   invisible. Without it the slide is simply visible and the motion is an
+   enhancement on top. */
+.hs.is-live .hs__copy > * { animation: hs-rise .5s cubic-bezier(.22, 1, .36, 1); }
+.hs.is-live .hs__copy > *:nth-child(2) { animation-delay: .05s; }
+.hs.is-live .hs__copy > *:nth-child(3) { animation-delay: .1s; }
+.hs.is-live .hs__copy > *:nth-child(4) { animation-delay: .15s; }
+.hs.is-live .hs__art { animation: hs-drift .6s cubic-bezier(.22, 1, .36, 1); }
+/* Transform only, never opacity. An animation that stalls at its first
+   keyframe would otherwise leave the headline or the product invisible, and a
+   campaign banner must never depend on motion running to be readable. */
+@keyframes hs-rise  { from { transform: translateY(14px); } }
+@keyframes hs-drift { from { transform: translateX(26px); } }
+
+/* Controls: a flat chip pair at the bottom-right of the campaign, over the
+   light stage. Centred on the edges they sat on top of the copy. */
+.hb__arrow {
+  position: absolute; z-index: 7;
+  bottom: calc(var(--hb-nav) + 16px);
+  width: 42px; height: 42px; display: grid; place-items: center;
+  border: 1px solid rgba(24, 20, 70, .12); border-radius: 10px;
+  background: rgba(255, 255, 255, .93);
+  box-shadow: 0 4px 14px rgba(18, 14, 55, .18);
+  cursor: pointer;
+  transition: background var(--t-fast), box-shadow var(--t-fast);
+}
+.hb__arrow::before {
   content: ""; width: 9px; height: 9px;
   border-top: 2px solid var(--brand-primary); border-right: 2px solid var(--brand-primary);
 }
-.hbanner__arrow--prev { left: 14px; }
-.hbanner__arrow--prev::before { transform: rotate(-135deg); margin-left: 3px; }
-.hbanner__arrow--next { right: 14px; }
-.hbanner__arrow--next::before { transform: rotate(45deg); margin-right: 3px; }
-.hbanner__arrow:hover { background: #fff; border-color: var(--border-strong); }
+.hb__arrow--prev { right: 68px; }
+.hb__arrow--prev::before { transform: rotate(-135deg); margin-left: 3px; }
+.hb__arrow--next { right: 18px; }
+.hb__arrow--next::before { transform: rotate(45deg); margin-right: 3px; }
+.hb__arrow:hover { background: #fff; box-shadow: 0 6px 18px rgba(18, 14, 55, .24); }
+.hb__arrow:focus-visible { outline: 2px solid var(--brand-accent); outline-offset: 2px; }
 
-/* Labelled slide navigation with its own progress bar. */
-.hbanner__nav {
-  position: absolute; left: var(--sp-9); right: var(--sp-7); bottom: var(--sp-5); z-index: 6;
-  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: var(--sp-3);
-  max-width: 620px;
+/* The campaign navigator, attached to the bottom edge of the banner. */
+.hb__nav {
+  position: relative; z-index: 6;
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  height: var(--hb-nav);
+  background: #14103F;
+  border-top: 1px solid rgba(255, 255, 255, .09);
 }
 .hnav {
-  display: grid; gap: 7px; padding: 0; cursor: pointer;
-  background: none; border: 0; text-align: left; font-family: inherit;
+  position: relative;
+  display: grid; gap: 3px; align-content: center;
+  padding: 0 var(--sp-4);
+  background: none; border: 0; text-align: left; cursor: pointer;
+  font-family: inherit; color: rgba(255, 255, 255, .60);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.hnav + .hnav { box-shadow: inset 1px 0 0 rgba(255, 255, 255, .08); }
+.hnav:hover { background: rgba(255, 255, 255, .06); color: #fff; }
+.hnav:focus-visible { outline: 2px solid var(--brand-accent); outline-offset: -3px; }
+.hnav__num {
+  font-family: var(--font-num); font-size: 10.5px; font-weight: 700;
+  letter-spacing: .1em; color: rgba(255, 255, 255, .38);
 }
 .hnav__label {
-  font-size: 11.5px; font-weight: 600; color: var(--text-muted);
+  font-size: 13px; font-weight: 600;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  transition: color var(--t-fast);
 }
-.hnav__bar { display: block; height: 3px; border-radius: 2px; background: var(--border-strong); overflow: hidden; }
-.hnav__fill { display: block; height: 100%; width: 0; background: var(--brand-accent); border-radius: 2px; }
-.hnav:hover .hnav__label { color: var(--brand-primary); }
-.hnav.is-active .hnav__label { color: var(--brand-primary); font-weight: 700; }
-.hnav.is-active .hnav__fill { width: 100%; transition: width .5s ease; }
+.hnav__bar {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+  background: rgba(255, 255, 255, .10); overflow: hidden;
+}
+.hnav__fill { display: block; height: 100%; width: 0; background: var(--brand-accent-bright); }
+.hnav.is-active { color: #fff; background: rgba(255, 255, 255, .07); }
+.hnav.is-active .hnav__num { color: #FF8585; }
+/* Autoplay progress runs as an animation, so pausing is a one-line state
+   change and reduced motion can drop it entirely. */
+.hnav.is-active .hnav__fill { animation: hb-progress var(--hb-dur) linear forwards; }
+.hb.is-paused .hnav.is-active .hnav__fill { animation-play-state: paused; }
+@keyframes hb-progress { from { width: 0; } to { width: 100%; } }
 
 /* ---------------------------------------------------------------- promo tiles */
 .hpromos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
@@ -1042,7 +1122,7 @@
 .store-band__facts span { font-size: 13px; color: var(--text-muted); }
 
 /* ============================================== focus visibility for controls */
-.rail__arrow:focus-visible, .hbanner__arrow:focus-visible, .hnav:focus-visible,
+.rail__arrow:focus-visible, .hb__arrow:focus-visible, .hnav:focus-visible,
 .dept__link:focus-visible, .mcard__btn:focus-visible, .rail__all:focus-visible,
 .rail__track:focus-visible, .dept-track:focus-visible, .ptile:focus-visible {
   outline: 2px solid var(--brand-accent); outline-offset: 3px; border-radius: var(--r-xs);
@@ -1052,8 +1132,14 @@
 /* ================================================================ responsive */
 @media (max-width: 1279px) {
   .hcom__grid { grid-template-columns: 236px minmax(0, 1fr); }
-  .hslide { padding: var(--sp-6) var(--sp-6) 72px var(--sp-8); min-height: 356px; }
-  .hbanner__nav { left: var(--sp-6); right: var(--sp-6); }
+  .hb { height: 440px; }
+  /* The copy column narrows faster than the headline does, so the stage is
+     pulled back and the copy given a right gutter: without both, the body text
+     ran under the product cluster between 1024 and 1279. */
+  .hs__copy { padding-left: var(--sp-6); padding-right: var(--sp-5); }
+  .hs__stage { width: 54%; }
+  .hs__cta .btn { padding: 0 15px; font-size: 13.5px; }
+  .hs__panel { width: 62%; clip-path: polygon(0 0, 100% 0, calc(100% - 88px) 100%, 0 100%); }
   .dept-track { grid-auto-columns: calc((100% - var(--sp-4) * 5) / 6); }
   .rail__track { grid-auto-columns: calc((100% - var(--sp-4) * 2) / 3); }
 }
@@ -1069,38 +1155,63 @@
   .ptile__title { font-size: 13.5px; min-height: 2.6em; }
   .hcom__grid { grid-template-columns: minmax(0, 1fr); }
   .hcom__main { grid-template-rows: auto auto; }
-  .hbanner { height: auto; }
-  .hslide {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-    padding: var(--sp-6) 64px 70px; min-height: 320px;
-  }
-  .hslide__stage { min-height: 210px; }
+  .hb { height: 420px; }
+  .hs { grid-template-columns: minmax(0, .5fr) minmax(0, .5fr); }
+  .hs__panel { width: 64%; clip-path: polygon(0 0, 100% 0, calc(100% - 72px) 100%, 0 100%); }
+  .hs__copy { padding: var(--sp-5) var(--sp-4) var(--sp-5) 60px; }
+  .hs__stage { width: 50%; }
+  .hnav__label { font-size: 12px; }
   .rail__track { grid-auto-columns: calc((100% - var(--sp-4)) / 2.2); }
   .dept-track { grid-auto-columns: calc((100% - var(--sp-4) * 4) / 5); }
   .store-band { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
 }
 
+/* The split hero needs ~900px; below that it becomes a stacked composition. */
+@media (max-width: 860px) {
+  .hb { --hb-nav: 46px; height: 470px; }
+  .hs {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: start;
+  }
+  /* One field top to bottom: the angle becomes a horizontal sweep so the copy
+     sits on navy and the products stand on the light stage below it. */
+  .hs__panel {
+    inset: 0 0 auto 0; width: 100%; height: 62%;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 34px), 0 100%);
+  }
+  .hs__panel::after {
+    -webkit-mask-image: linear-gradient(178deg, #000 0%, #000 52%, transparent 92%);
+            mask-image: linear-gradient(178deg, #000 0%, #000 52%, transparent 92%);
+  }
+  .hs__copy { padding: var(--sp-5) var(--sp-5) var(--sp-4); }
+  .hs__title { font-size: 28px; }
+  .hs__text {
+    margin-bottom: var(--sp-4); font-size: 13.5px; max-width: none;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .hs__cta .btn { flex: 1 1 auto; justify-content: center; }
+  /* min-height:0 gives the stage a definite height inside the 1fr row, which
+     is what lets the picture below resolve its own height against it. Without
+     it the composition grew to its natural size and covered the headline. */
+  .hs__stage {
+    position: relative; right: auto; top: auto; bottom: auto;
+    width: 100%; height: 100%; min-height: 0;
+    padding: 0 var(--sp-4) var(--sp-3);
+    align-self: stretch;
+  }
+  .hs__art { height: 100%; width: auto; max-width: 92%; object-fit: contain; }
+  .hb__arrow { display: none; }
+  /* The five labelled tabs do not fit: the navigator becomes the active
+     campaign name with a progress line and dots for the rest. */
+  .hnav { padding: 0 6px; }
+  .hnav__num, .hnav__label { display: none; }
+  .hnav__bar { top: 50%; bottom: auto; height: 4px; border-radius: 2px; margin-top: -2px; }
+  .hnav.is-active { background: none; }
+}
+
 @media (max-width: 760px) {
   .hcom { padding-block: var(--sp-4) var(--sp-4); }
-  .hslide {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--sp-4); padding: var(--sp-5) var(--sp-4) 66px;
-    min-height: 0;
-  }
-  .hslide__stage { order: -1; min-height: 176px; }
-  .hslide__pad { width: 62%; }
-  .hslide__art--1 { width: 44%; }
-  .hslide__art--2 { width: 30%; transform: translate(60%, -26%); }
-  .hslide__art--3 { width: 25%; transform: translate(-62%, 34%); }
-  .hslide__text { margin-bottom: var(--sp-4); font-size: 14px; }
-  .hslide__cta .btn { flex: 1 1 auto; justify-content: center; }
-  .hbanner__arrow { display: none; }
-  .hbanner__nav {
-    left: var(--sp-4); right: var(--sp-4); bottom: var(--sp-4);
-    gap: 6px; max-width: none;
-  }
-  .hnav__label { display: none; }
-  .hnav__bar { height: 4px; }
   .hpromos { grid-template-columns: minmax(0, 1fr); gap: var(--sp-3); }
   .rail { margin-bottom: var(--sp-8); }
   .rail__head { flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-4); }
@@ -1114,16 +1225,26 @@
   .mcard__name { font-size: 14.5px; }
 }
 
+/* Phones: one action only. Two stacked buttons ate the product zone, and the
+   secondary destination is still reachable from the header and the navigation. */
+@media (max-width: 480px) {
+  .hs__cta .btn--outline { display: none; }
+  .hs__copy { padding: var(--sp-4) var(--sp-4) var(--sp-3); }
+  .hs__art { max-width: 88%; }
+}
+
 @media (max-width: 400px) {
   .rail__track { grid-auto-columns: calc((100% - var(--sp-3)) / 1.45); }
   .dept-track { grid-auto-columns: calc((100% - var(--sp-3) * 1.8) / 2.8); }
-  .hslide__title { font-size: 23px; }
+  .hs__title { font-size: 25px; }
+  .hs__text { font-size: 13px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .rail__track, .dept-track { scroll-behavior: auto; }
-  .hbanner__track { transition: none; }
-  .hnav.is-active .hnav__fill { transition: none; }
+  .hb__track { transition: none; }
+  .hs.is-live .hs__copy > *, .hs.is-live .hs__art { animation: none; }
+  .hnav.is-active .hnav__fill { animation: none; width: 100%; }
   .mcard, .mcard__media img { transition: none; }
   .mcard:hover { transform: none; }
   .mcard:hover .mcard__media img { transform: none; }
