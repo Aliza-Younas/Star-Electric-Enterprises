@@ -59,6 +59,32 @@ function star_electric_child_assets(): void {
 			true
 		);
 	}
+
+	// Only the catalogue archives carry the filter panel.
+	$is_archive = function_exists( 'is_shop' )
+		&& ( is_shop() || is_product_taxonomy() || ( is_search() && 'product' === get_query_var( 'post_type' ) ) );
+
+	$shop = $dir . '/assets/js/shop.js';
+	if ( $is_archive && file_exists( $shop ) ) {
+		wp_enqueue_script(
+			'star-electric-shop',
+			$uri . '/assets/js/shop.js',
+			array(),
+			(string) filemtime( $shop ),
+			true
+		);
+	}
+
+	$single = $dir . '/assets/js/product.js';
+	if ( function_exists( 'is_product' ) && is_product() && file_exists( $single ) ) {
+		wp_enqueue_script(
+			'star-electric-product',
+			$uri . '/assets/js/product.js',
+			array(),
+			(string) filemtime( $single ),
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'star_electric_child_assets', 20 );
 

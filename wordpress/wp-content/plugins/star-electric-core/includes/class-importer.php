@@ -749,6 +749,18 @@ class Star_Electric_Importer {
 		}
 
 		/*
+		 * The catalogue's own notes about a record - most often that its source
+		 * publishes no price. The approved product page shows these under
+		 * Additional Information, and hides the tab when there are none, so
+		 * they are part of the content rather than a debugging artefact.
+		 */
+		if ( ! empty( $rec['import_notes'] ) ) {
+			update_post_meta( $id, '_star_electric_notes', wp_json_encode( (array) $rec['import_notes'] ) );
+		} else {
+			delete_post_meta( $id, '_star_electric_notes' );
+		}
+
+		/*
 		 * The approved shop offers a "Biggest Discount" sort. Ordering by a
 		 * discount computed at query time is not possible, so it is stored -
 		 * and stored on every product, including 0, so the sort does not

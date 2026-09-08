@@ -44,6 +44,7 @@ require_once STAR_ELECTRIC_PATH . 'includes/class-quote-only.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-provenance.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-search.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-shortcodes.php';
+require_once STAR_ELECTRIC_PATH . 'includes/class-filters.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-importer.php';
 
 if ( is_admin() ) {
@@ -66,6 +67,7 @@ function star_electric_boot(): void {
 
 	if ( class_exists( 'WooCommerce' ) ) {
 		Star_Electric_Quote_Only::init();
+		Star_Electric_Filters::init();
 	}
 
 	// The dashboard import runner. WP-CLI is the comfortable route, but it needs
