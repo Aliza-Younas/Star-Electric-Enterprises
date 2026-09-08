@@ -1,0 +1,19 @@
+# Never version WordPress core, secrets or server state.
+wp-config.php
+*.sql
+*.sql.gz
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/plugins/woocommerce/
+wp-content/plugins/elementor*/
+wp-content/themes/hello-elementor/
+.htaccess
+
+# Generated import payload. Regenerate with:
+#   python wordpress/tools/export-catalogue.py
+# It is derived entirely from data/catalogue-index.json, data/families.json and
+# data/products/*.json, all of which are versioned, so committing 5.8 MB of
+# regenerable output would only bloat the repository.
+data/*.json
+data/*.ndjson

@@ -1,0 +1,21 @@
+/*
+Theme Name:   Star Electric Child
+Theme URI:    https://github.com/Aliza-Younas/Star-Electric-Enterprises
+Description:  Child theme of Hello Elementor carrying the approved Star Electric Enterprises design system. The tokens, components and breakpoints are the same files the approved static storefront ships, so the WordPress build inherits the design rather than reinterpreting it.
+Author:       Star Electric Enterprises
+Template:     hello-elementor
+Version:      1.0.0
+Requires PHP: 7.4
+License:      GPL-2.0-or-later
+Text Domain:  star-electric-child
+*/
+
+/*
+ * Deliberately empty.
+ *
+ * The design system lives in assets/css/ - styles.css (tokens and components),
+ * pages.css (page-level layouts) and responsive.css (breakpoints) - which are
+ * the exact files the approved storefront uses. They are enqueued in order by
+ * functions.php. Editing them here rather than there would fork the design from
+ * its source of truth.
+ */
