@@ -223,7 +223,15 @@ class Star_Electric_Admin_Import {
 				</p>
 				<input type="url" name="star_electric_source_base" class="regular-text code"
 					value="<?php echo esc_attr( Star_Electric_Importer::source_base() ); ?>" />
-				<button type="submit" class="button"><?php esc_html_e( 'Save', 'star-electric' ); ?></button>
+
+				<h2><?php esc_html_e( 'Enquiry recipient', 'star-electric' ); ?></h2>
+				<p class="description">
+					<?php esc_html_e( 'Quote requests, contact messages and complaints are emailed here. Every submission is also stored under Enquiries, so nothing is lost if mail fails.', 'star-electric' ); ?>
+				</p>
+				<input type="email" name="star_electric_form_email" class="regular-text code"
+					value="<?php echo esc_attr( Star_Electric_Forms::recipient() ); ?>" />
+
+				<p><button type="submit" class="button button-primary"><?php esc_html_e( 'Save settings', 'star-electric' ); ?></button></p>
 			</form>
 
 			<h2><?php esc_html_e( 'Steps', 'star-electric' ); ?></h2>
@@ -310,17 +318,45 @@ class Star_Electric_Admin_Import {
 	 * Persist the image source setting.
 	 */
 	private static function save_settings(): void {
-		if ( ! isset( $_POST['star_electric_source_base'] ) ) {
+		if ( ! isset( $_POST['star_electric_source_base'] ) && ! isset( $_POST['star_electric_form_email'] ) ) {
 			return;
 		}
 		check_admin_referer( self::NONCE );
 
-		$base = esc_url_raw( wp_unslash( $_POST['star_electric_source_base'] ) );
-		if ( '' !== $base ) {
-			update_option( Star_Electric_Importer::SOURCE_OPTION, untrailingslashit( $base ), false );
-			add_settings_error( self::SLUG, 'saved', __( 'Image source saved.', 'star-electric' ), 'updated' );
-			settings_errors( self::SLUG );
+		$saved = array();
+
+		if ( isset( $_POST['star_electric_source_base'] ) ) {
+			$base = esc_url_raw( wp_unslash( $_POST['star_electric_source_base'] ) );
+			if ( '' !== $base ) {
+				update_option( Star_Electric_Importer::SOURCE_OPTION, untrailingslashit( $base ), false );
+				$saved[] = __( 'Image source', 'star-electric' );
+			}
 		}
+
+		if ( isset( $_POST['star_electric_form_email'] ) ) {
+			$email = sanitize_email( wp_unslash( $_POST['star_electric_form_email'] ) );
+			if ( '' !== $email && is_email( $email ) ) {
+				update_option( Star_Electric_Forms::EMAIL_OPTION, $email, false );
+				$saved[] = __( 'Enquiry recipient', 'star-electric' );
+			} elseif ( '' !== $email ) {
+				add_settings_error( self::SLUG, 'email', __( 'That email address is not valid, so it was not saved.', 'star-electric' ), 'error' );
+			}
+		}
+
+		if ( $saved ) {
+			add_settings_error(
+				self::SLUG,
+				'saved',
+				sprintf(
+					/* translators: %s: comma-separated list of saved settings */
+					__( 'Saved: %s.', 'star-electric' ),
+					implode( ', ', $saved )
+				),
+				'updated'
+			);
+		}
+
+		settings_errors( self::SLUG );
 	}
 
 	/**
