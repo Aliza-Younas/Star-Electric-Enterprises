@@ -520,14 +520,16 @@
     on(top, "click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
   }
 
-  /* Forms: this prototype never submits anywhere */
+  /* Forms on this storefront are not wired to a backend. A form carrying
+     data-inactive-form never submits; it tells the visitor plainly, in its own
+     words, and points them at a route that works. */
   function initForms() {
     document.addEventListener("submit", function (e) {
       var form = e.target;
-      if (form.hasAttribute("data-demo-form")) {
+      if (form.hasAttribute("data-inactive-form")) {
         e.preventDefault();
-        var msg = form.getAttribute("data-demo-form") ||
-                  "This is a design prototype — the form is not connected yet.";
+        var msg = form.getAttribute("data-inactive-form") ||
+                  "This form is not connected yet. Please contact the store directly.";
         toast(msg, "info");
       }
     });
@@ -1990,53 +1992,13 @@
     setText("#coTotal", UI.money(sub));
   };
 
-  /* ---------- MY ACCOUNT ---------- */
-  PAGES.account = function () {
-    /* Logged-out / logged-in preview toggle — design states only,
-       there is no authentication in this prototype. */
-    var loggedOut = $("#authView");
-    var dash = $("#dashView");
-
-    function show(which) {
-      if (loggedOut) { loggedOut.hidden = which !== "auth"; }
-      if (dash) { dash.hidden = which !== "dash"; }
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    on($("#previewDash"), "click", function (e) { e.preventDefault(); show("dash"); });
-    on($("#previewAuth"), "click", function (e) { e.preventDefault(); show("auth"); });
-    $$("[data-logout]").forEach(function (b) {
-      b.addEventListener("click", function (e) {
-        e.preventDefault();
-        show("auth");
-        toast("Signed out (design preview only)", "logout");
-      });
-    });
-
-    /* Dashboard sub-navigation */
-    $$("[data-acct-tab]").forEach(function (b) {
-      b.addEventListener("click", function (e) {
-        e.preventDefault();
-        var key = b.getAttribute("data-acct-tab");
-        $$("[data-acct-tab]").forEach(function (o) {
-          o.setAttribute("aria-current", o === b ? "true" : "false");
-        });
-        $$("[data-acct-panel]").forEach(function (pnl) {
-          pnl.hidden = pnl.getAttribute("data-acct-panel") !== key;
-        });
-      });
-    });
-
-    /* Account wishlist mirrors the wishlist page */
-    var aw = $("#acctWishlist");
-    if (aw) {
-      var list = SEE_STORE.wishlist();
-      aw.innerHTML = list.length
-        ? UI.renderProductGrid(list.slice(0, 4))
-        : "";
-      var e2 = $("#acctWishlistEmpty");
-      if (e2) { e2.hidden = list.length > 0; }
-    }
-  };
+  /* ---------- CUSTOMER ACCOUNT ----------
+     There is no authentication on this storefront, so the page has no state to
+     manage: it is a list of links to services that genuinely work. The signed-in
+     preview, its state toggle, the dashboard sub-navigation and the account
+     wishlist mirror were removed with the simulated dashboard, so this
+     controller is no longer needed. Sign-in, orders, addresses and account
+     details arrive with WooCommerce. */
 
   /* ---------- TRACK ORDER ---------- */
   PAGES.track = function () {
@@ -2126,7 +2088,7 @@
       product: PAGES.product, search: PAGES.search, deals: PAGES.deals,
       brands: PAGES.brands, wishlist: PAGES.wishlist, cart: PAGES.cart,
       quote: PAGES.quote,
-      checkout: PAGES.checkout, account: PAGES.account, track: PAGES.track,
+      checkout: PAGES.checkout, track: PAGES.track,
       faq: PAGES.faq
     };
     if (map[page]) { map[page](); }

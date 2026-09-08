@@ -248,7 +248,9 @@ window.SEE_UI = (function () {
         '<div class="header__actions">' +
           '<a class="action" href="my-account.html">' +
             '<span class="action__ico">' + icon("user") + "</span>" +
-            '<span class="action__txt"><small>Account</small><strong>Sign In</strong></span>' +
+            /* Not "Sign In": there is no sign-in to offer yet, and the header
+               should not invite one. Same markup, same design. */
+            '<span class="action__txt"><small>Customer</small><strong>Account</strong></span>' +
           "</a>" +
           '<a class="action" href="wishlist.html">' +
             '<span class="action__ico">' + icon("heart") +

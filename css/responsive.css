@@ -66,7 +66,6 @@
   .search { max-width: none; }
   .mega { width: min(760px, calc(100vw - 40px)); }
   .mega__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 
@@ -103,12 +102,11 @@
   /* Commerce templates */
   .cart-layout,
   .checkout-layout,
-  .account-layout,
   .doc-layout,
   .form-layout { grid-template-columns: minmax(0, 1fr); }
+  .acct-grid { grid-template-columns: minmax(0, 1fr); }
   .summary, .filters, .doc-toc { position: static; }
   .doc-toc { display: none; }
-  .auth-layout { grid-template-columns: minmax(0, 1fr); }
 
   .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); }
   .value-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -282,7 +280,6 @@
   .summary__total strong { font-size: 21px; }
   .coupon { flex-direction: column; }
   .coupon .input { max-width: none; }
-  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wish-row { grid-template-columns: 64px minmax(0, 1fr); }
   .wish-row .wish-row__actions { grid-column: 1 / -1; }
 

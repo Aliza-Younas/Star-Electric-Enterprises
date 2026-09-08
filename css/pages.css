@@ -426,54 +426,43 @@
 
 
 /* ==========================================================================
-   09  MY ACCOUNT
+   09  CUSTOMER ACCOUNT
+   --------------------------------------------------------------------------
+   The account navigation, avatar, sign-in split and dashboard statistic tiles
+   were removed with the simulated signed-in state. What is left is the set of
+   services this storefront can actually perform, as one list of action cards.
    ========================================================================== */
-.account-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: var(--sp-6); align-items: start; }
-.account-nav {
+.acct-layout { display: grid; gap: var(--sp-5); max-width: 980px; }
+
+.acct-notice { padding: var(--sp-5); }
+
+/* Two across on desktop so the page reads as a considered set of services
+   rather than one narrow column against empty space. */
+.acct-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); }
+.acct-card {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  overflow: hidden;
+  transition: border-color var(--t), box-shadow var(--t), transform var(--t);
 }
-.account-nav__user {
-  display: flex; align-items: center; gap: var(--sp-3);
-  padding: var(--sp-4);
-  border-bottom: 1px solid var(--border);
-  background: var(--surface-soft);
-}
-.avatar {
+.acct-card:hover { border-color: var(--border-strong); box-shadow: var(--sh-2); }
+.acct-card__ico {
   display: grid; place-items: center;
-  width: 44px; height: 44px; flex: none;
-  border-radius: 50%;
-  background: var(--brand-primary); color: #fff;
-  font-size: 15px; font-weight: 700;
-}
-.account-nav__user strong { display: block; font-size: 14px; color: var(--text-primary); }
-.account-nav__user small { display: block; font-size: 12.5px; color: var(--text-muted); }
-.account-nav__list { padding: var(--sp-2); display: grid; gap: 2px; }
-.account-nav__list button, .account-nav__list a {
-  display: flex; align-items: center; gap: var(--sp-3);
-  width: 100%; padding: 10px var(--sp-3);
-  border-radius: var(--r);
-  font-size: 14px; font-weight: 600; color: var(--text-secondary);
-  text-align: left;
-  transition: background var(--t-fast), color var(--t-fast);
-}
-.account-nav__list button:hover, .account-nav__list a:hover { background: var(--surface-soft); color: var(--text-primary); }
-.account-nav__list [aria-current="true"] { background: var(--navy-50); color: var(--brand-primary); }
-.account-nav__list .ico { color: currentColor; }
-
-.auth-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); align-items: start; }
-
-.stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-3); }
-.stat {
-  padding: var(--sp-4);
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
+  width: 46px; height: 46px;
   border-radius: var(--r-md);
+  background: var(--navy-50);
+  color: var(--brand-primary);
 }
-.stat strong { display: block; font-size: 22px; font-weight: 800; color: var(--brand-primary); font-family: var(--font-num); }
-.stat small { display: block; font-size: 12.5px; color: var(--text-muted); }
+.acct-card__ico .ico { width: 22px; height: 22px; }
+.acct-card__title { display: block; font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.acct-card__text { display: block; margin-top: 3px; font-size: 13.5px; color: var(--text-muted); }
+.acct-card__go { width: 20px; height: 20px; color: var(--text-faint); transition: color var(--t), transform var(--t); }
+.acct-card:hover .acct-card__go { color: var(--brand-accent); transform: translateX(3px); }
 
 
 /* ==========================================================================

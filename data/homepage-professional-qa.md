@@ -626,3 +626,102 @@ product shows Rs. 3,500 / Rs. 6,500 / Save 46% and "You save Rs. 3,000".
 dashboard layout with no real data. It no longer contains placeholders or dead
 controls, but it is a design preview on a public page. Removing it is a page-level
 decision rather than a defect fix, so it was left for a separate call.
+
+---
+
+## Addendum — 2026-09-08: simulated My Account authenticated state removed
+
+Final production-readiness item. **Removed the simulated My Account
+authenticated state from the public storefront.**
+
+### What was removed and why
+
+`my-account.html` shipped a "View dashboard state" button that switched the page
+into a fabricated signed-in customer dashboard. There is no authentication and
+no backend, so every part of that view was invented, and any visitor could
+activate it.
+
+| Removed | Why |
+|---|---|
+| "View signed-out state" / "View dashboard state" toggle | Let a visitor simulate being logged in |
+| `#dashView` — the whole simulated dashboard | Presented an account the visitor does not have |
+| Account nav with avatar and "Your account" identity block | Fabricated customer identity |
+| Dashboard statistics (Total orders, Processing, Completed, Saved items) | Fabricated account statistics |
+| Orders panel | Fabricated order history |
+| Addresses panel (billing / delivery) | Fabricated saved addresses |
+| Account Details form, including a change-password form | Fake account management; submitting did nothing |
+| Sign In form (username, password, "Keep me signed in") | Fake authentication — the button only raised a toast |
+| Create an Account form | Fake registration, including a terms checkbox |
+| `[data-logout]` handler and its "Signed out (design preview only)" toast | Simulated a session ending |
+| Dashboard sub-navigation (`[data-acct-tab]` / `[data-acct-panel]`) | Only existed to drive the fake dashboard |
+| Account wishlist mirror (`#acctWishlist`) | Duplicated `wishlist.html` inside the fake dashboard |
+| Quick View modal on this page | No product grid renders here any more |
+
+Nothing was replaced with different fake examples. The page keeps its filename
+and a clean structure so it can become the WooCommerce My Account template when
+accounts are switched on.
+
+### Replacement — customer-safe behaviour
+
+The page is now **Customer Account — "Manage shopping and service options."**
+with one honest notice and five action cards that all point at functionality
+this storefront genuinely performs:
+
+> Account sign-in is not currently available online. You can still use the
+> services below, and the store will look after anything else directly.
+
+| Card | Destination |
+|---|---|
+| Cart | `cart.html` |
+| Wishlist | `wishlist.html` |
+| Track an Order | `track-order.html` |
+| Request a Quote | `quote-request.html` |
+| Contact Us | `contact.html` |
+
+No developer or prototype vocabulary is used. The header keeps its existing
+design; only the account action's label changed from "Account / **Sign In**" to
+"Customer / **Account**", because the header should not invite a sign-in that
+does not exist.
+
+### Dead code removed
+
+- `js/main.js` — `PAGES.account` in full (state toggle, logout handler, tab
+  switcher, wishlist mirror) and its entry in the page-controller map
+- `css/pages.css` — `.account-layout`, `.account-nav`, `.account-nav__user`,
+  `.account-nav__list`, `.avatar`, `.auth-layout`, `.stat-grid`, `.stat`,
+  replaced by `.acct-layout`, `.acct-notice`, `.acct-grid`, `.acct-card`
+- `css/responsive.css` — the `.stat-grid`, `.account-layout` and `.auth-layout`
+  overrides; a single-column `.acct-grid` rule added at the commerce breakpoint
+
+Shared components used by other pages were left untouched.
+
+### Repository-wide prototype audit
+
+`data-demo-form` was renamed to `data-inactive-form` across the four pages that
+still carry an unconnected form, and its fallback message no longer mentions a
+prototype. An invented order-number example, "e.g. SEE-10042", was removed from
+the tracking and complaint forms — the store has not defined an order-number
+format.
+
+**Result: 0 customer-visible occurrences of demo, mock, prototype, fake, sample
+order, sample customer, signed-in state, test account or design preview** in any
+rendered page or in any string emitted by the JavaScript. Remaining matches are
+`placeholder="…"` form hints and internal class names, both legitimate.
+
+### QA
+
+| Check | Result |
+|---|---|
+| Signed-in preview control | gone |
+| Simulated dashboard, orders, statistics, identity, addresses | gone |
+| Fake login / register / forgot-password / remember-me | gone — the page has 0 forms, 0 inputs and 0 buttons in `<main>` |
+| Useful customer links | 5, all resolving |
+| Header / footer | unchanged apart from the account label |
+| Cart and wishlist on a fresh visit | both empty; no storage key written |
+| Console errors across 16 pages | 0 |
+| Internal links checked / broken | 3,090 / 0 |
+| Images checked / broken | 387 / 0 |
+| Horizontal overflow at 1440 / 1024 / 768 / 430 / 390 | 0 at every width |
+| Card content overflow at 390 | none |
+| Track Order | still shows nothing until a visitor submits the form; the fabricated sample order removed earlier has not returned |
+| Product data | unchanged — nothing under `data/` touched but this record |
