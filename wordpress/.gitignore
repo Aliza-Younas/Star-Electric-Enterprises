@@ -17,3 +17,10 @@ wp-content/themes/hello-elementor/
 # regenerable output would only bloat the repository.
 data/*.json
 data/*.ndjson
+
+# Built upload packages. Regenerate with:
+#   python wordpress/tools/build-packages.py
+dist/
+
+# A local copy of the payload staged inside the plugin by the packaging script.
+wp-content/plugins/star-electric-core/data/

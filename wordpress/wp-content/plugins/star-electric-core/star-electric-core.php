@@ -44,6 +44,11 @@ require_once STAR_ELECTRIC_PATH . 'includes/class-quote-only.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-provenance.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-search.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-shortcodes.php';
+require_once STAR_ELECTRIC_PATH . 'includes/class-importer.php';
+
+if ( is_admin() ) {
+	require_once STAR_ELECTRIC_PATH . 'includes/class-admin-import.php';
+}
 
 /**
  * Boot the plugin.
@@ -61,6 +66,12 @@ function star_electric_boot(): void {
 
 	if ( class_exists( 'WooCommerce' ) ) {
 		Star_Electric_Quote_Only::init();
+	}
+
+	// The dashboard import runner. WP-CLI is the comfortable route, but it needs
+	// a shell; this is the one that works with nothing but an admin login.
+	if ( is_admin() ) {
+		Star_Electric_Admin_Import::init();
 	}
 }
 add_action( 'plugins_loaded', 'star_electric_boot' );

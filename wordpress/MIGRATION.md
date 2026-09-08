@@ -7,8 +7,10 @@ Migration of the approved static storefront at
 The static site is the **visual source of truth**. This is a migration, not a
 redesign: no colour, type, spacing, component or section changes.
 
-**Status: Phase 2 of 13 — foundation built locally, not yet deployed.**
-Deployment is blocked on SSH credentials for the Hostinger account.
+**Status: Phase 2 of 13 — foundation built and packaged, awaiting the admin login.**
+Deployment runs entirely through `wp-admin`. No SSH or SFTP access is required:
+the theme and plugin arrive as ZIP uploads, and the catalogue import runs from a
+dashboard screen in small AJAX batches.
 
 ---
 
@@ -85,7 +87,10 @@ Business logic that must survive a theme change. Nothing here belongs in
 | `includes/class-provenance.php` | Source metadata, admin panel, front-end image note |
 | `includes/class-search.php` | Widens product search to SKU, model, series, specifications |
 | `includes/class-shortcodes.php` | `[star_products]`, `[star_departments]`, `[star_ranges]` |
-| `cli/class-import-command.php` | The catalogue importer |
+| `includes/class-importer.php` | The import engine — every step, resumable |
+| `includes/class-admin-import.php` | The dashboard import screen and its AJAX endpoints |
+| `cli/class-import-command.php` | A thin WP-CLI wrapper over the same engine |
+| `data/` | The exported payload, carried inside the plugin |
 
 **Quote-only products.** 2,548 products have no published price. WooCommerce has
 no native "priced on enquiry" state, so they are stored with **no price at all** —
@@ -108,28 +113,42 @@ brand and department, enquirable — and impossible to add to a cart.
 
 ### Importer
 
-`wp star-electric <command> --dir=/path/to/static-site`
+All the work lives in `Star_Electric_Importer`. The dashboard screen and the
+WP-CLI command are both thin wrappers over it, so fixing a bug in one fixes it
+in the other.
 
-| Command | Purpose |
-|---|---|
-| `import-media` | Uploads each unique master once, records provenance |
-| `import-taxonomies` | Categories with subcategories, brands, departments |
-| `import-ranges` | The 181 range posts |
-| `import-products` | The 4,348 products, `--batch` / `--offset` / `--limit` |
-| `audit` | Reconciles WordPress counts against the source payload |
+| Step | Records | Purpose |
+|---|---:|---|
+| media | 2,054 | Each unique master imported once, with its provenance |
+| taxonomies | 21 | Categories with subcategories, brands, departments |
+| ranges | 181 | The family records, as `star_range` posts |
+| products | 4,348 | The catalogue, including 105 variable parents |
 
 Properties, all required by the brief:
 
 - **Idempotent** — every record stores `_star_electric_source_id` and is matched
-  on it, so a second run updates instead of duplicating.
-- **Resumable** — `--offset` resumes; the command reports the offset to use.
-- **Batched** — caches are flushed every `--batch` records so a 4,348-record run
-  does not exhaust memory.
-- **Deduplicated** — a persisted media map means an image uploads once.
-- **Honest** — failures are counted and named, never swallowed.
+  on it, so a second run updates instead of duplicating. Variation children are
+  matched on `<parent source id>#<index>`, and children the source no longer
+  lists are deleted rather than left behind.
+- **Resumable** — each step takes an offset and returns the next one. Progress is
+  persisted in an option, so a closed browser tab, a dropped connection or a
+  stopped run loses nothing: pressing Run again continues from the same record.
+- **Batched** — a batch is sized to finish inside one PHP request (15 images, 20
+  products), so no single request is long-running and the host's execution limit
+  is never the constraint.
+- **Deduplicated** — a persisted media map means an image is fetched once and
+  every later product reuses the attachment ID.
+- **Honest** — failures are counted, named and shown per step, never swallowed.
 
-The `audit` command explicitly checks that **no product has a `_price` of 0**,
-which is the failure mode this catalogue must never have.
+The audit explicitly checks that **no product has a `_price` of 0**, which is the
+failure mode this catalogue must never have.
+
+**Where images come from.** The destination cannot read this repository, so the
+importer copies each master over HTTPS from the approved storefront into the
+site's own media library. Nothing is hotlinked, and the source URL is
+configurable on the import screen. If the masters are ever bundled into the
+plugin's `data/media/` directory instead, they are used in preference and no
+outbound request is made.
 
 ### `star-electric-child` theme
 
@@ -147,35 +166,43 @@ the source domain on the product page.
 
 ---
 
-## Deployment runbook
+## Deployment runbook — dashboard only
 
-Once SSH access is available, from the WordPress root:
+Build the two upload packages first:
 
 ```
-# 1. Back up first — never modify without one
-wp db export ~/pre-migration-backup.sql
-tar czf ~/pre-migration-wp-content.tar.gz wp-content
-
-# 2. WooCommerce
-wp plugin install woocommerce --activate
-
-# 3. Custom code (rsync from the repo's wordpress/wp-content/)
-wp theme activate star-electric-child
-wp plugin activate star-electric-core
-
-# 4. Permalinks
-wp option update permalink_structure '/%postname%/'
-wp rewrite flush --hard
-
-# 5. Catalogue — in this order
-wp star-electric import-media       --dir=/path/to/static-site
-wp star-electric import-taxonomies  --dir=/path/to/static-site
-wp star-electric import-ranges      --dir=/path/to/static-site
-wp star-electric import-products    --dir=/path/to/static-site --batch=100
-
-# 6. Reconcile — must show OK on every row
-wp star-electric audit --dir=/path/to/static-site
+python wordpress/tools/export-catalogue.py     # only if the source data changed
+python wordpress/tools/build-packages.py
 ```
+
+That writes `wordpress/dist/star-electric-child.zip` (0.03 MB) and
+`wordpress/dist/star-electric-core.zip` (0.25 MB, payload included). Both are
+far below any plausible `upload_max_filesize`, which is what makes the
+dashboard route viable.
+
+Then, signed in at `/wp-admin/`:
+
+1. **Back up.** Hostinger → Websites → Backups → create a manual backup, and
+   confirm it completes before anything else is touched.
+2. **WooCommerce.** Plugins → Add New → search *WooCommerce* → Install → Activate.
+   Skip the setup wizard; the storefront takes no payment, so its questions do
+   not apply.
+3. **Theme.** Appearance → Themes → Add New → Upload Theme →
+   `star-electric-child.zip` → Activate. Hello Elementor stays installed as the
+   parent.
+4. **Plugin.** Plugins → Add New → Upload Plugin → `star-electric-core.zip` →
+   Activate.
+5. **Permalinks.** Settings → Permalinks → Post name → Save. This also flushes
+   the rules `/brand/…` and `/range/…` need.
+6. **Import.** Star Electric → check the environment table reads *working* and
+   *active* on every row, then run the steps in order: media, taxonomies,
+   ranges, products. Each shows a progress bar and can be stopped and resumed.
+7. **Reconcile.** Run the audit on the same screen. Every row must read `OK`,
+   including *products priced 0*, which must be `0`.
+
+The same steps are available over WP-CLI if shell access is ever added
+(`wp star-electric import-media`, `… import-products`, `… audit`), but nothing in
+the migration depends on it.
 
 ---
 
@@ -183,8 +210,9 @@ wp star-electric audit --dir=/path/to/static-site
 
 | Item | Status |
 |---|---|
-| SSH credentials | **Required to proceed.** Everything above is built and waiting |
-| Form recipient email | Requested; forms will not be wired to an invented address |
+| WordPress admin login | **Required to proceed.** Everything above is built, packaged and waiting |
+| SSH / SFTP | Not required. The dashboard route covers every deployment step |
+| Form recipient email | Supplied, and recorded outside the repository |
 | Payment gateways | Agreed: leave disabled. The storefront already states no payment is taken online |
 | Shipping zones and rates | Agreed: leave unconfigured. No delivery terms are on record |
 

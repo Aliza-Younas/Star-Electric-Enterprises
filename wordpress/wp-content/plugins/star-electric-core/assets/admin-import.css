@@ -1,0 +1,116 @@
+/*
+ * Import screen. Deliberately plain WordPress admin styling - this is an
+ * operator tool, not part of the storefront design system.
+ */
+
+.star-import__lead {
+	max-width: 60em;
+	font-size: 14px;
+}
+
+.star-import__env th {
+	width: 220px;
+}
+
+.star-import__ok {
+	color: #1a7f37;
+	font-weight: 600;
+}
+
+.star-import__bad {
+	color: #b32d2e;
+	font-weight: 600;
+}
+
+.star-import__settings {
+	margin: 1.5em 0 2em;
+	padding: 0 0 1.5em;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.star-step {
+	margin: 0 0 18px;
+	padding: 16px 18px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #c3c4c7;
+	box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.04 );
+}
+
+.star-step.is-running {
+	border-left-color: #2271b1;
+}
+
+.star-step.is-done {
+	border-left-color: #1a7f37;
+}
+
+.star-step__head {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.star-step__head h3 {
+	margin: 0;
+	font-size: 15px;
+}
+
+.star-step__buttons {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.star-step__bar {
+	height: 8px;
+	margin: 12px 0 8px;
+	background: #f0f0f1;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.star-step__bar span {
+	display: block;
+	height: 100%;
+	width: 0;
+	background: #2271b1;
+	transition: width 0.2s ease;
+}
+
+.star-step.is-done .star-step__bar span {
+	background: #1a7f37;
+}
+
+.star-step__status {
+	margin: 0;
+	font-variant-numeric: tabular-nums;
+	color: #50575e;
+}
+
+.star-step__errors {
+	margin-top: 10px;
+}
+
+.star-step__errors summary {
+	cursor: pointer;
+	color: #b32d2e;
+}
+
+.star-step__errors ul {
+	max-height: 220px;
+	overflow-y: auto;
+	margin: 8px 0 0;
+	padding: 8px 12px;
+	background: #fcf0f1;
+	border: 1px solid #f0c3c4;
+	font-family: Consolas, Monaco, monospace;
+	font-size: 12px;
+}
+
+.star-step__errors li {
+	margin: 0 0 4px;
+	word-break: break-word;
+}
