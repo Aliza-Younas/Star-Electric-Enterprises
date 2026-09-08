@@ -105,11 +105,22 @@ if ( $star_object instanceof WP_Term ) {
 					</button>
 					<span id="resultCount">
 						<?php
-						printf(
-							/* translators: %s: number of products */
-							esc_html( _n( '%s product', '%s products', $star_found, 'star-electric-child' ) ),
-							esc_html( number_format_i18n( $star_found ) )
-						);
+						$star_per   = max( 1, (int) $wp_query->get( 'posts_per_page' ) );
+						$star_page  = max( 1, (int) get_query_var( 'paged' ) );
+						$star_first = ( ( $star_page - 1 ) * $star_per ) + 1;
+						$star_last  = min( $star_found, $star_page * $star_per );
+
+						if ( $star_found > 0 ) {
+							printf(
+								/* translators: 1: first result, 2: last result, 3: total */
+								esc_html__( 'Showing %1$d–%2$d of %3$d products', 'star-electric-child' ),
+								(int) $star_first,
+								(int) $star_last,
+								(int) $star_found
+							);
+						} else {
+							esc_html_e( 'No products found', 'star-electric-child' );
+						}
 						?>
 					</span>
 				</div>

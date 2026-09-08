@@ -196,6 +196,60 @@ class Star_Electric_Importer {
 		wp_defer_comment_counting( true );
 	}
 
+	/**
+	 * Flush the counting that relax_limits() deferred.
+	 *
+	 * Deferring term counting keeps a batch fast, but the deferred list lives
+	 * only for the request - so it has to be flushed before the request ends.
+	 * Without this every term count stays at zero, and anything asking for
+	 * non-empty terms (the shop's category and brand filters, for one) sees an
+	 * empty catalogue.
+	 */
+	private static function settle(): void {
+		wp_defer_term_counting( false );
+		wp_defer_comment_counting( false );
+	}
+
+	/**
+	 * Recount every catalogue taxonomy from scratch.
+	 *
+	 * A repair for counts left stale by an interrupted run, and cheap enough to
+	 * run whenever the numbers look wrong.
+	 */
+	public static function recount(): array {
+		self::relax_limits();
+
+		$taxonomies = array( 'product_cat', 'product_tag', 'product_type' );
+		if ( class_exists( 'Star_Electric_Taxonomies' ) ) {
+			$taxonomies[] = Star_Electric_Taxonomies::BRAND;
+			$taxonomies[] = Star_Electric_Taxonomies::DEPARTMENT;
+		}
+
+		$total = 0;
+		foreach ( $taxonomies as $taxonomy ) {
+			if ( ! taxonomy_exists( $taxonomy ) ) {
+				continue;
+			}
+			$ids = get_terms(
+				array(
+					'taxonomy'   => $taxonomy,
+					'hide_empty' => false,
+					'fields'     => 'ids',
+				)
+			);
+			if ( is_wp_error( $ids ) || ! $ids ) {
+				continue;
+			}
+			wp_update_term_count_now( $ids, $taxonomy );
+			$total += count( $ids );
+		}
+
+		self::settle();
+		delete_transient( 'star_electric_filter_counts' );
+
+		return array( 'terms' => $total );
+	}
+
 	/* --------------------------------------------------------------------- *
 	 * Step 1 - media
 	 * --------------------------------------------------------------------- */
@@ -271,6 +325,7 @@ class Star_Electric_Importer {
 			),
 			$errors
 		);
+		self::settle();
 		self::record( 'media', $result );
 		return $result;
 	}
@@ -382,6 +437,7 @@ class Star_Electric_Importer {
 			),
 			$errors
 		);
+		self::settle();
 		self::record( 'taxonomies', $result );
 		return $result;
 	}
@@ -496,6 +552,7 @@ class Star_Electric_Importer {
 			),
 			$errors
 		);
+		self::settle();
 		self::record( 'ranges', $result );
 		return $result;
 	}
@@ -637,6 +694,7 @@ class Star_Electric_Importer {
 			),
 			$errors
 		);
+		self::settle();
 		self::record( 'products', $result );
 
 		$all                     = self::progress();

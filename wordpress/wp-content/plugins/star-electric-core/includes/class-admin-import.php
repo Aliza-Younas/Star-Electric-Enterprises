@@ -63,6 +63,7 @@ class Star_Electric_Admin_Import {
 		add_action( 'wp_ajax_star_electric_import', array( __CLASS__, 'ajax' ) );
 		add_action( 'wp_ajax_star_electric_import_audit', array( __CLASS__, 'ajax_audit' ) );
 		add_action( 'wp_ajax_star_electric_import_reset', array( __CLASS__, 'ajax_reset' ) );
+		add_action( 'wp_ajax_star_electric_import_recount', array( __CLASS__, 'ajax_recount' ) );
 	}
 
 	/**
@@ -283,7 +284,13 @@ class Star_Electric_Admin_Import {
 			<p class="description">
 				<?php esc_html_e( 'Compares WordPress against the source payload. Every row must read OK before the migration counts as complete.', 'star-electric' ); ?>
 			</p>
-			<p><button type="button" class="button" id="star-import-audit"><?php esc_html_e( 'Run audit', 'star-electric' ); ?></button></p>
+			<p>
+				<button type="button" class="button" id="star-import-audit"><?php esc_html_e( 'Run audit', 'star-electric' ); ?></button>
+				<button type="button" class="button" id="star-import-recount"><?php esc_html_e( 'Recount categories and brands', 'star-electric' ); ?></button>
+			</p>
+			<p class="description">
+				<?php esc_html_e( 'Recount if the shop’s category or brand filters look empty: an import that was interrupted can leave the term counts at zero.', 'star-electric' ); ?>
+			</p>
 			<table class="widefat striped" id="star-import-audit-table" hidden>
 				<thead>
 					<tr>
@@ -375,6 +382,14 @@ class Star_Electric_Admin_Import {
 	public static function ajax_audit(): void {
 		self::guard();
 		wp_send_json_success( array( 'rows' => Star_Electric_Importer::audit() ) );
+	}
+
+	/**
+	 * Recount the catalogue taxonomies.
+	 */
+	public static function ajax_recount(): void {
+		self::guard();
+		wp_send_json_success( Star_Electric_Importer::recount() );
 	}
 
 	/**

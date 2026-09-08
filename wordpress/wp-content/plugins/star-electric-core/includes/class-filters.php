@@ -246,6 +246,15 @@ class Star_Electric_Filters {
 				break;
 			case 'relevance':
 			default:
+				/*
+				 * "Featured" on the approved shop is the catalogue's own order.
+				 * Products were imported in payload order, so ordering by ID
+				 * reproduces it - and the shop opens on the same twelve products
+				 * the approved site does.
+				 */
+				$args['orderby']  = 'ID';
+				$args['order']    = 'ASC';
+				$args['meta_key'] = ''; // phpcs:ignore WordPress.DB.SlowDBQuery
 				break;
 		}
 
@@ -352,12 +361,17 @@ class Star_Electric_Filters {
 		echo '<a class="btn btn--quiet btn--sm" href="' . esc_url( self::clear_url() ) . '" data-clear-all>'
 			. esc_html__( 'Clear all', 'star-electric' ) . '</a></div>';
 
-		// Categories.
+		/*
+		 * Categories, including the ones with nothing in them yet. The approved
+		 * shop lists all ten departments with their counts - a "0" is honest
+		 * information about the catalogue, and hiding those three would quietly
+		 * change the navigation.
+		 */
 		$cats = get_terms(
 			array(
 				'taxonomy'   => 'product_cat',
 				'parent'     => 0,
-				'hide_empty' => true,
+				'hide_empty' => false,
 			)
 		);
 		$body = '';

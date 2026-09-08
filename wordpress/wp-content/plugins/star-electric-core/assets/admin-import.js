@@ -267,6 +267,37 @@
 		} );
 	}
 
+	/**
+	 * Recount the catalogue taxonomies.
+	 */
+	function wireRecount() {
+		var button = document.getElementById( 'star-import-recount' );
+		if ( ! button ) {
+			return;
+		}
+
+		button.addEventListener( 'click', function () {
+			var label = button.textContent;
+			button.disabled = true;
+			button.textContent = 'Recounting...';
+
+			post( 'star_electric_import_recount', {} )
+				.then( function ( data ) {
+					button.textContent = 'Recounted ' + ( data.terms || 0 ) + ' terms';
+					window.setTimeout( function () {
+						button.textContent = label;
+					}, 4000 );
+				} )
+				.catch( function ( error ) {
+					window.alert( 'Recount failed: ' + error.message );
+					button.textContent = label;
+				} )
+				.finally( function () {
+					button.disabled = false;
+				} );
+		} );
+	}
+
 	document.addEventListener( 'DOMContentLoaded', function () {
 		Array.prototype.forEach.call(
 			document.querySelectorAll( '.star-step' ),
@@ -275,5 +306,6 @@
 			}
 		);
 		wireAudit();
+		wireRecount();
 	} );
 }() );
