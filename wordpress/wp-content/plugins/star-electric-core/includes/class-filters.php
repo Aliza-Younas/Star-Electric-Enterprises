@@ -372,6 +372,8 @@ class Star_Electric_Filters {
 				'taxonomy'   => 'product_cat',
 				'parent'     => 0,
 				'hide_empty' => false,
+				'orderby'    => 'count',
+				'order'      => 'DESC',
 			)
 		);
 		$body = '';

@@ -411,7 +411,28 @@ class Star_Electric_Importer {
 		}
 
 		foreach ( $tax['brands'] as $brand ) {
-			self::ensure_term( $brand['name'], Star_Electric_Taxonomies::BRAND, $brand['slug'], 0, $made, $kept, $errors );
+			$term_id = self::ensure_term( $brand['name'], Star_Electric_Taxonomies::BRAND, $brand['slug'], 0, $made, $kept, $errors );
+			if ( ! $term_id ) {
+				continue;
+			}
+
+			/*
+			 * The monogram is the brand's mark on the approved storefront.
+			 * Real manufacturer logos are deliberately not used: showing one
+			 * would imply a dealership or distribution relationship that is not
+			 * on record.
+			 */
+			update_term_meta( $term_id, '_star_electric_mark', (string) ( $brand['mark'] ?? '' ) );
+			update_term_meta( $term_id, '_star_electric_note', (string) ( $brand['note'] ?? '' ) );
+			update_term_meta( $term_id, '_star_electric_family_count', (int) ( $brand['familyCount'] ?? 0 ) );
+
+			// A brand whose source publishes ranges but no individual products
+			// is navigable but not a catalogue listing.
+			update_term_meta(
+				$term_id,
+				'_star_electric_catalogue_exposed',
+				false === ( $brand['catalogueExposed'] ?? true ) ? 'no' : 'yes'
+			);
 		}
 
 		foreach ( $tax['departments'] as $dept ) {

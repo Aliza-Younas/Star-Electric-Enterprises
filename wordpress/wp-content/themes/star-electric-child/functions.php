@@ -75,6 +75,17 @@ function star_electric_child_assets(): void {
 		);
 	}
 
+	$home = $dir . '/assets/js/home.js';
+	if ( is_front_page() && file_exists( $home ) ) {
+		wp_enqueue_script(
+			'star-electric-home',
+			$uri . '/assets/js/home.js',
+			array(),
+			(string) filemtime( $home ),
+			true
+		);
+	}
+
 	$single = $dir . '/assets/js/product.js';
 	if ( function_exists( 'is_product' ) && is_product() && file_exists( $single ) ) {
 		wp_enqueue_script(

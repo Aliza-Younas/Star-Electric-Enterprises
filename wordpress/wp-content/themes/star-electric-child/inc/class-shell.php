@@ -268,12 +268,19 @@ class Star_Electric_Shell {
 		}
 
 		$tree    = array();
+		/*
+		 * Ordered by how much of the catalogue sits behind each department, which
+		 * is the order the approved storefront navigates in - Wires & Cables
+		 * first at 2,390 products, Earthing Material last. Alphabetical would
+		 * bury the biggest department in the middle of the list.
+		 */
 		$parents = get_terms(
 			array(
 				'taxonomy'   => 'product_cat',
 				'parent'     => 0,
 				'hide_empty' => false,
-				'orderby'    => 'name',
+				'orderby'    => 'count',
+				'order'      => 'DESC',
 			)
 		);
 
@@ -290,7 +297,8 @@ class Star_Electric_Shell {
 					'taxonomy'   => 'product_cat',
 					'parent'     => $parent->term_id,
 					'hide_empty' => false,
-					'orderby'    => 'name',
+					'orderby'    => 'count',
+					'order'      => 'DESC',
 				)
 			);
 			$tree[]   = array(
@@ -300,6 +308,42 @@ class Star_Electric_Shell {
 		}
 
 		return $tree;
+	}
+
+	/**
+	 * The photograph for a product category, from the media library.
+	 *
+	 * The importer stores each category image as the term's thumbnail, so this
+	 * is the same file the approved storefront uses. A category without one
+	 * renders nothing rather than a broken image.
+	 *
+	 * @param string $slug   Category slug.
+	 * @param int    $width  Width attribute.
+	 * @param int    $height Height attribute.
+	 */
+	public static function category_image( string $slug, int $width, int $height ): string {
+		$term = get_term_by( 'slug', $slug, 'product_cat' );
+		if ( ! $term instanceof WP_Term ) {
+			return '';
+		}
+
+		$thumb = (int) get_term_meta( $term->term_id, 'thumbnail_id', true );
+		if ( ! $thumb ) {
+			return '';
+		}
+
+		return (string) wp_get_attachment_image(
+			$thumb,
+			'large',
+			false,
+			array(
+				'alt'      => '',
+				'width'    => $width,
+				'height'   => $height,
+				'loading'  => 'lazy',
+				'decoding' => 'async',
+			)
+		);
 	}
 
 	/**
