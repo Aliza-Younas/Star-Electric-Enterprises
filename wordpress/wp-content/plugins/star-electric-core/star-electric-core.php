@@ -47,9 +47,18 @@ require_once STAR_ELECTRIC_PATH . 'includes/class-navigation.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-forms.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-wishlist.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-seo.php';
+require_once STAR_ELECTRIC_PATH . 'includes/class-sections.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-shortcodes.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-filters.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-importer.php';
+
+/*
+ * Elementor owns presentation; this plugin owns the markup and the catalogue
+ * behind it. The widgets render through Star_Electric_Sections, which is the
+ * same code the child theme's templates call, so a page built in Elementor and
+ * a page rendered by PHP cannot drift apart.
+ */
+require_once STAR_ELECTRIC_PATH . 'elementor/class-elementor.php';
 
 if ( is_admin() ) {
 	require_once STAR_ELECTRIC_PATH . 'includes/class-admin-import.php';
@@ -71,6 +80,7 @@ function star_electric_boot(): void {
 	Star_Electric_Forms::init();
 	Star_Electric_Wishlist::init();
 	Star_Electric_SEO::init();
+	Star_Electric_Elementor::init();
 
 	if ( class_exists( 'WooCommerce' ) ) {
 		Star_Electric_Quote_Only::init();
