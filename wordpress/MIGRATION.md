@@ -231,6 +231,40 @@ invented.
 
 ---
 
+## Phase 14 — Elementor conversion (in progress)
+
+The migration is complete and the frontend is approved; this phase changes how
+that frontend is *edited*, not how it looks. See `ELEMENTOR-GUIDE.md` for the
+editing instructions and `ARCHITECTURE.md` for where the line between Elementor
+and the plugin falls.
+
+**Converted and verified**
+
+| Piece | Where it is edited |
+|---|---|
+| Site Settings — colours, typography, container | Elementor → Site Settings |
+| Header | Templates → Theme Builder → Header → Site Header |
+| Footer | Templates → Theme Builder → Footer → Site Footer |
+| Homepage — 9 named sections | Pages → Home |
+| FAQ | Pages → FAQs |
+| Shipping, Returns, Privacy Policy, Terms | Pages → each page |
+
+Their PHP templates - `front-page.php`, `page-faq.php`, `page-shipping.php`,
+`page-returns.php`, `page-privacy-policy.php`, `page-terms-and-conditions.php` -
+are removed, because WordPress prefers a `page-{slug}.php` over any page content
+and leaving them would have meant an Elementor page nobody ever saw.
+
+**Not yet converted**
+
+About, Contact, Request a Quote, Submit a Complaint, Track Order, Categories,
+Brands and Deals still render from their PHP templates, as do the shop, category,
+product, cart, checkout, account and wishlist pages. They work exactly as
+before. The pattern for converting them is established: a widget per approved
+section, a document built from those widgets, a comparison against the
+screenshot baseline, and only then the template's removal.
+
+---
+
 ## Phases 3 to 13 (complete)
 
 | Phase | Delivered |

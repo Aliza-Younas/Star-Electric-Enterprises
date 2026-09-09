@@ -298,7 +298,63 @@ fetched over HTTP and then rendered in a browser.
 
 ---
 
-## 9. Reconciliation
+## 9. Elementor conversion QA
+
+The conversion is a change to how the site is edited, not to how it looks, so
+its acceptance test is that nothing changed. Three harnesses were used, each
+answering a different question.
+
+**Did the server send the same markup?** `htmlparity.py` compares the live page
+against a capture taken before the change, element by element, ignoring the
+things that legitimately differ between two requests - whitespace between tags,
+cache-buster query strings, nonces and LiteSpeed's cache comment.
+
+**Do the components compute the same styles?** `wpcompare.py` renders two pages
+of the site at the same viewport and compares font size, colour, padding and box
+width for a list of components.
+
+**Do the pages look the same?** `pixdiff.py` and `pixpages.py` compare
+screenshots pixel for pixel and write a side-by-side plus a heat map of every
+differing pixel, so a real shift can be told from an antialiasing wobble.
+
+| Step | Result |
+|---|---|
+| Moving the homepage markup into the plugin | Identical across all 6,149 elements |
+| Elementor Site Settings | Only change: Roboto and Roboto Slab no longer loaded |
+| Elementor homepage vs the PHP homepage | 15 of 15 components identical at 1440 |
+| Elementor homepage vs the baseline | Pixel-identical at 375 and 390; wider widths differ only inside the hero carousel, which is on a different slide in the two captures |
+| Header and footer in Theme Builder | Contact page differs only where the header shows a cart badge, which is session state |
+| FAQ | Pixel-identical at all eight widths, worst 0.006% |
+| Responsive sweep, 20 pages x 8 widths | No horizontal overflow, no broken images |
+| Live smoke test, 28 URLs | 200 on all, no console errors, no PHP notices |
+| Catalogue reconciliation | All 16 rows still OK - the conversion touched no product data |
+| Elementor editors | All 8 documents open, 22 Star Electric widgets registered, no errors |
+| Save and revert | A label was changed, confirmed live, and reverted cleanly |
+
+### What the conversion QA found
+
+- **The front-page setting silently did not save.** WordPress settings forms
+  post to `options.php`, not to `options-reading.php`. Posting to the latter
+  returns 200 and changes nothing, so the homepage briefly became the empty
+  blog index. Caught by the pixel diff, which reported 48-59% of pixels
+  changed.
+- **Moving the homepage markup dropped the brand section's disclaimer** -
+  "Manufacturers", and the line stating that no dealership, distribution or
+  authorisation relationship is implied. Caught by the element-level markup
+  comparison. That sentence is what keeps the brand tiles from reading as a
+  dealership claim.
+- **An Elementor page rendered at 615px instead of 1440.** The theme's
+  `page.php` wraps content in `.prose`, which is 76ch wide. Converted pages use
+  Elementor's Full Width template instead.
+- **The screenshot harness was framing narrow widths** in a wrapper page,
+  because old headless Chrome clamped `--window-size` to about 500px.
+  `--headless=new` honours 375 directly, and framing silently failed on any
+  page that sends `X-Frame-Options` - which is how the mobile My Account
+  baseline came out as a broken-image icon.
+
+---
+
+## 10. Reconciliation
 
 See `migration-audit.md`. Every one of sixteen measures reconciles, including
 the three that are defect counts rather than quantities: **0 failed imports, 0

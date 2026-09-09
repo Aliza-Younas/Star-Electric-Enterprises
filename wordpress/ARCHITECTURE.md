@@ -13,8 +13,9 @@ reinterpreting it.
 
 ```
 Hello Elementor                     parent theme (installed, unstyled)
-└── star-electric-child             presentation: templates + the approved CSS
-star-electric-core                  business logic: data model, rules, import
+└── star-electric-child             templates + the approved CSS
+star-electric-core                  business logic, section renderers, widgets
+Elementor Pro 4.2.3                 page and template content
 WooCommerce 11.1                    products, cart, checkout, account, orders
 Rank Math Pro                       SEO output
 LiteSpeed Cache                     page cache (purge after every deploy)
@@ -36,12 +37,39 @@ buttons, and overriding it rule by rule was more fragile than not loading it.
 
 ### Elementor
 
-Elementor and Elementor Pro remain installed and active because they were
-already there and other work may want them. **No page in this migration is built
-with Elementor**, and no Elementor template is used: every page is a PHP template
-in the child theme. That was a requirement — the approved markup had to be
-ported as markup, not pasted into a widget, embedded in an iframe, or flattened
-into a single HTML block.
+Elementor Pro owns the content of the pages that have been converted; the
+approved stylesheets still own how everything looks. Nothing is pasted into an
+HTML widget, embedded in an iframe or flattened into a single block: each
+approved section is a widget of its own, and each widget renders the approved
+markup from PHP.
+
+**Where the line falls.** The approved stylesheets target exact class names -
+`.hs`, `.rail`, `.mcard`, `.ptile`, `.why-card`, `.header__inner`. A section's
+structure is therefore not something an editor may rearrange without the design
+breaking, but what a section *says* is. So each section is one Star Electric
+widget with a panel of content controls, rather than a tree of generic Elementor
+heading, text and button widgets. Sections themselves can be reordered, removed
+and duplicated from the Navigator.
+
+**One source of markup.** `Star_Electric_Sections` and `Star_Electric_Chrome`
+render every approved section. The Elementor widgets call them, and so does any
+theme template that still renders that section, so the two cannot drift apart.
+
+**Elementor containers are transparent.** Every container the conversion creates
+carries `content_width: full` and zero padding, margin and gap, because the
+approved sections already provide their own width and spacing. Verified by
+measuring: the same components on an Elementor page and on the PHP page it
+replaced report identical computed styles.
+
+**Page template.** A converted page is set to *Elementor Full Width*
+(`elementor_header_footer`). The theme's own `page.php` wraps content in
+`.prose`, which is 76ch wide and would squeeze every section.
+
+**Site Settings** carry the design system's own colours, typography presets and
+1320px container so anyone reaching for a colour in Elementor is offered the
+brand's values. Nothing is applied from there — the approved stylesheets do all
+the styling — which is why setting them changed nothing on the site except that
+Elementor stopped loading Roboto and Roboto Slab, which nothing used.
 
 ---
 
@@ -70,12 +98,11 @@ WooCommerce's scripts to find it, and WooCommerce styles it, so the approved
 
 | Template | Covers |
 |---|---|
-| `header.php` / `footer.php` | The shared shell, from `js/components.js` |
-| `front-page.php` | The homepage, section by section |
+| `header.php` / `footer.php` | The document, then Elementor's header/footer location with the renderer as fallback |
 | `archive-product.php` | Shop, category, subcategory, brand and department archives |
 | `single-product.php` | The product page |
 | `page.php` | The default page: page head, then `the_content()` |
-| `page-*.php` | One per ported content page (about, faq, brands, deals, …) |
+| `page-*.php` | One per content page not yet converted (about, contact, brands, deals, …) |
 | `woocommerce/` | Overrides: cart, checkout, my account, order tracking, product card |
 | `template-parts/` | Shared fragments, e.g. the department card grid |
 | `inc/class-shell.php` | Breadcrumbs, page heads, icons, category art, availability pills |
@@ -125,6 +152,10 @@ for a product the shop correctly prices on enquiry.
 | `includes/class-forms.php` | Quote, contact and complaint submission and storage |
 | `includes/class-wishlist.php` | Server-rendered wishlist rows and product cards |
 | `includes/class-seo.php` | Titles, descriptions, canonicals, robots — through Rank Math |
+| `includes/class-sections.php` | The approved page sections, one renderer each |
+| `includes/class-chrome.php` | The global header and footer |
+| `elementor/class-elementor.php` | Registers the widget category and the widgets |
+| `elementor/widgets/` | One widget per approved section |
 | `includes/class-importer.php` | The import engine and the reconciliation audit |
 | `includes/class-admin-import.php` | The dashboard import screen and its AJAX endpoints |
 | `cli/class-import-command.php` | A thin WP-CLI wrapper over the same engine |
