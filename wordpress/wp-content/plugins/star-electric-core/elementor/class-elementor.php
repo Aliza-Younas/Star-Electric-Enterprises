@@ -41,6 +41,8 @@ class Star_Electric_Elementor {
 	 */
 	private static function widgets(): array {
 		return array(
+			'site-header'      => 'Star_Electric_Widget_Site_Header',
+			'site-footer'      => 'Star_Electric_Widget_Site_Footer',
 			'campaign-banner'  => 'Star_Electric_Widget_Campaign_Banner',
 			'trust-strip'      => 'Star_Electric_Widget_Trust_Strip',
 			'department-strip' => 'Star_Electric_Widget_Department_Strip',

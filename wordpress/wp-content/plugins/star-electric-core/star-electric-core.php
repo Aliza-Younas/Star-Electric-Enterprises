@@ -47,6 +47,7 @@ require_once STAR_ELECTRIC_PATH . 'includes/class-navigation.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-forms.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-wishlist.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-seo.php';
+require_once STAR_ELECTRIC_PATH . 'includes/class-chrome.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-sections.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-shortcodes.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-filters.php';
