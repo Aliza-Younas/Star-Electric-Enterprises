@@ -346,6 +346,14 @@ differing pixel, so a real shift can be told from an antialiasing wobble.
 - **An Elementor page rendered at 615px instead of 1440.** The theme's
   `page.php` wraps content in `.prose`, which is 76ch wide. Converted pages use
   Elementor's Full Width template instead.
+- **Saving an Elementor document cleared the page's template.** Elementor's
+  save writes the whole page-settings record, so a save that passes no settings
+  clears what was there - including *Elementor Full Width*. The FAQ page fell
+  back to the theme's `page.php` and rendered a second page head inside the
+  76ch `.prose` wrapper. Caught by auditing the template of every converted
+  page rather than trusting the earlier measurement, which had been taken
+  before the regression. The tooling now re-asserts the template after every
+  save, and all six converted pages were checked.
 - **The screenshot harness was framing narrow widths** in a wrapper page,
   because old headless Chrome clamped `--window-size` to about 500px.
   `--headless=new` honours 375 directly, and framing silently failed on any
