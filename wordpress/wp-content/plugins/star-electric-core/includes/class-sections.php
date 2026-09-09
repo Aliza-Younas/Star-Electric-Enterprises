@@ -2106,4 +2106,362 @@ class Star_Electric_Sections {
 		$letter = strtoupper( substr( remove_accents( $name ), 0, 1 ) );
 		return preg_match( '/[A-Z]/', $letter ) ? $letter : '#';
 	}
+	/* --------------------------------------------------------------------- *
+	 * The catalogue
+	 * --------------------------------------------------------------------- */
+
+	/**
+	 * The three wide promo cards the deals page opens with.
+	 *
+	 * A card takes its picture from a department, from the approved banner
+	 * artwork, or from an image chosen in Elementor - in that order of
+	 * preference, so the approved artwork stays unless someone replaces it
+	 * deliberately.
+	 *
+	 * @param array $args cards.
+	 */
+	public static function promo_grid( array $args = array() ): void {
+		$args = wp_parse_args( $args, array( 'cards' => array() ) );
+		?>
+		<section class="section section--sm">
+			<div class="container">
+				<div class="promo-grid">
+					<?php foreach ( (array) $args['cards'] as $star_card ) : ?>
+						<article class="promo-card<?php echo ! empty( $star_card['dark'] ) ? ' promo-card--dark' : ''; ?>">
+							<?php
+							$star_dept   = (string) ( $star_card['department'] ?? '' );
+							$star_banner = (string) ( $star_card['banner'] ?? '' );
+							$star_image  = (string) ( $star_card['image'] ?? '' );
+
+							if ( '' !== $star_dept ) {
+								echo self::category_image( $star_dept, 1200, 620 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							} elseif ( '' !== $star_banner || '' !== $star_image ) {
+								printf(
+									'<img src="%s" alt="" width="1200" height="620" loading="lazy" decoding="async">',
+									esc_url( '' !== $star_image ? $star_image : self::art() . '/banners/' . $star_banner . '.webp' )
+								);
+							}
+							?>
+							<h2 style="font-size:19px"><?php echo esc_html( (string) ( $star_card['title'] ?? '' ) ); ?></h2>
+							<p><?php echo esc_html( (string) ( $star_card['text'] ?? '' ) ); ?></p>
+							<a class="btn btn--<?php echo esc_attr( (string) ( $star_card['style'] ?? 'accent' ) ); ?> btn--sm" href="<?php echo esc_url( (string) ( $star_card['url'] ?? '' ) ); ?>">
+								<?php echo esc_html( (string) ( $star_card['label'] ?? '' ) ); ?>
+							</a>
+						</article>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The products a supplier source currently lists below its previous price.
+	 *
+	 * A discount exists only where the importer recorded one, which it does only
+	 * where the source published both a previous and a current price. A product
+	 * priced on enquiry can never qualify, so nothing on the deals page can show
+	 * a saving the source did not publish.
+	 *
+	 * @param int $paged Page number.
+	 */
+	public static function deals_query( int $paged ): WP_Query {
+		$args = array(
+			'post_type'           => 'product',
+			'post_status'         => 'publish',
+			'posts_per_page'      => 12,
+			'paged'               => max( 1, $paged ),
+			'ignore_sticky_posts' => true,
+			'meta_query'          => array( // phpcs:ignore WordPress.DB.SlowDBQuery
+				array(
+					'key'     => '_star_electric_discount',
+					'value'   => 0,
+					'type'    => 'NUMERIC',
+					'compare' => '>',
+				),
+			),
+		);
+
+		if ( class_exists( 'Star_Electric_Filters' ) ) {
+			$args = Star_Electric_Filters::query_args( $args, 'discount' );
+		} else {
+			$args['meta_key'] = '_star_electric_discount'; // phpcs:ignore WordPress.DB.SlowDBQuery
+			$args['orderby']  = 'meta_value_num';
+			$args['order']    = 'DESC';
+		}
+
+		return new WP_Query( $args );
+	}
+
+	/**
+	 * The filter sidebar, toolbar, product grid and pager.
+	 *
+	 * One renderer for the shop, the department and brand archives and the
+	 * deals page, because on the approved storefront they are one component.
+	 * They differ in what they carry through the filter form, which sorts they
+	 * offer, what they say when nothing matches and how their pager is built -
+	 * and in nothing else.
+	 *
+	 * @param array $args Query, wording and the handful of documented variations.
+	 */
+	public static function catalogue( array $args = array() ): void {
+		global $wp_query;
+
+		$args = wp_parse_args(
+			$args,
+			array(
+				'query'          => null,
+				'prefix'         => 'f',
+				'carry'          => array( 's', 'post_type', 'product_cat', 'star_brand', 'star_department', 'view' ),
+				'section_style'  => '',
+				'filters_label'  => __( 'Product filters', 'star-electric' ),
+				'filters_button' => __( 'Filters', 'star-electric' ),
+				'count_none'     => __( 'No products found', 'star-electric' ),
+				'sort_label'     => __( 'Sort products', 'star-electric' ),
+				'sorts'          => null,
+				'sort_default'   => '',
+				'pager_label'    => __( 'Product pages', 'star-electric' ),
+				'prev'           => __( 'Prev', 'star-electric' ),
+				'next'           => __( 'Next', 'star-electric' ),
+				'pager_edges'    => true,
+				'pager_args'     => array(),
+				'empty_icon'     => 'search',
+				'empty_title'    => __( 'No products match those filters', 'star-electric' ),
+				'empty_text'     => __( 'Try removing a filter or widening the price range to see more of the catalogue.', 'star-electric' ),
+				'empty_button'   => __( 'Clear all filters', 'star-electric' ),
+				'empty_url'      => '',
+				'show_results'   => __( 'Show results', 'star-electric' ),
+				'after'          => '',
+			)
+		);
+
+		$star_query   = $args['query'] instanceof WP_Query ? $args['query'] : $wp_query;
+		$star_own     = $args['query'] instanceof WP_Query;
+		$star_filters = class_exists( 'Star_Electric_Filters' );
+		$star_active  = $star_filters ? Star_Electric_Filters::active() : array( 'sort' => '' );
+		$star_found   = (int) $star_query->found_posts;
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$star_view = ( isset( $_GET['view'] ) && 'list' === $_GET['view'] ) ? 'list' : 'grid';
+		$star_page = max( 1, (int) get_query_var( 'paged' ), $star_own ? (int) get_query_var( 'page' ) : 1 );
+		?>
+		<section class="section section--sm"<?php echo '' !== (string) $args['section_style'] ? ' style="' . esc_attr( (string) $args['section_style'] ) . '"' : ''; ?>>
+			<form class="container shop-layout" method="get" id="shopFilters">
+				<?php
+				/*
+				 * A GET form replaces the whole query string, so anything the
+				 * current view depends on has to be carried through explicitly.
+				 */
+				// phpcs:disable WordPress.Security.NonceVerification.Recommended
+				foreach ( (array) $args['carry'] as $star_keep ) {
+					if ( isset( $_GET[ $star_keep ] ) && '' !== $_GET[ $star_keep ] ) {
+						printf(
+							'<input type="hidden" name="%s" value="%s">',
+							esc_attr( $star_keep ),
+							esc_attr( sanitize_text_field( wp_unslash( $_GET[ $star_keep ] ) ) )
+						);
+					}
+				}
+				// phpcs:enable WordPress.Security.NonceVerification.Recommended
+				?>
+
+				<aside class="filters" data-filters aria-label="<?php echo esc_attr( (string) $args['filters_label'] ); ?>">
+					<?php
+					if ( $star_filters ) {
+						echo Star_Electric_Filters::render( $args['prefix'] . '0' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					}
+					?>
+				</aside>
+
+				<div>
+					<div class="shop-toolbar">
+						<div class="shop-toolbar__left">
+							<button class="btn btn--ghost btn--sm filter-open" type="button" id="filterOpen">
+								<?php echo self::icon( 'filter' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<span><?php echo esc_html( (string) $args['filters_button'] ); ?></span>
+							</button>
+							<span id="resultCount">
+								<?php
+								if ( $star_found > 0 ) {
+									$star_per   = max( 1, (int) $star_query->get( 'posts_per_page' ) );
+									$star_first = ( ( $star_page - 1 ) * $star_per ) + 1;
+									$star_last  = min( $star_found, $star_page * $star_per );
+									printf(
+										/* translators: 1: first result, 2: last result, 3: total */
+										esc_html__( 'Showing %1$d–%2$d of %3$d products', 'star-electric-child' ),
+										(int) $star_first,
+										(int) $star_last,
+										(int) $star_found
+									);
+								} else {
+									echo esc_html( (string) $args['count_none'] );
+								}
+								?>
+							</span>
+						</div>
+
+						<div class="shop-toolbar__right">
+							<label class="sr-only" for="sortSelect"><?php echo esc_html( (string) $args['sort_label'] ); ?></label>
+							<select class="select" id="sortSelect" name="sort">
+								<?php
+								$star_sorts = is_array( $args['sorts'] ) ? $args['sorts'] : ( $star_filters ? Star_Electric_Filters::sorts() : array() );
+								$star_now   = '' !== $star_active['sort'] ? $star_active['sort'] : (string) $args['sort_default'];
+								foreach ( $star_sorts as $star_key => $star_label ) :
+									?>
+									<option value="<?php echo esc_attr( $star_key ); ?>" <?php selected( $star_now, $star_key ); ?>>
+										<?php echo esc_html( $star_label ); ?>
+									</option>
+								<?php endforeach; ?>
+							</select>
+
+							<div class="view-toggle" role="group" aria-label="<?php esc_attr_e( 'Product view', 'star-electric-child' ); ?>">
+								<button type="button" data-view="grid" aria-pressed="<?php echo esc_attr( 'grid' === $star_view ? 'true' : 'false' ); ?>"
+									aria-label="<?php esc_attr_e( 'Grid view', 'star-electric-child' ); ?>">
+									<?php echo self::icon( 'grid' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</button>
+								<button type="button" data-view="list" aria-pressed="<?php echo esc_attr( 'list' === $star_view ? 'true' : 'false' ); ?>"
+									aria-label="<?php esc_attr_e( 'List view', 'star-electric-child' ); ?>">
+									<?php echo self::icon( 'list' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<?php
+					if ( $star_filters ) {
+						get_template_part( 'template-parts/filter-chips' );
+					}
+					?>
+
+					<?php if ( $star_query->have_posts() ) : ?>
+
+						<ul class="product-grid<?php echo esc_attr( 'list' === $star_view ? ' product-grid--list' : '' ); ?>">
+							<?php
+							while ( $star_query->have_posts() ) {
+								$star_query->the_post();
+								wc_get_template_part( 'content', 'product' );
+							}
+							if ( $star_own ) {
+								wp_reset_postdata();
+							}
+							?>
+						</ul>
+
+						<?php
+						$star_total = (int) $star_query->max_num_pages;
+						$star_pages = paginate_links(
+							array_merge(
+								array(
+									'total'     => $star_total,
+									'current'   => $star_page,
+									'type'      => 'array',
+									'prev_text' => (string) $args['prev'],
+									'next_text' => (string) $args['next'],
+								),
+								(array) $args['pager_args']
+							)
+						);
+
+						/*
+						 * The approved pager always shows Prev and Next, greyed
+						 * out at the ends. paginate_links() drops them instead,
+						 * which made the bar a different width on the first and
+						 * last page.
+						 */
+						if ( $args['pager_edges'] && is_array( $star_pages ) && $star_total > 1 ) {
+							if ( 1 === $star_page ) {
+								array_unshift( $star_pages, '<span class="is-gap">' . esc_html( (string) $args['prev'] ) . '</span>' );
+							}
+							if ( $star_page === $star_total ) {
+								$star_pages[] = '<span class="is-gap">' . esc_html( (string) $args['next'] ) . '</span>';
+							}
+						}
+						?>
+						<?php if ( $star_pages ) : ?>
+							<nav class="pagination" id="pagination" aria-label="<?php echo esc_attr( (string) $args['pager_label'] ); ?>" style="margin-top:32px">
+								<?php foreach ( $star_pages as $star_link ) : ?>
+									<?php echo wp_kses_post( $star_link ); ?>
+								<?php endforeach; ?>
+							</nav>
+						<?php endif; ?>
+
+					<?php else : ?>
+
+						<div id="catalogEmpty">
+							<div class="empty-state">
+								<span class="empty-state__ico">
+									<?php echo self::icon( (string) $args['empty_icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</span>
+								<h2><?php echo esc_html( (string) $args['empty_title'] ); ?></h2>
+								<p><?php echo esc_html( (string) $args['empty_text'] ); ?></p>
+								<a class="btn btn--accent" href="<?php echo esc_url( (string) $args['empty_url'] ); ?>">
+									<?php echo esc_html( (string) $args['empty_button'] ); ?>
+								</a>
+							</div>
+						</div>
+
+					<?php endif; ?>
+
+					<?php echo $args['after']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</div>
+
+				<div class="drawer drawer--right" id="filterDrawer" hidden>
+					<div class="drawer__scrim" data-side-close></div>
+					<div class="drawer__panel" role="dialog" aria-modal="true" aria-label="<?php echo esc_attr( (string) $args['filters_label'] ); ?>">
+						<div class="drawer__head">
+							<span class="drawer__title"><?php echo esc_html( (string) $args['filters_button'] ); ?></span>
+							<button class="icon-btn" type="button" data-side-close aria-label="<?php esc_attr_e( 'Close filters', 'star-electric-child' ); ?>">
+								<?php echo self::icon( 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							</button>
+						</div>
+						<div class="drawer__body" data-filters>
+							<?php
+							if ( $star_filters ) {
+								echo Star_Electric_Filters::render( $args['prefix'] . '1' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							}
+							?>
+						</div>
+						<div class="drawer__foot">
+							<button class="btn btn--accent btn--block" type="submit">
+								<?php echo esc_html( (string) $args['show_results'] ); ?>
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The standing note that closes the deals page.
+	 *
+	 * No countdown, no urgency, no offer period: every discount shown is one the
+	 * product's own source publishes. Please leave this note in place - it is
+	 * what keeps the page honest about where its prices come from.
+	 *
+	 * @param array $args strong, text.
+	 */
+	public static function deals_note( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'strong' => __( 'No countdown timers or urgency claims are used on this page.', 'star-electric' ),
+				'text'   => __( 'Every discount shown is one the product’s own source publishes: the previous price and the current price are both taken from that source on the date recorded against the product. Nothing is marked down here, and no offer period is claimed.', 'star-electric' ),
+			)
+		);
+		?>
+		<section class="section section--tint section--sm">
+			<div class="container">
+				<div class="placeholder-note">
+					<?php echo self::icon( 'info' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<span>
+						<strong><?php echo esc_html( (string) $args['strong'] ); ?></strong>
+						<?php echo esc_html( (string) $args['text'] ); ?>
+					</span>
+				</div>
+			</div>
+		</section>
+		<?php
+	}
 }

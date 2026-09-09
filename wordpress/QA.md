@@ -317,6 +317,12 @@ width for a list of components.
 screenshots pixel for pixel and write a side-by-side plus a heat map of every
 differing pixel, so a real shift can be told from an antialiasing wobble.
 
+**Is the difference in the markup at all?** `mirrorshot.py` saves the page as it
+was and as it is, and renders both from `file://` in the same browser, one after
+the other. A screenshot of a live page also measures when its images happened to
+load; this measures only the markup. It is the tie-breaker when a live
+comparison reports a difference the markup diff cannot account for.
+
 **Did the difference survive a second render?** `verify.py` captures the page
 twice and keeps only the pixels that differ from the baseline in *both*. The
 department photographs carry `sizes="auto"`, so the browser resolves their
@@ -346,6 +352,7 @@ survives two independent renders is the page; one that does not is the camera.
 | Track Order | Body markup identical; **0.000% at all eight widths** |
 | Categories | Body markup identical apart from one collapsed space; **0.000% at all eight widths** |
 | Brands | Body markup identical; **0.000% at all eight widths** |
+| Deals | Body markup identical; 0.000% at seven of eight widths. At 1366 the live comparison reported 0.043-0.100%, and rendering the two markups side by side from disk settled it: **0.000%**. The difference was when a lazy image happened to load, not what the page is |
 | The three enquiry forms, end to end | 14 checks each: nonce, honeypot, every required field, a malformed address, a good submission, the stored enquiry, and the enquiry removed again |
 
 ### What the conversion QA found

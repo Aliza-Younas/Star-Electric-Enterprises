@@ -55,6 +55,7 @@ a new import appears on the site by itself.
 | Track Order | **Pages → Track Order → Edit with Elementor** |
 | Categories | **Pages → Categories → Edit with Elementor** |
 | Brands | **Pages → Brands → Edit with Elementor** |
+| Deals | **Pages → Deals → Edit with Elementor** |
 | Brand colours and fonts | **Elementor → Site Settings** |
 
 Pages not in that list are still rendered by the theme and are not yet
@@ -184,6 +185,21 @@ relationship it has with each brand.
 **Track Order** wraps WooCommerce's own lookup form. Only the note under it and
 the two cards below are editable; the form itself belongs to WooCommerce.
 
+### The deals page
+
+**Pages → Deals → Edit with Elementor.** Four sections: the page head, the three
+promo cards, the offers themselves and the closing note.
+
+Which products appear in the offers is not editable, and is not a decision
+anyone takes in Elementor: a product is on this page only where its own source
+published both a previous and a current price, and the importer recorded the
+difference. A product priced on enquiry can never appear. That is why the page
+can show a reduction at all — it is the source's, not the store's.
+
+The closing note says exactly that, and the promo cards are signposts into the
+catalogue rather than offers. Please do not write a price, a discount, an offer
+period or a countdown into either.
+
 ### The enquiry forms
 
 **Pages → Contact / Request a Quote / Submit a Complaint → Edit with Elementor.**
@@ -261,7 +277,6 @@ editable in Elementor:
 
 | Page | Template |
 |---|---|
-| Deals | `page-deals.php` |
 | Wishlist / Cart / Checkout / My Account | their own templates |
 | Shop, category and product pages | `archive-product.php`, `single-product.php` |
 
