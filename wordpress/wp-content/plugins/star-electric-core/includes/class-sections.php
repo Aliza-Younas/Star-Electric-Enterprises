@@ -812,24 +812,140 @@ class Star_Electric_Sections {
 	}
 
 	/**
-	 * Fill the two catalogue tokens an editor may use in body copy.
+	 * Fill the tokens an editor may use in body copy.
 	 *
 	 * A page that says how many departments the catalogue has must never be
 	 * able to disagree with the catalogue, so that number is not typed: the
 	 * editor writes {departments} and it is filled in when the page renders.
-	 * {site} does the same for the business name.
+	 * {site} does the same for the business name, and the link tokens resolve
+	 * to whatever page currently holds that role, so a link cannot rot when a
+	 * page is renamed.
 	 *
-	 * @param string $text  Copy as the editor wrote it.
-	 * @param int    $depts Number of departments.
+	 * @param string $text Copy as the editor wrote it.
 	 */
-	private static function tokens( string $text, int $depts ): string {
-		return strtr(
-			$text,
-			array(
-				'{departments}' => number_format_i18n( $depts ),
-				'{site}'        => get_bloginfo( 'name' ),
-			)
+	private static function tokens( string $text ): string {
+		if ( false === strpos( $text, '{' ) ) {
+			return $text;
+		}
+
+		$map = array(
+			'{site}'    => get_bloginfo( 'name' ),
+			'{shop}'    => self::url( 'shop' ),
+			'{quote}'   => self::url( 'quote' ),
+			'{contact}' => self::url( 'contact' ),
+			'{privacy}' => self::url( 'privacy' ),
+			'{faq}'     => self::url( 'faq' ),
 		);
+
+		if ( false !== strpos( $text, '{departments}' ) ) {
+			$map['{departments}'] = number_format_i18n( count( self::tree() ) );
+		}
+
+		return strtr( $text, $map );
+	}
+
+	/**
+	 * Escaped copy with [text](url) links put back.
+	 *
+	 * The one piece of markup an editor is trusted to write, because a consent
+	 * line and an FAQ answer both need a link inside a sentence and neither is
+	 * worth a rich-text editor.
+	 *
+	 * @param string $text Copy as the editor wrote it.
+	 */
+	public static function rich( string $text ): string {
+		return (string) preg_replace(
+			'/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/',
+			'<a class="link-inline" href="$2">$1</a>',
+			esc_html( self::tokens( $text ) )
+		);
+	}
+
+	/**
+	 * The sidebar of small cards that sits beside a page's main column.
+	 *
+	 * A card is built from whichever parts it has: an intro line, a list of
+	 * rows, a closing hint, and one or more buttons. A card with no heading is
+	 * dropped, which is how an editor removes one.
+	 *
+	 * A row shows a label and a value; give the row a link and the value becomes
+	 * that link, or - when there is no value - the label itself does.
+	 *
+	 * @param array $cards Card definitions.
+	 */
+	public static function info_cards( array $cards ): void {
+		?>
+		<aside>
+			<?php
+			foreach ( $cards as $star_card ) :
+				$star_title = trim( (string) ( $star_card['title'] ?? '' ) );
+				if ( '' === $star_title ) {
+					continue;
+				}
+				$star_text    = (string) ( $star_card['text'] ?? '' );
+				$star_rows    = (array) ( $star_card['rows'] ?? array() );
+				$star_hint    = (string) ( $star_card['hint'] ?? '' );
+				$star_buttons = (array) ( $star_card['buttons'] ?? array() );
+				?>
+				<div class="info-card">
+					<h3><?php echo esc_html( self::tokens( $star_title ) ); ?></h3>
+					<?php if ( '' !== $star_text ) : ?>
+						<p class="t-sm t-muted" style="margin-bottom:16px"><?php echo esc_html( self::tokens( $star_text ) ); ?></p>
+					<?php endif; ?>
+
+					<?php if ( $star_rows ) : ?>
+						<ul class="info-list">
+							<?php
+							foreach ( $star_rows as $star_row ) :
+								$star_label = self::tokens( (string) ( $star_row['label'] ?? '' ) );
+								$star_value = self::tokens( (string) ( $star_row['value'] ?? '' ) );
+								$star_url   = (string) ( $star_row['url'] ?? '' );
+								?>
+								<li>
+									<?php echo self::icon( (string) ( $star_row['icon'] ?? 'info' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<?php if ( '' !== $star_url && '' === $star_value ) : ?>
+										<span><a class="link-inline" href="<?php echo esc_url( $star_url ); ?>"><?php echo esc_html( $star_label ); ?></a></span>
+									<?php elseif ( '' !== $star_url ) : ?>
+										<span><strong><?php echo esc_html( $star_label ); ?></strong><a class="link-inline" href="<?php echo esc_url( $star_url ); ?>"><?php echo esc_html( $star_value ); ?></a></span>
+									<?php else : ?>
+										<span><strong><?php echo esc_html( $star_label ); ?></strong><?php echo esc_html( $star_value ); ?></span>
+									<?php endif; ?>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
+
+					<?php if ( '' !== $star_hint ) : ?>
+						<p class="field__hint" style="margin-top:16px">
+							<?php echo esc_html( self::tokens( $star_hint ) ); ?>
+						</p>
+					<?php endif; ?>
+
+					<?php
+					/*
+					 * One button stands on its own; several are stacked. A stack of
+					 * one is not a stack, and the approved pages draw it both ways
+					 * for exactly that reason. The top margin is only needed when a
+					 * list sits above the button - an intro line brings its own.
+					 */
+					$star_gap = $star_rows ? ' style="margin-top:16px"' : '';
+					?>
+					<?php if ( count( $star_buttons ) > 1 ) : ?>
+						<div class="stack" style="gap:8px">
+							<?php foreach ( $star_buttons as $star_button ) : ?>
+								<a class="btn btn--<?php echo esc_attr( (string) ( $star_button['style'] ?? 'ghost' ) ); ?> btn--block btn--sm" href="<?php echo esc_url( (string) ( $star_button['url'] ?? '' ) ); ?>"><?php echo esc_html( (string) ( $star_button['label'] ?? '' ) ); ?></a>
+							<?php endforeach; ?>
+						</div>
+					<?php elseif ( $star_buttons ) : ?>
+						<?php $star_button = reset( $star_buttons ); ?>
+						<a class="btn btn--<?php echo esc_attr( (string) ( $star_button['style'] ?? 'ghost' ) ); ?> btn--block btn--sm"<?php echo $star_gap; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> href="<?php echo esc_url( (string) ( $star_button['url'] ?? '' ) ); ?>">
+							<?php echo esc_html( (string) ( $star_button['label'] ?? '' ) ); ?>
+						</a>
+					<?php endif; ?>
+				</div>
+			<?php endforeach; ?>
+		</aside>
+		<?php
 	}
 
 	/**
@@ -846,17 +962,12 @@ class Star_Electric_Sections {
 		$args = wp_parse_args(
 			$args,
 			array(
-				'blocks'      => array(),
-				'facts_title' => '',
-				'facts'       => array(),
-				'links_title' => '',
-				'links_text'  => '',
-				'links'       => array(),
+				'blocks' => array(),
+				'cards'  => array(),
 			)
 		);
 
-		$star_tree  = self::tree();
-		$star_depts = count( $star_tree );
+		$star_tree = self::tree();
 		?>
 		<section class="section section--sm">
 			<div class="container form-layout">
@@ -865,7 +976,7 @@ class Star_Electric_Sections {
 					<?php
 					foreach ( (array) $args['blocks'] as $star_block ) :
 						$star_kind = (string) ( $star_block['kind'] ?? 'text' );
-						$star_text = self::tokens( (string) ( $star_block['text'] ?? '' ), $star_depts );
+						$star_text = self::tokens( (string) ( $star_block['text'] ?? '' ) );
 
 						if ( 'heading' === $star_kind ) :
 							?>
@@ -894,35 +1005,7 @@ class Star_Electric_Sections {
 					?>
 				</div>
 
-				<aside>
-					<?php if ( '' !== (string) $args['facts_title'] ) : ?>
-						<div class="info-card">
-							<h3><?php echo esc_html( (string) $args['facts_title'] ); ?></h3>
-							<ul class="info-list">
-								<?php foreach ( (array) $args['facts'] as $star_fact ) : ?>
-									<li>
-										<?php echo self::icon( (string) ( $star_fact['icon'] ?? 'info' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-										<span><strong><?php echo esc_html( (string) ( $star_fact['label'] ?? '' ) ); ?></strong><?php echo esc_html( self::tokens( (string) ( $star_fact['value'] ?? '' ), $star_depts ) ); ?></span>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						</div>
-					<?php endif; ?>
-
-					<?php if ( '' !== (string) $args['links_title'] ) : ?>
-						<div class="info-card">
-							<h3><?php echo esc_html( (string) $args['links_title'] ); ?></h3>
-							<?php if ( '' !== (string) $args['links_text'] ) : ?>
-								<p class="t-sm t-muted" style="margin-bottom:16px"><?php echo esc_html( (string) $args['links_text'] ); ?></p>
-							<?php endif; ?>
-							<div class="stack" style="gap:8px">
-								<?php foreach ( (array) $args['links'] as $star_link ) : ?>
-									<a class="btn btn--<?php echo esc_attr( (string) ( $star_link['style'] ?? 'ghost' ) ); ?> btn--block btn--sm" href="<?php echo esc_url( (string) ( $star_link['url'] ?? '' ) ); ?>"><?php echo esc_html( (string) ( $star_link['label'] ?? '' ) ); ?></a>
-								<?php endforeach; ?>
-							</div>
-						</div>
-					<?php endif; ?>
-				</aside>
+				<?php self::info_cards( (array) $args['cards'] ); ?>
 			</div>
 		</section>
 		<?php
@@ -1046,7 +1129,6 @@ class Star_Electric_Sections {
 			)
 		);
 
-		$star_depts = count( self::tree() );
 		?>
 		<section class="section" aria-labelledby="deptTitle">
 			<div class="container">
@@ -1054,7 +1136,7 @@ class Star_Electric_Sections {
 					<div>
 						<p class="section__eyebrow"><?php echo esc_html( (string) $args['eyebrow'] ); ?></p>
 						<h2 class="section__title" id="deptTitle"><?php echo esc_html( (string) $args['title'] ); ?></h2>
-						<p class="section__sub"><?php echo esc_html( self::tokens( (string) $args['sub'], $star_depts ) ); ?></p>
+						<p class="section__sub"><?php echo esc_html( self::tokens( (string) $args['sub'] ) ); ?></p>
 					</div>
 					<?php if ( '' !== (string) $args['link_label'] ) : ?>
 						<a class="link-more" href="<?php echo esc_url( (string) $args['link_url'] ); ?>">
@@ -1064,6 +1146,584 @@ class Star_Electric_Sections {
 					<?php endif; ?>
 				</div>
 				<?php self::category_grid( (string) $args['modifier'] ); ?>
+			</div>
+		</section>
+		<?php
+	}
+	/**
+	 * The contact page's body: the enquiry form beside its sidebar.
+	 *
+	 * The form itself belongs to Star_Electric_Forms - the nonce, the honeypot,
+	 * where it posts, what it accepts and what it does with a submission are all
+	 * decided there. Everything this renders is wording.
+	 *
+	 * @param array $args Panel wording, field labels, subjects and sidebar.
+	 */
+	public static function contact_form( array $args = array() ): void {
+		if ( ! class_exists( 'Star_Electric_Forms' ) ) {
+			return;
+		}
+
+		$args = wp_parse_args(
+			$args,
+			array(
+				'heading'        => __( 'Send us a message', 'star-electric' ),
+				'note'           => __( 'We reply to the email address you give us.', 'star-electric' ),
+				'required_label' => __( 'required', 'star-electric' ),
+				'label_name'     => __( 'Full name', 'star-electric' ),
+				'label_phone'    => __( 'Phone', 'star-electric' ),
+				'label_email'    => __( 'Email', 'star-electric' ),
+				'label_subject'  => __( 'Subject', 'star-electric' ),
+				'label_message'  => __( 'Message', 'star-electric' ),
+				'subject_prompt' => __( 'Select a subject…', 'star-electric' ),
+				'subjects'       => self::default_contact_subjects(),
+				'placeholder'    => __( 'Tell us what you need — include ratings, sizes or model numbers where you know them.', 'star-electric' ),
+				'consent'        => __( 'I agree that my details may be used to respond to this message, as described in the [Privacy Policy]({privacy}).', 'star-electric' ),
+				'submit'         => __( 'Send Message', 'star-electric' ),
+				'cards'          => array(),
+			)
+		);
+
+		list( $star_notice_type, $star_notice ) = Star_Electric_Forms::notice();
+		?>
+		<section class="section section--sm">
+			<div class="container form-layout">
+
+				<div class="panel">
+					<div class="panel__head">
+						<div>
+							<h2 class="panel__title"><?php echo esc_html( (string) $args['heading'] ); ?></h2>
+							<p class="t-sm t-muted" style="margin-top:4px"><?php echo esc_html( (string) $args['note'] ); ?></p>
+						</div>
+						<span class="t-xs t-faint"><span class="t-accent">*</span> <?php echo esc_html( (string) $args['required_label'] ); ?></span>
+					</div>
+
+					<?php if ( '' !== $star_notice ) : ?>
+						<div class="notice notice--<?php echo esc_attr( $star_notice_type ); ?>" role="status" style="margin-bottom:20px">
+							<p><?php echo esc_html( $star_notice ); ?></p>
+						</div>
+					<?php endif; ?>
+
+					<form class="stack-5" method="post" action="<?php echo esc_url( Star_Electric_Forms::action() ); ?>">
+						<?php Star_Electric_Forms::fields( 'contact' ); ?>
+
+						<div class="form-grid">
+							<div class="field">
+								<label class="field__label" for="cName"><?php echo esc_html( (string) $args['label_name'] ); ?> <span class="req">*</span></label>
+								<input class="input" id="cName" name="name" type="text" autocomplete="name" required>
+							</div>
+							<div class="field">
+								<label class="field__label" for="cPhone"><?php echo esc_html( (string) $args['label_phone'] ); ?> <span class="req">*</span></label>
+								<input class="input" id="cPhone" name="phone" type="tel" autocomplete="tel" required>
+							</div>
+							<div class="field">
+								<label class="field__label" for="cEmail"><?php echo esc_html( (string) $args['label_email'] ); ?> <span class="req">*</span></label>
+								<input class="input" id="cEmail" name="email" type="email" autocomplete="email" required>
+							</div>
+							<div class="field">
+								<label class="field__label" for="cSubject"><?php echo esc_html( (string) $args['label_subject'] ); ?> <span class="req">*</span></label>
+								<select class="select" id="cSubject" name="subject" required>
+									<option value=""><?php echo esc_html( (string) $args['subject_prompt'] ); ?></option>
+									<?php foreach ( (array) $args['subjects'] as $star_subject ) : ?>
+										<?php printf( '<option>%s</option>', esc_html( (string) $star_subject ) ); ?>
+									<?php endforeach; ?>
+								</select>
+							</div>
+							<div class="field span-2">
+								<label class="field__label" for="cMessage"><?php echo esc_html( (string) $args['label_message'] ); ?> <span class="req">*</span></label>
+								<textarea class="textarea" id="cMessage" name="message" required
+									placeholder="<?php echo esc_attr( (string) $args['placeholder'] ); ?>"></textarea>
+							</div>
+						</div>
+
+						<label class="check">
+							<input type="checkbox" name="consent" value="yes" required>
+							<span>
+								<?php echo self::rich( (string) $args['consent'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<span class="req">*</span>
+							</span>
+						</label>
+
+						<button class="btn btn--accent btn--lg" type="submit" style="justify-self:start">
+							<?php echo esc_html( (string) $args['submit'] ); ?>
+						</button>
+					</form>
+				</div>
+
+				<?php self::info_cards( (array) $args['cards'] ); ?>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The subjects the approved contact form offers.
+	 *
+	 * @return string[]
+	 */
+	public static function default_contact_subjects(): array {
+		return array(
+			__( 'Product enquiry', 'star-electric' ),
+			__( 'Stock availability', 'star-electric' ),
+			__( 'Order status', 'star-electric' ),
+			__( 'Bulk / project quotation', 'star-electric' ),
+			__( 'Delivery question', 'star-electric' ),
+			__( 'Returns or replacement', 'star-electric' ),
+			__( 'Other', 'star-electric' ),
+		);
+	}
+
+	/**
+	 * A band of copy with a row of buttons under it.
+	 *
+	 * The Contact page's closing band is this shape, and it says what it says
+	 * deliberately: there is no map, street address, opening hours or
+	 * collection process on it, because none is on record. Please do not add
+	 * one until the business supplies it.
+	 *
+	 * @param array $args eyebrow, title, sub, buttons, tint, heading_id.
+	 */
+	public static function text_band( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'eyebrow'    => '',
+				'title'      => '',
+				'sub'        => '',
+				'buttons'    => array(),
+				'tint'       => true,
+				'heading_id' => 'bandTitle',
+			)
+		);
+
+		$star_class = $args['tint'] ? 'section section--tint' : 'section';
+		?>
+		<section class="<?php echo esc_attr( $star_class ); ?>" aria-labelledby="<?php echo esc_attr( (string) $args['heading_id'] ); ?>">
+			<div class="container">
+				<div>
+					<p class="section__eyebrow"><?php echo esc_html( self::tokens( (string) $args['eyebrow'] ) ); ?></p>
+					<h2 class="section__title" id="<?php echo esc_attr( (string) $args['heading_id'] ); ?>"><?php echo esc_html( self::tokens( (string) $args['title'] ) ); ?></h2>
+					<p class="section__sub" style="margin-bottom:24px">
+						<?php echo esc_html( self::tokens( (string) $args['sub'] ) ); ?>
+					</p>
+
+					<div class="btn-row">
+						<?php foreach ( (array) $args['buttons'] as $star_button ) : ?>
+							<a class="btn btn--<?php echo esc_attr( (string) ( $star_button['style'] ?? 'accent' ) ); ?>" href="<?php echo esc_url( (string) ( $star_button['url'] ?? '' ) ); ?>">
+								<?php echo esc_html( (string) ( $star_button['label'] ?? '' ) ); ?>
+							</a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php
+	}
+	/**
+	 * The navy hero the quote page opens with.
+	 *
+	 * Its breadcrumb is drawn light on the dark band rather than reusing the
+	 * page head, which is the approved page's own treatment.
+	 *
+	 * @param array $args crumbs, title, text, tags, steps, heading_id.
+	 */
+	public static function bulk_hero( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'crumbs'     => array(),
+				'title'      => '',
+				'text'       => '',
+				'tags'       => array(),
+				'steps'      => array(),
+				'heading_id' => 'quoteTitle',
+			)
+		);
+		?>
+		<section class="section bulk section--sm" aria-labelledby="<?php echo esc_attr( (string) $args['heading_id'] ); ?>">
+			<div class="container">
+				<nav aria-label="<?php esc_attr_e( 'Breadcrumb', 'star-electric' ); ?>" style="margin-bottom:16px">
+					<ol class="breadcrumb">
+						<?php
+						$star_last = count( (array) $args['crumbs'] ) - 1;
+						$star_i    = 0;
+						foreach ( (array) $args['crumbs'] as $star_crumb ) {
+							if ( $star_i > 0 ) {
+								echo '<li class="sep" aria-hidden="true" style="color:rgba(255,255,255,.35)">/</li>';
+							}
+							$star_label = (string) ( $star_crumb['label'] ?? '' );
+							$star_url   = (string) ( $star_crumb['url'] ?? '' );
+							if ( $star_i === $star_last || '' === $star_url ) {
+								printf( '<li aria-current="page" style="color:#fff">%s</li>', esc_html( $star_label ) );
+							} else {
+								printf(
+									'<li><a href="%s" style="color:rgba(255,255,255,.6)">%s</a></li>',
+									esc_url( $star_url ),
+									esc_html( $star_label )
+								);
+							}
+							++$star_i;
+						}
+						?>
+					</ol>
+				</nav>
+
+				<div class="bulk__inner">
+					<div>
+						<h1 class="bulk__title" id="<?php echo esc_attr( (string) $args['heading_id'] ); ?>"><?php echo esc_html( (string) $args['title'] ); ?></h1>
+						<p class="bulk__text"><?php echo esc_html( (string) $args['text'] ); ?></p>
+						<ul class="hero__cta" style="gap:8px;flex-wrap:wrap">
+							<?php foreach ( (array) $args['tags'] as $star_tag ) : ?>
+								<li class="hero__eyebrow" style="margin:0"><?php echo esc_html( (string) $star_tag ); ?></li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+					<ol class="bulk__steps">
+						<?php foreach ( array_values( (array) $args['steps'] ) as $star_i => $star_step ) : ?>
+							<li><b><?php echo esc_html( substr( '0' . ( $star_i + 1 ), -2 ) ); ?></b> <?php echo esc_html( (string) $star_step ); ?></li>
+						<?php endforeach; ?>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The project types the approved quote form offers.
+	 *
+	 * @return string[]
+	 */
+	public static function default_project_types(): array {
+		return array(
+			__( 'Residential — new build', 'star-electric' ),
+			__( 'Residential — renovation / rewiring', 'star-electric' ),
+			__( 'Commercial fit-out', 'star-electric' ),
+			__( 'Office installation', 'star-electric' ),
+			__( 'Industrial / factory', 'star-electric' ),
+			__( 'Shop or retail unit', 'star-electric' ),
+			__( 'Maintenance / repair contract', 'star-electric' ),
+			__( 'Other', 'star-electric' ),
+		);
+	}
+
+	/**
+	 * The quote request form and its sidebar.
+	 *
+	 * A "Request a Quote" button on a product page arrives here with that
+	 * product's id, which is put into a hidden field and named above the form so
+	 * the enquiry says what it is about. Resolving that id, and everything else
+	 * the submission does, belongs to Star_Electric_Forms.
+	 *
+	 * @param array $args Wording, field labels, project types and sidebar.
+	 */
+	public static function quote_form( array $args = array() ): void {
+		if ( ! class_exists( 'Star_Electric_Forms' ) ) {
+			return;
+		}
+
+		$args = wp_parse_args(
+			$args,
+			array(
+				'heading'         => __( 'Quote Request', 'star-electric' ),
+				'note'            => __( 'The more detail you provide, the more accurate the quotation.', 'star-electric' ),
+				'required_label'  => __( 'required', 'star-electric' ),
+				'quoting_for'     => __( 'Quoting for:', 'star-electric' ),
+				'legend_you'      => __( 'Your details', 'star-electric' ),
+				'legend_project'  => __( 'Project details', 'star-electric' ),
+				'label_name'      => __( 'Full name', 'star-electric' ),
+				'label_company'   => __( 'Company / Contractor name', 'star-electric' ),
+				'label_phone'     => __( 'Phone', 'star-electric' ),
+				'label_email'     => __( 'Email', 'star-electric' ),
+				'label_type'      => __( 'Project type', 'star-electric' ),
+				'type_prompt'     => __( 'Select a project type…', 'star-electric' ),
+				'types'           => self::default_project_types(),
+				'label_date'      => __( 'Required delivery date', 'star-electric' ),
+				'hint_date'       => __( 'Approximate is fine.', 'star-electric' ),
+				'label_items'     => __( 'Product requirements', 'star-electric' ),
+				'placeholder_items' => __( "List the products you need — for example:\n\n1.5mm single core copper wire — 20 coils\n32A MCB single pole — 40 units\n12W LED bulb B22 — 150 units", 'star-electric' ),
+				'hint_items'      => __( 'Include ratings, sizes and any brand preference where it matters.', 'star-electric' ),
+				'label_qty'       => __( 'Estimated total quantities / order value', 'star-electric' ),
+				'placeholder_qty' => __( 'e.g. approx. 400 items, or an approximate budget range', 'star-electric' ),
+				'label_notes'     => __( 'Additional notes', 'star-electric' ),
+				'placeholder_notes' => __( 'Site location, phased delivery, access restrictions, anything else we should know…', 'star-electric' ),
+				'consent'         => __( 'I agree that my details may be used to respond to this quote request, as described in the [Privacy Policy]({privacy}).', 'star-electric' ),
+				'submit'          => __( 'Submit Quote Request', 'star-electric' ),
+				'cards'           => array(),
+			)
+		);
+
+		list( $star_notice_type, $star_notice ) = Star_Electric_Forms::notice();
+
+		// The link says quote_product, not product: WordPress owns "product" as
+		// WooCommerce's post-type query var and answers ?product=2333 with a 404.
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$star_product_id = isset( $_GET['quote_product'] ) ? absint( $_GET['quote_product'] ) : 0;
+		$star_product    = $star_product_id && function_exists( 'wc_get_product' ) ? wc_get_product( $star_product_id ) : null;
+		?>
+		<section class="section section--sm">
+			<div class="container form-layout">
+
+				<div class="panel">
+					<div class="panel__head">
+						<div>
+							<h2 class="panel__title"><?php echo esc_html( (string) $args['heading'] ); ?></h2>
+							<p class="t-sm t-muted" style="margin-top:4px"><?php echo esc_html( (string) $args['note'] ); ?></p>
+						</div>
+						<span class="t-xs t-faint"><span class="t-accent">*</span> <?php echo esc_html( (string) $args['required_label'] ); ?></span>
+					</div>
+
+					<?php if ( '' !== $star_notice ) : ?>
+						<div class="notice notice--<?php echo esc_attr( $star_notice_type ); ?>" role="status" style="margin-bottom:20px">
+							<p><?php echo esc_html( $star_notice ); ?></p>
+						</div>
+					<?php endif; ?>
+
+					<form class="stack-5" method="post" action="<?php echo esc_url( Star_Electric_Forms::action() ); ?>">
+						<?php Star_Electric_Forms::fields( 'quote' ); ?>
+
+						<?php if ( $star_product instanceof WC_Product ) : ?>
+							<input type="hidden" name="product" value="<?php echo esc_attr( (string) $star_product->get_id() ); ?>">
+							<div class="info-note" style="margin-bottom:4px">
+								<p>
+									<?php echo esc_html( (string) $args['quoting_for'] ); ?>
+									<strong><?php echo esc_html( $star_product->get_name() ); ?></strong>
+								</p>
+							</div>
+						<?php endif; ?>
+
+						<fieldset style="border:0;padding:0;margin:0">
+							<legend class="field__label" style="margin-bottom:16px;font-size:14px"><?php echo esc_html( (string) $args['legend_you'] ); ?></legend>
+							<div class="form-grid">
+								<div class="field">
+									<label class="field__label" for="qName"><?php echo esc_html( (string) $args['label_name'] ); ?> <span class="req">*</span></label>
+									<input class="input" id="qName" name="name" type="text" autocomplete="name" required>
+								</div>
+								<div class="field">
+									<label class="field__label" for="qCompany"><?php echo esc_html( (string) $args['label_company'] ); ?></label>
+									<input class="input" id="qCompany" name="company" type="text" autocomplete="organization">
+								</div>
+								<div class="field">
+									<label class="field__label" for="qPhone"><?php echo esc_html( (string) $args['label_phone'] ); ?> <span class="req">*</span></label>
+									<input class="input" id="qPhone" name="phone" type="tel" autocomplete="tel" required>
+								</div>
+								<div class="field">
+									<label class="field__label" for="qEmail"><?php echo esc_html( (string) $args['label_email'] ); ?> <span class="req">*</span></label>
+									<input class="input" id="qEmail" name="email" type="email" autocomplete="email" required>
+								</div>
+							</div>
+						</fieldset>
+
+						<hr>
+
+						<fieldset style="border:0;padding:0;margin:0">
+							<legend class="field__label" style="margin-bottom:16px;font-size:14px"><?php echo esc_html( (string) $args['legend_project'] ); ?></legend>
+							<div class="form-grid">
+								<div class="field">
+									<label class="field__label" for="qType"><?php echo esc_html( (string) $args['label_type'] ); ?> <span class="req">*</span></label>
+									<select class="select" id="qType" name="project_type" required>
+										<option value=""><?php echo esc_html( (string) $args['type_prompt'] ); ?></option>
+										<?php foreach ( (array) $args['types'] as $star_type ) : ?>
+											<?php printf( '<option>%s</option>', esc_html( (string) $star_type ) ); ?>
+										<?php endforeach; ?>
+									</select>
+								</div>
+								<div class="field">
+									<label class="field__label" for="qDate"><?php echo esc_html( (string) $args['label_date'] ); ?></label>
+									<input class="input" id="qDate" name="required_date" type="date">
+									<p class="field__hint"><?php echo esc_html( (string) $args['hint_date'] ); ?></p>
+								</div>
+								<div class="field span-2">
+									<label class="field__label" for="qItems"><?php echo esc_html( (string) $args['label_items'] ); ?> <span class="req">*</span></label>
+									<textarea class="textarea" id="qItems" name="requirements" required
+										placeholder="<?php echo esc_attr( (string) $args['placeholder_items'] ); ?>"><?php
+										echo $star_product instanceof WC_Product
+											? esc_textarea( $star_product->get_name() . "\n" )
+											: '';
+									?></textarea>
+									<p class="field__hint"><?php echo esc_html( (string) $args['hint_items'] ); ?></p>
+								</div>
+								<div class="field span-2">
+									<label class="field__label" for="qQty"><?php echo esc_html( (string) $args['label_qty'] ); ?></label>
+									<input class="input" id="qQty" name="quantities" type="text"
+										placeholder="<?php echo esc_attr( (string) $args['placeholder_qty'] ); ?>">
+								</div>
+								<div class="field span-2">
+									<label class="field__label" for="qMessage"><?php echo esc_html( (string) $args['label_notes'] ); ?></label>
+									<textarea class="textarea" id="qMessage" name="message" style="min-height:110px"
+										placeholder="<?php echo esc_attr( (string) $args['placeholder_notes'] ); ?>"></textarea>
+								</div>
+							</div>
+						</fieldset>
+
+						<hr>
+
+						<label class="check">
+							<input type="checkbox" name="consent" value="yes" required>
+							<span>
+								<?php echo self::rich( (string) $args['consent'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<span class="req">*</span>
+							</span>
+						</label>
+
+						<button class="btn btn--accent btn--lg" type="submit" style="justify-self:start">
+							<?php echo esc_html( (string) $args['submit'] ); ?>
+						</button>
+					</form>
+				</div>
+
+				<?php self::info_cards( (array) $args['cards'] ); ?>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The complaint types the approved form offers.
+	 *
+	 * @return string[]
+	 */
+	public static function default_complaint_types(): array {
+		return array(
+			__( 'Wrong item received', 'star-electric' ),
+			__( 'Item damaged on arrival', 'star-electric' ),
+			__( 'Item faulty or not working', 'star-electric' ),
+			__( 'Missing item from the order', 'star-electric' ),
+			__( 'Delivery problem or delay', 'star-electric' ),
+			__( 'Billing or pricing issue', 'star-electric' ),
+			__( 'Service at the store', 'star-electric' ),
+			__( 'Other', 'star-electric' ),
+		);
+	}
+
+	/**
+	 * The complaint form and its sidebar.
+	 *
+	 * The page promises no resolution time, exactly as the approved page does:
+	 * the store has supplied no complaints procedure or turnaround, and stating
+	 * one would be inventing a commitment.
+	 *
+	 * @param array $args Wording, field labels, complaint types and sidebar.
+	 */
+	public static function complaint_form( array $args = array() ): void {
+		if ( ! class_exists( 'Star_Electric_Forms' ) ) {
+			return;
+		}
+
+		$args = wp_parse_args(
+			$args,
+			array(
+				'heading'            => __( 'Complaint Details', 'star-electric' ),
+				'note'               => __( 'The more detail you give, the faster we can look into it.', 'star-electric' ),
+				'required_label'     => __( 'required', 'star-electric' ),
+				'legend_you'         => __( 'Your details', 'star-electric' ),
+				'legend_problem'     => __( 'What went wrong', 'star-electric' ),
+				'label_name'         => __( 'Full name', 'star-electric' ),
+				'label_order'        => __( 'Order number', 'star-electric' ),
+				'placeholder_order'  => __( 'The reference on your order confirmation', 'star-electric' ),
+				'label_phone'        => __( 'Phone', 'star-electric' ),
+				'label_email'        => __( 'Email', 'star-electric' ),
+				'label_type'         => __( 'Complaint type', 'star-electric' ),
+				'type_prompt'        => __( 'Select the type of problem…', 'star-electric' ),
+				'types'              => self::default_complaint_types(),
+				'label_subject'      => __( 'Subject', 'star-electric' ),
+				'placeholder_subject' => __( 'A short summary of the problem', 'star-electric' ),
+				'label_description'  => __( 'Description', 'star-electric' ),
+				'placeholder_description' => __( 'What was ordered, what arrived, when it happened, and what you would like us to do.', 'star-electric' ),
+				'consent'            => __( 'I agree that my details may be used to investigate and respond to this complaint, as described in the [Privacy Policy]({privacy}).', 'star-electric' ),
+				'submit'             => __( 'Submit Complaint', 'star-electric' ),
+				'cards'              => array(),
+			)
+		);
+
+		list( $star_notice_type, $star_notice ) = Star_Electric_Forms::notice();
+		?>
+		<section class="section section--sm">
+			<div class="container form-layout">
+
+				<div class="panel">
+					<div class="panel__head">
+						<div>
+							<h2 class="panel__title"><?php echo esc_html( (string) $args['heading'] ); ?></h2>
+							<p class="t-sm t-muted" style="margin-top:4px"><?php echo esc_html( (string) $args['note'] ); ?></p>
+						</div>
+						<span class="t-xs t-faint"><span class="t-accent">*</span> <?php echo esc_html( (string) $args['required_label'] ); ?></span>
+					</div>
+
+					<?php if ( '' !== $star_notice ) : ?>
+						<div class="notice notice--<?php echo esc_attr( $star_notice_type ); ?>" role="status" style="margin-bottom:20px">
+							<p><?php echo esc_html( $star_notice ); ?></p>
+						</div>
+					<?php endif; ?>
+
+					<form class="stack-5" method="post" action="<?php echo esc_url( Star_Electric_Forms::action() ); ?>">
+						<?php Star_Electric_Forms::fields( 'complaint' ); ?>
+
+						<fieldset style="border:0;padding:0;margin:0">
+							<legend class="field__label" style="margin-bottom:16px;font-size:14px"><?php echo esc_html( (string) $args['legend_you'] ); ?></legend>
+							<div class="form-grid">
+								<div class="field">
+									<label class="field__label" for="xName"><?php echo esc_html( (string) $args['label_name'] ); ?> <span class="req">*</span></label>
+									<input class="input" id="xName" name="name" type="text" autocomplete="name" required>
+								</div>
+								<div class="field">
+									<label class="field__label" for="xOrder"><?php echo esc_html( (string) $args['label_order'] ); ?></label>
+									<input class="input" id="xOrder" name="order" type="text"
+										placeholder="<?php echo esc_attr( (string) $args['placeholder_order'] ); ?>">
+								</div>
+								<div class="field">
+									<label class="field__label" for="xPhone"><?php echo esc_html( (string) $args['label_phone'] ); ?> <span class="req">*</span></label>
+									<input class="input" id="xPhone" name="phone" type="tel" autocomplete="tel" required>
+								</div>
+								<div class="field">
+									<label class="field__label" for="xEmail"><?php echo esc_html( (string) $args['label_email'] ); ?> <span class="req">*</span></label>
+									<input class="input" id="xEmail" name="email" type="email" autocomplete="email" required>
+								</div>
+							</div>
+						</fieldset>
+
+						<hr>
+
+						<fieldset style="border:0;padding:0;margin:0">
+							<legend class="field__label" style="margin-bottom:16px;font-size:14px"><?php echo esc_html( (string) $args['legend_problem'] ); ?></legend>
+							<div class="form-grid">
+								<div class="field">
+									<label class="field__label" for="xType"><?php echo esc_html( (string) $args['label_type'] ); ?> <span class="req">*</span></label>
+									<select class="select" id="xType" name="type" required>
+										<option value=""><?php echo esc_html( (string) $args['type_prompt'] ); ?></option>
+										<?php foreach ( (array) $args['types'] as $star_type ) : ?>
+											<?php printf( '<option>%s</option>', esc_html( (string) $star_type ) ); ?>
+										<?php endforeach; ?>
+									</select>
+								</div>
+								<div class="field">
+									<label class="field__label" for="xSubject"><?php echo esc_html( (string) $args['label_subject'] ); ?> <span class="req">*</span></label>
+									<input class="input" id="xSubject" name="subject" type="text" required
+										placeholder="<?php echo esc_attr( (string) $args['placeholder_subject'] ); ?>">
+								</div>
+								<div class="field span-2">
+									<label class="field__label" for="xDesc"><?php echo esc_html( (string) $args['label_description'] ); ?> <span class="req">*</span></label>
+									<textarea class="textarea" id="xDesc" name="description" required style="min-height:160px"
+										placeholder="<?php echo esc_attr( (string) $args['placeholder_description'] ); ?>"></textarea>
+								</div>
+							</div>
+						</fieldset>
+
+						<label class="check">
+							<input type="checkbox" name="consent" value="yes" required>
+							<span>
+								<?php echo self::rich( (string) $args['consent'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<span class="req">*</span>
+							</span>
+						</label>
+
+						<button class="btn btn--accent btn--lg" type="submit" style="justify-self:start">
+							<?php echo esc_html( (string) $args['submit'] ); ?>
+						</button>
+					</form>
+				</div>
+
+				<?php self::info_cards( (array) $args['cards'] ); ?>
 			</div>
 		</section>
 		<?php

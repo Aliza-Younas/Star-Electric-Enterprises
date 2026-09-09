@@ -49,6 +49,9 @@ a new import appears on the site by itself.
 | Privacy Policy | **Pages → Privacy Policy → Edit with Elementor** |
 | Terms & Conditions | **Pages → Terms & Conditions → Edit with Elementor** |
 | About | **Pages → About Us → Edit with Elementor** |
+| Contact | **Pages → Contact → Edit with Elementor** |
+| Request a Quote | **Pages → Request a Quote → Edit with Elementor** |
+| Submit a Complaint | **Pages → Submit a Complaint → Edit with Elementor** |
 | Brand colours and fonts | **Elementor → Site Settings** |
 
 Pages not in that list are still rendered by the theme and are not yet
@@ -158,6 +161,33 @@ supporting line and the number of departments is filled in from the catalogue
 when the page loads. `{site}` does the same for the business name. That is why
 neither is typed out: the page cannot then disagree with the shop.
 
+### The enquiry forms
+
+**Pages → Contact / Request a Quote / Submit a Complaint → Edit with Elementor.**
+
+Each of those pages has one widget holding the form and the sidebar beside it,
+because they share a grid. Its panels are: the wording above the form, the
+label on every field, the list a dropdown offers, the consent line, the button,
+and then one panel per sidebar card.
+
+What you can change is what the form **says**. What it **does** — which fields
+it has, that they are required, the security token, the trap for bots, the
+checks on an email address, where a message is stored and who it is emailed to
+— belongs to the site and is deliberately out of reach. A form is only useful
+if it still works after it has been edited.
+
+In the consent line, `{privacy}` becomes the privacy policy page, so the link
+keeps working if that page is ever renamed. Write a link as
+`[the words](https://the-url)`.
+
+A sidebar card disappears when you clear its heading. Each card can carry an
+intro line, a list of rows, a closing note and buttons; a row shows a label and
+a value, and giving the row a link turns the value into that link.
+
+Please do not add a response time, a resolution time, a phone number or an
+address to any of them. None of those has been supplied, and each page leaves
+them out on purpose.
+
 ### FAQ questions
 
 **Pages → FAQs → Edit with Elementor → FAQ — Questions.** Every question is a
@@ -208,9 +238,6 @@ editable in Elementor:
 
 | Page | Template |
 |---|---|
-| Contact | `page-contact.php` |
-| Request a Quote | `page-quote-request.php` |
-| Submit a Complaint | `page-complaint.php` |
 | Track Order | `page-track-order.php` |
 | Categories | `page-categories.php` |
 | Brands | `page-brands.php` |

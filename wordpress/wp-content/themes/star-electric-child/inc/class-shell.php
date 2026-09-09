@@ -166,11 +166,16 @@ class Star_Electric_Shell {
 	/**
 	 * The quotation link for one product, matching the approved storefront.
 	 *
+	 * Not ?product=: WordPress owns that name as WooCommerce's post-type query
+	 * var, so ?product=2333 is read as a request for a product called "2333" and
+	 * returns 404 before any template runs. Every Request a Quote button on a
+	 * product page was dead because of it.
+	 *
 	 * @param int $product_id Product ID.
 	 */
 	public static function quote_url( int $product_id = 0 ): string {
 		$url = self::url( 'quote' );
-		return $product_id ? add_query_arg( 'product', $product_id, $url ) : $url;
+		return $product_id ? add_query_arg( 'quote_product', $product_id, $url ) : $url;
 	}
 
 	/**

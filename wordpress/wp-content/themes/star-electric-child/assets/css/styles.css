@@ -175,6 +175,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; background: none; border: 0; padding: 0; }
 table { border-collapse: collapse; width: 100%; }
 hr { border: 0; border-top: 1px solid var(--border); margin: var(--sp-5) 0; }
+/* Elementor's frontend reset zeroes hr margins inside .elementor, which
+   closed up the rule between the two halves of the quote and complaint
+   forms by 24px each. The approved rhythm is restored here rather than
+   changed. */
+.elementor hr { margin: var(--sp-5) 0; }
 
 :focus-visible {
   outline: 2px solid var(--brand-accent);

@@ -173,11 +173,7 @@ class Star_Electric_Widget_Faq extends Star_Electric_Widget_Base {
 	 * @param string $answer Answer text.
 	 */
 	private function answer( string $answer ): string {
-		return (string) preg_replace(
-			'/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/',
-			'<a class="link-inline" href="$2">$1</a>',
-			esc_html( $answer )
-		);
+		return Star_Electric_Sections::rich( $answer );
 	}
 
 	/**

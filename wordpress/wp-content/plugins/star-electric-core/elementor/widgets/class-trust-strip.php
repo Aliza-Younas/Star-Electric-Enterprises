@@ -71,6 +71,7 @@ class Star_Electric_Widget_Trust_Strip extends Star_Electric_Widget_Base {
 			'map'      => __( 'Map', 'star-electric' ),
 			'clock'    => __( 'Clock', 'star-electric' ),
 			'phone'    => __( 'Phone', 'star-electric' ),
+			'eye'      => __( 'Eye', 'star-electric' ),
 		);
 	}
 

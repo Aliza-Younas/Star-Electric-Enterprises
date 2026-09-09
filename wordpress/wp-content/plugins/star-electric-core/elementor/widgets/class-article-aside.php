@@ -252,12 +252,18 @@ class Star_Electric_Widget_Article_Aside extends Star_Electric_Widget_Base {
 
 		Star_Electric_Sections::article_aside(
 			array(
-				'blocks'      => $blocks,
-				'facts_title' => (string) ( $s['facts_title'] ?? '' ),
-				'facts'       => $facts,
-				'links_title' => (string) ( $s['links_title'] ?? '' ),
-				'links_text'  => (string) ( $s['links_text'] ?? '' ),
-				'links'       => $links,
+				'blocks' => $blocks,
+				'cards'  => array(
+					array(
+						'title' => (string) ( $s['facts_title'] ?? '' ),
+						'rows'  => $facts,
+					),
+					array(
+						'title'   => (string) ( $s['links_title'] ?? '' ),
+						'text'    => (string) ( $s['links_text'] ?? '' ),
+						'buttons' => $links,
+					),
+				),
 			)
 		);
 	}

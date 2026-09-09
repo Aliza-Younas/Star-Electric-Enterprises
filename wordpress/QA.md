@@ -340,6 +340,10 @@ survives two independent renders is the page; one that does not is the camera.
 | Elementor editors | All 8 documents open, 22 Star Electric widgets registered, no errors |
 | Save and revert | A label was changed, confirmed live, and reverted cleanly |
 | About | Body markup identical once Elementor's wrapper `<div>`s are set aside; worst reproducible pixel difference 0.021% at all eight widths, all of it one three-pixel antialiasing band |
+| Contact | Body markup identical; worst reproducible pixel difference 0.008% |
+| Request a Quote | Body markup identical apart from one collapsed space; worst reproducible pixel difference 0.021% |
+| Submit a Complaint | Body markup identical; **0.000% at all eight widths** |
+| The three enquiry forms, end to end | 14 checks each: nonce, honeypot, every required field, a malformed address, a good submission, the stored enquiry, and the enquiry removed again |
 
 ### What the conversion QA found
 
@@ -364,6 +368,22 @@ survives two independent renders is the page; one that does not is the camera.
   page rather than trusting the earlier measurement, which had been taken
   before the regression. The tooling now re-asserts the template after every
   save, and all six converted pages were checked.
+- **Elementor's reset closed up the rule between the two halves of a form.**
+  Elementor zeroes `hr` margins inside `.elementor`, which took 24px off each
+  side of both rules on the quote page and shifted everything below them -
+  16% of the pixels at 375. Found by comparing the computed style of 36
+  components on the page before and against after; exactly one differed. The
+  approved rhythm is restored in the child theme rather than changed.
+- **Every "Request a Quote" button on a product page was dead.** The link was
+  `?product=<id>`, and WordPress owns `product` as WooCommerce's post-type query
+  var, so it answered with a 404 before any template ran - on any page, which is
+  how it was missed. The link now says `quote_product`, and the quote page
+  carries the product through into the request again. This one predates the
+  Elementor work; the end-to-end form test is what found it.
+- **A form that renders is not a form that works.** The first version of that
+  test looked for its marker anywhere in the admin page, and the search screen
+  echoes the search term back - so it reported a stored enquiry that did not
+  exist. It now reads the list table's own rows.
 - **LiteSpeed served a stale page after its own purge reported success.** The
   Toolbox purge links return 200 and leave the cached HTML in place, so a
   screenshot or a markup capture taken straight after a deploy can be of the
