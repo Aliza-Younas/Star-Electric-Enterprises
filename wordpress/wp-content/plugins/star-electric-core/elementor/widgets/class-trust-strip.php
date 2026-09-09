@@ -52,18 +52,25 @@ class Star_Electric_Widget_Trust_Strip extends Star_Electric_Widget_Base {
 	 */
 	public static function icon_options(): array {
 		return array(
-			'shield'  => __( 'Shield', 'star-electric' ),
-			'tag'     => __( 'Tag', 'star-electric' ),
-			'headset' => __( 'Headset', 'star-electric' ),
-			'bolt'    => __( 'Bolt', 'star-electric' ),
-			'box'     => __( 'Box', 'star-electric' ),
-			'pin'     => __( 'Location pin', 'star-electric' ),
-			'truck'   => __( 'Truck', 'star-electric' ),
-			'check'   => __( 'Check', 'star-electric' ),
-			'doc'     => __( 'Document', 'star-electric' ),
-			'info'    => __( 'Information', 'star-electric' ),
-			'lock'    => __( 'Lock', 'star-electric' ),
-			'star'    => __( 'Star', 'star-electric' ),
+			'shield'   => __( 'Shield', 'star-electric' ),
+			'tag'      => __( 'Tag', 'star-electric' ),
+			'headset'  => __( 'Headset', 'star-electric' ),
+			'bolt'     => __( 'Bolt', 'star-electric' ),
+			'box'      => __( 'Box', 'star-electric' ),
+			'pin'      => __( 'Location pin', 'star-electric' ),
+			'truck'    => __( 'Truck', 'star-electric' ),
+			'check'    => __( 'Check', 'star-electric' ),
+			'doc'      => __( 'Document', 'star-electric' ),
+			'info'     => __( 'Information', 'star-electric' ),
+			'lock'     => __( 'Lock', 'star-electric' ),
+			'star'     => __( 'Star', 'star-electric' ),
+			'refresh'  => __( 'Refresh', 'star-electric' ),
+			'building' => __( 'Building', 'star-electric' ),
+			'user'     => __( 'Person', 'star-electric' ),
+			'mail'     => __( 'Envelope', 'star-electric' ),
+			'map'      => __( 'Map', 'star-electric' ),
+			'clock'    => __( 'Clock', 'star-electric' ),
+			'phone'    => __( 'Phone', 'star-electric' ),
 		);
 	}
 

@@ -97,6 +97,32 @@ function star_electric_boot(): void {
 add_action( 'plugins_loaded', 'star_electric_boot' );
 
 /**
+ * Keep every catalogue picture rendering the same way on every page.
+ *
+ * WordPress decides whether an image gets decoding="async" from where it is
+ * rendered: inside the main loop it does, outside it does not. That is exactly
+ * the difference between a section drawn by a PHP template and the same section
+ * drawn by an Elementor widget, so the same department card came out two ways
+ * on two pages. A reader cannot see the attribute, but it puts the browser on a
+ * different image-scaling path, and that showed up as a measurable pixel
+ * difference between an approved page and its conversion. Dropping it
+ * everywhere makes the two identical, which is the whole acceptance test.
+ *
+ * Both filters are needed: the optimiser's attributes are merged in after
+ * wp_get_attachment_image_attributes has run, so removing it from one is not
+ * enough on its own.
+ *
+ * @param array $attr Image attributes, or the loading optimiser's additions.
+ * @return array
+ */
+function star_electric_image_attributes( $attr ): array {
+	unset( $attr['decoding'] );
+	return (array) $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'star_electric_image_attributes', 99 );
+add_filter( 'wp_get_loading_optimization_attributes', 'star_electric_image_attributes', 99 );
+
+/**
  * Flush rewrites once on activation so /brand/... and /range/... resolve.
  *
  * Registration happens on init, so it has to be run here before flushing.

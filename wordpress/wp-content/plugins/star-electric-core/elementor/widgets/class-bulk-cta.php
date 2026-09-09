@@ -99,6 +99,28 @@ class Star_Electric_Widget_Bulk_Cta extends Star_Electric_Widget_Base {
 				'condition' => array( 'second_label!' => '' ),
 			)
 		);
+		$this->add_control(
+			'second_icon',
+			array(
+				'label'     => __( 'Icon on the second button', 'star-electric' ),
+				'type'      => \Elementor\Controls_Manager::SELECT,
+				'default'   => 'mail',
+				'options'   => array(
+					'mail' => __( 'Envelope', 'star-electric' ),
+					''     => __( 'None', 'star-electric' ),
+				),
+				'condition' => array( 'second_label!' => '' ),
+			)
+		);
+		$this->add_control(
+			'heading_id',
+			array(
+				'label'       => __( 'Heading id', 'star-electric' ),
+				'type'        => \Elementor\Controls_Manager::TEXT,
+				'default'     => 'bulkTitle',
+				'description' => __( 'Screen readers use this to announce the section. Change it only if two of these sections appear on the same page.', 'star-electric' ),
+			)
+		);
 
 		$this->end_controls_section();
 
@@ -162,6 +184,8 @@ class Star_Electric_Widget_Bulk_Cta extends Star_Electric_Widget_Base {
 				'primary_url'   => $this->url( $s['primary_url'] ?? array(), $quote ),
 				'second_label'  => (string) ( $s['second_label'] ?? '' ),
 				'second_url'    => $this->url( $s['second_url'] ?? array(), $contact ),
+				'second_icon'   => (string) ( $s['second_icon'] ?? 'mail' ),
+				'heading_id'    => (string) ( $s['heading_id'] ?? 'bulkTitle' ) ?: 'bulkTitle',
 				'steps'         => $steps ? $steps : Star_Electric_Sections::default_bulk_steps(),
 			)
 		);

@@ -403,11 +403,10 @@ class Star_Electric_Shell {
 			'large',
 			false,
 			array(
-				'alt'      => '',
-				'width'    => $width,
-				'height'   => $height,
-				'loading'  => 'lazy',
-				'decoding' => 'async',
+				'alt'     => '',
+				'width'   => $width,
+				'height'  => $height,
+				'loading' => 'lazy',
 			)
 		);
 	}

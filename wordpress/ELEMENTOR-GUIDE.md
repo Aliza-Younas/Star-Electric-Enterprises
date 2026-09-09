@@ -48,6 +48,7 @@ a new import appears on the site by itself.
 | Returns | **Pages → Returns → Edit with Elementor** |
 | Privacy Policy | **Pages → Privacy Policy → Edit with Elementor** |
 | Terms & Conditions | **Pages → Terms & Conditions → Edit with Elementor** |
+| About | **Pages → About Us → Edit with Elementor** |
 | Brand colours and fonts | **Elementor → Site Settings** |
 
 Pages not in that list are still rendered by the theme and are not yet
@@ -136,6 +137,27 @@ column starts with a number of departments read from the catalogue (set how
 many under *Departments listed first*) and then lists whatever extra links you
 add.
 
+### The About page
+
+**Pages → About Us → Edit with Elementor.** Four sections:
+
+- **ABOUT — Who We Are** holds the article and the sidebar. The article is a
+  list of blocks — each heading and each paragraph is its own row, so one can
+  be reworded, moved or removed without touching the rest. One block type is
+  *Department list*, which draws itself from the catalogue.
+- **ABOUT — How We Do Business** is the six cards and the standing note beneath
+  them. That note records what the page deliberately does *not* claim — no
+  establishment year, customer count, award, certification, dealership or
+  partnership. Please leave it there until the business confirms those facts.
+- **ABOUT — What We Stock** is the department cards. Only the heading and the
+  link are editable; the cards come from the catalogue.
+- **ABOUT — Ready to Order** is the closing call to action.
+
+Write `{departments}` anywhere in the article, the sidebar or a section's
+supporting line and the number of departments is filled in from the catalogue
+when the page loads. `{site}` does the same for the business name. That is why
+neither is typed out: the page cannot then disagree with the shop.
+
 ### FAQ questions
 
 **Pages → FAQs → Edit with Elementor → FAQ — Questions.** Every question is a
@@ -186,7 +208,6 @@ editable in Elementor:
 
 | Page | Template |
 |---|---|
-| About | `page-about.php` |
 | Contact | `page-contact.php` |
 | Request a Quote | `page-quote-request.php` |
 | Submit a Complaint | `page-complaint.php` |

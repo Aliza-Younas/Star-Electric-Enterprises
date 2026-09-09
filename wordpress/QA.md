@@ -317,6 +317,15 @@ width for a list of components.
 screenshots pixel for pixel and write a side-by-side plus a heat map of every
 differing pixel, so a real shift can be told from an antialiasing wobble.
 
+**Did the difference survive a second render?** `verify.py` captures the page
+twice and keeps only the pixels that differ from the baseline in *both*. The
+department photographs carry `sizes="auto"`, so the browser resolves their
+srcset against a layout box it has not finished computing and can pick a
+different candidate between two renders of the same page - up to half a percent
+of the pixels, on a page that has not changed at all. A difference that
+survives two independent renders is the page; one that does not is the camera.
+`verify.py` reports both numbers side by side.
+
 | Step | Result |
 |---|---|
 | Moving the homepage markup into the plugin | Identical across all 6,149 elements |
@@ -330,6 +339,7 @@ differing pixel, so a real shift can be told from an antialiasing wobble.
 | Catalogue reconciliation | All 16 rows still OK - the conversion touched no product data |
 | Elementor editors | All 8 documents open, 22 Star Electric widgets registered, no errors |
 | Save and revert | A label was changed, confirmed live, and reverted cleanly |
+| About | Body markup identical once Elementor's wrapper `<div>`s are set aside; worst reproducible pixel difference 0.021% at all eight widths, all of it one three-pixel antialiasing band |
 
 ### What the conversion QA found
 
@@ -354,6 +364,23 @@ differing pixel, so a real shift can be told from an antialiasing wobble.
   page rather than trusting the earlier measurement, which had been taken
   before the regression. The tooling now re-asserts the template after every
   save, and all six converted pages were checked.
+- **LiteSpeed served a stale page after its own purge reported success.** The
+  Toolbox purge links return 200 and leave the cached HTML in place, so a
+  screenshot or a markup capture taken straight after a deploy can be of the
+  previous build. A whole round of image measurements was made against a stale
+  `/about/` before this was noticed - the fix that was being measured had
+  already been deployed and was working. `baseline.py` and `htmlparity.py` now
+  request every page with a unique query string, which PHP always answers, and
+  the query string is normalised out of the comparison.
+- **The same picture rendered two ways on two pages.** WordPress adds
+  `decoding="async"` to an image rendered inside the main loop and not to the
+  same image rendered outside it - which is exactly the difference between a
+  section drawn by a PHP template and the same section drawn by an Elementor
+  widget. The attribute is invisible, but it puts the browser on a different
+  image-scaling path, and it showed up as a 0.28% pixel difference on the
+  department cards. Proved by rendering the same saved page with and without
+  the attribute. The plugin now removes it everywhere, so both paths draw the
+  same picture.
 - **The screenshot harness was framing narrow widths** in a wrapper page,
   because old headless Chrome clamped `--window-size` to about 500px.
   `--headless=new` honours 375 directly, and framing silently failed on any

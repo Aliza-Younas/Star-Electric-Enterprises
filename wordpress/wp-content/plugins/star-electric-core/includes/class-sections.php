@@ -641,20 +641,24 @@ class Star_Electric_Sections {
 				'primary_url'    => self::url( 'quote' ),
 				'second_label'   => __( 'Contact the Store', 'star-electric' ),
 				'second_url'     => self::url( 'contact' ),
+				'second_icon'    => 'mail',
 				'steps'          => self::default_bulk_steps(),
+				'heading_id'     => 'bulkTitle',
 			)
 		);
 		?>
-		<section class="section bulk" aria-labelledby="bulkTitle">
+		<section class="section bulk" aria-labelledby="<?php echo esc_attr( (string) $args['heading_id'] ); ?>">
 			<div class="container bulk__inner">
 				<div>
-					<h2 class="bulk__title" id="bulkTitle"><?php echo esc_html( (string) $args['title'] ); ?></h2>
+					<h2 class="bulk__title" id="<?php echo esc_attr( (string) $args['heading_id'] ); ?>"><?php echo esc_html( (string) $args['title'] ); ?></h2>
 					<p class="bulk__text"><?php echo esc_html( (string) $args['text'] ); ?></p>
 					<div class="btn-row">
 						<a class="btn btn--accent btn--lg" href="<?php echo esc_url( (string) $args['primary_url'] ); ?>"><?php echo esc_html( (string) $args['primary_label'] ); ?></a>
 						<?php if ( '' !== (string) $args['second_label'] ) : ?>
 							<a class="btn btn--light btn--lg" href="<?php echo esc_url( (string) $args['second_url'] ); ?>">
-								<?php echo self::icon( 'mail' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php if ( '' !== (string) $args['second_icon'] ) : ?>
+									<?php echo self::icon( (string) $args['second_icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php endif; ?>
 								<?php echo esc_html( (string) $args['second_label'] ); ?>
 							</a>
 						<?php endif; ?>
@@ -789,6 +793,277 @@ class Star_Electric_Sections {
 						<span><?php echo esc_html( (string) $args['fact3_text'] ); ?></span>
 					</li>
 				</ul>
+			</div>
+		</section>
+		<?php
+	}
+
+	/* --------------------------------------------------------------------- *
+	 * Page bodies
+	 * --------------------------------------------------------------------- */
+
+	/**
+	 * The department tree, or nothing when the child theme is not active.
+	 *
+	 * @return array
+	 */
+	private static function tree(): array {
+		return class_exists( 'Star_Electric_Shell' ) ? Star_Electric_Shell::category_tree() : array();
+	}
+
+	/**
+	 * Fill the two catalogue tokens an editor may use in body copy.
+	 *
+	 * A page that says how many departments the catalogue has must never be
+	 * able to disagree with the catalogue, so that number is not typed: the
+	 * editor writes {departments} and it is filled in when the page renders.
+	 * {site} does the same for the business name.
+	 *
+	 * @param string $text  Copy as the editor wrote it.
+	 * @param int    $depts Number of departments.
+	 */
+	private static function tokens( string $text, int $depts ): string {
+		return strtr(
+			$text,
+			array(
+				'{departments}' => number_format_i18n( $depts ),
+				'{site}'        => get_bloginfo( 'name' ),
+			)
+		);
+	}
+
+	/**
+	 * An article beside a sidebar of small cards - the About page's body.
+	 *
+	 * The article is a list of blocks rather than one block of HTML, so that
+	 * headings and paragraphs stay separately editable and the department list
+	 * can be a block that reads the live taxonomy instead of a written list
+	 * that would drift from it.
+	 *
+	 * @param array $args blocks, facts_title, facts, links_title, links_text, links.
+	 */
+	public static function article_aside( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'blocks'      => array(),
+				'facts_title' => '',
+				'facts'       => array(),
+				'links_title' => '',
+				'links_text'  => '',
+				'links'       => array(),
+			)
+		);
+
+		$star_tree  = self::tree();
+		$star_depts = count( $star_tree );
+		?>
+		<section class="section section--sm">
+			<div class="container form-layout">
+
+				<div class="prose">
+					<?php
+					foreach ( (array) $args['blocks'] as $star_block ) :
+						$star_kind = (string) ( $star_block['kind'] ?? 'text' );
+						$star_text = self::tokens( (string) ( $star_block['text'] ?? '' ), $star_depts );
+
+						if ( 'heading' === $star_kind ) :
+							?>
+							<h2><?php echo esc_html( $star_text ); ?></h2>
+							<?php
+						elseif ( 'departments' === $star_kind ) :
+							?>
+							<ul>
+								<?php foreach ( $star_tree as $star_node ) : ?>
+									<?php $star_names = wp_list_pluck( $star_node['children'], 'name' ); ?>
+									<li>
+										<strong><?php echo esc_html( $star_node['term']->name ); ?></strong>
+										<?php if ( ! empty( $star_names ) ) : ?>
+											&mdash; <?php echo esc_html( strtolower( implode( ', ', array_slice( $star_names, 0, 5 ) ) ) ); ?>
+										<?php endif; ?>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php
+						elseif ( '' !== $star_text ) :
+							?>
+							<p><?php echo esc_html( $star_text ); ?></p>
+							<?php
+						endif;
+					endforeach;
+					?>
+				</div>
+
+				<aside>
+					<?php if ( '' !== (string) $args['facts_title'] ) : ?>
+						<div class="info-card">
+							<h3><?php echo esc_html( (string) $args['facts_title'] ); ?></h3>
+							<ul class="info-list">
+								<?php foreach ( (array) $args['facts'] as $star_fact ) : ?>
+									<li>
+										<?php echo self::icon( (string) ( $star_fact['icon'] ?? 'info' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										<span><strong><?php echo esc_html( (string) ( $star_fact['label'] ?? '' ) ); ?></strong><?php echo esc_html( self::tokens( (string) ( $star_fact['value'] ?? '' ), $star_depts ) ); ?></span>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					<?php endif; ?>
+
+					<?php if ( '' !== (string) $args['links_title'] ) : ?>
+						<div class="info-card">
+							<h3><?php echo esc_html( (string) $args['links_title'] ); ?></h3>
+							<?php if ( '' !== (string) $args['links_text'] ) : ?>
+								<p class="t-sm t-muted" style="margin-bottom:16px"><?php echo esc_html( (string) $args['links_text'] ); ?></p>
+							<?php endif; ?>
+							<div class="stack" style="gap:8px">
+								<?php foreach ( (array) $args['links'] as $star_link ) : ?>
+									<a class="btn btn--<?php echo esc_attr( (string) ( $star_link['style'] ?? 'ghost' ) ); ?> btn--block btn--sm" href="<?php echo esc_url( (string) ( $star_link['url'] ?? '' ) ); ?>"><?php echo esc_html( (string) ( $star_link['label'] ?? '' ) ); ?></a>
+								<?php endforeach; ?>
+							</div>
+						</div>
+					<?php endif; ?>
+				</aside>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * A tinted band of icon cards, with an optional standing note beneath it.
+	 *
+	 * The note is where the About page records what it deliberately does not
+	 * claim. It is content, not decoration - please leave it in place until the
+	 * business confirms the facts it is holding open.
+	 *
+	 * @param array $args eyebrow, title, sub, cards, note.
+	 */
+	public static function value_grid( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'eyebrow' => '',
+				'title'   => '',
+				'sub'     => '',
+				'cards'   => array(),
+				'note'    => '',
+			)
+		);
+		?>
+		<section class="section section--tint" aria-labelledby="valTitle">
+			<div class="container">
+				<div class="section__head section__head--center">
+					<div>
+						<p class="section__eyebrow"><?php echo esc_html( (string) $args['eyebrow'] ); ?></p>
+						<h2 class="section__title" id="valTitle"><?php echo esc_html( (string) $args['title'] ); ?></h2>
+						<p class="section__sub"><?php echo esc_html( (string) $args['sub'] ); ?></p>
+					</div>
+				</div>
+
+				<ul class="value-grid">
+					<?php foreach ( (array) $args['cards'] as $star_card ) : ?>
+						<li class="value-card">
+							<span class="value-card__ico"><?php echo self::icon( (string) ( $star_card['icon'] ?? 'info' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+							<h3><?php echo esc_html( (string) ( $star_card['title'] ?? '' ) ); ?></h3>
+							<p><?php echo esc_html( (string) ( $star_card['text'] ?? '' ) ); ?></p>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+
+				<?php if ( '' !== (string) $args['note'] ) : ?>
+					<p class="placeholder-note" style="margin-top:32px">
+						<?php echo self::icon( 'info' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><?php echo esc_html( (string) $args['note'] ); ?></span>
+					</p>
+				<?php endif; ?>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The department cards, exactly as the approved storefront draws them.
+	 *
+	 * Five pages of the approved site use this list, so it is rendered in one
+	 * place. A department with no picture gets the text half of the card rather
+	 * than an empty frame - there is no stand-in photograph to put there.
+	 *
+	 * @param string $modifier Grid modifier class, e.g. cat-grid--4.
+	 */
+	public static function category_grid( string $modifier = 'cat-grid--4' ): void {
+		$star_tree = self::tree();
+		if ( empty( $star_tree ) ) {
+			return;
+		}
+		?>
+		<ul class="cat-grid <?php echo esc_attr( $modifier ); ?>">
+			<?php foreach ( $star_tree as $star_node ) : ?>
+				<?php
+				$star_term  = $star_node['term'];
+				$star_image = self::category_image( $star_term->slug, 900, 560 );
+				$star_subs  = count( $star_node['children'] );
+				?>
+				<li>
+					<a class="cat-card" href="<?php echo esc_url( (string) get_term_link( $star_term ) ); ?>">
+						<?php if ( '' !== $star_image ) : ?>
+							<span class="cat-card__photo"><?php echo wp_kses_post( $star_image ); ?></span>
+						<?php endif; ?>
+						<span class="cat-card__txt">
+							<span class="cat-card__name"><?php echo esc_html( $star_term->name ); ?></span>
+							<span class="cat-card__meta">
+								<?php
+								printf(
+									/* translators: 1: product count, 2: subcategory count */
+									esc_html( _n( '%1$s product', '%1$s products', (int) $star_term->count, 'star-electric-child' ) ) . ' &middot; ' .
+									esc_html( _n( '%2$s subcategory', '%2$s subcategories', $star_subs, 'star-electric-child' ) ),
+									esc_html( number_format_i18n( (int) $star_term->count ) ),
+									esc_html( number_format_i18n( $star_subs ) )
+								);
+								?>
+							</span>
+						</span>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		<?php
+	}
+
+	/**
+	 * A headed section wrapping the department cards.
+	 *
+	 * @param array $args eyebrow, title, sub, link_label, link_url, modifier.
+	 */
+	public static function department_grid( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'eyebrow'    => '',
+				'title'      => '',
+				'sub'        => '',
+				'link_label' => '',
+				'link_url'   => self::url( 'shop' ),
+				'modifier'   => 'cat-grid--4',
+			)
+		);
+
+		$star_depts = count( self::tree() );
+		?>
+		<section class="section" aria-labelledby="deptTitle">
+			<div class="container">
+				<div class="section__head">
+					<div>
+						<p class="section__eyebrow"><?php echo esc_html( (string) $args['eyebrow'] ); ?></p>
+						<h2 class="section__title" id="deptTitle"><?php echo esc_html( (string) $args['title'] ); ?></h2>
+						<p class="section__sub"><?php echo esc_html( self::tokens( (string) $args['sub'], $star_depts ) ); ?></p>
+					</div>
+					<?php if ( '' !== (string) $args['link_label'] ) : ?>
+						<a class="link-more" href="<?php echo esc_url( (string) $args['link_url'] ); ?>">
+							<?php echo esc_html( (string) $args['link_label'] ); ?>
+							<?php echo self::icon( 'arrowright' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						</a>
+					<?php endif; ?>
+				</div>
+				<?php self::category_grid( (string) $args['modifier'] ); ?>
 			</div>
 		</section>
 		<?php
