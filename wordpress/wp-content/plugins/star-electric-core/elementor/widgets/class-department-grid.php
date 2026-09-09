@@ -86,6 +86,32 @@ class Star_Electric_Widget_Department_Grid extends Star_Electric_Widget_Base {
 				'condition' => array( 'link_label!' => '' ),
 			)
 		);
+		$this->add_control(
+			'tint',
+			array(
+				'label'        => __( 'Tinted background', 'star-electric' ),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'return_value' => 'yes',
+			)
+		);
+		$this->add_control(
+			'compact',
+			array(
+				'label'        => __( 'Less space above and below', 'star-electric' ),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'return_value' => 'yes',
+			)
+		);
+		$this->add_control(
+			'heading_id',
+			array(
+				'label'       => __( 'Heading id', 'star-electric' ),
+				'type'        => \Elementor\Controls_Manager::TEXT,
+				'default'     => 'deptTitle',
+				'condition'   => array( 'title!' => '' ),
+				'description' => __( 'Screen readers use this to announce the section. Change it only if two of these appear on one page.', 'star-electric' ),
+			)
+		);
 		$this->end_controls_section();
 	}
 
@@ -103,6 +129,10 @@ class Star_Electric_Widget_Department_Grid extends Star_Electric_Widget_Base {
 				'sub'        => (string) ( $s['sub'] ?? '' ),
 				'link_label' => (string) ( $s['link_label'] ?? '' ),
 				'link_url'   => $this->url( $s['link_url'] ?? array(), $shop ),
+				'section_class' => 'section'
+					. ( 'yes' === (string) ( $s['tint'] ?? '' ) ? ' section--tint' : '' )
+					. ( 'yes' === (string) ( $s['compact'] ?? '' ) ? ' section--sm' : '' ),
+				'heading_id' => (string) ( $s['heading_id'] ?? '' ) ?: 'deptTitle',
 			)
 		);
 	}

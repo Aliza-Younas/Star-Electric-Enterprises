@@ -61,9 +61,10 @@ class Star_Electric_Widget_Page_Head extends Star_Electric_Widget_Base {
 		$this->add_control(
 			'sub',
 			array(
-				'label' => __( 'Supporting line', 'star-electric' ),
-				'type'  => \Elementor\Controls_Manager::TEXTAREA,
-				'rows'  => 3,
+				'label'       => __( 'Supporting line', 'star-electric' ),
+				'type'        => \Elementor\Controls_Manager::TEXTAREA,
+				'rows'        => 3,
+				'description' => __( 'Write {departments} or {products} and the count is filled in from the catalogue.', 'star-electric' ),
 			)
 		);
 
@@ -117,8 +118,8 @@ class Star_Electric_Widget_Page_Head extends Star_Electric_Widget_Base {
 
 		Star_Electric_Shell::page_head(
 			$crumbs,
-			(string) ( $s['title'] ?? '' ),
-			(string) ( $s['sub'] ?? '' )
+			Star_Electric_Sections::tokens( (string) ( $s['title'] ?? '' ) ),
+			Star_Electric_Sections::tokens( (string) ( $s['sub'] ?? '' ) )
 		);
 	}
 }

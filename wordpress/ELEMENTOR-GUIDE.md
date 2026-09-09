@@ -52,6 +52,9 @@ a new import appears on the site by itself.
 | Contact | **Pages → Contact → Edit with Elementor** |
 | Request a Quote | **Pages → Request a Quote → Edit with Elementor** |
 | Submit a Complaint | **Pages → Submit a Complaint → Edit with Elementor** |
+| Track Order | **Pages → Track Order → Edit with Elementor** |
+| Categories | **Pages → Categories → Edit with Elementor** |
+| Brands | **Pages → Brands → Edit with Elementor** |
 | Brand colours and fonts | **Elementor → Site Settings** |
 
 Pages not in that list are still rendered by the theme and are not yet
@@ -161,6 +164,26 @@ supporting line and the number of departments is filled in from the catalogue
 when the page loads. `{site}` does the same for the business name. That is why
 neither is typed out: the page cannot then disagree with the shop.
 
+### The catalogue pages
+
+**Categories** and **Brands** are almost entirely catalogue: the departments,
+their pictures, their subcategories, the brands, their order and every count
+are read from the shop each time the page loads. What you can edit is the
+wording around them — the headings, the "Browse department" link, the search
+box labels and the note above the brand tiles.
+
+Two counts can be written into any heading or supporting line without typing a
+number: `{departments}` and `{products}`. `{site}` gives the business name, and
+`{shop}`, `{quote}`, `{contact}`, `{privacy}` and `{faq}` give those pages'
+addresses.
+
+The brand tiles are monograms, and the note above them says why. Please leave
+that note alone until the business supplies logo files and says what
+relationship it has with each brand.
+
+**Track Order** wraps WooCommerce's own lookup form. Only the note under it and
+the two cards below are editable; the form itself belongs to WooCommerce.
+
 ### The enquiry forms
 
 **Pages → Contact / Request a Quote / Submit a Complaint → Edit with Elementor.**
@@ -238,9 +261,6 @@ editable in Elementor:
 
 | Page | Template |
 |---|---|
-| Track Order | `page-track-order.php` |
-| Categories | `page-categories.php` |
-| Brands | `page-brands.php` |
 | Deals | `page-deals.php` |
 | Wishlist / Cart / Checkout / My Account | their own templates |
 | Shop, category and product pages | `archive-product.php`, `single-product.php` |

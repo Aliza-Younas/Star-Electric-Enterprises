@@ -343,6 +343,9 @@ survives two independent renders is the page; one that does not is the camera.
 | Contact | Body markup identical; worst reproducible pixel difference 0.008% |
 | Request a Quote | Body markup identical apart from one collapsed space; worst reproducible pixel difference 0.021% |
 | Submit a Complaint | Body markup identical; **0.000% at all eight widths** |
+| Track Order | Body markup identical; **0.000% at all eight widths** |
+| Categories | Body markup identical apart from one collapsed space; **0.000% at all eight widths** |
+| Brands | Body markup identical; **0.000% at all eight widths** |
 | The three enquiry forms, end to end | 14 checks each: nonce, honeypot, every required field, a malformed address, a good submission, the stored enquiry, and the enquiry removed again |
 
 ### What the conversion QA found

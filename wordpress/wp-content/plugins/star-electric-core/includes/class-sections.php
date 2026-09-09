@@ -823,7 +823,7 @@ class Star_Electric_Sections {
 	 *
 	 * @param string $text Copy as the editor wrote it.
 	 */
-	private static function tokens( string $text ): string {
+	public static function tokens( string $text ): string {
 		if ( false === strpos( $text, '{' ) ) {
 			return $text;
 		}
@@ -839,6 +839,14 @@ class Star_Electric_Sections {
 
 		if ( false !== strpos( $text, '{departments}' ) ) {
 			$map['{departments}'] = number_format_i18n( count( self::tree() ) );
+		}
+
+		if ( false !== strpos( $text, '{products}' ) ) {
+			$total = 0;
+			foreach ( self::tree() as $node ) {
+				$total += (int) $node['term']->count;
+			}
+			$map['{products}'] = number_format_i18n( $total );
 		}
 
 		return strtr( $text, $map );
@@ -871,11 +879,35 @@ class Star_Electric_Sections {
 	 * A row shows a label and a value; give the row a link and the value becomes
 	 * that link, or - when there is no value - the label itself does.
 	 *
-	 * @param array $cards Card definitions.
+	 * The wrapper is an <aside> beside a main column by default. The track
+	 * order page puts the same cards in a two-column grid of their own and gives
+	 * them a row of small buttons instead of stacked block ones, which is what
+	 * the options are for.
+	 *
+	 * @param array $cards   Card definitions.
+	 * @param array $options wrapper, class, style, buttons.
 	 */
-	public static function info_cards( array $cards ): void {
+	public static function info_cards( array $cards, array $options = array() ): void {
+		$options = wp_parse_args(
+			$options,
+			array(
+				'wrapper' => 'aside',
+				'class'   => '',
+				'style'   => '',
+				'buttons' => 'block',
+			)
+		);
+
+		$star_open  = 'aside' === $options['wrapper'] ? '<aside>' : sprintf(
+			'<div class="%s"%s>',
+			esc_attr( (string) $options['class'] ),
+			'' !== (string) $options['style'] ? ' style="' . esc_attr( (string) $options['style'] ) . '"' : ''
+		);
+		$star_close = 'aside' === $options['wrapper'] ? '</aside>' : '</div>';
+		$star_row   = 'row' === $options['buttons'];
+
+		echo $star_open; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
-		<aside>
 			<?php
 			foreach ( $cards as $star_card ) :
 				$star_title = trim( (string) ( $star_card['title'] ?? '' ) );
@@ -930,7 +962,13 @@ class Star_Electric_Sections {
 					 */
 					$star_gap = $star_rows ? ' style="margin-top:16px"' : '';
 					?>
-					<?php if ( count( $star_buttons ) > 1 ) : ?>
+					<?php if ( $star_row && $star_buttons ) : ?>
+						<div class="btn-row">
+							<?php foreach ( $star_buttons as $star_button ) : ?>
+								<a class="btn btn--<?php echo esc_attr( (string) ( $star_button['style'] ?? 'ghost' ) ); ?> btn--sm" href="<?php echo esc_url( (string) ( $star_button['url'] ?? '' ) ); ?>"><?php echo esc_html( (string) ( $star_button['label'] ?? '' ) ); ?></a>
+							<?php endforeach; ?>
+						</div>
+					<?php elseif ( count( $star_buttons ) > 1 ) : ?>
 						<div class="stack" style="gap:8px">
 							<?php foreach ( $star_buttons as $star_button ) : ?>
 								<a class="btn btn--<?php echo esc_attr( (string) ( $star_button['style'] ?? 'ghost' ) ); ?> btn--block btn--sm" href="<?php echo esc_url( (string) ( $star_button['url'] ?? '' ) ); ?>"><?php echo esc_html( (string) ( $star_button['label'] ?? '' ) ); ?></a>
@@ -944,8 +982,8 @@ class Star_Electric_Sections {
 					<?php endif; ?>
 				</div>
 			<?php endforeach; ?>
-		</aside>
 		<?php
+		echo $star_close; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -1120,31 +1158,38 @@ class Star_Electric_Sections {
 		$args = wp_parse_args(
 			$args,
 			array(
-				'eyebrow'    => '',
-				'title'      => '',
-				'sub'        => '',
-				'link_label' => '',
-				'link_url'   => self::url( 'shop' ),
-				'modifier'   => 'cat-grid--4',
+				'eyebrow'       => '',
+				'title'         => '',
+				'sub'           => '',
+				'link_label'    => '',
+				'link_url'      => self::url( 'shop' ),
+				'modifier'      => 'cat-grid--4',
+				'section_class' => 'section',
+				'heading_id'    => 'deptTitle',
 			)
 		);
 
+		$star_head = '' !== (string) $args['title'];
 		?>
-		<section class="section" aria-labelledby="deptTitle">
+		<section class="<?php echo esc_attr( (string) $args['section_class'] ); ?>"<?php echo $star_head ? ' aria-labelledby="' . esc_attr( (string) $args['heading_id'] ) . '"' : ''; ?>>
 			<div class="container">
-				<div class="section__head">
-					<div>
-						<p class="section__eyebrow"><?php echo esc_html( (string) $args['eyebrow'] ); ?></p>
-						<h2 class="section__title" id="deptTitle"><?php echo esc_html( (string) $args['title'] ); ?></h2>
-						<p class="section__sub"><?php echo esc_html( self::tokens( (string) $args['sub'] ) ); ?></p>
+				<?php if ( $star_head ) : ?>
+					<div class="section__head">
+						<div>
+							<?php if ( '' !== (string) $args['eyebrow'] ) : ?>
+								<p class="section__eyebrow"><?php echo esc_html( (string) $args['eyebrow'] ); ?></p>
+							<?php endif; ?>
+							<h2 class="section__title" id="<?php echo esc_attr( (string) $args['heading_id'] ); ?>"><?php echo esc_html( (string) $args['title'] ); ?></h2>
+							<p class="section__sub"><?php echo esc_html( self::tokens( (string) $args['sub'] ) ); ?></p>
+						</div>
+						<?php if ( '' !== (string) $args['link_label'] ) : ?>
+							<a class="link-more" href="<?php echo esc_url( (string) $args['link_url'] ); ?>">
+								<?php echo esc_html( (string) $args['link_label'] ); ?>
+								<?php echo self::icon( 'arrowright' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							</a>
+						<?php endif; ?>
 					</div>
-					<?php if ( '' !== (string) $args['link_label'] ) : ?>
-						<a class="link-more" href="<?php echo esc_url( (string) $args['link_url'] ); ?>">
-							<?php echo esc_html( (string) $args['link_label'] ); ?>
-							<?php echo self::icon( 'arrowright' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						</a>
-					<?php endif; ?>
-				</div>
+				<?php endif; ?>
 				<?php self::category_grid( (string) $args['modifier'] ); ?>
 			</div>
 		</section>
@@ -1727,5 +1772,338 @@ class Star_Electric_Sections {
 			</div>
 		</section>
 		<?php
+	}
+	/**
+	 * The order tracking panel and the two cards under it.
+	 *
+	 * The tracking form itself is WooCommerce's own shortcode, so an order
+	 * lookup keeps working exactly as WooCommerce means it to.
+	 *
+	 * @param array $args hint, cards.
+	 */
+	public static function track_order( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'hint'  => '',
+				'cards' => array(),
+			)
+		);
+		?>
+		<section class="section section--sm">
+			<div class="container container--mid">
+
+				<div class="panel" style="margin-bottom:32px">
+					<?php echo do_shortcode( '[woocommerce_order_tracking]' ); ?>
+
+					<p class="field__hint" style="margin-top:16px">
+						<?php echo self::rich( (string) $args['hint'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</p>
+				</div>
+
+				<?php
+				self::info_cards(
+					(array) $args['cards'],
+					array(
+						'wrapper' => 'div',
+						'class'   => 'form-grid',
+						'style'   => 'margin-top:32px',
+						'buttons' => 'row',
+					)
+				);
+				?>
+
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * One tinted-and-plain band per department, listing its subcategories.
+	 *
+	 * Departments, subcategories, their pictures and their counts all come from
+	 * the catalogue; a department with no subcategories is skipped, and the
+	 * bands alternate shade so the page reads as a list rather than a wall.
+	 *
+	 * @param array $args link_label.
+	 */
+	public static function subcategory_sections( array $args = array() ): void {
+		$args = wp_parse_args( $args, array( 'link_label' => __( 'Browse department', 'star-electric' ) ) );
+
+		foreach ( self::tree() as $star_i => $star_node ) :
+			$star_term = $star_node['term'];
+			$star_subs = $star_node['children'];
+			if ( empty( $star_subs ) ) {
+				continue;
+			}
+			?>
+			<section class="section section--sm<?php echo esc_attr( 0 === $star_i % 2 ? ' section--tint' : '' ); ?>"
+				aria-labelledby="dept-<?php echo esc_attr( $star_term->slug ); ?>">
+				<div class="container">
+					<div class="section__head">
+						<div>
+							<h2 class="section__title" style="font-size:20px" id="dept-<?php echo esc_attr( $star_term->slug ); ?>">
+								<?php echo esc_html( $star_term->name ); ?>
+							</h2>
+							<p class="section__sub">
+								<?php
+								printf(
+									/* translators: %s: product count */
+									esc_html( _n( '%s product', '%s products', (int) $star_term->count, 'star-electric-child' ) ),
+									esc_html( number_format_i18n( (int) $star_term->count ) )
+								);
+								?>
+							</p>
+						</div>
+						<a class="link-more" href="<?php echo esc_url( (string) get_term_link( $star_term ) ); ?>">
+							<?php echo esc_html( (string) $args['link_label'] ); ?>
+							<?php echo self::icon( 'arrowright' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						</a>
+					</div>
+
+					<ul class="subcat-grid">
+						<?php foreach ( $star_subs as $star_sub ) : ?>
+							<?php $star_art = class_exists( 'Star_Electric_Shell' ) ? Star_Electric_Shell::category_icon( $star_sub ) : ''; ?>
+							<li>
+								<a class="subcat-card" href="<?php echo esc_url( (string) get_term_link( $star_sub ) ); ?>">
+									<?php echo wp_kses_post( $star_art ); ?>
+									<span><?php echo esc_html( $star_sub->name ); ?></span>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			</section>
+			<?php
+		endforeach;
+	}
+
+	/**
+	 * Every brand, in the catalogue's own order, with the A-Z filter above it.
+	 *
+	 * The tiles are monograms because no dealership, distribution or
+	 * authorisation relationship is on record. That is a fact about the
+	 * business, not a design choice, and the note above the grid says so.
+	 *
+	 * A brand whose source publishes ranges rather than individual products has
+	 * nothing to link to, so it is kept out of this grid and listed by
+	 * brand_families() instead.
+	 *
+	 * @param array $args Wording for the note, the search box and the empty state.
+	 */
+	public static function brand_directory( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'note_strong'  => __( 'Brand names come from the approved product sources; the logo tiles are placeholders.', 'star-electric' ),
+				'note'         => __( 'Star Electric Enterprises has not stated any dealership, distribution or authorisation relationship, so none is claimed here. Supplied logo files will replace these tiles.', 'star-electric' ),
+				'search_label' => __( 'Search brands', 'star-electric' ),
+				'search_hint'  => __( 'Start typing a brand name…', 'star-electric' ),
+				'all_label'    => __( 'All', 'star-electric' ),
+				'empty_title'  => __( 'No brands match that search', 'star-electric' ),
+				'empty_text'   => __( 'Try a different letter or clear the search box to see the whole directory.', 'star-electric' ),
+			)
+		);
+
+		list( $star_listed, $star_family ) = self::brands();
+		$star_available = array();
+		foreach ( array_merge( $star_listed, $star_family ) as $star_term ) {
+			$star_available[ self::brand_letter( $star_term->name ) ] = true;
+		}
+		?>
+		<section class="section section--sm">
+			<div class="container">
+
+				<div class="placeholder-note" style="margin-bottom:32px">
+					<?php echo self::icon( 'info' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<span>
+						<strong><?php echo esc_html( (string) $args['note_strong'] ); ?></strong>
+						<?php echo esc_html( (string) $args['note'] ); ?>
+					</span>
+				</div>
+
+				<div class="panel panel--tint" style="margin-bottom:32px">
+					<div class="form-grid" style="grid-template-columns:minmax(0,1fr) auto;align-items:end">
+						<div class="field">
+							<label class="field__label" for="brandSearch"><?php echo esc_html( (string) $args['search_label'] ); ?></label>
+							<input class="input" id="brandSearch" type="search" autocomplete="off"
+								placeholder="<?php echo esc_attr( (string) $args['search_hint'] ); ?>">
+						</div>
+						<p class="t-sm t-muted" id="brandCount" style="padding-bottom:12px">
+							<?php
+							printf(
+								/* translators: %s: number of brands with individual products */
+								esc_html__( '%s brands with individual products', 'star-electric-child' ),
+								esc_html( (string) count( $star_listed ) )
+							);
+							if ( ! empty( $star_family ) ) {
+								printf(
+									/* translators: %s: number of brands listed at family level */
+									esc_html__( ' · %s listed at family level', 'star-electric-child' ),
+									esc_html( (string) count( $star_family ) )
+								);
+							}
+							?>
+						</p>
+					</div>
+
+					<div class="az-bar" id="azBar" role="group" aria-label="<?php esc_attr_e( 'Filter brands by first letter', 'star-electric-child' ); ?>" style="margin-top:20px">
+						<button type="button" data-letter="" aria-pressed="true"><?php echo esc_html( (string) $args['all_label'] ); ?></button>
+						<?php foreach ( str_split( 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' ) as $star_letter ) : ?>
+							<button type="button" data-letter="<?php echo esc_attr( $star_letter ); ?>" aria-pressed="false"
+								<?php disabled( isset( $star_available[ $star_letter ] ), false ); ?>><?php echo esc_html( $star_letter ); ?></button>
+						<?php endforeach; ?>
+					</div>
+				</div>
+
+				<ul class="brand-grid" id="brandDirectory">
+					<?php foreach ( $star_listed as $star_term ) : ?>
+						<?php
+						$star_mark = (string) get_term_meta( $star_term->term_id, '_star_electric_mark', true );
+						if ( '' === $star_mark ) {
+							$star_mark = strtoupper( substr( $star_term->name, 0, 1 ) );
+						}
+						?>
+						<li data-brand="<?php echo esc_attr( strtolower( $star_term->name ) ); ?>" data-letter="<?php echo esc_attr( self::brand_letter( $star_term->name ) ); ?>">
+							<a class="brand-card" href="<?php echo esc_url( Star_Electric_Navigation::brand_url( $star_term ) ); ?>">
+								<span class="brand-card__mark" aria-hidden="true"><?php echo esc_html( $star_mark ); ?></span>
+								<span class="brand-card__name"><?php echo esc_html( $star_term->name ); ?></span>
+								<span class="brand-card__note">
+									<?php
+									printf(
+										/* translators: %s: product count */
+										esc_html( _n( '%s product', '%s products', (int) $star_term->count, 'star-electric-child' ) ),
+										esc_html( (string) (int) $star_term->count )
+									);
+									?>
+								</span>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+
+				<div id="brandEmpty" hidden>
+					<div class="empty-state">
+						<span class="empty-state__ico">
+							<?php echo self::icon( 'search' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						</span>
+						<h2><?php echo esc_html( (string) $args['empty_title'] ); ?></h2>
+						<p><?php echo esc_html( (string) $args['empty_text'] ); ?></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The brands whose source publishes ranges rather than products.
+	 *
+	 * Ranges are shown for navigation and enquiry only. They are not sellable
+	 * products and they carry no price, and the section says so - please leave
+	 * that sentence in place.
+	 *
+	 * @param array $args title, sub.
+	 */
+	public static function brand_families( array $args = array() ): void {
+		$args = wp_parse_args(
+			$args,
+			array(
+				'title' => __( 'Listed at product-family level', 'star-electric' ),
+				'sub'   => __( 'For these brands the approved source does not publish individual product pages, so no individual products are listed. The ranges below are shown for navigation and enquiry only — they are not sellable products and carry no price.', 'star-electric' ),
+			)
+		);
+
+		list( , $star_family ) = self::brands();
+		if ( empty( $star_family ) ) {
+			return;
+		}
+		?>
+		<section class="section section--sm" id="familySection" aria-labelledby="familyTitle">
+			<div class="container">
+				<div class="section__head">
+					<div>
+						<h2 class="section__title" id="familyTitle"><?php echo esc_html( (string) $args['title'] ); ?></h2>
+						<p class="section__sub">
+							<?php echo esc_html( (string) $args['sub'] ); ?>
+						</p>
+					</div>
+				</div>
+				<div id="familyDirectory">
+					<?php foreach ( $star_family as $star_term ) : ?>
+						<?php
+						$star_ranges = do_shortcode( '[star_ranges brand="' . esc_attr( $star_term->slug ) . '" limit="60"]' );
+						if ( '' === trim( $star_ranges ) ) {
+							continue;
+						}
+						?>
+						<div data-brand="<?php echo esc_attr( strtolower( $star_term->name ) ); ?>" data-letter="<?php echo esc_attr( self::brand_letter( $star_term->name ) ); ?>">
+							<?php echo $star_ranges; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * Every brand, split into those with products and those without.
+	 *
+	 * The order is the catalogue's own - Pakistan Cables first, then Aqua - and
+	 * not alphabetical. The importer records it on the term; a brand that
+	 * somehow has none sorts last rather than disappearing.
+	 *
+	 * @return array{0:WP_Term[],1:WP_Term[]}
+	 */
+	private static function brands(): array {
+		static $split = null;
+		if ( null !== $split ) {
+			return $split;
+		}
+
+		$terms = get_terms(
+			array(
+				'taxonomy'   => 'star_brand',
+				'hide_empty' => false,
+				'orderby'    => 'name',
+				'order'      => 'ASC',
+			)
+		);
+		$terms = is_wp_error( $terms ) ? array() : $terms;
+
+		usort(
+			$terms,
+			static function ( WP_Term $a, WP_Term $b ): int {
+				$oa = get_term_meta( $a->term_id, '_star_electric_order', true );
+				$ob = get_term_meta( $b->term_id, '_star_electric_order', true );
+				$oa = '' === $oa ? PHP_INT_MAX : (int) $oa;
+				$ob = '' === $ob ? PHP_INT_MAX : (int) $ob;
+				return $oa === $ob ? strcmp( $a->name, $b->name ) : ( $oa <=> $ob );
+			}
+		);
+
+		$listed = array();
+		$family = array();
+		foreach ( $terms as $term ) {
+			if ( (int) $term->count > 0 ) {
+				$listed[] = $term;
+			} else {
+				$family[] = $term;
+			}
+		}
+
+		$split = array( $listed, $family );
+		return $split;
+	}
+
+	/**
+	 * The letter a brand files under in the A-Z bar.
+	 *
+	 * @param string $name Brand name.
+	 */
+	private static function brand_letter( string $name ): string {
+		$letter = strtoupper( substr( remove_accents( $name ), 0, 1 ) );
+		return preg_match( '/[A-Z]/', $letter ) ? $letter : '#';
 	}
 }
