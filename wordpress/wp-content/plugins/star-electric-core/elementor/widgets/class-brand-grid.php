@@ -57,8 +57,9 @@ class Star_Electric_Widget_Brand_Grid extends Star_Electric_Widget_Base {
 		$this->add_control(
 			'eyebrow',
 			array(
-				'label' => __( 'Small label', 'star-electric' ),
-				'type'  => \Elementor\Controls_Manager::TEXT,
+				'label'   => __( 'Small label', 'star-electric' ),
+				'type'    => \Elementor\Controls_Manager::TEXT,
+				'default' => __( 'Manufacturers', 'star-electric' ),
 			)
 		);
 		$this->add_control(
@@ -72,9 +73,10 @@ class Star_Electric_Widget_Brand_Grid extends Star_Electric_Widget_Base {
 		$this->add_control(
 			'sub',
 			array(
-				'label' => __( 'Supporting text', 'star-electric' ),
-				'type'  => \Elementor\Controls_Manager::TEXTAREA,
-				'rows'  => 2,
+				'label'   => __( 'Supporting text', 'star-electric' ),
+				'type'    => \Elementor\Controls_Manager::TEXTAREA,
+				'rows'    => 3,
+				'default' => __( 'Brand names come from the approved product sources. No dealership, distribution or authorisation relationship is implied.', 'star-electric' ),
 			)
 		);
 		$this->add_control(

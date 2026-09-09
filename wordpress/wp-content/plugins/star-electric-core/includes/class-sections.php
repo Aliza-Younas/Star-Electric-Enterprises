@@ -579,9 +579,9 @@ class Star_Electric_Sections {
 		$args = wp_parse_args(
 			$args,
 			array(
-				'eyebrow'    => '',
+				'eyebrow'    => __( 'Manufacturers', 'star-electric' ),
 				'title'      => __( 'Shop by Brand', 'star-electric' ),
-				'sub'        => '',
+				'sub'        => __( 'Brand names come from the approved product sources. No dealership, distribution or authorisation relationship is implied.', 'star-electric' ),
 				'link_label' => __( 'All brands', 'star-electric' ),
 			)
 		);
