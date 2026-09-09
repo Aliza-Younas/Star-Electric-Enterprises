@@ -142,27 +142,59 @@ list( $star_notice_type, $star_notice ) = Star_Electric_Forms::notice();
 
 		<aside>
 			<div class="info-card">
-				<h2 class="panel__title" style="font-size:16px"><?php esc_html_e( 'Before you send', 'star-electric-child' ); ?></h2>
-				<ul class="prose" style="margin-top:12px">
-					<li><?php esc_html_e( 'Include the order or invoice reference if you have one.', 'star-electric-child' ); ?></li>
-					<li><?php esc_html_e( 'Describe the item by rating, size or model where you can.', 'star-electric-child' ); ?></li>
-					<li><?php esc_html_e( 'Tell us what outcome you are looking for.', 'star-electric-child' ); ?></li>
+				<h3><?php esc_html_e( 'What happens next', 'star-electric-child' ); ?></h3>
+				<ul class="info-list">
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'check' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'We acknowledge it', 'star-electric-child' ); ?></strong><?php esc_html_e( 'You receive confirmation that the complaint was received.', 'star-electric-child' ); ?></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'eye' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'We review it', 'star-electric-child' ); ?></strong><?php esc_html_e( 'Order records and the details you supply are checked.', 'star-electric-child' ); ?></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'refresh' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'We respond', 'star-electric-child' ); ?></strong><?php esc_html_e( 'With a proposed resolution.', 'star-electric-child' ); ?></span>
+					</li>
 				</ul>
+				<p class="field__hint" style="margin-top:16px">
+					<?php esc_html_e( 'The store will tell you what it can do once it has reviewed your complaint.', 'star-electric-child' ); ?>
+				</p>
 				<?php
 				/*
-				 * No resolution time is promised. The store has supplied no
-				 * complaints procedure or turnaround, and stating one here would
-				 * be inventing a commitment.
+				 * No resolution time is promised, exactly as on the approved page.
+				 * The store has supplied no complaints procedure or turnaround, and
+				 * stating one here would be inventing a commitment.
 				 */
 				?>
 			</div>
 
-			<div class="info-card" style="margin-top:16px">
-				<h2 class="panel__title" style="font-size:16px"><?php esc_html_e( 'Not a complaint?', 'star-electric-child' ); ?></h2>
-				<p class="t-sm t-muted" style="margin-top:8px"><?php esc_html_e( 'For product questions, availability or a quotation, the contact form is the quicker route.', 'star-electric-child' ); ?></p>
-				<a class="btn btn--ghost btn--block" style="margin-top:12px" href="<?php echo esc_url( Star_Electric_Shell::url( 'contact' ) ); ?>">
-					<?php esc_html_e( 'Contact the Store', 'star-electric-child' ); ?>
-				</a>
+			<div class="info-card">
+				<h3><?php esc_html_e( 'Might be quicker', 'star-electric-child' ); ?></h3>
+				<ul class="info-list">
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'pin' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'Bring it to the store', 'star-electric-child' ); ?></strong><?php esc_html_e( 'Saddar, Rawalpindi', 'star-electric-child' ); ?></span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="info-card">
+				<h3><?php esc_html_e( 'Related', 'star-electric-child' ); ?></h3>
+				<ul class="info-list">
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'refresh' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'returns' ) ); ?>"><?php esc_html_e( 'Returns & replacements', 'star-electric-child' ); ?></a></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'box' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'track-order' ) ); ?>"><?php esc_html_e( 'Track an order', 'star-electric-child' ); ?></a></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'info' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'faq' ) ); ?>"><?php esc_html_e( 'Frequently asked questions', 'star-electric-child' ); ?></a></span>
+					</li>
+				</ul>
 			</div>
 		</aside>
 	</div>

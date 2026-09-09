@@ -7,10 +7,19 @@ Migration of the approved static storefront at
 The static site is the **visual source of truth**. This is a migration, not a
 redesign: no colour, type, spacing, component or section changes.
 
-**Status: Phase 2 of 13 — foundation built and packaged, awaiting the admin login.**
+**Status: complete.** All thirteen phases are done, the destination is live,
+and every reconciliation row matches. See `migration-audit.md` for the counts,
+`QA.md` for what was tested and what it found, and `ARCHITECTURE.md` for how the
+build is put together.
+
 Deployment runs entirely through `wp-admin`. No SSH or SFTP access is required:
 the theme and plugin arrive as ZIP uploads, and the catalogue import runs from a
 dashboard screen in small AJAX batches.
+
+Two things remain, and both are business decisions rather than migration work:
+**payment gateway configuration** and **shipping zones and rates**. Neither is
+guessed at. The checkout says so in the approved page's own words and routes to
+the quotation and contact forms, which do work.
 
 ---
 
@@ -67,7 +76,7 @@ session scratchpad if the source data changes.
 | File | Contents |
 |---|---|
 | `taxonomies.json` | 10 categories with subcategories, 8 brands, 3 departments |
-| `media.json` | 2,054 unique masters with source URL, domain, image type and note |
+| `media.json` | 2,686 unique masters with source URL, domain, image type and note |
 | `ranges.json` | 181 range records |
 | `products.ndjson` | 4,348 products, one per line, import-ready |
 
@@ -210,7 +219,7 @@ the migration depends on it.
 
 | Item | Status |
 |---|---|
-| WordPress admin login | **Required to proceed.** Everything above is built, packaged and waiting |
+| WordPress admin login | Supplied, used, and recorded outside the repository |
 | SSH / SFTP | Not required. The dashboard route covers every deployment step |
 | Form recipient email | Supplied, and recorded outside the repository |
 | Payment gateways | Agreed: leave disabled. The storefront already states no payment is taken online |
@@ -222,16 +231,37 @@ invented.
 
 ---
 
-## Remaining phases
+## Phases 3 to 13 (complete)
 
-3. Global shell — header, navigation, footer, mobile drawer, search
-4. Data model — verify taxonomy import
-5. Product import — media, products, prices, variations, quote products
-6. Homepage — section by section against the approved live page
-7. Shop, category archives, product pages
-8. Cart, checkout, account, wishlist
-9. Forms — quote, contact, complaint
-10. Content pages — About, FAQ, Shipping, Returns, Privacy, Terms and the rest
-11. SEO — titles, descriptions, canonicals to the WordPress domain, sitemap
-12. Full QA — 1920 / 1440 / 1366 / 1024 / 768 / 430 / 390 / 375
-13. Final live QA
+| Phase | Delivered |
+|---|---|
+| 3. Global shell | Header, mega menu, mobile drawer, search, footer — one `header.php` / `footer.php` pair, from the approved `components.js` |
+| 4. Data model | 10 departments, 40 subcategories, 8 brands, 3 cross-category departments, 181 ranges |
+| 5. Product import | 4,348 products, 479 variations, 2,686 media masters, 2,548 quote-only products stored with no price at all |
+| 6. Homepage | Hero, department strip, promo tiles, 11 product rails, deals, brand grid, bulk section — every rail matching the approved page position for position |
+| 7. Shop and product | Shop archive, department and subcategory archives with the approved hero and subcategory strip, filters, sorting, pagination, product pages |
+| 8. Commerce | Real WooCommerce cart and checkout on the approved layouts, My Account, wishlist |
+| 9. Forms | Quote, contact and complaint: nonce-checked, sanitised, stored as private enquiries and emailed |
+| 10. Content pages | About, FAQ, Categories, Brands, Deals, Shipping, Returns, Privacy, Terms, Track Order |
+| 11. SEO | Titles, descriptions, canonicals and Open Graph through Rank Math; cart, checkout, account and wishlist noindex; quote-only products publish no price in their structured data |
+| 12. Full QA | 1920 / 1440 / 1366 / 1024 / 768 / 430 / 390 / 375 — no horizontal overflow, no broken images |
+| 13. Final live QA | Component parity, functional QA, reconciliation, security and credential checks — all recorded in `QA.md` |
+
+### Deliberate differences from the approved page
+
+Three, each of them a correction rather than a redesign:
+
+- **"WhatsApp Inquiry" is "Ask about this product."** The approved button
+  carries a WhatsApp icon and the word WhatsApp but links to the contact form —
+  no number is on record, and the label implied a channel the store has not
+  confirmed. The link goes to the same place.
+- **The privacy page no longer says the forms are not connected.** On the
+  approved static site that was true. Here the forms send an email and keep a
+  copy, so the page says that instead.
+- **The order-tracking page no longer says tracking is unavailable**, because it
+  is now real: it asks for a billing email, which is what WooCommerce can
+  actually match. The approved page asked for a phone number, which it cannot.
+
+`/categories/` has no counterpart on the approved site, where "Categories" is
+the header's mega menu. It is built from approved components so the department
+tree has a real URL that can be linked, shared and indexed.

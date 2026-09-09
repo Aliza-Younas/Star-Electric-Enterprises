@@ -192,26 +192,57 @@ $star_product    = $star_product_id && function_exists( 'wc_get_product' ) ? wc_
 
 		<aside>
 			<div class="info-card">
-				<h2 class="panel__title" style="font-size:16px"><?php esc_html_e( 'What happens next', 'star-electric-child' ); ?></h2>
-				<ul class="prose" style="margin-top:12px">
-					<li><?php esc_html_e( 'We check availability and current pricing against your list.', 'star-electric-child' ); ?></li>
-					<li><?php esc_html_e( 'You receive a written quotation covering the ratings and sizes you asked for.', 'star-electric-child' ); ?></li>
-					<li><?php esc_html_e( 'Nothing is ordered until you confirm the quotation.', 'star-electric-child' ); ?></li>
+				<h3><?php esc_html_e( 'What happens next', 'star-electric-child' ); ?></h3>
+				<ul class="info-list">
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'doc' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'We review your list', 'star-electric-child' ); ?></strong><?php esc_html_e( 'Availability and current pricing are checked.', 'star-electric-child' ); ?></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'mail' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'You receive a quotation', 'star-electric-child' ); ?></strong><?php esc_html_e( 'Sent in writing to the contact details you provide.', 'star-electric-child' ); ?></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'truck' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'Collection or delivery', 'star-electric-child' ); ?></strong><?php esc_html_e( 'Arranged once the quotation is accepted.', 'star-electric-child' ); ?></span>
+					</li>
 				</ul>
+				<p class="field__hint" style="margin-top:16px">
+					<?php esc_html_e( 'The store will come back to you once it has priced your list.', 'star-electric-child' ); ?>
+				</p>
 				<?php
 				/*
-				 * No response time is promised here. The store has not supplied
-				 * one, and a turnaround commitment on a public page would be a
-				 * business fact this project does not have.
+				 * No response time is promised here. The store has not supplied one,
+				 * and a turnaround commitment on a public page would be a business
+				 * fact this project does not have.
 				 */
 				?>
 			</div>
 
-			<div class="info-card" style="margin-top:16px">
-				<h2 class="panel__title" style="font-size:16px"><?php esc_html_e( 'Prefer to talk it through?', 'star-electric-child' ); ?></h2>
-				<p class="t-sm t-muted" style="margin-top:8px"><?php esc_html_e( 'Send the store a message and we will pick the requirement up from there.', 'star-electric-child' ); ?></p>
-				<a class="btn btn--ghost btn--block" style="margin-top:12px" href="<?php echo esc_url( Star_Electric_Shell::url( 'contact' ) ); ?>">
-					<?php esc_html_e( 'Contact the Store', 'star-electric-child' ); ?>
+			<div class="info-card">
+				<h3><?php esc_html_e( 'Prefer to talk it through?', 'star-electric-child' ); ?></h3>
+				<ul class="info-list">
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'pin' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'Visit the store', 'star-electric-child' ); ?></strong><?php esc_html_e( 'Saddar, Rawalpindi', 'star-electric-child' ); ?></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'mail' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php esc_html_e( 'Send a message', 'star-electric-child' ); ?></strong><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'contact' ) ); ?>"><?php esc_html_e( 'Use the contact form', 'star-electric-child' ); ?></a></span>
+					</li>
+				</ul>
+				<a class="btn btn--ghost btn--block btn--sm" style="margin-top:16px" href="<?php echo esc_url( Star_Electric_Shell::url( 'contact' ) ); ?>">
+					<?php esc_html_e( 'Contact page', 'star-electric-child' ); ?>
+				</a>
+			</div>
+
+			<div class="info-card">
+				<h3><?php esc_html_e( 'Browse before you ask', 'star-electric-child' ); ?></h3>
+				<p class="t-sm t-muted" style="margin-bottom:16px">
+					<?php esc_html_e( 'Check the catalogue to confirm the products and specifications you need.', 'star-electric-child' ); ?>
+				</p>
+				<a class="btn btn--accent btn--block btn--sm" href="<?php echo esc_url( Star_Electric_Shell::url( 'shop' ) ); ?>">
+					<?php esc_html_e( 'Browse the Shop', 'star-electric-child' ); ?>
 				</a>
 			</div>
 		</aside>

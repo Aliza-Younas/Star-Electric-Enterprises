@@ -292,7 +292,7 @@ $star_campaigns = array(
 		</div>
 
 		<div id="dealsRail">
-			<?php echo do_shortcode( '[star_products on_sale="yes" limit="10" title="Discounted at source" id="rail-deals"]' ); ?>
+			<?php echo do_shortcode( '[star_products on_sale="yes" limit="10" title="Discounted at source" id="rail-deals" view_all="' . esc_url( Star_Electric_Shell::url( 'deals' ) ) . '"]' ); ?>
 		</div>
 	</div>
 </section>

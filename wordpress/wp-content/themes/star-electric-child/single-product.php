@@ -40,8 +40,24 @@ while ( have_posts() ) :
 	$star_brands = wp_get_object_terms( $star_id, 'star_brand', array( 'fields' => 'names' ) );
 	$star_brand  = ( ! is_wp_error( $star_brands ) && $star_brands ) ? $star_brands[0] : '';
 
+	/*
+	 * A product carries both its department and its subcategory, and
+	 * wp_get_object_terms() returns them in whatever order it likes. The
+	 * approved page names the department beside the brand and shows both in the
+	 * breadcrumb, so the two are separated rather than "the first one".
+	 */
 	$star_cat_terms = wp_get_object_terms( $star_id, 'product_cat' );
-	$star_cat       = ( ! is_wp_error( $star_cat_terms ) && $star_cat_terms ) ? $star_cat_terms[0] : null;
+	$star_cat_terms = is_wp_error( $star_cat_terms ) ? array() : $star_cat_terms;
+	$star_dept      = null;
+	$star_sub       = null;
+	foreach ( $star_cat_terms as $star_term ) {
+		if ( 0 === (int) $star_term->parent ) {
+			$star_dept = $star_term;
+		} else {
+			$star_sub = $star_term;
+		}
+	}
+	$star_cat = $star_dept ?? $star_sub;
 
 	$star_pill = Star_Electric_Shell::availability_pill( $product );
 
@@ -74,10 +90,12 @@ while ( have_posts() ) :
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'star-electric-child' ); ?></a></li>
 					<li class="sep" aria-hidden="true">/</li>
 					<li><a href="<?php echo esc_url( Star_Electric_Shell::url( 'shop' ) ); ?>"><?php esc_html_e( 'Shop', 'star-electric-child' ); ?></a></li>
-					<?php if ( $star_cat instanceof WP_Term ) : ?>
-						<li class="sep" aria-hidden="true">/</li>
-						<li><a href="<?php echo esc_url( (string) get_term_link( $star_cat ) ); ?>"><?php echo esc_html( $star_cat->name ); ?></a></li>
-					<?php endif; ?>
+					<?php foreach ( array( $star_dept, $star_sub ) as $star_crumb ) : ?>
+						<?php if ( $star_crumb instanceof WP_Term ) : ?>
+							<li class="sep" aria-hidden="true">/</li>
+							<li><a href="<?php echo esc_url( (string) get_term_link( $star_crumb ) ); ?>"><?php echo esc_html( $star_crumb->name ); ?></a></li>
+						<?php endif; ?>
+					<?php endforeach; ?>
 					<li class="sep" aria-hidden="true">/</li>
 					<li aria-current="page"><?php the_title(); ?></li>
 				</ol>
@@ -89,7 +107,15 @@ while ( have_posts() ) :
 		<div class="container pdp">
 
 			<div class="gallery">
-				<?php if ( count( $star_gallery ) > 1 ) : ?>
+				<?php
+				/*
+				 * The thumbnail rail is rendered whenever there is an image at
+				 * all, not only when there are two. .gallery is a two-column
+				 * grid, so with the rail missing the photograph dropped into
+				 * the narrow thumbnail column and rendered at 78px wide.
+				 */
+				?>
+				<?php if ( $star_gallery ) : ?>
 					<div class="gallery__thumbs" id="galleryThumbs" role="tablist" aria-label="<?php esc_attr_e( 'Product images', 'star-electric-child' ); ?>">
 						<?php foreach ( $star_gallery as $star_i => $star_att ) : ?>
 							<button type="button" role="tab"
@@ -139,34 +165,87 @@ while ( have_posts() ) :
 
 				<h1 class="pdp__title"><?php the_title(); ?></h1>
 
-				<?php if ( '' !== $product->get_sku() ) : ?>
-					<div class="pdp__ratingrow">
-						<span><?php esc_html_e( 'SKU:', 'star-electric-child' ); ?> <strong><?php echo esc_html( $product->get_sku() ); ?></strong></span>
-					</div>
-				<?php endif; ?>
+				<div class="pdp__ratingrow">
+					<span class="rating">
+						<span class="t-xs t-faint"><?php esc_html_e( 'No customer ratings published', 'star-electric-child' ); ?></span>
+					</span>
+					<span>
+						<?php esc_html_e( 'SKU:', 'star-electric-child' ); ?>
+						<strong>
+							<?php
+							$star_sku = (string) $product->get_sku();
+							echo esc_html( '' !== $star_sku ? $star_sku : __( 'Not specified', 'star-electric-child' ) );
+							?>
+						</strong>
+					</span>
+				</div>
 
 				<div class="pdp__pricebox">
-					<?php if ( $star_quote ) : ?>
-						<p class="price price--lg price--quote">
-							<span class="price__quote"><?php esc_html_e( 'Request a Quote', 'star-electric-child' ); ?></span>
-						</p>
-					<?php else : ?>
-						<p class="price price--lg"><?php echo wp_kses_post( $product->get_price_html() ); ?></p>
-					<?php endif; ?>
+					<p class="price price--lg<?php echo esc_attr( $star_quote ? ' price--quote' : '' ); ?>">
+						<?php echo wp_kses_post( Star_Electric_Quote_Only::price_block( $product, 'lg' ) ); ?>
+					</p>
 					<p style="margin-top:12px">
 						<span class="pill <?php echo esc_attr( $star_pill[0] ); ?>"><?php echo esc_html( $star_pill[1] ); ?></span>
 					</p>
 				</div>
 
-				<?php if ( '' !== $product->get_short_description() ) : ?>
-					<div class="pdp__short"><?php echo wp_kses_post( wpautop( $product->get_short_description() ) ); ?></div>
+				<?php
+				$star_features = json_decode( (string) get_post_meta( $star_id, '_star_electric_features', true ), true );
+				$star_features = is_array( $star_features ) ? $star_features : array();
+				?>
+				<?php if ( '' !== $product->get_short_description() || $star_features ) : ?>
+					<div class="pdp__short">
+						<?php echo wp_kses_post( wpautop( $product->get_short_description() ) ); ?>
+						<?php if ( $star_features ) : ?>
+							<ul id="pdpBullets">
+								<?php foreach ( $star_features as $star_feature ) : ?>
+									<li><?php echo esc_html( (string) $star_feature ); ?></li>
+								<?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
+					</div>
 				<?php endif; ?>
+
+				<?php
+				/*
+				 * A variable product with no price still has real variants, and
+				 * the approved page shows them so an enquiry can name one. They
+				 * are swatches rather than a WooCommerce variation form because
+				 * nothing here is purchasable: there is no price to change.
+				 */
+				if ( $star_quote && $product->is_type( 'variable' ) ) :
+					$star_attrs = $product->get_variation_attributes();
+					if ( $star_attrs ) :
+						$star_axis   = array_key_first( $star_attrs );
+						$star_values = array_values( (array) $star_attrs[ $star_axis ] );
+						?>
+						<div class="variations" id="pdpVariations">
+							<div class="variation">
+								<p class="variation__label">
+									<?php echo esc_html( wc_attribute_label( (string) $star_axis, $product ) ); ?>:
+									<span id="varChosen"><?php echo esc_html( (string) $star_values[0] ); ?></span>
+								</p>
+								<div class="swatches">
+									<?php foreach ( $star_values as $star_i => $star_value ) : ?>
+										<button class="swatch" type="button"
+											aria-pressed="<?php echo esc_attr( 0 === $star_i ? 'true' : 'false' ); ?>"
+											data-val="<?php echo esc_attr( (string) $star_value ); ?>">
+											<?php echo esc_html( (string) $star_value ); ?>
+										</button>
+									<?php endforeach; ?>
+								</div>
+							</div>
+						</div>
+						<?php
+					endif;
+				endif;
+				?>
 
 				<?php if ( $star_quote ) : ?>
 
 					<div class="pdp__buy">
+						<?php // No icon here: the approved product page's quote button carries none. ?>
 						<a class="btn btn--accent btn--lg" href="<?php echo esc_url( Star_Electric_Shell::quote_url( $star_id ) ); ?>">
-							<?php echo Star_Electric_Shell::icon( 'doc' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							<?php esc_html_e( 'Request a Quote', 'star-electric-child' ); ?>
 						</a>
 					</div>
@@ -226,22 +305,25 @@ while ( have_posts() ) :
 						<?php echo Star_Electric_Shell::icon( 'mail' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php esc_html_e( 'Ask about this product', 'star-electric-child' ); ?>
 					</a>
+					<button class="btn btn--ghost js-wish" type="button" data-id="<?php echo esc_attr( (string) $star_id ); ?>">
+						<?php echo Star_Electric_Shell::icon( 'heart' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php esc_html_e( 'Add to Wishlist', 'star-electric-child' ); ?>
+					</button>
 					<a class="btn btn--ghost" href="<?php echo esc_url( Star_Electric_Shell::url( 'quote' ) ); ?>">
 						<?php esc_html_e( 'Request Bulk Quote', 'star-electric-child' ); ?>
 					</a>
 				</div>
 
 				<?php
-				$star_domain = (string) $product->get_meta( '_star_electric_source_domain' );
-				$star_url    = (string) $product->get_meta( '_star_electric_source_url' );
-				$star_model  = (string) $product->get_meta( '_star_electric_model' );
+				$star_domain  = (string) $product->get_meta( '_star_electric_source_domain' );
+				$star_url     = (string) $product->get_meta( '_star_electric_source_url' );
+				$star_model   = (string) $product->get_meta( '_star_electric_model' );
+				$star_series  = (string) $product->get_meta( '_star_electric_series' );
+				$star_checked = (string) $product->get_meta( '_star_electric_source_checked' );
 				?>
 				<dl class="pdp__meta">
 					<?php if ( '' !== $star_model ) : ?>
 						<div><dt><?php esc_html_e( 'Model', 'star-electric-child' ); ?></dt><dd><?php echo esc_html( $star_model ); ?></dd></div>
-					<?php endif; ?>
-					<?php if ( $star_cat instanceof WP_Term ) : ?>
-						<div><dt><?php esc_html_e( 'Category', 'star-electric-child' ); ?></dt><dd><?php echo esc_html( $star_cat->name ); ?></dd></div>
 					<?php endif; ?>
 					<?php if ( '' !== $star_domain ) : ?>
 						<div>
@@ -253,6 +335,29 @@ while ( have_posts() ) :
 									<?php echo esc_html( $star_domain ); ?>
 								<?php endif; ?>
 							</dd>
+						</div>
+					<?php endif; ?>
+					<?php if ( '' !== $star_checked ) : ?>
+						<div><dt><?php esc_html_e( 'Reference checked', 'star-electric-child' ); ?></dt><dd><?php echo esc_html( $star_checked ); ?></dd></div>
+					<?php endif; ?>
+					<?php if ( '' !== $star_series ) : ?>
+						<div><dt><?php esc_html_e( 'Series', 'star-electric-child' ); ?></dt><dd><?php echo esc_html( $star_series ); ?></dd></div>
+					<?php endif; ?>
+				</dl>
+
+				<?php
+				/*
+				 * Delivery, Returns and Warranty rows are deliberately absent,
+				 * exactly as they are on the approved page. The store has not
+				 * supplied those terms, and a public product page must not
+				 * state or hint at a policy that is not on record.
+				 */
+				?>
+				<dl class="pdp__meta">
+					<?php if ( $star_dept instanceof WP_Term ) : ?>
+						<div>
+							<dt><?php esc_html_e( 'Category', 'star-electric-child' ); ?></dt>
+							<dd><a class="link-inline" href="<?php echo esc_url( (string) get_term_link( $star_dept ) ); ?>"><?php echo esc_html( $star_dept->name ); ?></a></dd>
 						</div>
 					<?php endif; ?>
 				</dl>
@@ -280,6 +385,13 @@ while ( have_posts() ) :
 						$star_desc = (string) $product->get_description();
 						if ( '' !== trim( wp_strip_all_tags( $star_desc ) ) ) {
 							echo wp_kses_post( $star_desc );
+							if ( $star_features ) {
+								echo '<h3>' . esc_html__( 'Key points', 'star-electric-child' ) . '</h3><ul>';
+								foreach ( $star_features as $star_feature ) {
+									echo '<li>' . esc_html( (string) $star_feature ) . '</li>';
+								}
+								echo '</ul>';
+							}
 						} else {
 							echo '<p>' . esc_html__( 'This product’s source does not publish a description.', 'star-electric-child' ) . '</p>';
 						}
@@ -327,7 +439,7 @@ while ( have_posts() ) :
 	</section>
 
 	<?php
-	$star_related = wc_get_related_products( $star_id, 5 );
+	$star_related = Star_Electric_Navigation::related( $star_id, 4 );
 	if ( $star_related ) :
 		?>
 		<section class="section section--tint" aria-labelledby="relTitle">
@@ -363,7 +475,30 @@ while ( have_posts() ) :
 		</section>
 		<?php
 	endif;
+	?>
 
+	<?php
+	/*
+	 * Recently viewed. The list is the visitor's own browsing history, kept in
+	 * sessionStorage exactly as the approved page keeps it, so nothing about
+	 * who looked at what is stored on the server. The cards are rendered by
+	 * WordPress from the ids the browser sends back, which keeps the price,
+	 * quote and availability rules in one place.
+	 */
+	?>
+	<section class="section" id="recentSection" aria-labelledby="recTitle" hidden>
+		<div class="container">
+			<div class="section__head">
+				<div>
+					<h2 class="section__title" id="recTitle"><?php esc_html_e( 'Recently Viewed', 'star-electric-child' ); ?></h2>
+					<p class="section__sub"><?php esc_html_e( 'Products you looked at in this browsing session.', 'star-electric-child' ); ?></p>
+				</div>
+			</div>
+			<ul class="product-grid" id="recentGrid" data-current="<?php echo esc_attr( (string) $star_id ); ?>"></ul>
+		</div>
+	</section>
+
+	<?php
 endwhile;
 
 get_footer();

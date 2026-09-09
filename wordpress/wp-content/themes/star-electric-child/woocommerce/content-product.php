@@ -36,8 +36,25 @@ $star_quote = class_exists( 'Star_Electric_Quote_Only' )
 $star_brand = wp_get_object_terms( $star_id, 'star_brand', array( 'fields' => 'names' ) );
 $star_brand = ( ! is_wp_error( $star_brand ) && $star_brand ) ? $star_brand[0] : '';
 
-$star_cats = wp_get_object_terms( $star_id, 'product_cat', array( 'fields' => 'names' ) );
-$star_cat  = ( ! is_wp_error( $star_cats ) && $star_cats ) ? $star_cats[0] : '';
+/*
+ * The card names the department, not the leaf subcategory a product happens to
+ * be filed under: the approved card reads "ELECTRICAL ACCESSORIES", and
+ * "ACCESSORIES" on its own tells a shopper nothing about where they are.
+ */
+$star_cats = wp_get_object_terms( $star_id, 'product_cat' );
+$star_cat  = '';
+if ( ! is_wp_error( $star_cats ) && $star_cats ) {
+	foreach ( $star_cats as $star_term ) {
+		if ( 0 === (int) $star_term->parent ) {
+			$star_cat = $star_term->name;
+			break;
+		}
+	}
+	if ( '' === $star_cat ) {
+		$star_top = get_term( (int) $star_cats[0]->parent, 'product_cat' );
+		$star_cat = $star_top instanceof WP_Term ? $star_top->name : $star_cats[0]->name;
+	}
+}
 
 $star_model = (string) $product->get_meta( '_star_electric_model' );
 
@@ -94,11 +111,9 @@ $star_pill = Star_Electric_Shell::availability_pill( $product );
 			<p class="pcard__model"><?php esc_html_e( 'Model:', 'star-electric-child' ); ?> <?php echo esc_html( $star_model ); ?></p>
 		<?php endif; ?>
 
-		<?php if ( $star_quote ) : ?>
-			<p class="price price--quote"><span class="price__quote"><?php esc_html_e( 'Request a Quote', 'star-electric-child' ); ?></span></p>
-		<?php else : ?>
-			<p class="price"><?php echo wp_kses_post( $product->get_price_html() ); ?></p>
-		<?php endif; ?>
+		<p class="price<?php echo esc_attr( $star_quote ? ' price--quote' : '' ); ?>">
+			<?php echo wp_kses_post( Star_Electric_Quote_Only::price_block( $product ) ); ?>
+		</p>
 
 		<span class="pill <?php echo esc_attr( $star_pill[0] ); ?>"><?php echo esc_html( $star_pill[1] ); ?></span>
 

@@ -1,0 +1,15 @@
+# The catalogue payload is read from disk by the importer, and nothing should
+# ever request it over HTTP. Until this file existed the whole 5 MB products
+# file could be downloaded by anyone who guessed the path.
+#
+# build-packages.py copies this into the plugin archive as data/.htaccess. It is
+# kept under this name because wordpress/.gitignore excludes ".htaccess", which
+# is the right rule for a server's own file and the wrong one for this.
+
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order allow,deny
+	Deny from all
+</IfModule>

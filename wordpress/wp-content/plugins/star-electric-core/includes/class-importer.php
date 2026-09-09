@@ -396,25 +396,55 @@ class Star_Electric_Importer {
 		$made   = 0;
 		$kept   = 0;
 
-		foreach ( $tax['categories'] as $cat ) {
+		foreach ( $tax['categories'] as $cat_index => $cat ) {
 			$parent = self::ensure_term( $cat['name'], 'product_cat', $cat['slug'], 0, $made, $kept, $errors );
 			if ( ! $parent ) {
 				continue;
+			}
+
+			/*
+			 * A term has no order of its own, and the approved site lists both
+			 * departments and their subcategories in the catalogue's order, not
+			 * alphabetically and not by count. The payload's order is stored so
+			 * the filter panel, the subcategory strip and the department index
+			 * all read the same way round.
+			 */
+			update_term_meta( $parent, '_star_electric_order', (int) $cat_index );
+
+			/*
+			 * The approved category page prints this under the department
+			 * title. Stored as the term description, which is where WordPress
+			 * expects a category's own words to live.
+			 */
+			if ( ! empty( $cat['blurb'] ) ) {
+				wp_update_term( $parent, 'product_cat', array( 'description' => (string) $cat['blurb'] ) );
 			}
 			$thumb = $map[ 'assets/images/categories/' . $cat['slug'] . '.webp' ] ?? 0;
 			if ( $thumb ) {
 				update_term_meta( $parent, 'thumbnail_id', $thumb );
 			}
-			foreach ( (array) ( $cat['subcategories'] ?? array() ) as $sub ) {
-				self::ensure_term( $sub['name'], 'product_cat', $sub['slug'], $parent, $made, $kept, $errors );
+			foreach ( (array) ( $cat['subcategories'] ?? array() ) as $sub_index => $sub ) {
+				$child = self::ensure_term( $sub['name'], 'product_cat', $sub['slug'], $parent, $made, $kept, $errors );
+				if ( $child ) {
+					update_term_meta( $child, '_star_electric_order', (int) $sub_index );
+				}
 			}
 		}
 
-		foreach ( $tax['brands'] as $brand ) {
+		foreach ( $tax['brands'] as $brand_index => $brand ) {
 			$term_id = self::ensure_term( $brand['name'], Star_Electric_Taxonomies::BRAND, $brand['slug'], 0, $made, $kept, $errors );
 			if ( ! $term_id ) {
 				continue;
 			}
+
+			/*
+			 * The approved brand directory lists brands in the catalogue's own
+			 * order, largest first, not alphabetically. A term has no order of
+			 * its own, so the payload's is carried across rather than guessed
+			 * at from the product count - which happens to agree today and
+			 * would not have to tomorrow.
+			 */
+			update_term_meta( $term_id, '_star_electric_order', (int) $brand_index );
 
 			/*
 			 * The monogram is the brand's mark on the approved storefront.
@@ -558,9 +588,8 @@ class Star_Electric_Importer {
 			if ( ! empty( $r['image'] ) && isset( $map[ $r['image'] ] ) ) {
 				set_post_thumbnail( $id, (int) $map[ $r['image'] ] );
 			}
-			if ( ! empty( $r['departments'] ) ) {
-				wp_set_object_terms( $id, $r['departments'], Star_Electric_Taxonomies::DEPARTMENT );
-			}
+			$r_depts = self::known_departments( (array) ( $r['departments'] ?? array() ) );
+			wp_set_object_terms( $id, $r_depts, Star_Electric_Taxonomies::DEPARTMENT );
 		}
 
 		$result = self::result(
@@ -828,6 +857,17 @@ class Star_Electric_Importer {
 		}
 
 		/*
+		 * The approved product page lists these as "Key points" under the short
+		 * description. Only four records carry any, but dropping them was still
+		 * content the source publishes and the migration did not.
+		 */
+		if ( ! empty( $rec['features'] ) ) {
+			update_post_meta( $id, '_star_electric_features', wp_json_encode( array_values( (array) $rec['features'] ) ) );
+		} else {
+			delete_post_meta( $id, '_star_electric_features' );
+		}
+
+		/*
 		 * The catalogue's own notes about a record - most often that its source
 		 * publishes no price. The approved product page shows these under
 		 * Additional Information, and hides the tab when there are none, so
@@ -863,9 +903,11 @@ class Star_Electric_Importer {
 		if ( ! empty( $rec['brand'] ) && 'Not specified' !== $rec['brand'] ) {
 			wp_set_object_terms( $id, sanitize_title( $rec['brand'] ), Star_Electric_Taxonomies::BRAND );
 		}
-		if ( ! empty( $rec['departments'] ) ) {
-			wp_set_object_terms( $id, $rec['departments'], Star_Electric_Taxonomies::DEPARTMENT );
-		}
+		wp_set_object_terms(
+			$id,
+			self::known_departments( (array) ( $rec['departments'] ?? array() ) ),
+			Star_Electric_Taxonomies::DEPARTMENT
+		);
 
 		if ( $variable ) {
 			self::save_variations( (int) $id, $rec, $map );
@@ -1063,6 +1105,29 @@ class Star_Electric_Importer {
 		return (int) $id;
 	}
 
+	/**
+	 * Keep only the departments the catalogue actually declares.
+	 *
+	 * wp_set_object_terms() creates a term it cannot find, and three earthing
+	 * ranges carry their category slug in the departments field. Left alone
+	 * that invented a fourth department called "earthing-material", with a
+	 * public archive whose title was a slug. Departments are the three in
+	 * taxonomies.json; anything else is data noise, not a department.
+	 *
+	 * @param array $slugs Department slugs from a record.
+	 * @return string[] The ones that exist.
+	 */
+	private static function known_departments( array $slugs ): array {
+		$out = array();
+		foreach ( $slugs as $slug ) {
+			$slug = sanitize_title( (string) $slug );
+			if ( '' !== $slug && get_term_by( 'slug', $slug, Star_Electric_Taxonomies::DEPARTMENT ) ) {
+				$out[] = $slug;
+			}
+		}
+		return $out;
+	}
+
 	/* --------------------------------------------------------------------- *
 	 * Audit
 	 * --------------------------------------------------------------------- */
@@ -1070,24 +1135,60 @@ class Star_Electric_Importer {
 	/**
 	 * Reconcile what is in WordPress against the source payload.
 	 *
+	 * Every row is counted on both sides from the same definition, so a
+	 * mismatch names a real difference rather than two ways of counting. The
+	 * three rows at the end are defects rather than quantities: a record that
+	 * never arrived, a source id that arrived twice, and a product wearing a
+	 * price of zero - which for this catalogue would mean a quote-only item had
+	 * been given an invented price.
+	 *
 	 * @return array Rows of item / source / wordpress / status.
 	 */
 	public static function audit(): array {
 		global $wpdb;
 
-		$src_products = 0;
-		$src_quote    = 0;
-		$path         = self::data_dir() . 'products.ndjson';
+		/* ---------------------------------------------------- the source side */
+		$src = array(
+			'products'   => 0,
+			'quote'      => 0,
+			'priced'     => 0,
+			'sale'       => 0,
+			'variable'   => 0,
+			'variations' => 0,
+			'oos'        => 0,
+		);
+		$src_ids  = array();
+		$path     = self::data_dir() . 'products.ndjson';
 
 		if ( file_exists( $path ) ) {
 			$fh = fopen( $path, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 			while ( false !== ( $line = fgets( $fh ) ) ) {
-				if ( '' === trim( $line ) ) {
+				$line = trim( $line );
+				if ( '' === $line ) {
 					continue;
 				}
-				++$src_products;
-				if ( false !== strpos( $line, '"quote_only":true' ) || false !== strpos( $line, '"quote_only": true' ) ) {
-					++$src_quote;
+				$rec = json_decode( $line, true );
+				if ( ! is_array( $rec ) ) {
+					continue;
+				}
+				++$src['products'];
+				$src_ids[] = (string) ( $rec['source_id'] ?? '' );
+
+				if ( ! empty( $rec['quote_only'] ) ) {
+					++$src['quote'];
+				} else {
+					++$src['priced'];
+					if ( ! empty( $rec['sale_price'] ) && ! empty( $rec['regular_price'] )
+						&& (float) $rec['sale_price'] < (float) $rec['regular_price'] ) {
+						++$src['sale'];
+					}
+				}
+				if ( ! empty( $rec['variations'] ) ) {
+					++$src['variable'];
+					$src['variations'] += count( (array) $rec['variations'] );
+				}
+				if ( 'Out of Stock' === ( $rec['availability'] ?? '' ) ) {
+					++$src['oos'];
 				}
 			}
 			fclose( $fh ); // phpcs:ignore WordPress.WP.AlternativeFunctions
@@ -1095,28 +1196,150 @@ class Star_Electric_Importer {
 
 		$ranges     = self::read_json( 'ranges.json' );
 		$media      = self::read_json( 'media.json' );
+		$taxonomies = self::read_json( 'taxonomies.json' );
 		$src_ranges = is_array( $ranges ) ? count( $ranges ) : 0;
 		$src_media  = is_array( $media ) ? count( $media ) : 0;
-		$map        = self::media_map();
+		$src_cats   = isset( $taxonomies['categories'] ) ? count( (array) $taxonomies['categories'] ) : 0;
+		$src_brands = isset( $taxonomies['brands'] ) ? count( (array) $taxonomies['brands'] ) : 0;
+		$src_depts  = isset( $taxonomies['departments'] ) ? count( (array) $taxonomies['departments'] ) : 0;
+		$src_subs   = 0;
+		foreach ( (array) ( $taxonomies['categories'] ?? array() ) as $cat ) {
+			$src_subs += count( (array) ( $cat['subcategories'] ?? array() ) );
+		}
 
-		$wp_products = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type='product' AND post_status='publish'" );
-		$wp_ranges   = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type=%s AND post_status='publish'", Star_Electric_Ranges::POST_TYPE ) );
-		$wp_quote    = (int) $wpdb->get_var(
+		/* ----------------------------------------------- the WordPress side */
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.NotPrepared
+
+		$products = "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type='product' AND post_status='publish'";
+
+		$meta_count = static function ( string $key, string $value ) use ( $wpdb ): int {
+			return (int) $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT COUNT(*) FROM {$wpdb->postmeta} pm
+					 INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+					 WHERE pm.meta_key = %s AND pm.meta_value = %s
+					   AND p.post_type = 'product' AND p.post_status = 'publish'",
+					$key,
+					$value
+				)
+			);
+		};
+
+		$term_count = static function ( string $taxonomy ) use ( $wpdb ): int {
+			return (int) $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT COUNT(*) FROM {$wpdb->term_taxonomy} WHERE taxonomy = %s",
+					$taxonomy
+				)
+			);
+		};
+
+		$wp_products = (int) $wpdb->get_var( $products );
+		$wp_quote    = $meta_count( STAR_ELECTRIC_QUOTE_META, 'yes' );
+		$wp_priced   = $meta_count( STAR_ELECTRIC_QUOTE_META, 'no' );
+		$wp_oos      = $meta_count( '_star_electric_availability', 'Out of Stock' );
+
+		$wp_sale = (int) $wpdb->get_var(
+			"SELECT COUNT(*) FROM {$wpdb->postmeta} pm
+			 INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+			 WHERE pm.meta_key = '_star_electric_discount' AND pm.meta_value + 0 > 0
+			   AND p.post_type = 'product' AND p.post_status = 'publish'"
+		);
+
+		$wp_variable = (int) $wpdb->get_var(
+			"SELECT COUNT(DISTINCT p.ID) FROM {$wpdb->posts} p
+			 INNER JOIN {$wpdb->term_relationships} tr ON tr.object_id = p.ID
+			 INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
+			 INNER JOIN {$wpdb->terms} t ON t.term_id = tt.term_id
+			 WHERE tt.taxonomy = 'product_type' AND t.slug = 'variable'
+			   AND p.post_type = 'product' AND p.post_status = 'publish'"
+		);
+
+		$wp_variations = (int) $wpdb->get_var(
+			"SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type='product_variation' AND post_status IN ('publish','private')"
+		);
+
+		$wp_ranges = (int) $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT COUNT(*) FROM {$wpdb->postmeta} pm
-				 INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
-				 WHERE pm.meta_key = %s AND pm.meta_value = 'yes' AND p.post_type = 'product'",
-				STAR_ELECTRIC_QUOTE_META
+				"SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type=%s AND post_status='publish'",
+				Star_Electric_Ranges::POST_TYPE
 			)
 		);
-		$wp_zero     = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key='_price' AND meta_value='0'" );
+
+		// The catalogue's own categories, so a stray "Uncategorized" is not counted.
+		$wp_cats = (int) $wpdb->get_var(
+			"SELECT COUNT(*) FROM {$wpdb->term_taxonomy} WHERE taxonomy='product_cat' AND parent = 0
+			   AND term_id NOT IN ( SELECT term_id FROM {$wpdb->terms} WHERE slug = 'uncategorized' )"
+		);
+		$wp_subs = (int) $wpdb->get_var(
+			"SELECT COUNT(*) FROM {$wpdb->term_taxonomy} WHERE taxonomy='product_cat' AND parent <> 0"
+		);
+
+		$map = self::media_map();
+
+		/* ------------------------------------------------------------ defects */
+		// One query for every source id WordPress holds, rather than 4,348 of them.
+		$have = $wpdb->get_col(
+			$wpdb->prepare(
+				"SELECT pm.meta_value FROM {$wpdb->postmeta} pm
+				 INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+				 WHERE pm.meta_key = %s AND p.post_type = 'product' AND p.post_status = 'publish'",
+				STAR_ELECTRIC_SOURCE_ID_META
+			)
+		);
+		$have    = array_flip( array_map( 'strval', (array) $have ) );
+		$missing = 0;
+		foreach ( $src_ids as $source_id ) {
+			if ( '' !== $source_id && ! isset( $have[ $source_id ] ) ) {
+				++$missing;
+			}
+		}
+
+		$duplicates = (int) $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT COUNT(*) FROM (
+					SELECT pm.meta_value FROM {$wpdb->postmeta} pm
+					INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+					WHERE pm.meta_key = %s AND p.post_type = 'product' AND p.post_status = 'publish'
+					GROUP BY pm.meta_value HAVING COUNT(*) > 1
+				) d",
+				STAR_ELECTRIC_SOURCE_ID_META
+			)
+		);
+
+		/*
+		 * A price of zero on this catalogue can only mean a quote-only product
+		 * was given an invented one, so it is a defect and not a quantity.
+		 */
+		$zero = (int) $wpdb->get_var(
+			"SELECT COUNT(*) FROM {$wpdb->postmeta} pm
+			 INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+			 WHERE pm.meta_key = '_price' AND pm.meta_value + 0 = 0 AND pm.meta_value <> ''
+			   AND p.post_type IN ('product','product_variation')"
+		);
+		// phpcs:enable
+
+		$row = static function ( string $label, int $source, int $wordpress ): array {
+			return array( $label, $source, $wordpress, $source === $wordpress ? 'OK' : 'MISMATCH' );
+		};
 
 		return array(
-			array( 'products', $src_products, $wp_products, $src_products === $wp_products ? 'OK' : 'MISMATCH' ),
-			array( 'quote-only', $src_quote, $wp_quote, $src_quote === $wp_quote ? 'OK' : 'MISMATCH' ),
-			array( 'ranges', $src_ranges, $wp_ranges, $src_ranges === $wp_ranges ? 'OK' : 'MISMATCH' ),
-			array( 'media masters', $src_media, count( $map ), $src_media === count( $map ) ? 'OK' : 'MISMATCH' ),
-			array( 'products priced 0', 0, $wp_zero, 0 === $wp_zero ? 'OK' : 'FAIL - fake price present' ),
+			$row( 'products', $src['products'], $wp_products ),
+			$row( 'quote-only products', $src['quote'], $wp_quote ),
+			$row( 'priced products', $src['priced'], $wp_priced ),
+			$row( 'products on genuine sale', $src['sale'], $wp_sale ),
+			$row( 'variable products', $src['variable'], $wp_variable ),
+			$row( 'variations', $src['variations'], $wp_variations ),
+			$row( 'out of stock', $src['oos'], $wp_oos ),
+			$row( 'ranges', $src_ranges, $wp_ranges ),
+			$row( 'categories', $src_cats, $wp_cats ),
+			$row( 'subcategories', $src_subs, $wp_subs ),
+			$row( 'brands', $src_brands, $term_count( Star_Electric_Taxonomies::BRAND ) ),
+			$row( 'departments', $src_depts, $term_count( Star_Electric_Taxonomies::DEPARTMENT ) ),
+			$row( 'media masters', $src_media, count( $map ) ),
+			array( 'failed imports', 0, $missing, 0 === $missing ? 'OK' : 'FAIL - records missing' ),
+			array( 'duplicate source ids', 0, $duplicates, 0 === $duplicates ? 'OK' : 'FAIL - imported twice' ),
+			array( 'products priced 0', 0, $zero, 0 === $zero ? 'OK' : 'FAIL - fake price present' ),
 		);
 	}
 }

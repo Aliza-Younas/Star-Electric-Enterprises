@@ -1,0 +1,343 @@
+/* ==========================================================================
+   PLATFORM BRIDGE
+
+   The three stylesheets this theme ships are the approved storefront's own
+   files, unchanged. This fourth one exists only to reconcile them with the
+   platform underneath: markup WooCommerce emits that the static site never had
+   (checkout field rows, notices, quantity inputs, the order tracking result),
+   and layout wrappers WooCommerce introduces that the approved grids did not
+   expect. The parent theme's own paint is not fought here - it is dequeued in
+   functions.php, which is cheaper than overriding it rule by rule.
+
+   Nothing here invents a new visual style. Every rule either forwards a
+   WooCommerce class onto an existing component (.input, .alert, .panel),
+   undoes a wrapper that would otherwise break a layout grid, or restores a
+   reset the approved stylesheet already makes.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1  LAYOUT WRAPPERS
+
+   The cart and checkout shortcodes wrap their whole output in one div, which
+   inside a two-column grid collapses both columns into a single cell.
+   display:contents hands the grid its real children back.
+   -------------------------------------------------------------------------- */
+.cart-layout > .woocommerce,
+.checkout-layout > .woocommerce {
+  display: contents;
+}
+
+/* WooCommerce prints its notices wrapper before the cart, empty or not. With
+   display:contents that empty div becomes the grid's first cell and pushes the
+   cart itself into the summary column - which is where the empty state ended up
+   sitting. A notice, when there is one, spans both columns. */
+.cart-layout .woocommerce-notices-wrapper:empty,
+.checkout-layout .woocommerce-notices-wrapper:empty {
+  display: none;
+}
+.cart-layout .woocommerce-notices-wrapper,
+.checkout-layout .woocommerce-notices-wrapper {
+  grid-column: 1 / -1;
+}
+
+
+/* --------------------------------------------------------------------------
+   2  NOTICES
+
+   WooCommerce's messages, errors and info boxes, wearing .alert.
+   -------------------------------------------------------------------------- */
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-notice {
+  display: block;
+  margin: 0 0 var(--sp-4);
+  padding: var(--sp-4);
+  border: 1px solid transparent;
+  border-radius: var(--r);
+  font-size: 14px;
+  list-style: none;
+}
+.woocommerce-message {
+  background: var(--success-soft);
+  border-color: #BFE3D2;
+  color: var(--success);
+}
+.woocommerce-info,
+.woocommerce-notice {
+  background: var(--info-soft);
+  border-color: var(--navy-100);
+  color: var(--navy-700);
+}
+.woocommerce-error {
+  background: var(--warning-soft);
+  border-color: #F0DCC0;
+  color: var(--warning);
+}
+.woocommerce-error li { list-style: none; }
+/* WooCommerce draws its own icon into these boxes with an absolutely positioned
+   ::before from its icon font. The approved .alert component has no room set
+   aside for one, so the glyph lands on top of the first word. */
+.woocommerce-message::before,
+.woocommerce-error::before,
+.woocommerce-info::before,
+.woocommerce-notice::before { content: none; display: none; }
+.woocommerce-message .button,
+.woocommerce-error .button,
+.woocommerce-info .button {
+  float: right;
+  margin-left: var(--sp-3);
+}
+
+
+/* --------------------------------------------------------------------------
+   3  FORM ROWS
+
+   Checkout billing fields. WooCommerce builds them as <p class="form-row">
+   with an <input class="input-text">, so they are forwarded onto the field
+   and input components rather than restyled.
+   -------------------------------------------------------------------------- */
+.woocommerce form .form-row {
+  display: block;
+  margin: 0 0 var(--sp-4);
+}
+.woocommerce form .form-row label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.woocommerce form .form-row label .required {
+  color: var(--brand-accent);
+  text-decoration: none;
+  border: 0;
+}
+.woocommerce form .form-row .input-text,
+.woocommerce form .form-row select,
+.woocommerce form .form-row textarea,
+.woocommerce-page form .form-row .input-text {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--r);
+  font-size: 14.5px;
+  color: var(--text-primary);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.woocommerce form .form-row .input-text:focus,
+.woocommerce form .form-row select:focus,
+.woocommerce form .form-row textarea:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(42, 42, 107, .12);
+}
+.woocommerce form .form-row textarea { min-height: 110px; resize: vertical; }
+.woocommerce .select2-container .select2-selection--single {
+  height: auto;
+  padding: 6px 4px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--r);
+}
+
+/* Two-up rows, which is what form-row-first / form-row-last mean. */
+@media (min-width: 720px) {
+  .woocommerce form .form-row-first,
+  .woocommerce form .form-row-last {
+    width: calc(50% - (var(--sp-4) / 2));
+    display: inline-block;
+    vertical-align: top;
+  }
+  .woocommerce form .form-row-first { margin-right: var(--sp-4); }
+}
+.woocommerce form .form-row-wide { width: 100%; }
+.woocommerce .col2-set { display: block; }
+.woocommerce .col2-set .col-1,
+.woocommerce .col2-set .col-2 { width: 100%; }
+.woocommerce form .form-row .clear { clear: both; }
+
+.woocommerce-billing-fields h3,
+.woocommerce-shipping-fields h3,
+.woocommerce-additional-fields h3 {
+  margin: 0 0 var(--sp-4);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------------------------------------------------
+   4  QUANTITY INPUT
+
+   Narrow enough not to swallow the cart's quantity column.
+   -------------------------------------------------------------------------- */
+.woocommerce .quantity { display: inline-block; }
+.woocommerce .quantity .qty {
+  width: 72px;
+  padding: 9px 8px;
+  text-align: center;
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--r);
+  font-size: 14.5px;
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------------------------------------------------
+   5  CART
+
+   The cart's actions row, and the totals table WooCommerce prints for
+   shipping when a rate exists.
+   -------------------------------------------------------------------------- */
+/* The cart table sizes to its content, and WooCommerce's rows are wider than
+   the static site's were: a long product name plus a quantity input plus a
+   remove control pushed the table past its panel at 1366 and 1440. The panel
+   clips with overflow:hidden, but .sr-only is position:absolute with no offset,
+   so those labels escaped the clip and dragged the whole document sideways.
+   Filling the panel fixes the cause; scrolling inside the panel means an
+   unusually long row scrolls the table rather than the page. */
+.cart-panel {
+  position: relative;   /* contains .sr-only, which is absolute with no offset */
+  overflow-x: auto;
+}
+.cart-panel > .woocommerce-cart-form,
+.cart-panel .table { width: 100%; }
+.cart-panel .table th,
+.cart-panel .table td {
+  white-space: normal;
+  overflow-wrap: anywhere;   /* uninterrupted product codes must not set the width */
+}
+.cart-panel .cart-item__img { width: 60px; height: 60px; }
+
+/* WooCommerce ships its own stylesheets and paints .shop_table itself: 9px/12px
+   cells on a 1.5em line, a rounded outline and a top border on every row. The
+   cart table has to keep that class for WooCommerce's own scripts to find it,
+   so the approved .table component is restored over the top rather than the
+   class being dropped. */
+.woocommerce table.shop_table.table {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.woocommerce table.shop_table.table th,
+.woocommerce table.shop_table.table td {
+  line-height: inherit;
+  border-top: 0;
+  border-bottom: 1px solid var(--border);
+}
+.woocommerce table.shop_table.table th { padding: var(--sp-3) var(--sp-4); }
+.woocommerce table.shop_table.table td { padding: var(--sp-4); }
+.woocommerce table.shop_table.table tbody tr:last-child td { border-bottom: 0; }
+
+.woocommerce-cart-form .actions {
+  padding-top: var(--sp-4);
+  text-align: right;
+  border-top: 1px solid var(--border);
+}
+.woocommerce-shipping-totals th,
+.woocommerce-shipping-totals td {
+  padding: var(--sp-2) 0;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+}
+.woocommerce-shipping-methods { margin: 0; list-style: none; }
+.wc-proceed-to-checkout .checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 22px;
+  background: var(--brand-accent);
+  color: #fff;
+  border-radius: var(--r);
+  font-size: 15px;
+  font-weight: 600;
+}
+.wc-proceed-to-checkout .checkout-button:hover { background: var(--brand-accent-dark, #B81111); }
+
+
+/* --------------------------------------------------------------------------
+   6  CHECKOUT REVIEW
+
+   The live order review inside the checkout form.
+   -------------------------------------------------------------------------- */
+.woocommerce-checkout-review-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+  padding: var(--sp-3) 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.woocommerce-checkout-review-order-table td:last-child,
+.woocommerce-checkout-review-order-table th:last-child { text-align: right; }
+.woocommerce-checkout-review-order-table tfoot th { font-weight: 600; }
+.woocommerce-checkout-payment .payment_methods { margin: 0; padding: 0; list-style: none; }
+.woocommerce-checkout-payment .payment_box { font-size: 13.5px; color: var(--text-muted); }
+.woocommerce-terms-and-conditions-wrapper { margin: var(--sp-4) 0; }
+
+
+/* --------------------------------------------------------------------------
+   7  ORDER TRACKING AND ORDER DETAIL
+
+   The result WooCommerce prints after a successful tracking lookup.
+   -------------------------------------------------------------------------- */
+.woocommerce-order-details,
+.woocommerce-customer-details { margin-top: var(--sp-6); }
+.woocommerce-order-details__title,
+.woocommerce-column__title { font-size: 17px; font-weight: 700; margin-bottom: var(--sp-3); }
+.woocommerce-table--order-details {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.woocommerce-table--order-details th,
+.woocommerce-table--order-details td {
+  padding: var(--sp-3) 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.woocommerce-order-overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  list-style: none;
+}
+.woocommerce-order-overview li { font-size: 13px; color: var(--text-muted); }
+.woocommerce-order-overview li strong { display: block; font-size: 15px; color: var(--text-primary); }
+
+
+/* --------------------------------------------------------------------------
+   8  MY ACCOUNT
+
+   Only reached by a signed-in user; signed-out visitors get the approved
+   services grid instead of a login form.
+   -------------------------------------------------------------------------- */
+/* WooCommerce wraps the account page in .woocommerce, and the services grid is
+   a <ul>. Nothing in the approved design puts a marker on it, so the one the
+   browser adds by default is removed rather than styled. */
+.acct-grid,
+.woocommerce .acct-grid { margin: 0; padding: 0; list-style: none; }
+
+.woocommerce-MyAccount-navigation ul { margin: 0 0 var(--sp-5); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.woocommerce-MyAccount-navigation li a {
+  display: block;
+  padding: 8px 14px;
+  background: var(--navy-50);
+  border-radius: var(--r-sm);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy-700);
+}
+.woocommerce-MyAccount-navigation li.is-active a { background: var(--brand-primary); color: #fff; }

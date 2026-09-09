@@ -28,6 +28,47 @@ $star_object  = get_queried_object();
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 $star_view = ( isset( $_GET['view'] ) && 'list' === $_GET['view'] ) ? 'list' : 'grid';
 
+/*
+ * The approved storefront has two archive templates, not one. shop.html leads
+ * with a page head; category.html leads with a hero - eyebrow, title, blurb,
+ * two buttons and the department's own photograph - then a row of subcategory
+ * tiles, and ends with the ranges that source publishes at family level. A
+ * category or department view here gets that page; the shop and a brand view
+ * keep the shop's head.
+ */
+$star_is_dept = $star_object instanceof WP_Term
+	&& in_array( $star_object->taxonomy, array( 'product_cat', Star_Electric_Taxonomies::DEPARTMENT ), true );
+
+/*
+ * A subcategory view keeps its department's photograph, exactly as the
+ * approved page does - the picture belongs to the department, and only
+ * departments have one.
+ */
+$star_art_slug = '';
+if ( $star_is_dept && 'product_cat' === $star_object->taxonomy ) {
+	$star_art_slug = $star_object->slug;
+	if ( $star_object->parent ) {
+		$star_art_parent = get_term( (int) $star_object->parent, 'product_cat' );
+		if ( $star_art_parent instanceof WP_Term ) {
+			$star_art_slug = $star_art_parent->slug;
+		}
+	}
+}
+
+$star_children = array();
+if ( $star_is_dept && 'product_cat' === $star_object->taxonomy ) {
+	$star_children = get_terms(
+		array(
+			'taxonomy'   => 'product_cat',
+			'parent'     => $star_object->term_id,
+			'hide_empty' => true,
+		)
+	);
+	$star_children = Star_Electric_Taxonomies::in_catalogue_order(
+		is_wp_error( $star_children ) ? array() : (array) $star_children
+	);
+}
+
 /* The subtitle is the term's own description where there is one, and the
    approved shop copy otherwise. Nothing is invented to fill the space. */
 $star_sub = '';
@@ -53,22 +94,68 @@ if ( $star_object instanceof WP_Term ) {
 				<?php endif; ?>
 			</ol>
 		</nav>
-		<h1 class="page-head__title">
-			<?php
-			if ( $star_object instanceof WP_Term ) {
-				echo esc_html( $star_object->name );
-			} else {
-				esc_html_e( 'Shop All Products', 'star-electric-child' );
-			}
-			?>
-		</h1>
-		<?php if ( '' !== $star_sub ) : ?>
-			<p class="page-head__sub"><?php echo esc_html( $star_sub ); ?></p>
+		<?php if ( ! $star_is_dept ) : ?>
+			<h1 class="page-head__title">
+				<?php
+				if ( $star_object instanceof WP_Term ) {
+					echo esc_html( $star_object->name );
+				} else {
+					esc_html_e( 'Shop All Products', 'star-electric-child' );
+				}
+				?>
+			</h1>
+			<?php if ( '' !== $star_sub ) : ?>
+				<p class="page-head__sub"><?php echo esc_html( $star_sub ); ?></p>
+			<?php endif; ?>
 		<?php endif; ?>
 	</div>
 </div>
 
-<section class="section section--sm">
+<?php if ( $star_is_dept ) : ?>
+	<section class="section section--sm" style="padding-bottom:0">
+		<div class="container">
+			<div class="cat-hero">
+				<div>
+					<p class="section__eyebrow"><?php esc_html_e( 'Department', 'star-electric-child' ); ?></p>
+					<h1 class="section__title"><?php echo esc_html( $star_object->name ); ?></h1>
+					<?php if ( '' !== $star_sub ) : ?>
+						<p class="section__sub"><?php echo esc_html( $star_sub ); ?></p>
+					<?php endif; ?>
+					<div class="btn-row" style="margin-top:20px">
+						<a class="btn btn--accent btn--sm" href="<?php echo esc_url( Star_Electric_Shell::url( 'quote' ) ); ?>">
+							<?php esc_html_e( 'Request a Quote', 'star-electric-child' ); ?>
+						</a>
+						<a class="btn btn--ghost btn--sm" href="<?php echo esc_url( Star_Electric_Shell::url( 'shop' ) ); ?>">
+							<?php esc_html_e( 'All departments', 'star-electric-child' ); ?>
+						</a>
+					</div>
+				</div>
+				<?php $star_art_html = Star_Electric_Shell::category_image( $star_art_slug, 900, 560 ); ?>
+				<?php if ( '' !== $star_art_html ) : ?>
+					<div class="cat-hero__art"><?php echo wp_kses_post( $star_art_html ); ?></div>
+				<?php endif; ?>
+			</div>
+
+			<?php if ( ! empty( $star_children ) ) : ?>
+				<h2 class="section__title" id="subcatTitle" style="font-size:19px;margin-bottom:16px">
+					<?php esc_html_e( 'Browse subcategories', 'star-electric-child' ); ?>
+				</h2>
+				<ul class="subcat-grid" id="subcatGrid" style="margin-bottom:40px">
+					<?php foreach ( $star_children as $star_child ) : ?>
+						<li>
+							<a class="subcat-card" href="<?php echo esc_url( (string) get_term_link( $star_child ) ); ?>">
+								<?php echo wp_kses_post( Star_Electric_Shell::category_icon( $star_child ) ); ?>
+								<span><?php echo esc_html( $star_child->name ); ?></span>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+		</div>
+	</section>
+<?php endif; ?>
+
+<section class="section section--sm"<?php echo $star_is_dept ? ' style="padding-top:0"' : ''; ?>>
 	<form class="container shop-layout" method="get" id="shopFilters">
 		<?php
 		/*
@@ -167,15 +254,31 @@ if ( $star_object instanceof WP_Term ) {
 				</ul>
 
 				<?php
-				$star_pages = paginate_links(
+				$star_total_pages = (int) $wp_query->max_num_pages;
+				$star_this_page   = max( 1, (int) get_query_var( 'paged' ) );
+				$star_pages       = paginate_links(
 					array(
-						'total'     => (int) $wp_query->max_num_pages,
-						'current'   => max( 1, (int) get_query_var( 'paged' ) ),
+						'total'     => $star_total_pages,
+						'current'   => $star_this_page,
 						'type'      => 'array',
-						'prev_text' => __( 'Previous', 'star-electric-child' ),
+						'prev_text' => __( 'Prev', 'star-electric-child' ),
 						'next_text' => __( 'Next', 'star-electric-child' ),
 					)
 				);
+
+				/*
+				 * The approved pager always shows Prev and Next, greyed out at
+				 * the ends. paginate_links() drops them instead, which made the
+				 * bar a different width on the first and last page.
+				 */
+				if ( is_array( $star_pages ) && $star_total_pages > 1 ) {
+					if ( 1 === $star_this_page ) {
+						array_unshift( $star_pages, '<span class="is-gap">' . esc_html__( 'Prev', 'star-electric-child' ) . '</span>' );
+					}
+					if ( $star_this_page === $star_total_pages ) {
+						$star_pages[] = '<span class="is-gap">' . esc_html__( 'Next', 'star-electric-child' ) . '</span>';
+					}
+				}
 				?>
 				<?php if ( $star_pages ) : ?>
 					<nav class="pagination" id="pagination" aria-label="<?php esc_attr_e( 'Product pages', 'star-electric-child' ); ?>" style="margin-top:32px">
@@ -200,6 +303,35 @@ if ( $star_object instanceof WP_Term ) {
 					</div>
 				</div>
 
+			<?php endif; ?>
+
+			<?php
+			/*
+			 * Ranges the source publishes without individual product pages.
+			 * Navigation and enquiry only: never priced, never added to cart,
+			 * and kept clearly below the products so the two are not confused.
+			 */
+			$star_range_html = '';
+			if ( $star_is_dept ) {
+				$star_range_html = do_shortcode(
+					sprintf(
+						'[star_ranges %s="%s" limit="60"]',
+						'product_cat' === $star_object->taxonomy ? 'category' : 'department',
+						esc_attr( $star_object->slug )
+					)
+				);
+			}
+			?>
+			<?php if ( '' !== trim( $star_range_html ) ) : ?>
+				<section class="panel" id="catFamilySection" style="margin-top:32px">
+					<h2 class="section__title" style="font-size:20px" id="catFamilyTitle">
+						<?php esc_html_e( 'Ranges listed at family level', 'star-electric-child' ); ?>
+					</h2>
+					<p class="t-sm t-muted" style="margin:8px 0 20px">
+						<?php esc_html_e( 'For these ranges the approved source does not publish individual product pages, so they are not listed as products. Tell us the rating or size you need and we will quote against it.', 'star-electric-child' ); ?>
+					</p>
+					<div id="catFamilyList"><?php echo $star_range_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+				</section>
 			<?php endif; ?>
 		</div>
 

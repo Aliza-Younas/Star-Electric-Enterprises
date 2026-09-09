@@ -29,14 +29,29 @@ function star_electric_child_assets(): void {
 	$dir = get_stylesheet_directory();
 	$uri = get_stylesheet_directory_uri();
 
-	wp_enqueue_style(
-		'hello-elementor',
-		get_template_directory_uri() . '/style.css',
-		array(),
-		null // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-	);
+	/*
+	 * Hello Elementor's own stylesheets are dropped, not layered under ours.
+	 *
+	 * Its reset.css is not a reset: it paints every bare <button> with a 1px
+	 * #c36 border and #c36 text, inverts it to a solid #c36 block on hover, and
+	 * styles tables, inputs and links to match. The approved storefront ships a
+	 * complete design system - it runs the static site with no other CSS at all
+	 * - so none of that is needed, and all of it has to be fought off rule by
+	 * rule if it stays. The parent theme is still the parent for template
+	 * inheritance; only its paint is removed.
+	 */
+	foreach ( array( 'hello-elementor', 'hello-elementor-theme-style', 'hello-elementor-header-footer' ) as $handle ) {
+		wp_dequeue_style( $handle );
+		wp_deregister_style( $handle );
+	}
 
-	foreach ( array( 'styles', 'pages', 'responsive' ) as $i => $handle ) {
+	/*
+	 * The first three are the approved storefront's own stylesheets, in the
+	 * order they load there. The fourth dresses the markup WooCommerce emits
+	 * that the static site never had, and must come last so it can lean on the
+	 * tokens the first one defines.
+	 */
+	foreach ( array( 'styles', 'pages', 'responsive', 'woocommerce' ) as $i => $handle ) {
 		$path = $dir . '/assets/css/' . $handle . '.css';
 		if ( ! file_exists( $path ) ) {
 			continue;
@@ -44,7 +59,7 @@ function star_electric_child_assets(): void {
 		wp_enqueue_style(
 			'star-electric-' . $handle,
 			$uri . '/assets/css/' . $handle . '.css',
-			0 === $i ? array( 'hello-elementor' ) : array( 'star-electric-styles' ),
+			0 === $i ? array() : array( 'star-electric-styles' ),
 			(string) filemtime( $path )
 		);
 	}
@@ -60,9 +75,15 @@ function star_electric_child_assets(): void {
 		);
 	}
 
-	// Only the catalogue archives carry the filter panel.
+	/*
+	 * The filter panel, the mobile filter drawer and the grid/list toggle. The
+	 * deals page is not a WooCommerce archive but it wears the same toolbar, so
+	 * it needs the same script - without this its filter drawer opens onto
+	 * nothing.
+	 */
 	$is_archive = function_exists( 'is_shop' )
 		&& ( is_shop() || is_product_taxonomy() || ( is_search() && 'product' === get_query_var( 'post_type' ) ) );
+	$is_archive = $is_archive || is_page_template( 'page-deals.php' ) || is_page( 'deals' );
 
 	$shop = $dir . '/assets/js/shop.js';
 	if ( $is_archive && file_exists( $shop ) ) {
@@ -72,6 +93,65 @@ function star_electric_child_assets(): void {
 			array(),
 			(string) filemtime( $shop ),
 			true
+		);
+	}
+
+	/*
+	 * The wishlist runs everywhere, because the heart control lives on the
+	 * product card and the product card appears on nearly every page. It is
+	 * also what keeps the header's saved-items badge truthful, and that badge
+	 * is in the header on every page.
+	 */
+	$wish = $dir . '/assets/js/wishlist.js';
+	if ( file_exists( $wish ) ) {
+		wp_enqueue_script(
+			'star-electric-wishlist',
+			$uri . '/assets/js/wishlist.js',
+			array(),
+			(string) filemtime( $wish ),
+			true
+		);
+		wp_localize_script(
+			'star-electric-wishlist',
+			'starWishlist',
+			array(
+				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'action'  => class_exists( 'Star_Electric_Wishlist' ) ? Star_Electric_Wishlist::ACTION : 'star_electric_wishlist',
+			)
+		);
+	}
+
+	$brands = $dir . '/assets/js/brands.js';
+	if ( is_page( 'brands' ) && file_exists( $brands ) ) {
+		wp_enqueue_script(
+			'star-electric-brands',
+			$uri . '/assets/js/brands.js',
+			array(),
+			(string) filemtime( $brands ),
+			true
+		);
+	}
+
+	/*
+	 * Recently viewed, on the product page only - the one page that both adds
+	 * to the visitor's history and shows it back to them.
+	 */
+	$recent = $dir . '/assets/js/recent.js';
+	if ( function_exists( 'is_product' ) && is_product() && file_exists( $recent ) ) {
+		wp_enqueue_script(
+			'star-electric-recent',
+			$uri . '/assets/js/recent.js',
+			array(),
+			(string) filemtime( $recent ),
+			true
+		);
+		wp_localize_script(
+			'star-electric-recent',
+			'starRecent',
+			array(
+				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'action'  => class_exists( 'Star_Electric_Wishlist' ) ? Star_Electric_Wishlist::CARDS : 'star_electric_cards',
+			)
 		);
 	}
 

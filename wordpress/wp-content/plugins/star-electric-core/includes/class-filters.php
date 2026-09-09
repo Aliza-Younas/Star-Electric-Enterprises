@@ -62,6 +62,22 @@ class Star_Electric_Filters {
 	}
 
 	/**
+	 * The department this page is an archive of, if it is one.
+	 *
+	 * The approved category page arrives at a department by filtering, so the
+	 * department shows as a ticked box and as a chip. A WordPress archive
+	 * arrives by URL instead, and without this the panel showed no filter at
+	 * all on a page that is entirely filtered.
+	 */
+	public static function archive_category(): ?WP_Term {
+		if ( is_admin() || ! is_tax( 'product_cat' ) ) {
+			return null;
+		}
+		$term = get_queried_object();
+		return $term instanceof WP_Term ? $term : null;
+	}
+
+	/**
 	 * Read the active filters out of the request.
 	 *
 	 * @return array<string,mixed>
@@ -89,8 +105,14 @@ class Star_Electric_Filters {
 		$sort = isset( $_GET['sort'] ) ? sanitize_key( wp_unslash( $_GET['sort'] ) ) : '';
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
+		$cat     = $list( 'cat' );
+		$archive = self::archive_category();
+		if ( $archive && ! in_array( $archive->slug, $cat, true ) ) {
+			$cat[] = $archive->slug;
+		}
+
 		return array(
-			'cat'     => $list( 'cat' ),
+			'cat'     => $cat,
 			'brand'   => $list( 'brand' ),
 			'stock'   => array_values( array_intersect( $list( 'stock' ), array_keys( self::AVAILABILITY ) ) ),
 			'pricing' => array_values( array_intersect( $list( 'pricing' ), array( 'priced', 'quote', 'discounted' ) ) ),
@@ -215,13 +237,61 @@ class Star_Electric_Filters {
 	}
 
 	/**
+	 * Build query arguments for a catalogue view that is not the shop archive.
+	 *
+	 * The Deals page runs its own query rather than the main one, and a second
+	 * implementation of the six filter groups is exactly how two views of the
+	 * same catalogue start disagreeing about what is in stock. So it goes
+	 * through apply() as well: a throwaway WP_Query is used purely as the
+	 * carrier apply() already knows how to write into, and the clauses are read
+	 * back out of it.
+	 *
+	 * @param array  $args         Base query arguments; any tax_query or
+	 *                             meta_query already on them is preserved and
+	 *                             the active filters are added to it.
+	 * @param string $default_sort Sort to use when the request names none.
+	 * @return array
+	 */
+	public static function query_args( array $args, string $default_sort = 'relevance' ): array {
+		$probe = new WP_Query();
+		$probe->init();
+		$probe->set( 'tax_query', isset( $args['tax_query'] ) ? (array) $args['tax_query'] : array() );
+		$probe->set( 'meta_query', isset( $args['meta_query'] ) ? (array) $args['meta_query'] : array() );
+
+		self::apply( $probe );
+
+		$tax = (array) $probe->get( 'tax_query' );
+		$met = (array) $probe->get( 'meta_query' );
+
+		if ( $tax ) {
+			$args['tax_query'] = $tax; // phpcs:ignore WordPress.DB.SlowDBQuery
+		}
+		if ( $met ) {
+			$args['meta_query'] = $met; // phpcs:ignore WordPress.DB.SlowDBQuery
+		}
+
+		$active  = self::active();
+		$ordered = self::ordering( array(), '' !== $active['sort'] ? $active['sort'] : $default_sort );
+
+		foreach ( array( 'orderby', 'order', 'meta_key' ) as $key ) {
+			if ( isset( $ordered[ $key ] ) && '' !== $ordered[ $key ] ) {
+				$args[ $key ] = $ordered[ $key ];
+			}
+		}
+
+		return $args;
+	}
+
+	/**
 	 * Translate the approved sort options into query arguments.
 	 *
 	 * @param array $args Ordering args.
 	 */
-	public static function ordering( array $args ): array {
-		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$sort = isset( $_GET['sort'] ) ? sanitize_key( wp_unslash( $_GET['sort'] ) ) : '';
+	public static function ordering( array $args, string $sort = '' ): array {
+		if ( '' === $sort ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$sort = isset( $_GET['sort'] ) ? sanitize_key( wp_unslash( $_GET['sort'] ) ) : '';
+		}
 
 		switch ( $sort ) {
 			case 'price-asc':
@@ -240,7 +310,17 @@ class Star_Electric_Filters {
 				$args['meta_key'] = ''; // phpcs:ignore WordPress.DB.SlowDBQuery
 				break;
 			case 'discount':
-				$args['orderby']  = 'meta_value_num';
+				/*
+				 * Nineteen products share five discount values, so without a
+				 * second key the order of a page of deals is whatever the
+				 * database happens to return. Falling back to id keeps it in
+				 * catalogue order, which is the order the approved deals page
+				 * shows ties in.
+				 */
+				$args['orderby']  = array(
+					'meta_value_num' => 'DESC',
+					'ID'             => 'ASC',
+				);
 				$args['order']    = 'DESC';
 				$args['meta_key'] = '_star_electric_discount'; // phpcs:ignore WordPress.DB.SlowDBQuery
 				break;
@@ -372,10 +452,9 @@ class Star_Electric_Filters {
 				'taxonomy'   => 'product_cat',
 				'parent'     => 0,
 				'hide_empty' => false,
-				'orderby'    => 'count',
-				'order'      => 'DESC',
 			)
 		);
+		$cats = Star_Electric_Taxonomies::in_catalogue_order( is_wp_error( $cats ) ? array() : (array) $cats );
 		$body = '';
 		foreach ( (array) $cats as $term ) {
 			if ( ! $term instanceof WP_Term || 'uncategorized' === $term->slug ) {
@@ -540,12 +619,15 @@ class Star_Electric_Filters {
 		$a     = self::active();
 		$chips = array();
 
+		$archive = self::archive_category();
 		foreach ( $a['cat'] as $slug ) {
 			$term = get_term_by( 'slug', $slug, 'product_cat' );
 			if ( $term instanceof WP_Term ) {
 				$chips[] = array(
 					'label' => $term->name,
-					'url'   => self::remove_url( 'cat', $slug ),
+					'url'   => ( $archive && $archive->slug === $slug )
+						? ( wc_get_page_permalink( 'shop' ) ?: home_url( '/shop/' ) )
+						: self::remove_url( 'cat', $slug ),
 				);
 			}
 		}

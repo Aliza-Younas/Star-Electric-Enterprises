@@ -53,6 +53,7 @@ class Star_Electric_Shortcodes {
 			'chevright'  => '<path d="m10 7 5 5-5 5"/>',
 			'arrowright' => '<path d="M5 12h13M13 6l6 6-6 6"/>',
 			'eye'        => '<path d="M2.8 12S6.6 5.8 12 5.8 21.2 12 21.2 12 17.4 18.2 12 18.2 2.8 12 2.8 12Z"/><circle cx="12" cy="12" r="3"/>',
+			'doc'        => '<path d="M6 3h7l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M13 3v5h5"/>',
 		);
 
 		return '<svg class="ico ' . esc_attr( $cls ) . '" viewBox="0 0 24 24" aria-hidden="true">'
@@ -95,13 +96,6 @@ class Star_Electric_Shortcodes {
 		if ( '' !== $a['category'] ) {
 			$args['category'] = array_map( 'sanitize_title', explode( ',', $a['category'] ) );
 		}
-		if ( 'yes' === $a['on_sale'] ) {
-			$ids = wc_get_product_ids_on_sale();
-			if ( empty( $ids ) ) {
-				return '';
-			}
-			$args['include'] = $ids;
-		}
 
 		$tax_query = array();
 		if ( '' !== $a['department'] ) {
@@ -122,10 +116,56 @@ class Star_Electric_Shortcodes {
 			$args['tax_query'] = $tax_query; // phpcs:ignore WordPress.DB.SlowDBQuery
 		}
 
+		/*
+		 * A plain category or department rail is resolved by the navigation
+		 * class, which ranks and spreads a selection the way the approved
+		 * homepage does. Anything else - a brand, several categories, the
+		 * discount rail - is a shape that has no spread and is left to
+		 * WooCommerce.
+		 */
+		$products = array();
+		$plain    = '' === $a['brand'] && 'yes' !== $a['on_sale'];
+
+		/*
+		 * A rail of discounts leads with the biggest one, which is what the
+		 * approved homepage shows. Taking the first ten by id instead simply
+		 * drops whichever reductions happen to have been imported late - the
+		 * 6% capacitor went missing that way.
+		 */
+		if ( 'yes' === $a['on_sale'] ) {
+			foreach ( Star_Electric_Navigation::deal_ids( (int) $args['limit'] ) as $deal_id ) {
+				$deal = wc_get_product( $deal_id );
+				if ( $deal instanceof WC_Product && $deal->is_visible() ) {
+					$products[] = $deal;
+				}
+			}
+			if ( empty( $products ) ) {
+				return '';
+			}
+			if ( '' === $a['count'] ) {
+				$a['count'] = (string) count( Star_Electric_Navigation::deal_ids() );
+			}
+		}
+		if ( $plain && '' !== $a['category'] && '' === $a['department'] && false === strpos( $a['category'], ',' ) ) {
+			$products = Star_Electric_Navigation::products(
+				array( 'cat' => sanitize_title( $a['category'] ) ),
+				(int) $args['limit']
+			);
+		} elseif ( $plain && '' === $a['category'] && '' !== $a['department'] && false === strpos( $a['department'], ',' ) ) {
+			$products = Star_Electric_Navigation::products(
+				array( 'dept' => sanitize_title( $a['department'] ) ),
+				(int) $args['limit']
+			);
+		}
+
+		if ( empty( $products ) ) {
+			$products = (array) wc_get_products( $args );
+		}
+
 		return self::rail(
 			(string) ( '' !== $a['id'] ? $a['id'] : 'rail-' . sanitize_title( (string) $a['title'] ) ),
 			(string) $a['title'],
-			(array) wc_get_products( $args ),
+			$products,
 			(string) $a['view_all'],
 			'' === $a['count'] ? 0 : (int) $a['count']
 		);
@@ -226,24 +266,18 @@ class Star_Electric_Shortcodes {
 				<p class="mcard__brand">
 					<?php esc_html_e( 'By:', 'star-electric' ); ?>
 					<?php if ( $brand_term instanceof WP_Term ) : ?>
-						<a href="<?php echo esc_url( (string) get_term_link( $brand_term ) ); ?>"><?php echo esc_html( $brand_term->name ); ?></a>
+						<a href="<?php echo esc_url( Star_Electric_Navigation::brand_url( $brand_term ) ); ?>"><?php echo esc_html( $brand_term->name ); ?></a>
 					<?php else : ?>
 						<?php esc_html_e( 'Not specified', 'star-electric' ); ?>
 					<?php endif; ?>
 				</p>
 				<p class="mcard__price">
-					<?php if ( $quote ) : ?>
-						<span class="mcard__quote">
-							<b><?php esc_html_e( 'Request a Quote', 'star-electric' ); ?></b>
-							<span><?php esc_html_e( 'Priced on enquiry', 'star-electric' ); ?></span>
-						</span>
-					<?php else : ?>
-						<?php echo wp_kses_post( $product->get_price_html() ); ?>
-					<?php endif; ?>
+					<?php echo wp_kses_post( Star_Electric_Quote_Only::price_block( $product, 'mini' ) ); ?>
 				</p>
 				<div class="mcard__actions">
 					<?php if ( $quote ) : ?>
 						<a class="mcard__btn mcard__btn--quote" href="<?php echo esc_url( Star_Electric_Quote_Only::quote_url( $product ) ); ?>">
+							<?php echo self::icon( 'doc' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							<?php esc_html_e( 'Request Quote', 'star-electric' ); ?>
 						</a>
 					<?php elseif ( ! $product->is_in_stock() ) : ?>
@@ -463,19 +497,35 @@ class Star_Electric_Shortcodes {
 	 * @param array $atts Shortcode attributes.
 	 */
 	public static function brands( $atts ): string {
-		$a = shortcode_atts( array( 'hide_empty' => 'yes' ), $atts, 'star_brands' );
+		$a = shortcode_atts( array( 'hide_empty' => 'no' ), $atts, 'star_brands' );
 
 		$terms = get_terms(
 			array(
 				'taxonomy'   => Star_Electric_Taxonomies::BRAND,
 				'hide_empty' => 'yes' === $a['hide_empty'],
-				'orderby'    => 'count',
-				'order'      => 'DESC',
+				'orderby'    => 'name',
+				'order'      => 'ASC',
 			)
 		);
 		if ( is_wp_error( $terms ) || ! $terms ) {
 			return '';
 		}
+
+		/*
+		 * The approved grid lists all eight brands in the catalogue's own order,
+		 * largest first, and shows the three whose sources publish ranges rather
+		 * than products as "0 products" rather than hiding them.
+		 */
+		usort(
+			$terms,
+			static function ( WP_Term $x, WP_Term $y ): int {
+				$ox = get_term_meta( $x->term_id, '_star_electric_order', true );
+				$oy = get_term_meta( $y->term_id, '_star_electric_order', true );
+				$ox = '' === $ox ? PHP_INT_MAX : (int) $ox;
+				$oy = '' === $oy ? PHP_INT_MAX : (int) $oy;
+				return $ox === $oy ? strcmp( $x->name, $y->name ) : ( $ox <=> $oy );
+			}
+		);
 
 		ob_start();
 		echo '<ul class="brand-grid" id="brandGrid">';
@@ -486,7 +536,7 @@ class Star_Electric_Shortcodes {
 			}
 			?>
 			<li>
-				<a class="brand-card" href="<?php echo esc_url( (string) get_term_link( $term ) ); ?>">
+				<a class="brand-card" href="<?php echo esc_url( Star_Electric_Navigation::brand_url( $term ) ); ?>">
 					<span class="brand-card__mark" aria-hidden="true"><?php echo esc_html( $mark ); ?></span>
 					<span class="brand-card__name"><?php echo esc_html( $term->name ); ?></span>
 					<span class="brand-card__note">
@@ -494,7 +544,7 @@ class Star_Electric_Shortcodes {
 						printf(
 							/* translators: %s: product count */
 							esc_html( _n( '%s product', '%s products', (int) $term->count, 'star-electric' ) ),
-							esc_html( number_format_i18n( (int) $term->count ) )
+							esc_html( (string) (int) $term->count )
 						);
 						?>
 					</span>
@@ -516,6 +566,7 @@ class Star_Electric_Shortcodes {
 		$a = shortcode_atts(
 			array(
 				'brand'      => '',
+				'category'   => '',
 				'department' => '',
 				'limit'      => 12,
 			),
@@ -530,10 +581,39 @@ class Star_Electric_Shortcodes {
 		);
 
 		if ( '' !== $a['brand'] ) {
+			/*
+			 * The importer records a range's brand as the name the source
+			 * publishes - "ABB Furse", not "abb-furse" - so a caller passing a
+			 * term slug has to be translated first. Himel happened to work by
+			 * accident, because MySQL compares case-insensitively and its slug
+			 * and name differ only in case; ABB Furse and Hyundai Electric
+			 * silently returned nothing.
+			 */
+			$brand = sanitize_text_field( $a['brand'] );
+			$term  = get_term_by( 'slug', $brand, Star_Electric_Taxonomies::BRAND );
+			if ( ! $term instanceof WP_Term ) {
+				$term = get_term_by( 'name', $brand, Star_Electric_Taxonomies::BRAND );
+			}
+			if ( $term instanceof WP_Term ) {
+				$brand = $term->name;
+			}
+
 			$args['meta_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery
 				array(
 					'key'   => '_star_electric_brand',
-					'value' => sanitize_text_field( $a['brand'] ),
+					'value' => $brand,
+				),
+			);
+		}
+		if ( '' !== $a['category'] ) {
+			/*
+			 * A range records its category as the slug, not as a term: it is
+			 * not a product and is deliberately not filed in product_cat.
+			 */
+			$args['meta_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery
+				array(
+					'key'   => '_star_electric_category',
+					'value' => sanitize_title( $a['category'] ),
 				),
 			);
 		}
@@ -547,42 +627,92 @@ class Star_Electric_Shortcodes {
 			);
 		}
 
+		$args['orderby'] = 'title';
+		$args['order']   = 'ASC';
+
 		$q = new WP_Query( $args );
 		if ( ! $q->have_posts() ) {
 			return '';
 		}
 
-		ob_start();
-		echo '<div class="family-panel"><ul class="family-list">';
+		/*
+		 * The approved page groups ranges under the brand that publishes them,
+		 * inside a panel that says why they are ranges and not products. A
+		 * category view can hold several brands, so the grouping is done here
+		 * rather than by the caller.
+		 */
+		$by_brand = array();
 		while ( $q->have_posts() ) {
 			$q->the_post();
-			$id     = (int) get_the_ID();
-			$series = (string) get_post_meta( $id, '_star_electric_series', true );
+			$id    = (int) get_the_ID();
+			$brand = (string) get_post_meta( $id, '_star_electric_brand', true );
+			$brand = '' !== $brand && 'Not specified' !== $brand
+				? $brand
+				: __( 'Brand not stated by source', 'star-electric' );
 
-			echo '<li class="family-item"><span class="family-item__media">';
-			if ( has_post_thumbnail( $id ) ) {
-				echo get_the_post_thumbnail( $id, 'woocommerce_thumbnail', array( 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			} else {
-				echo '<span class="thumb-none">' . esc_html__( 'No image', 'star-electric' ) . '</span>';
-			}
-			echo '</span><span class="family-item__body">';
-			printf( '<span class="family-item__name">%s</span>', esc_html( get_the_title() ) );
-			if ( '' !== $series ) {
-				printf(
-					'<span class="family-item__series">%s %s</span>',
-					esc_html__( 'Series:', 'star-electric' ),
-					esc_html( $series )
-				);
-			}
-			printf(
-				'<a class="family-item__cta" href="%s">%s</a>',
-				esc_url( Star_Electric_Ranges::enquiry_url( $id ) ),
-				esc_html__( 'Ask about this range', 'star-electric' )
+			$by_brand[ $brand ][] = array(
+				'id'      => $id,
+				'name'    => get_the_title(),
+				'series'  => (string) get_post_meta( $id, '_star_electric_series', true ),
+				'summary' => trim( wp_strip_all_tags( (string) get_the_excerpt() ) ),
+				'url'     => (string) get_post_meta( $id, '_star_electric_source_url', true ),
+				'domain'  => (string) get_post_meta( $id, '_star_electric_source_domain', true ),
+				'thumb'   => has_post_thumbnail( $id )
+					? get_the_post_thumbnail( $id, 'woocommerce_thumbnail', array( 'alt' => '' ) )
+					: '',
 			);
-			echo '</span></li>';
 		}
 		wp_reset_postdata();
-		echo '</ul></div>';
+
+		ksort( $by_brand );
+
+		ob_start();
+		foreach ( $by_brand as $brand => $items ) {
+			$term = get_term_by( 'name', $brand, Star_Electric_Taxonomies::BRAND );
+			$note = $term instanceof WP_Term
+				? (string) get_term_meta( $term->term_id, '_star_electric_note', true )
+				: '';
+			?>
+			<article class="panel family-panel">
+				<h3 class="family-panel__title"><?php echo esc_html( $brand ); ?></h3>
+				<?php if ( '' !== $note ) : ?>
+					<p class="family-panel__note"><?php echo esc_html( $note ); ?></p>
+				<?php endif; ?>
+				<ul class="family-list">
+					<?php foreach ( $items as $item ) : ?>
+						<li class="family-item">
+							<span class="family-item__media">
+								<?php if ( '' !== $item['thumb'] ) : ?>
+									<?php echo wp_kses_post( $item['thumb'] ); ?>
+								<?php else : ?>
+									<span class="thumb-none"><?php esc_html_e( 'No image', 'star-electric' ); ?></span>
+								<?php endif; ?>
+							</span>
+							<span class="family-item__body">
+								<span class="family-item__name"><?php echo esc_html( $item['name'] ); ?></span>
+								<?php if ( '' !== $item['series'] ) : ?>
+									<span class="family-item__series"><?php esc_html_e( 'Series:', 'star-electric' ); ?> <?php echo esc_html( $item['series'] ); ?></span>
+								<?php endif; ?>
+								<?php if ( '' !== $item['summary'] ) : ?>
+									<span class="family-item__sum"><?php echo esc_html( $item['summary'] ); ?></span>
+								<?php endif; ?>
+								<span class="family-item__links">
+									<a href="<?php echo esc_url( Star_Electric_Ranges::enquiry_url( $item['id'] ) ); ?>">
+										<?php esc_html_e( 'Ask about this range', 'star-electric' ); ?>
+									</a>
+									<?php if ( '' !== $item['url'] && '' !== $item['domain'] ) : ?>
+										<a href="<?php echo esc_url( $item['url'] ); ?>" rel="nofollow noopener" target="_blank">
+											<?php esc_html_e( 'Source:', 'star-electric' ); ?> <?php echo esc_html( $item['domain'] ); ?>
+										</a>
+									<?php endif; ?>
+								</span>
+							</span>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</article>
+			<?php
+		}
 
 		return (string) ob_get_clean();
 	}

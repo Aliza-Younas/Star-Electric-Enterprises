@@ -91,6 +91,83 @@ class Star_Electric_Quote_Only {
 	}
 
 	/**
+	 * The approved storefront's price block.
+	 *
+	 * WooCommerce renders a reduced price as <del>old</del> <ins>new</ins>: the
+	 * price the shopper is no longer paying comes first, and the saving is never
+	 * stated. The approved design puts the current price first, the previous
+	 * price after it and "Save 46%" beside them, and that ordering is the whole
+	 * point of a deals page - so the block is built here rather than taken from
+	 * get_price_html().
+	 *
+	 * A quote-only product returns the quotation wording. It can never fall
+	 * through to a number, which is how such a product would otherwise end up
+	 * priced at zero.
+	 *
+	 * @param WC_Product $product Product.
+	 * @param string     $variant card | lg | mini.
+	 */
+	public static function price_block( WC_Product $product, string $variant = 'card' ): string {
+		$mini = 'mini' === $variant;
+
+		if ( self::is_quote( $product ) ) {
+			return $mini
+				? '<span class="mcard__quote"><b>' . esc_html__( 'Request a Quote', 'star-electric' ) . '</b><span>' .
+					esc_html__( 'Priced on enquiry', 'star-electric' ) . '</span></span>'
+				: '<span class="price__quote">' . esc_html__( 'Request a Quote', 'star-electric' ) . '</span>';
+		}
+
+		/*
+		 * A variable product has a range rather than a price. The approved card
+		 * shows the lowest with a "from" marker, which is what its own source
+		 * publishes for those lines.
+		 */
+		$from = false;
+		if ( $product->is_type( 'variable' ) ) {
+			$prices  = $product->get_variation_prices( true );
+			$values  = isset( $prices['price'] ) ? array_map( 'floatval', (array) $prices['price'] ) : array();
+			$values  = array_filter( $values );
+			$current = $values ? min( $values ) : (float) $product->get_price();
+			$regular = $current;
+			$from    = count( array_unique( $values ) ) > 1;
+		} else {
+			$current = (float) $product->get_price();
+			$regular = (float) $product->get_regular_price();
+		}
+
+		if ( $current <= 0 ) {
+			// No published price and not flagged quote-only: say nothing rather
+			// than print a zero.
+			return '';
+		}
+
+		$off = ( $regular > 0 && $current < $regular ) ? (int) round( ( 1 - ( $current / $regular ) ) * 100 ) : 0;
+
+		if ( $mini ) {
+			$html = '<span class="mcard__now">' . wp_kses_post( wc_price( $current ) ) . '</span>';
+			if ( $off > 0 ) {
+				$html .= '<span class="mcard__was">' . wp_kses_post( wc_price( $regular ) ) . '</span>';
+			}
+			return $html;
+		}
+
+		$html = '<span class="price__now">' . wp_kses_post( wc_price( $current ) ) . '</span>';
+		if ( $off > 0 ) {
+			$html .= '<span class="price__old">' . wp_kses_post( wc_price( $regular ) ) . '</span>';
+			$html .= '<span class="price__off">' . sprintf(
+				/* translators: %d: discount percentage */
+				esc_html__( 'Save %d%%', 'star-electric' ),
+				$off
+			) . '</span>';
+		}
+		if ( $from ) {
+			$html .= '<span class="price__from">' . esc_html__( 'from', 'star-electric' ) . '</span>';
+		}
+
+		return $html;
+	}
+
+	/**
 	 * Show the quotation state instead of a figure.
 	 *
 	 * @param string     $html    Existing price HTML.

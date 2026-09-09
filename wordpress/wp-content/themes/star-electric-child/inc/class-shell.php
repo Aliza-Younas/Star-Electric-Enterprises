@@ -321,6 +321,72 @@ class Star_Electric_Shell {
 	 * @param int    $width  Width attribute.
 	 * @param int    $height Height attribute.
 	 */
+	/**
+	 * The line-art icon the approved subcategory tiles use.
+	 *
+	 * Every tile in a department shows that department's icon, not a picture per
+	 * subcategory - only departments have a photograph, and shrinking one to
+	 * 46x36 turns it into a dark rectangle.
+	 */
+	private const CATEGORY_ICON = array(
+		'wires-cables'           => 'cable-coil',
+		'switches-sockets'       => 'switch-plate',
+		'circuit-protection'     => 'mcb',
+		'industrial-control'     => 'relay',
+		'fans-ventilation'       => 'ceiling-fan',
+		'lighting'               => 'led-bulb',
+		'power-energy'           => 'energy-meter',
+		'smart-home'             => 'smart-plug',
+		'electrical-accessories' => 'tape',
+	);
+
+	/**
+	 * The icon for a department, or for a subcategory's department.
+	 *
+	 * @param WP_Term $term   Term.
+	 * @param int     $width  Display width.
+	 * @param int     $height Display height.
+	 */
+	public static function category_icon( WP_Term $term, int $width = 46, int $height = 36 ): string {
+		$slug = $term->slug;
+		if ( $term->parent ) {
+			$parent = get_term( (int) $term->parent, $term->taxonomy );
+			if ( $parent instanceof WP_Term ) {
+				$slug = $parent->slug;
+			}
+		}
+
+		$icon = self::CATEGORY_ICON[ $slug ] ?? 'cable-coil';
+
+		return sprintf(
+			'<img src="%s" alt="" width="%d" height="%d" loading="lazy" decoding="async" aria-hidden="true">',
+			esc_url( get_stylesheet_directory_uri() . '/assets/images/icons/' . $icon . '.svg' ),
+			$width,
+			$height
+		);
+	}
+
+	/**
+	 * A term's picture, falling back to its department's.
+	 *
+	 * Only departments carry a thumbnail: the approved subcategory tiles show
+	 * the department's own art rather than a picture per subcategory, and a
+	 * tile with no image at all collapses to half the approved height.
+	 *
+	 * @param WP_Term $term   Term.
+	 * @param int     $width  Display width.
+	 * @param int     $height Display height.
+	 */
+	public static function term_image( WP_Term $term, int $width, int $height ): string {
+		$art = self::category_image( $term->slug, $width, $height );
+		if ( '' !== $art || ! $term->parent ) {
+			return $art;
+		}
+
+		$parent = get_term( (int) $term->parent, $term->taxonomy );
+		return $parent instanceof WP_Term ? self::category_image( $parent->slug, $width, $height ) : '';
+	}
+
 	public static function category_image( string $slug, int $width, int $height ): string {
 		$term = get_term_by( 'slug', $slug, 'product_cat' );
 		if ( ! $term instanceof WP_Term ) {
@@ -392,5 +458,125 @@ class Star_Electric_Shell {
 			esc_url( get_stylesheet_directory_uri() . '/assets/logo/star-electric-logo-trimmed.png' ),
 			esc_attr__( 'Star Electric Enterprises', 'star-electric-child' )
 		);
+	}
+
+	/**
+	 * The page head: breadcrumb, title and optional sub-line.
+	 *
+	 * Fourteen ported pages open with the same block. Keeping it in one place
+	 * means the breadcrumb markup cannot drift between them the way it did
+	 * across the static site's individual HTML files.
+	 *
+	 * @param array  $crumbs Ordered [ label => url ] pairs; the last entry is
+	 *                       the current page and takes an empty url.
+	 * @param string $title  Page title.
+	 * @param string $sub    Optional sub-line.
+	 */
+	public static function page_head( array $crumbs, string $title, string $sub = '' ): void {
+		?>
+		<div class="page-head">
+			<div class="container">
+				<nav aria-label="<?php esc_attr_e( 'Breadcrumb', 'star-electric-child' ); ?>">
+					<ol class="breadcrumb">
+						<?php
+						$last = count( $crumbs ) - 1;
+						$i    = 0;
+						foreach ( $crumbs as $label => $url ) {
+							if ( $i > 0 ) {
+								echo '<li class="sep" aria-hidden="true">/</li>';
+							}
+							if ( $i === $last || '' === $url ) {
+								printf( '<li aria-current="page">%s</li>', esc_html( (string) $label ) );
+							} else {
+								printf(
+									'<li><a href="%s">%s</a></li>',
+									esc_url( (string) $url ),
+									esc_html( (string) $label )
+								);
+							}
+							++$i;
+						}
+						?>
+					</ol>
+				</nav>
+				<h1 class="page-head__title"><?php echo esc_html( $title ); ?></h1>
+				<?php if ( '' !== $sub ) : ?>
+					<p class="page-head__sub"><?php echo esc_html( $sub ); ?></p>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php
+	}
+
+	/**
+	 * The "these terms are not published yet" panel.
+	 *
+	 * Privacy, terms, shipping and returns all say the same thing in the same
+	 * shape on the approved site, and they say it deliberately: the store has
+	 * agreed no policy, and showing invented terms would be worse than saying
+	 * so. The two paragraphs differ per page, nothing else does.
+	 *
+	 * @param string $heading Panel heading.
+	 * @param string $lead    First paragraph.
+	 * @param string $detail  Second paragraph.
+	 */
+	public static function policy_panel( string $heading, string $lead, string $detail ): void {
+		?>
+		<section class="section section--sm">
+			<div class="container">
+				<div class="doc-single">
+					<div class="panel">
+						<h2 class="panel__title" style="margin-bottom:12px"><?php echo esc_html( $heading ); ?></h2>
+						<p class="t-sm t-muted" style="margin-bottom:16px"><?php echo esc_html( $lead ); ?></p>
+						<p class="t-sm t-muted" style="margin-bottom:20px"><?php echo esc_html( $detail ); ?></p>
+						<div class="btn-row">
+							<a class="btn btn--accent btn--sm" href="<?php echo esc_url( self::url( 'contact' ) ); ?>">
+								<?php esc_html_e( 'Contact the store', 'star-electric-child' ); ?>
+							</a>
+							<a class="btn btn--ghost btn--sm" href="<?php echo esc_url( self::url( 'quote' ) ); ?>">
+								<?php esc_html_e( 'Request a quotation', 'star-electric-child' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php
+	}
+
+	/**
+	 * The three-step cart / checkout / complete indicator.
+	 *
+	 * @param string $at Which step is current: cart, checkout or done.
+	 */
+	public static function steps( string $at ): void {
+		$order = array( 'cart', 'checkout', 'done' );
+		$now   = array_search( $at, $order, true );
+		$now   = false === $now ? 0 : (int) $now;
+
+		$labels = array(
+			'cart'     => __( 'Cart', 'star-electric-child' ),
+			'checkout' => __( 'Checkout', 'star-electric-child' ),
+			'done'     => __( 'Order Complete', 'star-electric-child' ),
+		);
+		?>
+		<div class="steps" style="margin-top:16px">
+			<?php foreach ( $order as $i => $key ) : ?>
+				<?php if ( $i > 0 ) : ?>
+					<span class="step__line" aria-hidden="true"></span>
+				<?php endif; ?>
+				<span class="step <?php echo esc_attr( $i < $now ? 'is-done' : ( $i === $now ? 'is-active' : '' ) ); ?>">
+					<span class="step__num">
+						<?php if ( $i < $now ) : ?>
+							<?php echo self::icon( 'check' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php else : ?>
+							<?php echo esc_html( (string) ( $i + 1 ) ); ?>
+						<?php endif; ?>
+					</span>
+					<?php echo esc_html( $labels[ $key ] ); ?>
+				</span>
+			<?php endforeach; ?>
+		</div>
+		<?php
 	}
 }

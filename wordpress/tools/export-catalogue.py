@@ -55,7 +55,13 @@ def main():
         }
 
     for p in products:
-        note(p.get("img"), detail.get(p["id"]))
+        rec = detail.get(p["id"])
+        note(p.get("img"), rec)
+        # The gallery shots as well as the primary image. Exporting only the
+        # primary one left 632 photographs behind: the approved product page
+        # shows them, and WordPress had nothing to show.
+        for extra in ((rec or {}).get("images") or {}).get("gallery") or []:
+            note(extra, rec)
     for f in fams:
         note(f.get("img"), None)
     for c in idx["categories"]:

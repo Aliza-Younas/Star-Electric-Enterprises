@@ -58,8 +58,14 @@ class Star_Electric_Taxonomies {
 				'show_admin_column' => true,
 				'show_in_rest'      => true,
 				'query_var'         => true,
+				/*
+				 * Not "brand". WooCommerce registers its own product_brand
+				 * taxonomy on that base, and whichever loses the race serves a
+				 * 404 - which is what /brand/aqua/ was doing while the brand
+				 * directory linked to it.
+				 */
 				'rewrite'           => array(
-					'slug'       => 'brand',
+					'slug'       => 'product-brand',
 					'with_front' => false,
 				),
 			)
@@ -90,6 +96,31 @@ class Star_Electric_Taxonomies {
 				),
 			)
 		);
+	}
+
+	/**
+	 * Put terms back into the catalogue's own order.
+	 *
+	 * The importer records each term's position in the payload. A term without
+	 * one sorts last rather than disappearing, which is why this is a sort over
+	 * a fetched list and not an ordered query - a meta_key query silently drops
+	 * every term that has no such meta.
+	 *
+	 * @param WP_Term[] $terms Terms.
+	 * @return WP_Term[]
+	 */
+	public static function in_catalogue_order( array $terms ): array {
+		usort(
+			$terms,
+			static function ( WP_Term $a, WP_Term $b ): int {
+				$oa = get_term_meta( $a->term_id, '_star_electric_order', true );
+				$ob = get_term_meta( $b->term_id, '_star_electric_order', true );
+				$oa = '' === $oa ? PHP_INT_MAX : (int) $oa;
+				$ob = '' === $ob ? PHP_INT_MAX : (int) $ob;
+				return $oa === $ob ? strcmp( $a->name, $b->name ) : ( $oa <=> $ob );
+			}
+		);
+		return $terms;
 	}
 
 	/**

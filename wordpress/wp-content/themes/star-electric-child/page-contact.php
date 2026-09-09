@@ -121,29 +121,71 @@ list( $star_notice_type, $star_notice ) = Star_Electric_Forms::notice();
 
 		<aside>
 			<div class="info-card">
-				<h2 class="panel__title" style="font-size:16px"><?php esc_html_e( 'The store', 'star-electric-child' ); ?></h2>
-				<dl class="pdp__meta" style="margin-top:12px">
-					<div><dt><?php esc_html_e( 'Name', 'star-electric-child' ); ?></dt><dd><?php bloginfo( 'name' ); ?></dd></div>
-					<div><dt><?php esc_html_e( 'Area', 'star-electric-child' ); ?></dt><dd><?php esc_html_e( 'Saddar, Rawalpindi', 'star-electric-child' ); ?></dd></div>
-				</dl>
+				<h3><?php esc_html_e( 'Store details', 'star-electric-child' ); ?></h3>
+				<ul class="info-list">
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'building' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><strong><?php bloginfo( 'name' ); ?></strong><?php esc_html_e( 'Saddar, Rawalpindi', 'star-electric-child' ); ?></span>
+					</li>
+				</ul>
 				<?php
 				/*
-				 * The street address, phone number, WhatsApp number and opening
-				 * hours are deliberately absent. None has been supplied, and this
-				 * is a public page: an invented contact detail is worse than a
-				 * missing one. They belong here once the store provides them.
+				 * The street address, phone number, WhatsApp number and opening hours
+				 * are deliberately absent, exactly as they are on the approved page.
+				 * None has been supplied, and this is a public page: an invented
+				 * contact detail is worse than a missing one.
 				 */
 				?>
 			</div>
 
-			<div class="info-card" style="margin-top:16px">
-				<h2 class="panel__title" style="font-size:16px"><?php esc_html_e( 'Buying for a project?', 'star-electric-child' ); ?></h2>
-				<p class="t-sm t-muted" style="margin-top:8px"><?php esc_html_e( 'Send an item list or bill of quantities and we will prepare a written quotation.', 'star-electric-child' ); ?></p>
-				<a class="btn btn--accent btn--block" style="margin-top:12px" href="<?php echo esc_url( Star_Electric_Shell::url( 'quote' ) ); ?>">
-					<?php esc_html_e( 'Request a Quotation', 'star-electric-child' ); ?>
-				</a>
+			<div class="info-card">
+				<h3><?php esc_html_e( 'Other ways to get help', 'star-electric-child' ); ?></h3>
+				<ul class="info-list">
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'box' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'track-order' ) ); ?>"><?php esc_html_e( 'Track an order', 'star-electric-child' ); ?></a></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'doc' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'quote' ) ); ?>"><?php esc_html_e( 'Request a bulk quote', 'star-electric-child' ); ?></a></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'info' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'faq' ) ); ?>"><?php esc_html_e( 'Read the FAQs', 'star-electric-child' ); ?></a></span>
+					</li>
+					<li>
+						<?php echo Star_Electric_Shell::icon( 'headset' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<span><a class="link-inline" href="<?php echo esc_url( Star_Electric_Shell::url( 'complaint' ) ); ?>"><?php esc_html_e( 'Submit a complaint', 'star-electric-child' ); ?></a></span>
+					</li>
+				</ul>
 			</div>
 		</aside>
+	</div>
+</section>
+
+<section class="section section--tint" aria-labelledby="mapTitle">
+	<div class="container">
+		<div>
+			<p class="section__eyebrow"><?php esc_html_e( 'Visit the store', 'star-electric-child' ); ?></p>
+			<h2 class="section__title" id="mapTitle"><?php esc_html_e( 'Find Us in Saddar', 'star-electric-child' ); ?></h2>
+			<p class="section__sub" style="margin-bottom:24px">
+				<?php esc_html_e( 'Come in to see products before buying, collect an order, or talk through a specification at the counter.', 'star-electric-child' ); ?>
+			</p>
+
+			<?php
+			/*
+			 * No map, street address, opening hours or collection process. None is
+			 * on record, and the approved page leaves those rows out rather than
+			 * showing placeholders. The enquiry form above is the route that works.
+			 */
+			?>
+
+			<div class="btn-row">
+				<a class="btn btn--accent" href="<?php echo esc_url( Star_Electric_Shell::url( 'quote' ) ); ?>">
+					<?php esc_html_e( 'Request a Quote', 'star-electric-child' ); ?>
+				</a>
+			</div>
+		</div>
 	</div>
 </section>
 
