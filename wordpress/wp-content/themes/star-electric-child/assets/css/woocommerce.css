@@ -41,6 +41,15 @@
   grid-column: 1 / -1;
 }
 
+/* Elementor's single-product location prints the same wrapper above the
+   product, where an empty one is not a stray grid cell but 30px of blank space
+   the approved page does not have. It is hidden until WooCommerce puts a notice
+   in it, exactly as on the cart. */
+.elementor-location-single > .woocommerce-notices-wrapper:empty,
+body.single-product .woocommerce-notices-wrapper:empty {
+  display: none;
+}
+
 
 /* --------------------------------------------------------------------------
    2  NOTICES

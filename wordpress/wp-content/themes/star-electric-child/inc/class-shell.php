@@ -476,7 +476,7 @@ class Star_Electric_Shell {
 	 * @param string $title  Page title.
 	 * @param string $sub    Optional sub-line.
 	 */
-	public static function page_head( array $crumbs, string $title, string $sub = '' ): void {
+	public static function page_head( array $crumbs, string $title, string $sub = '', string $steps = '' ): void {
 		?>
 		<div class="page-head">
 			<div class="container">
@@ -506,6 +506,9 @@ class Star_Electric_Shell {
 				<h1 class="page-head__title"><?php echo esc_html( $title ); ?></h1>
 				<?php if ( '' !== $sub ) : ?>
 					<p class="page-head__sub"><?php echo esc_html( $sub ); ?></p>
+				<?php endif; ?>
+				<?php if ( '' !== $steps ) : ?>
+					<?php self::steps( $steps ); ?>
 				<?php endif; ?>
 			</div>
 		</div>

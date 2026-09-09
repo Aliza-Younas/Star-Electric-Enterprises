@@ -68,6 +68,22 @@ class Star_Electric_Widget_Page_Head extends Star_Electric_Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'steps',
+			array(
+				'label'       => __( 'Checkout steps', 'star-electric' ),
+				'type'        => \Elementor\Controls_Manager::SELECT,
+				'default'     => '',
+				'options'     => array(
+					''         => __( 'None', 'star-electric' ),
+					'cart'     => __( 'Cart', 'star-electric' ),
+					'checkout' => __( 'Checkout', 'star-electric' ),
+					'done'     => __( 'Order complete', 'star-electric' ),
+				),
+				'description' => __( 'The three-step indicator the cart and checkout pages carry.', 'star-electric' ),
+			)
+		);
+
 		$crumb = new \Elementor\Repeater();
 		$crumb->add_control(
 			'label',
@@ -119,7 +135,8 @@ class Star_Electric_Widget_Page_Head extends Star_Electric_Widget_Base {
 		Star_Electric_Shell::page_head(
 			$crumbs,
 			Star_Electric_Sections::tokens( (string) ( $s['title'] ?? '' ) ),
-			Star_Electric_Sections::tokens( (string) ( $s['sub'] ?? '' ) )
+			Star_Electric_Sections::tokens( (string) ( $s['sub'] ?? '' ) ),
+			(string) ( $s['steps'] ?? '' )
 		);
 	}
 }

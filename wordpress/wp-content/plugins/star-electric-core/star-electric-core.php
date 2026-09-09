@@ -123,6 +123,56 @@ add_filter( 'wp_get_attachment_image_attributes', 'star_electric_image_attribute
 add_filter( 'wp_get_loading_optimization_attributes', 'star_electric_image_attributes', 99 );
 
 /**
+ * Keep WooCommerce's default product styles off the approved pages.
+ *
+ * Elementor's theme locations wrap their content in a div carrying
+ * WooCommerce's own "product" class. That switches on every
+ * `.woocommerce div.product ...` rule in WooCommerce's stylesheet - rules the
+ * theme's own templates never matched, because they had no such ancestor. Two
+ * of them changed the product page the moment it moved into Elementor: a 30px
+ * margin under the add-to-cart form, and WooCommerce's green 1.25em price.
+ * Others would have surfaced on product types not being looked at.
+ *
+ * Removing that one class restores the cascade the approved pages were designed
+ * against, rather than patching each rule as it is noticed. It is taken off the
+ * rendered wrapper rather than through a filter because Elementor adds it after
+ * both get_post_class() and its own attribute filters have run - neither of
+ * which could reach it.
+ *
+ * @param string $html The location's rendered HTML.
+ * @return string
+ */
+function star_electric_strip_product_class( string $html ): string {
+	return (string) preg_replace_callback(
+		'/<div\s[^>]*class="([^"]*elementor-location-(?:single|archive)[^"]*)"/',
+		static function ( array $m ): string {
+			$classes = preg_split( '/\s+/', $m[1], -1, PREG_SPLIT_NO_EMPTY );
+			$classes = array_values( array_diff( (array) $classes, array( 'product' ) ) );
+			return str_replace( 'class="' . $m[1] . '"', 'class="' . implode( ' ', $classes ) . '"', $m[0] );
+		},
+		$html,
+		1
+	);
+}
+
+foreach ( array( 'single', 'archive' ) as $star_location ) {
+	add_action(
+		'elementor/theme/before_do_' . $star_location,
+		static function () {
+			ob_start();
+		},
+		0
+	);
+	add_action(
+		'elementor/theme/after_do_' . $star_location,
+		static function () {
+			echo star_electric_strip_product_class( (string) ob_get_clean() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		},
+		99
+	);
+}
+
+/**
  * Flush rewrites once on activation so /brand/... and /range/... resolve.
  *
  * Registration happens on init, so it has to be run here before flushing.
