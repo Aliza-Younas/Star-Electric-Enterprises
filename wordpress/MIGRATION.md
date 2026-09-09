@@ -246,22 +246,24 @@ and the plugin falls.
 | Header | Templates → Theme Builder → Header → Site Header |
 | Footer | Templates → Theme Builder → Footer → Site Footer |
 | Homepage — 9 named sections | Pages → Home |
-| FAQ | Pages → FAQs |
-| Shipping, Returns, Privacy Policy, Terms | Pages → each page |
+| FAQ, Shipping, Returns, Privacy Policy, Terms | Pages → each page |
+| About, Contact, Request a Quote, Submit a Complaint | Pages → each page |
+| Track Order, Categories, Brands, Deals | Pages → each page |
+| Cart, Checkout, Customer Account, Wishlist | Pages → each page |
+| Shop, department, subcategory, brand and search archives | Templates → Theme Builder → Product Archive |
+| Every product page | Templates → Theme Builder → Single Product |
 
-Their PHP templates - `front-page.php`, `page-faq.php`, `page-shipping.php`,
-`page-returns.php`, `page-privacy-policy.php`, `page-terms-and-conditions.php` -
-are removed, because WordPress prefers a `page-{slug}.php` over any page content
-and leaving them would have meant an Elementor page nobody ever saw.
+Their PHP templates are removed, because WordPress prefers a `page-{slug}.php`
+over any page content and leaving them would have meant an Elementor page nobody
+ever saw. The child theme now holds `header.php`, `footer.php`, the generic
+`page.php` fallback, the WooCommerce template overrides and the shared parts —
+and nothing else.
 
-**Not yet converted**
-
-About, Contact, Request a Quote, Submit a Complaint, Track Order, Categories,
-Brands and Deals still render from their PHP templates, as do the shop, category,
-product, cart, checkout, account and wishlist pages. They work exactly as
-before. The pattern for converting them is established: a widget per approved
-section, a document built from those widgets, a comparison against the
-screenshot baseline, and only then the template's removal.
+Nothing about the catalogue moved with them. Which products an archive shows, in
+what order, at what price, whether a product can be bought at all, what a
+variable product's variants are, what the three enquiry forms accept and where
+they send it, and every total in the cart all stay in WooCommerce and in the
+plugin's own classes. Elementor holds wording.
 
 ---
 

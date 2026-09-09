@@ -353,6 +353,20 @@ survives two independent renders is the page; one that does not is the camera.
 | Categories | Body markup identical apart from one collapsed space; **0.000% at all eight widths** |
 | Brands | Body markup identical; **0.000% at all eight widths** |
 | Deals | Body markup identical; 0.000% at seven of eight widths. At 1366 the live comparison reported 0.043-0.100%, and rendering the two markups side by side from disk settled it: **0.000%**. The difference was when a lazy image happened to load, not what the page is |
+| Track Order | Body markup identical; **0.000% at all eight widths** |
+| Categories | Body markup identical apart from one collapsed space; **0.000% at all eight widths** |
+| Brands | Body markup identical; **0.000% at all eight widths** |
+| Deals | Body markup identical; 0.000% at seven of eight widths, and 0.000% at 1366 once the two markups were rendered side by side from disk |
+| Shop | Body markup identical; **0.000%** |
+| Department and subcategory archives | Body markup identical; 0.119%, all of it the three-pixel band |
+| Brand archive | Body markup identical; 0.566%, image resampling and the three-pixel band |
+| Product search | Body markup identical; 0.007% |
+| Product page, priced | Body markup identical; **0.000% - not one pixel of 4200 x 1440** |
+| Product page, quote-only | Body markup identical; 0.060% |
+| Cart | Body markup identical; 0.008% |
+| Checkout | Body markup identical; 0.008% |
+| Customer account | Body markup identical; **0.000%** |
+| Wishlist | Body markup identical; 0.043% |
 | The three enquiry forms, end to end | 14 checks each: nonce, honeypot, every required field, a malformed address, a good submission, the stored enquiry, and the enquiry removed again |
 
 ### What the conversion QA found
@@ -394,6 +408,29 @@ survives two independent renders is the page; one that does not is the camera.
   test looked for its marker anywhere in the admin page, and the search screen
   echoes the search term back - so it reported a stored enquiry that did not
   exist. It now reads the list table's own rows.
+- **Elementor's theme locations switched on WooCommerce's default product
+  styles.** The location wrapper carries `get_post_class()`, which includes
+  WooCommerce's own `product` class, and that makes every
+  `.woocommerce div.product ...` rule in WooCommerce's stylesheet apply - rules
+  the theme's own templates never matched, because they had no such ancestor.
+  Two changed the product page at once: a 30px margin under the add-to-cart
+  form, and WooCommerce's green 1.25em price. Found by comparing the computed
+  style of 185 selectors, which is also what proved the fix: 0 of 185 differ
+  now. The class is taken back off the rendered wrapper, because Elementor adds
+  it after both `get_post_class()` and its own attribute filters have run -
+  neither could reach it.
+- **The same location prints an empty notices wrapper above the product**,
+  worth 30px of blank space the approved page does not have. Hidden until
+  WooCommerce puts a notice in it, exactly as on the cart.
+- **A "page unchanged after saving" check that could never pass.** Saving a
+  document bumps the post's modified time, and both LiteSpeed's own comment and
+  Rank Math's `dateModified` carry a timestamp into the markup. Nineteen
+  documents reported a difference that was two clocks. Both are normalised now,
+  the way nonces and cache-busters already were.
+- **The end-to-end form test was following a dead link.** It looked for
+  `?product=` on a product page, which is how the broken quote route was found
+  in the first place; it now follows the link through to the quote page and
+  checks the product arrives with it.
 - **LiteSpeed served a stale page after its own purge reported success.** The
   Toolbox purge links return 200 and leave the cached HTML in place, so a
   screenshot or a markup capture taken straight after a deploy can be of the
@@ -419,7 +456,61 @@ survives two independent renders is the page; one that does not is the camera.
 
 ---
 
-## 10. Reconciliation
+## 10. Editability and what the conversion cost
+
+### Every document opens, edits and saves without harm
+
+`editability.py` opens each of the twenty-two documents through Elementor's own
+editor URL, reads the document back out of the editor's config, checks that each
+of its sections carries a Navigator name rather than "Container #118", saves it,
+and then checks that the page is byte-for-byte what it was and that its page
+template - or, for a theme template, its display condition - survived.
+
+**132 checks, 0 failures.** Nothing is left rendering from a PHP template that
+Elementor was supposed to replace, no document is a draft, no two templates
+claim the same condition, and the regression that started this - Elementor's
+save clearing a page's template - cannot happen unnoticed again.
+
+Two things had to be fixed in the harness before that number meant anything.
+Saving a document bumps the post's modified time, and both LiteSpeed's own
+comment and Rank Math's `dateModified` carry a timestamp into the markup;
+nineteen documents were reporting a difference that was two clocks. And the
+end-to-end form test was still following `?product=`, the dead quote link.
+
+### What the conversion cost
+
+Measured the same way on both sides: the markup as it was before the conversion
+against the markup the site serves now, rendered from disk with the assets still
+coming from the live site.
+
+| Page | HTML | Elements | CSS files / KB | JS files / KB |
+|---|---|---|---|---|
+| Home | 398 KB → 418 KB | 6,149 → 6,262 | 13 / 456 → 15 / 322 | 14 / 164 → 23 / 352 |
+| Shop | 132 KB → 133 KB | 2,034 → 2,049 | 15 / 457 → 16 / 458 | 23 / 349 → 23 / 349 |
+| Department archive | 136 KB → 137 KB | 2,111 → 2,126 | 15 / 457 → 16 / 458 | 23 / 349 → 23 / 349 |
+| Product page | 110 KB → 113 KB | 1,367 → 1,402 | 17 / 468 → 18 / 470 | 29 / 427 → 29 / 427 |
+| About | 102 KB → 107 KB | 1,285 → 1,323 | 15 / 458 → 15 / 321 | 22 / 345 → 22 / 345 |
+| Contact | 86 KB → 89 KB | 1,047 → 1,069 | 15 / 458 → 15 / 321 | 22 / 345 → 22 / 345 |
+| Cart | 147 KB → 148 KB | 927 → 944 | 16 / 472 → 16 / 335 | 26 / 437 → 26 / 437 |
+
+Elementor's containers and widget wrappers cost **15 to 38 elements and 1 to 5
+KB of HTML per page** - the honest price of making a page editable, and the
+whole of it.
+
+The Elementor runtime itself was paid for once, when the header and footer moved
+into the Theme Builder: that is the home page's 14 → 23 scripts, and it is the
+same on every page. Against it, the pages that are not WooCommerce pages now
+load **135 KB less CSS** than they did.
+
+Cumulative layout shift is **0.000 on both sides of every page measured**. First
+contentful paint could not be told apart: repeated runs of the same page varied
+by more than the difference between the two sides, so no claim is made about it
+either way. Neither figure comes from a real visitor's browser, and neither
+should be read as one.
+
+---
+
+## 11. Reconciliation
 
 See `migration-audit.md`. Every one of sixteen measures reconciles, including
 the three that are defect counts rather than quantities: **0 failed imports, 0

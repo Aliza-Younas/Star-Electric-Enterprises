@@ -56,10 +56,16 @@ a new import appears on the site by itself.
 | Categories | **Pages → Categories → Edit with Elementor** |
 | Brands | **Pages → Brands → Edit with Elementor** |
 | Deals | **Pages → Deals → Edit with Elementor** |
+| Cart | **Pages → Cart → Edit with Elementor** |
+| Checkout | **Pages → Checkout → Edit with Elementor** |
+| Customer Account | **Pages → My account → Edit with Elementor** |
+| Wishlist | **Pages → Wishlist → Edit with Elementor** |
+| Shop, department, brand and search pages | **Templates → Theme Builder → Product Archive** |
+| Product pages | **Templates → Theme Builder → Single Product** |
 | Brand colours and fonts | **Elementor → Site Settings** |
 
-Pages not in that list are still rendered by the theme and are not yet
-Elementor-editable — see section 7.
+That is the whole storefront: there is nothing left that only a developer
+can change.
 
 ---
 
@@ -185,6 +191,44 @@ relationship it has with each brand.
 **Track Order** wraps WooCommerce's own lookup form. Only the note under it and
 the two cards below are editable; the form itself belongs to WooCommerce.
 
+### The shop and the product pages
+
+These two are **Theme Builder** templates rather than pages, because one of
+each covers hundreds of pages.
+
+**Templates → Theme Builder → Product Archive** draws the shop, every
+department and subcategory, every brand page and every product search. It has
+two sections. *Archive Head* holds two sets of wording: what the shop's own
+page head says, and what a department's hero says — which of the two appears is
+decided by the page being viewed, exactly as on the approved site. *Archive
+Catalogue* holds the filter and toolbar wording, what the page says when
+nothing matches, and the note above the ranges a department lists at family
+level.
+
+**Templates → Theme Builder → Single Product** draws every product page:
+breadcrumb, the gallery and buying column, the tabs, related products and
+recently viewed. Everything a product page says about the product itself — its
+name, brand, department, price, availability, description, specification,
+photographs and variants — comes from the catalogue.
+
+What a product page will *not* do is not editable either, and that is
+deliberate: a product whose source published no price never gets a cart, only a
+quotation route; there is no delivery, returns or warranty row, because the
+store has not supplied those terms; and the reviews tab says there are none
+rather than inventing a rating.
+
+### The cart, the checkout and the account
+
+**Pages → Cart / Checkout / My account → Edit with Elementor.** Each has a page
+head and a single *WooCommerce Panel* widget. What is inside that panel is
+WooCommerce's own — the basket, the totals, the checkout fields, the order
+history — and none of it is edited in Elementor. The panel only says which of
+the three to show and which of the approved layouts to wrap it in.
+
+The **Wishlist** page is Elementor's; its saved products are not. They live
+in each visitor's own browser, so nothing about what anyone saved is stored on
+this website.
+
 ### The deals page
 
 **Pages → Deals → Edit with Elementor.** Four sections: the page head, the three
@@ -270,21 +314,16 @@ These are not oversights. Please do not work around them:
 
 ---
 
-## 7. What is not in Elementor yet
+## 7. Everything is in Elementor
 
-These pages still render from PHP templates in the child theme and are **not**
-editable in Elementor:
+Every page and template of the storefront is now editable in Elementor. The
+child theme keeps only the document itself — `header.php`, `footer.php`, the
+generic `page.php` fallback, and the WooCommerce template parts that give the
+cart rows, the product cards and the login form their approved markup.
 
-| Page | Template |
-|---|---|
-| Wishlist / Cart / Checkout / My Account | their own templates |
-| Shop, category and product pages | `archive-product.php`, `single-product.php` |
-
-They work exactly as before. Converting them follows the same pattern as the
-pages above: a widget per section in
-`star-electric-core/elementor/widgets/`, a document built from those widgets,
-the result compared against the screenshot baseline, and only then the
-`page-{slug}.php` template removed.
+If you ever need a change Elementor cannot make — moving the logo out of the
+header, splitting a product rail apart — that is a design change and needs a
+developer.
 
 ---
 

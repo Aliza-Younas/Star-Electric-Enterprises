@@ -99,20 +99,31 @@ WooCommerce's scripts to find it, and WooCommerce styles it, so the approved
 | Template | Covers |
 |---|---|
 | `header.php` / `footer.php` | The document, then Elementor's header/footer location with the renderer as fallback |
-| `archive-product.php` | Shop, category, subcategory, brand and department archives |
-| `single-product.php` | The product page |
-| `page.php` | The default page: page head, then `the_content()` |
-| `page-*.php` | One per content page not yet converted (about, contact, brands, deals, …) |
+| `page.php` | The default page: page head, then `the_content()`. Nothing routine uses it any more |
 | `woocommerce/` | Overrides: cart, checkout, my account, order tracking, product card |
 | `template-parts/` | Shared fragments, e.g. the department card grid |
 | `inc/class-shell.php` | Breadcrumbs, page heads, icons, category art, availability pills |
 
-`archive-product.php` serves two of the approved site's templates. `shop.html`
-leads with a page head; `category.html` leads with a hero — eyebrow, title,
-blurb, two buttons and the department's photograph — then a subcategory strip,
-and ends with the ranges published at family level. A `product_cat` or
-`star_department` archive gets the second shape; the shop and brand views get
-the first.
+Every page and archive is an Elementor document. The shop, the department,
+subcategory, brand and search archives are drawn by one **Product Archive**
+theme template; every product page by one **Single Product** theme template.
+
+The archive template serves two of the approved site's shapes. `shop.html` leads
+with a page head; `category.html` leads with a hero — eyebrow, title, blurb, two
+buttons and the department's photograph — then a subcategory strip, and ends
+with the ranges published at family level. A `product_cat` or `star_department`
+archive gets the second shape; the shop, a brand view and a product search get
+the first. Which one appears is the query's decision, not an editor's, because
+that is how the approved storefront is built.
+
+Two things Elementor's theme locations do had to be undone to keep the approved
+pages as they were. Their wrapper carries `get_post_class()`, which includes
+WooCommerce's own `product` class and so switches on every
+`.woocommerce div.product ...` rule in WooCommerce's stylesheet — rules the
+theme's templates never matched. And the single-product location prints an
+empty notices wrapper above the product. Both are handled in
+`star-electric-core.php` and `assets/css/woocommerce.css`, and both are
+commented where they sit.
 
 ### Client-side behaviour
 
