@@ -259,11 +259,14 @@ worth reading. **The origin server is a different address**, shown in hPanel
 under Files -> FTP Accounts as "FTP IP (hostname)":
 
 ```
-45.84.207.155     port 21   FTPS        -> 220 FTP Server ready.  (0.4s)
-45.84.207.155     port 65002 SSH        -> SSH-2.0-OpenSSH_8.0    (0.4s)
+<origin IP from hPanel>   port 21     FTPS  -> 220 FTP Server ready.  (0.4s)
+<origin IP from hPanel>   port 65002  SSH   -> SSH-2.0-OpenSSH_8.0    (0.4s)
 ```
 
-Use the IP, never the hostname. With that, an FTP account rooted at
+Use that IP, never the hostname. The address itself is deliberately not written
+down here: this repository is public, and an origin IP published next to the
+site it belongs to is exactly what the CDN in front of it exists to hide. Read
+it from hPanel when it is needed - and expect it to change. With that, an FTP account rooted at
 `public_html` is enough to replace a file that has taken the dashboard down,
 and `wordpress/tools/` has no business holding the credential: it belongs in a
 scratch file outside the repository, deleted after use.
