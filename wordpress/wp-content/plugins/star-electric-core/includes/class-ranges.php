@@ -78,8 +78,14 @@ class Star_Electric_Ranges {
 	 * @param int $post_id Range post ID.
 	 */
 	public static function enquiry_url( int $post_id ): string {
-		$page = get_page_by_path( 'request-a-quote' );
-		$base = $page ? get_permalink( $page ) : home_url( '/request-a-quote/' );
+		/*
+		 * The page is 'quote-request'. Looking it up as 'request-a-quote'
+		 * found nothing and fell through to a URL that has never existed,
+		 * so every Request a Quote button on a quote-only product and on a
+		 * range landed on a 404 - the one route those products have.
+		 */
+		$page = get_page_by_path( 'quote-request' );
+		$base = $page ? get_permalink( $page ) : home_url( '/quote-request/' );
 
 		return add_query_arg(
 			array(

@@ -2766,6 +2766,36 @@ class Star_Electric_Sections {
 	}
 
 	/**
+	 * One specification value, as a customer can read it.
+	 *
+	 * Nearly every value is a string. The exception is a product sold in
+	 * choices - a fan's face decor, a cable's conductor - where the source
+	 * records the options as a list. Those were reaching the specification
+	 * table through wp_json_encode(), so the page showed the shopper
+	 * ["Urban Black","Grand Dark Wood"] instead of the two names. Joining them
+	 * reads like every other row in the table.
+	 *
+	 * @param mixed $value The recorded value.
+	 */
+	private static function spec_value( $value ): string {
+		if ( is_scalar( $value ) ) {
+			return (string) $value;
+		}
+
+		if ( is_array( $value ) ) {
+			$parts = array();
+			foreach ( $value as $item ) {
+				if ( is_scalar( $item ) && '' !== trim( (string) $item ) ) {
+					$parts[] = trim( (string) $item );
+				}
+			}
+			return implode( ', ', $parts );
+		}
+
+		return '';
+	}
+
+	/**
 	 * The product page's breadcrumb.
 	 *
 	 * @param array $args home, shop.
@@ -2885,7 +2915,7 @@ class Star_Electric_Sections {
 									<?php foreach ( $star_specs as $star_key => $star_value ) : ?>
 										<tr>
 											<th scope="row"><?php echo esc_html( (string) $star_key ); ?></th>
-											<td><?php echo esc_html( is_scalar( $star_value ) ? (string) $star_value : wp_json_encode( $star_value ) ); ?></td>
+											<td><?php echo esc_html( self::spec_value( $star_value ) ); ?></td>
 										</tr>
 									<?php endforeach; ?>
 								</tbody>
