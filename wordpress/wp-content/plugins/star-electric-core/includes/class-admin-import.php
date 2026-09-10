@@ -290,7 +290,7 @@ class Star_Electric_Admin_Import {
 
 			<h2><?php esc_html_e( 'Product page layouts', 'star-electric' ); ?></h2>
 			<p class="description">
-				<?php esc_html_e( 'Every product owns its own Elementor layout, so editing one product's page cannot change another's. This gives the approved starter layout to any product that has not got one yet.', 'star-electric' ); ?>
+				<?php esc_html_e( 'Every product owns its own Elementor layout, so editing one product’s page cannot change another’s. This gives the approved starter layout to any product that has not got one yet.', 'star-electric' ); ?>
 			</p>
 			<p class="description">
 				<?php esc_html_e( 'Safe to run as often as you like: a product already carrying the starter layout is left alone, and a product somebody has edited in Elementor is never written over.', 'star-electric' ); ?>
