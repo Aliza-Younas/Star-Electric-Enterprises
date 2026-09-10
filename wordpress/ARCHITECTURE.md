@@ -94,6 +94,31 @@ single job is `table.shop_table`: the cart table has to carry that class for
 WooCommerce's scripts to find it, and WooCommerce styles it, so the approved
 `.table` component is restored over the top.
 
+### Product pages
+
+Every product is its own Elementor document. The Theme Builder holds one
+**Single Product** template - a shell containing a single *Product Content*
+widget - and that widget prints the layout stored on the product being viewed.
+A product with no layout of its own falls back to the approved default, so a
+brand-new import is never a blank page.
+
+`Star_Electric_Product_Layout` owns that arrangement: the default layout, the
+seeding of a product that has none, the backfill for a catalogue that predates
+it, and the fingerprint that tells a page still carrying the default from one
+somebody has made their own. It copies nothing - a seeded document is a list of
+widgets with no settings at all, because every widget's wording lives in its own
+defaults. That is why a seeded product is about two kilobytes rather than
+fifteen, and why a change of wording in the plugin reaches every product nobody
+has edited.
+
+The detail block's two columns are Elementor elements: the gallery is a widget,
+the column beside it is a container of three more. The containers carry the
+approved layout classes - `section section--sm`, `container pdp` - and the
+approved stylesheet reaches them by naming `.e-con.section` alongside `.section`
+rather than by restating any value. Elementor's own wrappers step out of the
+grid with `display: contents`, so the grid's children are the approved elements,
+exactly as they were when one PHP template drew the whole block.
+
 ### Templates
 
 | Template | Covers |

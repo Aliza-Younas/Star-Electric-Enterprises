@@ -231,6 +231,15 @@
    03  PRODUCT DETAIL
    ========================================================================== */
 .pdp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
+/* Each product owns its own Elementor document, and the detail block's two
+   columns are Elementor elements: the gallery is a widget, the column beside it
+   is a container of three. Elementor's own wrappers step out of the grid so its
+   children are the approved elements, exactly as they were when one PHP
+   template drew the whole block. Without this the grid would be laid out around
+   Elementor's <div>s instead. */
+.pdp > .elementor-widget { display: contents; }
+.pdp > .e-con { display: block; }
+.pdp > .e-con > .elementor-widget { display: contents; }
 
 .gallery { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: var(--sp-3); }
 .gallery__thumbs { display: grid; gap: var(--sp-2); align-content: start; }

@@ -456,7 +456,46 @@ survives two independent renders is the page; one that does not is the camera.
 
 ---
 
-## 10. Editability and what the conversion cost
+## 10. Per-product Elementor documents
+
+Every product owns its own Elementor layout, drawn by one Single Product shell.
+The measurements below are of the seeded layout against the product page as the
+shared template drew it, rendered from disk so that what is compared is the
+markup rather than when its images happened to load.
+
+| Product | 1920 | 1440 | 1366 | 768 | 1024, 430, 390, 375 |
+|---|---|---|---|---|---|
+| Simple priced | 0.049% | **0.000%** | **0.000%** | **0.000%** | see below |
+| Quote-only | 0.000% | **0.000%** | **0.000%** | **0.000%** | see below |
+| Genuine sale | **0.000%** | **0.000%** | **0.000%** | 0.162% | see below |
+| Variable, priced | 0.011% | 0.028% | 0.017% | **0.000%** | see below |
+| Variable, quote-only | 0.004% | **0.000%** | **0.000%** | **0.000%** | see below |
+| Out of stock | 0.013% | **0.000%** | **0.000%** | **0.000%** | see below |
+| Several gallery images | **0.000%** | **0.000%** | 0.074% | **0.000%** | see below |
+
+### The one defect still open
+
+At 1024, 430, 390 and 375 every product differs by 10-21%, and all of it is one
+cause: eight pixels of section padding.
+
+The detail block is an Elementor container carrying the approved
+`section section--sm` classes, and Elementor gives every container a padding of
+its own. The first attempt at putting the approved padding back used a selector
+specific enough to beat Elementor - and specific enough to beat the responsive
+scale as well, so the section kept one padding at every width instead of
+stepping down. Measured, not guessed: comparing the computed style of the page
+before and after shows exactly one property differing, `padding-top` on
+`.section--sm`, 48px against 40px at 1024 and 32px against 40px at 390. Nothing
+else on the page differs at any width.
+
+The fix is in the repository: the approved rules name `.e-con.section` beside
+`.section`, in the stylesheet and at each of the three breakpoints, so the
+cascade resolves exactly as it always did and no value is restated anywhere. It
+is not on the site yet - the admin session expired before it could be uploaded.
+
+---
+
+## 11. Editability and what the conversion cost
 
 ### Every document opens, edits and saves without harm
 
@@ -510,7 +549,7 @@ should be read as one.
 
 ---
 
-## 11. Reconciliation
+## 12. Reconciliation
 
 See `migration-audit.md`. Every one of sixteen measures reconciles, including
 the three that are defect counts rather than quantities: **0 failed imports, 0

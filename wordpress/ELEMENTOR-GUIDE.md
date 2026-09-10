@@ -191,6 +191,75 @@ relationship it has with each brand.
 **Track Order** wraps WooCommerce's own lookup form. Only the note under it and
 the two cards below are editable; the form itself belongs to WooCommerce.
 
+### Editing one product's page
+
+**Products → hover a product → Edit with Elementor**, or open the product and
+press *Edit with Elementor*.
+
+Every product owns its own Elementor layout. Editing one product's page changes
+that product and nothing else: move a section on the PIR sensor and the PVC
+pipes are untouched. There are 4,348 product pages and one Theme Builder
+template behind them.
+
+The Navigator on a product reads:
+
+```
+PRODUCT — Breadcrumbs
+PRODUCT — Detail
+    PRODUCT — Detail Grid
+        PRODUCT — Gallery
+        PRODUCT — Summary Column
+            PRODUCT — Main Information
+            PRODUCT — Purchase / Quote
+            PRODUCT — Product Record
+PRODUCT — Description & Specifications
+PRODUCT — Related Products
+PRODUCT — Recently Viewed
+```
+
+You can reorder those sections, remove one, change its wording, and add
+sections of your own — a heading, an image, a note about this particular
+product — to that product alone.
+
+**What stays dynamic.** The title, brand, department, SKU, price, previous
+price, saving, stock, variants, photographs, description, specification and
+related products all come from WooCommerce and from the catalogue every time
+the page loads. They are never typed into Elementor. If you edit a product's
+page and then change its price in WooCommerce, the page shows the new price.
+
+**What is not editable, on purpose.** Whether a product can be bought at all is
+the catalogue's decision: a product whose source published no price gets a
+quotation route and never a number, an out-of-stock product gets neither, and a
+variable product gets WooCommerce's own variation form. There is no delivery,
+returns or warranty row, because the store has not supplied those terms. The
+reviews tab says there are none rather than inventing a rating.
+
+**Description and Specifications** are two panels of one tabbed component on the
+approved page, so they move together. Reordering them within the tabs would be
+a change to the component rather than a change to the page.
+
+### New products, and products you have edited
+
+A product created or imported from now on is given the same starter layout the
+moment it exists — nothing has to be seeded by hand, and no new Theme Builder
+template is ever needed.
+
+The plugin remembers, per product, the shape of the layout it seeded. A product
+still carrying that shape counts as *default*; a product whose layout differs
+counts as *yours*, and the backfill will never write over it. Revert your
+changes and it counts as default again.
+
+To give the starter layout to anything that has not got one — after a large
+import, say — use **Star Electric → Product page layouts → Give products their
+starter layout**. It is safe to press as often as you like.
+
+### The Single Product shell
+
+**Templates → Theme Builder → Star Electric — Single Product Shell** is the only
+Single Product template, and it is deliberately almost empty: one widget, whose
+whole job is to draw the product's own layout. Do not build the product page
+inside it — anything put there would appear on all 4,348 products at once.
+
 ### The shop and the product pages
 
 These two are **Theme Builder** templates rather than pages, because one of

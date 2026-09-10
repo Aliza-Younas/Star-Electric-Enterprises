@@ -265,6 +265,25 @@ variable product's variants are, what the three enquiry forms accept and where
 they send it, and every total in the cart all stay in WooCommerce and in the
 plugin's own classes. Elementor holds wording.
 
+### Per-product Elementor documents
+
+The Single Product theme template used to hold the whole product page, which
+meant all 4,348 products shared one page: moving a section on one moved it on
+every one of them. Each product now owns an Elementor document, and the Theme
+Builder keeps a single shell that prints it.
+
+| Piece | Where it lives |
+|---|---|
+| One Single Product shell | Templates → Theme Builder → Star Electric — Single Product Shell |
+| Each product's own layout | Products → the product → Edit with Elementor |
+| The default layout, seeding and the backfill | `Star_Electric_Product_Layout` |
+| The backfill's button | Star Electric → Product page layouts |
+
+Nothing was copied. A seeded document holds no title, price, SKU, stock state,
+brand or photograph: it is a list of widgets that ask WooCommerce and the plugin
+for the product being viewed. Product ids, metadata, images, categories, brands
+and SEO are untouched.
+
 ---
 
 ## Phases 3 to 13 (complete)

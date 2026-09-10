@@ -237,7 +237,8 @@ body.no-scroll { overflow: hidden; }
 /* ==========================================================================
    03  LAYOUT
    ========================================================================== */
-.container {
+.container,
+.e-con.container {
   width: 100%;
   max-width: var(--container);
   margin-inline: auto;
@@ -246,9 +247,17 @@ body.no-scroll { overflow: hidden; }
 .container--narrow { max-width: 880px; }
 .container--mid { max-width: 1080px; }
 
-.section { padding-block: var(--sp-9); }
-.section--sm { padding-block: var(--sp-7); }
+.section,
+.e-con.section { padding-block: var(--sp-9); }
+.section--sm,
+.e-con.section--sm { padding-block: var(--sp-7); }
 .section--tint { background: var(--surface-soft); }
+
+/* Elementor gives every container a padding of its own on the axis the
+   approved rule above says nothing about. A container carrying one of these
+   classes is one of the approved elements, so it gets the approved box. */
+.e-con.section { padding-inline: 0; }
+.e-con.container { padding-block: 0; }
 .section--dark { background: var(--brand-dark); color: rgba(255, 255, 255, .78); }
 
 .section__head {

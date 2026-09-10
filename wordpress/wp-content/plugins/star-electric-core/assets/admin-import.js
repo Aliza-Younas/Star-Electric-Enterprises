@@ -298,6 +298,50 @@
 		} );
 	}
 
+	/**
+	 * The product layout backfill: one batch per request, until it says done.
+	 *
+	 * Same shape as the import steps - nothing long-running, and it can be
+	 * started again from where it stopped.
+	 */
+	function wireLayouts() {
+		var button = document.getElementById( 'star-layouts-run' );
+		var state = document.getElementById( 'star-layouts-state' );
+		if ( ! button || ! state ) {
+			return;
+		}
+
+		button.addEventListener( 'click', function () {
+			var label = button.textContent;
+			var seeded = 0;
+			button.disabled = true;
+
+			function batch( offset ) {
+				state.textContent = 'Looked at ' + offset + '...';
+
+				return post( 'star_electric_layouts', { offset: offset, size: 50 } )
+					.then( function ( data ) {
+						seeded += data.batch.seeded;
+						if ( ! data.batch.done ) {
+							return batch( data.batch.next );
+						}
+						state.textContent = seeded + ' given the starter layout. ' +
+							data.state.seeded + ' of ' + data.state.products +
+							' carry it; ' + data.state.customised + ' have been edited.';
+					} );
+			}
+
+			batch( 0 )
+				.catch( function ( error ) {
+					state.textContent = 'Failed: ' + error.message;
+				} )
+				.finally( function () {
+					button.disabled = false;
+					button.textContent = label;
+				} );
+		} );
+	}
+
 	document.addEventListener( 'DOMContentLoaded', function () {
 		Array.prototype.forEach.call(
 			document.querySelectorAll( '.star-step' ),
@@ -307,5 +351,6 @@
 		);
 		wireAudit();
 		wireRecount();
+		wireLayouts();
 	} );
 }() );

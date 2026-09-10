@@ -288,6 +288,18 @@ class Star_Electric_Admin_Import {
 			<?php endforeach; ?>
 			</div>
 
+			<h2><?php esc_html_e( 'Product page layouts', 'star-electric' ); ?></h2>
+			<p class="description">
+				<?php esc_html_e( 'Every product owns its own Elementor layout, so editing one product's page cannot change another's. This gives the approved starter layout to any product that has not got one yet.', 'star-electric' ); ?>
+			</p>
+			<p class="description">
+				<?php esc_html_e( 'Safe to run as often as you like: a product already carrying the starter layout is left alone, and a product somebody has edited in Elementor is never written over.', 'star-electric' ); ?>
+			</p>
+			<p>
+				<button type="button" class="button" id="star-layouts-run"><?php esc_html_e( 'Give products their starter layout', 'star-electric' ); ?></button>
+				<span id="star-layouts-state" class="description"></span>
+			</p>
+
 			<h2><?php esc_html_e( 'Reconciliation', 'star-electric' ); ?></h2>
 			<p class="description">
 				<?php esc_html_e( 'Compares WordPress against the source payload. Every row must read OK before the migration counts as complete.', 'star-electric' ); ?>

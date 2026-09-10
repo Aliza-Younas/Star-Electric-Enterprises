@@ -49,6 +49,7 @@ require_once STAR_ELECTRIC_PATH . 'includes/class-wishlist.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-seo.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-chrome.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-sections.php';
+require_once STAR_ELECTRIC_PATH . 'includes/class-product-layout.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-shortcodes.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-filters.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-importer.php';
@@ -82,6 +83,7 @@ function star_electric_boot(): void {
 	Star_Electric_Wishlist::init();
 	Star_Electric_SEO::init();
 	Star_Electric_Elementor::init();
+	Star_Electric_Product_Layout::init();
 
 	if ( class_exists( 'WooCommerce' ) ) {
 		Star_Electric_Quote_Only::init();
