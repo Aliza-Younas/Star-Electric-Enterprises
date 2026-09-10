@@ -554,3 +554,128 @@ should be read as one.
 See `migration-audit.md`. Every one of sixteen measures reconciles, including
 the three that are defect counts rather than quantities: **0 failed imports, 0
 duplicate source ids, 0 products priced at zero.**
+
+---
+
+## 13. Production QA sweep, 2026-09-10
+
+Run against the live site while `/wp-admin/` was returning a critical error, so
+everything here was measured from outside WordPress: HTTP, the rendered DOM in
+headless Chrome, the sitemaps, and the structured data. Nothing was submitted -
+the contact, quote and complaint forms reach a real inbox - and no product,
+order or Elementor document was modified.
+
+### What the fatal actually costs
+
+The parse error is loaded under `is_admin()`, so the split is exact:
+
+| Endpoint | Status |
+|---|---|
+| `/`, `/shop/`, `/wp-json/`, `/wp-login.php` | 200 |
+| `/wp-admin/`, `/wp-admin/admin.php?page=star-electric-import` | 500 |
+| `/wp-admin/admin-ajax.php` | 500 |
+
+The third row is not only an admin problem. **The wishlist and the recently
+viewed rail are front-end features that post to `admin-ajax.php`**
+(`star_electric_wishlist`, `star_electric_cards`), and both return 500 for every
+visitor right now. The storefront renders correctly, but it is not intact.
+
+### Catalogue reconciliation from public data
+
+| Measure | Expected | Live | Source |
+|---|---:|---:|---:|
+| Product URLs | 4,348 | **4,348** | 4,348 |
+| Duplicate product URLs | 0 | **0** | 0 |
+| Quote-only | 2,548 | — | 2,548 |
+| Priced | 1,800 | — | 1,800 |
+| Genuine sale prices | 19 | — | 19 |
+| Variable products | 105 | — | 105 |
+| Out of stock | 341 | — | 341 |
+| Categories / subcategories / brands / departments | 10 / 40 / 8 / 3 | — | 10 / 40 / 8 / 3 |
+
+The live column is what the sitemaps can prove without the dashboard. The
+per-attribute counts still need the audit screen on the import page, which is
+one of the pages the fatal takes down.
+
+### Per-product Elementor architecture, from production
+
+Sixty products drawn at random from the 4,348:
+
+- 60/60 returned 200
+- 60/60 carried **their own** Elementor document id, equal to their post id
+- 60/60 also carried **7950, and only 7950**, as the Single Product shell
+- 60/60 rendered all nine product widgets
+
+One shell, 4,348 independent bodies - confirmed from the outside. The A/B/C
+edit-and-restore proof still needs the editor.
+
+### Seven archetypes
+
+| Archetype | Result |
+|---|---|
+| Simple priced | price, quantity, Add to Cart, Buy Now; `Offer` price 2200, InStock |
+| Quote-only | no price, no cart, Request a Quote, **no `Offer` in the structured data** |
+| Genuine sale | Rs. 3,500 against Rs. 6,500, "Save 46%" |
+| Variable, purchasable | two attribute selects, variations form, price range 8,495-9,895 |
+| Variable, quote-only | options shown, quoted on enquiry, no invented price |
+| Out of stock | price shown, not purchasable, `OutOfStock` in structured data |
+| Representative image | renders, with the provenance note the record carries |
+
+`Rs. 0` appears nowhere except an empty cart total, which is what an empty cart
+costs.
+
+### Responsive parity - the outstanding 8px
+
+Measured at eight widths on three product pages, comparing the Elementor
+container against the plain `.section--sm` the approved storefront uses:
+
+| Width | Live gap | With the committed CSS |
+|---:|---:|---:|
+| 1920, 1440, 1366, 768 | 0 | 0 |
+| 1024 | **-8px** | **0** |
+| 430, 390, 375 | **+8px** | **0** |
+
+Live `styles.css` still carries `.elementor .e-con.section--sm`, whose extra
+specificity the breakpoints never reach, so the Elementor container holds 40px
+while the approved section moves 48 → 40 → 32. The committed pair of stylesheets
+drops that selector and pairs `.e-con.section` with `.section` at every
+breakpoint, which closes it to zero at all eight widths on all three pages.
+`documentElement.scrollWidth === clientWidth` at every width, both versions.
+
+The measurement substitutes the repository stylesheets for the live ones in a
+local copy of the live page, which is what deploying them does. Appending them
+instead proves nothing: the old high-specificity selector wins until it is gone.
+
+### Defects found and fixed in source
+
+1. **Every Request a Quote button led to a 404.** `quote_url()` and
+   `enquiry_url()` looked the page up as `request-a-quote`; the slug is
+   `quote-request`. 97 of the 413 internal links checked were broken and all 97
+   were this one bug - the only route a quote-only product has, and 2,548
+   products are quote-only.
+2. **The specification table printed raw JSON.** A list value reached the cell
+   through `wp_json_encode()`, so shoppers saw `["Urban Black","Grand Dark Wood"]`.
+   164 specification rows across the catalogue are lists.
+
+Both are fixed in the repository and both need the same deployment as everything
+else.
+
+### Everything else checked
+
+- 205/205 images resolve; 316/413 internal links resolve and the other 97 are
+  defect 1 above
+- No console errors on home, shop, product, cart, FAQ or quote - only the
+  standard jQuery Migrate notice
+- Sorting, pagination, brand and availability filters, and search all change the
+  result set; a nonsense search returns the empty state
+- Cart adds a priced product, carries quantity, remove, coupon and totals, and
+  **refuses a quote-only product**
+- Checkout renders eight billing fields and states plainly that no payment
+  method is set up; nothing invented
+- Account sign-in is deliberately unavailable online and says so
+- Track order carries a nonce and shows no sample orders; the three forms each
+  carry a nonce and required fields
+- `noindex` on cart, checkout, account and wishlist; canonicals all point at the
+  WordPress domain; no `aliza-younas.github.io` canonical anywhere
+- The import payload is not public: `products.ndjson`, `media.json` and the
+  directory itself all return 403
