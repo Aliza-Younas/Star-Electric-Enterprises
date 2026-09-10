@@ -249,6 +249,33 @@ load the plugin, wp-admin returns, the storefront loses its catalogue chrome
 until the folder is renamed back, and no data is lost either way. Prefer fixing
 the file: renaming is the bigger hammer.
 
+### Reaching the server at all
+
+The dashboard is not the only way in, but the way in is not the obvious one.
+`ftp.salmon-antelope-713580.hostingersite.com` resolves to Hostinger CDN edge
+nodes (`Server: hcdn`) that answer 443 and drop everything else, so every FTP
+and SSH attempt against that hostname times out at the TCP layer with no error
+worth reading. **The origin server is a different address**, shown in hPanel
+under Files -> FTP Accounts as "FTP IP (hostname)":
+
+```
+45.84.207.155     port 21   FTPS        -> 220 FTP Server ready.  (0.4s)
+45.84.207.155     port 65002 SSH        -> SSH-2.0-OpenSSH_8.0    (0.4s)
+```
+
+Use the IP, never the hostname. With that, an FTP account rooted at
+`public_html` is enough to replace a file that has taken the dashboard down,
+and `wordpress/tools/` has no business holding the credential: it belongs in a
+scratch file outside the repository, deleted after use.
+
+Two things that cost time on 2026-09-10 and need not cost it again: Windows
+PowerShell's `Set-Content -Encoding utf8` writes a byte-order mark, which rides
+along on the first line of a credential file and makes curl reject the URL with
+"No host part in the URL"; and the FTP username in the FTP Access panel is the
+main account, which is not necessarily the account whose password was just
+changed - a 530 with a correct-looking username usually means the password
+belongs to a sub-account.
+
 Prevention lives in the build:
 
 ```

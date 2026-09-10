@@ -79,21 +79,21 @@ class Star_Electric_Quote_Only {
 	 */
 	public static function quote_url( WC_Product $product ): string {
 		/*
-		 * The page is 'quote-request'. Looking it up as 'request-a-quote'
-		 * found nothing and fell through to a URL that has never existed,
-		 * so every Request a Quote button on a quote-only product and on a
-		 * range landed on a 404 - the one route those products have.
+		 * Star_Electric_Shell::quote_url() is the single source of truth for
+		 * this link, and it is the only builder that gets the query string
+		 * right: the form prefills from quote_product, and ?product= is
+		 * WooCommerce's own post-type query var, which answers 404 before any
+		 * template runs. Rolling a second URL here is what produced a dead
+		 * button on every quote-only product card.
 		 */
+		if ( class_exists( 'Star_Electric_Shell' ) ) {
+			return Star_Electric_Shell::quote_url( $product->get_id() );
+		}
+
 		$page = get_page_by_path( 'quote-request' );
 		$base = $page ? get_permalink( $page ) : home_url( '/quote-request/' );
 
-		return add_query_arg(
-			array(
-				'product'      => $product->get_id(),
-				'product_name' => rawurlencode( $product->get_name() ),
-			),
-			$base
-		);
+		return add_query_arg( 'quote_product', $product->get_id(), $base );
 	}
 
 	/**

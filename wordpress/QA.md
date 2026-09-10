@@ -679,3 +679,65 @@ else.
   WordPress domain; no `aliza-younas.github.io` canonical anywhere
 - The import payload is not public: `products.ndjson`, `media.json` and the
   directory itself all return 403
+
+---
+
+## 14. Deployment and re-verification, 2026-09-10
+
+The recovery finally went out over **FTPS to the origin server by IP**, not
+through the dashboard. See the runbook in `MIGRATION.md`: the `ftp.` hostname is
+CDN-fronted and drops everything but 443, which is what made every earlier
+transport look like a firewall.
+
+| Step | Result |
+|---|---|
+| `class-admin-import.php` uploaded, read back, byte-compared | **match** |
+| Plugin and child theme, every file | **134 of 134, 0 failed**, each verified by read-back |
+| `/wp-admin/` | 500 → **302** (login redirect) |
+| `/wp-admin/admin-ajax.php` | 500 → **200** |
+| Import screen | 500 → **302** (login redirect) |
+| Wishlist AJAX | 500 → **200**, `{"success":true,…}` |
+| Recently-viewed AJAX | 500 → **200**, `{"success":true,…}` |
+
+### One defect the deployment exposed
+
+Commit `512833e` fixed the *slug* in `quote_url()` and `enquiry_url()` but left
+the query string as `?product=`, and WooCommerce owns `product` as its post-type
+query var: the live check returned **404 for `?product=2333` and 200 for
+`?quote_product=2333`**, which is exactly what the comment in
+`class-sections.php` already warned about. The theme's
+`Star_Electric_Shell::quote_url()` had it right all along, so
+`Star_Electric_Quote_Only::quote_url()` now delegates to it instead of building
+a second URL. `?quote_product=2333` prefills the form with the product name.
+
+### Re-verification after deployment
+
+| Check | Before | After |
+|---|---|---|
+| Broken internal links | 97 (all `/request-a-quote/`) | **0 of 411** |
+| Broken images | 0 of 205 | **0 of 205** |
+| Specification values | `["Urban Black","Grand Dark Wood"]` | **`Urban Black, Grand Light Wood, …`** |
+| JSON in rendered text | present | **0 hits in `document.body.innerText`** |
+| Padding gap, 1024 | −8px | **0** |
+| Padding gap, 430 / 390 / 375 | +8px | **0** |
+| Horizontal overflow, 8 widths × 3 product types | 0 | **0** |
+| Console errors | none | **none** |
+| Product URLs / duplicates | 4,348 / 0 | **4,348 / 0** |
+| Random products owning their own Elementor document | 60/60 | **60/60** |
+| Single Product shells in use | 1 (`7950`) | **1 (`7950`)** |
+| Product widgets per page | 9 | **9** |
+
+Seven archetypes re-tested after deployment and all correct: priced carries cart
+and an `Offer`; quote-only carries no price, no cart and no offer; the sale shows
+Rs. 3,500 against Rs. 6,500 with "Save 46%"; the purchasable variable offers two
+attribute selects and a 8,495–9,895 range; the quote-only variable shows its
+options without inventing a price; out of stock is not purchasable and is
+`OutOfStock` in the structured data. `Rs. 0` appears nowhere.
+
+### Caveat on the QA harness
+
+The earlier "bracketed text" finding was a **false positive in the checker**, not
+the site: stripping tags with `<[^>]+>` breaks on an attribute value containing
+`>`, which exposed the WooCommerce variations JSON as if it were visible text.
+Re-checked through Chrome's own `innerText`: zero hits.
+
