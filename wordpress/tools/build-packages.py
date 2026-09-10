@@ -16,11 +16,18 @@ Writes star-electric-child.zip and star-electric-core.zip, then prints the sizes
 that decide whether the upload will be accepted.
 """
 
+import importlib
 import os
 import sys
 import zipfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+
+# The checker is a sibling script whose name is hyphenated like the rest of the
+# tooling, so it has to be imported by name rather than with a plain import.
+sys.path.insert(0, HERE)
+php_syntax_check = importlib.import_module("php-syntax-check")
+
 WORDPRESS = os.path.dirname(HERE)
 CONTENT = os.path.join(WORDPRESS, "wp-content")
 PAYLOAD = os.path.join(WORDPRESS, "data")
@@ -97,7 +104,15 @@ def main():
         print("Run wordpress/tools/export-catalogue.py first.")
         return 1
 
-    print("Building upload packages into %s\n" % outdir)
+    # A PHP parse error inside the plugin takes every wp-admin page down, and
+    # wp-admin is the only way in - so a broken file cannot be replaced by the
+    # same route that shipped it. Never package one.
+    print("Checking PHP syntax\n")
+    if php_syntax_check.run([CONTENT]):
+        print("\nPHP problems found. Nothing packaged.")
+        return 1
+
+    print("\nBuilding upload packages into %s\n" % outdir)
 
     build(outdir, "star-electric-child", os.path.join(CONTENT, "themes", "star-electric-child"))
 

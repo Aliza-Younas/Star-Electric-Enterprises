@@ -213,6 +213,52 @@ The same steps are available over WP-CLI if shell access is ever added
 (`wp star-electric import-media`, `… import-products`, `… audit`), but nothing in
 the migration depends on it.
 
+### If wp-admin goes fatal
+
+The dashboard-only route has one failure mode worth writing down, because it
+happened on 2026-09-10: a PHP parse error inside the plugin takes every wp-admin
+page down, and wp-admin is the only way to upload a corrected plugin. The route
+that shipped the fault cannot repair it.
+
+The signature is unmistakable. The storefront is untouched — `/`, `/shop/`,
+`/wp-json/` and `/wp-login.php` all return 200 — while everything that sets
+`is_admin()` returns 500:
+
+```
+curl -s -o /dev/null -w "%{http_code}\n" https://salmon-antelope-713580.hostingersite.com/wp-admin/
+curl -s -o /dev/null -w "%{http_code}\n" https://salmon-antelope-713580.hostingersite.com/wp-admin/admin-ajax.php?action=heartbeat
+```
+
+That split points at the plugin's admin code specifically: `star-electric-core.php`
+requires `includes/class-admin-import.php` only under `is_admin()`, so a parse
+error there is invisible to shoppers and fatal to the dashboard.
+
+The way back in is Hostinger's own file manager, which does not go through
+WordPress at all:
+
+1. hPanel → **Websites** → the site → **File manager**.
+2. Go to `public_html/wp-content/plugins/star-electric-core/`.
+3. Replace the offending file with the repository's copy (upload it into the
+   same directory and confirm the overwrite), or edit it in place.
+4. Reload `/wp-admin/`. It comes straight back — nothing is cached and nothing
+   needs reactivating.
+
+If the faulty file cannot be identified quickly, rename the folder
+`star-electric-core` to `star-electric-core-off` instead. WordPress then cannot
+load the plugin, wp-admin returns, the storefront loses its catalogue chrome
+until the folder is renamed back, and no data is lost either way. Prefer fixing
+the file: renaming is the bigger hammer.
+
+Prevention lives in the build:
+
+```
+python wordpress/tools/php-syntax-check.py
+```
+
+`build-packages.py` runs it first and refuses to package anything if it finds a
+problem, so a file in this state cannot reach the server through the runbook
+again.
+
 ---
 
 ## Outstanding decisions

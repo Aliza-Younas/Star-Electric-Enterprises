@@ -24,3 +24,7 @@ dist/
 
 # A local copy of the payload staged inside the plugin by the packaging script.
 wp-content/plugins/star-electric-core/data/
+
+# Python bytecode from the build tooling.
+__pycache__/
+*.pyc
