@@ -45,6 +45,7 @@ require_once STAR_ELECTRIC_PATH . 'includes/class-provenance.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-search.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-navigation.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-forms.php';
+require_once STAR_ELECTRIC_PATH . 'includes/class-privacy.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-wishlist.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-seo.php';
 require_once STAR_ELECTRIC_PATH . 'includes/class-chrome.php';
@@ -80,6 +81,7 @@ function star_electric_boot(): void {
 	Star_Electric_Search::init();
 	Star_Electric_Shortcodes::init();
 	Star_Electric_Forms::init();
+	Star_Electric_Privacy::init();
 	Star_Electric_Wishlist::init();
 	Star_Electric_SEO::init();
 	Star_Electric_Elementor::init();

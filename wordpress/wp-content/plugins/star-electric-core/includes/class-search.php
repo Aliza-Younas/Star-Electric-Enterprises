@@ -61,10 +61,36 @@ class Star_Electric_Search {
 		global $wpdb;
 
 		if ( self::applies( $query ) && false === strpos( $join, 'star_search_meta' ) ) {
-			$join .= " LEFT JOIN {$wpdb->postmeta} AS star_search_meta ON {$wpdb->posts}.ID = star_search_meta.post_id ";
+			/*
+			 * The key filter belongs in the ON clause, not the WHERE. Joined
+			 * without it, every meta row of every product is brought back and
+			 * then thrown away - on a 4,348 product catalogue that is the whole
+			 * postmeta table. Restricted here, the join carries at most four
+			 * rows per product.
+			 */
+			$join .= " LEFT JOIN {$wpdb->postmeta} AS star_search_meta"
+				. " ON {$wpdb->posts}.ID = star_search_meta.post_id"
+				. ' AND star_search_meta.meta_key IN ( ' . self::keys() . ' ) ';
 		}
 
 		return $join;
+	}
+
+	/**
+	 * The searchable meta keys, as a quoted SQL list.
+	 */
+	private static function keys(): string {
+		global $wpdb;
+
+		return implode(
+			',',
+			array_map(
+				static function ( $key ) use ( $wpdb ) {
+					return $wpdb->prepare( '%s', $key );
+				},
+				self::KEYS
+			)
+		);
 	}
 
 	/**
@@ -93,16 +119,36 @@ class Star_Electric_Search {
 		$term = (string) $query->get( 's' );
 		$like = '%' . $wpdb->esc_like( $term ) . '%';
 
-		$keys = implode( ',', array_map( static function ( $k ) use ( $wpdb ) {
-			return $wpdb->prepare( '%s', $k );
-		}, self::KEYS ) );
+		$meta = $wpdb->prepare( ' OR ( star_search_meta.meta_value LIKE %s ) ', $like );
 
-		$meta = $wpdb->prepare(
-			" OR ( star_search_meta.meta_key IN ( {$keys} ) AND star_search_meta.meta_value LIKE %s ) ",
-			$like
-		);
+		/*
+		 * WordPress hands this filter the whole clause, and for a visitor who is
+		 * not logged in that clause ends with its own group:
+		 *
+		 *   AND ( (post_title LIKE ..) OR (post_excerpt ..) OR (post_content ..) )
+		 *   AND ( wp_posts.post_password = '' )
+		 *
+		 * Splicing at the last ")" therefore widened the *password* test rather
+		 * than the search, so the title group still gated every row and a search
+		 * for a SKU or a model number found nothing. Logged in there is no
+		 * password clause, the splice landed correctly, and the fault was
+		 * invisible to anyone testing from the dashboard.
+		 *
+		 * So the password clause is set aside, the meta condition goes into the
+		 * group it belongs to, and the clause is put back together.
+		 */
+		$tail = '';
+		$pos  = strpos( $search, $wpdb->posts . '.post_password' );
+		if ( false !== $pos ) {
+			$open = strrpos( substr( $search, 0, $pos ), ' AND (' );
+			if ( false !== $open ) {
+				$tail   = substr( $search, $open );
+				$search = substr( $search, 0, $open );
+			}
+		}
 
-		// Splice the extra condition inside the existing parenthesised group.
-		return preg_replace( '/\)\s*$/', $meta . ')', $search, 1 ) ?: $search;
+		$widened = preg_replace( '/\)\s*$/', $meta . ')', $search, 1 );
+
+		return ( null === $widened ? $search : $widened ) . $tail;
 	}
 }
