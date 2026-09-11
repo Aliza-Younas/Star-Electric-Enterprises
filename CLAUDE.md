@@ -65,6 +65,52 @@ For a normal completed task, just do it.
 push. If something is obviously wrong or incomplete, fix it, validate again,
 then commit.
 
+### Three live states, not one
+
+Pushing to GitHub is step five of nine, not the finish line. The project exists
+in three places, and a change is only done when every place it applies to is in
+the intended state:
+
+| | |
+|---|---|
+| **1. Source** | `https://github.com/Aliza-Younas/Star-Electric-Enterprises` |
+| **2. WordPress** | `https://salmon-antelope-713580.hostingersite.com/` |
+| **3. GitHub Pages** | `https://aliza-younas.github.io/Star-Electric-Enterprises/` |
+
+So the workflow continues past step 15:
+
+16. **Deploy** to WordPress — see the runbook in `wordpress/MIGRATION.md`, which
+    covers reaching the origin server. A fix that is only committed is not live.
+17. **Apply the frontend equivalent** to the static site, where one exists.
+18. **Verify both live sites**, not the local files and not a cached copy.
+    Purge LiteSpeed after any WordPress change that alters markup, CSS or JS,
+    and confirm GitHub Pages is serving the new commit before claiming parity.
+
+**Which changes go where.** PHP, WooCommerce, Elementor documents, the database,
+AJAX handlers, REST security and anything in `wordpress/` can only run on
+WordPress; GitHub Pages cannot execute them. Everything a visitor can see or
+touch — design, spacing, typography, colour, imagery, header and footer, product
+cards, responsive rules, front-end JavaScript — belongs on both, because the
+static site is the approved visual reference and the two must not drift.
+
+A WordPress-only fix still requires **checking** the static site rather than
+assuming: the question is not "does this file exist there" but "does the visitor
+now see or get something different there". On 2026-09-11 catalogue search by SKU
+was dead on WordPress and working on GitHub Pages, and the static site was the
+one that was right — the drift was only visible because both were tested.
+
+State it per change, and never claim a state that was not tested:
+
+```
+BUG:            <description>
+REPOSITORY:     PASS / FAIL   commit <hash>
+WORDPRESS LIVE: PASS / FAIL   <url tested>
+GITHUB PAGES:   PASS / FAIL / NOT APPLICABLE (verified, not assumed)  <url tested>
+PARITY:         PASS / FAIL
+```
+
+Nothing is "fixed" until every applicable row passes.
+
 ---
 
 ## 3. Validation
@@ -200,6 +246,8 @@ Completed: <what changed, one or two lines>
 Validation: Passed
 Commit: a1b2c3d — Improve homepage category imagery
 GitHub: Successfully pushed to origin/main
+WordPress live: Deployed and verified — <url tested>
+GitHub Pages: Deployed and verified — <url tested>, or Not applicable (checked)
 Local: Clean and synchronized
 ```
 
