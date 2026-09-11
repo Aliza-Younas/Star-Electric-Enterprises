@@ -143,6 +143,19 @@ window.SEE_DATA = (function () {
              sourceDomains: b.sourceDomains || [], note: b.note || "" };
   });
 
+  /* Every other filter compares slugs - p.cat, p.sub, p.depts - and the brand
+     filter's checkboxes, the brand directory's links and the WordPress site all
+     use the brand slug too. Only the product carried the display name, so
+     ?brand=pakistan-cables matched nothing. Give the product its slug as well,
+     and leave p.brand alone: the cards print it. */
+  var BRAND_SLUG_BY_NAME = {};
+  for (var bi = 0; bi < BRANDS.length; bi++) {
+    BRAND_SLUG_BY_NAME[BRANDS[bi].name] = BRANDS[bi].slug;
+  }
+  for (var pi = 0; pi < PRODUCTS.length; pi++) {
+    PRODUCTS[pi].brandSlug = BRAND_SLUG_BY_NAME[PRODUCTS[pi].brand] || "";
+  }
+
   /* ------------------------------------------------------------- families
      Product families and series are NOT products and are never rendered as
      product cards. A family is a group name the source publishes without any

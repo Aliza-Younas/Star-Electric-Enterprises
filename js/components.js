@@ -577,8 +577,9 @@ window.SEE_UI = (function () {
       "</a>" +
       '<div class="mcard__body">' +
         '<h3 class="mcard__name"><a href="' + href + '">' + esc(p.name) + "</a></h3>" +
-        '<p class="mcard__brand">By: <a href="shop.html?brand=' + esc(p.brand) + '">' +
-          esc(D.brandName(p.brand) || p.brand || "Not specified") + "</a></p>" +
+        '<p class="mcard__brand">By: <a href="shop.html?brand=' +
+          encodeURIComponent(p.brandSlug || "") + '">' +
+          esc(p.brand || "Not specified") + "</a></p>" +
         '<p class="mcard__price">' + price + "</p>" +
         '<div class="mcard__actions">' + cta +
           '<a class="mcard__btn mcard__btn--ghost" href="' + href + '" aria-label="View ' +

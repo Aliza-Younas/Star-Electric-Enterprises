@@ -576,7 +576,7 @@
       if (state.dept && (p.depts || []).indexOf(state.dept) === -1) { return false; }
       if (state.cats.length && state.cats.indexOf(p.cat) === -1) { return false; }
       if (state.subs.length && state.subs.indexOf(p.sub) === -1) { return false; }
-      if (state.brands.length && state.brands.indexOf(p.brand) === -1) { return false; }
+      if (state.brands.length && state.brands.indexOf(p.brandSlug) === -1) { return false; }
       if (state.stock.length && state.stock.indexOf(p.stock) === -1) { return false; }
       if (state.type.length && state.type.indexOf(p.type) === -1) { return false; }
       if (state.pricing.length) {
